@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 const cols = [
   { title:"Services", links:[{l:"Buy Property",h:"/buy"},{l:"Sell Property",h:"/sell"},{l:"Rent Property",h:"/rent"},{l:"Commercial RE",h:"/commercial"},{l:"Luxury Properties",h:"/luxury"},{l:"New Launches",h:"/new-launches"}] },
   { title:"Advisory",  links:[{l:"Investment Advisory",h:"/investment-advisory"},{l:"NRI Services",h:"/nri-services"},{l:"Property Management",h:"/property-management"},{l:"Verification Center",h:"/verification-center"},{l:"Free Calculators",h:"/calculators"}] },
@@ -26,8 +27,13 @@ export default function Footer() {
         <div style={{ display:"grid",gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1fr",gap:40,paddingBottom:48,borderBottom:"1px solid rgba(255,255,255,0.06)" }} className="footer-grid">
           <div>
             <div style={{ marginBottom:16 }}>
-              <span style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:400,fontSize:24,color:"rgba(252,250,244,0.9)",letterSpacing:"0.02em" }}>Vedhara</span>
-              <span style={{ display:"block",fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.22em",textTransform:"uppercase",color:"var(--gold)",marginTop:2 }}>Group</span>
+              <Image
+                src="/vedhara-logo-white.png"
+                alt="Vedhara Group"
+                width={180}
+                height={45}
+                style={{ height: 42, width: "auto" }}
+              />
             </div>
             <p style={{ fontFamily:"var(--t-head)",fontSize:9,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold)",marginBottom:14 }}>Wisdom Rooted. Futures Built.</p>
             <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(255,255,255,0.3)",lineHeight:1.75,marginBottom:18,maxWidth:240 }}>Delhi NCR&apos;s independent real estate advisory firm. Verified listings, transparent fees, dedicated advisors.</p>
