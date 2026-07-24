@@ -130,7 +130,7 @@ export default function RentPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24 }}>
+          <div className="prop-grid">
             {rentalListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80}>
                 <div className="hover-lift" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>

@@ -170,7 +170,7 @@ export default function NewLaunchesPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24 }}>
+          <div className="prop-grid">
             {launchProjects.map((project,index)=>(
               <ScrollReveal key={project.id} delay={index * 80}>
                 <div className="hover-lift" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
