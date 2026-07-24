@@ -92,7 +92,7 @@ img,video{max-width:100%;height:auto;}
 /* Video hero */
 .video-hero{position:relative;overflow:hidden;}
 .video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-.video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(9,15,29,0.92) 0%,rgba(15,30,56,0.78) 50%,rgba(9,15,29,0.88) 100%);}
+.video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(9,15,29,0.55) 0%,rgba(15,30,56,0.35) 50%,rgba(9,15,29,0.50) 100%);}
 
 /* Service cards */
 .svc-card{display:block;background:var(--cream);padding:36px 28px;text-decoration:none;transition:background 0.35s var(--ease-out);position:relative;overflow:hidden;}
@@ -123,8 +123,8 @@ img,video{max-width:100%;height:auto;}
 .process-step:hover{background:rgba(184,146,42,0.1);border-color:rgba(184,146,42,0.25);}
 
 /* Hover lift */
-.hover-lift{transition:transform 0.3s var(--ease-spring),box-shadow 0.3s ease;}
-.hover-lift:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(9,15,29,0.2);}
+.hover-lift{transition:transform 0.4s var(--ease-spring),box-shadow 0.4s ease,filter 0.3s ease;}
+.hover-lift:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 24px 48px rgba(9,15,29,0.25);filter:brightness(1.05);}
 
 /* Animated gradient bg */
 .animated-gradient{background:linear-gradient(-45deg,var(--navy-deep),var(--navy),#1a3a5c,var(--navy));background-size:400% 400%;animation:gradientPan 12s ease infinite;}

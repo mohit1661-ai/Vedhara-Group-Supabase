@@ -2,52 +2,261 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+/* ── Gold Particles Canvas ── */
 function Particles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  useEffect(()=>{
-    const canvas=canvasRef.current; if(!canvas) return;
-    const ctx=canvas.getContext("2d"); if(!ctx) return;
-    const resize=()=>{ canvas.width=canvas.offsetWidth; canvas.height=canvas.offsetHeight; };
-    resize(); window.addEventListener("resize",resize);
-    const particles=Array.from({length:70},()=>({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3-0.08, size:Math.random()*1.8+0.3, alpha:Math.random()*0.4+0.1 }));
-    let raf:number;
-    const draw=()=>{
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      particles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; if(p.x<0)p.x=canvas.width; if(p.x>canvas.width)p.x=0; if(p.y<0)p.y=canvas.height; if(p.y>canvas.height)p.y=0; ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fillStyle=`rgba(184,146,42,${p.alpha})`; ctx.fill(); });
-      for(let i=0;i<particles.length;i++) for(let j=i+1;j<particles.length;j++){ const dx=particles[i].x-particles[j].x; const dy=particles[i].y-particles[j].y; const d=Math.sqrt(dx*dx+dy*dy); if(d<120){ ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.strokeStyle=`rgba(184,146,42,${0.06*(1-d/120)})`; ctx.lineWidth=0.5; ctx.stroke(); } }
-      raf=requestAnimationFrame(draw);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const resize = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+    const particles = Array.from({ length: 70 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3 - 0.08,
+      size: Math.random() * 1.6 + 0.3,
+      alpha: Math.random() * 0.35 + 0.05,
+    }));
+    let raf: number;
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212,170,82,${p.alpha})`;
+        ctx.fill();
+      });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(212,170,82,${0.05 * (1 - d / 120)})`;
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+          }
+        }
+      }
+      raf = requestAnimationFrame(draw);
     };
     draw();
-    return ()=>{ cancelAnimationFrame(raf); window.removeEventListener("resize",resize); };
-  },[]);
-  return <canvas ref={canvasRef} style={{ position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none",zIndex:2 }} />;
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
+        zIndex: 3,
+      }}
+    />
+  );
 }
 
 export default function CinematicHero() {
   const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const contentOuterRef = useRef<HTMLDivElement>(null);
 
-  useEffect(()=>{ const t=setTimeout(()=>setLoaded(true),100); return ()=>clearTimeout(t); },[]);
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 100);
+    return () => clearTimeout(t);
+  }, []);
 
-  useEffect(()=>{
-    const hero=heroRef.current; if(!hero) return;
-    const onScroll=()=>{ const content=hero.querySelector<HTMLElement>(".hero-content"); if(content) content.style.transform=`translateY(${window.scrollY*0.22}px)`; };
-    window.addEventListener("scroll",onScroll,{passive:true});
-    return ()=>window.removeEventListener("scroll",onScroll);
-  },[]);
+  /* ── Multi-layer parallax ── */
+  useEffect(() => {
+    const hero = heroRef.current;
+    const bg = bgRef.current;
+    const outer = contentOuterRef.current;
+    if (!hero || !bg || !outer) return;
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      bg.style.transform = `translateY(${scrollY * 0.15}px)`;
+      outer.style.transform = `translateY(${scrollY * 0.06}px)`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* ── 3D mouse-tilt on hero content ── */
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    const inner = hero.querySelector<HTMLElement>(".hero-inner");
+    if (!inner) return;
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      inner.style.transform = `rotateX(${y * -3}deg) rotateY(${x * 3}deg) translateZ(30px)`;
+    };
+    const onMouseLeave = () => {
+      inner.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px)";
+    };
+    hero.addEventListener("mousemove", onMouseMove, { passive: true });
+    hero.addEventListener("mouseleave", onMouseLeave, { passive: true });
+    return () => {
+      hero.removeEventListener("mousemove", onMouseMove);
+      hero.removeEventListener("mouseleave", onMouseLeave);
+    };
+  }, []);
 
   return (
-    <section ref={heroRef} className="video-hero" style={{ minHeight:"100vh",display:"flex",alignItems:"center",paddingTop:"var(--nav-h)" }}>
-      <video autoPlay muted loop playsInline onLoadedData={()=>setVideoLoaded(true)} className="video-bg" style={{ opacity:videoLoaded?1:0,transition:"opacity 1.5s ease" }} poster="/hero-poster.jpg">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-city-at-night-11-large.mp4" type="video/mp4" />
-      </video>
-      <div className="video-overlay" />
-      <div style={{ position:"absolute",inset:0,zIndex:1,background:"radial-gradient(ellipse 70% 70% at 30% 50%,rgba(15,30,56,0.3) 0%,transparent 70%)" }} />
-      <div style={{ position:"absolute",inset:0,zIndex:1,backgroundImage:"repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(184,146,42,0.015) 60px,rgba(184,146,42,0.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(184,146,42,0.015) 60px,rgba(184,146,42,0.015) 61px)" }} />
+    <section
+      ref={heroRef}
+      className="video-hero"
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        paddingTop: "var(--nav-h)",
+        perspective: "1200px",
+      }}
+    >
+      {/* ── Video BG (parallax layer) ── */}
+      <div
+        ref={bgRef}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "120%",
+          top: "-10%",
+          zIndex: 0,
+          willChange: "transform",
+        }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          onLoadedData={() => setVideoLoaded(true)}
+          className="video-bg"
+          style={{
+            opacity: videoLoaded ? 1 : 0,
+            transition: "opacity 1.8s ease",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+          poster="/hero-poster.jpg"
+        >
+          {/* Modern building exterior with glass reflection (Mixkit) */}
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-modern-building-with-reflective-glass-and-blue-sky-41434-large.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      {/* ── Gradient overlay (lighter so video is visible) ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          background:
+            "linear-gradient(135deg, rgba(9,15,29,0.50) 0%, rgba(15,30,56,0.30) 40%, rgba(9,15,29,0.45) 100%)",
+        }}
+      />
+
+      {/* ── Radial vignette ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          background:
+            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.2) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* ── Cinematic grid lines ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 2,
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(184,146,42,0.015) 60px, rgba(184,146,42,0.015) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(184,146,42,0.015) 60px, rgba(184,146,42,0.015) 61px)",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* ── Scan-line overlay ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 2,
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.008) 2px, rgba(255,255,255,0.008) 3px)",
+          pointerEvents: "none",
+          opacity: 0.4,
+        }}
+      />
+
+      {/* ── Particles ── */}
       <Particles />
-      <div style={{ position:"absolute",top:"18%",right:"10%",width:480,height:480,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.12) 0%,transparent 70%)",zIndex:2,pointerEvents:"none",animation:"float 8s ease-in-out infinite" }} />
-      <div style={{ position:"absolute",bottom:"15%",left:"8%",width:280,height:280,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.07) 0%,transparent 70%)",zIndex:2,pointerEvents:"none",animation:"float 10s ease-in-out infinite 2s" }} />
+
+      {/* ── Floating orbs ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: "18%",
+          right: "10%",
+          width: 480,
+          height: 480,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(184,146,42,0.10) 0%, transparent 70%)",
+          zIndex: 2,
+          pointerEvents: "none",
+          animation: "float 8s ease-in-out infinite",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "15%",
+          left: "8%",
+          width: 280,
+          height: 280,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(184,146,42,0.06) 0%, transparent 70%)",
+          zIndex: 2,
+          pointerEvents: "none",
+          animation: "float 10s ease-in-out infinite 2s",
+        }}
+      />
 
       <div className="hero-content" style={{ position:"relative",zIndex:3,maxWidth:1320,margin:"0 auto",padding:"80px 32px 60px",width:"100%" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 380px",gap:80,alignItems:"center" }} className="hero-inner">
