@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label:"About",     href:"/about" },
@@ -31,10 +32,37 @@ export default function Navbar() {
         transition:"background 0.35s ease,border-color 0.35s ease",
       }}>
         <nav style={{ maxWidth:1320,margin:"0 auto",padding:"0 32px",height:"100%",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
-          {/* Logo text mark */}
-          <Link href="/" style={{ textDecoration:"none",display:"flex",flexDirection:"column",lineHeight:1 }}>
-            <span style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:400,fontSize:22,color: scrolled?"var(--navy)":"#FCFAF4",letterSpacing:"0.02em",transition:"color 0.3s" }}>Vedhara</span>
-            <span style={{ fontFamily:"var(--t-head)",fontSize:7,fontWeight:600,letterSpacing:"0.22em",textTransform:"uppercase",color:"var(--gold)",marginTop:1 }}>Group</span>
+          {/* Logo mark — swaps between white/gold (transparent hero) and navy/gold (scrolled) */}
+          <Link href="/" style={{ textDecoration:"none",display:"flex",alignItems:"center",position:"relative",height:40 }} aria-label="Vedhara Group home">
+            <Image
+              src="/vedhara-logo-white.png"
+              alt="Vedhara Group"
+              width={160}
+              height={40}
+              priority
+              style={{
+                height: 40, width: "auto",
+                position: scrolled ? "absolute" : "static",
+                opacity: scrolled ? 0 : 1,
+                transition: "opacity 0.3s ease",
+                pointerEvents: scrolled ? "none" : "auto",
+              }}
+            />
+            <Image
+              src="/vedhara-logo-dark.png"
+              alt="Vedhara Group"
+              width={160}
+              height={40}
+              priority
+              style={{
+                height: 40, width: "auto",
+                position: scrolled ? "static" : "absolute",
+                top: 0, left: 0,
+                opacity: scrolled ? 1 : 0,
+                transition: "opacity 0.3s ease",
+                pointerEvents: scrolled ? "auto" : "none",
+              }}
+            />
           </Link>
 
           {/* Desktop nav */}
