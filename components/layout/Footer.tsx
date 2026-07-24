@@ -30,9 +30,9 @@ export default function Footer() {
               <Image
                 src="/vedhara-logo-white.png"
                 alt="Vedhara Group"
-                width={180}
-                height={45}
-                style={{ height: 42, width: "auto" }}
+                width={240}
+                height={60}
+                style={{ height: 56, width: "auto" }}
               />
             </div>
             <p style={{ fontFamily:"var(--t-head)",fontSize:9,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold)",marginBottom:14 }}>Wisdom Rooted. Futures Built.</p>
