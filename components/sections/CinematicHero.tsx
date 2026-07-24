@@ -170,7 +170,7 @@ export default function CinematicHero() {
         >
           {/* Modern building exterior with glass reflection (Mixkit) */}
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-modern-building-with-reflective-glass-and-blue-sky-41434-large.mp4"
+            src="/videos/hero-bg.mp4"
             type="video/mp4"
           />
         </video>

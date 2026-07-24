@@ -116,7 +116,7 @@ function Particles({ baseOpacity = 0.25 }) {
 
 export default function VideoHeroSection({
   children,
-  videoSrc = "https://assets.mixkit.co/videos/preview/mixkit-modern-building-with-reflective-glass-and-blue-sky-41434-large.mp4",
+  videoSrc = "/videos/hero-bg.mp4",
   poster = "/hero-poster.jpg",
   overlayGradient,
   disableTilt,
