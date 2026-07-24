@@ -33,7 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           url:"https://www.vedharagroup.com",
           description:"Vedhara Group is an independent real estate advisory and brokerage firm offering verified developer-partner listings and investment advisory across Delhi NCR.",
           slogan:"Wisdom Rooted. Futures Built.",
-          telephone:"+91-98106-47063", email:"hello@vedharagroup.com",
+          telephone:"+91-98106-47063", email:"contact@vedharagroup.com",
           address:{ "@type":"PostalAddress", addressLocality:"Delhi", addressRegion:"Delhi", addressCountry:"IN" },
           areaServed:[{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Ghaziabad"},{name:"Greater Noida"}],
           knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","RERA Verified Property Listings","NRI Property Investment India"],
