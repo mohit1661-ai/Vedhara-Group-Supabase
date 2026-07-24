@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights | Price Trends & Investment Intelligence | Vedhara Group", description:"Independent real estate market analysis for Delhi NCR — price-per-sqft trends, locality demand, investment hotspots, and the monthly Ground Report from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/market-insights" } };
 const themes = [
@@ -11,15 +12,13 @@ const themes = [
 export default function Page() {
   return (
     <>
-      <section className="page-hero animated-gradient" style={{ textAlign:"center",position:"relative",overflow:"hidden" }}>
-        <div style={{ maxWidth:800,margin:"0 auto",position:"relative",zIndex:1 }}>
+      <VideoHeroSection>
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Research &amp; Insights</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
             Delhi NCR Real Estate Intelligence —<br /><span style={{ color:"var(--gold-lt)" }}>Research That Informs, Not Sells.</span>
           </h1>
-        </div>
-      </section>
+        </VideoHeroSection>
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:980,margin:"0 auto" }}>
           <ScrollReveal>

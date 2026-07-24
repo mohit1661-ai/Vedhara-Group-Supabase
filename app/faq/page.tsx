@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection from "@/components/sections/FAQSection";
 export const metadata: Metadata = { title:"Real Estate FAQ | Property Buying, Selling, NRI & Investment Questions | Vedhara Group Delhi NCR", description:"Answers to the most common real estate questions in Delhi NCR — buying process, RERA, stamp duty, NRI property, home loans, rental agreements, and investment advisory.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
 const faqs = [
@@ -14,16 +15,14 @@ const faqs = [
 export default function Page() {
   return (
     <>
-      <section className="page-hero animated-gradient" style={{ textAlign:"center",position:"relative",overflow:"hidden" }}>
-        <div style={{ maxWidth:800,margin:"0 auto",position:"relative",zIndex:1 }}>
+      <VideoHeroSection>
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>FAQ Hub</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
             Real Estate Questions,<br /><span style={{ color:"var(--gold-lt)" }}>Answered Honestly.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:520,margin:"0 auto" }}>Whether you are buying your first property in Noida, selling a flat in Gurugram, or investing from the UAE — straight answers without a sales pitch.</p>
-        </div>
-      </section>
+        </VideoHeroSection>
       <FAQSection faqs={faqs} title="Delhi NCR Property FAQ" />
     </>
   );

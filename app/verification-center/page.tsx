@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
@@ -45,9 +46,7 @@ export default function VerificationCenterPage() {
   return (
     <>
       <JsonLd data={howToSchema} />
-      <section className="page-hero animated-gradient" style={{ textAlign:"center",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:700,height:700,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.07) 0%,transparent 70%)",pointerEvents:"none" }} />
-        <div style={{ maxWidth:800,margin:"0 auto",position:"relative",zIndex:1 }}>
+      <VideoHeroSection>
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Verification Center</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
@@ -56,8 +55,7 @@ export default function VerificationCenterPage() {
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto" }}>
             The most common phrase in Indian real estate marketing is &ldquo;verified properties.&rdquo; The least common explanation is what &ldquo;verified&rdquo; actually means. Here is exactly what we check — five steps, documented and published on every listing.
           </p>
-        </div>
-      </section>
+        </VideoHeroSection>
 
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1060,margin:"0 auto" }}>
