@@ -46,7 +46,7 @@ export default function VerificationCenterPage() {
   return (
     <>
       <JsonLd data={howToSchema} />
-      <VideoHeroSection>
+      <VideoHeroSection videoSrc="/videos/Property%20Verification.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Verification Center</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
