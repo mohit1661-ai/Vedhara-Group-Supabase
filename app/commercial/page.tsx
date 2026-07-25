@@ -90,7 +90,7 @@ const commercialListings: CommercialListing[] = [
 export default function CommercialPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.commercial} />
+      <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" />
 
       {/* Commercial Listings Section */}
       <section style={{ background:"var(--navy-deep)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>

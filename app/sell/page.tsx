@@ -97,7 +97,7 @@ const sellListings: SellListing[] = [
 export default function SellPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.sell} />
+      <ServicePageTemplate content={servicePages.sell} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Sell%20Page%20Video%20(1).mp4" />
 
       {/* Properties for Sale Section */}
       <section style={{ background:"var(--navy-deep)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>

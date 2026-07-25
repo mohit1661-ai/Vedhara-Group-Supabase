@@ -77,7 +77,7 @@ function Particles() {
   );
 }
 
-export default function CinematicHero() {
+export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ videoSrc?:string }) {
   const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -97,8 +97,8 @@ export default function CinematicHero() {
     if (!hero || !bg || !outer) return;
     const onScroll = () => {
       const scrollY = window.scrollY;
-      bg.style.transform = `translateY(${scrollY * 0.15}px)`;
-      outer.style.transform = `translateY(${scrollY * 0.06}px)`;
+      bg.style.transform = `translateY(${scrollY * 0.05}px)`;
+      outer.style.transform = `translateY(${scrollY * 0.025}px)`;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -146,8 +146,8 @@ export default function CinematicHero() {
           position: "absolute",
           inset: 0,
           width: "100%",
-          height: "120%",
-          top: "-10%",
+          height: "105%",
+          top: "-2.5%",
           zIndex: 0,
           willChange: "transform",
         }}
@@ -168,9 +168,8 @@ export default function CinematicHero() {
           }}
           poster="/hero-poster.jpg"
         >
-          {/* Modern building exterior with glass reflection (Mixkit) */}
           <source
-            src="/videos/hero-bg.mp4"
+            src={videoSrc}
             type="video/mp4"
           />
         </video>

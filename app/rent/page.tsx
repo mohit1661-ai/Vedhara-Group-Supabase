@@ -111,7 +111,7 @@ const rentalListings: RentalListing[] = [
 export default function RentPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.rent} />
+      <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" />
 
       {/* Featured Rentals Section */}
       <section style={{ background:"var(--navy-deep)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>

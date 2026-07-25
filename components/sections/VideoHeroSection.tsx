@@ -135,12 +135,12 @@ export default function VideoHeroSection({
     if (!hero || !bg) return;
     const onScroll = () => {
       const rect = hero.getBoundingClientRect();
-      const speed = 0.18;
+      const speed = 0.06;
       // Parallax the video background
       bg.style.transform = `translateY(${rect.top * speed}px)`;
       // Parallax the content at a different speed
       if (contentRef.current) {
-        contentRef.current.style.transform = `translateY(${rect.top * 0.08}px)`;
+        contentRef.current.style.transform = `translateY(${rect.top * 0.025}px)`;
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -201,8 +201,8 @@ export default function VideoHeroSection({
           position: "absolute",
           inset: 0,
           width: "100%",
-          height: "120%",
-          top: "-10%",
+          height: "105%",
+          top: "-2.5%",
           zIndex: 0,
           willChange: "transform",
         }}

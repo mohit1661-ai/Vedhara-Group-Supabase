@@ -10,11 +10,11 @@ export interface ServicePageContent {
   whoForTitle?:string; whoFor:string[]; faqs:FAQItem[]; ctaLabel:string;
 }
 
-export default function ServicePageTemplate({ content }:{ content:ServicePageContent }) {
+export default function ServicePageTemplate({ content, videoSrc }:{ content:ServicePageContent; videoSrc?:string }) {
   return (
     <>
       <JsonLd data={{"@context":"https://schema.org","@type":"Service",name:content.h1+(content.h1Accent?" "+content.h1Accent:""),provider:{"@id":"https://www.vedharagroup.com/#organization"},areaServed:{"@type":"City","name":"Delhi NCR"},description:content.intro}} />
-      <VideoHeroSection>
+      <VideoHeroSection videoSrc={videoSrc}>
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>{content.eyebrow}</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>

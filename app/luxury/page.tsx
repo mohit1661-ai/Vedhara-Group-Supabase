@@ -97,7 +97,7 @@ const luxuryListings: LuxuryListing[] = [
 export default function LuxuryPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.luxury} />
+      <ServicePageTemplate content={servicePages.luxury} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Luxury%20Properties%20Page%20Video%20(1).mp4" />
 
       {/* Luxury Listings Section */}
       <section style={{ background:"var(--navy-deep)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>

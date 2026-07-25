@@ -97,7 +97,7 @@ const featuredListings: PropertyListing[] = [
 export default function BuyPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.buy} />
+      <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" />
 
       {/* Featured Listings Section */}
       <section style={{ background:"var(--navy-deep)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>

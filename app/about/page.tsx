@@ -36,7 +36,7 @@ const faqs = [
 export default function AboutPage() {
   return (
     <>
-      <VideoHeroSection>
+      <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Gurgaon%20Real%20Estate%20About%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Our Story</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"#FCFAF4",lineHeight:1.02,marginBottom:24 }}>
