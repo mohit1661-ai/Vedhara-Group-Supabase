@@ -227,7 +227,7 @@ export default function VideoHeroSection({
         </video>
       </div>
 
-      {/* ── Overlay (reduced opacity so video shows through) ── */}
+      {/* ── Overlay (balanced for text readability while keeping video visible) ── */}
       <div
         className="video-overlay"
         style={
@@ -235,7 +235,7 @@ export default function VideoHeroSection({
             ? { background: overlayGradient }
             : {
                 background:
-                  "linear-gradient(135deg, rgba(9,15,29,0.55) 0%, rgba(15,30,56,0.35) 40%, rgba(9,15,29,0.50) 100%)",
+                  "linear-gradient(135deg, rgba(9,15,29,0.72) 0%, rgba(15,30,56,0.50) 40%, rgba(9,15,29,0.65) 100%)",
               }
         }
       />

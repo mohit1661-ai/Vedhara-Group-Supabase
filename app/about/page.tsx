@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 
 export const metadata: Metadata = {
   title:"About Vedhara Group | Independent Real Estate Advisory Firm in Delhi NCR",
@@ -35,20 +36,17 @@ const faqs = [
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero animated-gradient" style={{ textAlign:"center",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:700,height:700,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.07) 0%,transparent 70%)",pointerEvents:"none" }} />
-        <div style={{ maxWidth:800,margin:"0 auto",position:"relative",zIndex:1 }}>
-          <span className="v-line" style={{ margin:"0 auto 14px" }} />
-          <p className="eyebrow" style={{ marginBottom:18 }}>Our Story</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"#FCFAF4",lineHeight:1.02,marginBottom:24 }}>
-            Advisory Built on Wisdom.<br />
-            <span style={{ color:"var(--gold-lt)" }}>Trusted Across Delhi NCR.</span>
-          </h1>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:560,margin:"0 auto" }}>
-            VED is wisdom. DHARA is the earth. Vedhara Group builds your real estate future on ground that is verified, transparent, and genuinely independent.
-          </p>
-        </div>
-      </section>
+      <VideoHeroSection>
+        <span className="v-line" style={{ margin:"0 auto 14px" }} />
+        <p className="eyebrow" style={{ marginBottom:18 }}>Our Story</p>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"#FCFAF4",lineHeight:1.02,marginBottom:24 }}>
+          Advisory Built on Wisdom.<br />
+          <span style={{ color:"var(--gold-lt)" }}>Trusted Across Delhi NCR.</span>
+        </h1>
+        <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:560,margin:"0 auto" }}>
+          VED is wisdom. DHARA is the earth. Vedhara Group builds your real estate future on ground that is verified, transparent, and genuinely independent.
+        </p>
+      </VideoHeroSection>
 
       {/* Origin */}
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 
 export const metadata: Metadata = {
   title:"NRI Property Advisory in India | Buy, Sell & Manage from Abroad | Vedhara Group Delhi NCR",
@@ -49,23 +50,20 @@ export default function NRIServicesPage() {
     <>
       <JsonLd data={{ "@context":"https://schema.org","@type":"Service",name:"NRI Property Investment Advisory",provider:{"@id":"https://www.vedharagroup.com/#organization"},areaServed:["AE","GB","US","CA","SG","AU"] }} />
 
-      <section className="page-hero animated-gradient" style={{ textAlign:"center",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:700,height:700,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.07) 0%,transparent 70%)",pointerEvents:"none" }} />
-        <div style={{ maxWidth:800,margin:"0 auto",position:"relative",zIndex:1 }}>
-          <span className="v-line" style={{ margin:"0 auto 14px" }} />
-          <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
-            Managing Property in India<br />from the UAE, UK, USA,<br /><span style={{ color:"var(--gold-lt)" }}>Canada, or Singapore?</span>
-          </h1>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto 28px" }}>
-            Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support — so you can make a verified property decision in India without buying a flight ticket.
-          </p>
-          <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
-            <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
-            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn btn-outline">💬 WhatsApp NRI Desk</a>
-          </div>
+      <VideoHeroSection>
+        <span className="v-line" style={{ margin:"0 auto 14px" }} />
+        <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+          Managing Property in India<br />from the UAE, UK, USA,<br /><span style={{ color:"var(--gold-lt)" }}>Canada, or Singapore?</span>
+        </h1>
+        <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto 28px" }}>
+          Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support — so you can make a verified property decision in India without buying a flight ticket.
+        </p>
+        <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
+          <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
+          <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn btn-outline">💬 WhatsApp NRI Desk</a>
         </div>
-      </section>
+      </VideoHeroSection>
 
       {/* Commitments */}
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>

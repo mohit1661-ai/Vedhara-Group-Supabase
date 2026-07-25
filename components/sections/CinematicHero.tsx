@@ -176,14 +176,14 @@ export default function CinematicHero() {
         </video>
       </div>
 
-      {/* ── Gradient overlay (lighter so video is visible) ── */}
+      {/* ── Gradient overlay (balanced for text readability) ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(135deg, rgba(9,15,29,0.50) 0%, rgba(15,30,56,0.30) 40%, rgba(9,15,29,0.45) 100%)",
+            "linear-gradient(135deg, rgba(9,15,29,0.68) 0%, rgba(15,30,56,0.45) 40%, rgba(9,15,29,0.60) 100%)",
         }}
       />
 
