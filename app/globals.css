@@ -102,9 +102,9 @@ img,video{max-width:100%;height:auto;}
 .svc-card-icon{font-size:30px;margin-bottom:18px;display:inline-block;transition:transform 0.35s var(--ease-spring);}
 .svc-card:hover .svc-card-icon{transform:scale(1.15) rotate(-6deg);}
 .svc-card-title{font-family:var(--t-head);font-size:15px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.25;transition:color 0.3s;}
-.svc-card:hover .svc-card-title{color:#FCFAF4;}
+.svc-card:hover .svc-card-title{color:var(--gold-lt);}
 .svc-card-desc{font-family:var(--t-body);font-size:12.5px;color:var(--slate);line-height:1.65;margin:0 0 16px;transition:color 0.3s;}
-.svc-card:hover .svc-card-desc{color:rgba(252,250,244,0.5);}
+.svc-card:hover .svc-card-desc{color:rgba(212,170,82,0.55);}
 .svc-card-arrow{font-family:var(--t-head);font-size:9.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);opacity:0;transform:translateX(-8px);transition:opacity 0.3s,transform 0.3s var(--ease-out);display:block;}
 .svc-card:hover .svc-card-arrow{opacity:1;transform:translateX(0);}
 
