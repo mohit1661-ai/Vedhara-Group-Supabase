@@ -20,7 +20,7 @@ export default function ServicePageTemplate({ content, videoSrc }:{ content:Serv
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           {content.h1}{content.h1Accent && <><br /><span style={{ color:"var(--gold-lt)" }}>{content.h1Accent}</span></>}
         </h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto" }}>{content.intro}</p>
+        <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:580,margin:"0 auto" }}>{content.intro}</p>
       </VideoHeroSection>
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:64 }} className="grid-2">

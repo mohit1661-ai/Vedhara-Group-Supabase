@@ -21,7 +21,7 @@ export default function Page() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Real Estate Questions,<br /><span style={{ color:"var(--gold-lt)" }}>Answered Honestly.</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:520,margin:"0 auto" }}>Whether you are buying your first property in Noida, selling a flat in Gurugram, or investing from the UAE, straight answers without a sales pitch.</p>
+          <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:520,margin:"0 auto" }}>Whether you are buying your first property in Noida, selling a flat in Gurugram, or investing from the UAE, straight answers without a sales pitch.</p>
         </VideoHeroSection>
       <FAQSection faqs={faqs} title="Delhi NCR Property FAQ" />
     </>

@@ -43,7 +43,7 @@ export default function AboutPage() {
           Advisory Built on Wisdom.<br />
           <span style={{ color:"var(--gold-lt)" }}>Trusted Across Delhi NCR.</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:560,margin:"0 auto" }}>
+        <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:560,margin:"0 auto" }}>
           VED is wisdom. DHARA is the earth. Vedhara Group builds your real estate future on ground that is verified, transparent, and genuinely independent.
         </p>
       </VideoHeroSection>

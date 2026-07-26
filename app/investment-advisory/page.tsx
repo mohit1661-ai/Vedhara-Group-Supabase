@@ -44,7 +44,7 @@ export default function InvestmentAdvisoryPage() {
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Real Estate as a Portfolio Decision,<br /><span style={{ color:"var(--gold-lt)" }}>Not a Single Purchase.</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto" }}>
+        <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:580,margin:"0 auto" }}>
           For investors who think beyond one transaction, Vedhara provides ongoing, portfolio-level real estate strategy aligned to your broader financial goals.
         </p>
       </VideoHeroSection>

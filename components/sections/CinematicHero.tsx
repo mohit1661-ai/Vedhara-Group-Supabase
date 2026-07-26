@@ -182,7 +182,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(135deg, rgba(9,15,29,0.68) 0%, rgba(15,30,56,0.45) 40%, rgba(9,15,29,0.60) 100%)",
+            "linear-gradient(135deg, rgba(9,15,29,0.75) 0%, rgba(15,30,56,0.55) 40%, rgba(9,15,29,0.68) 100%)",
         }}
       />
 
@@ -193,7 +193,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           inset: 0,
           zIndex: 1,
           background:
-            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.2) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.3) 0%, transparent 70%)",
         }}
       />
 
@@ -271,7 +271,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </h1>
 
             {/* Exact sub-headline from Word doc */}
-            <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(252,250,244,0.55)",lineHeight:1.85,maxWidth:540,marginBottom:40,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(24px)",transition:"all 0.8s ease 0.45s" }}>
+            <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(252,250,244,0.72)",lineHeight:1.85,maxWidth:540,marginBottom:40,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(24px)",transition:"all 0.8s ease 0.45s" }}>
               Vedhara Group is an independent real estate advisory firm serving buyers, sellers, investors, NRIs, and first-time homebuyers across Delhi, Gurugram, Noida, Faridabad, Ghaziabad, and Greater Noida. Every property we recommend has passed our five-point Verification Framework, and we publish exactly what we found on the listing itself.
             </p>
 
@@ -285,7 +285,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
               {["RERA Compliant","Transparent Fees","Verified Developer Partners","4 Free Property Tools","NRI Desk Available"].map(t=>(
                 <div key={t} style={{ display:"flex",alignItems:"center",gap:7 }}>
                   <span style={{ width:4,height:4,borderRadius:"50%",background:"var(--gold)",display:"block" }} />
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:500,color:"rgba(255,255,255,0.36)",letterSpacing:"0.05em" }}>{t}</span>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:500,color:"rgba(255,255,255,0.5)",letterSpacing:"0.05em" }}>{t}</span>
                 </div>
               ))}
             </div>
@@ -329,7 +329,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
 
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;}.hero-right{display:none!important;}}
-        .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:rgba(255,255,255,0.48);text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
+        .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:rgba(255,255,255,0.6);text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
         .hero-quick-link:hover{background:rgba(184,146,42,0.1);color:var(--gold-lt);}
       `}</style>
     </section>

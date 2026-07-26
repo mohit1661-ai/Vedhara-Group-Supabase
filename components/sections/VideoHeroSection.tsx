@@ -235,7 +235,7 @@ export default function VideoHeroSection({
             ? { background: overlayGradient }
             : {
                 background:
-                  "linear-gradient(135deg, rgba(9,15,29,0.72) 0%, rgba(15,30,56,0.50) 40%, rgba(9,15,29,0.65) 100%)",
+                  "linear-gradient(135deg, rgba(9,15,29,0.78) 0%, rgba(15,30,56,0.60) 40%, rgba(9,15,29,0.72) 100%)",
               }
         }
       />

@@ -87,7 +87,7 @@ export default function ServicesPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Advisory for Every Stage of<br /><span style={{ color:"var(--gold-lt)" }}>Your Property Journey</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:520,margin:"0 auto" }}>Independent guidance tailored to your specific goals, from your first home to a multi-property portfolio.</p>
+          <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:520,margin:"0 auto" }}>Independent guidance tailored to your specific goals, from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
