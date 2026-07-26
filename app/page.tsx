@@ -298,7 +298,7 @@ export default function HomePage() {
               </div>
               <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
                 <Link href="/nri-services" className="btn btn-primary">Book a Weekend Video Consultation</Link>
-                <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--navy)",border:"1px solid rgba(15,30,56,0.12)" }}>WhatsApp NRI Desk</a>
+                <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp NRI Desk</a>
               </div>
             </div>
           </ScrollReveal>
@@ -363,7 +363,7 @@ export default function HomePage() {
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
               <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
-              <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--navy)",border:"1px solid rgba(15,30,56,0.12)" }}>WhatsApp Us</a>
+              <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp Us</a>
             </div>
           </div>
         </ScrollReveal>
