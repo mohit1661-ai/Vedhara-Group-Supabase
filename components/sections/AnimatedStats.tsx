@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 const stats = [
-  { target:200, prefix:"",  suffix:"+",    label:"Families Guided",        icon:"FG", gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
-  { target:50,  prefix:"₹", suffix:"Cr+",  label:"Transactions Assisted",  icon:"₹",  gradient:"linear-gradient(135deg,#0F1E38,#B8922A)" },
-  { target:5,   prefix:"",  suffix:"-Step",label:"Verification Framework", icon:"✓",  gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
-  { target:6,   prefix:"",  suffix:"+",    label:"Countries Served",       icon:"✈",  gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
+  { target:200, prefix:"",  suffix:"+",    label:"Families Guided" },
+  { target:50,  prefix:"₹", suffix:"Cr+",  label:"Transactions Assisted" },
+  { target:5,   prefix:"",  suffix:"-Step",label:"Verification Framework" },
+  { target:6,   prefix:"",  suffix:"+",    label:"Countries Served" },
 ];
 function Counter({ target, prefix, suffix }:{ target:number; prefix:string; suffix:string }) {
   const [count, setCount] = useState(0);
@@ -30,9 +30,8 @@ export default function AnimatedStats() {
       <div style={{ maxWidth:1320,margin:"0 auto" }}>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",background:"rgba(184,146,42,0.04)" }} className="grid-4">
           {stats.map((s,i)=>(
-            <div key={s.label} style={{ padding:"40px 28px",textAlign:"center",borderRight:i<3?"1px solid rgba(184,146,42,0.07)":"none",transition:"background 0.3s",cursor:"default" }}
-              onMouseEnter={undefined} onMouseLeave={undefined}>
-              <div className="prop-stat" style={{background:s.gradient}}>{s.icon}</div>
+            <div key={s.label} style={{ padding:"40px 28px",textAlign:"center",borderRight:i<3?"1px solid rgba(184,146,42,0.07)":"none",transition:"background 0.3s",cursor:"default" }}>
+              <div className="gold-accent-sm" style={{margin:"0 auto 12px"}}></div>
               <Counter target={s.target} prefix={s.prefix} suffix={s.suffix} />
               <div style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.32)",textTransform:"uppercase",letterSpacing:"0.1em",marginTop:8 }}>{s.label}</div>
             </div>

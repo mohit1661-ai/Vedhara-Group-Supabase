@@ -92,7 +92,7 @@ export default function Navbar() {
             {navLinks.map(l=>(<Link key={l.href} href={l.href} onClick={()=>setOpen(false)} style={{ display:"block",fontFamily:"var(--t-head)",fontSize:14,fontWeight:500,color:"var(--ink)",textDecoration:"none",padding:"13px 0",borderBottom:"1px solid rgba(42,45,53,0.06)" }}>{l.label}</Link>))}
             <div style={{ display:"flex",gap:10,marginTop:16 }}>
               <Link href="/contact" onClick={()=>setOpen(false)} className="btn btn-dark" style={{ flex:1,justifyContent:"center",padding:"14px" }}>Free Consultation</Link>
-              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ flex:1,background:"#25D366",color:"white",justifyContent:"center",padding:"14px" }}>💬 WhatsApp</a>
+              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ flex:1,background:"#25D366",color:"white",justifyContent:"center",padding:"14px" }}>WhatsApp</a>
             </div>
           </div>
         </div>
@@ -102,12 +102,11 @@ export default function Navbar() {
       <div className="show-mobile" style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:999,background:"var(--navy)",borderTop:"1px solid rgba(184,146,42,0.2)",display:"none" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr 1fr" }}>
           {[
-            { icon:"C", label:"Call",  href:"tel:+919810647063",bg:"transparent", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
-            { icon:"W", label:"Chat",  href:"https://wa.me/919810647063",bg:"transparent", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
-            { icon:"B", label:"Book",  href:"/contact",bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+            { label:"Call",  href:"tel:+919810647063",bg:"transparent" },
+            { label:"Chat",  href:"https://wa.me/919810647063",bg:"transparent" },
+            { label:"Book",  href:"/contact",bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))" },
           ].map(item=>(
             <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"10px 8px",textDecoration:"none",background:item.bg,borderRight:"1px solid rgba(255,255,255,0.06)" }}>
-              <div className="prop-icon" style={{width:36,height:36,borderRadius:10,fontSize:13,marginBottom:4,background:item.grad}}>{item.icon}</div>
               <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
             </a>
           ))}

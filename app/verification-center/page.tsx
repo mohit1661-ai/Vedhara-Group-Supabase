@@ -63,7 +63,7 @@ export default function VerificationCenterPage() {
             <ScrollReveal key={c.n} delay={i*60}>
               <div style={{ display:"grid",gridTemplateColumns:"200px 1fr",gap:40,paddingBottom:52,marginBottom:52,borderBottom:i<checks.length-1?"1px solid rgba(42,45,53,0.08)":"none",alignItems:"flex-start" }} className="check-row">
                 <div>
-                  <div className="prop-icon" style={{width:52,height:52,borderRadius:14,fontSize:20,marginBottom:10,background:c.grad}}>{c.icon}</div>
+                  <div className="gold-accent"></div>
                   <span className="eyebrow" style={{ display:"block",marginBottom:8 }}>CHECK {c.n}</span>
                   <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",padding:"8px 12px" }}>
                     <span className="body-sm" style={{ color:"var(--slate)" }}>{c.portal}</span>
@@ -85,7 +85,7 @@ export default function VerificationCenterPage() {
           <ScrollReveal>
             <div style={{ background:"linear-gradient(135deg,rgba(184,146,42,0.08),rgba(184,146,42,0.04))",border:"1px solid rgba(184,146,42,0.2)",padding:"36px 40px" }}>
               <div style={{ display:"flex",gap:20,alignItems:"flex-start" }}>
-                <div className="prop-icon" style={{width:52,height:52,borderRadius:14,fontSize:24,flexShrink:0,background:"linear-gradient(135deg,#0F1E38,#B8922A)"}}>!</div>
+                <div className="gold-accent" style={{width:36,height:2,flexShrink:0,background:"var(--gold)",marginTop:8}}></div>
                 <div>
                   <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:12 }}>What a &ldquo;Verified&rdquo; Badge Means, and Doesn&apos;t Mean</h3>
                   <p className="body-md" style={{ color:"var(--slate)",marginBottom:12 }}>A Verified badge on a Vedhara listing means the project passed all five checks at the time of publishing. It is a rigorous starting signal, not a substitute for independent legal due diligence before you sign any agreement.</p>

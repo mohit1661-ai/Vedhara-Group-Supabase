@@ -94,7 +94,7 @@ export default function ServicesPage() {
           {services.map((svc,i)=>(
             <ScrollReveal key={svc.href} delay={i*60}>
               <Link href={svc.href} className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
-                <div className="prop-icon" style={{background:svc.gradient}}>{svc.icon}</div>
+                <div className="gold-accent"></div>
                 <h2 className="svc-card-title">{svc.title}</h2>
                 <p className="svc-card-desc">{svc.desc}</p>
                 <span className="svc-card-arrow">Explore →</span>

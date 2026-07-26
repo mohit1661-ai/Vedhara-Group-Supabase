@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 };
 
 const values = [
-  { icon:"I", title:"Independence", desc:"No exclusive developer tie-ups. Every shortlist built around your requirements, not around which developer pays the highest commission.", gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
-  { icon:"T", title:"Transparency", desc:"We publish our verification methodology, disclose our compensation model upfront, and document every step of the advisory process.", gradient:"linear-gradient(135deg,#0F1E38,#B8922A)" },
-  { icon:"D", title:"Dedication", desc:"One named advisor from day one. Not a rotating team, not a CRM ticket. Your advisor knows your requirements throughout the entire journey.", gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
-  { icon:"A", title:"Accountability", desc:"Every claim we make about a property is documented and verifiable. Our Verification Framework results are published on every listing page.", gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
+  { title:"Independence", desc:"No exclusive developer tie-ups. Every shortlist built around your requirements, not around which developer pays the highest commission." },
+  { title:"Transparency", desc:"We publish our verification methodology, disclose our compensation model upfront, and document every step of the advisory process." },
+  { title:"Dedication", desc:"One named advisor from day one. Not a rotating team, not a CRM ticket. Your advisor knows your requirements throughout the entire journey." },
+  { title:"Accountability", desc:"Every claim we make about a property is documented and verifiable. Our Verification Framework results are published on every listing page." },
 ];
 
 const locations = [
@@ -102,7 +102,7 @@ export default function AboutPage() {
             {values.map((v,i)=>(
               <ScrollReveal key={v.title} delay={i*80}>
                 <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
-                  <div className="prop-icon" style={{background:v.gradient}}>{v.icon}</div>
+                  <div className="gold-accent"></div>
                   <h3 className="svc-card-title">{v.title}</h3>
                   <p className="svc-card-desc">{v.desc}</p>
                 </div>

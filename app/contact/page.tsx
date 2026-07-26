@@ -25,7 +25,7 @@ export default function ContactPage() {
   if (status==="success") return (
     <section className="page-hero animated-gradient" style={{ minHeight:"60vh",display:"flex",alignItems:"center",textAlign:"center" }}>
       <div style={{ maxWidth:540,margin:"0 auto" }}>
-        <div className="prop-stat" style={{width:72,height:72,borderRadius:20,fontSize:30,margin:"0 auto 20px",background:"linear-gradient(135deg,#0F1E38,#B8922A)"}}>✓</div>
+        <div className="gold-accent-sm" style={{margin:"0 auto 20px",width:40}}></div>
         <h1 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Thank you for reaching out</h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.</p>
       </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
                     style={{ display:"flex",gap:14,padding:"14px 16px",marginBottom:8,background:"var(--cream)",textDecoration:"none",borderLeft:"2px solid transparent",transition:"border-color 0.2s,background 0.2s" }}
                     className="contact-link">
-                    <span className="prop-icon" style={{width:36,height:36,borderRadius:10,fontSize:14,margin:0,background:item.grad}}>{item.icon}</span>
+                    <span className="gold-accent" style={{width:24,height:2,margin:0}}></span>
                     <div>
                       <div className="eyebrow" style={{ color:"var(--gold)",marginBottom:2 }}>{item.label}</div>
                       <div className="body-sm" style={{ color:"var(--ink)" }}>{item.val}</div>

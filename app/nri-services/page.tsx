@@ -61,7 +61,7 @@ export default function NRIServicesPage() {
         </p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
           <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
-          <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn btn-outline">💬 WhatsApp NRI Desk</a>
+          <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn btn-outline">WhatsApp NRI Desk</a>
         </div>
       </VideoHeroSection>
 
@@ -80,7 +80,7 @@ export default function NRIServicesPage() {
               <ScrollReveal key={c.n} delay={i*70}>
                 <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
                   <div style={{ display:"flex",gap:10,alignItems:"center",marginBottom:14 }}>
-                    <span className="prop-icon" style={{width:38,height:38,borderRadius:10,fontSize:15,margin:0,background:c.grad}}>{c.icon}</span>
+                    <div className="gold-accent" style={{width:24,height:2,margin:0}}></div>
                     <span className="eyebrow" style={{ color:"var(--gold)" }}>{c.n}</span>
                   </div>
                   <h3 className="svc-card-title">{c.title}</h3>
@@ -105,7 +105,7 @@ export default function NRIServicesPage() {
             {countries.map((c,i)=>(
               <ScrollReveal key={c.name} delay={i*60}>
                 <div className="glass hover-lift" style={{ textAlign:"center",padding:"28px 16px" }}>
-                  <div className="prop-icon" style={{width:50,height:50,borderRadius:14,fontSize:16,margin:"0 auto 10px",background:c.grad}}>{c.flag}</div>
+                  <div className="gold-accent-sm" style={{margin:"0 auto 10px"}}></div>
                   <div className="body-sm" style={{ fontWeight:600,color:"var(--light)",marginBottom:4 }}>{c.name}</div>
                   <div style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"rgba(255,255,255,0.3)" }}>{c.cities}</div>
                 </div>
