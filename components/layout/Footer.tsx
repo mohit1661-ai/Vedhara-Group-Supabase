@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           <div style={{ display:"flex",gap:10 }}>
             <Link href="/contact" className="btn btn-dark" style={{ padding:"12px 24px",fontSize:10 }}>Book Free Consultation</Link>
-            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#25D366",color:"white",padding:"12px 20px",fontSize:10 }}>💬 WhatsApp</a>
+            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#25D366",color:"white",padding:"12px 20px",fontSize:10 }}>W WhatsApp</a>
           </div>
         </div>
       </div>
@@ -37,10 +37,10 @@ export default function Footer() {
             </div>
             <p style={{ fontFamily:"var(--t-head)",fontSize:9,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold)",marginBottom:14 }}>Wisdom Rooted. Futures Built.</p>
             <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(255,255,255,0.6)",lineHeight:1.75,marginBottom:18,maxWidth:240 }}>Delhi NCR&apos;s independent real estate advisory firm. Verified listings, transparent fees, dedicated advisors.</p>
-            <div style={{ display:"flex",flexDirection:"column",gap:8 }}>
-              <a href="tel:+919810647063" className="footer-link-item">📞 +91 98106 47063</a>
-              <a href="mailto:hello@vedharagroup.com" className="footer-link-item">✉ hello@vedharagroup.com</a>
-              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"#25D366",textDecoration:"none" }}>💬 WhatsApp Us</a>
+            <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
+              <a href="tel:+919810647063" className="footer-link-item" style={{ display:"flex",alignItems:"center",gap:10 }}><span className="prop-icon" style={{width:28,height:28,borderRadius:8,fontSize:11,margin:0,background:"linear-gradient(135deg,#0F1E38,#1a3a5c)"}}>C</span> +91 98106 47063</a>
+              <a href="mailto:hello@vedharagroup.com" className="footer-link-item" style={{ display:"flex",alignItems:"center",gap:10 }}><span className="prop-icon" style={{width:28,height:28,borderRadius:8,fontSize:11,margin:0,background:"linear-gradient(135deg,#0F1E38,#B8922A)"}}>E</span> hello@vedharagroup.com</a>
+              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"#25D366",textDecoration:"none",display:"flex",alignItems:"center",gap:10 }}><span className="prop-icon" style={{width:28,height:28,borderRadius:8,fontSize:11,margin:0,background:"linear-gradient(135deg,#0F1E38,#2a3f6f)"}}>W</span> WhatsApp Us</a>
             </div>
             <div style={{ display:"flex",gap:8,marginTop:18,flexWrap:"wrap" }}>
               {["RERA Compliant","ISO Verified"].map(b=>(

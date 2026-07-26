@@ -12,21 +12,21 @@ export const metadata: Metadata = {
 };
 
 const commitments = [
-  { icon:"🗓️", n:"01", title:"Weekend & Evening IST Slots", desc:"Saturday and Sunday, 10AM–4PM IST, plus weekday evening slots. We schedule around your time zone, not ours." },
-  { icon:"🎥", n:"02", title:"On-Demand Video Walkthroughs", desc:"Shortlisted properties available for live or recorded video walkthroughs within 48 hours of request. You see the property, the surroundings, the society entrance, and the documentation." },
-  { icon:"✓",  n:"03", title:"Independent Verification", desc:"RERA check, builder history, approvals, title documents, all completed before you are asked to make a booking payment." },
-  { icon:"✍️", n:"04", title:"E-Signature & Digital Documentation", desc:"Sale agreements, token money receipts, and most pre-registration documents can be handled digitally. We guide you through what specifically requires physical presence or a registered POA." },
-  { icon:"⚖️", n:"05", title:"FEMA & RBI Compliance Guidance", desc:"Every NRI transaction structured to comply with FEMA property acquisition regulations, NRO/NRE account routing, and TDS deduction requirements under Section 195." },
-  { icon:"👤", n:"06", title:"Dedicated Single Advisor", desc:"One named advisor. Their direct number. No re-explaining your requirements every time. Not a call centre, not a rotating team." },
+  { icon:"S", n:"01", title:"Weekend & Evening IST Slots", desc:"Saturday and Sunday, 10AM–4PM IST, plus weekday evening slots. We schedule around your time zone, not ours.", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+  { icon:"V", n:"02", title:"On-Demand Video Walkthroughs", desc:"Shortlisted properties available for live or recorded video walkthroughs within 48 hours of request. You see the property, the surroundings, the society entrance, and the documentation.", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { icon:"✓", n:"03", title:"Independent Verification", desc:"RERA check, builder history, approvals, title documents, all completed before you are asked to make a booking payment.", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+  { icon:"E", n:"04", title:"E-Signature & Digital Documentation", desc:"Sale agreements, token money receipts, and most pre-registration documents can be handled digitally. We guide you through what specifically requires physical presence or a registered POA.", grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
+  { icon:"L", n:"05", title:"FEMA & RBI Compliance Guidance", desc:"Every NRI transaction structured to comply with FEMA property acquisition regulations, NRO/NRE account routing, and TDS deduction requirements under Section 195.", grad:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
+  { icon:"A", n:"06", title:"Dedicated Single Advisor", desc:"One named advisor. Their direct number. No re-explaining your requirements every time. Not a call centre, not a rotating team.", grad:"linear-gradient(135deg,#0F1E38,#5a6070)" },
 ];
 
 const countries = [
-  { flag:"🇦🇪", name:"UAE",            cities:"Dubai, Abu Dhabi, Sharjah" },
-  { flag:"🇬🇧", name:"United Kingdom", cities:"London, Birmingham, Manchester" },
-  { flag:"🇺🇸", name:"United States",  cities:"New York, New Jersey, Texas, California" },
-  { flag:"🇨🇦", name:"Canada",         cities:"Toronto, Vancouver, Calgary" },
-  { flag:"🇸🇬", name:"Singapore",      cities:"All districts" },
-  { flag:"🇦🇺", name:"Australia",      cities:"Melbourne, Sydney, Brisbane" },
+  { flag:"U",  name:"UAE",            cities:"Dubai, Abu Dhabi, Sharjah", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { flag:"UK", name:"United Kingdom", cities:"London, Birmingham, Manchester", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+  { flag:"US", name:"United States",  cities:"New York, New Jersey, Texas, California", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+  { flag:"CA", name:"Canada",         cities:"Toronto, Vancouver, Calgary", grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
+  { flag:"SG", name:"Singapore",      cities:"All districts", grad:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
+  { flag:"AU", name:"Australia",      cities:"Melbourne, Sydney, Brisbane", grad:"linear-gradient(135deg,#0F1E38,#5a6070)" },
 ];
 
 const legalPoints = [
@@ -80,7 +80,7 @@ export default function NRIServicesPage() {
               <ScrollReveal key={c.n} delay={i*70}>
                 <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
                   <div style={{ display:"flex",gap:10,alignItems:"center",marginBottom:14 }}>
-                    <span style={{ fontSize:22 }}>{c.icon}</span>
+                    <span className="prop-icon" style={{width:38,height:38,borderRadius:10,fontSize:15,margin:0,background:c.grad}}>{c.icon}</span>
                     <span className="eyebrow" style={{ color:"var(--gold)" }}>{c.n}</span>
                   </div>
                   <h3 className="svc-card-title">{c.title}</h3>
@@ -105,7 +105,7 @@ export default function NRIServicesPage() {
             {countries.map((c,i)=>(
               <ScrollReveal key={c.name} delay={i*60}>
                 <div className="glass hover-lift" style={{ textAlign:"center",padding:"28px 16px" }}>
-                  <div style={{ fontSize:36,marginBottom:10 }}>{c.flag}</div>
+                  <div className="prop-icon" style={{width:50,height:50,borderRadius:14,fontSize:16,margin:"0 auto 10px",background:c.grad}}>{c.flag}</div>
                   <div className="body-sm" style={{ fontWeight:600,color:"var(--light)",marginBottom:4 }}>{c.name}</div>
                   <div style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"rgba(255,255,255,0.3)" }}>{c.cities}</div>
                 </div>

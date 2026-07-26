@@ -22,17 +22,17 @@ const checks = [
 ];
 
 const whyItems = [
-  { icon:"⚖️", title:"Independent by Design", desc:"No exclusive developer tie-ups. Every shortlist built around your requirements, not which developer is offering the highest commission this quarter." },
-  { icon:"📢", title:"Transparent Compensation", desc:"We disclose how we earn on every listing, standard brokerage commission or optional advisory retainer. No hidden arrangements, no surprises at closing." },
-  { icon:"✅", title:"Verified Before Published", desc:"Our Verification Framework is the only publicly documented due-diligence process in the NCR advisory market. Five checks. Published results. Every listing." },
-  { icon:"👤", title:"Named Advisor Always", desc:"One advisor's direct number from day one. Not a CRM ticket, not a rotating team, not a call centre. One person who knows your requirements throughout." },
+  { icon:"I", title:"Independent by Design", desc:"No exclusive developer tie-ups. Every shortlist built around your requirements, not which developer is offering the highest commission this quarter.", gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+  { icon:"T", title:"Transparent Compensation", desc:"We disclose how we earn on every listing, standard brokerage commission or optional advisory retainer. No hidden arrangements, no surprises at closing.", gradient:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { icon:"✓", title:"Verified Before Published", desc:"Our Verification Framework is the only publicly documented due-diligence process in the NCR advisory market. Five checks. Published results. Every listing.", gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+  { icon:"A", title:"Named Advisor Always", desc:"One advisor's direct number from day one. Not a CRM ticket, not a rotating team, not a call centre. One person who knows your requirements throughout.", gradient:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
 ];
 
 const tools = [
-  { icon:"📊", title:"ROI & Rental Yield Calculator", desc:"Estimate gross yield, net yield, and total return over your holding period." },
-  { icon:"🏦", title:"Home Loan EMI Calculator", desc:"Monthly EMI, total interest, and year-by-year amortisation schedule." },
-  { icon:"📋", title:"Stamp Duty & Registration", desc:"State-wise stamp duty and registration charges, Delhi, Haryana & UP." },
-  { icon:"💡", title:"Affordability Calculator", desc:"Realistic property budget based on standard 40–50% FOIR bank lending norms." },
+  { icon:"%",  title:"ROI & Rental Yield Calculator", desc:"Estimate gross yield, net yield, and total return over your holding period.", gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+  { icon:"₹",  title:"Home Loan EMI Calculator", desc:"Monthly EMI, total interest, and year-by-year amortisation schedule.", gradient:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { icon:"S",  title:"Stamp Duty & Registration", desc:"State-wise stamp duty and registration charges, Delhi, Haryana & UP.", gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+  { icon:"A",  title:"Affordability Calculator", desc:"Realistic property budget based on standard 40–50% FOIR bank lending norms.", gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
 ];
 
 /* Word doc FAQs, Page 1 */
@@ -72,9 +72,9 @@ export default function HomePage() {
             </ScrollReveal>
             <ScrollReveal delay={120} direction="right">
               <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:14 }}>
-                {[{icon:"📋",stat:"100%",sub:"Listings Verified"},{icon:"⚖️",stat:"5-Step",sub:"Due Diligence"},{icon:"🔍",stat:"3 Portals",sub:"RERA Checked"},{icon:"📊",stat:"Real Data",sub:"Price Benchmarked"}].map(card=>(
+                {[{icon:"✓",stat:"100%",sub:"Listings Verified",grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)"},{icon:"5",stat:"5-Step",sub:"Due Diligence",grad:"linear-gradient(135deg,#0F1E38,#B8922A)"},{icon:"R",stat:"3 Portals",sub:"RERA Checked",grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)"},{icon:"₹",stat:"Real Data",sub:"Price Benchmarked",grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)"}].map(card=>(
                   <div key={card.sub} className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.06)",padding:"24px 20px",textAlign:"center" }}>
-                    <div style={{ fontSize:28,marginBottom:8 }}>{card.icon}</div>
+                    <div className="prop-icon" style={{width:44,height:44,borderRadius:12,fontSize:17,marginBottom:10,background:card.grad}}>{card.icon}</div>
                     <div className="heading-md" style={{ color:"var(--gold)",marginBottom:4 }}>{card.stat}</div>
                     <div className="caption" style={{ color:"var(--slate)" }}>{card.sub}</div>
                   </div>
@@ -269,7 +269,7 @@ export default function HomePage() {
             {whyItems.map((card,i)=>(
               <ScrollReveal key={card.title} delay={i*80}>
                 <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
-                  <div className="svc-card-icon">{card.icon}</div>
+                  <div className="prop-icon" style={{background:card.gradient}}>{card.icon}</div>
                   <h3 className="svc-card-title">{card.title}</h3>
                   <p className="svc-card-desc">{card.desc}</p>
                 </div>
@@ -294,11 +294,11 @@ export default function HomePage() {
                 Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs of shortlisted properties within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
               </p>
               <div style={{ display:"flex",flexWrap:"wrap",gap:16,marginBottom:32 }}>
-                {["🇦🇪 UAE","🇬🇧 UK","🇺🇸 USA","🇨🇦 Canada","🇸🇬 Singapore","🇦🇺 Australia"].map(c=>(<span key={c} className="body-sm" style={{ color:"rgba(255,255,255,0.36)" }}>{c}</span>))}
+                {[{f:"AE",n:"UAE"},{f:"UK",n:"UK"},{f:"US",n:"USA"},{f:"CA",n:"Canada"},{f:"SG",n:"Singapore"},{f:"AU",n:"Australia"}].map(c=>(<span key={c.n} className="body-sm" style={{ color:"rgba(255,255,255,0.36)" }}>{c.n}</span>))}
               </div>
               <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
                 <Link href="/nri-services" className="btn btn-primary">Book a Weekend Video Consultation</Link>
-                <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#25D366",color:"white" }}>💬 WhatsApp NRI Desk</a>
+                <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#25D366",color:"white" }}>W WhatsApp NRI Desk</a>
               </div>
             </div>
           </ScrollReveal>
@@ -336,7 +336,7 @@ export default function HomePage() {
             {tools.map((tool,i)=>(
               <ScrollReveal key={tool.title} delay={i*80}>
                 <Link href="/calculators" className="glass hover-lift" style={{ display:"block",padding:"32px 26px",textDecoration:"none",transition:"background 0.25s" }}>
-                  <div style={{ fontSize:30,marginBottom:16 }}>{tool.icon}</div>
+                  <div className="prop-icon" style={{width:48,height:48,borderRadius:12,fontSize:20,marginBottom:16,background:tool.gradient}}>{tool.icon}</div>
                   <h3 className="heading-md" style={{ color:"var(--gold-lt)",marginBottom:10,fontSize:14 }}>{tool.title}</h3>
                   <p className="body-sm" style={{ color:"rgba(252,250,244,0.38)",margin:0 }}>{tool.desc}</p>
                 </Link>
@@ -363,7 +363,7 @@ export default function HomePage() {
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
               <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
-              <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#25D366",color:"white" }}>💬 WhatsApp Us</a>
+              <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#25D366",color:"white" }}>W WhatsApp Us</a>
             </div>
           </div>
         </ScrollReveal>

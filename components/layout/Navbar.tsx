@@ -102,12 +102,12 @@ export default function Navbar() {
       <div className="show-mobile" style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:999,background:"var(--navy)",borderTop:"1px solid rgba(184,146,42,0.2)",display:"none" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr 1fr" }}>
           {[
-            { icon:"📞",label:"Call",  href:"tel:+919810647063",bg:"transparent" },
-            { icon:"💬",label:"Chat",  href:"https://wa.me/919810647063",bg:"transparent" },
-            { icon:"📅",label:"Book",  href:"/contact",bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))" },
+            { icon:"C", label:"Call",  href:"tel:+919810647063",bg:"transparent", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+            { icon:"W", label:"Chat",  href:"https://wa.me/919810647063",bg:"transparent", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+            { icon:"B", label:"Book",  href:"/contact",bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
           ].map(item=>(
             <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"10px 8px",textDecoration:"none",background:item.bg,borderRight:"1px solid rgba(255,255,255,0.06)" }}>
-              <span style={{ fontSize:18,marginBottom:2 }}>{item.icon}</span>
+              <div className="prop-icon" style={{width:36,height:36,borderRadius:10,fontSize:13,marginBottom:4,background:item.grad}}>{item.icon}</div>
               <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
             </a>
           ))}

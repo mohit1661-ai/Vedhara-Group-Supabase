@@ -145,6 +145,12 @@ img,video{max-width:100%;height:auto;}
 .calc-result-val{font-family:var(--t-head);font-size:15px;font-weight:700;color:var(--navy);}
 .calc-result-val.highlight{color:var(--gold);}
 
+/* Property icon containers */
+.prop-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;font-family:var(--t-head);color:var(--gold-lt);margin-bottom:18px;flex-shrink:0;position:relative;overflow:hidden;}
+.prop-icon::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none;}
+.prop-stat{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;font-family:var(--t-head);color:var(--gold-lt);margin:0 auto 12px;position:relative;overflow:hidden;}
+.prop-stat::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.1) 0%,transparent 60%);pointer-events:none;}
+
 /* Responsive */
 .show-mobile{display:none;}
 @media(max-width:1024px){.hidden-mobile{display:none!important;}.show-mobile{display:block!important;}}

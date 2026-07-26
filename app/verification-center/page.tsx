@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 };
 
 const checks = [
-  { n:"01", icon:"📋", title:"RERA Registration Validity",
+  { n:"01", icon:"V", title:"RERA Registration Validity", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)",
     portal:"UP RERA (rera.up.gov.in) · HRERA (hrera.org.in) · Delhi RERA (rera.delhi.gov.in)",
     points:["Registration is active and within validity dates","Project details on the RERA portal match the developer's marketing claims","Quarterly progress reports have been filed as required by RERA","Any complaint history registered against the project on the RERA portal is disclosed"] },
-  { n:"02", icon:"🏗️", title:"Builder Delivery History",
+  { n:"02", icon:"B", title:"Builder Delivery History", grad:"linear-gradient(135deg,#0F1E38,#B8922A)",
     portal:"Developer track record, past projects reviewed",
     points:["Completion and handover timelines for past delivered projects","Any court cases, consumer forum complaints, or RERA non-compliance notices on record","Historical pattern of construction quality and society formation compliance","Current financial standing where publicly available for listed developers"] },
-  { n:"03", icon:"📄", title:"Project-Level Statutory Approvals",
+  { n:"03", icon:"A", title:"Project-Level Statutory Approvals", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)",
     portal:"DDA · HRERA · NOIDA Authority · GNIDA approvals verified",
     points:["Building plan sanction (BPS) from the relevant development authority","Commencement certificate (CC) for the specific tower or phase","Environmental clearance (EC) where applicable under EIA notification","Occupation certificate (OC) or Completion certificate (CC) status for ready properties"] },
-  { n:"04", icon:"⚖️", title:"Price Fairness Assessment",
+  { n:"04", icon:"P", title:"Price Fairness Assessment", grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)",
     portal:"Sub-registrar registered transaction data · Government circle rates",
     points:["Recent registered transactions in the same sub-locality or sector","Government circle rates for the area","Active competing inventory pricing","Published result: is this project fairly priced, at a premium, or at a discount versus comparables?"] },
-  { n:"05", icon:"📁", title:"Title & Document Availability",
+  { n:"05", icon:"T", title:"Title & Document Availability", grad:"linear-gradient(135deg,#0F1E38,#5a6070)",
     portal:"Developer confirmation of document readiness",
     points:["Parent title documents for the land parcel","Allotment letters, registered sale deed templates","No Objection Certificate (NOC) from relevant authorities where required","RERA registration certificate, approved building plan, and EC"] },
 ];
@@ -63,7 +63,7 @@ export default function VerificationCenterPage() {
             <ScrollReveal key={c.n} delay={i*60}>
               <div style={{ display:"grid",gridTemplateColumns:"200px 1fr",gap:40,paddingBottom:52,marginBottom:52,borderBottom:i<checks.length-1?"1px solid rgba(42,45,53,0.08)":"none",alignItems:"flex-start" }} className="check-row">
                 <div>
-                  <div style={{ fontSize:36,marginBottom:10 }}>{c.icon}</div>
+                  <div className="prop-icon" style={{width:52,height:52,borderRadius:14,fontSize:20,marginBottom:10,background:c.grad}}>{c.icon}</div>
                   <span className="eyebrow" style={{ display:"block",marginBottom:8 }}>CHECK {c.n}</span>
                   <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",padding:"8px 12px" }}>
                     <span className="body-sm" style={{ color:"var(--slate)" }}>{c.portal}</span>
@@ -85,7 +85,7 @@ export default function VerificationCenterPage() {
           <ScrollReveal>
             <div style={{ background:"linear-gradient(135deg,rgba(184,146,42,0.08),rgba(184,146,42,0.04))",border:"1px solid rgba(184,146,42,0.2)",padding:"36px 40px" }}>
               <div style={{ display:"flex",gap:20,alignItems:"flex-start" }}>
-                <div style={{ fontSize:36,flexShrink:0 }}>⚠️</div>
+                <div className="prop-icon" style={{width:52,height:52,borderRadius:14,fontSize:24,flexShrink:0,background:"linear-gradient(135deg,#0F1E38,#B8922A)"}}>!</div>
                 <div>
                   <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:12 }}>What a &ldquo;Verified&rdquo; Badge Means, and Doesn&apos;t Mean</h3>
                   <p className="body-md" style={{ color:"var(--slate)",marginBottom:12 }}>A Verified badge on a Vedhara listing means the project passed all five checks at the time of publishing. It is a rigorous starting signal, not a substitute for independent legal due diligence before you sign any agreement.</p>

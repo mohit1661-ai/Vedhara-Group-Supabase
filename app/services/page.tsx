@@ -4,15 +4,15 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR | Vedhara Group", description:"Explore Vedhara Group's full range of property advisory services, buying, selling, renting, commercial, investment, luxury, and NRI services across Delhi NCR.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
 const services = [
-  { icon:"🏠",title:"Buy Property",href:"/buy",desc:"Independent guidance through verified listings from shortlist to registration." },
-  { icon:"💰",title:"Sell Property",href:"/sell",desc:"Strategic pricing and qualified buyer access for fair-value sales." },
-  { icon:"🔑",title:"Rent Property",href:"/rent",desc:"Verified rentals with transparent lease terms for tenants and landlords." },
-  { icon:"🏢",title:"Commercial Real Estate",href:"/commercial",desc:"Site selection and lease advisory for retail, office, and industrial spaces." },
-  { icon:"💎",title:"Luxury Properties",href:"/luxury",desc:"Curated premium residences with white-glove advisory service." },
-  { icon:"🚀",title:"New Launches",href:"/new-launches",desc:"Verified upcoming developer projects across Delhi NCR." },
-  { icon:"📈",title:"Investment Advisory",href:"/investment-advisory",desc:"Portfolio-level real estate strategy for long-term investors." },
-  { icon:"🌐",title:"NRI Services",href:"/nri-services",desc:"Remote-friendly advisory for Indian diaspora worldwide." },
-  { icon:"🔧",title:"Property Management",href:"/property-management",desc:"Tenant and maintenance management for property owners." },
+  { icon:"B",title:"Buy Property",href:"/buy",desc:"Independent guidance through verified listings from shortlist to registration.",gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+  { icon:"S",title:"Sell Property",href:"/sell",desc:"Strategic pricing and qualified buyer access for fair-value sales.",gradient:"linear-gradient(135deg,#0F1E38,#2a4a6a)" },
+  { icon:"R",title:"Rent Property",href:"/rent",desc:"Verified rentals with transparent lease terms for tenants and landlords.",gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
+  { icon:"C",title:"Commercial Real Estate",href:"/commercial",desc:"Site selection and lease advisory for retail, office, and industrial spaces.",gradient:"linear-gradient(135deg,#1a1a2e,#B8922A)" },
+  { icon:"L",title:"Luxury Properties",href:"/luxury",desc:"Curated premium residences with white-glove advisory service.",gradient:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { icon:"N",title:"New Launches",href:"/new-launches",desc:"Verified upcoming developer projects across Delhi NCR.",gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+  { icon:"I",title:"Investment Advisory",href:"/investment-advisory",desc:"Portfolio-level real estate strategy for long-term investors.",gradient:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
+  { icon:"N",title:"NRI Services",href:"/nri-services",desc:"Remote-friendly advisory for Indian diaspora worldwide.",gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
+  { icon:"P",title:"Property Management",href:"/property-management",desc:"Tenant and maintenance management for property owners.",gradient:"linear-gradient(135deg,#0F1E38,#5a6070)" },
 ];
 
 const featuredProperties = [
@@ -94,7 +94,7 @@ export default function ServicesPage() {
           {services.map((svc,i)=>(
             <ScrollReveal key={svc.href} delay={i*60}>
               <Link href={svc.href} className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
-                <div className="svc-card-icon">{svc.icon}</div>
+                <div className="prop-icon" style={{background:svc.gradient}}>{svc.icon}</div>
                 <h2 className="svc-card-title">{svc.title}</h2>
                 <p className="svc-card-desc">{svc.desc}</p>
                 <span className="svc-card-arrow">Explore →</span>

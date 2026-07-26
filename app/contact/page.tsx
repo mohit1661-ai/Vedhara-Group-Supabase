@@ -25,7 +25,7 @@ export default function ContactPage() {
   if (status==="success") return (
     <section className="page-hero animated-gradient" style={{ minHeight:"60vh",display:"flex",alignItems:"center",textAlign:"center" }}>
       <div style={{ maxWidth:540,margin:"0 auto" }}>
-        <div style={{ fontSize:56,marginBottom:20 }}>🙏</div>
+        <div className="prop-stat" style={{width:72,height:72,borderRadius:20,fontSize:30,margin:"0 auto 20px",background:"linear-gradient(135deg,#0F1E38,#B8922A)"}}>✓</div>
         <h1 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Thank you for reaching out</h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.</p>
       </div>
@@ -72,14 +72,14 @@ export default function ContactPage() {
               <div style={{ marginTop:32 }}>
                 <p className="eyebrow" style={{ marginBottom:14 }}>How to Reach Us</p>
                 {[
-                  { icon:"📞", label:"Call",      val:"+91 98106 47063",       href:"tel:+919810647063" },
-                  { icon:"💬", label:"WhatsApp",  val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group" },
-                  { icon:"✉️", label:"Email",     val:"hello@vedharagroup.com", href:"mailto:hello@vedharagroup.com" },
+                  { icon:"C",  label:"Call",      val:"+91 98106 47063",       href:"tel:+919810647063", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+                  { icon:"W",  label:"WhatsApp",  val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+                  { icon:"E",  label:"Email",     val:"hello@vedharagroup.com", href:"mailto:hello@vedharagroup.com", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
                 ].map(item=>(
                   <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
                     style={{ display:"flex",gap:14,padding:"14px 16px",marginBottom:8,background:"var(--cream)",textDecoration:"none",borderLeft:"2px solid transparent",transition:"border-color 0.2s,background 0.2s" }}
                     className="contact-link">
-                    <span style={{ fontSize:20,flexShrink:0 }}>{item.icon}</span>
+                    <span className="prop-icon" style={{width:36,height:36,borderRadius:10,fontSize:14,margin:0,background:item.grad}}>{item.icon}</span>
                     <div>
                       <div className="eyebrow" style={{ color:"var(--gold)",marginBottom:2 }}>{item.label}</div>
                       <div className="body-sm" style={{ color:"var(--ink)" }}>{item.val}</div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ marginTop:20,padding:"16px 20px",background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.15)" }}>
-                <p className="eyebrow" style={{ color:"var(--gold)",marginBottom:6 }}>🌐 NRI Clients</p>
+                <p className="eyebrow" style={{ color:"var(--gold)",marginBottom:6 }}>NRI Clients</p>
                 <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>Weekend slots available: Saturday & Sunday, 10AM–4PM IST. Tell us your time zone in the form and we will schedule around you.</p>
               </div>
 
