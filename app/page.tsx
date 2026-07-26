@@ -117,6 +117,138 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ══ FEATURED PROPERTIES ══ */}
+      <section style={{ background:"var(--navy)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:52 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ marginBottom:14 }}>Featured Properties</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
+                Explore Premium Listings<span style={{ color:"var(--gold-lt)" }}> Across Delhi NCR</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)",maxWidth:540,margin:"0 auto" }}>
+                Hand-picked properties from our verified inventory, each independently assessed through the Vedhara Verification Framework.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="prop-grid">
+            {[
+              {
+                category:"Residential",
+                title:"The Cullinan Heights",
+                location:"Sector 150, Noida",
+                price:"₹ 4.85 Cr",
+                config:"4 BHK + Study",
+                size:"2,450 sq.ft.",
+                gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
+                link:"/buy",
+                tag:"Ready to Move",
+              },
+              {
+                category:"Luxury",
+                title:"One Golf Course Penthouse",
+                location:"Golf Course Road, Gurugram",
+                price:"₹ 12.80 Cr",
+                config:"5 BHK + Pool",
+                size:"4,200 sq.ft.",
+                gradient:"linear-gradient(135deg,#0F1E38 0%,#B8922A 30%,#D4AA52 70%,#F0DBA8 100%)",
+                link:"/luxury",
+                tag:"Available",
+              },
+              {
+                category:"Commercial",
+                title:"One Golden Mile",
+                location:"Sector 62, Gurugram",
+                price:"₹ 8.50 Cr",
+                config:"4,500 sq.ft. Office",
+                size:"4,500 sq.ft.",
+                gradient:"linear-gradient(135deg,#1a1a2e 0%,#B8922A 30%,#D4AA52 70%,#F0DBA8 100%)",
+                link:"/commercial",
+                tag:"Ready to Move",
+              },
+              {
+                category:"New Launch",
+                title:"Amaryllis Residences",
+                location:"Golf Course Road, Gurugram",
+                price:"₹ 6.20 Cr",
+                config:"3 BHK + Servant",
+                size:"2,150 sq.ft.",
+                gradient:"linear-gradient(135deg,#16243F 0%,#2a3f6f 50%,#B8922A 100%)",
+                link:"/new-launches",
+                tag:"Possession Oct 2026",
+              },
+              {
+                category:"Rental",
+                title:"The Aspen Residency",
+                location:"Sector 57, Gurugram",
+                price:"₹ 58,000/mo",
+                config:"3 BHK",
+                size:"1,550 sq.ft.",
+                gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#4a7a9f 100%)",
+                link:"/rent",
+                tag:"Available",
+              },
+              {
+                category:"Plotted",
+                title:"Serene Garden Plot",
+                location:"Sector 150, Noida",
+                price:"₹ 4.50 Cr",
+                config:"450 sq.yds.",
+                size:"450 sq.yds.",
+                gradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+                link:"/sell",
+                tag:"Available for Sale",
+              },
+            ].map((p,i)=>(
+              <ScrollReveal key={p.title} delay={i*80}>
+                <Link href={p.link} className="hover-lift" style={{ display:"block",background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",textDecoration:"none" }}>
+                  <div style={{ height:180,background:p.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
+                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
+                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(252,250,244,0.7)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
+                      {p.title}
+                    </div>
+                    <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(184,146,42,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(184,146,42,0.3)" }}>
+                        {p.tag}
+                      </span>
+                    </div>
+                  </div>
+                  <div style={{ padding:20 }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(184,146,42,0.1)",color:"var(--gold-lt)",borderRadius:3 }}>
+                        {p.category}
+                      </span>
+                    </div>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.35)",marginBottom:4 }}>{p.location}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"rgba(252,250,244,0.6)",marginBottom:10,lineHeight:1.4 }}>{p.config} · {p.size}</p>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(184,146,42,0.1)",paddingTop:12 }}>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--gold-lt)",margin:0 }}>{p.price}</p>
+                      <span className="btn-ghost" style={{ color:"var(--gold-lt)",fontSize:9,display:"inline-flex",alignItems:"center",gap:4 }}>
+                        View Details →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={120}>
+            <div style={{ textAlign:"center",marginTop:48 }}>
+              <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
+                Our full inventory spans 200+ verified listings across Delhi NCR.
+              </p>
+              <Link href="/buy" className="btn btn-primary">
+                Browse All Properties →
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ══ WHY VEDHARA ══ */}
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
