@@ -1,7 +1,7 @@
 /**
  * lib/email.ts
  * Optional email notification via Resend REST API.
- * No SDK — plain fetch. Zero extra dependencies.
+ * No SDK, plain fetch. Zero extra dependencies.
  * If RESEND_API_KEY is not set, this is a silent no-op.
  */
 
@@ -12,17 +12,17 @@ export async function sendLeadNotification(lead: Lead): Promise<void> {
   const toEmail = process.env.NOTIFY_EMAIL || "hello@vedharagroup.com";
 
   if (!apiKey) {
-    console.log("[Email] RESEND_API_KEY not set — skipping notification");
+    console.log("[Email] RESEND_API_KEY not set, skipping notification");
     return;
   }
 
   const rows = [
     ["Name",        lead.full_name],
     ["Phone",       lead.phone],
-    ["Email",       lead.email || "—"],
+    ["Email",       lead.email || "-"],
     ["Interest",    lead.interest],
-    ["Time Zone",   lead.timezone || "—"],
-    ["Source Page", lead.source_page || "—"],
+    ["Time Zone",   lead.timezone || "-"],
+    ["Source Page", lead.source_page || "-"],
     ["Status",      lead.status || "new"],
     ["Lead ID",     lead.id],
   ];
@@ -65,7 +65,7 @@ export async function sendLeadNotification(lead: Lead): Promise<void> {
       body: JSON.stringify({
         from:    "Vedhara Website <noreply@vedharagroup.com>",
         to:      [toEmail],
-        subject: `New Lead: ${lead.full_name} — ${lead.interest}`,
+        subject: `New Lead: ${lead.full_name}, ${lead.interest}`,
         html,
       }),
     });

@@ -4,7 +4,7 @@ import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR | Office, Retail & Industrial | Vedhara Group", description:"Independent commercial property advisory in Delhi NCR — office space leasing, retail site selection, industrial shed, and commercial property acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
+export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR | Office, Retail & Industrial | Vedhara Group", description:"Independent commercial property advisory in Delhi NCR, office space leasing, retail site selection, industrial shed, and commercial property acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
 
 interface CommercialListing {
   id:string;
@@ -65,7 +65,7 @@ const commercialListings: CommercialListing[] = [
   },
   {
     id:"ved-c05",
-    title:"Commercial Plot — Sector 150",
+    title:"Commercial Plot, Sector 150",
     location:"Sector 150, Noida",
     price:"₹ 6.80 Cr",
     size:"2,500 sq.yds.",
@@ -104,7 +104,7 @@ export default function CommercialPage() {
                 Available Commercial<span style={{ color:"var(--gold-lt)" }}> Properties</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
-                Office, retail, industrial, and land opportunities — each with Vedhara&apos;s independent commercial advisory.
+                Office, retail, industrial, and land opportunities, each with Vedhara&apos;s independent commercial advisory.
               </p>
             </div>
           </ScrollReveal>

@@ -48,7 +48,7 @@ function EMICalculator() {
     <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
       <div>
         <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:8 }}>Home Loan EMI Calculator</h3>
-        <p className="body-sm" style={{ color:"var(--slate)",marginBottom:20 }}>Monthly EMI, total interest, and full amortisation schedule using the standard reducing-balance formula — identical to bank calculations.</p>
+        <p className="body-sm" style={{ color:"var(--slate)",marginBottom:20 }}>Monthly EMI, total interest, and full amortisation schedule using the standard reducing-balance formula, identical to bank calculations.</p>
         {[{l:"Loan Amount (₹)",k:"loan"},{l:"Annual Interest Rate (%)",k:"rate"},{l:"Loan Tenure (Years)",k:"tenure"}].map(f=>(
           <div key={f.k} style={{ marginBottom:14 }}>
             <label className="input-label">{f.l}</label>
@@ -65,7 +65,7 @@ function EMICalculator() {
           </div>
         ))}
         <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
-          <p className="body-sm" style={{ color:"rgba(255,255,255,0.4)",margin:0 }}>Uses standard reducing-balance formula — identical to bank calculations.</p>
+          <p className="body-sm" style={{ color:"rgba(255,255,255,0.4)",margin:0 }}>Uses standard reducing-balance formula, identical to bank calculations.</p>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ function StampDutyCalculator() {
         </div>
       </div>
       <div style={{ background:"var(--navy)",padding:"28px 24px" }}>
-        <h4 className="eyebrow" style={{ color:"var(--gold)",marginBottom:20 }}>Results — {r.name}</h4>
+        <h4 className="eyebrow" style={{ color:"var(--gold)",marginBottom:20 }}>Results, {r.name}</h4>
         {[{l:`Stamp Duty (${sr}%)`,val:fmt(stamp),h:false},{l:`Registration Charge (${r.reg}%)`,val:fmt(reg),h:false},{l:"Total Payable",val:fmt(total),h:true},{l:"Property Value",val:fmt(v),h:false}].map(row=>(
           <div key={row.l} style={{ display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 0",borderBottom:"1px solid rgba(255,255,255,0.06)" }}>
             <span className="body-sm" style={{ color:"rgba(255,255,255,0.5)" }}>{row.l}</span>
@@ -167,8 +167,8 @@ const tabs = [
 
 const faqs = [
   { q:"Are the stamp duty rates in the calculator current?", a:"The stamp duty calculator uses rates verified at the time of publishing and updated when state governments revise rates through official notification. Always verify the applicable rate with the relevant state's sub-registrar office or stamp vendor before transacting, as local cess, surcharges, or revised notifications may apply." },
-  { q:"What is the difference between gross and net rental yield?", a:"Gross rental yield is annual rent divided by property price — a simple, widely-used metric. Net rental yield deducts annual maintenance costs (typically 1% of property value), property tax, and vacancy periods from the annual rent before calculating yield. Net yield is a more realistic measure of actual investment return." },
-  { q:"What FOIR do Indian banks use for home loan eligibility?", a:"Most Indian banks and HFCs apply a Fixed Obligation to Income Ratio (FOIR) of 40% to 50%, meaning your total monthly loan EMIs should not exceed 40–50% of your gross monthly income. Our affordability calculator conservatively uses 45% — confirm with your specific lender." },
+  { q:"What is the difference between gross and net rental yield?", a:"Gross rental yield is annual rent divided by property price, a simple, widely-used metric. Net rental yield deducts annual maintenance costs (typically 1% of property value), property tax, and vacancy periods from the annual rent before calculating yield. Net yield is a more realistic measure of actual investment return." },
+  { q:"What FOIR do Indian banks use for home loan eligibility?", a:"Most Indian banks and HFCs apply a Fixed Obligation to Income Ratio (FOIR) of 40% to 50%, meaning your total monthly loan EMIs should not exceed 40–50% of your gross monthly income. Our affordability calculator conservatively uses 45%; confirm with your specific lender." },
   { q:"How accurate is the EMI calculator?", a:"The EMI calculator uses the standard reducing-balance formula: EMI = P × r × (1+r)^n / ((1+r)^n – 1). This is the same formula all Indian banks use. Your actual bank EMI may differ marginally due to processing fees or specific bank calculation conventions, but the difference is typically less than ₹50–100 per lakh." },
 ];
 
@@ -180,7 +180,7 @@ export default function CalculatorsPage() {
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Free Tools</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
-            Four Free Property Calculators —<br /><span style={{ color:"var(--gold-lt)" }}>No Sign-Up, No Phone Number.</span>
+            Four Free Property Calculators,<br /><span style={{ color:"var(--gold-lt)" }}>No Sign-Up, No Phone Number.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:520,margin:"0 auto" }}>
             Every property decision in Delhi NCR comes down to numbers. These four tools are free, instant, and available without sharing your contact details. Run the numbers first. Then talk to an advisor.

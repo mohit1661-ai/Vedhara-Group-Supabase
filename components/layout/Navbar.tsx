@@ -32,7 +32,7 @@ export default function Navbar() {
         transition:"background 0.35s ease,border-color 0.35s ease",
       }}>
         <nav style={{ maxWidth:1320,margin:"0 auto",padding:"0 32px",height:"100%",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
-          {/* Logo mark — swaps between white/gold (transparent hero) and navy/gold (scrolled) */}
+          {/* Logo mark, swaps between white/gold (transparent hero) and navy/gold (scrolled) */}
           <Link href="/" style={{ textDecoration:"none",display:"flex",alignItems:"center",position:"relative",height:56 }} aria-label="Vedhara Group home">
             <Image
               src="/vedhara-logo-white.png"

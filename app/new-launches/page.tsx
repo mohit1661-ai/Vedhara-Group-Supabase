@@ -92,7 +92,7 @@ const launchProjects: LaunchProject[] = [
     location:"Sector 36, Sohna Road, Gurugram",
     startingPrice:"₹ 1.55 Cr",
     configs:"2, 3 BHK",
-    possession:"Phase 2 — Dec 2027",
+    possession:"Phase 2, Dec 2027",
     type:"Residential",
     status:"Phase 2 Released",
     highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
@@ -163,7 +163,7 @@ export default function NewLaunchesPage() {
                 Recently Launched &amp;<span style={{ color:"var(--gold-lt)" }}> Upcoming Projects</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
-                Directly from Vedhara&apos;s verified developer partners — no speculative listings, no unapproved projects.
+                Directly from Vedhara&apos;s verified developer partners, no speculative listings, no unapproved projects.
               </p>
             </div>
           </ScrollReveal>

@@ -7,10 +7,10 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Browse Verified Properties,",
     h1Accent: "Backed by Independent Advice",
     intro:
-      "Vedhara Group offers independent guidance through verified developer-partner listings — from shortlisting to negotiation to final paperwork, with your interests represented first.",
+      "Vedhara Group offers independent guidance through verified developer-partner listings, from shortlisting to negotiation to final paperwork, with your interests represented first.",
     included: [
       "Goal-mapping session to understand budget, location priorities, and long-term plans",
-      "Curated shortlist based on the Vedhara Verification Framework — not a flood of irrelevant listings",
+      "Curated shortlist based on the Vedhara Verification Framework, not a flood of irrelevant listings",
       "Independent site visits with honest, unfiltered assessments",
       "Legal and title due diligence support before any commitment",
       "Price negotiation support grounded in comparable market data",
@@ -24,7 +24,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "Do I pay Vedhara a fee to buy a property?",
-        a: "In most cases, no direct fee is charged to buyers — Vedhara is compensated through standard brokerage commission paid by the seller or developer side, disclosed on the specific listing.",
+        a: "In most cases, no direct fee is charged to buyers; Vedhara is compensated through standard brokerage commission paid by the seller or developer side, disclosed on the specific listing.",
       },
       {
         q: "Can I see properties that aren't from partner developers?",
@@ -39,11 +39,11 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Sell at What Your Property",
     h1Accent: "Is Actually Worth",
     intro:
-      "Most sellers either underprice out of urgency or overprice out of attachment. Vedhara helps you price — and sell — based on real market data.",
+      "Most sellers either underprice out of urgency or overprice out of attachment. Vedhara helps you price, and sell, based on real market data.",
     included: [
       "Comparative market analysis to determine a realistic, defensible asking price",
       "Access to Vedhara's network of pre-qualified buyers and investors",
-      "Marketing guidance — presentation, positioning, and timing strategy",
+      "Marketing guidance, presentation, positioning, and timing strategy",
       "Negotiation support to protect your bottom line",
       "Documentation and registration coordination through to handover",
     ],
@@ -55,11 +55,11 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "How does Vedhara determine my property's value?",
-        a: "We analyse recent comparable transactions in your locality, current demand trends, and the specific condition and positioning of your property — arriving at a price range that is realistic, not aspirational.",
+        a: "We analyse recent comparable transactions in your locality, current demand trends, and the specific condition and positioning of your property, arriving at a price range that is realistic, not aspirational.",
       },
       {
         q: "What if I'm not ready to sell yet but want an opinion?",
-        a: "That's exactly the kind of conversation we welcome. Our Portfolio Health Check service is designed for owners who want an honest hold, sell, or rebalance assessment — with no obligation to act.",
+        a: "That's exactly the kind of conversation we welcome. Our Portfolio Health Check service is designed for owners who want an honest hold, sell, or rebalance assessment, with no obligation to act.",
       },
     ],
     ctaLabel: "Get a Free Property Valuation",
@@ -86,7 +86,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "Does Vedhara handle rental disputes?",
-        a: "While Vedhara is not a legal firm, we help both parties understand lease terms clearly upfront — which is the most effective way to prevent disputes. For active legal matters, we can refer clients to trusted legal partners.",
+        a: "While Vedhara is not a legal firm, we help both parties understand lease terms clearly upfront, which is the most effective way to prevent disputes. For active legal matters, we can refer clients to trusted legal partners.",
       },
     ],
     ctaLabel: "Find or List a Rental",
@@ -97,7 +97,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Commercial Real Estate Decisions,",
     h1Accent: "Backed by Data",
     intro:
-      "Retail footfall, office accessibility, mixed-use zoning — commercial real estate has its own rules. Vedhara's advisory is built around them.",
+      "Retail footfall, office accessibility, mixed-use zoning, commercial real estate has its own rules. Vedhara's advisory is built around them.",
     included: [
       "Site selection based on footfall, accessibility, and zoning analysis",
       "Valuation and rent benchmarking against comparable commercial spaces",
@@ -112,7 +112,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "Does Vedhara help with corporate office leasing too?",
-        a: "Yes — corporate office leasing has its own dedicated advisory covering space planning, location strategy, and lease negotiation. Contact us for details on our corporate leasing support.",
+        a: "Yes, corporate office leasing has its own dedicated advisory covering space planning, location strategy, and lease negotiation. Contact us for details on our corporate leasing support.",
       },
     ],
     ctaLabel: "Discuss Your Commercial Requirement",
@@ -138,7 +138,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "How is the Luxury desk different from standard Buy Property advisory?",
-        a: "The Luxury desk applies the same Verification Framework but adds a dedicated single advisor, more flexible scheduling, and coordination with legal, interior design, and relocation partners — suited to higher-value, higher-discretion transactions.",
+        a: "The Luxury desk applies the same Verification Framework but adds a dedicated single advisor, more flexible scheduling, and coordination with legal, interior design, and relocation partners, suited to higher-value, higher-discretion transactions.",
       },
     ],
     ctaLabel: "Speak to Our Luxury Desk",
@@ -149,7 +149,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Your Property, Managed",
     h1Accent: "Without You Having to Be There",
     intro:
-      "For owners who don't want to personally chase tenants, coordinate repairs, or track rent — Vedhara's property management service handles the operational side of ownership.",
+      "For owners who don't want to personally chase tenants, coordinate repairs, or track rent, Vedhara's property management service handles the operational side of ownership.",
     included: [
       "Tenant sourcing, screening, and lease management",
       "Rent collection and timely owner payouts",
@@ -164,7 +164,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "Can NRIs use the property management service without visiting India?",
-        a: "Yes — this service is specifically designed to let NRI owners manage Indian property remotely, with regular reporting and video updates in place of physical visits.",
+        a: "Yes, this service is specifically designed to let NRI owners manage Indian property remotely, with regular reporting and video updates in place of physical visits.",
       },
     ],
     ctaLabel: "Discuss Property Management",

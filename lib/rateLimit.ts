@@ -2,7 +2,7 @@
  * lib/rateLimit.ts
  *
  * Simple in-memory rate limiter for the consultation API.
- * Resets on every serverless cold-start — that's fine for
+ * Resets on every serverless cold-start, that's fine for
  * a low-traffic marketing site. No Redis needed.
  *
  * Default: 5 requests per IP per 10 minutes.
@@ -23,7 +23,7 @@ export function isRateLimited(ip: string): boolean {
   const entry = store.get(ip);
 
   if (!entry || now > entry.resetAt) {
-    // First request or window expired — start fresh
+    // First request or window expired, start fresh
     store.set(ip, { count: 1, resetAt: now + WINDOW_MS });
     return false;
   }

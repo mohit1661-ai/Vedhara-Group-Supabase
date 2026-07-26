@@ -7,23 +7,23 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Vedhara Group | Verified Property Advisory in Delhi NCR — Buy, Sell, Invest",
+  title: "Vedhara Group | Verified Property Advisory in Delhi NCR, Buy, Sell, Invest",
   description: "Vedhara Group is Delhi NCR's independent real estate advisory firm. Buy, sell, invest, or manage property across Gurugram, Noida, Faridabad & Ghaziabad with verified listings and transparent guidance.",
   alternates: { canonical: "https://www.vedharagroup.com" },
 };
 
-/* ── Word doc: Page 1 — Homepage ─────────────────────────── */
+/* ── Word doc: Page 1, Homepage ─────────────────────────── */
 const checks = [
   { num:"01", title:"RERA Registration", desc:"Registration number verified against UP RERA (rera.up.gov.in), HRERA (hrera.org.in), or Delhi RERA (rera.delhi.gov.in). Validity dates and quarterly progress report filings confirmed before any listing goes live." },
-  { num:"02", title:"Builder Delivery History", desc:"Past project completion timelines reviewed. Any litigation on record, consumer forum complaints, or RERA non-compliance notices are disclosed to you upfront — not discovered after you have committed." },
-  { num:"03", title:"Project-Level Approvals", desc:"Building plan sanction, commencement certificate, environmental clearance where applicable under EIA notification, and OC status checked at the specific project level — not just at developer level." },
+  { num:"02", title:"Builder Delivery History", desc:"Past project completion timelines reviewed. Any litigation on record, consumer forum complaints, or RERA non-compliance notices are disclosed to you upfront, not discovered after you have committed." },
+  { num:"03", title:"Project-Level Approvals", desc:"Building plan sanction, commencement certificate, environmental clearance where applicable under EIA notification, and OC status checked at the specific project level, not just at developer level." },
   { num:"04", title:"Price Fairness", desc:"Every listing benchmarked against recent registered transactions using government circle rate data and comparable sales in the same locality. We publish whether this project is fairly priced, at a premium, or at a discount." },
   { num:"05", title:"Title & Documents", desc:"Developer confirms in writing the ability to produce title chain documents, allotment letters, and registered sale deed templates before we publish the listing. No documentation availability = no listing." },
 ];
 
 const whyItems = [
-  { icon:"⚖️", title:"Independent by Design", desc:"No exclusive developer tie-ups. Every shortlist built around your requirements — not which developer is offering the highest commission this quarter." },
-  { icon:"📢", title:"Transparent Compensation", desc:"We disclose how we earn on every listing — standard brokerage commission or optional advisory retainer. No hidden arrangements, no surprises at closing." },
+  { icon:"⚖️", title:"Independent by Design", desc:"No exclusive developer tie-ups. Every shortlist built around your requirements, not which developer is offering the highest commission this quarter." },
+  { icon:"📢", title:"Transparent Compensation", desc:"We disclose how we earn on every listing, standard brokerage commission or optional advisory retainer. No hidden arrangements, no surprises at closing." },
   { icon:"✅", title:"Verified Before Published", desc:"Our Verification Framework is the only publicly documented due-diligence process in the NCR advisory market. Five checks. Published results. Every listing." },
   { icon:"👤", title:"Named Advisor Always", desc:"One advisor's direct number from day one. Not a CRM ticket, not a rotating team, not a call centre. One person who knows your requirements throughout." },
 ];
@@ -31,17 +31,17 @@ const whyItems = [
 const tools = [
   { icon:"📊", title:"ROI & Rental Yield Calculator", desc:"Estimate gross yield, net yield, and total return over your holding period." },
   { icon:"🏦", title:"Home Loan EMI Calculator", desc:"Monthly EMI, total interest, and year-by-year amortisation schedule." },
-  { icon:"📋", title:"Stamp Duty & Registration", desc:"State-wise stamp duty and registration charges — Delhi, Haryana & UP." },
+  { icon:"📋", title:"Stamp Duty & Registration", desc:"State-wise stamp duty and registration charges, Delhi, Haryana & UP." },
   { icon:"💡", title:"Affordability Calculator", desc:"Realistic property budget based on standard 40–50% FOIR bank lending norms." },
 ];
 
-/* Word doc FAQs — Page 1 */
+/* Word doc FAQs, Page 1 */
 const homeFaqs = [
-  { q:"Is Vedhara Group a property developer or builder?", a:"No. Vedhara Group is an independent real estate advisory and brokerage firm operating across Delhi NCR. We do not build, develop, or own properties. We represent buyers, sellers, tenants, investors, and NRIs independently — and list only verified projects from developer partners." },
+  { q:"Is Vedhara Group a property developer or builder?", a:"No. Vedhara Group is an independent real estate advisory and brokerage firm operating across Delhi NCR. We do not build, develop, or own properties. We represent buyers, sellers, tenants, investors, and NRIs independently, and list only verified projects from developer partners." },
   { q:"Which areas of Delhi NCR does Vedhara Group cover?", a:"Vedhara Group covers property transactions across Delhi, Gurugram, Noida, Greater Noida, Faridabad, Ghaziabad, Sonipat, and surrounding NCR micro-markets. Contact us with your specific location requirement." },
-  { q:"How does Vedhara verify the properties it lists?", a:"Every partner project passes five checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness benchmarked against government circle rates and registered transactions, and title document availability. Results are published on the listing page — not hidden in fine print." },
+  { q:"How does Vedhara verify the properties it lists?", a:"Every partner project passes five checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness benchmarked against government circle rates and registered transactions, and title document availability. Results are published on the listing page, not hidden in fine print." },
   { q:"Does Vedhara charge buyers a fee?", a:"In most cases, no direct fee is charged to buyers. Vedhara earns standard market brokerage commission paid by the developer or seller side, disclosed on every specific listing. For portfolio-level investment advisory, an optional flat retainer is available." },
-  { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators — ROI & Rental Yield, EMI, Stamp Duty, and Affordability — are completely free and require no account, phone number, or email address to use." },
+  { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators — ROI & Rental Yield, EMI, Stamp Duty, and Affordability, are completely free and require no account, phone number, or email address to use." },
 ];
 
 export default function HomePage() {
@@ -63,7 +63,7 @@ export default function HomePage() {
                   <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Before You See It</em>
                 </h2>
                 <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28,maxWidth:480 }}>
-                  Most property portals list whatever inventory developers hand them. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework — five documented checks that we publish in plain language on every listing page. No jargon. No fine print. Just the facts.
+                  Most property portals list whatever inventory developers hand them. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework, five documented checks that we publish in plain language on every listing page. No jargon. No fine print. Just the facts.
                 </p>
                 <Link href="/verification-center" className="btn btn-ghost" style={{ color:"var(--gold)" }}>
                   See the Full Verification Framework →
@@ -159,7 +159,7 @@ export default function HomePage() {
                 Managing Property in India from the UAE, UK, USA, Canada, or Singapore?
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28,maxWidth:560 }}>
-                Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs of shortlisted properties within 48 hours, and e-signature documentation support — so you can make a verified property decision in India without buying a flight ticket.
+                Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs of shortlisted properties within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
               </p>
               <div style={{ display:"flex",flexWrap:"wrap",gap:16,marginBottom:32 }}>
                 {["🇦🇪 UAE","🇬🇧 UK","🇺🇸 USA","🇨🇦 Canada","🇸🇬 Singapore","🇦🇺 Australia"].map(c=>(<span key={c} className="body-sm" style={{ color:"rgba(255,255,255,0.36)" }}>{c}</span>))}
@@ -192,7 +192,7 @@ export default function HomePage() {
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Decide With Data</p>
               <h2 className="heading-xl" style={{ color:"#FCFAF4",lineHeight:1.1,marginBottom:16 }}>
-                Four Free Tools —{" "}
+                Four Free Tools,{" "}
                 <em className="display-gold" style={{ fontSize:"inherit" }}>No Sign-Up Required</em>
               </h2>
               <p className="body-lg" style={{ color:"rgba(255,255,255,0.42)",maxWidth:460,margin:"0 auto" }}>
@@ -227,7 +227,7 @@ export default function HomePage() {
               <em className="display-gold" style={{ fontSize:"inherit" }}>Independent Advice.</em>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",marginBottom:40 }}>
-              Whether you are buying, selling, investing, or managing property from abroad — start with an honest conversation, not a sales pitch.
+              Whether you are buying, selling, investing, or managing property from abroad, start with an honest conversation, not a sales pitch.
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
               <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>

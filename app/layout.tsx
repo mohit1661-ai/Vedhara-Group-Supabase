@@ -7,9 +7,9 @@ import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedharagroup.com"),
-  title: { default: "Vedhara Group | Verified Property Advisory in Delhi NCR — Buy, Sell, Invest", template: "%s | Vedhara Group" },
+  title: { default: "Vedhara Group | Verified Property Advisory in Delhi NCR, Buy, Sell, Invest", template: "%s | Vedhara Group" },
   description: "Delhi NCR's independent real estate advisory firm. Verified listings, transparent fees, and free investment tools across Gurugram, Noida, Faridabad & Ghaziabad.",
-  openGraph: { type:"website", locale:"en_IN", siteName:"Vedhara Group", url:"https://www.vedharagroup.com", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group — Independent Real Estate Advisory Delhi NCR" }] },
+  openGraph: { type:"website", locale:"en_IN", siteName:"Vedhara Group", url:"https://www.vedharagroup.com", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group, Independent Real Estate Advisory Delhi NCR" }] },
   twitter: { card:"summary_large_image", images:["/og-default.jpg"] },
   robots: { index:true, follow:true, googleBot:{ index:true, follow:true, "max-image-preview":"large", "max-snippet":-1 } },
 };

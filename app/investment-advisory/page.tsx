@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { n:"01", title:"Legal & Title Clarity", desc:"No recommendation proceeds without a clean title check and RERA verification. A high-yield property with a clouded title is not an opportunity — it is a liability." },
+  { n:"01", title:"Legal & Title Clarity", desc:"No recommendation proceeds without a clean title check and RERA verification. A high-yield property with a clouded title is not an opportunity; it is a liability." },
   { n:"02", title:"Locality Growth Assessment", desc:"We evaluate upcoming infrastructure (Delhi Metro extensions, Expressway developments, commercial zone approvals), employer base, and demographic demand before recommending a micro-market." },
-  { n:"03", title:"Price-to-Value Fairness", desc:"Investment purchases benchmarked against recent registered transactions and circle rates — not developer brochure prices. The difference matters significantly at investment scale." },
+  { n:"03", title:"Price-to-Value Fairness", desc:"Investment purchases benchmarked against recent registered transactions and circle rates, not developer brochure prices. The difference matters significantly at investment scale." },
   { n:"04", title:"Rental Yield Analysis", desc:"Gross and net rental yield modelled against current comparable rental data for the specific locality and unit type. We use actual rental comparables, not developer rental projections." },
   { n:"05", title:"Resale Liquidity Assessment", desc:"We assess the historical transaction volume in the locality. Illiquid micro-markets may offer lower entry prices but make exit difficult when you need to sell." },
   { n:"06", title:"Portfolio Fit", desc:"Does this asset complement your existing holdings? We evaluate diversification, tenure mix, and income timing before recommending an acquisition." },
@@ -28,10 +28,10 @@ const corridors = [
 ];
 
 const faqs = [
-  { q:"What rental yield can I expect from property investment in Delhi NCR?", a:"Gross rental yields in Delhi NCR typically range from 2.5% to 5% for residential property, depending on locality, unit size, and furnishing. Commercial property — retail and office — delivers 6–9% gross yields in established locations. Noida Expressway corridor and Gurugram Sohna Road are currently among the stronger residential yield markets in NCR." },
-  { q:"Is Delhi NCR real estate a good investment in 2025–26?", a:"Delhi NCR's residential market has seen sustained price appreciation since 2022, particularly in Gurugram, Noida Expressway, and premium Delhi micro-markets. Investment viability depends heavily on which micro-market, which project, and at what price — which is exactly what Vedhara's investment advisory is designed to assess independently." },
+  { q:"What rental yield can I expect from property investment in Delhi NCR?", a:"Gross rental yields in Delhi NCR typically range from 2.5% to 5% for residential property, depending on locality, unit size, and furnishing. Commercial property, retail and office, delivers 6–9% gross yields in established locations. Noida Expressway corridor and Gurugram Sohna Road are currently among the stronger residential yield markets in NCR." },
+  { q:"Is Delhi NCR real estate a good investment in 2025–26?", a:"Delhi NCR's residential market has seen sustained price appreciation since 2022, particularly in Gurugram, Noida Expressway, and premium Delhi micro-markets. Investment viability depends heavily on which micro-market, which project, and at what price, which is exactly what Vedhara's investment advisory is designed to assess independently." },
   { q:"What is the minimum capital needed to invest in Delhi NCR property?", a:"Entry-level investment properties (1BHK/2BHK in Greater Noida West, Ghaziabad, or Faridabad) start from approximately ₹25–40 lakh. Premium investment properties in Gurugram and Noida Expressway typically start from ₹80 lakh–₹1.5 Cr. Commercial investment typically starts from ₹50 lakh for retail shop units in NCR." },
-  { q:"Does Vedhara offer tax planning advice for real estate investments?", a:"Vedhara provides strategic investment advisory including general awareness of capital gains tax (LTCG/STCG), Section 54/54F exemptions, and rental income taxation. For specific tax structuring, we recommend engaging a qualified CA — and can refer trusted tax professionals from our network." },
+  { q:"Does Vedhara offer tax planning advice for real estate investments?", a:"Vedhara provides strategic investment advisory including general awareness of capital gains tax (LTCG/STCG), Section 54/54F exemptions, and rental income taxation. For specific tax structuring, we recommend engaging a qualified CA, and can refer trusted tax professionals from our network." },
 ];
 
 export default function InvestmentAdvisoryPage() {
@@ -45,7 +45,7 @@ export default function InvestmentAdvisoryPage() {
           Real Estate as a Portfolio Decision,<br /><span style={{ color:"var(--gold-lt)" }}>Not a Single Purchase.</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto" }}>
-          For investors who think beyond one transaction — Vedhara provides ongoing, portfolio-level real estate strategy aligned to your broader financial goals.
+          For investors who think beyond one transaction, Vedhara provides ongoing, portfolio-level real estate strategy aligned to your broader financial goals.
         </p>
       </VideoHeroSection>
 
@@ -58,7 +58,7 @@ export default function InvestmentAdvisoryPage() {
               <p className="eyebrow" style={{ marginBottom:14 }}>The Vedhara Decision Framework</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:14,lineHeight:1.1 }}>Six Checks Applied to Every Investment Recommendation</h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560 }}>
-                Buying a property as an investment and buying a property to live in are fundamentally different decisions. Investment properties need to be evaluated on yield, liquidity, locality growth trajectory, and capital appreciation potential — not just brochure appeal.
+                Buying a property as an investment and buying a property to live in are fundamentally different decisions. Investment properties need to be evaluated on yield, liquidity, locality growth trajectory, and capital appreciation potential, not just brochure appeal.
               </p>
             </div>
           </ScrollReveal>
@@ -115,7 +115,7 @@ export default function InvestmentAdvisoryPage() {
       <section style={{ background:"var(--navy)",padding:"72px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Run Your Investment Numbers First</h2>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Before any conversation, use our free ROI & Rental Yield Calculator — no sign-up required.</p>
+          <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Before any conversation, use our free ROI & Rental Yield Calculator, no sign-up required.</p>
           <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
             <Link href="/calculators" className="btn btn-primary">Try the ROI Calculator →</Link>
             <Link href="/contact" className="btn btn-outline">Book a Consultation</Link>

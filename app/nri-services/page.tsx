@@ -7,14 +7,14 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 
 export const metadata: Metadata = {
   title:"NRI Property Advisory in India | Buy, Sell & Manage from Abroad | Vedhara Group Delhi NCR",
-  description:"NRI property services for Indian diaspora in UAE, UK, USA, Canada & Singapore. Buy, sell, or manage property in Delhi NCR remotely — video consultations, verified due diligence, e-signature documentation.",
+  description:"NRI property services for Indian diaspora in UAE, UK, USA, Canada & Singapore. Buy, sell, or manage property in Delhi NCR remotely, video consultations, verified due diligence, e-signature documentation.",
   alternates:{ canonical:"https://www.vedharagroup.com/nri-services" },
 };
 
 const commitments = [
   { icon:"🗓️", n:"01", title:"Weekend & Evening IST Slots", desc:"Saturday and Sunday, 10AM–4PM IST, plus weekday evening slots. We schedule around your time zone, not ours." },
   { icon:"🎥", n:"02", title:"On-Demand Video Walkthroughs", desc:"Shortlisted properties available for live or recorded video walkthroughs within 48 hours of request. You see the property, the surroundings, the society entrance, and the documentation." },
-  { icon:"✓",  n:"03", title:"Independent Verification", desc:"RERA check, builder history, approvals, title documents — all completed before you are asked to make a booking payment." },
+  { icon:"✓",  n:"03", title:"Independent Verification", desc:"RERA check, builder history, approvals, title documents, all completed before you are asked to make a booking payment." },
   { icon:"✍️", n:"04", title:"E-Signature & Digital Documentation", desc:"Sale agreements, token money receipts, and most pre-registration documents can be handled digitally. We guide you through what specifically requires physical presence or a registered POA." },
   { icon:"⚖️", n:"05", title:"FEMA & RBI Compliance Guidance", desc:"Every NRI transaction structured to comply with FEMA property acquisition regulations, NRO/NRE account routing, and TDS deduction requirements under Section 195." },
   { icon:"👤", n:"06", title:"Dedicated Single Advisor", desc:"One named advisor. Their direct number. No re-explaining your requirements every time. Not a call centre, not a rotating team." },
@@ -32,16 +32,16 @@ const countries = [
 const legalPoints = [
   "NRIs and PIOs can purchase residential and commercial property in India without RBI approval",
   "Agricultural land, plantation property, and farmhouses generally cannot be purchased by NRIs under FEMA without specific RBI permission",
-  "Purchase consideration must flow through NRE or NRO banking channels — or via direct foreign inward remittance",
+  "Purchase consideration must flow through NRE or NRO banking channels, or via direct foreign inward remittance",
   "TDS at 20% (long-term capital gain, property held more than 24 months) or 30% (short-term) is deductible by the buyer when purchasing from an NRI seller",
   "A registered Power of Attorney issued at the Indian embassy or notarised and apostilled in your country of residence can authorise a representative in India to complete most transaction steps on your behalf",
 ];
 
 const faqs = [
-  { q:"Can an NRI buy property in Delhi NCR without visiting India?", a:"In most cases, yes. With a registered Power of Attorney and digital documentation support, the majority of the buying process can be completed remotely. The physical presence requirement is primarily at sub-registrar registration — this can be handled by a POA holder in India. Vedhara guides NRI clients through exactly what requires physical presence versus what can be completed digitally." },
+  { q:"Can an NRI buy property in Delhi NCR without visiting India?", a:"In most cases, yes. With a registered Power of Attorney and digital documentation support, the majority of the buying process can be completed remotely. The physical presence requirement is primarily at sub-registrar registration; this can be handled by a POA holder in India. Vedhara guides NRI clients through exactly what requires physical presence versus what can be completed digitally." },
   { q:"What type of bank account should an NRI use to purchase property in India?", a:"Property purchase consideration must flow through NRE (Non-Resident External) or NRO (Non-Resident Ordinary) bank accounts, or via direct foreign inward remittance. Repatriation of sale proceeds is allowed from NRE accounts without restriction. NRO account repatriation has a cap of USD 1 million per financial year." },
   { q:"Is TDS applicable when an NRI sells property in India?", a:"Yes. Under Section 195 of the Income Tax Act, the buyer is required to deduct TDS at 20% on long-term capital gain (property held for more than 24 months) or 30% on short-term gain on the sale consideration paid to an NRI seller. The NRI seller can apply for a lower TDS certificate from the Income Tax Department if their actual tax liability is lower." },
-  { q:"How does Vedhara handle NRI property management in Delhi NCR?", a:"Vedhara's Property Management service handles tenant sourcing and screening, rent collection and transfer to your NRO/NRE bank account, maintenance coordination, and periodic video condition reports — all managed remotely so NRI owners maintain visibility over their Indian assets without requiring travel." },
+  { q:"How does Vedhara handle NRI property management in Delhi NCR?", a:"Vedhara's Property Management service handles tenant sourcing and screening, rent collection and transfer to your NRO/NRE bank account, maintenance coordination, and periodic video condition reports, all managed remotely so NRI owners maintain visibility over their Indian assets without requiring travel." },
   { q:"What time zones do your NRI consultations support?", a:"Our NRI desk offers weekend slots (Saturday and Sunday, 10AM–4PM IST) and weekday evening slots to accommodate clients across UAE/Gulf (GMT+4), UK (GMT/BST), North America (EST/CST/PST), and APAC time zones." },
 ];
 
@@ -57,7 +57,7 @@ export default function NRIServicesPage() {
           Managing Property in India<br />from the UAE, UK, USA,<br /><span style={{ color:"var(--gold-lt)" }}>Canada, or Singapore?</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto 28px" }}>
-          Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support — so you can make a verified property decision in India without buying a flight ticket.
+          Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
         </p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
           <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
@@ -72,7 +72,7 @@ export default function NRIServicesPage() {
             <div style={{ marginBottom:52 }}>
               <span className="v-line" />
               <p className="eyebrow" style={{ marginBottom:14 }}>Six Commitments to Every NRI Client</p>
-              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>What Every NRI Client Receives — <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>By Default</em></h2>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>What Every NRI Client Receives, <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>By Default</em></h2>
             </div>
           </ScrollReveal>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
@@ -121,7 +121,7 @@ export default function NRIServicesPage() {
           <ScrollReveal>
             <div style={{ marginBottom:36 }}>
               <span className="v-line" />
-              <p className="eyebrow" style={{ marginBottom:14 }}>NRI Legal Framework — Key Points</p>
+              <p className="eyebrow" style={{ marginBottom:14 }}>NRI Legal Framework, Key Points</p>
               <h2 className="heading-lg" style={{ color:"var(--navy)",lineHeight:1.15 }}>Key Legal Points for NRI Property Transactions in India</h2>
             </div>
           </ScrollReveal>

@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, ReactNode } from "react";
 
 /**
- * VideoHeroSection — Cinematic 3D video hero for sub-pages.
+ * VideoHeroSection, Cinematic 3D video hero for sub-pages.
  *
  * ── FEATURES ──
  * • Full-screen video background with smooth fade-in
@@ -330,7 +330,7 @@ export default function VideoHeroSection({
             pointerEvents: "none",
           }}
         >
-          🔧 Replace video in /public/videos/ — see VideoHeroSection.tsx
+          🔧 Replace video in /public/videos/ , see VideoHeroSection.tsx
         </div>
       )}
     </section>

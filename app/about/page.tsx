@@ -27,7 +27,7 @@ const locations = [
 ];
 
 const faqs = [
-  { q:"Is Vedhara Group a real estate developer?", a:"No. Vedhara Group is an independent real estate advisory and brokerage firm. We do not build, develop, or own properties. Our role is to represent and advise clients — buyers, sellers, investors, tenants, landlords, and NRIs — independently, while listing verified projects from partner developers." },
+  { q:"Is Vedhara Group a real estate developer?", a:"No. Vedhara Group is an independent real estate advisory and brokerage firm. We do not build, develop, or own properties. Our role is to represent and advise clients, buyers, sellers, investors, tenants, landlords, and NRIs, independently, while listing verified projects from partner developers." },
   { q:"Is Vedhara Group RERA registered?", a:"Vedhara Group operates in compliance with RERA registration requirements applicable to real estate agents in Delhi, Haryana, and Uttar Pradesh. RERA agent registration numbers are disclosed on request and on relevant transaction documents." },
   { q:"Where is Vedhara Group based?", a:"Vedhara Group is based in the Delhi NCR region and serves clients across Delhi, Gurugram, Noida, Greater Noida, Faridabad, and Ghaziabad. NRI clients are served remotely through video consultations and digital documentation." },
   { q:"How long has Vedhara Group been operating?", a:"Vedhara Group is a growing independent advisory firm in the Delhi NCR market. Our team brings professional real estate advisory experience across residential, commercial, and investment property segments." },
@@ -60,10 +60,10 @@ export default function AboutPage() {
                 <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Delhi NCR&apos;s Property Market</em>
               </h2>
               <p className="body-md" style={{ color:"var(--slate)",marginBottom:16,lineHeight:1.85 }}>
-                Vedhara Group was founded on a simple observation: most real estate platforms in Delhi NCR are developer-distribution channels wearing an advisory costume. Their listings are unverified, their pricing is developer-set, and their advisors are paid sales executives with a financial incentive to close — not to advise.
+                Vedhara Group was founded on a simple observation: most real estate platforms in Delhi NCR are developer-distribution channels wearing an advisory costume. Their listings are unverified, their pricing is developer-set, and their advisors are paid sales executives with a financial incentive to close, not to advise.
               </p>
               <p className="body-md" style={{ color:"var(--slate)",marginBottom:28,lineHeight:1.85 }}>
-                We set out to build something genuinely different — an advisory firm that lists verified developer-partner projects, publishes exactly how we verify them, discloses how we are paid, and assigns you a named, dedicated advisor from day one.
+                We set out to build something genuinely different, an advisory firm that lists verified developer-partner projects, publishes exactly how we verify them, discloses how we are paid, and assigns you a named, dedicated advisor from day one.
               </p>
               <Link href="/verification-center" className="btn btn-ghost" style={{ color:"var(--gold)" }}>See Our Verification Framework →</Link>
             </div>
@@ -72,13 +72,13 @@ export default function AboutPage() {
             <div style={{ background:"var(--ivory)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px" }}>
               <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:16 }}>Our Mission</h3>
               <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.85,marginBottom:24 }}>
-                To become the most trusted, independently-positioned real estate advisory firm in Delhi NCR — helping buyers, sellers, investors, and NRIs make property decisions backed by verified information rather than sales pressure.
+                To become the most trusted, independently-positioned real estate advisory firm in Delhi NCR, helping buyers, sellers, investors, and NRIs make property decisions backed by verified information rather than sales pressure.
               </p>
               <div style={{ borderTop:"1px solid rgba(42,45,53,0.08)",paddingTop:20 }}>
                 <p className="eyebrow" style={{ marginBottom:12 }}>What We Stand For</p>
-                {["Independent advisory — never a developer's agent","Verification published, not just promised","Fees disclosed before the conversation begins","One named advisor throughout your journey"].map(pt=>(
+                {["Independent advisory, never a developer's agent","Verification published, not just promised","Fees disclosed before the conversation begins","One named advisor throughout your journey"].map(pt=>(
                   <div key={pt} style={{ display:"flex",gap:10,marginBottom:10 }}>
-                    <span style={{ color:"var(--gold)",flexShrink:0 }}>—</span>
+                    <span style={{ color:"var(--gold)",flexShrink:0 }}>-</span>
                     <span className="body-sm" style={{ color:"var(--slate)" }}>{pt}</span>
                   </div>
                 ))}
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <span className="v-line" />
               <p className="eyebrow" style={{ marginBottom:14 }}>Where We Operate</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
-                Covering Delhi NCR —{" "}
+                Covering Delhi NCR,{" "}
                 <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Every Major Market</em>
               </h2>
             </div>
@@ -142,12 +142,12 @@ export default function AboutPage() {
       <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Ready for an Advisor Who Works for You?</h2>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>No pitch, no pressure. A 30-minute conversation about your property goals — free, no obligation.</p>
+          <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>No pitch, no pressure. A 30-minute conversation about your property goals, free, no obligation.</p>
           <Link href="/contact" className="btn btn-primary">Book a Free Consultation →</Link>
         </div>
       </section>
 
-      <FAQSection faqs={faqs} title="About Vedhara Group — FAQ" />
+      <FAQSection faqs={faqs} title="About Vedhara Group, FAQ" />
     </>
   );
 }

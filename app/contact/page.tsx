@@ -27,7 +27,7 @@ export default function ContactPage() {
       <div style={{ maxWidth:540,margin:"0 auto" }}>
         <div style={{ fontSize:56,marginBottom:20 }}>🙏</div>
         <h1 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Thank you for reaching out</h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch — just a conversation about what you are trying to achieve.</p>
+        <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.</p>
       </div>
     </section>
   );
@@ -43,7 +43,7 @@ export default function ContactPage() {
             Let&apos;s Start With<br /><span style={{ color:"var(--gold-lt)" }}>an Honest Conversation.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:500,margin:"0 auto" }}>
-            No pitch, no pressure, no pre-qualification for whether your budget is &ldquo;worth our time.&rdquo; Whether you are considering buying a 1BHK in Ghaziabad or a luxury penthouse in Gurugram — every consultation begins the same way: we listen, we understand what you are trying to achieve, and we tell you honestly how we can help.
+            No pitch, no pressure, no pre-qualification for whether your budget is &ldquo;worth our time.&rdquo; Whether you are considering buying a 1BHK in Ghaziabad or a luxury penthouse in Gurugram, every consultation begins the same way: we listen, we understand what you are trying to achieve, and we tell you honestly how we can help.
           </p>
       </VideoHeroSection>
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
               {[
                 { label:"Duration",  val:"30–45 minutes (phone or video call)" },
-                { label:"Format",    val:"Your advisor leads with questions about your goals, budget, timeline, and location preferences — not a property pitch" },
+                { label:"Format",    val:"Your advisor leads with questions about your goals, budget, timeline, and location preferences, not a property pitch" },
                 { label:"Output",    val:"A written summary of your requirements, recommended next steps, and a realistic assessment of what is achievable in your budget across Delhi NCR" },
                 { label:"Cost",      val:"Free, with no obligation to proceed" },
               ].map(item=>(
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label className="input-label">Time Zone (NRI clients)</label>
-                  <input type="text" value={form.timezone} onChange={e=>up("timezone",e.target.value)} className="input-field" placeholder="e.g. UAE — GMT+4 / UK — BST" />
+                  <input type="text" value={form.timezone} onChange={e=>up("timezone",e.target.value)} className="input-field" placeholder="e.g. UAE, GMT+4 / UK, BST" />
                 </div>
                 <div>
                   <label className="input-label">Message (optional)</label>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                 <button type="submit" disabled={status==="submitting"} className="btn btn-dark" style={{ width:"100%",justifyContent:"center",opacity:status==="submitting"?0.6:1 }}>
                   {status==="submitting"?"Sending…":"Book a Free Consultation"}
                 </button>
-                {status==="error" && <p className="body-sm" style={{ color:"#B23A3A",textAlign:"center" }}>Something went wrong — please try WhatsApp or call us directly.</p>}
+                {status==="error" && <p className="body-sm" style={{ color:"#B23A3A",textAlign:"center" }}>Something went wrong; please try WhatsApp or call us directly.</p>}
                 <p className="caption" style={{ color:"var(--mist)",textAlign:"center" }}>We respond within 24 hours during business hours. No spam, ever.</p>
               </form>
             </div>

@@ -2,7 +2,7 @@
  * lib/validation.ts
  *
  * Server-side validation for the consultation form.
- * Runs inside the API route — never on the client.
+ * Runs inside the API route, never on the client.
  */
 
 export interface FormInput {
@@ -75,7 +75,7 @@ export function validate(input: FormInput): ValidationResult {
     errors.message = "Message is too long (max 2000 characters).";
   }
 
-  // Primitive bot / spam check — honeypot handled client-side
+  // Primitive bot / spam check, honeypot handled client-side
   if (input.timezone && input.timezone.length > 100) {
     errors.timezone = "Invalid timezone value.";
   }

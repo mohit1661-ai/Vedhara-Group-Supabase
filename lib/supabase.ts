@@ -16,7 +16,7 @@ const url  = process.env.SUPABASE_URL;
 const key  = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!url || !key) {
-  // Warn at startup — don't crash (static pages still work)
+  // Warn at startup, don't crash (static pages still work)
   console.warn(
     "[Supabase] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is not set.\n" +
     "Leads will fall back to local JSON file storage."
