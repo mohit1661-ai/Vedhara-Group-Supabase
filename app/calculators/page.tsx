@@ -29,7 +29,7 @@ function ROICalculator() {
         {[{l:"Gross Rental Yield",val:`${gy.toFixed(2)}%`,h:false},{l:"Net Rental Yield",val:`${ny.toFixed(2)}%`,h:true},{l:"Projected Resale Value",val:fmt(rv),h:false},{l:"Total Rental Income (period)",val:fmt(tr),h:false},{l:"Total Gain (Appreciation + Rent)",val:fmt(tg),h:false},{l:"Annualised ROI",val:`${roi.toFixed(1)}%`,h:true}].map(row=>(
           <div key={row.l} style={{ display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 0",borderBottom:"1px solid rgba(255,255,255,0.06)" }}>
             <span className="body-sm" style={{ color:"rgba(255,255,255,0.5)" }}>{row.l}</span>
-            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"#FCFAF4" }}>{row.val}</span>
+            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
       </div>
@@ -61,7 +61,7 @@ function EMICalculator() {
         {[{l:"Monthly EMI",val:fmt(emi),h:true},{l:"Total Interest Payable",val:fmt(interest),h:false},{l:"Total Payment (Principal + Interest)",val:fmt(total),h:false},{l:"Principal (Loan Amount)",val:fmt(p),h:false}].map(row=>(
           <div key={row.l} style={{ display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 0",borderBottom:"1px solid rgba(255,255,255,0.06)" }}>
             <span className="body-sm" style={{ color:"rgba(255,255,255,0.5)" }}>{row.l}</span>
-            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"#FCFAF4" }}>{row.val}</span>
+            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
         <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
@@ -110,7 +110,7 @@ function StampDutyCalculator() {
         {[{l:`Stamp Duty (${sr}%)`,val:fmt(stamp),h:false},{l:`Registration Charge (${r.reg}%)`,val:fmt(reg),h:false},{l:"Total Payable",val:fmt(total),h:true},{l:"Property Value",val:fmt(v),h:false}].map(row=>(
           <div key={row.l} style={{ display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 0",borderBottom:"1px solid rgba(255,255,255,0.06)" }}>
             <span className="body-sm" style={{ color:"rgba(255,255,255,0.5)" }}>{row.l}</span>
-            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"#FCFAF4" }}>{row.val}</span>
+            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
         <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
@@ -147,7 +147,7 @@ function AffordabilityCalculator() {
         {[{l:"Max Affordable Monthly EMI",val:fmt(maxEmi),h:false},{l:"Maximum Loan Eligibility",val:fmt(maxLoan),h:false},{l:"Realistic Property Budget",val:fmt(budget),h:true},{l:"Down Payment Available",val:fmt(down),h:false}].map(row=>(
           <div key={row.l} style={{ display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 0",borderBottom:"1px solid rgba(255,255,255,0.06)" }}>
             <span className="body-sm" style={{ color:"rgba(255,255,255,0.5)" }}>{row.l}</span>
-            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"#FCFAF4" }}>{row.val}</span>
+            <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
         <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
@@ -179,7 +179,7 @@ export default function CalculatorsPage() {
       <VideoHeroSection videoSrc="/videos/Real%20Estate%20Calculator.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Free Tools</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Four Free Property Calculators,<br /><span style={{ color:"var(--gold-lt)" }}>No Sign-Up, No Phone Number.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:520,margin:"0 auto" }}>
@@ -192,7 +192,7 @@ export default function CalculatorsPage() {
           <div style={{ display:"flex",gap:2,flexWrap:"wrap",marginBottom:36,borderBottom:"2px solid rgba(42,45,53,0.08)" }}>
             {tabs.map(tab=>(
               <button key={tab.id} onClick={()=>setActive(tab.id)}
-                style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",padding:"12px 22px",border:"none",cursor:"pointer",background:active===tab.id?"var(--navy)":"transparent",color:active===tab.id?"white":"var(--mist)",borderBottom:active===tab.id?"2px solid var(--gold)":"2px solid transparent",transition:"all 0.25s",display:"inline-flex",alignItems:"center",gap:7 }}>
+                style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",padding:"12px 22px",border:"none",cursor:"pointer",background:active===tab.id?"var(--navy)":"transparent",color:active===tab.id?"white":"var(--slate)",borderBottom:active===tab.id?"2px solid var(--gold)":"2px solid transparent",transition:"all 0.25s",display:"inline-flex",alignItems:"center",gap:7 }}>
                 <span>{tab.icon}</span>{tab.label}
               </button>
             ))}

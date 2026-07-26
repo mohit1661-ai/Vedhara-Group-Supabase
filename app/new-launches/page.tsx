@@ -145,7 +145,7 @@ export default function NewLaunchesPage() {
       <VideoHeroSection videoSrc="/videos/New%20Launches.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>New Launches</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Verified New Project Launches<br /><span style={{ color:"var(--gold-lt)" }}>Across Delhi NCR</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:500,margin:"0 auto" }}>Every project listed passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
@@ -159,7 +159,7 @@ export default function NewLaunchesPage() {
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Verified Projects</p>
-              <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:16 }}>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Recently Launched &amp;<span style={{ color:"var(--gold-lt)" }}> Upcoming Projects</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
@@ -204,7 +204,7 @@ export default function NewLaunchesPage() {
                       </span>
                     </div>
 
-                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"#FCFAF4",marginBottom:6,lineHeight:1.2 }}>
+                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"var(--light)",marginBottom:6,lineHeight:1.2 }}>
                       {project.projectName}
                     </h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(252,250,244,0.4)",marginBottom:16 }}>
@@ -219,11 +219,11 @@ export default function NewLaunchesPage() {
                       </div>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Configurations</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"#FCFAF4" }}>{project.configs}</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{project.configs}</p>
                       </div>
                       <div style={{ gridColumn:"span 2" }}>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Possession</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"#FCFAF4" }}>{project.possession}</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{project.possession}</p>
                       </div>
                     </div>
 

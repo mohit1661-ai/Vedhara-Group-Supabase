@@ -8,7 +8,7 @@ const cols = [
 ];
 export default function Footer() {
   return (
-    <footer style={{ background:"#060E1F",color:"rgba(255,255,255,0.5)" }}>
+    <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.5)" }}>
       {/* CTA bar */}
       <div style={{ background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",padding:"22px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>

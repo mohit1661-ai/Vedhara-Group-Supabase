@@ -39,7 +39,7 @@ export default function AboutPage() {
       <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Gurgaon%20Real%20Estate%20About%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Our Story</p>
-        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"#FCFAF4",lineHeight:1.02,marginBottom:24 }}>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"var(--light)",lineHeight:1.02,marginBottom:24 }}>
           Advisory Built on Wisdom.<br />
           <span style={{ color:"var(--gold-lt)" }}>Trusted Across Delhi NCR.</span>
         </h1>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150} direction="right">
-            <div style={{ background:"var(--ivory)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px" }}>
+            <div style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px" }}>
               <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:16 }}>Our Mission</h3>
               <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.85,marginBottom:24 }}>
                 To become the most trusted, independently-positioned real estate advisory firm in Delhi NCR, helping buyers, sellers, investors, and NRIs make property decisions backed by verified information rather than sales pressure.
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section style={{ background:"var(--ivory)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
@@ -128,7 +128,7 @@ export default function AboutPage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
             {locations.map((loc,i)=>(
               <ScrollReveal key={loc.city} delay={i*60}>
-                <div style={{ background:"var(--ivory)",padding:"28px 24px" }}>
+                <div style={{ background:"var(--cream)",padding:"28px 24px" }}>
                   <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:8 }}>{loc.city}</h3>
                   <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>{loc.areas}</p>
                 </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
-          <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Ready for an Advisor Who Works for You?</h2>
+          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Ready for an Advisor Who Works for You?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>No pitch, no pressure. A 30-minute conversation about your property goals, free, no obligation.</p>
           <Link href="/contact" className="btn btn-primary">Book a Free Consultation →</Link>
         </div>

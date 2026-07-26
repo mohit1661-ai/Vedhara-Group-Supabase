@@ -5,8 +5,8 @@ export interface FAQItem { q:string; a:string; }
 export default function FAQSection({ faqs, title, dark=true }:{ faqs:FAQItem[]; title?:string; dark?:boolean }) {
   const [open, setOpen] = useState<number|null>(null);
   const schema = { "@context":"https://schema.org","@type":"FAQPage", mainEntity:faqs.map(f=>({ "@type":"Question",name:f.q,acceptedAnswer:{"@type":"Answer",text:f.a} })) };
-  const bg = dark?"#0D1730":"var(--ivory)";
-  const hc = dark?"#FCFAF4":"var(--navy)";
+  const bg = dark?"var(--navy)":"var(--cream)";
+  const hc = dark?"var(--light)":"var(--navy)";
   const ac = dark?"rgba(255,255,255,0.48)":"var(--slate)";
   const bc = dark?"rgba(255,255,255,0.06)":"rgba(42,45,53,0.08)";
   return (

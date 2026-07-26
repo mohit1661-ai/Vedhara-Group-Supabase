@@ -41,7 +41,7 @@ export default function InvestmentAdvisoryPage() {
       <VideoHeroSection videoSrc="/videos/Real%20Estate%20Investment%20Advisory.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Investment Advisory</p>
-        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Real Estate as a Portfolio Decision,<br /><span style={{ color:"var(--gold-lt)" }}>Not a Single Purchase.</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto" }}>
@@ -84,7 +84,7 @@ export default function InvestmentAdvisoryPage() {
       </section>
 
       {/* Corridors */}
-      <section style={{ background:"var(--ivory)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1100,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ marginBottom:48 }}>
@@ -107,14 +107,14 @@ export default function InvestmentAdvisoryPage() {
               </ScrollReveal>
             ))}
           </div>
-          <p className="body-sm" style={{ color:"var(--mist)",marginTop:16 }}>Yield estimates are indicative based on current market conditions. Actual returns depend on specific property, unit type, occupancy, and market timing. Use our free ROI Calculator for personalised projections.</p>
+          <p className="body-sm" style={{ color:"var(--slate)",marginTop:16 }}>Yield estimates are indicative based on current market conditions. Actual returns depend on specific property, unit type, occupancy, and market timing. Use our free ROI Calculator for personalised projections.</p>
         </div>
       </section>
 
       {/* CTA */}
       <section style={{ background:"var(--navy)",padding:"72px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
-          <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Run Your Investment Numbers First</h2>
+          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Run Your Investment Numbers First</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Before any conversation, use our free ROI & Rental Yield Calculator, no sign-up required.</p>
           <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
             <Link href="/calculators" className="btn btn-primary">Try the ROI Calculator →</Link>

@@ -107,7 +107,7 @@ export default function SellPage() {
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Listed for Sale</p>
-              <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:16 }}>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Properties Currently<span style={{ color:"var(--gold-lt)" }}> on the Market</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
@@ -144,7 +144,7 @@ export default function SellPage() {
                       </span>
                     </div>
 
-                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"#FCFAF4",marginBottom:6,lineHeight:1.2 }}>
+                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"var(--light)",marginBottom:6,lineHeight:1.2 }}>
                       {property.title}
                     </h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(252,250,244,0.4)",marginBottom:16 }}>
@@ -159,11 +159,11 @@ export default function SellPage() {
                       </div>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Configuration</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"#FCFAF4" }}>{property.config}</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{property.config}</p>
                       </div>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Area</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"#FCFAF4" }}>{property.size}</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{property.size}</p>
                       </div>
                     </div>
 

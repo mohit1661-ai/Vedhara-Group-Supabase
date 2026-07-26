@@ -266,7 +266,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
               <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory · Verified Listings · Delhi NCR</span>
             </div>
 
-            <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"#FCFAF4",marginBottom:28,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(36px)",transition:"all 0.8s ease 0.3s" }}>
+            <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"var(--light)",marginBottom:28,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(36px)",transition:"all 0.8s ease 0.3s" }}>
               Property Decisions<br />in Delhi NCR,<br /><em className="gold-shimmer" style={{ fontSize:"inherit",fontStyle:"italic" }}>Backed by Verification.</em>
             </h1>
 

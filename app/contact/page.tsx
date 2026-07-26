@@ -26,7 +26,7 @@ export default function ContactPage() {
     <section className="page-hero animated-gradient" style={{ minHeight:"60vh",display:"flex",alignItems:"center",textAlign:"center" }}>
       <div style={{ maxWidth:540,margin:"0 auto" }}>
         <div style={{ fontSize:56,marginBottom:20 }}>🙏</div>
-        <h1 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Thank you for reaching out</h1>
+        <h1 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Thank you for reaching out</h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.</p>
       </div>
     </section>
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <VideoHeroSection videoSrc="/videos/Property%20Real%20Estate%20Contact.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Get In Touch</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Let&apos;s Start With<br /><span style={{ color:"var(--gold-lt)" }}>an Honest Conversation.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:500,margin:"0 auto" }}>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                   { icon:"✉️", label:"Email",     val:"hello@vedharagroup.com", href:"mailto:hello@vedharagroup.com" },
                 ].map(item=>(
                   <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
-                    style={{ display:"flex",gap:14,padding:"14px 16px",marginBottom:8,background:"var(--ivory)",textDecoration:"none",borderLeft:"2px solid transparent",transition:"border-color 0.2s,background 0.2s" }}
+                    style={{ display:"flex",gap:14,padding:"14px 16px",marginBottom:8,background:"var(--cream)",textDecoration:"none",borderLeft:"2px solid transparent",transition:"border-color 0.2s,background 0.2s" }}
                     className="contact-link">
                     <span style={{ fontSize:20,flexShrink:0 }}>{item.icon}</span>
                     <div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                   {status==="submitting"?"Sending…":"Book a Free Consultation"}
                 </button>
                 {status==="error" && <p className="body-sm" style={{ color:"#B23A3A",textAlign:"center" }}>Something went wrong; please try WhatsApp or call us directly.</p>}
-                <p className="caption" style={{ color:"var(--mist)",textAlign:"center" }}>We respond within 24 hours during business hours. No spam, ever.</p>
+                <p className="caption" style={{ color:"var(--slate)",textAlign:"center" }}>We respond within 24 hours during business hours. No spam, ever.</p>
               </form>
             </div>
           </ScrollReveal>

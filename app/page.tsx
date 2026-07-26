@@ -73,7 +73,7 @@ export default function HomePage() {
             <ScrollReveal delay={120} direction="right">
               <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:14 }}>
                 {[{icon:"📋",stat:"100%",sub:"Listings Verified"},{icon:"⚖️",stat:"5-Step",sub:"Due Diligence"},{icon:"🔍",stat:"3 Portals",sub:"RERA Checked"},{icon:"📊",stat:"Real Data",sub:"Price Benchmarked"}].map(card=>(
-                  <div key={card.sub} className="hover-lift" style={{ background:"var(--ivory)",border:"1px solid rgba(42,45,53,0.06)",padding:"24px 20px",textAlign:"center" }}>
+                  <div key={card.sub} className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.06)",padding:"24px 20px",textAlign:"center" }}>
                     <div style={{ fontSize:28,marginBottom:8 }}>{card.icon}</div>
                     <div className="heading-md" style={{ color:"var(--gold)",marginBottom:4 }}>{card.stat}</div>
                     <div className="caption" style={{ color:"var(--slate)" }}>{card.sub}</div>
@@ -86,9 +86,9 @@ export default function HomePage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-5">
             {checks.map((c,i)=>(
               <ScrollReveal key={c.num} delay={i*70}>
-                <div className="hover-lift" style={{ background:i===2?"var(--navy)":"var(--ivory)",padding:"36px 24px",height:"100%",cursor:"default" }}>
+                <div className="hover-lift" style={{ background:i===2?"var(--navy)":"var(--cream)",padding:"36px 24px",height:"100%",cursor:"default" }}>
                   <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.14em",color:i===2?"rgba(212,170,82,0.55)":"var(--gold)",display:"block",marginBottom:14 }}>{c.num}</span>
-                  <h3 className="heading-md" style={{ color:i===2?"#FCFAF4":"var(--navy)",marginBottom:12,fontSize:14 }}>{c.title}</h3>
+                  <h3 className="heading-md" style={{ color:i===2?"var(--light)":"var(--navy)",marginBottom:12,fontSize:14 }}>{c.title}</h3>
                   <p className="body-sm" style={{ color:i===2?"rgba(252,250,244,0.5)":"var(--slate)",margin:0 }}>{c.desc}</p>
                 </div>
               </ScrollReveal>
@@ -98,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ SERVICES ══ */}
-      <section style={{ background:"var(--ivory)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:52,flexWrap:"wrap",gap:20 }}>
             <ScrollReveal>
@@ -136,7 +136,7 @@ export default function HomePage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-4">
             {whyItems.map((card,i)=>(
               <ScrollReveal key={card.title} delay={i*80}>
-                <div className="svc-card" style={{ background:"var(--ivory)",borderRadius:0 }}>
+                <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
                   <div className="svc-card-icon">{card.icon}</div>
                   <h3 className="svc-card-title">{card.title}</h3>
                   <p className="svc-card-desc">{card.desc}</p>
@@ -155,7 +155,7 @@ export default function HomePage() {
             <div>
               <span className="v-line" />
               <p className="eyebrow" style={{ marginBottom:14 }}>NRI Desk</p>
-              <h2 className="heading-xl" style={{ color:"#FCFAF4",lineHeight:1.1,marginBottom:20 }}>
+              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:20 }}>
                 Managing Property in India from the UAE, UK, USA, Canada, or Singapore?
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28,maxWidth:560 }}>
@@ -191,7 +191,7 @@ export default function HomePage() {
             <div style={{ textAlign:"center",marginBottom:56 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Decide With Data</p>
-              <h2 className="heading-xl" style={{ color:"#FCFAF4",lineHeight:1.1,marginBottom:16 }}>
+              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
                 Four Free Tools,{" "}
                 <em className="display-gold" style={{ fontSize:"inherit" }}>No Sign-Up Required</em>
               </h2>

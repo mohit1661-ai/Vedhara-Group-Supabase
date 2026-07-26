@@ -49,7 +49,7 @@ export default function VerificationCenterPage() {
       <VideoHeroSection videoSrc="/videos/Property%20Verification.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Verification Center</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             What Vedhara Checks Before Any Property<br /><span style={{ color:"var(--gold-lt)" }}>Reaches You, In Plain Language.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto" }}>
@@ -66,7 +66,7 @@ export default function VerificationCenterPage() {
                   <div style={{ fontSize:36,marginBottom:10 }}>{c.icon}</div>
                   <span className="eyebrow" style={{ display:"block",marginBottom:8 }}>CHECK {c.n}</span>
                   <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",padding:"8px 12px" }}>
-                    <span className="body-sm" style={{ color:"var(--mist)" }}>{c.portal}</span>
+                    <span className="body-sm" style={{ color:"var(--slate)" }}>{c.portal}</span>
                   </div>
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export default function VerificationCenterPage() {
 
       <section style={{ background:"var(--navy)",padding:"72px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:540,margin:"0 auto" }}>
-          <h2 className="heading-xl" style={{ color:"#FCFAF4",marginBottom:14,lineHeight:1.1 }}>Want These Checks Applied to a Specific Property?</h2>
+          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Want These Checks Applied to a Specific Property?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Share the property details with us. We will run the Verification Framework and share the results.</p>
           <Link href="/contact" className="btn btn-primary">Request a Property Verification →</Link>
         </div>

@@ -53,7 +53,7 @@ export default function NRIServicesPage() {
       <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>
-        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"#FCFAF4",lineHeight:1.05,marginBottom:24 }}>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Managing Property in India<br />from the UAE, UK, USA,<br /><span style={{ color:"var(--gold-lt)" }}>Canada, or Singapore?</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(252,250,244,0.52)",maxWidth:580,margin:"0 auto 28px" }}>
@@ -78,7 +78,7 @@ export default function NRIServicesPage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
             {commitments.map((c,i)=>(
               <ScrollReveal key={c.n} delay={i*70}>
-                <div className="svc-card" style={{ background:"var(--ivory)",borderRadius:0 }}>
+                <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
                   <div style={{ display:"flex",gap:10,alignItems:"center",marginBottom:14 }}>
                     <span style={{ fontSize:22 }}>{c.icon}</span>
                     <span className="eyebrow" style={{ color:"var(--gold)" }}>{c.n}</span>
@@ -98,7 +98,7 @@ export default function NRIServicesPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <h2 className="heading-xl" style={{ color:"#FCFAF4",lineHeight:1.1 }}>Serving Indian Diaspora Across <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Six Countries</em></h2>
+              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1 }}>Serving Indian Diaspora Across <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Six Countries</em></h2>
             </div>
           </ScrollReveal>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:1,background:"rgba(184,146,42,0.1)" }} className="grid-6">
@@ -106,7 +106,7 @@ export default function NRIServicesPage() {
               <ScrollReveal key={c.name} delay={i*60}>
                 <div className="glass hover-lift" style={{ textAlign:"center",padding:"28px 16px" }}>
                   <div style={{ fontSize:36,marginBottom:10 }}>{c.flag}</div>
-                  <div className="body-sm" style={{ fontWeight:600,color:"#FCFAF4",marginBottom:4 }}>{c.name}</div>
+                  <div className="body-sm" style={{ fontWeight:600,color:"var(--light)",marginBottom:4 }}>{c.name}</div>
                   <div style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"rgba(255,255,255,0.3)" }}>{c.cities}</div>
                 </div>
               </ScrollReveal>
@@ -116,7 +116,7 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Legal */}
-      <section style={{ background:"var(--ivory)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:920,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ marginBottom:36 }}>
@@ -134,7 +134,7 @@ export default function NRIServicesPage() {
             </ScrollReveal>
           ))}
           <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.15)",padding:"16px 20px",marginTop:20 }}>
-            <p className="body-sm" style={{ color:"var(--mist)",margin:0 }}>The above is general guidance only. FEMA regulations are subject to RBI updates and individual circumstances vary. Vedhara coordinates with qualified CA and legal advisors for transaction-specific compliance.</p>
+            <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>The above is general guidance only. FEMA regulations are subject to RBI updates and individual circumstances vary. Vedhara coordinates with qualified CA and legal advisors for transaction-specific compliance.</p>
           </div>
         </div>
       </section>
