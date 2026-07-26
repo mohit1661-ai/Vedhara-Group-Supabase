@@ -106,7 +106,7 @@ export default function SellPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ marginBottom:14 }}>Listed for Sale</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Listed for Sale</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Properties Currently<span style={{ color:"var(--gold-lt)" }}> on the Market</span>
               </h2>

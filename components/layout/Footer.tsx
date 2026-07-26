@@ -35,7 +35,7 @@ export default function Footer() {
                 style={{ height: 56, width: "auto" }}
               />
             </div>
-            <p style={{ fontFamily:"var(--t-head)",fontSize:9,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold)",marginBottom:14 }}>Wisdom Rooted. Futures Built.</p>
+            <p style={{ fontFamily:"var(--t-head)",fontSize:9,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:14 }}>Wisdom Rooted. Futures Built.</p>
             <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(255,255,255,0.6)",lineHeight:1.75,marginBottom:18,maxWidth:240 }}>Delhi NCR&apos;s independent real estate advisory firm. Verified listings, transparent fees, dedicated advisors.</p>
             <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
               <a href="tel:+919810647063" className="footer-link-item" style={{ display:"flex",alignItems:"center",gap:10 }}>+91 98106 47063</a>

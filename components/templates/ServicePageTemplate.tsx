@@ -44,7 +44,7 @@ export default function ServicePageTemplate({ content, videoSrc }:{ content:Serv
               <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>{content.whoForTitle||"Who This Is For"}</h2>
               {content.whoFor.map(item=>(
                 <div key={item} style={{ display:"flex",gap:12,marginBottom:14 }}>
-                  <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2 }}>-</span>
+                  <span style={{ color:"var(--gold-dk)",flexShrink:0,marginTop:2 }}>-</span>
                   <span className="body-md" style={{ color:"var(--slate)" }}>{item}</span>
                 </div>
               ))}

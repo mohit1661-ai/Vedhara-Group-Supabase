@@ -107,7 +107,7 @@ export default function HomePage() {
                 <p className="eyebrow" style={{ marginBottom:14 }}>What We Do</p>
                 <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
                   Advisory for Every Stage of{" "}
-                  <em className="display-gold" style={{ fontSize:"inherit" }}>Your Property Journey</em>
+                  <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Your Property Journey</em>
                 </h2>
               </div>
             </ScrollReveal>
@@ -124,7 +124,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ marginBottom:14 }}>Featured Properties</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Featured Properties</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
                 Explore Premium Listings<span style={{ color:"var(--gold-lt)" }}> Across Delhi NCR</span>
               </h2>
@@ -258,7 +258,7 @@ export default function HomePage() {
               <p className="eyebrow" style={{ marginBottom:14 }}>Why Vedhara</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
                 The Standard Others in Delhi NCR{" "}
-                <em className="display-gold" style={{ fontSize:"inherit" }}>Are Still Catching Up To</em>
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Are Still Catching Up To</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"16px auto 0" }}>
                 Most real estate platforms in Delhi NCR are developer-distribution channels wearing an advisory costume. Their listings are unverified, their pricing is developer-set, and their advisors are paid sales executives. Vedhara is different in a way that is easy to verify: we publish our due-diligence methodology on every listing, disclose how we earn, and assign you a named, dedicated advisor from day one.
@@ -286,7 +286,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div>
               <span className="v-line" />
-              <p className="eyebrow" style={{ marginBottom:14 }}>NRI Desk</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>NRI Desk</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:20 }}>
                 Managing Property in India from the UAE, UK, USA, Canada, or Singapore?
               </h2>
@@ -322,7 +322,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:56 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ marginBottom:14 }}>Decide With Data</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Decide With Data</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
                 Four Free Tools,{" "}
                 <em className="display-gold" style={{ fontSize:"inherit" }}>No Sign-Up Required</em>
@@ -356,7 +356,7 @@ export default function HomePage() {
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:20 }}>
               Your Next Property Decision Deserves{" "}
-              <em className="display-gold" style={{ fontSize:"inherit" }}>Independent Advice.</em>
+              <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Independent Advice.</em>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",marginBottom:40 }}>
               Whether you are buying, selling, investing, or managing property from abroad, start with an honest conversation, not a sales pitch.

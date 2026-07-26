@@ -120,7 +120,7 @@ export default function RentPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ marginBottom:14 }}>Available Rentals</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Available Rentals</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Verified Rental Properties<span style={{ color:"var(--gold-lt)" }}> in Delhi NCR</span>
               </h2>

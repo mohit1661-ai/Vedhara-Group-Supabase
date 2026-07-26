@@ -262,7 +262,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           {/* LEFT */}
           <div>
             <div style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(184,146,42,0.1)",border:"1px solid rgba(184,146,42,0.3)",backdropFilter:"blur(12px)",opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease 0.15s" }}>
-              <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold)",animation:"pulseRing 2.5s infinite",display:"block" }} />
+              <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",animation:"pulseRing 2.5s infinite",display:"block" }} />
               <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory · Verified Listings · Delhi NCR</span>
             </div>
 
@@ -284,7 +284,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             <div style={{ display:"flex",gap:20,flexWrap:"wrap",opacity:loaded?1:0,transition:"opacity 0.8s ease 0.75s" }}>
               {["RERA Compliant","Transparent Fees","Verified Developer Partners","4 Free Property Tools","NRI Desk Available"].map(t=>(
                 <div key={t} style={{ display:"flex",alignItems:"center",gap:7 }}>
-                  <span style={{ width:4,height:4,borderRadius:"50%",background:"var(--gold)",display:"block" }} />
+                  <span style={{ width:4,height:4,borderRadius:"50%",background:"var(--gold-lt)",display:"block" }} />
                   <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:500,color:"rgba(255,255,255,0.5)",letterSpacing:"0.05em" }}>{t}</span>
                 </div>
               ))}

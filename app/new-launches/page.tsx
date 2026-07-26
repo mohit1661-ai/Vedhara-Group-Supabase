@@ -158,7 +158,7 @@ export default function NewLaunchesPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ marginBottom:14 }}>Verified Projects</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Verified Projects</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Recently Launched &amp;<span style={{ color:"var(--gold-lt)" }}> Upcoming Projects</span>
               </h2>

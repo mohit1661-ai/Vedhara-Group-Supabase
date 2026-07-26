@@ -99,7 +99,7 @@ export default function CommercialPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ marginBottom:14 }}>Commercial Spaces</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Commercial Spaces</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Available Commercial<span style={{ color:"var(--gold-lt)" }}> Properties</span>
               </h2>
