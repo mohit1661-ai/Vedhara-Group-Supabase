@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           <div style={{ display:"flex",gap:10 }}>
             <Link href="/contact" className="btn btn-dark" style={{ padding:"12px 24px",fontSize:10 }}>Book Free Consultation</Link>
-            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn btn-dark" style={{ padding:"12px 20px",fontSize:10 }}>WhatsApp</a>
+            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--navy)",border:"1px solid rgba(15,30,56,0.12)",padding:"12px 20px",fontSize:10 }}>WhatsApp</a>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Footer() {
             <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
               <a href="tel:+919810647063" className="footer-link-item" style={{ display:"flex",alignItems:"center",gap:10 }}>+91 98106 47063</a>
               <a href="mailto:hello@vedharagroup.com" className="footer-link-item" style={{ display:"flex",alignItems:"center",gap:10 }}>hello@vedharagroup.com</a>
-              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--gold-lt)",textDecoration:"none",display:"flex",alignItems:"center",gap:10 }}>WhatsApp Us</a>
+              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--navy)",border:"1px solid rgba(15,30,56,0.12)",padding:"10px 18px",fontSize:10,textDecoration:"none",display:"inline-flex",alignItems:"center",gap:8 }}>WhatsApp Us</a>
             </div>
             <div style={{ display:"flex",gap:8,marginTop:18,flexWrap:"wrap" }}>
               {["RERA Compliant","ISO Verified"].map(b=>(

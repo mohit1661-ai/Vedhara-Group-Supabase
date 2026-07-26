@@ -92,7 +92,7 @@ export default function Navbar() {
             {navLinks.map(l=>(<Link key={l.href} href={l.href} onClick={()=>setOpen(false)} style={{ display:"block",fontFamily:"var(--t-head)",fontSize:14,fontWeight:500,color:"var(--ink)",textDecoration:"none",padding:"13px 0",borderBottom:"1px solid rgba(42,45,53,0.06)" }}>{l.label}</Link>))}
             <div style={{ display:"flex",gap:10,marginTop:16 }}>
               <Link href="/contact" onClick={()=>setOpen(false)} className="btn btn-dark" style={{ flex:1,justifyContent:"center",padding:"14px" }}>Free Consultation</Link>
-              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn btn-dark" style={{ flex:1,justifyContent:"center",padding:"14px" }}>WhatsApp</a>
+              <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ flex:1,justifyContent:"center",padding:"14px",background:"#FFFFFF",color:"var(--navy)",border:"1px solid rgba(15,30,56,0.12)" }}>WhatsApp</a>
             </div>
           </div>
         </div>
