@@ -8,7 +8,7 @@ const cols = [
 ];
 export default function Footer() {
   return (
-    <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.5)" }}>
+    <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.75)" }}>
       {/* CTA bar */}
       <div style={{ background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",padding:"22px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>
@@ -36,7 +36,7 @@ export default function Footer() {
               />
             </div>
             <p style={{ fontFamily:"var(--t-head)",fontSize:9,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold)",marginBottom:14 }}>Wisdom Rooted. Futures Built.</p>
-            <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(255,255,255,0.3)",lineHeight:1.75,marginBottom:18,maxWidth:240 }}>Delhi NCR&apos;s independent real estate advisory firm. Verified listings, transparent fees, dedicated advisors.</p>
+            <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(255,255,255,0.6)",lineHeight:1.75,marginBottom:18,maxWidth:240 }}>Delhi NCR&apos;s independent real estate advisory firm. Verified listings, transparent fees, dedicated advisors.</p>
             <div style={{ display:"flex",flexDirection:"column",gap:8 }}>
               <a href="tel:+919810647063" className="footer-link-item">📞 +91 98106 47063</a>
               <a href="mailto:hello@vedharagroup.com" className="footer-link-item">✉ hello@vedharagroup.com</a>
@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
             <div style={{ display:"flex",gap:8,marginTop:18,flexWrap:"wrap" }}>
               {["RERA Compliant","ISO Verified"].map(b=>(
-                <span key={b} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(184,146,42,0.6)",border:"1px solid rgba(184,146,42,0.2)",padding:"4px 8px" }}>{b}</span>
+                <span key={b} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--gold-lt)",border:"1px solid rgba(184,146,42,0.2)",padding:"4px 8px" }}>{b}</span>
               ))}
             </div>
           </div>
@@ -56,20 +56,20 @@ export default function Footer() {
           ))}
         </div>
         <div style={{ padding:"18px 0 16px",borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
-          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"rgba(184,146,42,0.32)",marginBottom:8 }}>Cities We Serve</p>
+          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:8 }}>Cities We Serve</p>
           <div style={{ display:"flex",flexWrap:"wrap",gap:8 }}>
             {["Delhi","Gurugram","Noida","Greater Noida","Faridabad","Ghaziabad","Sonipat","Manesar"].map(city=>(
-              <span key={city} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(255,255,255,0.18)" }}>{city} ·</span>
+              <span key={city} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(255,255,255,0.5)" }}>{city} ·</span>
             ))}
           </div>
         </div>
         <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12,paddingTop:18 }}>
-          <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.16)",margin:0 }}>© {new Date().getFullYear()} Vedhara Group Pvt. Ltd. All Rights Reserved.</p>
-          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(184,146,42,0.22)",margin:0 }}>vedharagroup.com</p>
+          <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.4)",margin:0 }}>© {new Date().getFullYear()} Vedhara Group Pvt. Ltd. All Rights Reserved.</p>
+          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(212,170,82,0.5)",margin:0 }}>vedharagroup.com</p>
         </div>
       </div>
       <style>{`
-        .footer-link-item{font-family:var(--t-body);font-size:12.5px;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s;}
+        .footer-link-item{font-family:var(--t-body);font-size:12.5px;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;}
         .footer-link-item:hover{color:var(--gold-lt);}
         @media(max-width:1100px){.footer-grid{grid-template-columns:1fr 1fr 1fr!important;}}
         @media(max-width:720px){.footer-grid{grid-template-columns:1fr 1fr!important;}}
