@@ -26,7 +26,7 @@ function Counter({ target, prefix, suffix }:{ target:number; prefix:string; suff
 }
 export default function AnimatedStats() {
   return (
-    <section style={{ background:"var(--navy-deep)",borderTop:"1px solid rgba(184,146,42,0.08)",borderBottom:"1px solid rgba(184,146,42,0.08)" }}>
+    <section style={{ background:"var(--navy)",borderTop:"1px solid rgba(184,146,42,0.08)",borderBottom:"1px solid rgba(184,146,42,0.08)" }}>
       <div style={{ maxWidth:1320,margin:"0 auto" }}>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",background:"rgba(184,146,42,0.04)" }} className="grid-4">
           {stats.map((s,i)=>(

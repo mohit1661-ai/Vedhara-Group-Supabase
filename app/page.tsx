@@ -184,7 +184,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FREE TOOLS ══ */}
-      <section style={{ background:"var(--navy-deep)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 70% 50% at 50% 0%,rgba(184,146,42,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>

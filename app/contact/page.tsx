@@ -150,7 +150,7 @@ export default function ContactPage() {
       </section>
 
       <style>{`
-        .contact-link:hover { border-left-color: var(--gold) !important; background: var(--stone) !important; }
+        .contact-link:hover { border-left-color: var(--gold) !important; background: var(--cream) !important; }
       `}</style>
     </>
   );

@@ -114,7 +114,7 @@ export default function RentPage() {
       <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" />
 
       {/* Featured Rentals Section */}
-      <section style={{ background:"var(--navy-deep)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
@@ -133,7 +133,7 @@ export default function RentPage() {
           <div className="prop-grid">
             {rentalListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80}>
-                <div className="hover-lift" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
+                <div className="hover-lift" style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
                   
                   {/* Image area */}
                   <div style={{ height:200,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
