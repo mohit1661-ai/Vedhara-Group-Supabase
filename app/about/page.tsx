@@ -43,7 +43,7 @@ export default function AboutPage() {
           Advisory Built on Wisdom.<br />
           <span style={{ color:"var(--gold-lt)" }}>Trusted Across Delhi NCR.</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:560,margin:"0 auto" }}>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
           VED is wisdom. DHARA is the earth. Vedhara Group builds your real estate future on ground that is verified, transparent, and genuinely independent.
         </p>
       </VideoHeroSection>
@@ -116,8 +116,8 @@ export default function AboutPage() {
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
-            <div style={{ marginBottom:48 }}>
-              <span className="v-line" />
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Where We Operate</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
                 Covering Delhi NCR,{" "}

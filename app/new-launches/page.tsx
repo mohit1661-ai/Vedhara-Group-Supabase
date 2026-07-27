@@ -148,7 +148,7 @@ export default function NewLaunchesPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Verified New Project Launches<br /><span style={{ color:"var(--gold-lt)" }}>Across Delhi NCR</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:500,margin:"0 auto" }}>Every project listed passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Every project listed passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
       </VideoHeroSection>
 
       {/* Upcoming & New Launch Projects */}
@@ -162,7 +162,7 @@ export default function NewLaunchesPage() {
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Recently Launched &amp;<span style={{ color:"var(--gold-lt)" }}> Upcoming Projects</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
                 Directly from Vedhara&apos;s verified developer partners, no speculative listings, no unapproved projects.
               </p>
             </div>

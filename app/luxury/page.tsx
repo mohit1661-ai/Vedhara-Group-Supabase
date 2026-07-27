@@ -110,7 +110,7 @@ export default function LuxuryPage() {
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Premium Properties<span style={{ color:"var(--gold-lt)" }}> for Discerning Buyers</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
                 Each residence is hand-selected and discreetly presented. No public listings, no speculative deals.
               </p>
             </div>

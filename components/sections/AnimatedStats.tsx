@@ -33,7 +33,7 @@ export default function AnimatedStats() {
             <div key={s.label} style={{ padding:"40px 28px",textAlign:"center",borderRight:i<3?"1px solid rgba(184,146,42,0.07)":"none",transition:"background 0.3s",cursor:"default" }}>
               <div className="gold-accent-sm" style={{margin:"0 auto 12px"}}></div>
               <Counter target={s.target} prefix={s.prefix} suffix={s.suffix} />
-              <div style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.32)",textTransform:"uppercase",letterSpacing:"0.1em",marginTop:8 }}>{s.label}</div>
+              <div style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em",marginTop:8 }}>{s.label}</div>
             </div>
           ))}
         </div>

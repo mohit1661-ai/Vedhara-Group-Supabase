@@ -56,7 +56,7 @@ export default function NRIServicesPage() {
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Managing Property in India<br />from the UAE, UK, USA,<br /><span style={{ color:"var(--gold-lt)" }}>Canada, or Singapore?</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:580,margin:"0 auto 28px" }}>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 28px" }}>
           Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
         </p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
@@ -69,8 +69,8 @@ export default function NRIServicesPage() {
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
-            <div style={{ marginBottom:52 }}>
-              <span className="v-line" />
+            <div style={{ textAlign:"center",marginBottom:52 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Six Commitments to Every NRI Client</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>What Every NRI Client Receives, <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>By Default</em></h2>
             </div>

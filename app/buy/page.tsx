@@ -110,7 +110,7 @@ export default function BuyPage() {
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 Verified Properties<span style={{ color:"var(--gold-lt)" }}> in Delhi NCR</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:540,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
                 Every listing is RERA-verified and independently assessed through the Vedhara Verification Framework.
               </p>
             </div>

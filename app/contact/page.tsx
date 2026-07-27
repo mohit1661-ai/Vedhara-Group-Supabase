@@ -27,7 +27,7 @@ export default function ContactPage() {
       <div style={{ maxWidth:540,margin:"0 auto" }}>
         <div className="gold-accent-sm" style={{margin:"0 auto 20px",width:40}}></div>
         <h1 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Thank you for reaching out</h1>
-        <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.</p>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)" }}>A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.</p>
       </div>
     </section>
   );
@@ -42,7 +42,7 @@ export default function ContactPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Let&apos;s Start With<br /><span style={{ color:"var(--gold-lt)" }}>an Honest Conversation.</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.72)",maxWidth:500,margin:"0 auto" }}>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
             No pitch, no pressure, no pre-qualification for whether your budget is &ldquo;worth our time.&rdquo; Whether you are considering buying a 1BHK in Ghaziabad or a luxury penthouse in Gurugram, every consultation begins the same way: we listen, we understand what you are trying to achieve, and we tell you honestly how we can help.
           </p>
       </VideoHeroSection>

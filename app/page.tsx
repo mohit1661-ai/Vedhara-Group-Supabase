@@ -128,7 +128,7 @@ export default function HomePage() {
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
                 Explore Premium Listings<span style={{ color:"var(--gold-lt)" }}> Across Delhi NCR</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)",maxWidth:540,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)",maxWidth:560,margin:"0 auto" }}>
                 Hand-picked properties from our verified inventory, each independently assessed through the Vedhara Verification Framework.
               </p>
             </div>
@@ -327,7 +327,7 @@ export default function HomePage() {
                 Four Free Tools,{" "}
                 <em className="display-gold" style={{ fontSize:"inherit" }}>No Sign-Up Required</em>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(255,255,255,0.42)",maxWidth:460,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(255,255,255,0.42)",maxWidth:560,margin:"0 auto" }}>
                 Every property decision in Delhi NCR comes down to numbers. These four tools are free, instant, and available without sharing your contact details. Run the numbers first. Then talk to an advisor.
               </p>
             </div>

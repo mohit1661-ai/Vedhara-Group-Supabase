@@ -271,7 +271,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </h1>
 
             {/* Exact sub-headline from Word doc */}
-            <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(252,250,244,0.72)",lineHeight:1.85,maxWidth:540,marginBottom:40,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(24px)",transition:"all 0.8s ease 0.45s" }}>
+            <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(255,255,255,0.85)",lineHeight:1.85,maxWidth:580,marginBottom:40,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(24px)",transition:"all 0.8s ease 0.45s" }}>
               Vedhara Group is an independent real estate advisory firm serving buyers, sellers, investors, NRIs, and first-time homebuyers across Delhi, Gurugram, Noida, Faridabad, Ghaziabad, and Greater Noida. Every property we recommend has passed our five-point Verification Framework, and we publish exactly what we found on the listing itself.
             </p>
 
@@ -285,7 +285,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
               {["RERA Compliant","Transparent Fees","Verified Developer Partners","4 Free Property Tools","NRI Desk Available"].map(t=>(
                 <div key={t} style={{ display:"flex",alignItems:"center",gap:7 }}>
                   <span style={{ width:4,height:4,borderRadius:"50%",background:"var(--gold-lt)",display:"block" }} />
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:500,color:"rgba(255,255,255,0.5)",letterSpacing:"0.05em" }}>{t}</span>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:500,color:"rgba(255,255,255,0.75)",letterSpacing:"0.05em" }}>{t}</span>
                 </div>
               ))}
             </div>
@@ -298,16 +298,16 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
                 {[{num:"200+",sub:"Families Guided"},{num:"₹50Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
                   <div key={s.sub} style={{ padding:"18px 16px",textAlign:"center",background:"rgba(9,15,29,0.4)" }}>
                     <span style={{ display:"block",fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:6 }}>{s.num}</span>
-                    <span style={{ fontFamily:"var(--t-body)",fontSize:9.5,color:"rgba(255,255,255,0.35)",textTransform:"uppercase",letterSpacing:"0.1em" }}>{s.sub}</span>
+                    <span style={{ fontFamily:"var(--t-body)",fontSize:9.5,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em" }}>{s.sub}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="glass-gold" style={{ padding:"18px 20px",display:"flex",alignItems:"center",gap:14,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
-              <div style={{ width:42,height:42,borderRadius:"50%",background:"rgba(184,146,42,0.18)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0 }}>✓</div>
+              <div style={{ width:42,height:42,borderRadius:"50%",background:"rgba(184,146,42,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
               <div>
                 <p style={{ fontFamily:"var(--t-head)",fontSize:12,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 3px" }}>Vedhara Verification Framework</p>
-                <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.4)",margin:0 }}>5 checks published on every listing before you see it</p>
+                <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.7)",margin:0 }}>5 checks published on every listing before you see it</p>
               </div>
             </div>
             <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(184,146,42,0.06)" }}>
@@ -320,7 +320,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
 
         {/* Scroll indicator */}
         <div style={{ position:"absolute",bottom:-20,left:"50%",transform:"translateX(-50%)",display:"flex",flexDirection:"column",alignItems:"center",gap:8,opacity:loaded?0.45:0,transition:"opacity 1s ease 1s" }}>
-          <span style={{ fontFamily:"var(--t-head)",fontSize:8,letterSpacing:"0.2em",textTransform:"uppercase",color:"rgba(255,255,255,0.4)" }}>Scroll</span>
+          <span style={{ fontFamily:"var(--t-head)",fontSize:8,letterSpacing:"0.2em",textTransform:"uppercase",color:"rgba(255,255,255,0.6)" }}>Scroll</span>
           <div style={{ width:28,height:46,border:"1.5px solid rgba(255,255,255,0.18)",borderRadius:14,display:"flex",justifyContent:"center",paddingTop:6 }}>
             <div style={{ width:3,height:8,borderRadius:2,background:"var(--gold-lt)",animation:"float 2s ease-in-out infinite" }} />
           </div>
