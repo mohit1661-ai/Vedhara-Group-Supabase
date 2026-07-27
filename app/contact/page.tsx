@@ -42,7 +42,7 @@ export default function ContactPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Let&apos;s Start With<br /><span style={{ color:"var(--gold-lt)" }}>an Honest Conversation.</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:720,margin:"0 auto" }}>
             No pitch, no pressure, no pre-qualification for whether your budget is &ldquo;worth our time.&rdquo; Whether you are considering buying a 1BHK in Ghaziabad or a luxury penthouse in Gurugram, every consultation begins the same way: we listen, we understand what you are trying to achieve, and we tell you honestly how we can help.
           </p>
       </VideoHeroSection>
