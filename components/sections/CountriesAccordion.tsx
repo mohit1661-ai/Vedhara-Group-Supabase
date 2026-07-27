@@ -9,13 +9,13 @@ interface Country {
   grad: string;
 }
 
-const countryFlags: Record<string, string> = {
-  UAE: "🇦🇪",
-  "United Kingdom": "🇬🇧",
-  "United States": "🇺🇸",
-  Canada: "🇨🇦",
-  Singapore: "🇸🇬",
-  Australia: "🇦🇺",
+const countryCodes: Record<string, string> = {
+  UAE: "AE",
+  "United Kingdom": "GB",
+  "United States": "US",
+  Canada: "CA",
+  Singapore: "SG",
+  Australia: "AU",
 };
 
 export default function CountriesAccordion({ countries }: { countries: Country[] }) {
@@ -55,9 +55,20 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                   border:"1px solid rgba(184,146,42,0.12)",
                 }}
               >
-                {/* Flag emoji */}
-                <div style={{ fontSize:34, lineHeight:1, marginBottom:10 }}>
-                  {countryFlags[c.name] || c.flag}
+                {/* Country code badge — white */}
+                <div
+                  className="country-code"
+                  style={{
+                    fontSize:28,
+                    fontWeight:700,
+                    fontFamily:"var(--t-head)",
+                    letterSpacing:"0.06em",
+                    color:"rgba(255,255,255,0.85)",
+                    lineHeight:1,
+                    marginBottom:6,
+                  }}
+                >
+                  {countryCodes[c.name] || c.flag}
                 </div>
 
                 {/* Gold accent bar */}
@@ -81,12 +92,12 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                   {c.name}
                 </div>
 
-                {/* Key cities — subtle white */}
+                {/* Key cities — white */}
                 <div
                   style={{
                     fontFamily:"var(--t-body)",
                     fontSize:10,
-                    color:"rgba(255,255,255,0.45)",
+                    color:"rgba(255,255,255,0.65)",
                     lineHeight:1.4,
                     marginBottom:4,
                   }}
@@ -112,7 +123,7 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                     style={{
                       fontFamily:"var(--t-body)",
                       fontSize:10.5,
-                      color:"rgba(255,255,255,0.6)",
+                      color:"rgba(255,255,255,0.8)",
                       lineHeight:1.5,
                       padding:"10px 0 4px",
                       borderTop:"1px solid rgba(184,146,42,0.1)",
@@ -132,8 +143,8 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                     fontWeight:700,
                     letterSpacing:"0.08em",
                     textTransform:"uppercase",
-                    color:"var(--gold)",
-                    opacity: isOpen ? 0.8 : 0.5,
+                    color:"rgba(255,255,255,0.7)",
+                    opacity: isOpen ? 0.9 : 0.55,
                     transition:"opacity 0.3s",
                     display:"flex",
                     alignItems:"center",
@@ -167,8 +178,11 @@ function CountriesCardStyles() {
     .country-card:hover .country-name {
       color: #D4AA52;
     }
+    .country-card:hover .country-code {
+      color: rgba(255,255,255,1) !important;
+    }
     .country-card:hover .country-cities {
-      color: rgba(255,255,255,0.8) !important;
+      color: rgba(255,255,255,0.95) !important;
     }
     .country-card .gold-accent-sm {
       transition: width 0.3s ease, background 0.3s ease;
