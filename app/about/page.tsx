@@ -139,7 +139,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--navy)",padding:"96px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Ready for an Advisor Who Works for You?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>No pitch, no pressure. A 30-minute conversation about your property goals, free, no obligation.</p>

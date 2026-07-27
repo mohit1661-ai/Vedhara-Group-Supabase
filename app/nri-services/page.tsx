@@ -82,11 +82,12 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Countries */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:48 }}>
+            <div style={{ textAlign:"center",marginBottom:52 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ marginBottom:14 }}>Where We Serve</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>Serving Indian Diaspora Across <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Six Countries</em></h2>
             </div>
           </ScrollReveal>
@@ -95,10 +96,10 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Legal */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
         <div style={{ maxWidth:920,margin:"0 auto" }}>
           <ScrollReveal>
-            <div style={{ marginBottom:36 }}>
+            <div style={{ marginBottom:40 }}>
               <span className="v-line" />
               <p className="eyebrow" style={{ marginBottom:14 }}>NRI Legal Framework, Key Points</p>
               <h2 className="heading-lg" style={{ color:"var(--navy)",lineHeight:1.15 }}>Key Legal Points for NRI Property Transactions in India</h2>
@@ -112,7 +113,7 @@ export default function NRIServicesPage() {
               </div>
             </ScrollReveal>
           ))}
-          <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.15)",padding:"16px 20px",marginTop:20 }}>
+          <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.15)",padding:"16px 20px",marginTop:32 }}>
             <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>The above is general guidance only. FEMA regulations are subject to RBI updates and individual circumstances vary. Vedhara coordinates with qualified CA and legal advisors for transaction-specific compliance.</p>
           </div>
         </div>

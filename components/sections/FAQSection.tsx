@@ -10,7 +10,7 @@ export default function FAQSection({ faqs, title, dark=true }:{ faqs:FAQItem[]; 
   const ac = dark?"rgba(255,255,255,0.48)":"var(--slate)";
   const bc = dark?"rgba(255,255,255,0.06)":"rgba(42,45,53,0.08)";
   return (
-    <section style={{ background:bg,padding:"80px 32px",position:"relative" }}>
+    <section style={{ background:bg,padding:"96px 32px",position:"relative" }}>
       <JsonLd data={schema} />
       {dark && <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 60% 40% at 50% 100%,rgba(184,146,42,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />}
       <div style={{ maxWidth:860,margin:"0 auto",position:"relative",zIndex:1 }}>

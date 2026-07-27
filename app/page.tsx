@@ -118,7 +118,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FEATURED PROPERTIES ══ */}
-      <section style={{ background:"var(--navy)",padding:"104px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
