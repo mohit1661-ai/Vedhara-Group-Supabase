@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CommitmentsAccordion from "@/components/sections/CommitmentsAccordion";
+import CountriesAccordion from "@/components/sections/CountriesAccordion";
 
 export const metadata: Metadata = {
   title:"NRI Property Advisory in India | Buy, Sell & Manage from Abroad | Vedhara Group Delhi NCR",
@@ -81,25 +82,15 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Countries */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1 }}>Serving Indian Diaspora Across <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Six Countries</em></h2>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>Serving Indian Diaspora Across <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Six Countries</em></h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:1,background:"rgba(184,146,42,0.1)" }} className="grid-6">
-            {countries.map((c,i)=>(
-              <ScrollReveal key={c.name} delay={i*60}>
-                <div className="glass hover-lift" style={{ textAlign:"center",padding:"28px 16px" }}>
-                  <div className="gold-accent-sm" style={{margin:"0 auto 10px"}}></div>
-                  <div className="body-sm" style={{ fontWeight:600,color:"var(--light)",marginBottom:4 }}>{c.name}</div>
-                  <div style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"rgba(255,255,255,0.3)" }}>{c.cities}</div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <CountriesAccordion countries={countries} />
         </div>
       </section>
 
