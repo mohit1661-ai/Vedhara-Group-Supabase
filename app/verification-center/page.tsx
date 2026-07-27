@@ -57,7 +57,7 @@ export default function VerificationCenterPage() {
           </p>
         </VideoHeroSection>
 
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1060,margin:"0 auto" }}>
           {checks.map((c,i)=>(
             <ScrollReveal key={c.n} delay={i*60}>
@@ -97,7 +97,7 @@ export default function VerificationCenterPage() {
         </div>
       </section>
 
-      <section style={{ background:"var(--navy)",padding:"96px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:540,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Want These Checks Applied to a Specific Property?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Share the property details with us. We will run the Verification Framework and share the results.</p>

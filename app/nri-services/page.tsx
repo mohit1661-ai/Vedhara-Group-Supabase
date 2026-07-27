@@ -68,7 +68,7 @@ export default function NRIServicesPage() {
       </VideoHeroSection>
 
       {/* Commitments */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
@@ -82,7 +82,7 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Countries */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
@@ -96,7 +96,7 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Legal */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:920,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ marginBottom:40 }}>

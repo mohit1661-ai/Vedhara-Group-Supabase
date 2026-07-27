@@ -187,7 +187,7 @@ export default function CalculatorsPage() {
           </p>
         </VideoHeroSection>
 
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:980,margin:"0 auto" }}>
           <div style={{ display:"flex",gap:2,flexWrap:"wrap",marginBottom:36,borderBottom:"2px solid rgba(42,45,53,0.08)" }}>
             {tabs.map(tab=>(

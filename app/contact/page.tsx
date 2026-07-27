@@ -47,7 +47,7 @@ export default function ContactPage() {
           </p>
       </VideoHeroSection>
 
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:64,alignItems:"flex-start" }} className="grid-2">
 
           {/* INFO SIDE */}

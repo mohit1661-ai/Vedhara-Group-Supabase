@@ -49,7 +49,7 @@ export default function AboutPage() {
       </VideoHeroSection>
 
       {/* Origin */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:72,alignItems:"center" }} className="grid-2">
           <ScrollReveal>
             <div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
@@ -113,7 +113,7 @@ export default function AboutPage() {
       </section>
 
       {/* Coverage */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
@@ -139,7 +139,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background:"var(--navy)",padding:"96px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Ready for an Advisor Who Works for You?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>No pitch, no pressure. A 30-minute conversation about your property goals, free, no obligation.</p>

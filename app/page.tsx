@@ -98,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ SERVICES ══ */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:52,flexWrap:"wrap",gap:20 }}>
             <ScrollReveal>
@@ -118,7 +118,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FEATURED PROPERTIES ══ */}
-      <section style={{ background:"var(--navy)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
@@ -250,7 +250,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ WHY VEDHARA ══ */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:56 }}>
@@ -280,7 +280,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ NRI CALLOUT ══ */}
-      <section style={{ background:"var(--navy)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 50% 80% at 85% 50%,rgba(184,146,42,0.1) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr auto",gap:60,alignItems:"center",position:"relative",zIndex:1 }} className="grid-2">
           <ScrollReveal>
@@ -316,7 +316,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FREE TOOLS ══ */}
-      <section style={{ background:"var(--navy)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 70% 50% at 50% 0%,rgba(184,146,42,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
@@ -350,7 +350,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FINAL CTA ══ */}
-      <section style={{ background:"var(--cream)",padding:"96px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px",textAlign:"center" }}>
         <ScrollReveal>
           <div style={{ maxWidth:700,margin:"0 auto" }}>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />

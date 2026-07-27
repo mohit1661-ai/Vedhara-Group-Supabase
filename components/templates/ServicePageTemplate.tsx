@@ -22,7 +22,7 @@ export default function ServicePageTemplate({ content, videoSrc }:{ content:Serv
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>{content.intro}</p>
       </VideoHeroSection>
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:64 }} className="grid-2">
           <ScrollReveal>
             <div>

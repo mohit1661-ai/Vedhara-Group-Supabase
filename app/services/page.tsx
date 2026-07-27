@@ -89,7 +89,7 @@ export default function ServicesPage() {
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals, from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>
-      <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
           {services.map((svc,i)=>(
             <ScrollReveal key={svc.href} delay={i*60}>
@@ -105,7 +105,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Featured Properties Showcase */}
-      <section style={{ background:"var(--navy)",padding:"96px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
