@@ -4,6 +4,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import CommitmentsAccordion from "@/components/sections/CommitmentsAccordion";
 
 export const metadata: Metadata = {
   title:"NRI Property Advisory in India | Buy, Sell & Manage from Abroad | Vedhara Group Delhi NCR",
@@ -75,20 +76,7 @@ export default function NRIServicesPage() {
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>What Every NRI Client Receives, <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>By Default</em></h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
-            {commitments.map((c,i)=>(
-              <ScrollReveal key={c.n} delay={i*70}>
-                <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
-                  <div style={{ display:"flex",gap:10,alignItems:"center",marginBottom:14 }}>
-                    <div className="gold-accent" style={{width:24,height:2,margin:0}}></div>
-                    <span className="eyebrow" style={{ color:"var(--gold)" }}>{c.n}</span>
-                  </div>
-                  <h3 className="svc-card-title">{c.title}</h3>
-                  <p className="svc-card-desc">{c.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <CommitmentsAccordion commitments={commitments} />
         </div>
       </section>
 
