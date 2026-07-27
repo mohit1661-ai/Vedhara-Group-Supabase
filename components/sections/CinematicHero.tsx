@@ -83,11 +83,20 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
   const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const contentOuterRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(t);
   }, []);
+
+  /* ── Force autoplay (browsers often block <video autoplay>) ── */
+  useEffect(() => {
+    if (!videoLoaded || !videoRef.current) return;
+    videoRef.current.play().catch(() => {
+      /* Autoplay still blocked — user interaction will resume */
+    });
+  }, [videoLoaded]);
 
   /* ── Multi-layer parallax ── */
   useEffect(() => {
@@ -153,6 +162,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
         }}
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
@@ -182,7 +192,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(135deg, rgba(9,15,29,0.75) 0%, rgba(15,30,56,0.55) 40%, rgba(9,15,29,0.68) 100%)",
+            "linear-gradient(135deg, rgba(9,15,29,0.5) 0%, rgba(15,30,56,0.3) 40%, rgba(9,15,29,0.45) 100%)",
         }}
       />
 
@@ -193,7 +203,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           inset: 0,
           zIndex: 1,
           background:
-            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.3) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.15) 0%, transparent 70%)",
         }}
       />
 
