@@ -94,7 +94,7 @@ export const servicePages: Record<string, ServicePageContent> = {
   commercial: {
     slug: "commercial",
     eyebrow: "Commercial Advisory",
-    h1: "Commercial Real Estate Decisions,",
+    h1: "Commercial Real Estate,",
     h1Accent: "Backed by Data",
     intro:
       "Retail footfall, office accessibility, mixed-use zoning, commercial real estate has its own rules. Vedhara's advisory is built around them.",
@@ -147,7 +147,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     slug: "property-management",
     eyebrow: "Property Management",
     h1: "Your Property, Managed",
-    h1Accent: "Without You Having to Be There",
+    h1Accent: "Managed Without You Being There",
     intro:
       "For owners who don't want to personally chase tenants, coordinate repairs, or track rent, Vedhara's property management service handles the operational side of ownership.",
     included: [

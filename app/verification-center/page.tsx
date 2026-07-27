@@ -50,7 +50,7 @@ export default function VerificationCenterPage() {
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Verification Center</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-            What Vedhara Checks Before Any Property<br /><span style={{ color:"var(--gold-lt)" }}>Reaches You, In Plain Language.</span>
+            What Vedhara Checks Before<br /><span style={{ color:"var(--gold-lt)" }}>Any Property Reaches You</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
             The most common phrase in Indian real estate marketing is &ldquo;verified properties.&rdquo; The least common explanation is what &ldquo;verified&rdquo; actually means. Here is exactly what we check, five steps, documented and published on every listing.

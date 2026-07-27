@@ -16,7 +16,7 @@ export default function Page() {
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Research &amp; Insights</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-            Delhi NCR Real Estate Intelligence,<br /><span style={{ color:"var(--gold-lt)" }}>Research That Informs, Not Sells.</span>
+            Delhi NCR Real Estate Intel,<br /><span style={{ color:"var(--gold-lt)" }}>Research That Informs, Not Sells</span>
           </h1>
         </VideoHeroSection>
       <section style={{ background:"var(--cream)",padding:"96px 32px" }}>
