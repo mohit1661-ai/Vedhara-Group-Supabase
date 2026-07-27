@@ -47,7 +47,7 @@ export default function CommitmentsAccordion({ commitments }: { commitments: Com
                 className="comm-desc-wrap"
                 style={{
                   overflow:"hidden",
-                  maxHeight: isOpen ? "300px" : "52px",
+                  maxHeight: isOpen ? "300px" : "60px",
                   transition:"max-height 0.4s ease, opacity 0.3s ease",
                   opacity: isOpen ? 1 : 0.7,
                   flex: 1,
