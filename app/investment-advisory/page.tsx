@@ -57,7 +57,7 @@ export default function InvestmentAdvisoryPage() {
               <span className="v-line" />
               <p className="eyebrow" style={{ marginBottom:14 }}>The Vedhara Decision Framework</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:14,lineHeight:1.1 }}>Six Checks Applied to Every Investment Recommendation</h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560 }}>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:720 }}>
                 Buying a property as an investment and buying a property to live in are fundamentally different decisions. Investment properties need to be evaluated on yield, liquidity, locality growth trajectory, and capital appreciation potential, not just brochure appeal.
               </p>
             </div>

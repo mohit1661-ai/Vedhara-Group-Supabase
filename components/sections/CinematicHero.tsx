@@ -94,7 +94,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
   useEffect(() => {
     if (!videoLoaded || !videoRef.current) return;
     videoRef.current.play().catch(() => {
-      /* Autoplay still blocked — user interaction will resume */
+      /* Autoplay still blocked - user interaction will resume */
     });
   }, [videoLoaded]);
 

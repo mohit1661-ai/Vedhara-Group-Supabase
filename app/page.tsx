@@ -41,7 +41,7 @@ const homeFaqs = [
   { q:"Which areas of Delhi NCR does Vedhara Group cover?", a:"Vedhara Group covers property transactions across Delhi, Gurugram, Noida, Greater Noida, Faridabad, Ghaziabad, Sonipat, and surrounding NCR micro-markets. Contact us with your specific location requirement." },
   { q:"How does Vedhara verify the properties it lists?", a:"Every partner project passes five checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness benchmarked against government circle rates and registered transactions, and title document availability. Results are published on the listing page, not hidden in fine print." },
   { q:"Does Vedhara charge buyers a fee?", a:"In most cases, no direct fee is charged to buyers. Vedhara earns standard market brokerage commission paid by the developer or seller side, disclosed on every specific listing. For portfolio-level investment advisory, an optional flat retainer is available." },
-  { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators — ROI & Rental Yield, EMI, Stamp Duty, and Affordability, are completely free and require no account, phone number, or email address to use." },
+  { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators: ROI & Rental Yield, EMI, Stamp Duty, and Affordability, are completely free and require no account, phone number, or email address to use." },
 ];
 
 export default function HomePage() {
@@ -260,8 +260,8 @@ export default function HomePage() {
                 The Standard Others in Delhi NCR{" "}
                 <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Are Still Catching Up To</em>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"16px auto 0" }}>
-                Most real estate platforms in Delhi NCR are developer-distribution channels wearing an advisory costume. Their listings are unverified, their pricing is developer-set, and their advisors are paid sales executives. Vedhara is different in a way that is easy to verify: we publish our due-diligence methodology on every listing, disclose how we earn, and assign you a named, dedicated advisor from day one.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:720,margin:"16px auto 0" }}>
+                Most real estate platforms are developer-distribution channels disguised as advisors: unverified listings, developer-set pricing, and sales-driven teams. Vedhara is different: published due-diligence on every listing, transparent fees, and one named advisor from day one.
               </p>
             </div>
           </ScrollReveal>
