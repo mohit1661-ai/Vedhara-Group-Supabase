@@ -54,7 +54,7 @@ export default function NRIServicesPage() {
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6.5vw,80px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-          Managing Property in India<br />from the UAE, UK, USA,<br /><span style={{ color:"var(--gold-lt)" }}>Canada, or Singapore?</span>
+          Manage Indian Property from<br /><span style={{ color:"var(--gold-lt)" }}>the UAE, UK, USA, or Singapore?</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 28px" }}>
           Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
