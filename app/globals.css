@@ -53,6 +53,7 @@ img,video{max-width:100%;height:auto;}
 /* Layout */
 .page-hero{padding-top:calc(var(--nav-h) + 72px);padding-bottom:60px;padding-left:32px;padding-right:32px;}
 @media(max-width:768px){:root{--nav-h:64px;}.page-hero{padding-top:calc(var(--nav-h)+48px);padding-left:20px;padding-right:20px;padding-bottom:56px;}}
+@media(max-width:1024px){.video-hero{align-items:flex-start!important;min-height:60vh!important;padding-top:calc(var(--nav-h)+80px)!important;}}
 
 /* Glass */
 .glass{background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);}
