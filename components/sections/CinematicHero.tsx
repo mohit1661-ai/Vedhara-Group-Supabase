@@ -321,8 +321,8 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
               </div>
             </div>
             <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.06)" }}>
-              {[{l:"📊 ROI Calculator",h:"/calculators"},{l:"🌐 NRI Services",h:"/nri-services"},{l:"🔍 Verify Property",h:"/verification-center"},{l:"📈 Invest in NCR",h:"/investment-advisory"}].map(item=>(
-                <Link key={item.l} href={item.h} className="hero-quick-link">{item.l}</Link>
+              {[{i:"📊",t:"ROI Calculator",h:"/calculators"},{i:"🌐",t:"NRI Services",h:"/nri-services"},{i:"🔍",t:"Verify Property",h:"/verification-center"},{i:"📈",t:"Invest in NCR",h:"/investment-advisory"}].map(item=>(
+                <Link key={item.t} href={item.h} className="hero-quick-link"><span className="hero-quick-icon">{item.i}</span>{item.t}</Link>
               ))}
             </div>
           </div>
@@ -339,8 +339,10 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
 
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;}.hero-right{display:none!important;}}
-        .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:rgba(255,255,255,0.6);text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
+                .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:#ffffff;text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
         .hero-quick-link:hover{background:rgba(212,168,67,0.1);color:var(--gold-lt);}
+        .hero-quick-icon{margin-right:6px;color:var(--gold-lt);transition:color 0.25s;}
+        .hero-quick-link:hover .hero-quick-icon{color:var(--gold);}
       `}</style>
     </section>
   );
