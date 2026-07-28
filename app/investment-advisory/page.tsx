@@ -93,15 +93,16 @@ export default function InvestmentAdvisoryPage() {
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>Where We Are Recommending Investment Today</h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-2">
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-2 svc-card-alt">
             {corridors.map((c,i)=>(
               <ScrollReveal key={c.area} delay={i*80}>
-                <div className="hover-lift" style={{ background:"var(--cream)",padding:"32px 28px" }}>
-                  <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14,gap:16 }}>
-                    <h3 className="heading-md" style={{ color:"var(--navy)",lineHeight:1.3,fontSize:15 }}>{c.area}</h3>
-                    <span className="heading-md" style={{ color:"var(--gold)",flexShrink:0 }}>{c.yield}</span>
-                  </div>
-                  <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>{c.driver}</p>
+                <div className="svc-card" style={{ borderRadius:0 }}>
+                  <div className="gold-accent"></div>
+                  <h3 className="svc-card-title" style={{ display:"flex",justifyContent:"space-between",alignItems:"center" }}>
+                    {c.area}
+                    <span style={{ color:"var(--gold)",fontSize:15,flexShrink:0 }}>{c.yield}</span>
+                  </h3>
+                  <p className="svc-card-desc">{c.driver}</p>
                   <p className="caption" style={{ color:"rgba(212,168,67,0.55)",marginTop:10,marginBottom:0 }}>Gross Yield Estimate</p>
                 </div>
               </ScrollReveal>

@@ -90,10 +90,10 @@ export default function ServicesPage() {
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals, from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
+        <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
           {services.map((svc,i)=>(
             <ScrollReveal key={svc.href} delay={i*60}>
-              <Link href={svc.href} className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
+              <Link href={svc.href} className="svc-card" style={{ borderRadius:0 }}>
                 <div className="gold-accent"></div>
                 <h2 className="svc-card-title">{svc.title}</h2>
                 <p className="svc-card-desc">{svc.desc}</p>

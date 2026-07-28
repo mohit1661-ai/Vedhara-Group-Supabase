@@ -30,8 +30,8 @@ export default function Page() {
             </div>
           </ScrollReveal>
           <ScrollReveal><div style={{ marginBottom:36 }}><span className="v-line" /><h2 className="heading-lg" style={{ color:"var(--navy)" }}>Current Market Themes</h2></div></ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-2">
-            {themes.map((t,i)=>(<ScrollReveal key={t.title} delay={i*80}><div style={{ background:"var(--cream)",padding:"28px 24px" }}><h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:10,fontSize:15 }}>{t.title}</h3><p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>{t.body}</p></div></ScrollReveal>))}
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-2 svc-card-alt">
+            {themes.map((t,i)=>(<ScrollReveal key={t.title} delay={i*80}><div className="svc-card" style={{ borderRadius:0 }}><div className="gold-accent"></div><h3 className="svc-card-title">{t.title}</h3><p className="svc-card-desc">{t.body}</p></div></ScrollReveal>))}
           </div>
         </div>
       </section>
