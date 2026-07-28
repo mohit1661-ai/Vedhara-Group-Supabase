@@ -9,7 +9,7 @@ import type { Lead } from "./leads";
 
 export async function sendLeadNotification(lead: Lead): Promise<void> {
   const apiKey  = process.env.RESEND_API_KEY;
-  const toEmail = process.env.NOTIFY_EMAIL || "hello@vedharagroup.com";
+  const toEmail = process.env.NOTIFY_EMAIL || "contact@vedharagroup.com";
 
   if (!apiKey) {
     console.log("[Email] RESEND_API_KEY not set, skipping notification");
