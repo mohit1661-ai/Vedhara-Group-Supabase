@@ -22,13 +22,13 @@ function Counter({ target, prefix, suffix }:{ target:number; prefix:string; suff
     if(ref.current) obs.observe(ref.current);
     return ()=>obs.disconnect();
   },[target]);
-  return <div ref={ref} style={{ fontFamily:"var(--t-head)",fontSize:"clamp(28px,3vw,40px)",fontWeight:700,color:"var(--gold-lt)",lineHeight:1 }}>{prefix}{count}{suffix}</div>;
+  return <div ref={ref} className="stat-counter" style={{ fontFamily:"var(--t-head)",fontSize:"clamp(28px,3vw,40px)",fontWeight:700,color:"var(--gold-lt)",lineHeight:1 }}>{prefix}{count}{suffix}</div>;
 }
 export default function AnimatedStats() {
   return (
     <section style={{ background:"var(--navy)",borderTop:"1px solid rgba(212,168,67,0.08)",borderBottom:"1px solid rgba(212,168,67,0.08)" }}>
       <div style={{ maxWidth:1320,margin:"0 auto" }}>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",background:"rgba(212,168,67,0.04)" }} className="grid-4">
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",background:"rgba(212,168,67,0.04)" }} className="stats-row">
           {stats.map((s,i)=>(
             <div key={s.label} style={{ padding:"40px 28px",textAlign:"center",borderRight:i<3?"1px solid rgba(212,168,67,0.07)":"none",transition:"background 0.3s",cursor:"default" }}>
               <div className="gold-accent-sm" style={{margin:"0 auto 12px"}}></div>
@@ -38,6 +38,7 @@ export default function AnimatedStats() {
           ))}
         </div>
       </div>
+      <style>{`.stats-row{grid-template-columns:repeat(4,1fr)!important;}@media(max-width:600px){.stats-row>div{padding:20px 8px!important;}.stats-row .stat-counter{font-size:clamp(18px,4vw,28px)!important;}.stats-row>div>div:last-child{font-size:7.5px!important;letter-spacing:0.06em!important;}}`}</style>
     </section>
   );
 }

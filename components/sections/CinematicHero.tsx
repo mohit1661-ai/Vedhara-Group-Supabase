@@ -271,7 +271,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
         <div style={{ display:"grid",gridTemplateColumns:"1fr 380px",gap:80,alignItems:"center" }} className="hero-inner">
           {/* LEFT */}
           <div>
-            <div style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease 0.15s" }}>
+            <div className="hero-tagline" style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease 0.15s" }}>
               <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",animation:"pulseRing 2.5s infinite",display:"block" }} />
               <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory · Verified Listings · Delhi NCR</span>
             </div>
@@ -304,11 +304,11 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           {/* RIGHT: glass stat cards */}
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
             <div className="glass" style={{ padding:"24px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
-              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>
+              <div className="stat-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>
                 {[{num:"500+",sub:"Families Guided"},{num:"₹200Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
                   <div key={s.sub} style={{ padding:"18px 16px",textAlign:"center",background:"rgba(9,15,29,0.4)" }}>
-                    <span style={{ display:"block",fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:6 }}>{s.num}</span>
-                    <span style={{ fontFamily:"var(--t-body)",fontSize:9.5,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em" }}>{s.sub}</span>
+                    <span className="stat-num" style={{ display:"block",fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:6,whiteSpace:"nowrap" }}>{s.num}</span>
+                    <span className="stat-label" style={{ fontFamily:"var(--t-body)",fontSize:9.5,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em" }}>{s.sub}</span>
                   </div>
                 ))}
               </div>
@@ -338,7 +338,8 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
       </div>
 
       <style>{`
-        @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;}.hero-right{display:none!important;}}
+        @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;gap:32px!important;}.hero-right{max-width:400px;margin:0 auto;}}
+        @media(max-width:600px){.hero-tagline{margin-bottom:8px!important;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:8px!important;}}
                 .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:#ffffff;text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
         .hero-quick-link:hover{background:rgba(212,168,67,0.1);color:var(--gold-lt);}
         .hero-quick-icon{margin-right:6px;color:var(--gold-lt);transition:color 0.25s;}
