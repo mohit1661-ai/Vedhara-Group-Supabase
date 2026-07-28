@@ -73,10 +73,10 @@ export default function HomePage() {
             <ScrollReveal delay={120} direction="right">
               <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:14 }}>
                 {[{stat:"100%",sub:"Listings Verified"},{stat:"5-Step",sub:"Due Diligence"},{stat:"3 Portals",sub:"RERA Checked"},{stat:"Real Data",sub:"Price Benchmarked"}].map(card=>(
-                  <div key={card.sub} className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.06)",padding:"24px 20px",textAlign:"center" }}>
-                    <div className="gold-accent-sm" style={{margin:"0 auto 10px"}}></div>
-                    <div className="heading-md" style={{ color:"var(--gold)",marginBottom:4 }}>{card.stat}</div>
-                    <div className="caption" style={{ color:"var(--slate)" }}>{card.sub}</div>
+                  <div key={card.sub} className="stat-card">
+                    <div className="stat-accent"></div>
+                    <div className="stat-num">{card.stat}</div>
+                    <div className="stat-label">{card.sub}</div>
                   </div>
                 ))}
               </div>
