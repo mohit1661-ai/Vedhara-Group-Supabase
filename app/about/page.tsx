@@ -98,10 +98,10 @@ export default function AboutPage() {
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>Four Principles That Guide Every Engagement</h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-4">
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-4 svc-card-alt">
             {values.map((v,i)=>(
               <ScrollReveal key={v.title} delay={i*80}>
-                <div className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
+                <div className="svc-card" style={{ borderRadius:0 }}>
                   <div className="gold-accent"></div>
                   <h3 className="svc-card-title">{v.title}</h3>
                   <p className="svc-card-desc">{v.desc}</p>
