@@ -239,7 +239,7 @@ export default function HomePage() {
           <ScrollReveal delay={120}>
             <div style={{ textAlign:"center",marginTop:32 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Our full inventory spans 200+ verified listings across Delhi NCR.
+                Our full inventory spans 500+ verified listings across Delhi NCR.
               </p>
               <Link href="/buy" className="btn btn-primary">
                 Browse All Properties →

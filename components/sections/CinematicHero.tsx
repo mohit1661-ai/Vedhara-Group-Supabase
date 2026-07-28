@@ -305,7 +305,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
             <div className="glass" style={{ padding:"24px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
               <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>
-                {[{num:"200+",sub:"Families Guided"},{num:"₹50Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
+                {[{num:"500+",sub:"Families Guided"},{num:"₹200Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
                   <div key={s.sub} style={{ padding:"18px 16px",textAlign:"center",background:"rgba(9,15,29,0.4)" }}>
                     <span style={{ display:"block",fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:6 }}>{s.num}</span>
                     <span style={{ fontFamily:"var(--t-body)",fontSize:9.5,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em" }}>{s.sub}</span>

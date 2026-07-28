@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 const stats = [
-  { target:200, prefix:"",  suffix:"+",    label:"Families Guided" },
-  { target:50,  prefix:"₹", suffix:"Cr+",  label:"Transactions Assisted" },
+  { target:500, prefix:"",  suffix:"+",    label:"Families Guided" },
+  { target:200,  prefix:"₹", suffix:"Cr+",  label:"Transactions Assisted" },
   { target:5,   prefix:"",  suffix:"-Step",label:"Verification Framework" },
   { target:6,   prefix:"",  suffix:"+",    label:"Countries Served" },
 ];

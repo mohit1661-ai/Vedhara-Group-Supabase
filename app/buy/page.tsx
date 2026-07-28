@@ -194,7 +194,7 @@ export default function BuyPage() {
           <ScrollReveal delay={120}>
             <div style={{ textAlign:"center",marginTop:52 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Don&apos;t see what you&apos;re looking for? Our full inventory spans 200+ verified listings across Delhi NCR.
+                Don&apos;t see what you&apos;re looking for? Our full inventory spans 500+ verified listings across Delhi NCR.
               </p>
               <Link href="/contact" className="btn btn-primary">
                 Talk to an Advisor →
