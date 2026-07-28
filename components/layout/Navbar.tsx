@@ -8,6 +8,7 @@ const navLinks = [
   { label:"Buy",       href:"/buy" },
   { label:"Sell",      href:"/sell" },
   { label:"Invest",    href:"/investment-advisory" },
+  { label:"Our Team",  href:"/team" },
   { label:"NRI Desk",  href:"/nri-services" },
   { label:"Verify",    href:"/verification-center" },
   { label:"Calculators",href:"/calculators" },
