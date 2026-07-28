@@ -123,9 +123,18 @@ export default function VideoHeroSection({
   disableParallax,
 }: Props) {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+
+  /* ── Catch video already loaded before React attached onLoadedData ── */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && video.readyState >= 3) {
+      setVideoLoaded(true);
+    }
+  }, []);
 
   /* ── Parallax on scroll ── */
   useEffect(() => {
@@ -208,6 +217,7 @@ export default function VideoHeroSection({
         }}
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop

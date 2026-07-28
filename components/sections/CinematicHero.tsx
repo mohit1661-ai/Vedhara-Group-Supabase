@@ -90,6 +90,14 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
     return () => clearTimeout(t);
   }, []);
 
+  /* ── Catch video already loaded before React attached onLoadedData ── */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && video.readyState >= 3) {
+      setVideoLoaded(true);
+    }
+  }, []);
+
   /* ── Force autoplay (browsers often block <video autoplay>) ── */
   useEffect(() => {
     if (!videoLoaded || !videoRef.current) return;
