@@ -139,34 +139,6 @@ img,video{max-width:100%;height:auto;}
 
 /* Desktop: position-specific overrides for color swapping */
 @media(min-width: 1025px){
-  /* Position 5 (Luxury) → cream idle, navy hover (like Sell/even) */
-  .svc-card-alt > :nth-child(5){background:var(--cream)!important;}
-  .svc-card-alt > :nth-child(5) .gold-accent{background:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(5) .svc-card-title{color:var(--navy)!important;}
-  .svc-card-alt > :nth-child(5) .svc-card-desc{color:var(--slate)!important;}
-  .svc-card-alt > :nth-child(5) .svc-card-arrow{color:var(--navy)!important;}
-  .svc-card-alt > :nth-child(5):hover{background:var(--navy)!important;}
-  .svc-card-alt > :nth-child(5):hover .svc-card-title{color:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(5):hover .svc-card-desc{color:rgba(232,201,112,0.55)!important;}
-  .svc-card-alt > :nth-child(5):hover .svc-card-arrow{color:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(5):hover .gold-accent{background:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(5) .svc-card{background:var(--cream)!important;}
-  .svc-card-alt > :nth-child(5) .svc-card:hover{background:var(--navy)!important;}
-
-  /* Position 6 (Investment) → navy idle, cream hover (like odd) */
-  .svc-card-alt > :nth-child(6){background:var(--navy)!important;}
-  .svc-card-alt > :nth-child(6) .gold-accent{background:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(6) .svc-card-title{color:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(6) .svc-card-desc{color:rgba(255,255,255,0.65)!important;}
-  .svc-card-alt > :nth-child(6) .svc-card-arrow{color:#ffffff!important;}
-  .svc-card-alt > :nth-child(6):hover{background:var(--cream)!important;}
-  .svc-card-alt > :nth-child(6):hover .svc-card-title{color:var(--navy)!important;}
-  .svc-card-alt > :nth-child(6):hover .svc-card-desc{color:var(--slate)!important;}
-  .svc-card-alt > :nth-child(6):hover .svc-card-arrow{color:var(--gold-lt)!important;}
-  .svc-card-alt > :nth-child(6):hover .gold-accent{background:var(--gold)!important;}
-  .svc-card-alt > :nth-child(6) .svc-card{background:var(--navy)!important;}
-  .svc-card-alt > :nth-child(6) .svc-card:hover{background:var(--cream)!important;}
-
   /* Position 7 (NRI) → cream idle, navy hover (like even) */
   .svc-card-alt > :nth-child(7){background:var(--cream)!important;}
   .svc-card-alt > :nth-child(7) .gold-accent{background:var(--gold-lt)!important;}

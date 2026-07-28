@@ -125,12 +125,13 @@ export default function AboutPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3">
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
             {locations.map((loc,i)=>(
               <ScrollReveal key={loc.city} delay={i*60}>
-                <div style={{ background:"var(--cream)",padding:"28px 24px" }}>
-                  <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:8 }}>{loc.city}</h3>
-                  <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>{loc.areas}</p>
+                <div className="svc-card" style={{ borderRadius:0 }}>
+                  <div className="gold-accent"></div>
+                  <h3 className="svc-card-title">{loc.city}</h3>
+                  <p className="svc-card-desc">{loc.areas}</p>
                 </div>
               </ScrollReveal>
             ))}
