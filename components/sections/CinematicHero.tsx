@@ -163,8 +163,8 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           position: "absolute",
           inset: 0,
           width: "100%",
-          height: "105%",
-          top: "-2.5%",
+          height: "100%",
+          top: 0,
           zIndex: 0,
           willChange: "transform",
         }}
