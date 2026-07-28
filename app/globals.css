@@ -137,8 +137,36 @@ img,video{max-width:100%;height:auto;}
 .svc-card-alt > :nth-child(even) .svc-card{background:var(--cream);}
 .svc-card-alt > :nth-child(even) .svc-card:hover{background:var(--navy)!important;}
 
-/* No desktop position-specific overrides needed — all svc-card-alt grids
-   follow the natural odd/even alternating pattern across breakpoints. */
+/* Desktop: position-specific overrides for color swapping */
+@media(min-width: 1025px){
+  /* Position 3 (Greater Noida West) → cream idle, navy hover (like even) */
+  .svc-card-alt > :nth-child(3){background:var(--cream)!important;}
+  .svc-card-alt > :nth-child(3) .gold-accent{background:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(3) .svc-card-title{color:var(--navy)!important;}
+  .svc-card-alt > :nth-child(3) .svc-card-desc{color:var(--slate)!important;}
+  .svc-card-alt > :nth-child(3) .svc-card-arrow{color:var(--navy)!important;}
+  .svc-card-alt > :nth-child(3):hover{background:var(--navy)!important;}
+  .svc-card-alt > :nth-child(3):hover .svc-card-title{color:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(3):hover .svc-card-desc{color:rgba(232,201,112,0.55)!important;}
+  .svc-card-alt > :nth-child(3):hover .svc-card-arrow{color:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(3):hover .gold-accent{background:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(3) .svc-card{background:var(--cream)!important;}
+  .svc-card-alt > :nth-child(3) .svc-card:hover{background:var(--navy)!important;}
+
+  /* Position 4 (Faridabad NH-19 Corridor) → navy idle, cream hover (like odd) */
+  .svc-card-alt > :nth-child(4){background:var(--navy)!important;}
+  .svc-card-alt > :nth-child(4) .gold-accent{background:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(4) .svc-card-title{color:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(4) .svc-card-desc{color:rgba(255,255,255,0.65)!important;}
+  .svc-card-alt > :nth-child(4) .svc-card-arrow{color:#ffffff!important;}
+  .svc-card-alt > :nth-child(4):hover{background:var(--cream)!important;}
+  .svc-card-alt > :nth-child(4):hover .svc-card-title{color:var(--navy)!important;}
+  .svc-card-alt > :nth-child(4):hover .svc-card-desc{color:var(--slate)!important;}
+  .svc-card-alt > :nth-child(4):hover .svc-card-arrow{color:var(--gold-lt)!important;}
+  .svc-card-alt > :nth-child(4):hover .gold-accent{background:var(--gold)!important;}
+  .svc-card-alt > :nth-child(4) .svc-card{background:var(--navy)!important;}
+  .svc-card-alt > :nth-child(4) .svc-card:hover{background:var(--cream)!important;}
+}
 
 /* FAQ */
 .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);}
