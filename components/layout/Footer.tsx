@@ -10,15 +10,15 @@ export default function Footer() {
   return (
     <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.75)" }}>
       {/* CTA bar */}
-      <div style={{ background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",padding:"22px 32px" }}>
+      <div style={{ background:"var(--cream)",padding:"26px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>
           <div>
             <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:"0 0 3px" }}>Ready to make your next property move?</p>
-            <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(9,15,29,0.65)",margin:0 }}>Independent advisory · Verified listings · Free consultation</p>
+            <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--slate)",margin:0 }}>Independent advisory · Verified listings · Free consultation</p>
           </div>
           <div style={{ display:"flex",gap:10 }}>
             <Link href="/contact" className="btn btn-dark" style={{ padding:"12px 24px",fontSize:10 }}>Book Free Consultation</Link>
-            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"#FFFFFF",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)",padding:"12px 20px",fontSize:10 }}>WhatsApp</a>
+            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"transparent",color:"var(--navy)",border:"1px solid rgba(15,30,56,0.2)",padding:"12px 20px",fontSize:10 }}>WhatsApp</a>
           </div>
         </div>
       </div>
