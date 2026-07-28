@@ -309,23 +309,23 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </div>
           </div>
 
-          {/* RIGHT: glass stat cards */}
+          {/* RIGHT: Stat cards — glass backdrop, clean text */}
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
-            <div className="glass" style={{ padding:"24px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
+            <div className="glass" style={{ padding:"22px 10px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
               <div className="stat-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>
                 {[{num:"500+",sub:"Families Guided"},{num:"₹200Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
-                  <div key={s.sub} style={{ padding:"18px 16px",textAlign:"center",background:"rgba(9,15,29,0.4)" }}>
-                    <span className="stat-num" style={{ display:"block",fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:6,whiteSpace:"nowrap" }}>{s.num}</span>
-                    <span className="stat-label" style={{ fontFamily:"var(--t-body)",fontSize:9.5,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em" }}>{s.sub}</span>
+                  <div key={s.sub} style={{ padding:"14px 12px",textAlign:"center",background:"transparent" }}>
+                    <span className="stat-num" style={{ display:"block",fontFamily:"var(--t-head)",fontSize:20,fontWeight:700,color:"var(--gold-lt)",lineHeight:1.1,marginBottom:4,whiteSpace:"nowrap",letterSpacing:"-0.02em",textShadow:"0 2px 8px rgba(0,0,0,0.3)" }}>{s.num}</span>
+                    <span className="stat-label" style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:500,color:"rgba(255,255,255,0.8)",textTransform:"uppercase",letterSpacing:"0.12em",textShadow:"0 1px 4px rgba(0,0,0,0.3)" }}>{s.sub}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="glass-gold" style={{ padding:"18px 20px",display:"flex",alignItems:"center",gap:14,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
-              <div style={{ width:42,height:42,borderRadius:"50%",background:"rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
+            <div className="glass-gold" style={{ padding:"14px 18px",display:"flex",alignItems:"center",gap:12,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
+              <div style={{ width:38,height:38,borderRadius:"50%",background:"rgba(212,168,67,0.2)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
               <div>
-                <p style={{ fontFamily:"var(--t-head)",fontSize:12,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 3px" }}>Vedhara Verification Framework</p>
-                <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.7)",margin:0 }}>5 checks published on every listing before you see it</p>
+                <p style={{ fontFamily:"var(--t-head)",fontSize:12,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 1px",letterSpacing:"0.03em",textShadow:"0 1px 4px rgba(0,0,0,0.2)" }}>Vedhara Verification Framework</p>
+                <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:300,color:"rgba(255,255,255,0.7)",margin:0,textShadow:"0 1px 4px rgba(0,0,0,0.2)" }}>5 checks published on every listing</p>
               </div>
             </div>
             <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.06)" }}>
@@ -348,7 +348,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;gap:32px!important;}.hero-right{max-width:400px;margin:0 auto;}}
         @media(max-width:600px){.hero-tagline{margin-bottom:8px!important;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:8px!important;}}
-                .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:#ffffff;text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
+        .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:#ffffff;text-decoration:none;background:transparent;transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
         .hero-quick-link:hover{background:rgba(212,168,67,0.1);color:var(--gold-lt);}
         .hero-quick-icon{margin-right:6px;color:var(--gold-lt);transition:color 0.25s;}
         .hero-quick-link:hover .hero-quick-icon{color:var(--gold);}
