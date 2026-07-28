@@ -157,7 +157,7 @@ img,video{max-width:100%;height:auto;}
 .stat-card:hover .stat-accent{background:var(--gold);}
 .stat-card .stat-num{font-family:var(--t-head);font-size:clamp(20px,2.8vw,30px);font-weight:600;line-height:1.25;color:var(--gold-lt);margin-bottom:4;transition:color 0.35s var(--ease-out);}
 .stat-card:hover .stat-num{color:var(--navy);}
-.stat-card .stat-label{font-family:var(--t-body);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(232,201,112,0.7);transition:color 0.35s var(--ease-out);}
+.stat-card .stat-label{font-family:var(--t-body);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color 0.35s var(--ease-out);}
 .stat-card:hover .stat-label{color:var(--slate);}
 
 /* Responsive */
