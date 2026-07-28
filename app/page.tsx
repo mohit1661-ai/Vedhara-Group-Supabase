@@ -32,7 +32,7 @@ const tools = [
   { title:"ROI & Rental Yield Calculator", desc:"Estimate gross yield, net yield, and total return over your holding period." },
   { title:"Home Loan EMI Calculator", desc:"Monthly EMI, total interest, and year-by-year amortisation schedule." },
   { title:"Stamp Duty & Registration", desc:"State-wise stamp duty and registration charges, Delhi, Haryana & UP." },
-  { title:"Affordability Calculator", desc:"Realistic property budget based on standard 40–50% FOIR bank lending norms." },
+  { title:"Affordability Calculator", desc:"Realistic property budget based on standard bank lending norms." },
 ];
 
 /* Word doc FAQs, Page 1 */
@@ -332,13 +332,13 @@ export default function HomePage() {
               </p>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(212,168,67,0.08)",marginBottom:40 }} className="grid-4">
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:16,marginBottom:40 }} className="grid-4">
             {tools.map((tool,i)=>(
               <ScrollReveal key={tool.title} delay={i*80}>
-                <Link href="/calculators" className="glass hover-lift" style={{ display:"block",padding:"32px 26px",textDecoration:"none",transition:"background 0.25s" }}>
+                <Link href="/calculators" className="glass-gold hover-lift" style={{ display:"block",padding:"32px 26px",textDecoration:"none",borderRadius:12,transition:"all 0.3s ease" }}>
                   <div className="gold-accent"></div>
                   <h3 className="heading-md" style={{ color:"var(--gold-lt)",marginBottom:10,fontSize:14 }}>{tool.title}</h3>
-                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.38)",margin:0 }}>{tool.desc}</p>
+                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.6)",margin:0 }}>{tool.desc}</p>
                 </Link>
               </ScrollReveal>
             ))}
