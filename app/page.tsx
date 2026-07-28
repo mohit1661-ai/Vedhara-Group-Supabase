@@ -316,18 +316,17 @@ export default function HomePage() {
       </section>
 
       {/* ══ FREE TOOLS ══ */}
-      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,168,67,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
-        <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
+        <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:36 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Decide With Data</p>
-              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Decide With Data</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:16 }}>
                 Four Free Tools,{" "}
-                <em className="display-gold" style={{ fontSize:"inherit" }}>No Sign-Up Required</em>
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>No Sign-Up Required</em>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(255,255,255,0.42)",maxWidth:560,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
                 Every property decision in Delhi NCR comes down to numbers. These four tools are free, instant, and available without sharing your contact details. Run the numbers first. Then talk to an advisor.
               </p>
             </div>
@@ -335,16 +334,16 @@ export default function HomePage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:16,marginBottom:40 }} className="grid-4">
             {tools.map((tool,i)=>(
               <ScrollReveal key={tool.title} delay={i*80}>
-                <Link href="/calculators" className="glass-gold hover-lift" style={{ display:"block",padding:"32px 26px",textDecoration:"none",borderRadius:12,transition:"all 0.3s ease" }}>
+                <Link href="/calculators" className="hover-lift" style={{ display:"block",padding:"32px 26px",textDecoration:"none",borderRadius:12,background:"var(--navy)",border:"1px solid rgba(212,168,67,0.15)",transition:"all 0.3s ease" }}>
                   <div className="gold-accent"></div>
                   <h3 className="heading-md" style={{ color:"var(--gold-lt)",marginBottom:10,fontSize:14 }}>{tool.title}</h3>
-                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.6)",margin:0 }}>{tool.desc}</p>
+                  <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:0 }}>{tool.desc}</p>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
           <div style={{ textAlign:"center" }}>
-            <Link href="/calculators" className="btn btn-primary">Open All Four Calculators →</Link>
+            <Link href="/calculators" className="btn btn-dark">Open All Four Calculators →</Link>
           </div>
         </div>
       </section>
