@@ -64,7 +64,7 @@ function EMICalculator() {
             <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
-        <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
+        <div style={{ marginTop:16,padding:"12px",background:"rgba(212,168,67,0.08)",border:"1px solid rgba(212,168,67,0.15)" }}>
           <p className="body-sm" style={{ color:"rgba(255,255,255,0.4)",margin:0 }}>Uses standard reducing-balance formula, identical to bank calculations.</p>
         </div>
       </div>
@@ -113,7 +113,7 @@ function StampDutyCalculator() {
             <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
-        <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
+        <div style={{ marginTop:16,padding:"12px",background:"rgba(212,168,67,0.08)",border:"1px solid rgba(212,168,67,0.15)" }}>
           <p className="body-sm" style={{ color:"rgba(255,255,255,0.4)",margin:0 }}>Rates are indicative. Verify with sub-registrar office before any transaction.</p>
         </div>
       </div>
@@ -150,7 +150,7 @@ function AffordabilityCalculator() {
             <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:row.h?"var(--gold-lt)":"var(--light)" }}>{row.val}</span>
           </div>
         ))}
-        <div style={{ marginTop:16,padding:"12px",background:"rgba(184,146,42,0.08)",border:"1px solid rgba(184,146,42,0.15)" }}>
+        <div style={{ marginTop:16,padding:"12px",background:"rgba(212,168,67,0.08)",border:"1px solid rgba(212,168,67,0.15)" }}>
           <p className="body-sm" style={{ color:"rgba(255,255,255,0.4)",margin:0 }}>Based on 45% FOIR. Actual eligibility depends on your lender, credit score, and employer type.</p>
         </div>
       </div>
@@ -187,7 +187,7 @@ export default function CalculatorsPage() {
           </p>
         </VideoHeroSection>
 
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:980,margin:"0 auto" }}>
           <div style={{ display:"flex",gap:2,flexWrap:"wrap",marginBottom:36,borderBottom:"2px solid rgba(42,45,53,0.08)" }}>
             {tabs.map(tab=>(

@@ -15,7 +15,7 @@ const checks = [
   { n:"01", icon:"V", title:"RERA Registration Validity", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)",
     portal:"UP RERA (rera.up.gov.in) · HRERA (hrera.org.in) · Delhi RERA (rera.delhi.gov.in)",
     points:["Registration is active and within validity dates","Project details on the RERA portal match the developer's marketing claims","Quarterly progress reports have been filed as required by RERA","Any complaint history registered against the project on the RERA portal is disclosed"] },
-  { n:"02", icon:"B", title:"Builder Delivery History", grad:"linear-gradient(135deg,#0F1E38,#B8922A)",
+  { n:"02", icon:"B", title:"Builder Delivery History", grad:"linear-gradient(135deg,#0F1E38,#D4A843)",
     portal:"Developer track record, past projects reviewed",
     points:["Completion and handover timelines for past delivered projects","Any court cases, consumer forum complaints, or RERA non-compliance notices on record","Historical pattern of construction quality and society formation compliance","Current financial standing where publicly available for listed developers"] },
   { n:"03", icon:"A", title:"Project-Level Statutory Approvals", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)",
@@ -57,7 +57,7 @@ export default function VerificationCenterPage() {
           </p>
         </VideoHeroSection>
 
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1060,margin:"0 auto" }}>
           {checks.map((c,i)=>(
             <ScrollReveal key={c.n} delay={i*60}>
@@ -65,7 +65,7 @@ export default function VerificationCenterPage() {
                 <div>
                   <div className="gold-accent"></div>
                   <span className="eyebrow" style={{ display:"block",marginBottom:8 }}>CHECK {c.n}</span>
-                  <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",padding:"8px 12px" }}>
+                  <div style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",padding:"8px 12px" }}>
                     <span className="body-sm" style={{ color:"var(--slate)" }}>{c.portal}</span>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export default function VerificationCenterPage() {
           ))}
 
           <ScrollReveal>
-            <div style={{ background:"linear-gradient(135deg,rgba(184,146,42,0.08),rgba(184,146,42,0.04))",border:"1px solid rgba(184,146,42,0.2)",padding:"36px 40px" }}>
+            <div style={{ background:"linear-gradient(135deg,rgba(212,168,67,0.08),rgba(212,168,67,0.04))",border:"1px solid rgba(212,168,67,0.2)",padding:"36px 40px" }}>
               <div style={{ display:"flex",gap:20,alignItems:"flex-start" }}>
                 <div className="gold-accent" style={{width:36,height:2,flexShrink:0,background:"var(--gold)",marginTop:8}}></div>
                 <div>
@@ -97,7 +97,7 @@ export default function VerificationCenterPage() {
         </div>
       </section>
 
-      <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--navy)",padding:"60px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:540,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Want These Checks Applied to a Specific Property?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Share the property details with us. We will run the Verification Framework and share the results.</p>

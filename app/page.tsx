@@ -51,9 +51,9 @@ export default function HomePage() {
       <AnimatedStats />
 
       {/* ══ VERIFICATION FRAMEWORK ══ */}
-      <section style={{ background:"var(--cream)",padding:"var(--gap-3xl,96px) 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:72,alignItems:"center",marginBottom:60 }} className="grid-2">
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,alignItems:"center",marginBottom:40 }} className="grid-2">
             <ScrollReveal>
               <div>
                 <span className="v-line" />
@@ -87,7 +87,7 @@ export default function HomePage() {
             {checks.map((c,i)=>(
               <ScrollReveal key={c.num} delay={i*70}>
                 <div className="hover-lift" style={{ background:i===2?"var(--navy)":"var(--cream)",padding:"36px 24px",height:"100%",cursor:"default" }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.14em",color:i===2?"rgba(212,170,82,0.55)":"var(--gold)",display:"block",marginBottom:14 }}>{c.num}</span>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.14em",color:i===2?"rgba(232,201,112,0.55)":"var(--gold)",display:"block",marginBottom:14 }}>{c.num}</span>
                   <h3 className="heading-md" style={{ color:i===2?"var(--light)":"var(--navy)",marginBottom:12,fontSize:14 }}>{c.title}</h3>
                   <p className="body-sm" style={{ color:i===2?"rgba(252,250,244,0.5)":"var(--slate)",margin:0 }}>{c.desc}</p>
                 </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ SERVICES ══ */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:52,flexWrap:"wrap",gap:20 }}>
             <ScrollReveal>
@@ -118,11 +118,11 @@ export default function HomePage() {
       </section>
 
       {/* ══ FEATURED PROPERTIES ══ */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:52 }}>
+            <div style={{ textAlign:"center",marginBottom:36 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Featured Properties</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
@@ -154,7 +154,7 @@ export default function HomePage() {
                 price:"₹ 12.80 Cr",
                 config:"5 BHK + Pool",
                 size:"4,200 sq.ft.",
-                gradient:"linear-gradient(135deg,#0F1E38 0%,#B8922A 30%,#D4AA52 70%,#F0DBA8 100%)",
+                gradient:"linear-gradient(135deg,#0F1E38 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
                 link:"/luxury",
                 tag:"Available",
               },
@@ -165,7 +165,7 @@ export default function HomePage() {
                 price:"₹ 8.50 Cr",
                 config:"4,500 sq.ft. Office",
                 size:"4,500 sq.ft.",
-                gradient:"linear-gradient(135deg,#1a1a2e 0%,#B8922A 30%,#D4AA52 70%,#F0DBA8 100%)",
+                gradient:"linear-gradient(135deg,#1a1a2e 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
                 link:"/commercial",
                 tag:"Ready to Move",
               },
@@ -176,7 +176,7 @@ export default function HomePage() {
                 price:"₹ 6.20 Cr",
                 config:"3 BHK + Servant",
                 size:"2,150 sq.ft.",
-                gradient:"linear-gradient(135deg,#16243F 0%,#2a3f6f 50%,#B8922A 100%)",
+                gradient:"linear-gradient(135deg,#16243F 0%,#2a3f6f 50%,#D4A843 100%)",
                 link:"/new-launches",
                 tag:"Possession Oct 2026",
               },
@@ -204,27 +204,27 @@ export default function HomePage() {
               },
             ].map((p,i)=>(
               <ScrollReveal key={p.title} delay={i*80}>
-                <Link href={p.link} className="hover-lift" style={{ display:"block",background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",textDecoration:"none" }}>
+                <Link href={p.link} className="hover-lift" style={{ display:"block",background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",textDecoration:"none" }}>
                   <div style={{ height:180,background:p.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
                     <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(252,250,244,0.7)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
                       {p.title}
                     </div>
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(184,146,42,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(184,146,42,0.3)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(212,168,67,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.3)" }}>
                         {p.tag}
                       </span>
                     </div>
                   </div>
                   <div style={{ padding:20 }}>
                     <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(184,146,42,0.1)",color:"var(--gold-lt)",borderRadius:3 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.1)",color:"var(--gold-lt)",borderRadius:3 }}>
                         {p.category}
                       </span>
                     </div>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.35)",marginBottom:4 }}>{p.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"rgba(252,250,244,0.6)",marginBottom:10,lineHeight:1.4 }}>{p.config} · {p.size}</p>
-                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(184,146,42,0.1)",paddingTop:12 }}>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.1)",paddingTop:12 }}>
                       <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--gold-lt)",margin:0 }}>{p.price}</p>
                       <span className="btn-ghost" style={{ color:"var(--gold-lt)",fontSize:9,display:"inline-flex",alignItems:"center",gap:4 }}>
                         View Details →
@@ -237,7 +237,7 @@ export default function HomePage() {
           </div>
 
           <ScrollReveal delay={120}>
-            <div style={{ textAlign:"center",marginTop:48 }}>
+            <div style={{ textAlign:"center",marginTop:32 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Our full inventory spans 200+ verified listings across Delhi NCR.
               </p>
@@ -250,10 +250,10 @@ export default function HomePage() {
       </section>
 
       {/* ══ WHY VEDHARA ══ */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:56 }}>
+            <div style={{ textAlign:"center",marginBottom:36 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Why Vedhara</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
@@ -280,8 +280,8 @@ export default function HomePage() {
       </section>
 
       {/* ══ NRI CALLOUT ══ */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 50% 80% at 85% 50%,rgba(184,146,42,0.1) 0%,transparent 70%)",pointerEvents:"none" }} />
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 50% 80% at 85% 50%,rgba(212,168,67,0.1) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr auto",gap:60,alignItems:"center",position:"relative",zIndex:1 }} className="grid-2">
           <ScrollReveal>
             <div>
@@ -316,11 +316,11 @@ export default function HomePage() {
       </section>
 
       {/* ══ FREE TOOLS ══ */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 70% 50% at 50% 0%,rgba(184,146,42,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",inset:0,backgroundImage:"radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,168,67,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:56 }}>
+            <div style={{ textAlign:"center",marginBottom:36 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Decide With Data</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
@@ -332,7 +332,7 @@ export default function HomePage() {
               </p>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(184,146,42,0.08)",marginBottom:40 }} className="grid-4">
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(212,168,67,0.08)",marginBottom:40 }} className="grid-4">
             {tools.map((tool,i)=>(
               <ScrollReveal key={tool.title} delay={i*80}>
                 <Link href="/calculators" className="glass hover-lift" style={{ display:"block",padding:"32px 26px",textDecoration:"none",transition:"background 0.25s" }}>
@@ -350,7 +350,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FINAL CTA ══ */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px",textAlign:"center" }}>
         <ScrollReveal>
           <div style={{ maxWidth:700,margin:"0 auto" }}>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
@@ -358,7 +358,7 @@ export default function HomePage() {
               Your Next Property Decision Deserves{" "}
               <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Independent Advice.</em>
             </h2>
-            <p className="body-lg" style={{ color:"var(--slate)",marginBottom:40 }}>
+            <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28 }}>
               Whether you are buying, selling, investing, or managing property from abroad, start with an honest conversation, not a sales pitch.
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>

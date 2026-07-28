@@ -50,7 +50,7 @@ export default function InvestmentAdvisoryPage() {
       </VideoHeroSection>
 
       {/* Decision Framework */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1100,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ marginBottom:52 }}>
@@ -62,7 +62,7 @@ export default function InvestmentAdvisoryPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div style={{ borderLeft:"2px solid rgba(184,146,42,0.2)",paddingLeft:32 }}>
+          <div style={{ borderLeft:"2px solid rgba(212,168,67,0.2)",paddingLeft:32 }}>
             {steps.map((s,i)=>(
               <ScrollReveal key={s.n} delay={i*80}>
                 <div style={{ display:"flex",gap:24,paddingBottom:28,marginBottom:28,borderBottom:i<steps.length-1?"1px solid rgba(42,45,53,0.06)":"none",position:"relative" }}>
@@ -84,7 +84,7 @@ export default function InvestmentAdvisoryPage() {
       </section>
 
       {/* Corridors */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1100,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ marginBottom:48 }}>
@@ -102,7 +102,7 @@ export default function InvestmentAdvisoryPage() {
                     <span className="heading-md" style={{ color:"var(--gold)",flexShrink:0 }}>{c.yield}</span>
                   </div>
                   <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>{c.driver}</p>
-                  <p className="caption" style={{ color:"rgba(184,146,42,0.55)",marginTop:10,marginBottom:0 }}>Gross Yield Estimate</p>
+                  <p className="caption" style={{ color:"rgba(212,168,67,0.55)",marginTop:10,marginBottom:0 }}>Gross Yield Estimate</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -112,7 +112,7 @@ export default function InvestmentAdvisoryPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",textAlign:"center" }}>
+      <section style={{ background:"var(--navy)",padding:"60px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:560,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Run Your Investment Numbers First</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Before any conversation, use our free ROI & Rental Yield Calculator, no sign-up required.</p>

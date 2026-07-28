@@ -26,11 +26,11 @@ function Counter({ target, prefix, suffix }:{ target:number; prefix:string; suff
 }
 export default function AnimatedStats() {
   return (
-    <section style={{ background:"var(--navy)",borderTop:"1px solid rgba(184,146,42,0.08)",borderBottom:"1px solid rgba(184,146,42,0.08)" }}>
+    <section style={{ background:"var(--navy)",borderTop:"1px solid rgba(212,168,67,0.08)",borderBottom:"1px solid rgba(212,168,67,0.08)" }}>
       <div style={{ maxWidth:1320,margin:"0 auto" }}>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",background:"rgba(184,146,42,0.04)" }} className="grid-4">
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",background:"rgba(212,168,67,0.04)" }} className="grid-4">
           {stats.map((s,i)=>(
-            <div key={s.label} style={{ padding:"40px 28px",textAlign:"center",borderRight:i<3?"1px solid rgba(184,146,42,0.07)":"none",transition:"background 0.3s",cursor:"default" }}>
+            <div key={s.label} style={{ padding:"40px 28px",textAlign:"center",borderRight:i<3?"1px solid rgba(212,168,67,0.07)":"none",transition:"background 0.3s",cursor:"default" }}>
               <div className="gold-accent-sm" style={{margin:"0 auto 12px"}}></div>
               <Counter target={s.target} prefix={s.prefix} suffix={s.suffix} />
               <div style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.75)",textTransform:"uppercase",letterSpacing:"0.1em",marginTop:8 }}>{s.label}</div>

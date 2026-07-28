@@ -62,7 +62,7 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["IT/Tech Hub","Conference Room","Pantry","24hr Security"],
-    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#B8922A 30%,#D4AA52 70%,#F0DBA8 100%)",
+    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
   },
   {
     id:"ved-r04",
@@ -104,7 +104,7 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["MG Road Front","High Footfall","Washroom","Loading Bay"],
-    imageGradient:"linear-gradient(135deg,#2a2a4a 0%,#4a4a7a 50%,#B8922A 100%)",
+    imageGradient:"linear-gradient(135deg,#2a2a4a 0%,#4a4a7a 50%,#D4A843 100%)",
   },
 ];
 
@@ -114,8 +114,8 @@ export default function RentPage() {
       <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" />
 
       {/* Featured Rentals Section */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(184,146,42,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
@@ -133,7 +133,7 @@ export default function RentPage() {
           <div className="prop-grid">
             {rentalListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80}>
-                <div className="hover-lift" style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
+                <div className="hover-lift" style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
                   
                   {/* Image area */}
                   <div style={{ height:200,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
@@ -143,7 +143,7 @@ export default function RentPage() {
                     </div>
                     {/* Status badge */}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"5px 12px",borderRadius:20,background:property.status==="Available"?"rgba(184,146,42,0.15)":"rgba(255,255,255,0.06)",color:property.status==="Available"?"var(--gold-lt)":"rgba(252,250,244,0.5)",border:"1px solid "+ (property.status==="Available"?"rgba(184,146,42,0.3)":"rgba(255,255,255,0.08)") }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"5px 12px",borderRadius:20,background:property.status==="Available"?"rgba(212,168,67,0.15)":"rgba(255,255,255,0.06)",color:property.status==="Available"?"var(--gold-lt)":"rgba(252,250,244,0.5)",border:"1px solid "+ (property.status==="Available"?"rgba(212,168,67,0.3)":"rgba(255,255,255,0.08)") }}>
                         {property.status}
                       </span>
                     </div>
@@ -153,7 +153,7 @@ export default function RentPage() {
                   <div style={{ padding:24,flex:1,display:"flex",flexDirection:"column" }}>
                     {/* Type & Furnished badges */}
                     <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:10,flexWrap:"wrap" }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",background:"rgba(184,146,42,0.1)",color:"var(--gold-lt)",borderRadius:4 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",background:"rgba(212,168,67,0.1)",color:"var(--gold-lt)",borderRadius:4 }}>
                         {property.type}
                       </span>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(255,255,255,0.04)",color:"rgba(252,250,244,0.5)",borderRadius:4 }}>
@@ -191,7 +191,7 @@ export default function RentPage() {
                     {/* Highlights */}
                     <div style={{ display:"flex",flexWrap:"wrap",gap:6,marginBottom:20,flex:1,alignContent:"flex-start" }}>
                       {property.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(184,146,42,0.06)",color:"rgba(212,170,82,0.7)",borderRadius:4 }}>
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(212,168,67,0.06)",color:"rgba(232,201,112,0.7)",borderRadius:4 }}>
                           {h}
                         </span>
                       ))}

@@ -73,7 +73,7 @@ function Particles({ baseOpacity = 0.25 }) {
         if (p.y > canvas.height) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212,170,82,${p.alpha * baseOpacity})`;
+        ctx.fillStyle = `rgba(232,201,112,${p.alpha * baseOpacity})`;
         ctx.fill();
       });
       for (let i = 0; i < particles.length; i++) {
@@ -85,7 +85,7 @@ function Particles({ baseOpacity = 0.25 }) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(212,170,82,${0.04 * (1 - d / 100) * baseOpacity})`;
+            ctx.strokeStyle = `rgba(232,201,112,${0.04 * (1 - d / 100) * baseOpacity})`;
             ctx.lineWidth = 0.4;
             ctx.stroke();
           }
@@ -260,7 +260,7 @@ export default function VideoHeroSection({
           inset: 0,
           zIndex: 2,
           backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(184,146,42,0.02) 40px, rgba(184,146,42,0.02) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(184,146,42,0.02) 40px, rgba(184,146,42,0.02) 41px)",
+            "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,168,67,0.02) 40px, rgba(212,168,67,0.02) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,168,67,0.02) 40px, rgba(212,168,67,0.02) 41px)",
           pointerEvents: "none",
         }}
       />
@@ -275,7 +275,7 @@ export default function VideoHeroSection({
           height: 400,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(184,146,42,0.10) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(212,168,67,0.10) 0%, transparent 70%)",
           pointerEvents: "none",
           zIndex: 2,
           animation: "float 8s ease-in-out infinite",
@@ -290,7 +290,7 @@ export default function VideoHeroSection({
           height: 240,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(184,146,42,0.06) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(212,168,67,0.06) 0%, transparent 70%)",
           pointerEvents: "none",
           zIndex: 2,
           animation: "float 10s ease-in-out infinite 2s",

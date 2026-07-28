@@ -53,7 +53,7 @@ export default function Footer() {
             </div>
             <div style={{ display:"flex",gap:8,marginTop:18,flexWrap:"wrap" }}>
               {["RERA Compliant","ISO Verified"].map(b=>(
-                <span key={b} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--gold-lt)",border:"1px solid rgba(184,146,42,0.2)",padding:"4px 8px" }}>{b}</span>
+                <span key={b} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.2)",padding:"4px 8px" }}>{b}</span>
               ))}
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
         <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12,paddingTop:18 }}>
           <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.4)",margin:0 }}>© {new Date().getFullYear()} Vedhara Group Pvt. Ltd. All Rights Reserved.</p>
-          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(212,170,82,0.5)",margin:0 }}>vedharagroup.com</p>
+          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(232,201,112,0.5)",margin:0 }}>vedharagroup.com</p>
         </div>
       </div>
       <style>{`

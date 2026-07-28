@@ -52,7 +52,7 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                   height:"100%",
                   padding:"32px 16px 18px",
                   textAlign:"center",
-                  border:"1px solid rgba(184,146,42,0.12)",
+                  border:"1px solid rgba(212,168,67,0.12)",
                 }}
               >
                 {/* Country code badge — white */}
@@ -126,7 +126,7 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                       color:"rgba(255,255,255,0.8)",
                       lineHeight:1.5,
                       padding:"10px 0 4px",
-                      borderTop:"1px solid rgba(184,146,42,0.1)",
+                      borderTop:"1px solid rgba(212,168,67,0.1)",
                     }}
                   >
                     {c.cities}
@@ -172,11 +172,11 @@ function CountriesCardStyles() {
     .country-card:hover {
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 12px 36px rgba(9,15,29,0.3);
-      border-color: rgba(184,146,42,0.3);
+      border-color: rgba(212,168,67,0.3);
       background: linear-gradient(135deg, #0F1E38 0%, #16243F 100%) !important;
     }
     .country-card:hover .country-name {
-      color: #D4AA52;
+      color: #E8C970;
     }
     .country-card:hover .country-code {
       color: rgba(255,255,255,1) !important;

@@ -36,7 +36,7 @@ function Particles() {
         if (p.y > canvas.height) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212,170,82,${p.alpha})`;
+        ctx.fillStyle = `rgba(232,201,112,${p.alpha})`;
         ctx.fill();
       });
       for (let i = 0; i < particles.length; i++) {
@@ -48,7 +48,7 @@ function Particles() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(212,170,82,${0.05 * (1 - d / 120)})`;
+            ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / 120)})`;
             ctx.lineWidth = 0.4;
             ctx.stroke();
           }
@@ -214,7 +214,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           inset: 0,
           zIndex: 2,
           backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(184,146,42,0.015) 60px, rgba(184,146,42,0.015) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(184,146,42,0.015) 60px, rgba(184,146,42,0.015) 61px)",
+            "repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(212,168,67,0.015) 60px, rgba(212,168,67,0.015) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(212,168,67,0.015) 60px, rgba(212,168,67,0.015) 61px)",
           pointerEvents: "none",
         }}
       />
@@ -245,7 +245,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           height: 480,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(184,146,42,0.10) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(212,168,67,0.10) 0%, transparent 70%)",
           zIndex: 2,
           pointerEvents: "none",
           animation: "float 8s ease-in-out infinite",
@@ -260,7 +260,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           height: 280,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(184,146,42,0.06) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(212,168,67,0.06) 0%, transparent 70%)",
           zIndex: 2,
           pointerEvents: "none",
           animation: "float 10s ease-in-out infinite 2s",
@@ -271,7 +271,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
         <div style={{ display:"grid",gridTemplateColumns:"1fr 380px",gap:80,alignItems:"center" }} className="hero-inner">
           {/* LEFT */}
           <div>
-            <div style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(184,146,42,0.1)",border:"1px solid rgba(184,146,42,0.3)",backdropFilter:"blur(12px)",opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease 0.15s" }}>
+            <div style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease 0.15s" }}>
               <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",animation:"pulseRing 2.5s infinite",display:"block" }} />
               <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory · Verified Listings · Delhi NCR</span>
             </div>
@@ -304,7 +304,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           {/* RIGHT: glass stat cards */}
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
             <div className="glass" style={{ padding:"24px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
-              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(184,146,42,0.08)" }}>
+              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>
                 {[{num:"200+",sub:"Families Guided"},{num:"₹50Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
                   <div key={s.sub} style={{ padding:"18px 16px",textAlign:"center",background:"rgba(9,15,29,0.4)" }}>
                     <span style={{ display:"block",fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:6 }}>{s.num}</span>
@@ -314,13 +314,13 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
               </div>
             </div>
             <div className="glass-gold" style={{ padding:"18px 20px",display:"flex",alignItems:"center",gap:14,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
-              <div style={{ width:42,height:42,borderRadius:"50%",background:"rgba(184,146,42,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
+              <div style={{ width:42,height:42,borderRadius:"50%",background:"rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
               <div>
                 <p style={{ fontFamily:"var(--t-head)",fontSize:12,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 3px" }}>Vedhara Verification Framework</p>
                 <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.7)",margin:0 }}>5 checks published on every listing before you see it</p>
               </div>
             </div>
-            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(184,146,42,0.06)" }}>
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.06)" }}>
               {[{l:"📊 ROI Calculator",h:"/calculators"},{l:"🌐 NRI Services",h:"/nri-services"},{l:"🔍 Verify Property",h:"/verification-center"},{l:"📈 Invest in NCR",h:"/investment-advisory"}].map(item=>(
                 <Link key={item.l} href={item.h} className="hero-quick-link">{item.l}</Link>
               ))}
@@ -340,7 +340,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;}.hero-right{display:none!important;}}
         .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:rgba(255,255,255,0.6);text-decoration:none;background:rgba(9,15,29,0.5);backdrop-filter:blur(8px);transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
-        .hero-quick-link:hover{background:rgba(184,146,42,0.1);color:var(--gold-lt);}
+        .hero-quick-link:hover{background:rgba(212,168,67,0.1);color:var(--gold-lt);}
       `}</style>
     </section>
   );

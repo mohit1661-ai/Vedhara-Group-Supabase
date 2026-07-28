@@ -47,7 +47,7 @@ export default function ContactPage() {
           </p>
       </VideoHeroSection>
 
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:64,alignItems:"flex-start" }} className="grid-2">
 
           {/* INFO SIDE */}
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 <p className="eyebrow" style={{ marginBottom:14 }}>How to Reach Us</p>
                 {[
                   { icon:"C",  label:"Call",      val:"+91 98106 47063",       href:"tel:+919810647063", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
-                  { icon:"W",  label:"WhatsApp",  val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+                  { icon:"W",  label:"WhatsApp",  val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group", grad:"linear-gradient(135deg,#0F1E38,#D4A843)" },
                   { icon:"E",  label:"Email",     val:"hello@vedharagroup.com", href:"mailto:hello@vedharagroup.com", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
                 ].map(item=>(
                   <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div style={{ marginTop:20,padding:"16px 20px",background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.15)" }}>
+              <div style={{ marginTop:20,padding:"16px 20px",background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.15)" }}>
                 <p className="eyebrow" style={{ color:"var(--gold)",marginBottom:6 }}>NRI Clients</p>
                 <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>Weekend slots available: Saturday & Sunday, 10AM–4PM IST. Tell us your time zone in the form and we will schedule around you.</p>
               </div>

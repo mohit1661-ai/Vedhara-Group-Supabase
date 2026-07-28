@@ -19,7 +19,7 @@ export default function Page() {
             Delhi NCR Real Estate Intel,<br /><span style={{ color:"var(--gold-lt)" }}>Research That Informs, Not Sells</span>
           </h1>
         </VideoHeroSection>
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:980,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px",marginBottom:52 }}>

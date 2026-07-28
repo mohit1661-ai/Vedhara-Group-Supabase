@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const commitments = [
   { icon:"S", n:"01", title:"Weekend & Evening IST Slots", desc:"Saturday and Sunday, 10AM–4PM IST, plus weekday evening slots. We schedule around your time zone, not ours.", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
-  { icon:"V", n:"02", title:"On-Demand Video Walkthroughs", desc:"Shortlisted properties available for live or recorded video walkthroughs within 48 hours of request. You see the property, the surroundings, the society entrance, and the documentation.", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { icon:"V", n:"02", title:"On-Demand Video Walkthroughs", desc:"Shortlisted properties available for live or recorded video walkthroughs within 48 hours of request. You see the property, the surroundings, the society entrance, and the documentation.", grad:"linear-gradient(135deg,#0F1E38,#D4A843)" },
   { icon:"✓", n:"03", title:"Independent Verification", desc:"RERA check, builder history, approvals, title documents, all completed before you are asked to make a booking payment.", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
   { icon:"E", n:"04", title:"E-Signature & Digital Documentation", desc:"Sale agreements, token money receipts, and most pre-registration documents can be handled digitally. We guide you through what specifically requires physical presence or a registered POA.", grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
   { icon:"L", n:"05", title:"FEMA & RBI Compliance Guidance", desc:"Every NRI transaction structured to comply with FEMA property acquisition regulations, NRO/NRE account routing, and TDS deduction requirements under Section 195.", grad:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
@@ -23,7 +23,7 @@ const commitments = [
 ];
 
 const countries = [
-  { flag:"U",  name:"UAE",            cities:"Dubai, Abu Dhabi, Sharjah", grad:"linear-gradient(135deg,#0F1E38,#B8922A)" },
+  { flag:"U",  name:"UAE",            cities:"Dubai, Abu Dhabi, Sharjah", grad:"linear-gradient(135deg,#0F1E38,#D4A843)" },
   { flag:"UK", name:"United Kingdom", cities:"London, Birmingham, Manchester", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
   { flag:"US", name:"United States",  cities:"New York, New Jersey, Texas, California", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
   { flag:"CA", name:"Canada",         cities:"Toronto, Vancouver, Calgary", grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
@@ -68,7 +68,7 @@ export default function NRIServicesPage() {
       </VideoHeroSection>
 
       {/* Commitments */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
@@ -82,7 +82,7 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Countries */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
@@ -96,7 +96,7 @@ export default function NRIServicesPage() {
       </section>
 
       {/* Legal */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:920,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ marginBottom:40 }}>
@@ -108,12 +108,12 @@ export default function NRIServicesPage() {
           {legalPoints.map((pt,i)=>(
             <ScrollReveal key={i} delay={i*60}>
               <div style={{ display:"flex",gap:16,paddingBottom:16,marginBottom:16,borderBottom:i<legalPoints.length-1?"1px solid rgba(42,45,53,0.06)":"none" }}>
-                <span style={{ width:24,height:24,borderRadius:"50%",background:"rgba(184,146,42,0.12)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:11,color:"var(--gold)",fontWeight:700 }}>{i+1}</span>
+                <span style={{ width:24,height:24,borderRadius:"50%",background:"rgba(212,168,67,0.12)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:11,color:"var(--gold)",fontWeight:700 }}>{i+1}</span>
                 <span className="body-md" style={{ color:"var(--slate)" }}>{pt}</span>
               </div>
             </ScrollReveal>
           ))}
-          <div style={{ background:"rgba(184,146,42,0.06)",border:"1px solid rgba(184,146,42,0.15)",padding:"16px 20px",marginTop:32 }}>
+          <div style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.15)",padding:"16px 20px",marginTop:32 }}>
             <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>The above is general guidance only. FEMA regulations are subject to RBI updates and individual circumstances vary. Vedhara coordinates with qualified CA and legal advisors for transaction-specific compliance.</p>
           </div>
         </div>

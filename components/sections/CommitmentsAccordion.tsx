@@ -98,7 +98,7 @@ function CommCardStyles() {
       box-shadow: 0 16px 40px rgba(9,15,29,0.18);
     }
     .comm-card:hover .svc-card-title {
-      color: #D4AA52;
+      color: #E8C970;
     }
     .comm-card:hover .comm-desc-wrap {
       opacity: 1 !important;
@@ -107,7 +107,7 @@ function CommCardStyles() {
       transition: color 0.3s;
     }
     .comm-card:hover .svc-card-desc {
-      color: rgba(212,170,82,0.55);
+      color: rgba(232,201,112,0.55);
     }
   `}</style>;
 }
