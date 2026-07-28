@@ -101,9 +101,10 @@ export default function TeamPage() {
           The People Behind<br />
           <span style={{ color:"var(--gold-lt)" }}>Your Property Decisions.</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 32px" }}>
           Every client at Vedhara Group works with a named senior advisor, not a rotating team. Meet the leadership that sets the standard.
         </p>
+        <Link href="/contact" className="btn btn-primary" style={{ marginTop:4 }}>Book a Free Consultation</Link>
       </VideoHeroSection>
 
       {/* Team Grid */}
