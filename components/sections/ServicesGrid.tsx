@@ -11,9 +11,9 @@ const services = [
 ];
 export default function ServicesGrid() {
   return (
-    <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-4">
+    <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-4 svc-card-alt">
       {services.map(svc=>(
-        <Link key={svc.href} href={svc.href} className="svc-card" style={{ background:"var(--cream)",borderRadius:0 }}>
+        <Link key={svc.href} href={svc.href} className="svc-card" style={{ borderRadius:0 }}>
           <div className="gold-accent"></div>
           <h3 className="svc-card-title">{svc.title}</h3>
           <p className="svc-card-desc">{svc.desc}</p>

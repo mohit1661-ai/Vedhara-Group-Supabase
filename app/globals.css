@@ -111,6 +111,23 @@ img,video{max-width:100%;height:auto;}
 .svc-card-arrow{font-family:var(--t-head);font-size:9.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);opacity:0;transform:translateX(-8px);transition:opacity 0.3s,transform 0.3s var(--ease-out);display:block;}
 .svc-card:hover .svc-card-arrow{opacity:1;transform:translateX(0);}
 
+/* Alternating navy/gold cards for homepage sections */
+.svc-card-alt .svc-card{background:var(--navy);}
+.svc-card-alt > :nth-child(even) .svc-card{background:var(--gold-lt);}
+.svc-card-alt .svc-card .gold-accent{background:var(--gold-lt);}
+.svc-card-alt > :nth-child(even) .svc-card .gold-accent{background:var(--navy);}
+.svc-card-alt .svc-card .svc-card-title{color:var(--gold-lt);}
+.svc-card-alt > :nth-child(even) .svc-card .svc-card-title{color:var(--navy);}
+.svc-card-alt .svc-card .svc-card-desc{color:rgba(255,255,255,0.65);}
+.svc-card-alt > :nth-child(even) .svc-card .svc-card-desc{color:rgba(15,30,56,0.7);}
+.svc-card-alt .svc-card .svc-card-arrow{color:var(--gold-lt);}
+.svc-card-alt > :nth-child(even) .svc-card .svc-card-arrow{color:var(--navy);}
+.svc-card-alt .svc-card:hover{background:var(--cream)!important;}
+.svc-card-alt .svc-card:hover .svc-card-title{color:var(--navy)!important;}
+.svc-card-alt .svc-card:hover .svc-card-desc{color:var(--slate)!important;}
+.svc-card-alt .svc-card:hover .svc-card-arrow{color:var(--gold-lt)!important;}
+.svc-card-alt .svc-card:hover .gold-accent{background:var(--gold)!important;}
+
 /* FAQ */
 .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);}
 .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;transition:background 0.2s;}
