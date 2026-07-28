@@ -348,6 +348,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ══ OUR TEAM ══ */}
+      <section style={{ background:"var(--navy)",padding:"60px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:44 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px",background:"var(--gold-lt)" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Our Team</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1 }}>
+                Meet the{" "}
+                <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Leadership Behind</em>
+                <br />
+                Your Property Journey
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24 }} className="grid-4">
+            {[
+              { name:"Deshraj Sharma", title:"Founder & CEO", initials:"DS", desc:"20+ years guiding families through Delhi NCR's real estate market with transparency and independent advice." },
+              { name:"Mohit Sharma", title:"Managing Director", initials:"MS", desc:"Delivers tailored property strategies for HNI clients, NRIs, and first-time homebuyers alike." },
+              { name:"Kusum Sharma", title:"Director – Investment Advisory", initials:"KS", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
+              { name:"Bharat", title:"Director – Developer & Strategic Partnerships", initials:"BH", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
+            ].map((member,i)=>(
+              <ScrollReveal key={member.name} delay={i*100}>
+                <div className="team-card" style={{ background:"rgba(255,255,255,0.04)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:14,overflow:"hidden",transition:"all 0.4s var(--ease-out)",height:"100%" }}>
+                  {/* Avatar */}
+                  <div style={{ padding:"32px 24px 0",textAlign:"center" }}>
+                    <div style={{ width:72,height:72,borderRadius:"50%",margin:"0 auto 16px",background:"linear-gradient(135deg,rgba(212,168,67,0.2),rgba(212,168,67,0.06))",border:"2px solid rgba(212,168,67,0.2)",display:"flex",alignItems:"center",justifyContent:"center" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--light)",marginBottom:4 }}>{member.name}</h3>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"var(--gold-lt)",letterSpacing:"0.04em",marginBottom:16,textTransform:"uppercase" }}>{member.title}</p>
+                  </div>
+                  {/* Body */}
+                  <div style={{ padding:"0 22px 24px",textAlign:"center" }}>
+                    <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",lineHeight:1.8,fontSize:12.5,margin:"0 0 18px" }}>
+                      {member.desc}
+                    </p>
+                    <Link href="/team" style={{ fontFamily:"var(--t-head)",fontSize:11,color:"var(--gold)",fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",textDecoration:"none",transition:"color 0.3s",display:"inline-flex",alignItems:"center",gap:6 }}>
+                      Meet the Team{" "}
+                      <span style={{ fontSize:14,lineHeight:1 }}>→</span>
+                    </Link>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ FINAL CTA ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px",textAlign:"center" }}>
         <ScrollReveal>
