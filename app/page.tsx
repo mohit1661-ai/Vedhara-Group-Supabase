@@ -373,16 +373,17 @@ export default function HomePage() {
             ].map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100}>
                 <div className="team-card" style={{ background:"rgba(255,255,255,0.04)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:14,overflow:"hidden",transition:"all 0.4s var(--ease-out)",height:"100%" }}>
-                  {/* Avatar */}
-                  <div style={{ padding:"32px 24px 0",textAlign:"center" }}>
-                    <div style={{ width:72,height:72,borderRadius:"50%",margin:"0 auto 16px",background:"linear-gradient(135deg,rgba(212,168,67,0.2),rgba(212,168,67,0.06))",border:"2px solid rgba(212,168,67,0.2)",display:"flex",alignItems:"center",justifyContent:"center" }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
+                  {/* Full-width photo banner — like featured properties, taller for portrait */}
+                  <div style={{ height:220,background:"linear-gradient(135deg,rgba(212,168,67,0.25),rgba(15,30,56,0.6),rgba(212,168,67,0.15))",display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden" }}>
+                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
+                    <div style={{ width:104,height:104,borderRadius:12,background:"rgba(15,30,56,0.5)",border:"2px solid rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)",position:"relative",zIndex:1 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:34,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
                     </div>
-                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--light)",marginBottom:4 }}>{member.name}</h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"var(--gold-lt)",letterSpacing:"0.04em",marginBottom:16,textTransform:"uppercase" }}>{member.title}</p>
                   </div>
-                  {/* Body */}
-                  <div style={{ padding:"0 22px 24px",textAlign:"center" }}>
+                  {/* Content */}
+                  <div style={{ padding:"20px 22px 24px",textAlign:"center" }}>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--light)",marginBottom:4 }}>{member.name}</h3>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"var(--gold-lt)",letterSpacing:"0.04em",marginBottom:14,textTransform:"uppercase" }}>{member.title}</p>
                     <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",lineHeight:1.8,fontSize:12.5,margin:"0 0 18px" }}>
                       {member.desc}
                     </p>

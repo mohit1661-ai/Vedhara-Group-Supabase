@@ -119,18 +119,19 @@ export default function TeamPage() {
             {teamMembers.map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100}>
                 <div className="team-card" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",overflow:"hidden",transition:"all 0.4s var(--ease-out)" }}>
-                  {/* Header with avatar */}
-                  <div style={{ background:member.gradient,padding:"36px 32px",display:"flex",alignItems:"center",gap:24 }}>
-                    <div style={{ width:72,height:72,borderRadius:"50%",background:"rgba(255,255,255,0.12)",border:"2px solid rgba(255,255,255,0.25)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"rgba(255,255,255,0.9)",letterSpacing:"0.05em" }}>{member.initials}</span>
-                    </div>
-                    <div>
-                      <h3 style={{ fontFamily:"var(--t-head)",fontSize:20,fontWeight:700,color:"#ffffff",marginBottom:3 }}>{member.name}</h3>
-                      <p style={{ fontFamily:"var(--t-body)",fontSize:12,color:"rgba(255,255,255,0.7)",letterSpacing:"0.04em",margin:0 }}>{member.title}</p>
+                  {/* Full-width photo banner — like featured properties, taller for portrait */}
+                  <div style={{ height:280,background:member.gradient,display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden" }}>
+                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.08) 0%,transparent 60%)" }} />
+                    <div style={{ width:130,height:130,borderRadius:14,background:"rgba(15,30,56,0.35)",border:"2px solid rgba(255,255,255,0.25)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)",position:"relative",zIndex:1,boxShadow:"0 12px 36px rgba(0,0,0,0.2)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:42,fontWeight:700,color:"rgba(255,255,255,0.9)",letterSpacing:"0.05em" }}>{member.initials}</span>
                     </div>
                   </div>
-                  {/* Body */}
-                  <div style={{ padding:"28px 32px" }}>
+                  {/* Content */}
+                  <div style={{ padding:"24px 32px 28px" }}>
+                    <div style={{ marginBottom:18 }}>
+                      <h3 style={{ fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--navy)",marginBottom:4 }}>{member.name}</h3>
+                      <p style={{ fontFamily:"var(--t-body)",fontSize:12,color:"var(--gold-dk)",letterSpacing:"0.04em",margin:0,textTransform:"uppercase" }}>{member.title}</p>
+                    </div>
                     <p className="body-sm" style={{ color:"var(--slate)",lineHeight:1.85,marginBottom:20 }}>
                       {member.description}
                     </p>
