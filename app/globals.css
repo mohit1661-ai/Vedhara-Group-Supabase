@@ -112,21 +112,31 @@ img,video{max-width:100%;height:auto;}
 .svc-card:hover .svc-card-arrow{opacity:1;transform:translateX(0);}
 
 /* Alternating navy/gold cards for homepage sections */
+/* Odd cards: navy idle → cream hover */
 .svc-card-alt .svc-card{background:var(--navy);}
-.svc-card-alt > :nth-child(even) .svc-card{background:var(--gold-lt);}
 .svc-card-alt .svc-card .gold-accent{background:var(--gold-lt);}
-.svc-card-alt > :nth-child(even) .svc-card .gold-accent{background:var(--navy);}
 .svc-card-alt .svc-card .svc-card-title{color:var(--gold-lt);}
-.svc-card-alt > :nth-child(even) .svc-card .svc-card-title{color:var(--navy);}
 .svc-card-alt .svc-card .svc-card-desc{color:rgba(255,255,255,0.65);}
-.svc-card-alt > :nth-child(even) .svc-card .svc-card-desc{color:rgba(15,30,56,0.7);}
-.svc-card-alt .svc-card .svc-card-arrow{color:var(--gold-lt);}
-.svc-card-alt > :nth-child(even) .svc-card .svc-card-arrow{color:var(--navy);}
+.svc-card-alt .svc-card .svc-card-arrow{color:#ffffff;opacity:1;transform:translateX(0);}
 .svc-card-alt .svc-card:hover{background:var(--cream)!important;}
 .svc-card-alt .svc-card:hover .svc-card-title{color:var(--navy)!important;}
 .svc-card-alt .svc-card:hover .svc-card-desc{color:var(--slate)!important;}
 .svc-card-alt .svc-card:hover .svc-card-arrow{color:var(--gold-lt)!important;}
 .svc-card-alt .svc-card:hover .gold-accent{background:var(--gold)!important;}
+/* Even cards: cream idle (original) → navy hover */
+.svc-card-alt > :nth-child(even){background:var(--cream);}
+.svc-card-alt > :nth-child(even) .gold-accent{background:var(--gold-lt);}
+.svc-card-alt > :nth-child(even) .svc-card-title{color:var(--navy);}
+.svc-card-alt > :nth-child(even) .svc-card-desc{color:var(--slate);}
+.svc-card-alt > :nth-child(even) .svc-card-arrow{color:var(--navy);opacity:1;transform:translateX(0);}
+.svc-card-alt > :nth-child(even):hover{background:var(--navy)!important;}
+.svc-card-alt > :nth-child(even):hover .svc-card-title{color:var(--gold-lt)!important;}
+.svc-card-alt > :nth-child(even):hover .svc-card-desc{color:rgba(232,201,112,0.55)!important;}
+.svc-card-alt > :nth-child(even):hover .svc-card-arrow{color:var(--gold-lt)!important;}
+.svc-card-alt > :nth-child(even):hover .gold-accent{background:var(--gold-lt)!important;}
+/* Also support wrapped cards (e.g. ScrollReveal in Why Vedhara) */
+.svc-card-alt > :nth-child(even) .svc-card{background:var(--cream);}
+.svc-card-alt > :nth-child(even) .svc-card:hover{background:var(--navy)!important;}
 
 /* FAQ */
 .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);}
