@@ -56,10 +56,10 @@ export default function NRIServicesPage() {
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-          NRI Property, <span style={{ color:"var(--gold-lt)" }}>Managed from Abroad</span>
+          NRI Property<br /><span style={{ color:"var(--gold-lt)" }}>Managed from Abroad</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 28px" }}>
-          Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
+          Weekend IST consultations, 48-hour video walkthroughs, and e-signature documentation — make verified property decisions in India without buying a flight ticket.
         </p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
           <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
