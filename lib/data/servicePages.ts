@@ -4,10 +4,10 @@ export const servicePages: Record<string, ServicePageContent> = {
   buy: {
     slug: "buy",
     eyebrow: "Buy With Confidence",
-    h1: "Browse Verified Properties,",
-    h1Accent: "Backed by Independent Advice",
+    h1: "Browse Verified Properties",
+    h1Accent: "Independent Advice",
     intro:
-      "Vedhara Group offers independent guidance through verified developer-partner listings, from shortlisting to negotiation to final paperwork, with your interests represented first.",
+      "Expert guidance through verified listings — shortlisting to paperwork, your interests first.",
     included: [
       "Goal-mapping session to understand budget, location priorities, and long-term plans",
       "Curated shortlist based on the Vedhara Verification Framework, not a flood of irrelevant listings",
