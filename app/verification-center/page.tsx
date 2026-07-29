@@ -55,7 +55,6 @@ export default function VerificationCenterPage() {
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
             &ldquo;Verified properties&rdquo; &mdash; most common phrase.<br />&ldquo;Verified&rdquo; meaning &mdash; rarely explained.<br />See our five checks on every listing.
           </p>
-          </p>
         </VideoHeroSection>
 
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
