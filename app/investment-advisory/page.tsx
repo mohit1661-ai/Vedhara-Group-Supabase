@@ -49,7 +49,7 @@ export default function InvestmentAdvisoryPage() {
         </p>
       </VideoHeroSection>
 
-      {/* Decision Framework */}
+      {/* Decision Framework — cards */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1100,margin:"0 auto" }}>
           <ScrollReveal>
@@ -62,20 +62,14 @@ export default function InvestmentAdvisoryPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div style={{ borderLeft:"2px solid rgba(212,168,67,0.2)",paddingLeft:32 }}>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="prop-grid svc-card-alt">
             {steps.map((s,i)=>(
               <ScrollReveal key={s.n} delay={i*80}>
-                <div style={{ display:"flex",gap:24,paddingBottom:28,marginBottom:28,borderBottom:i<steps.length-1?"1px solid rgba(42,45,53,0.06)":"none",position:"relative" }}>
-                  <div style={{ position:"absolute",left:-41,top:0,width:18,height:18,borderRadius:"50%",background:"var(--gold)",display:"flex",alignItems:"center",justifyContent:"center" }}>
-                    <span style={{ width:6,height:6,borderRadius:"50%",background:"white" }} />
-                  </div>
-                  <div style={{ width:36,flexShrink:0 }}>
-                    <span className="eyebrow" style={{ color:"var(--gold)" }}>{s.n}</span>
-                  </div>
-                  <div>
-                    <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:6 }}>{s.title}</h3>
-                    <p className="body-md" style={{ color:"var(--slate)",margin:0 }}>{s.desc}</p>
-                  </div>
+                <div className="svc-card" style={{ borderRadius:12,padding:"32px 24px" }}>
+                  <div className="gold-accent" />
+                  <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:10,display:"block" }}>{s.n}</span>
+                  <h3 className="svc-card-title">{s.title}</h3>
+                  <p className="svc-card-desc">{s.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
