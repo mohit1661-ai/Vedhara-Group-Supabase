@@ -59,7 +59,7 @@ export default function NRIServicesPage() {
           NRI Property<br /><span style={{ color:"var(--gold-lt)" }}>Managed from Abroad</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 28px" }}>
-          Weekend IST consultations, 48-hour video walkthroughs, and e-signature documentation — make verified property decisions in India without buying a flight ticket.
+          Weekend IST consultations, 48-hour video walkthroughs, and e-signature documentation. Verified property decisions in India without buying a flight ticket.
         </p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
           <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
