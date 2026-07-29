@@ -183,6 +183,11 @@ export default function BuyPage() {
         </div>
       </section>
 
+      {/* Separator */}
+      <div style={{ background:"var(--navy)",display:"flex",justifyContent:"center",padding:"0 32px" }}>
+        <div style={{ width:80,height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
       {/* FAQ */}
       <FAQSection faqs={buyFaqs} title="Buying Property in Delhi NCR, FAQ" />
     </>
