@@ -69,17 +69,19 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150} direction="right">
-            <div style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px" }}>
-              <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:16 }}>Our Mission</h3>
-              <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.85,marginBottom:24 }}>
+            <div style={{ background:"var(--navy)",padding:"44px 40px",position:"relative",boxShadow:"0 20px 48px rgba(9,15,29,0.28)" }}>
+              {/* gold top bar */}
+              <div style={{ position:"absolute",top:0,left:0,right:0,height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))" }} />
+              <h3 className="heading-md" style={{ color:"var(--gold)",marginBottom:16 }}>Our Mission</h3>
+              <p className="body-md" style={{ color:"rgba(252,250,244,0.8)",lineHeight:1.85,marginBottom:28 }}>
                 To become the most trusted, independently-positioned real estate advisory firm in Delhi NCR, helping buyers, sellers, investors, and NRIs make property decisions backed by verified information rather than sales pressure.
               </p>
-              <div style={{ borderTop:"1px solid rgba(42,45,53,0.08)",paddingTop:20 }}>
-                <p className="eyebrow" style={{ marginBottom:12 }}>What We Stand For</p>
-                {["Independent advisory, never a developer's agent","Verification published, not just promised","Fees disclosed before the conversation begins","One named advisor throughout your journey"].map(pt=>(
-                  <div key={pt} style={{ display:"flex",gap:10,marginBottom:10 }}>
-                    <span style={{ color:"var(--gold)",flexShrink:0 }}>-</span>
-                    <span className="body-sm" style={{ color:"var(--slate)" }}>{pt}</span>
+              <div style={{ borderTop:"1px solid rgba(232,201,112,0.15)",paddingTop:20 }}>
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Stand For</p>
+                {["Independent advisory, never a developer's agent","Verification published, not just promised","Fees disclosed before the conversation begins","One named advisor throughout your journey"].map((pt,i)=>(
+                  <div key={pt} style={{ display:"flex",gap:12,marginBottom:12,opacity:0,animation:`fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) ${250+i*120}ms forwards` }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:1 }}>—</span>
+                    <span className="body-sm" style={{ color:"rgba(252,250,244,0.65)" }}>{pt}</span>
                   </div>
                 ))}
               </div>
