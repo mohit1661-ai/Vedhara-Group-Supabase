@@ -296,6 +296,11 @@ img,video{max-width:100%;height:auto;}
   section .btn.btn-outline{display:flex;width:100%;justify-content:center;box-sizing:border-box;}
 }
 
+/* CTA sub-text: stay on one line on desktop */
+@media(min-width:1024px){
+  .cta-sub-text{white-space:nowrap;}
+}
+
 /* Property listing grids */
 .prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 @media(max-width:1024px){.prop-grid{grid-template-columns:repeat(2,1fr)!important;}}
