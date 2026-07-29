@@ -372,25 +372,31 @@ export default function HomePage() {
               { name:"Bharat", title:"Director – Developer & Strategic Partnerships", initials:"BH", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
             ].map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100}>
-                <div className="team-card" style={{ background:"rgba(255,255,255,0.04)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:14,overflow:"hidden",transition:"all 0.4s var(--ease-out)",height:"100%" }}>
-                  {/* Full-width photo banner — like featured properties, taller for portrait */}
-                  <div style={{ height:220,background:"linear-gradient(135deg,rgba(212,168,67,0.25),rgba(15,30,56,0.6),rgba(212,168,67,0.15))",display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden" }}>
+                <div className="team-card hover-lift" style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                  {/* Full-width photo banner */}
+                  <div style={{ height:200,background:"linear-gradient(135deg,rgba(212,168,67,0.3),rgba(15,30,56,0.7),rgba(212,168,67,0.2))",display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden" }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ width:104,height:104,borderRadius:12,background:"rgba(15,30,56,0.5)",border:"2px solid rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)",position:"relative",zIndex:1 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:34,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
+                    <div style={{ width:96,height:96,borderRadius:12,background:"rgba(15,30,56,0.5)",border:"2px solid rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)",position:"relative",zIndex:1 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:32,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
                     </div>
                   </div>
-                  {/* Content */}
-                  <div style={{ padding:"20px 22px 24px",textAlign:"center" }}>
-                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--light)",marginBottom:4 }}>{member.name}</h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"var(--gold-lt)",letterSpacing:"0.04em",marginBottom:14,textTransform:"uppercase" }}>{member.title}</p>
-                    <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",lineHeight:1.8,fontSize:12.5,margin:"0 0 18px" }}>
+                  {/* Content — matching featured properties style */}
+                  <div style={{ padding:20 }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:6 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
+                        {member.title}
+                      </span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:6,marginTop:4 }}>{member.name}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)",lineHeight:1.7,fontSize:12,margin:"0 0 12px" }}>
                       {member.desc}
                     </p>
-                    <Link href="/team" style={{ fontFamily:"var(--t-head)",fontSize:11,color:"var(--gold)",fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",textDecoration:"none",transition:"color 0.3s",display:"inline-flex",alignItems:"center",gap:6 }}>
-                      Meet the Team{" "}
-                      <span style={{ fontSize:14,lineHeight:1 }}>→</span>
-                    </Link>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em" }}>Vedhara Group</span>
+                      <Link href="/team" style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,color:"var(--gold)",textTransform:"uppercase",letterSpacing:"0.06em",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:4 }}>
+                        View Bio →
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
