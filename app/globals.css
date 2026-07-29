@@ -218,7 +218,15 @@ img,video{max-width:100%;height:auto;}
 .services-grid > :nth-child(8):hover .gold-accent{background:var(--gold)!important;}
 .services-grid > :nth-child(8) .svc-card{background:var(--navy)!important;}
 .services-grid > :nth-child(8) .svc-card:hover{background:var(--cream)!important;}
-
+/* Verification check grid: RERA (pos 1) & Title (pos 5) → navy hover */
+.check-grid > :first-child .hover-lift:hover,
+.check-grid > :last-child .hover-lift:hover{background:var(--navy)!important;}
+.check-grid > :first-child .hover-lift:hover h3,
+.check-grid > :last-child .hover-lift:hover h3{color:var(--light)!important;}
+.check-grid > :first-child .hover-lift:hover p,
+.check-grid > :last-child .hover-lift:hover p{color:rgba(252,250,244,0.5)!important;}
+.check-grid > :first-child .hover-lift:hover span,
+.check-grid > :last-child .hover-lift:hover span{color:rgba(232,201,112,0.55)!important;}
 /* FAQ */
 .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);}
 .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;transition:background 0.2s;}

@@ -83,7 +83,7 @@ export default function HomePage() {
             </ScrollReveal>
           </div>
 
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-5">
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-5 check-grid">
             {checks.map((c,i)=>(
               <ScrollReveal key={c.num} delay={i*70}>
                 <div className="hover-lift" style={{ background:i===2?"var(--navy)":"var(--cream)",padding:"36px 24px",height:"100%",cursor:"default" }}>
