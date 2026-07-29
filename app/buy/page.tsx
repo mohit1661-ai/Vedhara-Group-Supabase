@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
+import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
@@ -94,10 +95,18 @@ const featuredListings: PropertyListing[] = [
   },
 ];
 
+const buyFaqs = [
+  { q:"Do I pay Vedhara a fee to buy a property?", a:"In most cases, no direct fee is charged to buyers; Vedhara is compensated through standard brokerage commission paid by the seller or developer side, disclosed on the specific listing." },
+  { q:"Can I see properties that aren't from partner developers?", a:"Our listed inventory comes from verified partner developers. If you've already found a property elsewhere and want an independent opinion on it, our advisory team can offer a Second Opinion review as a separate engagement." },
+  { q:"How does the Verification Framework protect buyers?", a:"Every property we list passes five documented checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness, and title document availability. Results are published on every listing page." },
+  { q:"What if I need help after purchasing?", a:"Our relationship does not end at registration. Post-purchase support includes handover coordination, utility connections, property tax guidance, and referrals for interior design and moving services." },
+  { q:"Can Vedhara help me compare properties across different developers?", a:"Yes. Our advisors prepare an objective comparison across shortlisted properties, covering pricing, floor plans, amenities, possession timelines, and total cost of ownership, to help you make an informed decision." },
+];
+
 export default function BuyPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" />
+      <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" hideFAQ />
 
       {/* Featured Listings Section */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
@@ -119,80 +128,50 @@ export default function BuyPage() {
           <div className="prop-grid">
             {featuredListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80}>
-                <div className="hover-lift" style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
-                  
+                <Link href="/contact?service=buy" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
-                  <div style={{ height:200,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
+                  <div style={{ height:180,flexShrink:0,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:20,color:"rgba(252,250,244,0.7)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
+                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
                       {property.title}
                     </div>
-                    {/* Status badge */}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"5px 12px",borderRadius:20,background:property.status==="Ready to Move"?"rgba(212,168,67,0.15)":"rgba(255,255,255,0.06)",color:property.status==="Ready to Move"?"var(--gold-lt)":"rgba(252,250,244,0.5)",border:"1px solid "+ (property.status==="Ready to Move"?"rgba(212,168,67,0.3)":"rgba(255,255,255,0.08)") }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
                         {property.status}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div style={{ padding:24,flex:1,display:"flex",flexDirection:"column" }}>
-                    {/* Type badge */}
-                    <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:10 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",background:"rgba(212,168,67,0.1)",color:"var(--gold-lt)",borderRadius:4 }}>
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
                         {property.type}
                       </span>
                     </div>
-
-                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"var(--light)",marginBottom:6,lineHeight:1.2 }}>
-                      {property.title}
-                    </h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(252,250,244,0.4)",marginBottom:16 }}>
-                      {property.location}
-                    </p>
-
-                    {/* Key details */}
-                    <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px 16px",marginBottom:18,padding:"14px 0",borderTop:"1px solid rgba(255,255,255,0.04)",borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
-                      <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Price</p>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--gold-lt)" }}>{property.price}</p>
-                      </div>
-                      <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Configuration</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{property.config}</p>
-                      </div>
-                      <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Area</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{property.size}</p>
-                      </div>
-                    </div>
-
-                    {/* Highlights */}
-                    <div style={{ display:"flex",flexWrap:"wrap",gap:6,marginBottom:20,flex:1,alignContent:"flex-start" }}>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
+                    <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:14,flex:1,alignContent:"flex-start" }}>
                       {property.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(212,168,67,0.06)",color:"rgba(232,201,112,0.7)",borderRadius:4 }}>
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 8px",background:"rgba(212,168,67,0.08)",color:"var(--gold-dk)",borderRadius:3 }}>
                           {h}
                         </span>
                       ))}
                     </div>
-
-                    {/* CTA */}
-                    <Link
-                      href="/contact?service=buy"
-                      className="btn btn-ghost"
-                      style={{ alignSelf:"flex-start",marginTop:"auto" }}
-                    >
-                      Inquire About This Property →
-                    </Link>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{property.price}</p>
+                      <span className="btn-ghost" style={{ color:"var(--gold)",fontSize:9,display:"inline-flex",alignItems:"center",gap:4 }}>
+                        Inquire →
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
 
-          {/* Bottom CTA */}
           <ScrollReveal delay={120}>
-            <div style={{ textAlign:"center",marginTop:52 }}>
+            <div style={{ textAlign:"center",marginTop:40 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Don&apos;t see what you&apos;re looking for? Our full inventory spans 500+ verified listings across Delhi NCR.
               </p>
@@ -203,6 +182,9 @@ export default function BuyPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection faqs={buyFaqs} title="Buying Property in Delhi NCR, FAQ" />
     </>
   );
 }

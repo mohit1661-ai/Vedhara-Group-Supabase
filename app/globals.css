@@ -246,6 +246,12 @@ img,video{max-width:100%;height:auto;}
 .hover-lift{transition:transform 0.4s var(--ease-spring),box-shadow 0.4s ease,filter 0.3s ease;}
 .hover-lift:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 24px 48px rgba(9,15,29,0.25);filter:brightness(1.05);}
 
+/* Gold-framed card — gold border on all 4 sides + hover popup */
+.gold-frame-card{position:relative;border:1px solid rgba(212,168,67,0.25);border-radius:12px;transition:transform 0.45s var(--ease-spring),box-shadow 0.4s ease;height:100%;}
+.gold-frame-card:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 24px 56px rgba(9,15,29,0.3);}
+.gold-frame-card.gfc-navy{background:var(--navy);}
+.gold-frame-card.gfc-cream{background:var(--cream);}
+
 /* Animated gradient bg */
 .animated-gradient{background:linear-gradient(-45deg,var(--navy),var(--navy-mid),#1a3a5c,var(--navy));background-size:400% 400%;animation:gradientPan 12s ease infinite;}
 
