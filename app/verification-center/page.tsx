@@ -18,13 +18,13 @@ const checks = [
   { n:"02", icon:"B", title:"Builder Delivery History", grad:"linear-gradient(135deg,#0F1E38,#D4A843)",
     portal:"Developer track record, past projects reviewed",
     points:["Completion and handover timelines for past delivered projects","Any court cases, consumer forum complaints, or RERA non-compliance notices on record","Historical pattern of construction quality and society formation compliance","Current financial standing where publicly available for listed developers"] },
-  { n:"03", icon:"A", title:"Project-Level Statutory Approvals", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)",
+  { n:"03", icon:"A", title:"Project-Level Statutory Approvals", grad:"linear-gradient(135deg,#0F1E38,#D4A843)",
     portal:"DDA · HRERA · NOIDA Authority · GNIDA approvals verified",
     points:["Building plan sanction (BPS) from the relevant development authority","Commencement certificate (CC) for the specific tower or phase","Environmental clearance (EC) where applicable under EIA notification","Occupation certificate (OC) or Completion certificate (CC) status for ready properties"] },
-  { n:"04", icon:"P", title:"Price Fairness Assessment", grad:"linear-gradient(135deg,#0F1E38,#3a6a8f)",
+  { n:"04", icon:"P", title:"Price Fairness Assessment", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)",
     portal:"Sub-registrar registered transaction data · Government circle rates",
     points:["Recent registered transactions in the same sub-locality or sector","Government circle rates for the area","Active competing inventory pricing","Published result: is this project fairly priced, at a premium, or at a discount versus comparables?"] },
-  { n:"05", icon:"T", title:"Title & Document Availability", grad:"linear-gradient(135deg,#0F1E38,#5a6070)",
+  { n:"05", icon:"T", title:"Title & Document Availability", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)",
     portal:"Developer confirmation of document readiness",
     points:["Parent title documents for the land parcel","Allotment letters, registered sale deed templates","No Objection Certificate (NOC) from relevant authorities where required","RERA registration certificate, approved building plan, and EC"] },
 ];
@@ -53,7 +53,7 @@ export default function VerificationCenterPage() {
             What Vedhara Checks Before<br /><span style={{ color:"var(--gold-lt)" }}>Any Property Reaches You</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
-            &ldquo;Verified properties&rdquo; &mdash; most common phrase.<br />&ldquo;Verified&rdquo; meaning &mdash; rarely explained.<br />See our five checks on every listing.
+            &ldquo;Verified properties&rdquo; most common phrase.<br />&ldquo;Verified&rdquo; meaning rarely explained.<br />See our five checks on every listing.
           </p>
         </VideoHeroSection>
 
@@ -74,7 +74,7 @@ export default function VerificationCenterPage() {
           {/* Verification Steps as Visual Process */}
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:24 }} className="grid-2">
             {checks.map((c,i)=>(
-              <ScrollReveal key={c.n} delay={i*80} style={i===4?{gridColumn:"1 / -1",display:"flex",justifyContent:"center"}:{}}>
+              <ScrollReveal key={c.n} delay={i*80} style={i===4?{gridColumn:"1 / -1",display:"flex",justifyContent:"center"}:{}} className={i===4?"vrf-last":""}>
                 <div className="vrf-card" style={{
                   background:"var(--cream)",
                   border:"1px solid rgba(42,45,53,0.06)",
@@ -223,8 +223,14 @@ export default function VerificationCenterPage() {
           box-shadow: 0 20px 48px rgba(9,15,29,0.18) !important;
           border-color: rgba(212,168,67,0.2) !important;
         }
+        .vrf-last .vrf-card {
+          max-width: calc(50% - 12px) !important;
+          width: 100% !important;
+        }
         @media(max-width:700px){
           .grid-2{grid-template-columns:1fr!important;}
+          .vrf-last { display:block !important; }
+          .vrf-last .vrf-card { max-width:none !important; width:auto !important; }
         }
       `}</style>
     </>
