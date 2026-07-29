@@ -172,7 +172,7 @@ export default function VerificationCenterPage() {
               {/* Decorative gold top line */}
               <div style={{ position:"absolute",top:-1,left:48,right:48,height:3,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.5 }} />
               
-              <div style={{ display:"flex",gap:18,alignItems:"flex-start" }}>
+              <div style={{ display:"flex",gap:18,alignItems:"flex-start" }} className="vrf-badge-row">
                 {/* Verification Seal Badge */}
                 <div style={{
                   width:60,
@@ -191,7 +191,7 @@ export default function VerificationCenterPage() {
                   <span style={{ fontFamily:"var(--t-head)",fontSize:10,color:"var(--gold-lt)",fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",textAlign:"center",lineHeight:1.15 }}>VERI&shy;FIED</span>
                 </div>
                 <div style={{ flex:1 }}>
-                  <h3 className="heading-sm" style={{ color:"var(--navy)",margin:"0 0 12px",fontSize:"clamp(15px,1.6vw,20px)" }}>What a &ldquo;Verified&rdquo; Badge Means, and Doesn&apos;t Mean</h3>
+                  <h3 className="heading-sm vrf-badge-title" style={{ color:"var(--navy)",margin:"0 0 12px",fontSize:"clamp(15px,1.6vw,20px)" }}>What a &ldquo;Verified&rdquo; Badge Means, and Doesn&apos;t Mean</h3>
                   <p className="body-sm" style={{ color:"var(--slate)",margin:"0 0 12px",lineHeight:1.75 }}>
                     A Verified badge on a Vedhara listing means the project passed all five checks at the time of publishing. It is a rigorous starting signal, not a substitute for independent legal due diligence before you sign any agreement.
                   </p>
@@ -207,8 +207,8 @@ export default function VerificationCenterPage() {
 
       <section style={{ background:"var(--navy)",padding:"60px 32px",textAlign:"center" }}>
         <div style={{ maxWidth:540,margin:"0 auto" }}>
-          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Want These Checks Applied to a Specific Property?</h2>
-          <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>Share the property details with us. We will run the Verification Framework and share the results.</p>
+          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}><span className="d-line">Want These Checks Applied</span> <span className="d-line">to a Specific Property?</span></h2>
+          <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}><span className="d-line">Share the property details with us.</span> <span className="d-line">We will run the Verification Framework and share the results.</span></p>
           <Link href="/contact" className="btn btn-primary">Request a Property Verification →</Link>
         </div>
       </section>
@@ -227,10 +227,19 @@ export default function VerificationCenterPage() {
           max-width: calc(50% - 12px) !important;
           width: 100% !important;
         }
+        .d-line{display:inline;}
+        @media(min-width:901px){
+          .d-line{display:block;}
+        }
         @media(max-width:700px){
           .grid-2{grid-template-columns:1fr!important;}
           .vrf-last { display:block !important; }
           .vrf-last .vrf-card { max-width:none !important; width:auto !important; }
+        }
+        @media(max-width:900px){
+          .vrf-badge-row{flex-direction:column!important;align-items:center!important;text-align:left!important;}
+          .vrf-badge-row > div:last-child{width:100%!important;}
+          .vrf-badge-title{text-align:center!important;}
         }
       `}</style>
     </>
