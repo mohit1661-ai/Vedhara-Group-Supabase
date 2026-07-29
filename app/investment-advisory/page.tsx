@@ -93,7 +93,7 @@ export default function InvestmentAdvisoryPage() {
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>Where We Are Recommending Investment Today</h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-2 svc-card-alt">
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-2 svc-card-alt corridor-grid">
             {corridors.map((c,i)=>(
               <ScrollReveal key={c.area} delay={i*80}>
                 <div className="svc-card" style={{ borderRadius:0 }}>
