@@ -7,7 +7,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Browse Verified Properties",
     h1Accent: "Independent Advice",
     intro:
-      "Expert guidance through verified listings — shortlisting to paperwork, your interests first.",
+      "Trust our expert guidance through verified listings, from initial shortlisting to final paperwork, with your interests always first.",
     included: [
       "Goal-mapping session to understand budget, location priorities, and long-term plans",
       "Curated shortlist based on the Vedhara Verification Framework, not a flood of irrelevant listings",
