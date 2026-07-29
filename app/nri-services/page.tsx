@@ -74,7 +74,7 @@ export default function NRIServicesPage() {
             <div style={{ textAlign:"center",marginBottom:52 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Six Commitments to Every NRI Client</p>
-              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>What Every NRI Client Receives, <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>By Default</em></h2>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>What Every NRI<br />Client Receives,<br /><em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>By Default</em></h2>
             </div>
           </ScrollReveal>
           <CommitmentsAccordion commitments={commitments} />
@@ -113,8 +113,11 @@ export default function NRIServicesPage() {
               </div>
             </ScrollReveal>
           ))}
-          <div style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.15)",padding:"16px 20px",marginTop:32 }}>
-            <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>The above is general guidance only. FEMA regulations are subject to RBI updates and individual circumstances vary. Vedhara coordinates with qualified CA and legal advisors for transaction-specific compliance.</p>
+          <div style={{ display:"flex",alignItems:"flex-start",gap:16,marginTop:28,padding:"22px 26px",background:"var(--navy)",border:"1px solid rgba(212,168,67,0.25)",borderRadius:12 }}>
+            <span style={{ fontFamily:"var(--t-head)",fontSize:18,flexShrink:0,color:"var(--gold-lt)",lineHeight:1.4,fontWeight:600 }}>ⓘ</span>
+            <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",margin:0,lineHeight:1.7 }}>
+              <strong style={{ color:"var(--gold-lt)" }}>The above is general guidance only.</strong> FEMA regulations are subject to RBI updates and individual circumstances vary. Vedhara coordinates with qualified CA and legal advisors for transaction-specific compliance.
+            </p>
           </div>
         </div>
       </section>
