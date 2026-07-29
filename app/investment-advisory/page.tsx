@@ -102,7 +102,12 @@ export default function InvestmentAdvisoryPage() {
               </ScrollReveal>
             ))}
           </div>
-          <p className="body-sm" style={{ color:"var(--slate)",marginTop:16 }}>Yield estimates are indicative based on current market conditions. Actual returns depend on specific property, unit type, occupancy, and market timing. Use our free ROI Calculator for personalised projections.</p>
+          <div style={{ display:"flex",alignItems:"flex-start",gap:16,marginTop:28,padding:"20px 24px",background:"rgba(212,168,67,0.05)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:10 }}>
+            <span style={{ fontFamily:"var(--t-head)",fontSize:16,flexShrink:0,color:"var(--gold)",lineHeight:1.4 }}>ⓘ</span>
+            <p className="body-sm" style={{ color:"var(--slate)",margin:0,lineHeight:1.7 }}>
+              <strong style={{ color:"var(--navy)" }}>Yield estimates are indicative</strong> based on current market conditions. Actual returns depend on specific property, unit type, occupancy, and market timing. Use our <Link href="/calculators" style={{ color:"var(--gold)",fontWeight:600,textDecoration:"underline",textUnderlineOffset:2 }}>free ROI Calculator</Link> for personalised projections.
+            </p>
+          </div>
         </div>
       </section>
 
