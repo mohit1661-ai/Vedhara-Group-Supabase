@@ -6,17 +6,17 @@ import FAQSection from "@/components/sections/FAQSection";
 
 export const metadata: Metadata = {
   title:"Our Team | Vedhara Group — Leadership in Real Estate Advisory",
-  description:"Meet the leadership team behind Vedhara Group: Deshraj Sharma (Founder & CEO), Mohit Sharma (MD), Kusum Sharma (Director – Investment Advisory), and Bharat (Director – Developer & Strategic Partnerships).",
+  description:"Meet the leadership team behind Vedhara Group: D.R Sharma (Founder & CEO), Mohit Sharma (MD), Kusum Sharma (Director – Investment Advisory), and Bharat (Director – Developer & Strategic Partnerships).",
   alternates:{ canonical:"https://www.vedharagroup.com/team" },
 };
 
 const teamMembers = [
   {
-    name:"Deshraj Sharma",
+    name:"D.R Sharma",
     title:"Founder & Chief Executive Officer",
     initials:"DS",
     gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)",
-    description:"With over two decades of experience in Delhi NCR's real estate landscape, Deshraj Sharma founded Vedhara Group on the principle that property advisory should be independent, transparent, and genuinely client-first. He oversees the firm's strategic direction, partnership framework, and the Vedhara Verification Framework that underpins every listing on the platform. His leadership has built an organisation where the client's interest, not the developer's commission, drives every recommendation.",
+    description:"With over two decades of experience in Delhi NCR's real estate landscape, D.R Sharma founded Vedhara Group on the principle that property advisory should be independent, transparent, and genuinely client-first. He oversees the firm's strategic direction, partnership framework, and the Vedhara Verification Framework that underpins every listing on the platform. His leadership has built an organisation where the client's interest, not the developer's commission, drives every recommendation.",
     philosophy:"Every property decision changes a family's future. We treat that responsibility with the seriousness it deserves, not as a transaction to be closed.",
     stats:[
       { num:"20+", label:"Years Experience" },
@@ -81,7 +81,7 @@ const stats = [
 
 const faqs = [
   { q:"How do I know which team member to speak with?", a:"Your first conversation is always a discovery call. Based on your requirements, we introduce you to the most relevant team member. For most buyers, sellers, and NRIs, this will be Mohit Sharma or Kusum Sharma depending on the nature of your requirement." },
-  { q:"Can I speak directly with the Founder?", a:"Deshraj Sharma is personally involved in all strategic client engagements and complex transactions. If your requirement involves portfolio-level investment, cross-city strategy, or high-value negotiations, the initial consultation will include direct access to the Founder." },
+  { q:"Can I speak directly with the Founder?", a:"D.R Sharma is personally involved in all strategic client engagements and complex transactions. If your requirement involves portfolio-level investment, cross-city strategy, or high-value negotiations, the initial consultation will include direct access to the Founder." },
   { q:"How do you ensure your advice is unbiased if you work with developers?", a:"Independence is the foundation of our practice. We maintain no exclusive tie-ups with any developer, which means we can recommend, or recommend against, any project in the market. Our advisors are evaluated on client satisfaction and long-term outcomes, not on which project you choose. Every recommendation is documented with the rationale, and clients are encouraged to verify our claims independently." },
   { q:"Is the team available for weekend consultations?", a:"Yes. NRI clients and working professionals can schedule weekend and evening IST video consultations. Kusum Sharma's NRI desk operates dedicated Saturday and Sunday slots from 10 AM to 4 PM IST. Standard weekday appointments are available from 9 AM to 7 PM." },
   { q:"What happens after I finalise a property? Does your team help with registration?", a:"Absolutely. Our support extends through the entire lifecycle, from offer negotiation and earnest money deposit coordination to legal document verification, bank loan facilitation, registration appointment scheduling, and post-possession handover support. Your named advisor stays with you until you have the keys in your hand and the registry in your name. We do not disappear after the deal." },
@@ -172,7 +172,7 @@ export default function TeamPage() {
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom:14 }}>Why It Matters</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
-                Four Reasons Our Team Structure{" "}
+                Four Reasons Our Team Structure<br />
                 <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Works for You</em>
               </h2>
             </div>
@@ -207,7 +207,7 @@ export default function TeamPage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(212,168,67,0.08)" }} className="grid-4">
             {stats.map((s,i)=>(
               <ScrollReveal key={s.label} delay={i*60}>
-                <div style={{ padding:"36px 20px",textAlign:"center",background:"rgba(9,15,29,0.3)" }}>
+                <div style={{ padding:"36px 20px",textAlign:"center",background:"rgba(249,246,239,0.08)" }}>
                   <div className="gold-accent-sm" style={{ margin:"0 auto 14px" }}></div>
                   <div style={{ fontFamily:"var(--t-head)",fontSize:"clamp(28px,3.5vw,40px)",fontWeight:700,color:"var(--gold-lt)",lineHeight:1,marginBottom:8 }}>{s.num}</div>
                   <div style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.65)",textTransform:"uppercase",letterSpacing:"0.08em" }}>{s.label}</div>
@@ -229,7 +229,7 @@ export default function TeamPage() {
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
               <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
-              <Link href="/about" className="btn" style={{ background:"#FFFFFF",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>Learn More About Us</Link>
+              <Link href="/about" className="btn" style={{ background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>Learn More About Us</Link>
             </div>
           </ScrollReveal>
         </div>
