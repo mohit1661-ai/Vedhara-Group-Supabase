@@ -122,6 +122,8 @@ img,video{max-width:100%;height:auto;}
 .svc-card-alt .svc-card:hover{background:var(--cream)!important;}
 .svc-card-alt .svc-card:hover .svc-card-title{color:var(--navy)!important;}
 .svc-card-alt .svc-card:hover .svc-card-desc{color:var(--slate)!important;}
+.svc-card-alt .svc-card .eyebrow{color:var(--gold-lt)!important;}
+.svc-card-alt .svc-card:hover .eyebrow{color:var(--gold-dk)!important;}
 .svc-card-alt .svc-card:hover .svc-card-arrow{color:var(--gold-lt)!important;}
 .svc-card-alt .svc-card:hover .gold-accent{background:var(--gold)!important;}
 
@@ -132,9 +134,13 @@ img,video{max-width:100%;height:auto;}
 .svc-card-alt > :nth-child(even) .svc-card-arrow{color:var(--navy);opacity:1;transform:translateX(0);}
 .svc-card-alt > :nth-child(even):hover{background:var(--navy)!important;}
 .svc-card-alt > :nth-child(even):hover .svc-card-title{color:var(--gold-lt)!important;}
-.svc-card-alt > :nth-child(even):hover .svc-card-desc{color:rgba(232,201,112,0.55)!important;}
+.svc-card-alt > :nth-child(even):hover .svc-card-desc{color:rgba(252,250,244,0.7)!important;}
 .svc-card-alt > :nth-child(even):hover .svc-card-arrow{color:var(--gold-lt)!important;}
 .svc-card-alt > :nth-child(even):hover .gold-accent{background:var(--gold-lt)!important;}
+.svc-card-alt > :nth-child(even) .svc-card .eyebrow{color:var(--gold-dk)!important;}
+.svc-card-alt > :nth-child(even) .svc-card:hover .eyebrow{color:var(--gold-lt)!important;}
+.svc-card-alt > :nth-child(even) .svc-card:hover .svc-card-title span{color:var(--gold-lt)!important;}
+.svc-card-alt .svc-card:hover .svc-card-title span{color:var(--gold-dk)!important;}
 .svc-card-alt > :nth-child(even) .svc-card{background:var(--cream);}
 .svc-card-alt > :nth-child(even) .svc-card:hover{background:var(--navy)!important;}
 
@@ -147,7 +153,8 @@ img,video{max-width:100%;height:auto;}
   .corridor-grid > :nth-child(3) .svc-card-arrow{color:var(--navy)!important;}
   .corridor-grid > :nth-child(3):hover{background:var(--navy)!important;}
   .corridor-grid > :nth-child(3):hover .svc-card-title{color:var(--gold-lt)!important;}
-  .corridor-grid > :nth-child(3):hover .svc-card-desc{color:rgba(232,201,112,0.55)!important;}
+  .corridor-grid > :nth-child(3):hover .svc-card-desc{color:rgba(252,250,244,0.7)!important;}
+  .corridor-grid > :nth-child(3):hover .svc-card-title span{color:var(--gold-lt)!important;}
   .corridor-grid > :nth-child(3):hover .svc-card-arrow{color:var(--gold-lt)!important;}
   .corridor-grid > :nth-child(3):hover .gold-accent{background:var(--gold-lt)!important;}
   .corridor-grid > :nth-child(3) .svc-card{background:var(--cream)!important;}
@@ -166,6 +173,16 @@ img,video{max-width:100%;height:auto;}
   .corridor-grid > :nth-child(4) .svc-card{background:var(--navy)!important;}
   .corridor-grid > :nth-child(4) .svc-card:hover{background:var(--cream)!important;}
 }
+
+/* Make all children of svc-card-alt grids stretch to full height for equal cards */
+.svc-card-alt > *{align-self:stretch;}
+.svc-card-alt .svc-card{height:100%;}
+
+/* Decision Framework grid — flexbox for equal card heights */
+.df-grid{display:flex;flex-wrap:wrap;gap:20px;}
+.df-grid > *{flex:0 0 calc(33.333% - 14px);min-width:0;}
+@media(max-width:1024px){.df-grid > *{flex:0 0 calc(50% - 10px);}}
+@media(max-width:640px){.df-grid > *{flex:0 0 100%;}}
 
 /* Homepage ServicesGrid: row 2 colour swap (odd positions → cream, even → navy) */
 .services-grid > :nth-child(5){background:var(--cream)!important;}

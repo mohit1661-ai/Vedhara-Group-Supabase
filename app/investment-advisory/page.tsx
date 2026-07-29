@@ -62,14 +62,14 @@ export default function InvestmentAdvisoryPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="prop-grid svc-card-alt">
+          <div style={{ display:"flex",flexWrap:"wrap",gap:20 }} className="df-grid svc-card-alt">
             {steps.map((s,i)=>(
               <ScrollReveal key={s.n} delay={i*80}>
-                <div className="svc-card" style={{ borderRadius:12,padding:"32px 24px" }}>
+                <div className="svc-card" style={{ borderRadius:12,padding:"32px 24px",height:"100%",display:"flex",flexDirection:"column" }}>
                   <div className="gold-accent" />
-                  <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:10,display:"block" }}>{s.n}</span>
+                  <span className="eyebrow" style={{ marginBottom:10,display:"block" }}>{s.n}</span>
                   <h3 className="svc-card-title">{s.title}</h3>
-                  <p className="svc-card-desc">{s.desc}</p>
+                  <p className="svc-card-desc" style={{ flex:1 }}>{s.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
