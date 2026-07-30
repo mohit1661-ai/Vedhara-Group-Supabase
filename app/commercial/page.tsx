@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
+import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
@@ -90,7 +92,7 @@ const commercialListings: CommercialListing[] = [
 export default function CommercialPage() {
   return (
     <>
-      <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" />
+      <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" hideFAQ />
 
       {/* Commercial Listings Section */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
@@ -101,7 +103,7 @@ export default function CommercialPage() {
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Commercial Spaces</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
-                Available Commercial<span style={{ color:"var(--gold-lt)" }}> Properties</span>
+                Available Commercial<br /><span style={{ color:"var(--gold-lt)" }}>Properties</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
                 Office, retail, industrial, and land opportunities, each with Vedhara&apos;s independent commercial advisory.
