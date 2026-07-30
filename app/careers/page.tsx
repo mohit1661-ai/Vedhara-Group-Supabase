@@ -86,29 +86,53 @@ export default function CareersPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Join Our Team</p>
+            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Join Our Team</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Work With Purpose,<br /><span style={{ color:"var(--gold-dk)" }}>Advise With Integrity</span>
+              Work With Purpose,<br /><span style={{ color:"#d4a843" }}>Advise With Integrity</span>
             </h2>
+            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
+              Vedhara Group is building the region&apos;s most trusted independent real estate advisory firm. We are looking for individuals who value transparency, rigour, and long-term client relationships over short-term commissions.
+            </p>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              Vedhara Group is building the region's most trusted independent real estate advisory firm. We are looking for individuals who value transparency, rigour, and long-term client relationships over short-term commissions.
+              If you are ready to build a career defined by trust, expertise, and lasting client relationships, not by sales targets and transaction volume, you will find a home here.
             </p>
           </ScrollReveal>
         </div>
       </div>
 
-      {/* Values */}
-      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+      {/* Our Values – Vibrant Cream Cards on Navy */}
+      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:52 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Our Core Values</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                What We Stand For,<br /><span style={{ color:"var(--gold-lt)" }}>How We Operate</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
+                These four principles guide every decision we make and every client relationship we build.
+              </p>
+            </div>
+          </ScrollReveal>
+
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }} className="grid-4">
             {values.map((v,i)=>(
-              <ScrollReveal key={v.title} delay={i*80}>
-                <div style={{ textAlign:"center",padding:"32px 20px",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,height:"100%",display:"flex",flexDirection:"column" }}>
-                  <div style={{ width:40,height:40,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px",flexShrink:0 }}>
-                    <span style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+              <ScrollReveal key={v.title} delay={i*80} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
+                  <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
+                  <div style={{ padding:"28px 20px 24px",flex:1,display:"flex",flexDirection:"column",textAlign:"center" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:8,justifyContent:"center",marginBottom:14 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"2px 7px",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,color:"var(--gold-dk)",opacity:0.5 }}>0{i+1}</span>
+                    </div>
+                    <div style={{ width:40,height:40,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 14px",flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{v.title}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{v.desc}</p>
                   </div>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{v.title}</h3>
-                  <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{v.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -116,76 +140,57 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* What We Offer – Benefits Section */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
+      {/* What We Offer + Who We're Looking For – Navy + Cream Card Pair */}
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Offer</p>
-              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
-                More Than a Job,<br /><span style={{ color:"var(--gold-lt)" }}>A Career With Purpose</span>
-              </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
-                At Vedhara, you will work on meaningful problems with a team that values depth over speed.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24 }} className="grid-3">
-            {[
-              { title:"Competitive Compensation", desc:"Industry-leading fixed salaries with performance bonuses. No cap on earnings for advisory roles. ESOP eligibility for senior team members.", icon:"💰" },
-              { title:"Remote-First Culture", desc:"Work from anywhere. Our NRI team is fully remote, and most roles offer hybrid or work-from-home flexibility. We trust you to deliver.", icon:"🏠" },
-              { title:"Learning & Growth", desc:"Sponsored RERA certification, access to PropTech tools, monthly market research briefings, and mentorship from senior advisors with 15+ years of experience.", icon:"📚" },
-              { title:"Real Impact, Not Sales", desc:"You will be measured on client outcomes, not on sales targets. No pressure to close, no push to upsell. Just honest advice and long-term relationships.", icon:"🎯" },
-              { title:"Transparent Career Path", desc:"Clear progression from Junior Advisor to Senior Partner. Defined milestones, review cycles, and promotion criteria. No politics, no favouritism.", icon:"📈" },
-              { title:"Health & Wellness", desc:"Comprehensive health insurance for you and your family. Annual wellness allowance, flexible leave policy, and mental health support resources.", icon:"❤️" },
-            ].map((ben,i)=>(
-              <ScrollReveal key={ben.title} delay={i*60} style={{ display:"flex" }}>
-                <div className="hover-lift" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,padding:"28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
-                  <span style={{ fontSize:24,marginBottom:10,lineHeight:1 }}>{ben.icon}</span>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:8,lineHeight:1.3 }}>{ben.title}</h3>
-                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8,flex:1 }}>{ben.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who We're Looking For */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:48 }}>
-              <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who We Are Looking For</p>
+              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>What We Offer</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Do You Value Trust Over<br /><span style={{ color:"var(--gold-dk)" }}>Short-Term Commissions?</span>
+                More Than a Job,<br /><span style={{ color:"#d4a843" }}>A Career With Purpose</span>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
-                If the following sounds like you, we should talk.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
+                At Vedhara, you will work on meaningful problems with a team that values depth over speed, and integrity over short-term gain.
               </p>
             </div>
           </ScrollReveal>
-
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }} className="grid-2">
-            {[
-              { title:"You Put the Client First", desc:"You believe that if you serve the client's interest, the business takes care of itself. You would rather walk away from a deal than recommend something you do not believe in." },
-              { title:"You Are a Lifelong Learner", desc:"Real estate markets evolve fast. You enjoy staying ahead, reading RERA updates, tracking infrastructure projects, and understanding how macro trends affect micro-markets." },
-              { title:"You Value Transparency", desc:"You believe in clear communication, written fee disclosures, and no hidden agenda. You are comfortable being measured on client satisfaction, not transaction volume." },
-              { title:"You Think Long Term", desc:"You see this as a career, not a stopgap. You want to build deep client relationships that span decades and transactions, not just a one-time sale." },
-            ].map((trait,i)=>(
-              <ScrollReveal key={trait.title} delay={i*80} style={{ display:"flex" }}>
-                <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
-                  <div style={{ width:36,height:36,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:12,flexShrink:0 }}>
-                    <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
+            {/* Compensation & Benefits – Navy */}
+            <ScrollReveal>
+              <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)" }}>
+                <span className="v-line" style={{ background:"var(--gold)" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Compensation &amp; Benefits</p>
+                <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What We Offer You</h2>
+                <p className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.8,marginBottom:24 }}>
+                  We believe that exceptional talent deserves exceptional support. Our compensation and benefits package is designed to attract, retain, and motivate the best professionals in Delhi NCR&apos;s real estate advisory space.
+                </p>
+                {["Industry-leading fixed salaries with uncapped performance bonuses for advisory roles","Comprehensive health insurance for you and your family, plus annual wellness allowance","Sponsored RERA certification, PropTech tools access, and mentorship from 15+ year veterans"].map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:16,fontWeight:700,lineHeight:1 }}>✓</span>
+                    <span className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.7 }}>{item}</span>
                   </div>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{trait.title}</h3>
-                  <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,flex:1 }}>{trait.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+                ))}
+              </div>
+            </ScrollReveal>
+
+            {/* Culture & Growth – Cream */}
+            <ScrollReveal delay={120} direction="right">
+              <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
+                <span className="v-line" style={{ background:"var(--gold)" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Culture &amp; Growth</p>
+                <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who We&apos;re Looking For</h2>
+                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
+                  We are not looking for salespeople. We are looking for advisors who value trust, transparency, and long-term relationships over short-term commissions. If this describes you, you will thrive here.
+                </p>
+                {["You put the client first and would rather walk away from a deal than recommend something you do not believe in","You are a lifelong learner who stays ahead of RERA updates, infrastructure projects, and micro-market trends","You value transparency and are comfortable being measured on client satisfaction, not transaction volume"].map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                    <span className="body-md" style={{ color:"var(--slate)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -196,9 +201,9 @@ export default function CareersPage() {
           <ScrollReveal>
             <div style={{ marginBottom:48,textAlign:"center" }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Open Positions</p>
+              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Open Positions</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Join the<span style={{ color:"var(--gold-dk)" }}> Team</span>
+                Join the<span style={{ color:"#d4a843" }}> Team</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
                 If you see a role that fits, send your CV and a brief note on why Vedhara, and we will get back to you within a week.
