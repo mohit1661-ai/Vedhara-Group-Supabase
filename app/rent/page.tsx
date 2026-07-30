@@ -134,11 +134,11 @@ export default function RentPage() {
 
           <div className="prop-grid">
             {rentalListings.map((property,index)=>(
-              <ScrollReveal key={property.id} delay={index * 80}>
+              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
                   href="/contact?service=rent"
                   className="hover-lift"
-                  style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
+                  style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
                   {/* Image area */}
                   <div style={{ height:180,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
