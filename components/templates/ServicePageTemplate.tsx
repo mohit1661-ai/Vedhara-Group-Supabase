@@ -60,7 +60,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
           </ScrollReveal>
         </div>
       </section>
-      {!hideFAQ && <><CTASection /><FAQSection faqs={content.faqs} /></>}
+      {!hideFAQ && <><FAQSection faqs={content.faqs} /><CTASection /></>}
     </>
   );
 }
