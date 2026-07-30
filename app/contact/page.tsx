@@ -128,45 +128,45 @@ export default function ContactPage() {
 
           {/* FORM SIDE */}
           <ScrollReveal delay={120} direction="right">
-            <div className="form-card" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px",position:"relative",boxShadow:"0 8px 32px rgba(9,15,29,0.08)" }}>
+            <div className="form-card" style={{ background:"var(--navy)",border:"1px solid rgba(212,168,67,0.2)",padding:"40px 36px",position:"relative",boxShadow:"0 12px 48px rgba(9,15,29,0.28)" }}>
               {/* Gold top accent */}
-              <div style={{ position:"absolute",top:0,left:36,right:36,height:2.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.5 }} />
-              <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Book Your Free Consultation</h2>
+              <div style={{ position:"absolute",top:0,left:36,right:36,height:2.5,background:"linear-gradient(90deg,transparent,var(--cream),var(--cream),var(--cream),transparent)",opacity:0.5 }} />
+              <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>Book Your Free Consultation</h2>
               <form onSubmit={submit} style={{ display:"flex",flexDirection:"column",gap:18 }}>
                 <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:14 }} className="grid-2">
                   <div>
-                    <label className="input-label">Full Name <span style={{ color:"var(--gold)" }}>*</span></label>
+                    <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Full Name <span style={{ color:"var(--gold)" }}>*</span></label>
                     <input type="text" required value={form.fullName} onChange={e=>up("fullName",e.target.value)} className="input-field" placeholder="Your full name" />
                   </div>
                   <div>
-                    <label className="input-label">Phone <span style={{ color:"var(--gold)" }}>*</span></label>
+                    <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Phone <span style={{ color:"var(--gold)" }}>*</span></label>
                     <input type="tel" required value={form.phone} onChange={e=>up("phone",e.target.value)} className="input-field" placeholder="+91 or country code" />
                   </div>
                 </div>
                 <div>
-                  <label className="input-label">Email Address</label>
+                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Email Address</label>
                   <input type="email" value={form.email} onChange={e=>up("email",e.target.value)} className="input-field" placeholder="your@email.com" />
                 </div>
                 <div>
-                  <label className="input-label">I Am Interested In <span style={{ color:"var(--gold)" }}>*</span></label>
-                  <select required value={form.interest} onChange={e=>up("interest",e.target.value)} className="input-field">
+                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>I Am Interested In <span style={{ color:"var(--gold)" }}>*</span></label>
+                  <select required value={form.interest} onChange={e=>up("interest",e.target.value)} className="input-field" placeholder="Select a service…">
                     <option value="">Select a service…</option>
                     {interests.map(i=><option key={i} value={i}>{i}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="input-label">Time Zone (NRI clients)</label>
+                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Time Zone (NRI clients)</label>
                   <input type="text" value={form.timezone} onChange={e=>up("timezone",e.target.value)} className="input-field" placeholder="e.g. UAE, GMT+4 / UK, BST" />
                 </div>
                 <div>
-                  <label className="input-label">Message (optional)</label>
+                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Message (optional)</label>
                   <textarea rows={4} value={form.message} onChange={e=>up("message",e.target.value)} className="input-field" placeholder="Tell us about your property goals…" style={{ resize:"none" }} />
                 </div>
                 <button type="submit" disabled={status==="submitting"} className="btn btn-dark" style={{ width:"100%",justifyContent:"center",opacity:status==="submitting"?0.6:1 }}>
                   {status==="submitting"?"Sending…":"Book a Free Consultation"}
                 </button>
                 {status==="error" && <p className="body-sm" style={{ color:"#B23A3A",textAlign:"center" }}>Something went wrong; please try WhatsApp or call us directly.</p>}
-                <p className="caption" style={{ color:"var(--slate)",textAlign:"center" }}>We respond within 24 hours during business hours. No spam, ever.</p>
+                <p className="caption" style={{ color:"rgba(255,255,255,0.4)",textAlign:"center" }}>We respond within 24 hours during business hours. No spam, ever.</p>
               </form>
             </div>
           </ScrollReveal>

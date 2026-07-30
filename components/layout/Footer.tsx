@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.75)" }}>
       {/* CTA bar */}
-      <div style={{ background:"var(--navy)",borderTop:"1.5px solid var(--cream)",padding:"26px 32px" }}>
+      <div style={{ background:"var(--navy)",borderTop:"1.5px solid var(--gold)",borderBottom:"1.5px solid var(--gold)",padding:"26px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>
           <div>
             <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--light)",margin:"0 0 3px" }}>Ready to make your next property move?</p>
