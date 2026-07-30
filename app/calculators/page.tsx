@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -207,6 +208,28 @@ export default function CalculatorsPage() {
       </section>
 
       <FAQSection faqs={faqs} title="Calculator FAQ" />
+
+      {/* CTA Section */}
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
+        <ScrollReveal>
+          <div style={{ maxWidth:700,margin:"0 auto",textAlign:"center" }}>
+            <span className="v-line" style={{ margin:"0 auto 14px" }} />
+            <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:20 }}>
+              Run the Numbers, Then{" "}
+              <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Talk to an Advisor.</em>
+            </h2>
+            <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28 }}>
+              Calculators give you the data. A conversation gives you the context. Speak with a Vedhara advisor to understand what the numbers mean for your specific situation.
+            </p>
+            <div style={{ display:"flex",gap:14,justifyContent:"center",alignItems:"center",flexWrap:"wrap" }}>
+              <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
+              {/* Gold separator */}
+              <div style={{ width:1.5,height:28,background:"linear-gradient(180deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.5 }} />
+              <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp Us</a>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
     </>
   );
 }
