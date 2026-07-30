@@ -166,6 +166,26 @@ export const servicePages: Record<string, ServicePageContent> = {
         q: "Can NRIs use the property management service without visiting India?",
         a: "Yes, this service is specifically designed to let NRI owners manage Indian property remotely, with regular reporting and video updates in place of physical visits.",
       },
+      {
+        q: "How is Vedhara different from a regular real estate agent or broker?",
+        a: "Unlike a broker who facilitates a one-time transaction, Vedhara provides ongoing operational management — tenant sourcing, lease administration, rent collection, maintenance coordination, and periodic reporting. We act as your long-term property operations partner, not a middleman.",
+      },
+      {
+        q: "What kind of reporting do property owners receive?",
+        a: "Owners receive monthly statements showing rent collected, expenses incurred, and net payouts. Additionally, we provide periodic property condition reports with photo and video documentation, and immediate alerts for any maintenance issues or tenant concerns.",
+      },
+      {
+        q: "How does Vedhara screen potential tenants?",
+        a: "Our screening includes identity verification, employment and income checks, prior landlord references, credit history review, and rental track record assessment — all documented and shared with the owner before lease finalisation.",
+      },
+      {
+        q: "What happens if a tenant damages the property or defaults on rent?",
+        a: "Our lease agreements include a security deposit mechanism and clear damage liability clauses. In case of default, we initiate the legally prescribed notice and eviction process on your behalf, coordinating with our empanelled legal partners to minimise your exposure.",
+      },
+      {
+        q: "Does Vedhara handle maintenance and emergency repairs?",
+        a: "Yes. We have a vetted network of vendors for plumbing, electrical, painting, carpentry, and other common repairs. For emergency issues, owners authorise us to approve repairs up to a pre-agreed threshold without prior approval, ensuring swift resolution.",
+      },
     ],
     ctaLabel: "Discuss Property Management",
   },
