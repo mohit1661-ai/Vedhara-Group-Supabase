@@ -146,10 +146,10 @@ export const servicePages: Record<string, ServicePageContent> = {
   "property-management": {
     slug: "property-management",
     eyebrow: "Property Management",
-    h1: "Your Property, Managed",
-    h1Accent: "Managed Without You Being There",
+    h1: "Your Property",
+    h1Accent: "Managed Remotely",
     intro:
-      "For owners who don't want to personally chase tenants, coordinate repairs, or track rent, Vedhara's property management service handles the operational side of ownership.",
+      "For owners who don't want to chase tenants, coordinate repairs, or track rent, Vedhara handles the operational side of ownership.",
     included: [
       "Tenant sourcing, screening, and lease management",
       "Rent collection and timely owner payouts",
