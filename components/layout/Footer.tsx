@@ -9,19 +9,6 @@ const cols = [
 export default function Footer() {
   return (
     <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.75)" }}>
-      {/* CTA bar */}
-      <div style={{ background:"var(--navy)",borderTop:"1.5px solid var(--gold)",borderBottom:"1.5px solid var(--gold)",padding:"26px 32px" }}>
-        <div style={{ maxWidth:1320,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>
-          <div>
-            <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--light)",margin:"0 0 3px" }}>Ready to make your next property move?</p>
-            <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(255,255,255,0.5)",margin:0 }}>Independent advisory · Verified listings · Free consultation</p>
-          </div>
-          <div style={{ display:"flex",gap:10 }}>
-            <Link href="/contact" className="btn btn-dark" style={{ padding:"12px 24px",fontSize:10 }}>Book Free Consultation</Link>
-            <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"transparent",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.3)",padding:"12px 20px",fontSize:10 }}>WhatsApp</a>
-          </div>
-        </div>
-      </div>
       {/* Main */}
       <div style={{ maxWidth:1320,margin:"0 auto",padding:"56px 32px 32px" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1fr",gap:40,paddingBottom:48,borderBottom:"1px solid rgba(255,255,255,0.06)" }} className="footer-grid">

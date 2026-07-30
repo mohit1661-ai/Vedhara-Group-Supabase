@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
@@ -213,6 +214,7 @@ export default function VerificationCenterPage() {
         </div>
       </section>
 
+      <CTASection />
       <FAQSection faqs={faqs} title="Verification Center FAQ" />
       <style>{`
         .vrf-card {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
@@ -132,6 +133,7 @@ export default function InvestmentAdvisoryPage() {
         <div style={{ width:80,height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
       </div>
 
+      <CTASection />
       <FAQSection faqs={faqs} title="Investment Advisory FAQ" />
     </>
   );

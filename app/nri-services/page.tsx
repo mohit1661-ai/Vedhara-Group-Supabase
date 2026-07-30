@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
@@ -122,6 +123,7 @@ export default function NRIServicesPage() {
         </div>
       </section>
 
+      <CTASection />
       <FAQSection faqs={faqs} title="NRI Property Services FAQ" />
     </>
   );

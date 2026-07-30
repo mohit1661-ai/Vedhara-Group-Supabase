@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
@@ -150,6 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <CTASection />
       <FAQSection faqs={faqs} title="About Vedhara Group, FAQ" />
     </>
   );

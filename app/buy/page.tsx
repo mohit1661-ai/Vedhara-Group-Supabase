@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
@@ -188,7 +189,7 @@ export default function BuyPage() {
         <div style={{ width:80,height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
       </div>
 
-      {/* FAQ */}
+      <CTASection />
       <FAQSection faqs={buyFaqs} title="Buying Property in Delhi NCR, FAQ" />
     </>
   );

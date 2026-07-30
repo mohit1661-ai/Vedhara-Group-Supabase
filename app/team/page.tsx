@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 
 export const metadata: Metadata = {
@@ -235,9 +236,8 @@ export default function TeamPage() {
         </div>
       </section>
 
+      <CTASection />
       <FAQSection faqs={faqs} title="Our Team, FAQ" />
-
-
     </>
   );
 }

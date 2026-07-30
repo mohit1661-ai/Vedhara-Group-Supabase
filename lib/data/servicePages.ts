@@ -68,7 +68,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     slug: "rent",
     eyebrow: "Rent & Lease Advisory",
     h1: "Renting, Done",
-    h1Accent: "the Transparent Way",
+    h1Accent: "The Transparent Way",
     intro:
       "Whether you're a tenant searching for the right home or a landlord seeking a reliable tenant, Vedhara ensures the process is transparent and fair for both sides.",
     includedTitle: "For Tenants",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
+import CTASection from "@/components/sections/CTASection";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
@@ -59,7 +60,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
           </ScrollReveal>
         </div>
       </section>
-      {!hideFAQ && <FAQSection faqs={content.faqs} />}
+      {!hideFAQ && <><CTASection /><FAQSection faqs={content.faqs} /></>}
     </>
   );
 }
