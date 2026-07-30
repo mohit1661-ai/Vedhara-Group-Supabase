@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
+import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR | Vedhara Group", description:"Explore Vedhara Group's full range of property advisory services, buying, selling, renting, commercial, investment, luxury, and NRI services across Delhi NCR.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
 const services = [
@@ -13,6 +15,29 @@ const services = [
   { icon:"I",title:"Investment Advisory",href:"/investment-advisory",desc:"Portfolio-level real estate strategy for long-term investors.",gradient:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
   { icon:"N",title:"NRI Services",href:"/nri-services",desc:"Remote-friendly advisory for Indian diaspora worldwide.",gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
   { icon:"P",title:"Property Management",href:"/property-management",desc:"Tenant and maintenance management for property owners.",gradient:"linear-gradient(135deg,#0F1E38,#5a6070)" },
+];
+
+const servicesFaqs: FAQItem[] = [
+  {
+    q:"Does Vedhara charge a fee for all services?",
+    a:"Vedhara's advisory model varies by service. Buy-side assistance is typically complimentary (the seller or developer pays the commission), while sell-side, property management, and dedicated advisory engagements operate on a disclosed fee basis. We always clarify the fee structure before any engagement begins.",
+  },
+  {
+    q:"Can I use multiple Vedhara services at the same time?",
+    a:"Yes. Many clients combine services — for example, selling one property through Vedhara while using our buy-side advisory to acquire another, or using property management alongside investment advisory for their portfolio.",
+  },
+  {
+    q:"How does Vedhara verify properties across different service categories?",
+    a:"All properties listed across Vedhara's services pass our five-point Verification Framework: RERA registration or application confirmation, builder track record assessment, legal title review, project progress verification (for under-construction), and pricing transparency. The same standard applies whether you are buying, renting, or investing.",
+  },
+  {
+    q:"Is Vedhara's advisory independent, or do you push certain developers?",
+    a:"Vedhara is an independent advisory firm. We do not have exclusive tie-ups with any developer or project. Our recommendations are based solely on the client's requirements and the property's merits under our Verification Framework.",
+  },
+  {
+    q:"Can NRI clients access all Vedhara services remotely?",
+    a:"Yes. Every Vedhara service — from buying and selling to property management and investment advisory — is designed to be accessible remotely. Video site visits, digital documentation, and remote coordination are standard across all services.",
+  },
 ];
 
 const featuredProperties = [
@@ -87,8 +112,20 @@ export default function ServicesPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Advisory for Every Stage of<br /><span style={{ color:"var(--gold-lt)" }}>Your Property Journey</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals, from your first home to a multi-property portfolio.</p>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals,<br />from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>
+
+      {/* Intro block */}
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"0 32px" }}>
+        <div style={{ maxWidth:700,margin:"0 auto" }}>
+          <ScrollReveal>
+            <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:14 }}>Your Complete Property Advisory Partner</h2>
+            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
+              From buying your first home to managing a portfolio of properties, Vedhara Group offers end-to-end advisory across every stage of your real estate journey. Each service is built on the same foundation: independent advice, verified listings, and transparent pricing. Explore what we offer below.
+            </p>
+          </ScrollReveal>
+        </div>
+      </div>
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
           {services.map((svc,i)=>(
@@ -116,30 +153,35 @@ export default function ServicesPage() {
                 A Selection Across<span style={{ color:"var(--gold-lt)" }}> Every Category</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
-                Browse hand-picked properties from every Vedhara service, all independently verified.
+                Browse hand-picked properties from every Vedhara service,<br />all independently verified.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="prop-grid">
             {featuredProperties.map((p,i)=>(
-              <ScrollReveal key={p.id} delay={i*80}>
-<Link href={p.tagHref} className="hover-lift" style={{ display:"block",background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",textDecoration:"none" }}>
-                  <div style={{ height:180,background:p.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
+              <ScrollReveal key={p.id} delay={i*80} style={{ display:"flex" }}>
+                <Link href={p.tagHref} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                  <div style={{ height:180,background:p.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(252,250,244,0.7)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
+                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
                       {p.title}
                     </div>
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(212,168,67,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.3)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
                         {p.tag}
                       </span>
                     </div>
                   </div>
-                  <div style={{ padding:20 }}>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.35)",marginBottom:4 }}>{p.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"rgba(252,250,244,0.6)",marginBottom:10,lineHeight:1.4 }}>{p.desc}</p>
-                    <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--gold-lt)" }}>{p.price}</p>
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{p.location}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--ink)",marginBottom:10,lineHeight:1.4,flex:1 }}>{p.desc}</p>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{p.price}</p>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:4,padding:"8px 14px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
+                        View {p.tag} →
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </ScrollReveal>
@@ -158,6 +200,10 @@ export default function ServicesPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection faqs={servicesFaqs} title="Vedhara Services FAQ" dark={false} />
+      <CTASection />
     </>
   );
 }
