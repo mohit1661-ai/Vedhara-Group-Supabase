@@ -183,9 +183,9 @@ export default function ContactPage() {
           border-bottom: 1px solid rgba(42,45,53,0.06);
         }
         .cta-card:hover {
-          transform: translateY(-3px) !important;
-          box-shadow: 0 10px 30px rgba(9,15,29,0.12) !important;
-          border-color: rgba(212,168,67,0.2) !important;
+          transform: translateY(-4px) scale(1.02) !important;
+          box-shadow: 0 16px 40px rgba(9,15,29,0.15) !important;
+          border-color: rgba(212,168,67,0.25) !important;
         }
         .service-tag {
           font-family: var(--t-head);
@@ -196,13 +196,29 @@ export default function ContactPage() {
           color: var(--slate);
           border: 1px solid rgba(42,45,53,0.12);
           padding: 4px 8px;
-          transition: all 0.2s;
+          transition: all 0.3s ease;
           text-decoration: none;
           display: inline-block;
         }
         .service-tag:hover {
           border-color: var(--gold);
           color: var(--gold-dk);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(212,168,67,0.15);
+        }
+        .form-card {
+          transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+        }
+        .form-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 56px rgba(9,15,29,0.35) !important;
+        }
+        .contact-detail-row {
+          transition: all 0.3s ease;
+        }
+        .contact-detail-row:hover {
+          padding-left: 8px;
+          border-bottom-color: rgba(212,168,67,0.25);
         }
         @media(max-width:700px){
           .contact-detail-row {
