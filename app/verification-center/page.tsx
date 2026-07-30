@@ -214,8 +214,8 @@ export default function VerificationCenterPage() {
         </div>
       </section>
 
-      <CTASection />
       <FAQSection faqs={faqs} title="Verification Center FAQ" />
+      <CTASection />
       <style>{`
         .vrf-card {
           box-sizing:border-box;

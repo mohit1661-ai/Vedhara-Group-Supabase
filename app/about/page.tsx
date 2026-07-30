@@ -151,8 +151,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTASection />
       <FAQSection faqs={faqs} title="About Vedhara Group, FAQ" />
+      <CTASection />
     </>
   );
 }

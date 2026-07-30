@@ -236,8 +236,8 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <CTASection />
       <FAQSection faqs={faqs} title="Our Team, FAQ" />
+      <CTASection />
     </>
   );
 }

@@ -190,8 +190,8 @@ export default function SellPage() {
         <div style={{ width:80,height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
       </div>
 
-      <CTASection />
       <FAQSection faqs={sellFaqs} title="Selling Property in Delhi NCR, FAQ" />
+      <CTASection />
     </>
   );
 }

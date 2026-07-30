@@ -123,8 +123,8 @@ export default function NRIServicesPage() {
         </div>
       </section>
 
-      <CTASection />
       <FAQSection faqs={faqs} title="NRI Property Services FAQ" />
+      <CTASection />
     </>
   );
 }
