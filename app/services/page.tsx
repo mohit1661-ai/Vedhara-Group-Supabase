@@ -116,10 +116,12 @@ export default function ServicesPage() {
       </VideoHeroSection>
 
       {/* Intro block */}
-      <div style={{ background:"var(--cream)",textAlign:"center",padding:"0 32px" }}>
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
-            <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:14 }}>Your Complete Property Advisory Partner</h2>
+            <span className="v-line" style={{ margin:"0 auto 14px" }} />
+            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>All Services</p>
+            <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>Your Complete Property<br /><span style={{ color:"var(--gold-dk)" }}>Advisory Partner</span></h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               From buying your first home to managing a portfolio of properties, Vedhara Group offers end-to-end advisory across every stage of your real estate journey. Each service is built on the same foundation: independent advice, verified listings, and transparent pricing. Explore what we offer below.
             </p>
