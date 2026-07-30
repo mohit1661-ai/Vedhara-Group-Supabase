@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = { title:"New Property Launches in Delhi NCR | Verified Upcoming Projects | Vedhara Group", description:"Upcoming and recently launched RERA-verified property projects across Gurugram, Noida, Faridabad, and Delhi from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
@@ -18,6 +19,29 @@ interface LaunchProject {
   highlights:string[];
   imageGradient:string;
 }
+
+const launchFaqs: FAQItem[] = [
+  {
+    q:"Are all projects on this page RERA-verified?",
+    a:"Yes. Every project shown on this page passes Vedhara's five-point Verification Framework, which includes RERA registration or application confirmation, builder track record assessment, legal title review, project progress verification, and pricing transparency.",
+  },
+  {
+    q:"Can I book a unit before the official launch?",
+    a:"For projects marked 'Pre-Launch' or 'Phase 2 Released', early registration is often possible through our channel. Register your interest and we will coordinate priority access and early-bird pricing with the developer.",
+  },
+  {
+    q:"Is there any fee to register interest in a project?",
+    a:"No. Registering interest with Vedhara is completely free and non-binding. You will receive project updates, pricing as it becomes available, and an invitation to site visits before any commitment.",
+  },
+  {
+    q:"How do you select which new launches to feature?",
+    a:"We feature projects from developers who meet our Verification Framework standards — established track record, clean legal title, realistic timelines, and transparent pricing. We do not accept listings from unverified sources.",
+  },
+  {
+    q:"Can I get a personalised shortlist of upcoming projects?",
+    a:"Absolutely. Contact our team with your budget, preferred locations, and configuration requirements. We will curate a shortlist of upcoming and recently launched projects that match your profile.",
+  },
+];
 
 const launchProjects: LaunchProject[] = [
   {
@@ -170,82 +194,74 @@ export default function NewLaunchesPage() {
 
           <div className="prop-grid">
             {launchProjects.map((project,index)=>(
-              <ScrollReveal key={project.id} delay={index * 80}>
-                <div className="hover-lift" style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
-                  
+              <ScrollReveal key={project.id} delay={index * 80} style={{ display:"flex" }}>
+                <Link
+                  href="/contact?service=new-launches"
+                  className="hover-lift"
+                  style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
+                >
                   {/* Image area */}
-                  <div style={{ height:200,background:project.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
+                  <div style={{ height:180,background:project.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
                     <div style={{ textAlign:"center",position:"relative",zIndex:1 }}>
-                      <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:20,color:"rgba(252,250,244,0.7)",padding:"0 20px",marginBottom:6 }}>
+                      <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",padding:"0 20px",marginBottom:4 }}>
                         {project.projectName}
                       </div>
-                      <div style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,color:"rgba(252,250,244,0.35)",letterSpacing:"0.08em",textTransform:"uppercase" }}>
+                      <div style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:600,color:"rgba(255,255,255,0.45)",letterSpacing:"0.08em",textTransform:"uppercase" }}>
                         {project.developer}
                       </div>
                     </div>
-                    {/* Status badge */}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"5px 12px",borderRadius:20,background:project.status==="Just Launched"||project.status==="Phase 2 Released"?"rgba(212,168,67,0.15)":"rgba(255,255,255,0.06)",color:project.status==="Just Launched"||project.status==="Phase 2 Released"?"var(--gold-lt)":"rgba(252,250,244,0.5)",border:"1px solid "+ (project.status==="Just Launched"||project.status==="Phase 2 Released"?"rgba(212,168,67,0.3)":"rgba(255,255,255,0.08)") }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
                         {project.status}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div style={{ padding:24,flex:1,display:"flex",flexDirection:"column" }}>
-                    {/* Type badge */}
-                    <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:10 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",background:"rgba(212,168,67,0.1)",color:"var(--gold-lt)",borderRadius:4 }}>
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
                         {project.type}
                       </span>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(255,255,255,0.04)",color:"rgba(252,250,244,0.4)",borderRadius:4 }}>
-                        {project.developer}
-                      </span>
                     </div>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{project.location}</p>
 
-                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"var(--light)",marginBottom:6,lineHeight:1.2 }}>
-                      {project.projectName}
-                    </h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(252,250,244,0.4)",marginBottom:16 }}>
-                      {project.location}
-                    </p>
-
-                    {/* Key details */}
-                    <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px 16px",marginBottom:18,padding:"14px 0",borderTop:"1px solid rgba(255,255,255,0.04)",borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
+                    {/* Details grid */}
+                    <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px 16px",marginBottom:10,padding:"10px 0",borderTop:"1px solid rgba(212,168,67,0.15)",borderBottom:"1px solid rgba(212,168,67,0.15)" }}>
                       <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Starting Price</p>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--gold-lt)" }}>{project.startingPrice}</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)" }}>{project.startingPrice}</p>
                       </div>
                       <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Configurations</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{project.configs}</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Configurations</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--ink)" }}>{project.configs}</p>
                       </div>
                       <div style={{ gridColumn:"span 2" }}>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Possession</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{project.possession}</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Possession</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--ink)" }}>{project.possession}</p>
                       </div>
                     </div>
 
                     {/* Highlights */}
-                    <div style={{ display:"flex",flexWrap:"wrap",gap:6,marginBottom:20,flex:1,alignContent:"flex-start" }}>
+                    <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {project.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(212,168,67,0.06)",color:"rgba(232,201,112,0.7)",borderRadius:4 }}>
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-dk)",borderRadius:3 }}>
                           {h}
                         </span>
                       ))}
                     </div>
 
+                    <div style={{ flex:1 }} />
+
                     {/* CTA */}
-                    <Link
-                      href="/contact?service=new-launches"
-                      className="btn btn-ghost"
-                      style={{ alignSelf:"flex-start",marginTop:"auto" }}
-                    >
-                      Register Interest →
-                    </Link>
+                    <div style={{ display:"flex",justifyContent:"flex-end",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
+                        Register Interest →
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
@@ -268,6 +284,9 @@ export default function NewLaunchesPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection faqs={launchFaqs} title="New Launches FAQ" />
     </>
   );
 }
