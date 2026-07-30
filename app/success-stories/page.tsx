@@ -96,7 +96,7 @@ export default function SuccessStoriesPage() {
         </div>
       </div>
 
-      {/* What We Do + Who We Serve – Two-Column Gold-Frame */}
+      {/* How We Help Clients Succeed – Navy + Cream Card Pair */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
           <ScrollReveal>
@@ -106,65 +106,63 @@ export default function SuccessStoriesPage() {
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
                 The Vedhara Approach to<br /><span style={{ color:"var(--gold-dk)" }}>Client Outcomes</span>
               </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
+                Independent advice, verified properties, and a fee structure that aligns with your interest, not a developer&apos;s margin.
+              </p>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }} className="grid-2">
-            {/* What We Do */}
-            <ScrollReveal style={{ display:"flex" }}>
-              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
-                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>01</span>
-                </div>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>What We Do</h3>
-                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
-                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR. We do not sell developer inventory, earn commissions, or push pre-launch projects. Our revenue comes entirely from client-paid advisory fees, which means every recommendation is aligned with your interest, not a developer's margin.
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
+            {/* What We Do – Navy */}
+            <ScrollReveal>
+              <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)" }}>
+                <span className="v-line" style={{ background:"var(--gold)" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Do</p>
+                <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What We Do</h2>
+                <p className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.8,marginBottom:24 }}>
+                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR. We do not sell developer inventory, earn commissions, or push pre-launch projects. Our revenue comes entirely from client-paid advisory fees, which means every recommendation is aligned with your interest, not a developer&apos;s margin.
                 </p>
-                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
-                  {["Property search & shortlisting across all NCR micro-markets","Price negotiation, legal due diligence & transaction management","NRI remote advisory with full power-of-attorney coordination","Portfolio strategy, rental analysis & exit planning"].map(item=>(
-                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
-                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {["Property search & shortlisting across all NCR micro-markets","Price negotiation, legal due diligence & transaction management","NRI remote advisory with full power-of-attorney coordination","Portfolio strategy, rental analysis & exit planning"].map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:16,fontWeight:700,lineHeight:1 }}>✓</span>
+                    <span className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
 
-            {/* Who We Serve */}
-            <ScrollReveal delay={100} style={{ display:"flex" }}>
-              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
-                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>02</span>
-                </div>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>Who We Serve</h3>
-                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+            {/* Who We Serve – Cream */}
+            <ScrollReveal delay={120} direction="right">
+              <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
+                <span className="v-line" style={{ background:"var(--gold)" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who We Serve</p>
+                <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who We Serve</h2>
+                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   Our clients range from first-time home buyers in Faridabad to HNI investors managing multi-crore portfolios across Noida, Gurugram, and Delhi. We also serve a significant base of NRI clients across UAE, USA, UK, Canada, and Singapore who rely on us for end-to-end remote advisory and transaction management.
                 </p>
-                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
-                  {["First-time home buyers needing trusted guidance","NRI investors seeking remote, reliable advisory","HNI & UHNI clients requiring portfolio strategy","Corporate tenants negotiating commercial leases","Retirees downsizing or relocating within NCR"].map(item=>(
-                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
-                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {["First-time home buyers needing trusted guidance","NRI investors seeking remote, reliable advisory","HNI & UHNI clients requiring portfolio strategy","Corporate tenants negotiating commercial leases","Retirees downsizing or relocating within NCR"].map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                    <span className="body-md" style={{ color:"var(--slate)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Why Vedhara – 2x2 Differentiators */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+      {/* Why Vedhara – 2x2 Vibrant Cream Cards on Navy */}
+      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:48 }}>
+            <div style={{ textAlign:"center",marginBottom:52 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
               <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Why Clients Choose Vedhara</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
                 The Difference Is<br /><span style={{ color:"var(--gold-lt)" }}>Independent Advice</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
                 Our success stories are not accidents. They are the result of a fundamentally different approach to real estate advisory.
               </p>
             </div>
@@ -178,9 +176,19 @@ export default function SuccessStoriesPage() {
               { title:"Post-Purchase Support", desc:"Our relationship does not end at registration. We help with rental management, property tax compliance, resale advisory, and portfolio rebalancing." },
             ].map((item,i)=>(
               <ScrollReveal key={item.title} delay={i*80} style={{ display:"flex" }}>
-                <div style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,padding:"32px",flex:1 }}>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--light)",marginBottom:10,lineHeight:1.3 }}>{item.title}</h3>
-                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8 }}>{item.desc}</p>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
+                  {/* Gold top accent */}
+                  <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
+                  <div style={{ padding:"28px 28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
+                    {/* Vedhara badge + number */}
+                    <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:14 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"3px 8px",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
+                      <div style={{ flex:1,height:1,background:"rgba(212,168,67,0.15)" }} />
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,color:"var(--gold-dk)",opacity:0.5 }}>0{i+1}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>{item.title}</h3>
+                    <p className="body-md" style={{ color:"var(--slate)",fontSize:13,lineHeight:1.8,flex:1 }}>{item.desc}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
