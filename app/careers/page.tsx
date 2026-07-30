@@ -58,10 +58,10 @@ const openRoles = [
 ];
 
 const values = [
-  { title:"Independent Advice First", desc:"We do not earn commission by pushing any developer's inventory. Every recommendation starts with the client's requirement, not our margin." },
-  { title:"Verification Before Listing", desc:"Every property we recommend passes our five-point Verification Framework. No exceptions." },
-  { title:"Transparent Fees, Always", desc:"Our fee structure is disclosed before any engagement, in writing, with no hidden charges." },
-  { title:"One Advisor, End-to-End", desc:"From first consultation to registration, a single named advisor owns your journey." },
+  { title:"Independent Advice First", desc:"No commissions from any developer; every recommendation starts with the client's needs, not our margin." },
+  { title:"Verification Before Listing", desc:"Every property passes our five-point Verification Framework before it reaches you. No exceptions." },
+  { title:"Transparent Fees, Always", desc:"Our fee structure is disclosed upfront, in writing, with absolutely no hidden charges." },
+  { title:"One Advisor, End-to-End", desc:"A single named advisor owns your journey from first consultation to final registration." },
 ];
 
 export default function CareersPage() {
@@ -203,7 +203,9 @@ export default function CareersPage() {
                 Join the<span style={{ color:"#d4a843" }}> Team</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
-                If you see a role that fits, send your CV and a brief note on why Vedhara, and we will get back to you within a week.
+                If you see a role that fits, send your CV to{" "}
+                <a href="mailto:contact@vedharagroup.com" style={{ color:"var(--gold)",textDecoration:"underline",textUnderlineOffset:3 }}>contact@vedharagroup.com</a>
+                {" "}with a brief note on why Vedhara, and we will get back to you within a week.
               </p>
             </div>
           </ScrollReveal>
@@ -223,9 +225,9 @@ export default function CareersPage() {
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{role.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{role.desc}</p>
                     <div style={{ paddingTop:16,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-dk)",display:"inline-flex",alignItems:"center",gap:4 }}>
+                      <a href={`mailto:contact@vedharagroup.com?subject=Application%20for%20${encodeURIComponent(role.title)}`} style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }} className="apply-btn">
                         Apply Now →
-                      </span>
+                      </a>
                     </div>
                   </div>
                 </div>
