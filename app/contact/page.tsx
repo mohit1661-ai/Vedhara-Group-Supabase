@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -105,9 +106,21 @@ export default function ContactPage() {
               <div style={{ marginTop:24 }}>
                 <p className="eyebrow" style={{ marginBottom:12 }}>Services You Can Enquire About</p>
                 <div style={{ display:"flex",flexWrap:"wrap",gap:6 }}>
-                  {["Buy Property","Sell Property","Rent Property","Commercial","Investment Advisory","NRI Services","Property Management","Market Research"].map(s=>(
-                    <span key={s} className="service-tag">{s}</span>
-                  ))}
+                  {["Buy Property","Sell Property","Rent Property","Commercial","Investment Advisory","NRI Services","Property Management","Market Research"].map(s=>{
+                    const slugs:Record<string,string> = {
+                      "Buy Property":"/buy",
+                      "Sell Property":"/sell",
+                      "Rent Property":"/rent",
+                      "Commercial":"/commercial",
+                      "Investment Advisory":"/investment-advisory",
+                      "NRI Services":"/nri-services",
+                      "Property Management":"/property-management",
+                      "Market Research":"/market-insights",
+                    };
+                    return (
+                      <Link key={s} href={slugs[s]||"/"} className="service-tag">{s}</Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -184,6 +197,8 @@ export default function ContactPage() {
           border: 1px solid rgba(42,45,53,0.12);
           padding: 4px 8px;
           transition: all 0.2s;
+          text-decoration: none;
+          display: inline-block;
         }
         .service-tag:hover {
           border-color: var(--gold);
