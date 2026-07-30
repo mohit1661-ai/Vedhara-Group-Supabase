@@ -230,14 +230,10 @@ export default function NewLaunchesPage() {
                     {/* Details grid */}
                     <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px 16px",marginBottom:10,padding:"10px 0",borderTop:"1px solid rgba(212,168,67,0.15)",borderBottom:"1px solid rgba(212,168,67,0.15)" }}>
                       <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)" }}>{project.startingPrice}</p>
-                      </div>
-                      <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Configurations</p>
                         <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--ink)" }}>{project.configs}</p>
                       </div>
-                      <div style={{ gridColumn:"span 2" }}>
+                      <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Possession</p>
                         <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--ink)" }}>{project.possession}</p>
                       </div>
@@ -254,8 +250,12 @@ export default function NewLaunchesPage() {
 
                     <div style={{ flex:1 }} />
 
-                    {/* CTA */}
-                    <div style={{ display:"flex",justifyContent:"flex-end",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                    {/* CTA - left to right */}
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <div>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",margin:0 }}>{project.startingPrice}</p>
+                      </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
                         Register Interest →
                       </span>
@@ -286,7 +286,7 @@ export default function NewLaunchesPage() {
       </section>
 
       {/* FAQ */}
-      <FAQSection faqs={launchFaqs} title="New Launches FAQ" />
+      <FAQSection faqs={launchFaqs} title="New Launches FAQ" dark={false} />
     </>
   );
 }
