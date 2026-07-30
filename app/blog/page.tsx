@@ -131,6 +131,131 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* Why Read Vedhara's Blog – 2x2 Differentiators */}
+      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Why Read Vedhara's Blog</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                Content You Can Trust,<br /><span style={{ color:"var(--gold-lt)" }}>Insights You Can Use</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
+                Most real estate blogs recycle press releases. Ours is built differently.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }}>
+            {/* Vedhara badge card */}
+            <ScrollReveal style={{ display:"flex" }}>
+              <div className="gfc-navy-dark" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"32px",flex:1,position:"relative",overflow:"hidden" }}>
+                <div style={{ position:"absolute",top:12,right:12,background:"var(--gold)",padding:"2px 10px",borderRadius:12,zIndex:1 }}>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:7,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--navy)" }}>Vedhara Blog</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--light)",marginBottom:16,lineHeight:1.3 }}>Written by Advisors, Not by Writers</h3>
+                <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+                  Every article on this blog is researched and written by Vedhara's advisory team, drawing from real client transactions, market data, and daily ground-level exposure across Delhi NCR. We do not outsource content or repurpose developer press releases.
+                </p>
+                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                  {["Backed by real transaction data, not speculation","Updated quarterly to reflect market shifts","Reviewed by legal team for regulatory accuracy","Cited by NRI investors, lawyers, and financial planners"].map(item=>(
+                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.75)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
+                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.7 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+
+            {/* Competitor box */}
+            <ScrollReveal delay={100} style={{ display:"flex" }}>
+              <div style={{ background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:16,padding:"32px",flex:1,position:"relative",overflow:"hidden" }}>
+                <div style={{ position:"absolute",top:12,right:12,background:"rgba(255,255,255,0.06)",padding:"2px 10px",borderRadius:12,zIndex:1 }}>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:7,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.4)" }}>Other Real Estate Blogs</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"rgba(252,250,244,0.5)",marginBottom:16,lineHeight:1.3 }}>Written by SEO Teams, Not by Practitioners</h3>
+                <p className="body-sm" style={{ color:"rgba(252,250,244,0.3)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+                  Most real estate content is produced by freelance writers or SEO agencies who have never been on a site visit, negotiated a deal, or verified a RERA number. The result is generic advice that rarely applies to your specific situation.
+                </p>
+                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                  {["Often based on outdated or generic data","Republished from developer press releases","No accountability for accuracy or timeliness","Designed for clicks, not for client decisions"].map(item=>(
+                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.2)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
+                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"rgba(255,255,255,0.15)" }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+
+            {/* Row 2: two more Vedhara strengths */}
+            <ScrollReveal delay={50} style={{ display:"flex" }}>
+              <div className="gfc-navy-dark" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"32px",flex:1 }}>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:10,lineHeight:1.3 }}>Data-Backed Market Analysis</h3>
+                <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8 }}>
+                  Our price trends, rental yield comparisons, and micro-market analyses are derived from Vedhara's proprietary transaction database, not from third-party aggregators. We track actual deal prices, not asking prices, giving you a realistic view of the market.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150} style={{ display:"flex" }}>
+              <div className="gfc-navy-dark" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"32px",flex:1 }}>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:10,lineHeight:1.3 }}>Practical Guides for Real Decisions</h3>
+                <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8 }}>
+                  Whether it is a step-by-step RERA compliance guide, a stamp duty calculator walkthrough, or an NRI repatriation checklist, every article is structured to help you take action. No fluff, no jargon, just what you need to know before you buy, sell, or invest.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Topics We Cover – Category Navigation */}
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Topics We Cover</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
+                Everything You Need to Know<br /><span style={{ color:"var(--gold-dk)" }}>About Delhi NCR Real Estate</span>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
+                From market trends to legal guides, we cover every aspect of property in Delhi NCR.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24 }} className="grid-3">
+            {[
+              { title:"Market Trends", desc:"Quarterly price movements, micro-market analysis, demand-supply dynamics, and infrastructure impact assessments across Delhi NCR corridors.", gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 100%)" },
+              { title:"Legal & Compliance", desc:"RERA registration verification, title due diligence, stamp duty, registration charges, and regulatory compliance for both buyers and sellers.", gradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 100%)" },
+              { title:"NRI Services", desc:"FEMA guidelines, repatriation rules, TDS on property transactions, power-of-attorney process, and remote purchase management for global Indians.", gradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 100%)" },
+              { title:"Buying Guides", desc:"Step-by-step guides for first-time buyers, budget planning, loan eligibility, property inspection checklists, and negotiation strategies.", gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 100%)" },
+              { title:"Investment Strategy", desc:"Rental yield analysis, capital appreciation trends, portfolio diversification, pre-launch vs. ready property evaluation, and exit planning.", gradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 100%)" },
+              { title:"Home Finance", desc:"Home loan interest rates, EMI calculators, tax benefits under Section 24 and 80C, balance transfer options, and lender comparison guides.", gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 100%)" },
+            ].map((topic,i)=>(
+              <ScrollReveal key={topic.title} delay={i*60} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column" }}>
+                  <div style={{ height:80,background:topic.gradient,display:"flex",alignItems:"center",padding:"0 24px",flexShrink:0 }}>
+                    <h3 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"var(--gold-lt)",margin:0 }}>{topic.title}</h3>
+                  </div>
+                  <div style={{ padding:"20px 24px 24px",flex:1,display:"flex",flexDirection:"column" }}>
+                    <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,flex:1 }}>{topic.desc}</p>
+                    <div style={{ paddingTop:16,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-dk)",display:"inline-flex",alignItems:"center",gap:4 }}>
+                        Browse Articles →
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );

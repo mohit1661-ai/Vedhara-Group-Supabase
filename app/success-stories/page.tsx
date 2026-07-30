@@ -96,6 +96,98 @@ export default function SuccessStoriesPage() {
         </div>
       </div>
 
+      {/* What We Do + Who We Serve – Two-Column Gold-Frame */}
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>How We Help Clients Succeed</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
+                The Vedhara Approach to<br /><span style={{ color:"var(--gold-dk)" }}>Client Outcomes</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }} className="grid-2">
+            {/* What We Do */}
+            <ScrollReveal style={{ display:"flex" }}>
+              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
+                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>01</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>What We Do</h3>
+                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR. We do not sell developer inventory, earn commissions, or push pre-launch projects. Our revenue comes entirely from client-paid advisory fees, which means every recommendation is aligned with your interest, not a developer's margin.
+                </p>
+                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                  {["Property search & shortlisting across all NCR micro-markets","Price negotiation, legal due diligence & transaction management","NRI remote advisory with full power-of-attorney coordination","Portfolio strategy, rental analysis & exit planning"].map(item=>(
+                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
+                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+
+            {/* Who We Serve */}
+            <ScrollReveal delay={100} style={{ display:"flex" }}>
+              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
+                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>02</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>Who We Serve</h3>
+                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+                  Our clients range from first-time home buyers in Faridabad to HNI investors managing multi-crore portfolios across Noida, Gurugram, and Delhi. We also serve a significant base of NRI clients across UAE, USA, UK, Canada, and Singapore who rely on us for end-to-end remote advisory and transaction management.
+                </p>
+                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                  {["First-time home buyers needing trusted guidance","NRI investors seeking remote, reliable advisory","HNI & UHNI clients requiring portfolio strategy","Corporate tenants negotiating commercial leases","Retirees downsizing or relocating within NCR"].map(item=>(
+                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
+                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Vedhara – 2x2 Differentiators */}
+      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Why Clients Choose Vedhara</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                The Difference Is<br /><span style={{ color:"var(--gold-lt)" }}>Independent Advice</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
+                Our success stories are not accidents. They are the result of a fundamentally different approach to real estate advisory.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }}>
+            {[
+              { title:"No Commission, No Conflict", desc:"Unlike brokers who earn from developers, our fee is paid by the client. This simple difference drives everything, from property selection to price negotiation." },
+              { title:"Five-Point Verification", desc:"Every property we recommend passes title verification, RERA compliance, construction quality assessment, market price benchmarking, and exit liquidity check." },
+              { title:"Named Advisor, End-to-End", desc:"From first consultation to possession, a single senior advisor owns your engagement. No handoffs, no junior associates learning on your transaction." },
+              { title:"Post-Purchase Support", desc:"Our relationship does not end at registration. We help with rental management, property tax compliance, resale advisory, and portfolio rebalancing." },
+            ].map((item,i)=>(
+              <ScrollReveal key={item.title} delay={i*80} style={{ display:"flex" }}>
+                <div style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,padding:"32px",flex:1 }}>
+                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--light)",marginBottom:10,lineHeight:1.3 }}>{item.title}</h3>
+                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8 }}>{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stories grid */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>

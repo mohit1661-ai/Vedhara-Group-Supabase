@@ -96,6 +96,105 @@ export default function CaseStudiesPage() {
         </div>
       </div>
 
+      {/* Our Advisory Approach – 4-Step Process */}
+      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Our Advisory Approach</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                How We Deliver<br /><span style={{ color:"var(--gold-lt)" }}>Measurable Outcomes</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
+                Every engagement follows a structured process designed to minimise risk, maximise value, and ensure complete transparency at every stage.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }} className="grid-4">
+            {[
+              { step:"01", title:"Discovery & Diagnosis", desc:"We spend time understanding your goals, budget, timeline, and risk appetite. No recommendations until we know your full picture." },
+              { step:"02", title:"Research & Shortlisting", desc:"Our team scans the entire NCR market, not just a portfolio. We shortlist only properties that pass our five-point verification framework." },
+              { step:"03", title:"Negotiation & Execution", desc:"We negotiate pricing, terms, and documentation on your behalf. Every offer, counter-offer, and clause is reviewed with you before proceeding." },
+              { step:"04", title:"Post-Closure Support", desc:"After registration, we stay available for rental management, compliance, tax advisory, and future portfolio decisions. It is a relationship, not a transaction." },
+            ].map((a,i)=>(
+              <ScrollReveal key={a.step} delay={i*80} style={{ display:"flex" }}>
+                <div style={{ display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",padding:"32px 20px",background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,flex:1 }}>
+                  <div style={{ width:48,height:48,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>{a.step}</span>
+                  </div>
+                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:8,lineHeight:1.3 }}>{a.title}</h3>
+                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8,flex:1 }}>{a.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Cover – Two-Column Gold-Frame */}
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Our Expertise</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
+                Advisory Across the<br /><span style={{ color:"var(--gold-dk)" }}>Full Property Lifecycle</span>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
+                From first-time buyers to portfolio investors, our advisory covers every stage of the real estate journey.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }} className="grid-2">
+            {/* Column 1: Transactions */}
+            <ScrollReveal style={{ display:"flex" }}>
+              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
+                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>01</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>Transaction Advisory</h3>
+                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+                  We guide buyers, sellers, and investors through every step of the property transaction lifecycle, ensuring compliance, fair pricing, and a smooth closing process from offer to registration.
+                </p>
+                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                  {["Residential purchase & sale advisory across all NCR corridors","Commercial & retail lease negotiation for corporate tenants","Pre-launch investment evaluation with exit strategy planning","NRI remote transaction management (POA, remittance, registration)"].map(item=>(
+                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
+                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+
+            {/* Column 2: Strategy & Portfolio */}
+            <ScrollReveal delay={100} style={{ display:"flex" }}>
+              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
+                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
+                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>02</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>Strategy & Portfolio Management</h3>
+                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+                  Beyond individual transactions, we help clients build, manage, and optimise their real estate portfolios for long-term wealth creation, tax efficiency, and risk diversification.
+                </p>
+                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
+                  {["Portfolio audit, yield analysis & rebalancing recommendations","Rent vs. buy, ready vs. pre-launch, residential vs. commercial evaluation","Property tax planning, compliance review & advisory","Exit strategy, sale timing & capital gains optimisation"].map(item=>(
+                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
+                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Case study cards */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>

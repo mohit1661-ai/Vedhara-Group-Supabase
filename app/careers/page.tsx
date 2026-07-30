@@ -116,6 +116,80 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* What We Offer – Benefits Section */}
+      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Offer</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                More Than a Job,<br /><span style={{ color:"var(--gold-lt)" }}>A Career With Purpose</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
+                At Vedhara, you will work on meaningful problems with a team that values depth over speed.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24 }} className="grid-3">
+            {[
+              { title:"Competitive Compensation", desc:"Industry-leading fixed salaries with performance bonuses. No cap on earnings for advisory roles. ESOP eligibility for senior team members.", icon:"💰" },
+              { title:"Remote-First Culture", desc:"Work from anywhere. Our NRI team is fully remote, and most roles offer hybrid or work-from-home flexibility. We trust you to deliver.", icon:"🏠" },
+              { title:"Learning & Growth", desc:"Sponsored RERA certification, access to PropTech tools, monthly market research briefings, and mentorship from senior advisors with 15+ years of experience.", icon:"📚" },
+              { title:"Real Impact, Not Sales", desc:"You will be measured on client outcomes, not on sales targets. No pressure to close, no push to upsell. Just honest advice and long-term relationships.", icon:"🎯" },
+              { title:"Transparent Career Path", desc:"Clear progression from Junior Advisor to Senior Partner. Defined milestones, review cycles, and promotion criteria. No politics, no favouritism.", icon:"📈" },
+              { title:"Health & Wellness", desc:"Comprehensive health insurance for you and your family. Annual wellness allowance, flexible leave policy, and mental health support resources.", icon:"❤️" },
+            ].map((ben,i)=>(
+              <ScrollReveal key={ben.title} delay={i*60} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,padding:"28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
+                  <span style={{ fontSize:24,marginBottom:10,lineHeight:1 }}>{ben.icon}</span>
+                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:8,lineHeight:1.3 }}>{ben.title}</h3>
+                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8,flex:1 }}>{ben.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who We're Looking For */}
+      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who We Are Looking For</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
+                Do You Value Trust Over<br /><span style={{ color:"var(--gold-dk)" }}>Short-Term Commissions?</span>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
+                If the following sounds like you, we should talk.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }} className="grid-2">
+            {[
+              { title:"You Put the Client First", desc:"You believe that if you serve the client's interest, the business takes care of itself. You would rather walk away from a deal than recommend something you do not believe in." },
+              { title:"You Are a Lifelong Learner", desc:"Real estate markets evolve fast. You enjoy staying ahead, reading RERA updates, tracking infrastructure projects, and understanding how macro trends affect micro-markets." },
+              { title:"You Value Transparency", desc:"You believe in clear communication, written fee disclosures, and no hidden agenda. You are comfortable being measured on client satisfaction, not transaction volume." },
+              { title:"You Think Long Term", desc:"You see this as a career, not a stopgap. You want to build deep client relationships that span decades and transactions, not just a one-time sale." },
+            ].map((trait,i)=>(
+              <ScrollReveal key={trait.title} delay={i*80} style={{ display:"flex" }}>
+                <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
+                  <div style={{ width:36,height:36,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:12,flexShrink:0 }}>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+                  </div>
+                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{trait.title}</h3>
+                  <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,flex:1 }}>{trait.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Open Roles */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
