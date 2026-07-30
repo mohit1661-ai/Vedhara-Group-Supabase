@@ -113,7 +113,7 @@ export default function LuxuryPage() {
                 Premium Properties<br /><span style={{ color:"var(--gold-lt)" }}>for Discerning Buyers</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
-                Each residence is hand-selected and discreetly presented. No public listings, no speculative deals.
+                Each residence is hand-selected and discreetly presented.<br />No public listings, no speculative deals.
               </p>
             </div>
           </ScrollReveal>
