@@ -115,6 +115,11 @@ export default function ServicesPage() {
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals,<br />from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>
 
+      {/* Gold differentiator */}
+      <div style={{ background:"var(--navy)",padding:"0 32px" }}>
+        <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
       {/* Intro block */}
       <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
         <div style={{ maxWidth:700,margin:"0 auto" }}>
