@@ -42,62 +42,71 @@ export default function ContactPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Let&apos;s Start With<br /><span style={{ color:"var(--gold-lt)" }}>an Honest Conversation.</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:720,margin:"0 auto" }}>
-            No pitch, no pressure, no pre-qualification for whether your budget is &ldquo;worth our time.&rdquo; Whether you are considering buying a 1BHK in Ghaziabad or a luxury penthouse in Gurugram, every consultation begins the same way: we listen, we understand what you are trying to achieve, and we tell you honestly how we can help.
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:620,margin:"0 auto" }}>
+            No pitch, no pressure. Whether you&apos;re buying a 1BHK in Ghaziabad or a luxury penthouse in Gurugram, every consultation starts the same way: we listen, understand your goals, and tell you honestly how we can help.
           </p>
       </VideoHeroSection>
 
+      {/* Main Section */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:64,alignItems:"flex-start" }} className="grid-2">
+        <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,alignItems:"flex-start" }} className="grid-2">
 
           {/* INFO SIDE */}
           <ScrollReveal>
             <div>
               <span className="v-line" />
-              <p className="eyebrow" style={{ marginBottom:14 }}>What to Expect From Your First Consultation</p>
-              <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Your First Consultation</h2>
+              <p className="eyebrow" style={{ marginBottom:14 }}>What to Expect</p>
+              <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:28 }}>Your First Consultation</h2>
 
-              {[
-                { label:"Duration",  val:"30–45 minutes (phone or video call)" },
-                { label:"Format",    val:"Your advisor leads with questions about your goals, budget, timeline, and location preferences, not a property pitch" },
-                { label:"Output",    val:"A written summary of your requirements, recommended next steps, and a realistic assessment of what is achievable in your budget across Delhi NCR" },
-                { label:"Cost",      val:"Free, with no obligation to proceed" },
-              ].map(item=>(
-                <div key={item.label} style={{ display:"grid",gridTemplateColumns:"100px 1fr",gap:12,paddingBottom:14,marginBottom:14,borderBottom:"1px solid rgba(42,45,53,0.06)" }}>
-                  <span className="eyebrow" style={{ color:"var(--gold)" }}>{item.label}</span>
-                  <span className="body-sm" style={{ color:"var(--slate)" }}>{item.val}</span>
-                </div>
-              ))}
+              {/* Details grid */}
+              <div className="contact-details" style={{ marginBottom:36 }}>
+                {[
+                  { label:"Duration",  val:"30–45 minutes (phone or video call)" },
+                  { label:"Format",    val:"Your advisor leads with questions about your goals, budget, timeline, and location preferences — not a property pitch" },
+                  { label:"Output",    val:"A written summary of your requirements, recommended next steps, and a realistic assessment of what is achievable in your budget across Delhi NCR" },
+                  { label:"Cost",      val:"Free, with no obligation to proceed" },
+                ].map(item=>(
+                  <div key={item.label} className="contact-detail-row">
+                    <span className="eyebrow" style={{ color:"var(--gold)",minWidth:90 }}>{item.label}</span>
+                    <span className="body-sm" style={{ color:"var(--slate)" }}>{item.val}</span>
+                  </div>
+                ))}
+              </div>
 
-              <div style={{ marginTop:32 }}>
-                <p className="eyebrow" style={{ marginBottom:14 }}>How to Reach Us</p>
+              {/* How to Reach Us - Cards */}
+              <p className="eyebrow" style={{ marginBottom:16 }}>How to Reach Us</p>
+              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }} className="grid-2">
                 {[
                   { icon:"C",  label:"Call",      val:"+91 98106 47063",       href:"tel:+919810647063", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
                   { icon:"W",  label:"WhatsApp",  val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group", grad:"linear-gradient(135deg,#0F1E38,#D4A843)" },
                   { icon:"E",  label:"Email",     val:"contact@vedharagroup.com", href:"mailto:contact@vedharagroup.com", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
                 ].map(item=>(
                   <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
-                    style={{ display:"flex",gap:14,padding:"14px 16px",marginBottom:8,background:"var(--cream)",textDecoration:"none",borderLeft:"2px solid transparent",transition:"border-color 0.2s,background 0.2s" }}
-                    className="contact-link">
-                    <span className="gold-accent" style={{width:24,height:2,margin:0}}></span>
-                    <div>
-                      <div className="eyebrow" style={{ color:"var(--gold)",marginBottom:2 }}>{item.label}</div>
-                      <div className="body-sm" style={{ color:"var(--ink)" }}>{item.val}</div>
-                    </div>
+                    className="cta-card"
+                    style={{ display:"flex",flexDirection:"column",padding:"16px 18px",textDecoration:"none",background:"var(--cream)",border:"1px solid rgba(42,45,53,0.06)",position:"relative",overflow:"hidden",transition:"all 0.35s var(--ease-out)" }}>
+                    {/* Gradient top bar */}
+                    <div style={{ position:"absolute",top:0,left:0,right:0,height:3,background:item.grad }} />
+                    <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:4,fontSize:10 }}>{item.label}</span>
+                    <span className="body-sm" style={{ color:"var(--ink)",fontWeight:500 }}>{item.val}</span>
                   </a>
                 ))}
               </div>
 
-              <div style={{ marginTop:20,padding:"16px 20px",background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.15)" }}>
-                <p className="eyebrow" style={{ color:"var(--gold)",marginBottom:6 }}>NRI Clients</p>
-                <p className="body-sm" style={{ color:"var(--slate)",margin:0 }}>Weekend slots available: Saturday & Sunday, 10AM–4PM IST. Tell us your time zone in the form and we will schedule around you.</p>
+              {/* NRI Box */}
+              <div style={{ display:"flex",alignItems:"flex-start",gap:14,marginTop:28,padding:"18px 22px",background:"var(--navy)",border:"1px solid rgba(212,168,67,0.25)",borderRadius:8 }}>
+                <span style={{ fontSize:18,flexShrink:0,color:"var(--gold-lt)" }}>ⓘ</span>
+                <div>
+                  <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:4 }}>NRI Clients</p>
+                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",margin:0,lineHeight:1.65 }}>Weekend slots available: Saturday & Sunday, 10AM–4PM IST. Tell us your time zone and we&apos;ll schedule around you.</p>
+                </div>
               </div>
 
-              <div style={{ marginTop:20 }}>
+              {/* Service Tags */}
+              <div style={{ marginTop:24 }}>
                 <p className="eyebrow" style={{ marginBottom:12 }}>Services You Can Enquire About</p>
                 <div style={{ display:"flex",flexWrap:"wrap",gap:6 }}>
-                  {["Buy Property","Sell Property","Rent Property","Commercial Real Estate","Investment Advisory","NRI Services","Property Management","Market Research & Second Opinion"].map(s=>(
-                    <span key={s} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--slate)",border:"1px solid rgba(42,45,53,0.12)",padding:"4px 8px" }}>{s}</span>
+                  {["Buy Property","Sell Property","Rent Property","Commercial","Investment Advisory","NRI Services","Property Management","Market Research"].map(s=>(
+                    <span key={s} className="service-tag">{s}</span>
                   ))}
                 </div>
               </div>
@@ -106,7 +115,9 @@ export default function ContactPage() {
 
           {/* FORM SIDE */}
           <ScrollReveal delay={120} direction="right">
-            <div style={{ background:"white",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px",boxShadow:"0 4px 32px rgba(42,45,53,0.06)" }}>
+            <div className="form-card" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",padding:"40px 36px",position:"relative",boxShadow:"0 8px 32px rgba(9,15,29,0.08)" }}>
+              {/* Gold top accent */}
+              <div style={{ position:"absolute",top:0,left:36,right:36,height:2.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.5 }} />
               <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Book Your Free Consultation</h2>
               <form onSubmit={submit} style={{ display:"flex",flexDirection:"column",gap:18 }}>
                 <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:14 }} className="grid-2">
@@ -150,7 +161,40 @@ export default function ContactPage() {
       </section>
 
       <style>{`
-        .contact-link:hover { border-left-color: var(--gold) !important; background: var(--cream) !important; }
+        .contact-detail-row {
+          display: grid;
+          grid-template-columns: 100px 1fr;
+          gap: 12px;
+          padding-bottom: 14px;
+          margin-bottom: 14px;
+          border-bottom: 1px solid rgba(42,45,53,0.06);
+        }
+        .cta-card:hover {
+          transform: translateY(-3px) !important;
+          box-shadow: 0 10px 30px rgba(9,15,29,0.12) !important;
+          border-color: rgba(212,168,67,0.2) !important;
+        }
+        .service-tag {
+          font-family: var(--t-head);
+          font-size: 9px;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: var(--slate);
+          border: 1px solid rgba(42,45,53,0.12);
+          padding: 4px 8px;
+          transition: all 0.2s;
+        }
+        .service-tag:hover {
+          border-color: var(--gold);
+          color: var(--gold-dk);
+        }
+        @media(max-width:700px){
+          .contact-detail-row {
+            grid-template-columns: 1fr !important;
+            gap: 4px;
+          }
+        }
       `}</style>
     </>
   );
