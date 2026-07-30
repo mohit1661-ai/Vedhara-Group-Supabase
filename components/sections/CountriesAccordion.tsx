@@ -55,7 +55,7 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                   border:"1px solid rgba(212,168,67,0.12)",
                 }}
               >
-                {/* Country code badge — white */}
+                {/* Country code badge - white */}
                 <div
                   className="country-code"
                   style={{
@@ -77,7 +77,7 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                   style={{ margin:"0 auto 12px" }}
                 />
 
-                {/* Country name — gold */}
+                {/* Country name - gold */}
                 <div
                   className="country-name"
                   style={{
@@ -92,7 +92,7 @@ export default function CountriesAccordion({ countries }: { countries: Country[]
                   {c.name}
                 </div>
 
-                {/* Key cities — white */}
+                {/* Key cities - white */}
                 <div
                   style={{
                     fontFamily:"var(--t-body)",

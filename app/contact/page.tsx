@@ -63,7 +63,7 @@ export default function ContactPage() {
               <div className="contact-details" style={{ marginBottom:36 }}>
                 {[
                   { label:"Duration",  val:"30–45 minutes (phone or video call)" },
-                  { label:"Format",    val:"Your advisor leads with questions about your goals, budget, timeline, and location preferences — not a property pitch" },
+                  { label:"Format",    val:"Your advisor leads with questions about your goals, budget, timeline, and location preferences, not a property pitch" },
                   { label:"Output",    val:"A written summary of your requirements, recommended next steps, and a realistic assessment of what is achievable in your budget across Delhi NCR" },
                   { label:"Cost",      val:"Free, with no obligation to proceed" },
                 ].map(item=>(

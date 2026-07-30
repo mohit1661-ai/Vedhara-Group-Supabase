@@ -380,7 +380,7 @@ export default function HomePage() {
                       <span style={{ fontFamily:"var(--t-head)",fontSize:32,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
                     </div>
                   </div>
-                  {/* Content — matching featured properties style */}
+                  {/* Content - matching featured properties style */}
                   <div style={{ padding:20 }}>
                     <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:6 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>

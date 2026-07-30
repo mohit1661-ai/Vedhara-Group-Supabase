@@ -309,7 +309,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </div>
           </div>
 
-          {/* RIGHT: Stat cards — glass backdrop, clean text */}
+          {/* RIGHT: Stat cards - glass backdrop, clean text */}
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
             <div className="glass" style={{ padding:"22px 10px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
               <div className="stat-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>

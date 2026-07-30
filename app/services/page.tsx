@@ -24,7 +24,7 @@ const servicesFaqs: FAQItem[] = [
   },
   {
     q:"Can I use multiple Vedhara services at the same time?",
-    a:"Yes. Many clients combine services — for example, selling one property through Vedhara while using our buy-side advisory to acquire another, or using property management alongside investment advisory for their portfolio.",
+    a:"Yes. Many clients combine services, for example, selling one property through Vedhara while using our buy-side advisory to acquire another, or using property management alongside investment advisory for their portfolio.",
   },
   {
     q:"How does Vedhara verify properties across different service categories?",
@@ -36,7 +36,7 @@ const servicesFaqs: FAQItem[] = [
   },
   {
     q:"Can NRI clients access all Vedhara services remotely?",
-    a:"Yes. Every Vedhara service — from buying and selling to property management and investment advisory — is designed to be accessible remotely. Video site visits, digital documentation, and remote coordination are standard across all services.",
+    a:"Yes. Every Vedhara service, from buying and selling to property management and investment advisory, is designed to be accessible remotely. Video site visits, digital documentation, and remote coordination are standard across all services.",
   },
 ];
 

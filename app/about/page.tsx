@@ -81,7 +81,7 @@ export default function AboutPage() {
                 <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Stand For</p>
                 {["Independent advisory, never a developer's agent","Verification published, not just promised","Fees disclosed before the conversation begins","One named advisor throughout your journey"].map((pt,i)=>(
                   <div key={pt} style={{ display:"flex",gap:12,marginBottom:12,opacity:0,animation:`fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) ${250+i*120}ms forwards` }}>
-                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:1 }}>—</span>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:1 }}>·</span>
                     <span className="body-sm" style={{ color:"rgba(252,250,244,0.65)" }}>{pt}</span>
                   </div>
                 ))}

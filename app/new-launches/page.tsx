@@ -35,7 +35,7 @@ const launchFaqs: FAQItem[] = [
   },
   {
     q:"How do you select which new launches to feature?",
-    a:"We feature projects from developers who meet our Verification Framework standards — established track record, clean legal title, realistic timelines, and transparent pricing. We do not accept listings from unverified sources.",
+    a:"We feature projects from developers who meet our Verification Framework standards, established track record, clean legal title, realistic timelines, and transparent pricing. We do not accept listings from unverified sources.",
   },
   {
     q:"Can I get a personalised shortlist of upcoming projects?",

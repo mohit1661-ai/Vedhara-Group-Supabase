@@ -105,7 +105,7 @@ export default function PropertyManagementPage() {
         </div>
       </section>
 
-      {/* Why Vedhara — Expertise vs Competitors */}
+      {/* Why Vedhara - Expertise vs Competitors */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
           <ScrollReveal>
@@ -145,7 +145,7 @@ export default function PropertyManagementPage() {
         </div>
       </section>
 
-      {/* How We Work — Process Steps as Cards */}
+      {/* How We Work - Process Steps as Cards */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>

@@ -101,7 +101,7 @@ const sellFaqs = [
   { q:"What if I'm not ready to sell yet but want an opinion?", a:"That's exactly the kind of conversation we welcome. Our Portfolio Health Check service is designed for owners who want an honest hold, sell, or rebalance assessment, with no obligation to act." },
   { q:"How long does it typically take to sell a property with Vedhara?", a:"Timelines vary by property type, location, and market conditions. On average, our listings receive qualified interest within 4–6 weeks of active marketing. We provide a transparent timeline estimate upfront." },
   { q:"Do I need to vacate my property before you start marketing it?", a:"No. We coordinate marketing and site visits around your schedule. For tenanted properties, we work with existing tenants to arrange convenient viewing windows." },
-  { q:"What costs are involved in selling through Vedhara?", a:"Vedhara charges a success-fee structure — you pay only when your property is sold. The fee is a fixed percentage of the final sale price, disclosed upfront with no hidden charges." },
+  { q:"What costs are involved in selling through Vedhara?", a:"Vedhara charges a success-fee structure; you pay only when your property is sold. The fee is a fixed percentage of the final sale price, disclosed upfront with no hidden charges." },
 ];
 
 export default function SellPage() {

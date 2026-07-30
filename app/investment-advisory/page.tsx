@@ -50,7 +50,7 @@ export default function InvestmentAdvisoryPage() {
         </p>
       </VideoHeroSection>
 
-      {/* Decision Framework — cards */}
+      {/* Decision Framework - cards */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1100,margin:"0 auto" }}>
           <ScrollReveal>

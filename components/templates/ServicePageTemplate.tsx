@@ -26,7 +26,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
           
-          {/* What's Included — Navy card with gold frame */}
+          {/* What's Included - Navy card with gold frame */}
           <ScrollReveal>
             <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
@@ -41,7 +41,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
             </div>
           </ScrollReveal>
 
-          {/* Who This Is For — Cream card with gold frame */}
+          {/* Who This Is For - Cream card with gold frame */}
           <ScrollReveal delay={120} direction="right">
             <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
