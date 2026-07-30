@@ -85,9 +85,9 @@ export default function SuccessStoriesPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Client Outcomes</p>
+            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Client Outcomes</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Every Client Has a Story,<br /><span style={{ color:"var(--gold-dk)" }}>Here Are a Few</span>
+              Every Client Has a Story,<br /><span style={{ color:"#d4a843" }}>Here Are a Few</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               From first-time buyers in Noida to NRI investors in Dubai and corporate tenants in Gurugram, each engagement reflects the same commitment, independent advice, verified information, and transparent process.
@@ -102,9 +102,9 @@ export default function SuccessStoriesPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>How We Help Clients Succeed</p>
+              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>How We Help Clients Succeed</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                The Vedhara Approach to<br /><span style={{ color:"var(--gold-dk)" }}>Client Outcomes</span>
+                The Vedhara Approach to<br /><span style={{ color:"#d4a843" }}>Client Outcomes</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 Independent advice, verified properties, and a fee structure that aligns with your interest, not a developer&apos;s margin.
