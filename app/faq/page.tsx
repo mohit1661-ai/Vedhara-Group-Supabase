@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection from "@/components/sections/FAQSection";
+import CTASection from "@/components/sections/CTASection";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 export const metadata: Metadata = { title:"Real Estate FAQ | Property Buying, Selling, NRI & Investment Questions | Vedhara Group Delhi NCR", description:"Answers to the most common real estate questions in Delhi NCR, buying process, RERA, stamp duty, NRI property, home loans, rental agreements, and investment advisory.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
+
 const faqs = [
   { q:"Is Vedhara Group a builder or a broker?", a:"Neither in the traditional sense. Vedhara Group is an independent real estate advisory and brokerage firm. We are not a builder (we don't develop properties). We are a RERA-compliant property advisor and channel partner who represents buyers, sellers, investors, and NRIs, and lists verified projects from developer partners." },
   { q:"What are the total costs involved in buying a property in Delhi NCR?", a:"Total acquisition cost includes: Base price + PLC (preferential location charges) + EDC/IDC (external/internal development charges) + GST (5% for under-construction, nil for ready) + Stamp duty (4–7% depending on state and buyer category) + Registration charge (1%) + Brokerage if applicable. All-in costs typically add 12–18% above base price for under-construction properties." },
@@ -12,7 +16,8 @@ const faqs = [
   { q:"Is the initial consultation genuinely free?", a:"Yes. Vedhara's initial consultation has no cost and no minimum engagement requirement. We ask for 30–45 minutes to understand your goals; in return, you receive an honest, informed perspective on what is achievable and realistic in your target market." },
   { q:"How quickly will Vedhara respond to an enquiry?", a:"Contact form and WhatsApp enquiries are responded to within 24 business hours. For urgent requirements, WhatsApp is the fastest channel, direct to the advisory team, not a call centre." },
 ];
-export default function Page() {
+
+export default function FAQPage() {
   return (
     <>
       <VideoHeroSection>
@@ -22,8 +27,31 @@ export default function Page() {
             Real Estate Questions,<br /><span style={{ color:"var(--gold-lt)" }}>Answered Honestly.</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Whether you are buying your first property in Noida, selling a flat in Gurugram, or investing from the UAE, straight answers without a sales pitch.</p>
-        </VideoHeroSection>
-      <FAQSection faqs={faqs} title="Delhi NCR Property FAQ" />
+      </VideoHeroSection>
+
+      {/* Gold differentiator */}
+      <div style={{ background:"var(--navy)",padding:"0 32px" }}>
+        <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
+      {/* Intro block */}
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
+        <div style={{ maxWidth:700,margin:"0 auto" }}>
+          <ScrollReveal>
+            <span className="v-line" style={{ margin:"0 auto 14px" }} />
+            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Common Questions</p>
+            <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
+              Everything You Need to Know<br /><span style={{ color:"var(--gold-dk)" }}>Before Your Next Move</span>
+            </h2>
+            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
+              From RERA regulations to stamp duty rates, NRI investment rules to rental agreements, find clear answers to the most common property questions we hear every day at Vedhara.
+            </p>
+          </ScrollReveal>
+        </div>
+      </div>
+
+      <FAQSection faqs={faqs} title="Delhi NCR Property FAQ" dark={false} />
+      <CTASection />
     </>
   );
 }
