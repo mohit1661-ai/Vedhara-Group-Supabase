@@ -100,7 +100,7 @@ export default function MarketInsightsPage() {
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Market Intelligence</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Data-Driven Perspective on<br /><span style={{ color:"var(--gold-dk)" }}>Delhi NCR Real Estate</span>
+                Data-Driven Perspective<br /><span style={{ color:"var(--gold-dk)" }}>on Delhi NCR Real Estate</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               Vedhara's research team tracks price movements, infrastructure developments, and demand patterns across Delhi NCR's micro-markets. Our insights are grounded in verified transaction data and ground-level assessments, not aggregated portal listings.
@@ -112,34 +112,38 @@ export default function MarketInsightsPage() {
       {/* What's Included + Who This Is For */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
-          <ScrollReveal>
-            <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)" }}>
+          <ScrollReveal style={{ display:"flex" }}>
+            <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)",display:"flex",flexDirection:"column" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What's Included</p>
-              <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What's Included</h2>
-              {includedItems.map(item=>(
-                <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>
-                  <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:16,fontWeight:700,lineHeight:1 }}>✓</span>
-                  <span className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.7 }}>{item}</span>
-                </div>
-              ))}
-              <div style={{ marginTop:32,paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.25)" }}>
+              <div style={{ flex:1 }}>
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What's Included</p>
+                <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What's Included</h2>
+                {includedItems.map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:16,fontWeight:700,lineHeight:1 }}>✓</span>
+                    <span className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.25)" }}>
                 <Link href="/contact" className="btn btn-primary">Subscribe to Ground Report →</Link>
               </div>
             </div>
           </ScrollReveal>
-          <ScrollReveal delay={120} direction="right">
-            <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
+          <ScrollReveal delay={120} direction="right" style={{ display:"flex" }}>
+            <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)",display:"flex",flexDirection:"column" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who This Is For</p>
-              <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who This Is For</h2>
-              {whoForItems.map(item=>(
-                <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>
-                  <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
-                  <span className="body-md" style={{ color:"var(--slate)",lineHeight:1.7 }}>{item}</span>
-                </div>
-              ))}
-              <div style={{ marginTop:32,paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.2)" }}>
+              <div style={{ flex:1 }}>
+                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who This Is For</p>
+                <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who This Is For</h2>
+                {whoForItems.map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                    <span className="body-md" style={{ color:"var(--slate)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.2)" }}>
                 <Link href="/contact" className="btn btn-dark">Request Custom Research →</Link>
               </div>
             </div>
@@ -166,7 +170,7 @@ export default function MarketInsightsPage() {
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:24 }} className="grid-2">
             {differentiators.map((d,i)=>(
               <ScrollReveal key={d.title} delay={i * 100}>
-                <div style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",height:"100%",display:"flex",flexDirection:"column",boxShadow:"0 4px 20px rgba(9,15,29,0.04)" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",height:"100%",display:"flex",flexDirection:"column",boxShadow:"0 4px 20px rgba(9,15,29,0.04)" }}>
                   <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt))",flexShrink:0 }} />
                   <div style={{ padding:"28px 28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
                     <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:12 }}>
