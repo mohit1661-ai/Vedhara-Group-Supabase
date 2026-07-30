@@ -120,8 +120,8 @@ export const servicePages: Record<string, ServicePageContent> = {
   luxury: {
     slug: "luxury",
     eyebrow: "Luxury Properties",
-    h1: "Curated Premium",
-    h1Accent: "Residences, White-Glove Advisory",
+    h1: "Luxury Properties",
+    h1Accent: "Premium Advisory",
     intro:
       "Luxury real estate demands discretion, speed, and an advisor who understands what premium buyers actually value. Vedhara's luxury desk is built for exactly that.",
     included: [
