@@ -82,7 +82,7 @@ export default function CareersPage() {
       </div>
 
       {/* Intro block */}
-      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 48px" }}>
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
@@ -90,29 +90,27 @@ export default function CareersPage() {
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
               Work With Purpose,<br /><span style={{ color:"#d4a843" }}>Advise With Integrity</span>
             </h2>
-            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
-              Vedhara Group is building the region&apos;s most trusted independent real estate advisory firm. We are looking for individuals who value transparency, rigour, and long-term client relationships over short-term commissions.
-            </p>
-            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              If you are ready to build a career defined by trust, expertise, and lasting client relationships, not by sales targets and transaction volume, you will find a home here.
+            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:48 }}>
+              Vedhara Group is building the region&apos;s most trusted independent real estate advisory firm. We are looking for individuals who value transparency, rigour, and long-term client relationships over short-term commissions. If you are ready to build a career defined by trust, expertise, and lasting client relationships, not by sales targets and transaction volume, you will find a home here.
             </p>
           </ScrollReveal>
         </div>
       </div>
 
       {/* Our Values – Vibrant Cream Cards on Navy */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px",position:"relative",overflow:"hidden" }}>
+      <section style={{ background:"var(--navy)",padding:"48px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:52 }}>
+            <div style={{ textAlign:"center",marginBottom:36 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Our Core Values</p>
-              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:10 }}>Our Core Values</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
                 What We Stand For,<br /><span style={{ color:"var(--gold-lt)" }}>How We Operate</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
-                These four principles guide every decision we make and every client relationship we build.
+                These four principles guide every decision we make and<br />
+                every client relationship we build.
               </p>
             </div>
           </ScrollReveal>
@@ -122,13 +120,12 @@ export default function CareersPage() {
               <ScrollReveal key={v.title} delay={i*80} style={{ display:"flex" }}>
                 <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
                   <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
-                  <div style={{ padding:"28px 20px 24px",flex:1,display:"flex",flexDirection:"column",textAlign:"center" }}>
-                    <div style={{ display:"flex",alignItems:"center",gap:8,justifyContent:"center",marginBottom:14 }}>
+                  <div style={{ padding:"20px 16px 20px",flex:1,display:"flex",flexDirection:"column",textAlign:"center" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:8,justifyContent:"center",marginBottom:10 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"2px 7px",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,color:"var(--gold-dk)",opacity:0.5 }}>0{i+1}</span>
                     </div>
-                    <div style={{ width:40,height:40,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 14px",flexShrink:0 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+                    <div style={{ width:36,height:36,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 10px",flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{v.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{v.desc}</p>
