@@ -113,69 +113,56 @@ export default function CommercialPage() {
 
           <div className="prop-grid">
             {commercialListings.map((property,index)=>(
-              <ScrollReveal key={property.id} delay={index * 80}>
-                <div className="hover-lift" style={{ background:"rgba(212,168,67,0.06)",border:"1px solid rgba(212,168,67,0.12)",borderRadius:16,overflow:"hidden",backdropFilter:"blur(12px)",height:"100%",display:"flex",flexDirection:"column" }}>
-                  
-                  <div style={{ height:200,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
+              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
+                <Link
+                  href="/contact?service=commercial"
+                  className="hover-lift"
+                  style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
+                >
+                  <div style={{ height:180,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:20,color:"rgba(252,250,244,0.7)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
+                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
                       {property.title}
                     </div>
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"5px 12px",borderRadius:20,background:property.status==="Available"?"rgba(212,168,67,0.15)":"rgba(255,255,255,0.06)",color:property.status==="Available"?"var(--gold-lt)":"rgba(252,250,244,0.5)",border:"1px solid "+ (property.status==="Available"?"rgba(212,168,67,0.3)":"rgba(255,255,255,0.08)") }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
                         {property.status}
                       </span>
                     </div>
                   </div>
-
-                  <div style={{ padding:24,flex:1,display:"flex",flexDirection:"column" }}>
-                    <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:10 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",background:"rgba(212,168,67,0.1)",color:"var(--gold-lt)",borderRadius:4 }}>
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
                         {property.type}
                       </span>
                     </div>
-
-                    <h3 style={{ fontFamily:"var(--t-display)",fontSize:22,fontWeight:400,color:"var(--light)",marginBottom:6,lineHeight:1.2 }}>
-                      {property.title}
-                    </h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"rgba(252,250,244,0.4)",marginBottom:16 }}>
-                      {property.location}
-                    </p>
-
-                    <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px 16px",marginBottom:18,padding:"14px 0",borderTop:"1px solid rgba(255,255,255,0.04)",borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
-                      <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Price</p>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--gold-lt)" }}>{property.price}</p>
-                      </div>
-                      <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.3)",marginBottom:2 }}>Area</p>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--light)" }}>{property.size}</p>
-                      </div>
-                    </div>
-
-                    <div style={{ display:"flex",flexWrap:"wrap",gap:6,marginBottom:20,flex:1,alignContent:"flex-start" }}>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.size}</p>
+                    <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {property.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"4px 10px",background:"rgba(212,168,67,0.06)",color:"rgba(232,201,112,0.7)",borderRadius:4 }}>
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-dk)",borderRadius:3 }}>
                           {h}
                         </span>
                       ))}
                     </div>
-
-                    <Link
-                      href="/contact?service=commercial"
-                      className="btn btn-ghost"
-                      style={{ alignSelf:"flex-start",marginTop:"auto" }}
-                    >
-                      Inquire About This Space →
-                    </Link>
+                    <div style={{ flex:1 }} />
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <div>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Price</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{property.price}</p>
+                      </div>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
+                        Inquire →
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
 
           <ScrollReveal delay={120}>
-            <div style={{ textAlign:"center",marginTop:52 }}>
+            <div style={{ textAlign:"center",marginTop:32 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Looking for something specific? We have 40+ commercial properties across Delhi NCR.
               </p>
@@ -186,6 +173,10 @@ export default function CommercialPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* FAQ then CTA */}
+      <FAQSection faqs={servicePages.commercial.faqs} title="Commercial Real Estate FAQ" />
+      <CTASection />
     </>
   );
 }
