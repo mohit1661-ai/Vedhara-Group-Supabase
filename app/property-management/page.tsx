@@ -116,7 +116,7 @@ export default function PropertyManagementPage() {
                 Property Management,<br /><span style={{ color:"var(--gold-dk)" }}>Done Differently</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
-                Most property managers treat your property as just another file. Vedhara treats it like an asset — with transparency, accountability, and remote-first operations built for today&apos;s owners.
+                Most property managers treat your property as just another file. Vedhara treats it as an asset, with transparency, accountability, and remote-first operations for today&apos;s owners.
               </p>
             </div>
           </ScrollReveal>
@@ -124,12 +124,19 @@ export default function PropertyManagementPage() {
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:24 }} className="grid-2">
             {differentiators.map((d,i)=>(
               <ScrollReveal key={d.title} delay={i * 100}>
-                <div className="gold-frame-card gfc-cream" style={{ padding:"36px 32px",boxShadow:"0 4px 20px rgba(9,15,29,0.04)",height:"100%",display:"flex",flexDirection:"column" }}>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>{d.title}</h3>
-                  <p className="body-md" style={{ color:"var(--ink)",marginBottom:16,lineHeight:1.7 }}>{d.desc}</p>
-                  <div style={{ marginTop:"auto",paddingTop:16,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                    <p style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.3)",marginBottom:4 }}>Typical competitor approach</p>
-                    <p className="body-sm" style={{ color:"var(--slate)",lineHeight:1.6,fontSize:12.5 }}>{d.competitor}</p>
+                <div style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",height:"100%",display:"flex",flexDirection:"column",boxShadow:"0 4px 20px rgba(9,15,29,0.04)" }}>
+                  <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt))",flexShrink:0 }} />
+                  <div style={{ padding:"28px 28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:12 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
+                      <div style={{ flex:1,height:1,background:"rgba(212,168,67,0.12)" }} />
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>{d.title}</h3>
+                    <p className="body-md" style={{ color:"var(--ink)",marginBottom:16,lineHeight:1.7,flex:1 }}>{d.desc}</p>
+                    <div style={{ padding:"14px 16px",background:"var(--navy)",borderRadius:8,borderLeft:"3px solid var(--gold-lt)" }}>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:3 }}>Competitors typically</p>
+                      <p className="body-sm" style={{ color:"rgba(252,250,244,0.75)",lineHeight:1.6,fontSize:12 }}>{d.competitor}</p>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -138,7 +145,7 @@ export default function PropertyManagementPage() {
         </div>
       </section>
 
-      {/* How We Work — Process */}
+      {/* How We Work — Process Steps as Cards */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
@@ -158,12 +165,15 @@ export default function PropertyManagementPage() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }} className="grid-4">
             {processSteps.map((s,i)=>(
               <ScrollReveal key={s.step} delay={i * 80}>
-                <div style={{ textAlign:"center" }}>
-                  <div style={{ width:56,height:56,borderRadius:"50%",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.2)",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px" }}>
-                    <span style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--gold-lt)" }}>{s.step}</span>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textAlign:"center",height:"100%",display:"flex",flexDirection:"column" }}>
+                  <div style={{ padding:"28px 20px 24px",flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ width:48,height:48,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px",flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)" }}>{s.step}</span>
+                    </div>
+                    <div style={{ width:32,height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),transparent)",margin:"0 auto 14px",flexShrink:0 }} />
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{s.title}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{s.desc}</p>
                   </div>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:8,lineHeight:1.3 }}>{s.title}</h3>
-                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.45)",fontSize:12.5,lineHeight:1.7 }}>{s.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
