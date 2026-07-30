@@ -149,7 +149,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>I Am Interested In <span style={{ color:"var(--gold)" }}>*</span></label>
-                  <select required value={form.interest} onChange={e=>up("interest",e.target.value)} className="input-field" placeholder="Select a service…">
+                  <select required value={form.interest} onChange={e=>up("interest",e.target.value)} className="input-field">
                     <option value="">Select a service…</option>
                     {interests.map(i=><option key={i} value={i}>{i}</option>)}
                   </select>
