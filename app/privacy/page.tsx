@@ -198,23 +198,21 @@ export default function PrivacyPage() {
                 <div className="gold-frame-card gfc-navy" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(0,0,0,0.2)" }}>
                   <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:14 }}>In Plain Terms</p>
                   {sec.id === "contact" ? (
-                    <>
-                      <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }} className="grid-2">
-                        {contactCards.map(item=>(
-                          <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
-                            className="hover-lift"
-                            style={{ display:"flex",flexDirection:"column",padding:"16px 18px",textDecoration:"none",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",position:"relative",overflow:"hidden",transition:"all 0.35s var(--ease-out)" }}>
-                            <div style={{ position:"absolute",top:0,left:0,right:0,height:3,background:item.grad }} />
-                            <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:4,fontSize:10 }}>{item.label}</span>
-                            <span className="body-sm" style={{ color:"var(--ink)",fontWeight:500 }}>{item.val}</span>
-                          </a>
-                        ))}
+                    <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }} className="grid-2">
+                      {contactCards.map(item=>(
+                        <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
+                          className="hover-lift"
+                          style={{ display:"flex",flexDirection:"column",padding:"16px 18px",textDecoration:"none",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",position:"relative",overflow:"hidden",transition:"all 0.35s var(--ease-out)" }}>
+                          <div style={{ position:"absolute",top:0,left:0,right:0,height:3,background:item.grad }} />
+                          <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:4,fontSize:10 }}>{item.label}</span>
+                          <span className="body-sm" style={{ color:"var(--ink)",fontWeight:500 }}>{item.val}</span>
+                        </a>
+                      ))}
+                      <div style={{ display:"flex",alignItems:"center",gap:10,padding:"16px 18px",background:"rgba(212,168,67,0.05)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:8,minHeight:52 }}>
+                        <span style={{ color:"var(--gold-lt)",flexShrink:0,fontSize:14,lineHeight:1 }}>◆</span>
+                        <p className="body-md" style={{ color:"rgba(252,250,244,0.85)",lineHeight:1.5,margin:0,fontSize:13 }}>Office: Vedhara Group, Delhi NCR, India</p>
                       </div>
-                      <div style={{ display:"flex",alignItems:"flex-start",gap:12,marginTop:14 }}>
-                        <span style={{ color:"var(--gold-lt)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
-                        <p className="body-md" style={{ color:"rgba(252,250,244,0.85)",lineHeight:1.7,margin:0 }}>Office: Vedhara Group, Delhi NCR, India</p>
-                      </div>
-                    </>
+                    </div>
                   ) : (
                     sec.bullets.map((item,bi)=>(
                       <div key={bi} style={{ display:"flex",alignItems:"flex-start",gap:12,marginBottom:10 }}>
