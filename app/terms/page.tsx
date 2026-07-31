@@ -123,7 +123,7 @@ export default function TermsPage() {
 
       {/* Intro block */}
       <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 48px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
+        <div style={{ maxWidth:900,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Website Terms of Use</p>
@@ -131,10 +131,7 @@ export default function TermsPage() {
               Understanding Your <br className="br-desktop" /><span style={{ color:"#d4a843" }}>Rights &amp; Responsibilities</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              These terms govern your use of our website and its tools.<br />
-              By accessing this site, you agree to the terms below.<br />
-              For specific advisory engagements, separate contracts apply.<br />
-              Read carefully to understand your rights and responsibilities.
+              These terms govern your use of our website and its tools. By accessing this site, you agree to the terms below.<br className="br-desktop" />For specific advisory engagements, separate contracts apply. Read carefully to understand your rights and responsibilities.
             </p>
           </ScrollReveal>
         </div>
