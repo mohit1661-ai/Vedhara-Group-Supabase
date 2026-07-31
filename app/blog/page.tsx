@@ -132,7 +132,7 @@ export default function BlogPage() {
                 Everything You Need to Know<br /><span style={{ color:"#d4a843" }}>About Delhi NCR Real Estate</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
-                From market trends to legal guides, we cover every aspect of property in Delhi NCR.
+                From market trends to legal guides, we cover every aspect of<br className="br-mobile" /> property in Delhi NCR.
               </p>
             </div>
           </ScrollReveal>
