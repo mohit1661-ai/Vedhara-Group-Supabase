@@ -112,7 +112,7 @@ export default function TermsPage() {
           <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.85)",border:"1px solid rgba(255,255,255,0.2)" }}>Applies to vedharagroup.com</span>
         </div>
         <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:"0 auto",maxWidth:520 }}>
-          Clear, plain-language terms for using our website,<br />calculators, and advisory services.
+          Clear, plain-language terms for using our website,<br className="br-desktop" />calculators, and advisory services.
         </p>
       </VideoHeroSection>
 
@@ -149,7 +149,7 @@ export default function TermsPage() {
                 Six Sections,<br /><span style={{ color:"var(--gold-lt)" }}>Clearly Defined</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:620,margin:"0 auto" }}>
-                Jump to any section below for a plain-language explanation<br />of your rights and responsibilities.
+                Jump to any section below for a plain-language explanation<br className="br-desktop" />of your rights and responsibilities.
               </p>
             </div>
           </ScrollReveal>
@@ -235,7 +235,7 @@ export default function TermsPage() {
                 What We <span style={{ color:"var(--gold-lt)" }}>Ask of You</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
-                Four simple expectations that keep the website safe,<br />accurate, and useful for everyone.
+                Four simple expectations that keep the website safe,<br className="br-desktop" />accurate, and useful for everyone.
               </p>
             </div>
           </ScrollReveal>

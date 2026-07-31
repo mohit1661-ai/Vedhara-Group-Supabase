@@ -127,7 +127,7 @@ export default function PrivacyPage() {
 
       {/* Intro block */}
       <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 48px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
+        <div style={{ maxWidth:900,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Your Privacy Matters</p>
@@ -135,10 +135,7 @@ export default function PrivacyPage() {
               How We Handle <br className="br-desktop" /><span style={{ color:"#d4a843" }}>Your Data</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              Vedhara Group respects your privacy.<br />
-              This policy explains what we collect, how we use it,<br />
-              how we protect it, and the rights you hold over it.<br />
-              Wherever you are, we handle your data transparently and securely.
+              Vedhara Group respects your privacy. This policy explains what we collect and how we use it.<br className="br-desktop" />How we protect it, and the rights you hold over it. Wherever you are, we handle your data transparently and securely.
             </p>
           </ScrollReveal>
         </div>
@@ -156,7 +153,7 @@ export default function PrivacyPage() {
                 Six Areas,<br /><span style={{ color:"var(--gold-lt)" }}>Explained Transparently</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:620,margin:"0 auto" }}>
-                Each section below sets out exactly how your information is handled.<br />Tap a card to jump straight to that section.
+                Each section below sets out exactly how your information is handled.<br className="br-desktop" />Tap a card to jump straight to that section.
               </p>
             </div>
           </ScrollReveal>

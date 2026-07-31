@@ -127,7 +127,7 @@ export default function RentPage() {
                 Verified Rental Properties<br /><span style={{ color:"var(--gold-lt)" }}>in Delhi NCR</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
-                Each rental listing is verified for authenticity,<br />lease terms, and property condition.
+                Each rental listing is verified for authenticity,<br className="br-desktop" />lease terms, and property condition.
               </p>
             </div>
           </ScrollReveal>

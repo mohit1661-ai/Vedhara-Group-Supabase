@@ -112,7 +112,7 @@ export default function ServicesPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Advisory for Every Stage of<br /><span style={{ color:"var(--gold-lt)" }}>Your Property Journey</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals,<br />from your first home to a multi-property portfolio.</p>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals,<br className="br-desktop" />from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}

@@ -54,7 +54,7 @@ export default function VerificationCenterPage() {
             What Vedhara Checks Before<br /><span style={{ color:"var(--gold-lt)" }}>Any Property Reaches You</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
-            &ldquo;Verified properties&rdquo; most common phrase.<br />&ldquo;Verified&rdquo; meaning rarely explained.<br />See our five checks on every listing.
+            &ldquo;Verified properties&rdquo; most common phrase.<br className="br-desktop" />&ldquo;Verified&rdquo; meaning rarely explained.<br className="br-desktop" />See our five checks on every listing.
           </p>
         </VideoHeroSection>
 
