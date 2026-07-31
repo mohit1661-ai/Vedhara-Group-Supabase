@@ -7,7 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Buy Verified Property in Delhi NCR | Independent Advisory", description:"Buy verified residential and commercial property in Delhi, Gurugram, Noida, Faridabad and Ghaziabad with Vedhara Group, independent advisory, RERA-verified listings, transparent pricing.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
+export const metadata: Metadata = { title:"Buy Verified Property in Delhi NCR", description:"Buy verified residential and commercial property in Delhi, Gurugram, Noida, Faridabad and Ghaziabad with RERA-verified listings.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
 
 interface PropertyListing {
   id:string;

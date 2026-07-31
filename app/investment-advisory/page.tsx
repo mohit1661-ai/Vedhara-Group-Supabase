@@ -8,8 +8,8 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title:"Real Estate Investment Advisory in Delhi NCR | ROI & Portfolio Strategy",
-  description:"Build a high-yield real estate portfolio in Delhi NCR with Vedhara Group's independent investment advisory. Rental yield analysis, locality selection, and buy-to-invest strategy across Gurugram, Noida, and NCR.",
+  title:"Real Estate Investment Advisory in Delhi NCR",
+  description:"Build a high-yield real estate portfolio in Delhi NCR with rental yield analysis, locality selection and buy-to-invest strategy.",
   alternates:{ canonical:"https://www.vedharagroup.com/investment-advisory" },
 };
 

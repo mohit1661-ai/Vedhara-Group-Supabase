@@ -5,7 +5,7 @@ import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights | Price Trends & Investment Intelligence", description:"Independent real estate market analysis for Delhi NCR, price-per-sqft trends, locality demand, investment hotspots, and the monthly Ground Report from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/market-insights" } };
+export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights", description:"Independent real estate market analysis for Delhi NCR: price trends, locality demand and investment hotspots from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/market-insights" } };
 
 const themes = [
   { title:"Delhi NCR Premium Segment", body:"Post-2022 price appreciation has been significant across Gurugram and Noida Expressway premium corridors. The ₹1.5Cr–3Cr segment remains the most active nationally, driven by end-user demand from corporate employment growth." },

@@ -43,7 +43,14 @@ export default function Footer() {
                 <span key={b} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.2)",padding:"4px 8px" }}>{b}</span>
               ))}
             </div>
-          </div>
+            <div style={{ display:"flex",gap:10,marginTop:18 }}>
+              <a href="https://www.linkedin.com/company/vedhara-group" target="_blank" rel="noopener noreferrer" aria-label="Vedhara Group on LinkedIn" style={{ width:32,height:32,display:"flex",alignItems:"center",justifyContent:"center",border:"1px solid rgba(212,168,67,0.25)",borderRadius:"50%",color:"var(--gold-lt)",transition:"all 0.2s" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/vedharagroup" target="_blank" rel="noopener noreferrer" aria-label="Vedhara Group on Instagram" style={{ width:32,height:32,display:"flex",alignItems:"center",justifyContent:"center",border:"1px solid rgba(212,168,67,0.25)",borderRadius:"50%",color:"var(--gold-lt)",transition:"all 0.2s" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+            </div>          </div>
           {cols.map(col=>(
             <div key={col.title}>
               <h4 style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:18 }}>{col.title}</h4>
@@ -54,7 +61,7 @@ export default function Footer() {
         <div style={{ padding:"18px 0 16px",borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
           <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:8 }}>Cities We Serve</p>
           <div style={{ display:"flex",flexWrap:"wrap",gap:8 }}>
-            {["Delhi","Gurugram","Noida","Greater Noida","Faridabad","Ghaziabad","Sonipat","Manesar"].map(city=>(
+            {["Delhi","Gurugram","Noida","Greater Noida","Faridabad","Ghaziabad","Chandigarh","Mohali","Panchkula","Zirakpur"].map(city=>(
               <span key={city} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(255,255,255,0.5)" }}>{city} ·</span>
             ))}
           </div>

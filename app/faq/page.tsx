@@ -5,7 +5,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Real Estate FAQ | Property Buying, Selling, NRI & Investment Questions | Delhi NCR", description:"Answers to the most common real estate questions in Delhi NCR: buying costs, stamp duty, RERA, home loans, NRI property rules, rental agreements, capital gains, and independent investment advisory. Clear, verified answers from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
+export const metadata: Metadata = { title:"Real Estate FAQ | Delhi NCR Property Advice", description:"Clear, verified answers to the most common Delhi NCR real estate questions: buying costs, stamp duty, RERA, home loans, NRI rules and rentals.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
 
 const topics = [
   { title:"Buying Process", desc:"Base prices, stamp duty, GST, home loans, and documentation, everything that goes into buying a property in Delhi NCR." },

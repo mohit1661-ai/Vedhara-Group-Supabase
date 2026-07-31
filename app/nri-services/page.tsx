@@ -10,8 +10,8 @@ import CommitmentsAccordion from "@/components/sections/CommitmentsAccordion";
 import CountriesAccordion from "@/components/sections/CountriesAccordion";
 
 export const metadata: Metadata = {
-  title:"NRI Property Advisory in India | Buy, Sell & Manage from Abroad | Delhi NCR",
-  description:"NRI property services for Indian diaspora in UAE, UK, USA, Canada & Singapore. Buy, sell, or manage property in Delhi NCR remotely, video consultations, verified due diligence, e-signature documentation.",
+  title:"NRI Property Advisory in India | Delhi NCR",
+  description:"NRI property services for the Indian diaspora in UAE, UK, USA, Canada & Singapore. Buy, sell or manage property in Delhi NCR remotely.",
   alternates:{ canonical:"https://www.vedharagroup.com/nri-services" },
 };
 

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug:stri
     description:post.metaDescription,
     keywords:post.keywords,
     alternates:{ canonical:`https://www.vedharagroup.com/blog/${post.slug}` },
-    openGraph:{ title:post.metaTitle, description:post.metaDescription, type:"article" },
+    openGraph:{ title:post.metaTitle, description:post.metaDescription, type:"article", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:post.metaTitle }] },
   };
 }
 

@@ -5,7 +5,7 @@ import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { blogPosts } from "@/lib/data/blogPosts";
 
-export const metadata: Metadata = { title:"Delhi NCR Real Estate Blog | Property Insights, Trends & Guides", description:"Expert insights on Delhi NCR property market, RERA updates, NRI investment guide, rental yields, stamp duty, home loans, and locality analysis for Gurugram, Noida, Faridabad, and Delhi.", alternates:{ canonical:"https://www.vedharagroup.com/blog" } };
+export const metadata: Metadata = { title:"Delhi NCR Real Estate Blog", description:"Expert insights on the Delhi NCR property market: price trends, RERA updates, NRI investing, stamp duty, rental yields and home loans.", alternates:{ canonical:"https://www.vedharagroup.com/blog" } };
 
 const reasons = [
   { title:"Written by Advisors, Not by Writers", desc:"Every article is researched and written by Vedhara's advisory team from real client transactions and daily ground-level exposure across Delhi NCR. We never outsource content or repurpose developer press releases." },

@@ -8,8 +8,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title:"Property Verification Center | How Vedhara Checks Every Listing | Delhi NCR",
-  description:"Vedhara Group's five-point property Verification Framework, RERA status, builder history, approvals, price fairness, and document availability, checked before any listing is published.",
+  title:"Property Verification Center | How Vedhara Verifies",
+  description:"Vedhara Group's five-point property Verification Framework: RERA status, builder history, approvals, price fairness and document checks.",
   alternates:{ canonical:"https://www.vedharagroup.com/verification-center" },
 };
 

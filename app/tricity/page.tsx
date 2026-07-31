@@ -7,8 +7,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title:"Real Estate in Chandigarh Tricity | Property Advisory in Mohali, Panchkula & Zirakpur",
-  description:"Independent property advisory for Chandigarh Tricity, Chandigarh, Mohali (SAS Nagar), Panchkula, Zirakpur and Kharar. GMADA, HRERA and Punjab RERA jurisdiction guidance, freehold vs leasehold clarity, and verified advisory from Vedhara Group.",
+  title:"Real Estate in Chandigarh Tricity | Property Advisory",
+  description:"Independent property advisory for Chandigarh Tricity: Chandigarh, Mohali, Panchkula, Zirakpur & Kharar. GMADA, HRERA and Punjab RERA due diligence.",
   alternates:{ canonical:"https://www.vedharagroup.com/tricity" },
 };
 

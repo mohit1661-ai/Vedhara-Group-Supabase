@@ -7,8 +7,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Vedhara Group | Verified Property Advisory in Delhi NCR, Buy, Sell, Invest",
-  description: "Vedhara Group is Delhi NCR's independent real estate advisory firm. Buy, sell, invest, or manage property across Gurugram, Noida, Faridabad & Ghaziabad with verified listings and transparent guidance.",
+  title: "Vedhara Group | Verified Property Advisory in Delhi NCR",
+  description: "Delhi NCR's independent real estate advisory firm. Buy, sell, invest, or manage property across Gurugram, Noida, Faridabad & Ghaziabad with verified listings.",
   alternates: { canonical: "https://www.vedharagroup.com" },
 };
 
