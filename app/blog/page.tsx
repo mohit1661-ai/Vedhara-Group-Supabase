@@ -63,6 +63,13 @@ const blogPosts = [
   },
 ];
 
+const reasons = [
+  { title:"Written by Advisors, Not by Writers", desc:"Every article is researched and written by Vedhara's advisory team from real client transactions and daily ground-level exposure across Delhi NCR. We never outsource content or repurpose developer press releases." },
+  { title:"Data-Backed Market Analysis", desc:"Price trends, rental yields, and micro-market analyses are derived from Vedhara's proprietary transaction database, actual deal prices, not asking prices or third-party aggregators." },
+  { title:"Practical Guides for Real Decisions", desc:"Step-by-step RERA guides, stamp duty walkthroughs, and NRI repatriation checklists structured so you can act. No fluff and no jargon, just what to know before you buy, sell, or invest." },
+  { title:"Reviewed & Kept Current", desc:"Each article is reviewed by our legal team for regulatory accuracy and updated quarterly to reflect RERA changes, budget announcements, and shifting market conditions." },
+];
+
 export default function BlogPage() {
   return (
     <>
@@ -81,13 +88,13 @@ export default function BlogPage() {
       </div>
 
       {/* Intro block */}
-      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 48px" }}>
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Latest Articles</p>
+            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Latest Articles</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Expert Knowledge for<br /><span style={{ color:"var(--gold-dk)" }}>Smarter Property Decisions</span>
+              Expert Knowledge for<br /><span style={{ color:"#d4a843" }}>Smarter Property Decisions</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               From market trends to legal guides, our articles are written by Vedhara's advisory team based on real transaction data and ground-level experience across Delhi NCR.
@@ -119,9 +126,9 @@ export default function BlogPage() {
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
                     <div style={{ paddingTop:16,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-dk)",display:"inline-flex",alignItems:"center",gap:4 }}>
+                      <a href={`mailto:contact@vedharagroup.com?subject=${encodeURIComponent("Request the full guide: "+post.title)}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
                         Read Article →
-                      </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -131,82 +138,41 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Why Read Vedhara's Blog – 2x2 Differentiators */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+      {/* Why Read Vedhara's Blog – Vibrant Cream Cards on Navy */}
+      <section style={{ background:"var(--navy)",padding:"56px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:48 }}>
+            <div style={{ textAlign:"center",marginBottom:40 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Why Read Vedhara's Blog</p>
-              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>Why Read Vedhara's Blog</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
                 Content You Can Trust,<br /><span style={{ color:"var(--gold-lt)" }}>Insights You Can Use</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
-                Most real estate blogs recycle press releases. Ours is built differently.
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
+                Most real estate blogs recycle press releases. Ours is built differently, with four standards we never compromise on.
               </p>
             </div>
           </ScrollReveal>
 
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }}>
-            {/* Vedhara badge card */}
-            <ScrollReveal style={{ display:"flex" }}>
-              <div className="gfc-navy-dark" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"32px",flex:1,position:"relative",overflow:"hidden" }}>
-                <div style={{ position:"absolute",top:12,right:12,background:"var(--gold)",padding:"2px 10px",borderRadius:12,zIndex:1 }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:7,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--navy)" }}>Vedhara Blog</span>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }} className="grid-4">
+            {reasons.map((r,i)=>(
+              <ScrollReveal key={r.title} delay={i*80} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
+                  <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
+                  <div style={{ padding:"20px 16px 20px",flex:1,display:"flex",flexDirection:"column",textAlign:"center" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:8,justifyContent:"center",marginBottom:10 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"2px 7px",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
+                    </div>
+                    <div style={{ width:36,height:36,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 10px",flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{r.title}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)",fontSize:11.5,lineHeight:1.7,flex:1 }}>{r.desc}</p>
+                  </div>
                 </div>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--light)",marginBottom:16,lineHeight:1.3 }}>Written by Advisors, Not by Writers</h3>
-                <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
-                  Every article on this blog is researched and written by Vedhara's advisory team, drawing from real client transactions, market data, and daily ground-level exposure across Delhi NCR. We do not outsource content or repurpose developer press releases.
-                </p>
-                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
-                  {["Backed by real transaction data, not speculation","Updated quarterly to reflect market shifts","Reviewed by legal team for regulatory accuracy","Cited by NRI investors, lawyers, and financial planners"].map(item=>(
-                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.75)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
-                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.7 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-
-            {/* Competitor box */}
-            <ScrollReveal delay={100} style={{ display:"flex" }}>
-              <div style={{ background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:16,padding:"32px",flex:1,position:"relative",overflow:"hidden" }}>
-                <div style={{ position:"absolute",top:12,right:12,background:"rgba(255,255,255,0.06)",padding:"2px 10px",borderRadius:12,zIndex:1 }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:7,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(252,250,244,0.4)" }}>Other Real Estate Blogs</span>
-                </div>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"rgba(252,250,244,0.5)",marginBottom:16,lineHeight:1.3 }}>Written by SEO Teams, Not by Practitioners</h3>
-                <p className="body-sm" style={{ color:"rgba(252,250,244,0.3)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
-                  Most real estate content is produced by freelance writers or SEO agencies who have never been on a site visit, negotiated a deal, or verified a RERA number. The result is generic advice that rarely applies to your specific situation.
-                </p>
-                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
-                  {["Often based on outdated or generic data","Republished from developer press releases","No accountability for accuracy or timeliness","Designed for clicks, not for client decisions"].map(item=>(
-                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(252,250,244,0.2)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
-                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"rgba(255,255,255,0.15)" }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-
-            {/* Row 2: two more Vedhara strengths */}
-            <ScrollReveal delay={50} style={{ display:"flex" }}>
-              <div className="gfc-navy-dark" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"32px",flex:1 }}>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:10,lineHeight:1.3 }}>Data-Backed Market Analysis</h3>
-                <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8 }}>
-                  Our price trends, rental yield comparisons, and micro-market analyses are derived from Vedhara's proprietary transaction database, not from third-party aggregators. We track actual deal prices, not asking prices, giving you a realistic view of the market.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={150} style={{ display:"flex" }}>
-              <div className="gfc-navy-dark" style={{ background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"32px",flex:1 }}>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:10,lineHeight:1.3 }}>Practical Guides for Real Decisions</h3>
-                <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8 }}>
-                  Whether it is a step-by-step RERA compliance guide, a stamp duty calculator walkthrough, or an NRI repatriation checklist, every article is structured to help you take action. No fluff, no jargon, just what you need to know before you buy, sell, or invest.
-                </p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
@@ -217,9 +183,9 @@ export default function BlogPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Topics We Cover</p>
+              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Topics We Cover</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Everything You Need to Know<br /><span style={{ color:"var(--gold-dk)" }}>About Delhi NCR Real Estate</span>
+                Everything You Need to Know<br /><span style={{ color:"#d4a843" }}>About Delhi NCR Real Estate</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
                 From market trends to legal guides, we cover every aspect of property in Delhi NCR.
@@ -244,9 +210,9 @@ export default function BlogPage() {
                   <div style={{ padding:"20px 24px 24px",flex:1,display:"flex",flexDirection:"column" }}>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,flex:1 }}>{topic.desc}</p>
                     <div style={{ paddingTop:16,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-dk)",display:"inline-flex",alignItems:"center",gap:4 }}>
+                      <a href={`mailto:contact@vedharagroup.com?subject=${encodeURIComponent("Article requests: "+topic.title)}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
                         Browse Articles →
-                      </span>
+                      </a>
                     </div>
                   </div>
                 </div>
