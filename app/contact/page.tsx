@@ -2,8 +2,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import FAQSection from "@/components/sections/FAQSection";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+
+const contactFaqs = [
+  { q:"How quickly will I hear back after submitting the form?", a:"A Vedhara advisor responds within 24 hours during business hours. No spam, ever — the first contact is simply a conversation about what you are trying to achieve." },
+  { q:"Is the free consultation really free and no-obligation?", a:"Yes. Your first consultation carries no fee and no obligation. It is a conversation where we listen, understand your goals, and tell you honestly how we can help — even if that means telling you not to buy right now." },
+  { q:"Do you charge buyers a fee for helping them purchase?", a:"In most cases, no direct fee is charged to buyers. Vedhara is compensated through standard brokerage commission paid by the seller or developer side, which is disclosed on the specific listing." },
+  { q:"Which areas and services does Vedhara cover?", a:"We cover Delhi NCR — Delhi, Gurugram, Noida, Greater Noida, Faridabad, Ghaziabad, and Sonipat — plus remote-first advisory for NRI clients worldwide. Services span buying, selling, renting, commercial, investment advisory, NRI services, property management, and luxury properties." },
+  { q:"Can NRIs book a consultation from abroad?", a:"Yes. Our NRI desk offers weekend (Saturday and Sunday) and weekday evening IST slots to accommodate clients across UAE/Gulf, UK, North America, and APAC time zones." },
+];
 
 const interests = [
   "Buy Property","Sell Property","Rent / Lease","Commercial Real Estate",
@@ -172,6 +181,8 @@ export default function ContactPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      <FAQSection faqs={contactFaqs} title="Contact Us, FAQ" />
 
       <style>{`
         .contact-detail-row {

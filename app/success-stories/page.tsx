@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = { title:"Client Success Stories | Vedhara Group Delhi NCR", description:"Real client outcomes from Vedhara Group's independent real estate advisory across Delhi NCR, from first-time buyers in Noida to NRI investors in Gurugram.", alternates:{ canonical:"https://www.vedharagroup.com/success-stories" } };
@@ -61,6 +62,15 @@ const stories = [
     tags:["Commercial","Lease","Gurugram","Corporate"],
     gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
   },
+];
+
+const storiesFaqs = [
+  { q:"Are these success stories real?", a:"Yes. Every story reflects a genuine Vedhara client engagement and is shared with the client's permission. To respect privacy and confidentiality, names and some identifying details may be adjusted, but the figures, outcomes, and the nature of the engagement are accurately represented." },
+  { q:"Can my experience be featured as a success story?", a:"If you are a Vedhara client and would like to share your experience, just mention it to your advisor or write to contact@vedharagroup.com. We only ever publish stories with explicit client consent and full control over what is shared." },
+  { q:"How does Vedhara achieve below-market prices like these?", a:"Our negotiation is grounded in comparable transaction data, timing, and an independent position — we are not compensated to push any developer or seller. We also flag risks early, which avoids costly mistakes that often inflate the final cost of a purchase." },
+  { q:"Can I get a similar outcome for my own situation?", a:"Every engagement is different, and no result is guaranteed. What these stories share is a repeatable process: a discovery call, verification of every shortlisted property, honest pricing, skilled negotiation, and end-to-end documentation. That process is available to every client." },
+  { q:"Do you have success stories for NRI clients specifically?", a:"Yes. Several stories in this section were completed fully remotely, including sale, purchase, and investment transactions for clients in the UAE, UK, and elsewhere — coordinated through video calls, digital documentation, and Power of Attorney." },
+  { q:"What does it cost to start working with Vedhara?", a:"Your first consultation is free and carries no obligation. For buyer and seller mandates we generally work on a success-based fee disclosed upfront, and for advisory and management work we use fixed, agreed fees with no hidden charges." },
 ];
 
 export default function SuccessStoriesPage() {
@@ -229,6 +239,7 @@ export default function SuccessStoriesPage() {
         </div>
       </section>
 
+      <FAQSection faqs={storiesFaqs} title="Success Stories, FAQ" />
       <CTASection />
     </>
   );

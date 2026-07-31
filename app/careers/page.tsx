@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = { title:"Careers at Vedhara Group | Real Estate Advisory Jobs in Delhi NCR", description:"Join Vedhara Group's independent real estate advisory team in Delhi NCR. Open positions in advisory, research, NRI services, and property management.", alternates:{ canonical:"https://www.vedharagroup.com/careers" } };
@@ -62,6 +63,15 @@ const values = [
   { title:"Verification Before Listing", desc:"Every property passes our five-point Verification Framework before it reaches you. No exceptions." },
   { title:"Transparent Fees, Always", desc:"Our fee structure is disclosed upfront, in writing, with absolutely no hidden charges." },
   { title:"One Advisor, End-to-End", desc:"A single named advisor owns your journey from first consultation to final registration." },
+];
+
+const careersFaqs = [
+  { q:"How do I apply for an open role?", a:"Send your CV to contact@vedharagroup.com with a brief note on why Vedhara. We review every application personally and respond within a week, whether or not you progress to the next stage." },
+  { q:"Are remote or hybrid roles available?", a:"Yes. Our NRI Relationship Manager role is remote (India-based), and several other functions operate with flexible or hybrid arrangements where the role allows. Gurugram-based team members also enjoy a hybrid schedule." },
+  { q:"Do you hire freshers without real estate experience?", a:"Absolutely. Our Junior Advisor role explicitly welcomes freshers and includes structured training on the Verification Framework, market research, and transaction documentation, with mentorship from senior advisors." },
+  { q:"What does the interview process look like?", a:"Typically two to three rounds: a CV and portfolio review, a discovery conversation, and a role-specific discussion covering real scenarios you would actually handle. We keep the process short, transparent, and give honest feedback at every step." },
+  { q:"Is RERA certification or training provided?", a:"Yes. For advisory roles we sponsor RERA certification and provide access to PropTech tools, along with mentorship from advisors with 15+ years of market experience. Continuous learning is a core part of the role." },
+  { q:"How are advisors measured — is there sales pressure?", a:"No sales targets and no transaction-volume pressure. Advisors are measured on client satisfaction, verification quality, and long-term outcomes, because that is the model that built Vedhara's reputation." },
 ];
 
 export default function CareersPage() {
@@ -237,6 +247,7 @@ export default function CareersPage() {
         </div>
       </section>
 
+      <FAQSection faqs={careersFaqs} title="Careers at Vedhara, FAQ" />
       <CTASection />
     </>
   );

@@ -88,6 +88,30 @@ export const servicePages: Record<string, ServicePageContent> = {
         q: "Does Vedhara handle rental disputes?",
         a: "While Vedhara is not a legal firm, we help both parties understand lease terms clearly upfront, which is the most effective way to prevent disputes. For active legal matters, we can refer clients to trusted legal partners.",
       },
+      {
+        q: "How much security deposit is standard in Delhi NCR?",
+        a: "For residential tenancies, 1–2 months' rent is standard for unfurnished properties and 2–3 months for furnished or higher-value homes, though some landlords ask for more in premium micro-markets. We help both sides agree a fair, documented deposit before the lease is signed.",
+      },
+      {
+        q: "Are 11-month rent agreements legal in India?",
+        a: "Yes. 11-month agreements are fully legal and widely used across Delhi NCR specifically to avoid the mandatory registration that applies to leases of 12 months or more. For higher-value or long-term rentals, we recommend a registered agreement regardless of tenure to strengthen enforceability for both owner and tenant.",
+      },
+      {
+        q: "Who is responsible for maintenance and repairs during a tenancy?",
+        a: "Generally, structural and major repairs are the landlord's responsibility, while minor wear-and-tear and day-to-day consumables are the tenant's — but the exact split is defined in the lease agreement. We make sure this is written clearly so there are no surprises when something needs fixing.",
+      },
+      {
+        q: "How does Vedhara screen tenants for landlords?",
+        a: "Every prospective tenant undergoes identity verification, employment and income checks, prior landlord references, and a credit history review before being presented to the owner. Owners see the full verification dossier and approve the shortlist, which significantly reduces the risk of defaults and disputes.",
+      },
+      {
+        q: "Can an NRI rent out their property in India remotely?",
+        a: "Yes. Through our Property Management service, NRI owners can list, vet tenants, collect rent into their NRE/NRO account, and coordinate maintenance entirely remotely, with monthly statements and photo or video condition reports in place of physical visits.",
+      },
+      {
+        q: "How is rental income taxed for a landlord in India?",
+        a: "Rental income is taxed under 'Income from House Property', where you can claim a 30% standard deduction on the net annual value plus property tax paid. Where monthly rent exceeds ₹50,000, tenants are generally required to deduct TDS at 5% under Section 194-IB. A CA can help structure your exact liability and any interest deductions on a home loan.",
+      },
     ],
     ctaLabel: "Find or List a Rental",
   },
@@ -183,6 +207,30 @@ export const servicePages: Record<string, ServicePageContent> = {
       {
         q: "How is the Luxury desk different from standard Buy Property advisory?",
         a: "The Luxury desk applies the same Verification Framework but adds a dedicated single advisor, more flexible scheduling, and coordination with legal, interior design, and relocation partners, suited to higher-value, higher-discretion transactions.",
+      },
+      {
+        q: "What is the typical budget for a luxury property in Delhi NCR?",
+        a: "Luxury in Delhi NCR generally starts around ₹2–3 crore and can range well above ₹20 crore for penthouses, farmhouses, and branded residences. The exact threshold depends on location and asset type — a premium apartment on Golf Course Road, a duplex in DLF, or an independent floor in Vasant Kunj each sit at different price points, and we curate accordingly.",
+      },
+      {
+        q: "Do you have off-market or unlisted luxury properties?",
+        a: "Yes. Because discretion matters in this segment, some opportunities are shared privately with qualified buyers before or without being publicly listed. Every off-market property still passes the same five-point Verification Framework and price benchmarking before we present it.",
+      },
+      {
+        q: "Can NRIs or overseas buyers use the luxury desk?",
+        a: "Absolutely. We run remote-first luxury engagements with video walkthroughs, digital documentation, and Power of Attorney coordination, and schedule visits around your travel. Several of our high-value NRI transactions have been completed with the buyer never setting foot in India.",
+      },
+      {
+        q: "How is a luxury property verified differently from a regular one?",
+        a: "The same five-point Verification Framework applies, but at higher value we go deeper: a full chain-of-title legal review, builder reputation and delivery track record, project and RERA approvals, encumbrance checks, and benchmarked price-to-locality analysis. For branded and under-construction residences we also review the developer's financial and delivery history.",
+      },
+      {
+        q: "Is there a fee to use the Luxury desk?",
+        a: "In most cases buyers are not charged a direct fee — Vedhara is compensated through the seller or developer side, disclosed on the specific listing. For highly bespoke engagements, such as portfolio acquisitions or complex off-market deals, a fixed advisory fee may apply and is always agreed in writing before work begins.",
+      },
+      {
+        q: "What makes a property 'luxury' in Delhi NCR?",
+        a: "Beyond price, we look at location and exclusivity, unit size and privacy, architecture and brand, amenities and services, and scarcity of supply. Premium corridors such as Golf Course Road, Golf Course Extension Road, DLF, Vasant Kunj, and select Noida and New Gurugram pockets consistently deliver these qualities, and we shortlist based on what genuinely fits your lifestyle, not a price tag alone.",
       },
     ],
     ctaLabel: "Speak to Our Luxury Desk",
