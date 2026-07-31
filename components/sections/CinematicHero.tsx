@@ -299,29 +299,19 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </div>
 
             {/* Trust strip from Word doc */}
-            <div style={{ display:"flex",gap:20,flexWrap:"wrap",opacity:loaded?1:0,transition:"opacity 0.8s ease 0.75s" }}>
+            <div className="trust-strip" style={{ opacity:loaded?1:0,transition:"opacity 0.8s ease 0.75s" }}>
               {["RERA Compliant","Transparent Fees","Verified Developer Partners","4 Free Property Tools","NRI Desk Available"].map(t=>(
-                <div key={t} style={{ display:"flex",alignItems:"center",gap:7 }}>
-                  <span style={{ width:4,height:4,borderRadius:"50%",background:"var(--gold-lt)",display:"block" }} />
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:500,color:"rgba(255,255,255,0.75)",letterSpacing:"0.05em" }}>{t}</span>
+                <div key={t} className="trust-item">
+                  <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",display:"block",boxShadow:"0 0 8px rgba(232,201,112,0.6)",flexShrink:0 }} />
+                  <span className="trust-label">{t}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* RIGHT: Stat cards - glass backdrop, clean text */}
+          {/* RIGHT: Verification + quick links - glass backdrop, clean text */}
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
-            <div className="glass" style={{ padding:"22px 10px",marginBottom:10,animation:"float 5s ease-in-out infinite" }}>
-              <div className="stat-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.08)" }}>
-                {[{num:"500+",sub:"Families Guided"},{num:"₹200Cr+",sub:"Transactions"},{num:"5-Check",sub:"Verification"},{num:"6+",sub:"Countries"}].map(s=>(
-                  <div key={s.sub} style={{ padding:"14px 12px",textAlign:"center",background:"transparent" }}>
-                    <span className="stat-num" style={{ display:"block",fontFamily:"var(--t-head)",fontSize:20,fontWeight:700,color:"var(--gold-lt)",lineHeight:1.1,marginBottom:4,whiteSpace:"nowrap",letterSpacing:"-0.02em",textShadow:"0 2px 8px rgba(0,0,0,0.3)" }}>{s.num}</span>
-                    <span className="stat-label" style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:500,color:"rgba(255,255,255,0.8)",textTransform:"uppercase",letterSpacing:"0.12em",textShadow:"0 1px 4px rgba(0,0,0,0.3)" }}>{s.sub}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="glass-gold" style={{ padding:"14px 18px",display:"flex",alignItems:"center",gap:12,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
+            <div className="glass-navy" style={{ padding:"14px 18px",display:"flex",alignItems:"center",gap:12,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
               <div style={{ width:38,height:38,borderRadius:"50%",background:"rgba(212,168,67,0.2)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
               <div>
                 <p style={{ fontFamily:"var(--t-head)",fontSize:12,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 1px",letterSpacing:"0.03em",textShadow:"0 1px 4px rgba(0,0,0,0.2)" }}>Vedhara Verification Framework</p>
@@ -352,6 +342,11 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
         .hero-quick-link:hover{background:rgba(212,168,67,0.1);color:var(--gold-lt);}
         .hero-quick-icon{margin-right:6px;color:var(--gold-lt);transition:color 0.25s;}
         .hero-quick-link:hover .hero-quick-icon{color:var(--gold);}
+        .trust-strip{display:flex;align-items:center;flex-wrap:nowrap;gap:18px;}
+        .trust-item{display:flex;align-items:center;gap:9px;white-space:nowrap;}
+        .trust-label{font-family:var(--t-head);font-size:11px;font-weight:600;color:rgba(255,255,255,0.95);letter-spacing:0.04em;text-shadow:0 1px 8px rgba(9,15,29,0.55);}
+        @media(max-width:1280px){.trust-strip{flex-wrap:wrap;gap:12px 18px;}}
+        @media(max-width:960px){.trust-strip{justify-content:center;}}
       `}</style>
     </section>
   );
