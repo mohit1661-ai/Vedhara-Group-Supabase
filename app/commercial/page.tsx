@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -93,7 +92,6 @@ const commercialListings: CommercialListing[] = [
 export default function CommercialPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Commercial Real Estate", href:"/commercial" }]} />
       <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" hideFAQ />
 
       {/* Commercial Listings Section */}

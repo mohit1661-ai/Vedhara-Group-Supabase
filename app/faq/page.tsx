@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -81,7 +80,6 @@ const faqGroups = [
 export default function FAQPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"FAQ", href:"/faq" }]} />
       <VideoHeroSection>
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>FAQ Hub</p>

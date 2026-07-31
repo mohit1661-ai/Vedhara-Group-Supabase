@@ -5,7 +5,6 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CommitmentsAccordion from "@/components/sections/CommitmentsAccordion";
 import CountriesAccordion from "@/components/sections/CountriesAccordion";
 
@@ -54,7 +53,6 @@ export default function NRIServicesPage() {
     <>
       <JsonLd data={{ "@context":"https://schema.org","@type":"Service",name:"NRI Property Investment Advisory",provider:{"@id":"https://www.vedharagroup.com/#organization"},areaServed:["AE","GB","US","CA","SG","AU"] }} />
 
-      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"NRI Services", href:"/nri-services" }]} />
       <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>

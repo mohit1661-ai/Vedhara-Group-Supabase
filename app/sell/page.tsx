@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -108,7 +107,6 @@ const sellFaqs = [
 export default function SellPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Sell Property", href:"/sell" }]} />
       <ServicePageTemplate content={servicePages.sell} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Sell%20Page%20Video%20(1).mp4" hideFAQ />
 
       {/* Properties for Sale Section */}

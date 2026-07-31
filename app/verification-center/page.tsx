@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -47,7 +46,6 @@ const howToSchema = {
 export default function VerificationCenterPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Verification Center", href:"/verification-center" }]} />
       <JsonLd data={howToSchema} />
       <VideoHeroSection videoSrc="/videos/Property%20Verification.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />

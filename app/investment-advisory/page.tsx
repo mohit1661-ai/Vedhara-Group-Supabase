@@ -5,7 +5,6 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
   title:"Real Estate Investment Advisory in Delhi NCR | ROI & Portfolio Strategy",
@@ -40,7 +39,6 @@ export default function InvestmentAdvisoryPage() {
   return (
     <>
       <JsonLd data={{ "@context":"https://schema.org","@type":"Service",name:"Real Estate Investment Advisory Delhi NCR",provider:{"@id":"https://www.vedharagroup.com/#organization"} }} />
-      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Investment Advisory", href:"/investment-advisory" }]} />
       <VideoHeroSection videoSrc="/videos/Real%20Estate%20Investment%20Advisory.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Investment Advisory</p>
