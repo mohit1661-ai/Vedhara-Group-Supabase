@@ -222,6 +222,7 @@ export default function VideoHeroSection({
           muted
           loop
           playsInline
+          preload="metadata"
           onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{

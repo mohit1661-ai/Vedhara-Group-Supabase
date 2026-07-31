@@ -175,6 +175,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           muted
           loop
           playsInline
+          preload="metadata"
           onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{
