@@ -206,9 +206,9 @@ export default function VerificationCenterPage() {
         </div>
       </section>
 
-      <section style={{ background:"var(--navy)",padding:"60px 32px",textAlign:"center" }}>
-        <div style={{ maxWidth:540,margin:"0 auto" }}>
-          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}><span className="d-line">Want These Checks Applied</span> <span className="d-line">to a Specific Property?</span></h2>
+      <section style={{ background:"var(--navy)",padding:"60px 24px",textAlign:"center" }}>
+        <div style={{ maxWidth:820,margin:"0 auto" }}>
+          <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.15,fontSize:"clamp(22px,4.2vw,54px)" }}><span className="d-line">Want These Checks Applied</span> <span className="d-line">to a Specific Property?</span></h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}><span className="d-line">Share the property details with us.</span> <span className="d-line">We will run the Verification Framework and share the results.</span></p>
           <Link href="/contact" className="btn btn-primary">Request a Property Verification →</Link>
         </div>
