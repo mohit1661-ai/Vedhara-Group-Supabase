@@ -55,9 +55,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:10,flexWrap:"wrap",marginBottom:16 }}>
           <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(212,168,67,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.4)" }}>{post.category}</span>
           <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.85)",border:"1px solid rgba(255,255,255,0.2)" }}>{post.readTime}</span>
+          <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(212,168,67,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.4)" }}>By Mohit Sharma · Managing Director</span>
         </div>
-        <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:"0 auto",maxWidth:520 }}>
-          Written by the Vedhara Group Advisory Team, grounded in real transaction data across Delhi NCR.
+        <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:"0 auto",maxWidth:560 }}>
+          Grounded in real transaction data across Delhi NCR.
         </p>
       </VideoHeroSection>
 
