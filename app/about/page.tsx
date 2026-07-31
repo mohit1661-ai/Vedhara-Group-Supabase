@@ -4,6 +4,7 @@ import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
   title:"About Us | Independent Real Estate Advisory Firm in Delhi NCR",
@@ -37,6 +38,7 @@ const faqs = [
 export default function AboutPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"About Us", href:"/about" }]} />
       <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Gurgaon%20Real%20Estate%20About%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Our Story</p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -89,6 +90,7 @@ const serviceSchema = {
 export default function TricityPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Tricity Real Estate", href:"/tricity" }]} />
       <JsonLd data={serviceSchema} />
 
       {/* Hero */}

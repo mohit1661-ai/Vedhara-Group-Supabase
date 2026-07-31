@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -99,6 +100,7 @@ const luxuryListings: LuxuryListing[] = [
 export default function LuxuryPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Luxury Properties", href:"/luxury" }]} />
       <ServicePageTemplate content={servicePages.luxury} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Luxury%20Properties%20Page%20Video%20(1).mp4" hideFAQ />
 
       {/* Luxury Listings Section */}

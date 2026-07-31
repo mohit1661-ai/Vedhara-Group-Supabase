@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -107,6 +108,7 @@ const buyFaqs = [
 export default function BuyPage() {
   return (
     <>
+      <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Buy Property", href:"/buy" }]} />
       <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" hideFAQ />
 
       {/* Featured Listings Section */}
