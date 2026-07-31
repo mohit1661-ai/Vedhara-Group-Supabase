@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import AnimatedStats from "@/components/sections/AnimatedStats";
 
-export const metadata: Metadata = { title:"Case Studies | Vedhara Group | Real Estate Advisory in Delhi NCR", description:"Detailed case studies from Vedhara Group's advisory engagements across Delhi NCR, covering complex transactions, NRI coordination, portfolio strategy, and commercial lease negotiations.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
+export const metadata: Metadata = { title:"Real Estate Case Studies | Vedhara Group | Delhi NCR Property Advisory Success Stories", description:"Real Delhi NCR real estate case studies from Vedhara Group: NRI property purchase, portfolio restructuring, corporate lease negotiation, first-time home buying in Faridabad, rent-to-buy strategies and pre-launch investment with measurable outcomes.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
 
 const cases = [
   {
@@ -81,32 +82,36 @@ export default function CaseStudiesPage() {
       </div>
 
       {/* Intro block */}
-      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 48px" }}>
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Featured Engagements</p>
+            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Featured Engagements</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Every Engagement Teaches Us<br /><span style={{ color:"var(--gold-dk)" }}>Something New</span>
+              Every Engagement Teaches Us<br /><span style={{ color:"#d4a843" }}>Something New</span>
             </h2>
-            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              These case studies represent some of the more complex and rewarding advisory engagements we have handled. Each one reflects our commitment to thoroughness, transparency, and client-first outcomes, regardless of transaction size.
+            <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:48 }}>
+              These case studies represent some of the more complex and rewarding advisory engagements we have handled across Gurugram, Noida, Faridabad, and the wider Delhi NCR region. Each one reflects our commitment to thoroughness, transparency, and client-first outcomes, whether we are guiding a first-time buyer, an NRI investor, or a corporate tenant, regardless of transaction size. Real client journeys, verified outcomes, and the measurable impact of independent advisory.
             </p>
           </ScrollReveal>
         </div>
       </div>
 
+      {/* Animated stats band */}
+      <AnimatedStats />
+
       {/* Our Advisory Approach – 4-Step Process */}
-      <section style={{ background:"var(--navy)",padding:"80px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+      <section style={{ background:"var(--navy)",padding:"56px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:48 }}>
+            <div style={{ textAlign:"center",marginBottom:40 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Our Advisory Approach</p>
-              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>Our Advisory Approach</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
                 How We Deliver<br /><span style={{ color:"var(--gold-lt)" }}>Measurable Outcomes</span>
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.7)",maxWidth:600,margin:"0 auto" }}>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:620,margin:"0 auto" }}>
                 Every engagement follows a structured process designed to minimise risk, maximise value, and ensure complete transparency at every stage.
               </p>
             </div>
@@ -114,18 +119,24 @@ export default function CaseStudiesPage() {
 
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }} className="grid-4">
             {[
-              { step:"01", title:"Discovery & Diagnosis", desc:"We spend time understanding your goals, budget, timeline, and risk appetite. No recommendations until we know your full picture." },
-              { step:"02", title:"Research & Shortlisting", desc:"Our team scans the entire NCR market, not just a portfolio. We shortlist only properties that pass our five-point verification framework." },
-              { step:"03", title:"Negotiation & Execution", desc:"We negotiate pricing, terms, and documentation on your behalf. Every offer, counter-offer, and clause is reviewed with you before proceeding." },
-              { step:"04", title:"Post-Closure Support", desc:"After registration, we stay available for rental management, compliance, tax advisory, and future portfolio decisions. It is a relationship, not a transaction." },
+              { title:"Discovery & Diagnosis", desc:"We spend time understanding your goals, budget, timeline, and risk appetite. No recommendations until we know your full picture." },
+              { title:"Research & Shortlisting", desc:"Our team scans the entire NCR market, not just a portfolio. We shortlist only properties that pass our five-point verification framework." },
+              { title:"Negotiation & Execution", desc:"We negotiate pricing, terms, and documentation on your behalf. Every offer, counter-offer, and clause is reviewed with you before proceeding." },
+              { title:"Post-Closure Support", desc:"After registration, we stay available for rental management, compliance, tax advisory, and future portfolio decisions. It is a relationship, not a transaction." },
             ].map((a,i)=>(
-              <ScrollReveal key={a.step} delay={i*80} style={{ display:"flex" }}>
-                <div style={{ display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",padding:"32px 20px",background:"rgba(255,255,255,0.03)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,flex:1 }}>
-                  <div style={{ width:48,height:48,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
-                    <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>{a.step}</span>
+              <ScrollReveal key={a.title} delay={i*80} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
+                  <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
+                  <div style={{ padding:"20px 16px 20px",flex:1,display:"flex",flexDirection:"column",textAlign:"center" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:8,justifyContent:"center",marginBottom:10 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"2px 7px",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
+                    </div>
+                    <div style={{ width:36,height:36,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 10px",flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)" }}>{i+1}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.3 }}>{a.title}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)",fontSize:11.5,lineHeight:1.7,flex:1 }}>{a.desc}</p>
                   </div>
-                  <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--light)",marginBottom:8,lineHeight:1.3 }}>{a.title}</h3>
-                  <p className="body-sm" style={{ color:"rgba(252,250,244,0.65)",fontSize:12,lineHeight:1.8,flex:1 }}>{a.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -133,62 +144,55 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* What We Cover – Two-Column Gold-Frame */}
-      <section style={{ background:"var(--cream)",padding:"80px 32px" }}>
+      {/* Our Expertise – Navy + Cream Gold-Frame Card Pair */}
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Our Expertise</p>
+              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Our Expertise</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Advisory Across the<br /><span style={{ color:"var(--gold-dk)" }}>Full Property Lifecycle</span>
+                Advisory Across the<br /><span style={{ color:"#d4a843" }}>Full Property Lifecycle</span>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
-                From first-time buyers to portfolio investors, our advisory covers every stage of the real estate journey.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
+                From first-time buyers to portfolio investors, our advisory covers every stage of the real estate journey, in every major corridor of Delhi NCR.
               </p>
             </div>
           </ScrollReveal>
-
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }} className="grid-2">
-            {/* Column 1: Transactions */}
-            <ScrollReveal style={{ display:"flex" }}>
-              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
-                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>01</span>
-                </div>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>Transaction Advisory</h3>
-                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
-                  We guide buyers, sellers, and investors through every step of the property transaction lifecycle, ensuring compliance, fair pricing, and a smooth closing process from offer to registration.
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
+            {/* Transaction Advisory – Navy */}
+            <ScrollReveal>
+              <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)" }}>
+                <span className="v-line" style={{ background:"var(--gold)" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Transactions</p>
+                <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>Transaction Advisory</h2>
+                <p className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.8,marginBottom:24 }}>
+                  We guide buyers, sellers, and investors through every step of the property transaction lifecycle across Delhi NCR, ensuring compliance, fair pricing, and a smooth closing process from offer to registration.
                 </p>
-                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
-                  {["Residential purchase & sale advisory across all NCR corridors","Commercial & retail lease negotiation for corporate tenants","Pre-launch investment evaluation with exit strategy planning","NRI remote transaction management (POA, remittance, registration)"].map(item=>(
-                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
-                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {["Residential purchase and sale advisory across all NCR corridors","Commercial and retail lease negotiation for corporate tenants","Pre-launch investment evaluation with exit strategy planning","NRI remote transaction management (POA, remittance, registration)"].map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:16,fontWeight:700,lineHeight:1 }}>✓</span>
+                    <span className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
 
-            {/* Column 2: Strategy & Portfolio */}
-            <ScrollReveal delay={100} style={{ display:"flex" }}>
-              <div className="gfc-cream" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,padding:"36px 32px",flex:1 }}>
-                <div style={{ width:44,height:44,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,flexShrink:0 }}>
-                  <span style={{ fontFamily:"var(--t-head)",fontSize:18,fontWeight:700,color:"var(--navy)" }}>02</span>
-                </div>
-                <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>Strategy & Portfolio Management</h3>
-                <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.8,marginBottom:16 }}>
+            {/* Strategy & Portfolio – Cream */}
+            <ScrollReveal delay={120} direction="right">
+              <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
+                <span className="v-line" style={{ background:"var(--gold)" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Strategy</p>
+                <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Strategy &amp; Portfolio Management</h2>
+                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   Beyond individual transactions, we help clients build, manage, and optimise their real estate portfolios for long-term wealth creation, tax efficiency, and risk diversification.
                 </p>
-                <ul style={{ listStyle:"none",padding:0,margin:0 }}>
-                  {["Portfolio audit, yield analysis & rebalancing recommendations","Rent vs. buy, ready vs. pre-launch, residential vs. commercial evaluation","Property tax planning, compliance review & advisory","Exit strategy, sale timing & capital gains optimisation"].map(item=>(
-                    <li key={item} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",padding:"4px 0 4px 18px",position:"relative",lineHeight:1.6 }}>
-                      <span style={{ position:"absolute",left:0,top:"7px",width:6,height:6,borderRadius:"50%",background:"var(--gold)",opacity:0.8 }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {["Portfolio audit, yield analysis and rebalancing recommendations","Rent vs. buy, ready vs. pre-launch, residential vs. commercial evaluation","Property tax planning, compliance review and advisory","Exit strategy, sale timing and capital gains optimisation"].map(item=>(
+                  <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
+                    <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                    <span className="body-md" style={{ color:"var(--slate)",lineHeight:1.7 }}>{item}</span>
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>
@@ -198,6 +202,18 @@ export default function CaseStudiesPage() {
       {/* Case study cards */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Client Journeys</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
+                Real Problems,<br /><span style={{ color:"#d4a843" }}>Verified Results</span>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
+                A closer look at six engagements that show how independent advisory creates measurable value for buyers, sellers, investors, and corporate clients across Delhi NCR.
+              </p>
+            </div>
+          </ScrollReveal>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24 }} className="grid-3">
             {cases.map((c,i)=>(
               <ScrollReveal key={c.title} delay={i*60} style={{ display:"flex" }}>
@@ -234,6 +250,17 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        faqs={[
+          { q:"Are the names and details in these case studies real?", a:"For privacy and confidentiality, we use representative descriptions rather than full identifying information. Every engagement reflects a genuine transaction handled by our advisory team, with figures and outcomes accurately represented." },
+          { q:"How does Vedhara's advisory differ from a typical broker?", a:"We are an independent advisory and brokerage firm. We earn no developer commission tied to pushing inventory, so every recommendation starts with your needs. The case studies above show the kind of measurable outcomes this independence produces, from price reductions to portfolio yield improvements." },
+          { q:"Can Vedhara handle a case like mine remotely?", a:"Yes. Many of our engagements, especially for NRI clients based in the UAE, USA, UK, Canada, and Singapore, are managed end-to-end remotely. We coordinate title checks, Power of Attorney, remittances, registration, and property management on your behalf." },
+          { q:"What does it cost to engage Vedhara for a similar outcome?", a:"Our fee structure is transparent and disclosed in writing before any engagement begins. For many buyer and seller mandates we work on a success-based fee, and for advisory and management work we use fixed, agreed fees with no hidden charges." },
+        ]}
+        title="Case Studies, FAQ"
+      />
 
       <CTASection />
     </>
