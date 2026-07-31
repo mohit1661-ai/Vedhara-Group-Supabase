@@ -308,6 +308,8 @@ img,video{max-width:100%;height:auto;}
 @media(max-width:1024px){.hidden-mobile{display:none!important;}.show-mobile{display:block!important;}}
 .br-mobile{display:none;}
 @media(max-width:1024px){.br-mobile{display:inline;}}
+.br-desktop{display:inline;}
+@media(max-width:1024px){.br-desktop{display:none;}}
 @media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)!important;}.grid-5{grid-template-columns:repeat(2,1fr)!important;}}
 @media(max-width:768px){.grid-2,.grid-3,.grid-4,.grid-5{grid-template-columns:1fr!important;}.grid-6{grid-template-columns:repeat(2,1fr)!important;}}
 

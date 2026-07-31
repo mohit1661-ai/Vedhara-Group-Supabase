@@ -85,6 +85,12 @@ const faqs = [
   { q:"How do I opt out of marketing communications?", a:"You can withdraw consent for marketing communications at any time by replying to any message, using the unsubscribe link, or emailing contact@vedharagroup.com. Service-related communications will still be sent where required." },
 ];
 
+const contactCards = [
+  { label:"Call",    val:"+91 98106 47063",       href:"tel:+919810647063", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
+  { label:"WhatsApp",val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group", grad:"linear-gradient(135deg,#0F1E38,#D4A843)" },
+  { label:"Email",   val:"contact@vedharagroup.com", href:"mailto:contact@vedharagroup.com", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+];
+
 const schema = {
   "@context":"https://schema.org",
   "@type":"WebPage",
@@ -110,7 +116,7 @@ export default function PrivacyPage() {
           <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.85)",border:"1px solid rgba(255,255,255,0.2)" }}>Applies to vedharagroup.com</span>
         </div>
         <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:"0 auto",maxWidth:520 }}>
-          A plain-language explanation of what data we collect, why we collect it, and the rights you hold over it.
+          A plain-language explanation of what data we collect, why we collect it,<br />and the rights you hold over it.
         </p>
       </VideoHeroSection>
 
@@ -126,10 +132,13 @@ export default function PrivacyPage() {
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Your Privacy Matters</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              How We Handle <span style={{ color:"#d4a843" }}>Your Data</span>
+              How We Handle <br className="br-desktop" /><span style={{ color:"#d4a843" }}>Your Data</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              Vedhara Group respects your privacy. This policy explains what information we collect across our website and advisory services, how we use it, how we protect it, and the rights you hold over your personal data. Wherever you are in the world, we are committed to handling your information transparently and securely.
+              Vedhara Group respects your privacy.<br />
+              This policy explains what we collect, how we use it,<br />
+              how we protect it, and the rights you hold over it.<br />
+              Wherever you are, we handle your data transparently and securely.
             </p>
           </ScrollReveal>
         </div>
@@ -147,7 +156,7 @@ export default function PrivacyPage() {
                 Six Areas,<br /><span style={{ color:"var(--gold-lt)" }}>Explained Transparently</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:620,margin:"0 auto" }}>
-                Each section below sets out exactly how your information is handled. Tap a card to jump straight to that section.
+                Each section below sets out exactly how your information is handled.<br />Tap a card to jump straight to that section.
               </p>
             </div>
           </ScrollReveal>
@@ -186,14 +195,34 @@ export default function PrivacyPage() {
                   </h2>
                 </div>
                 <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.9,fontSize:15,marginBottom:18 }}>{sec.body}</p>
-                <div className="gold-frame-card gfc-cream" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
-                  <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:14 }}>In Plain Terms</p>
-                  {sec.bullets.map((item,bi)=>(
-                    <div key={bi} style={{ display:"flex",alignItems:"flex-start",gap:12,marginBottom:10 }}>
-                      <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
-                      <p className="body-md" style={{ color:"var(--ink)",lineHeight:1.7,margin:0 }}>{item}</p>
-                    </div>
-                  ))}
+                <div className="gold-frame-card gfc-navy" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(0,0,0,0.2)" }}>
+                  <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:14 }}>In Plain Terms</p>
+                  {sec.id === "contact" ? (
+                    <>
+                      <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }} className="grid-2">
+                        {contactCards.map(item=>(
+                          <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
+                            className="hover-lift"
+                            style={{ display:"flex",flexDirection:"column",padding:"16px 18px",textDecoration:"none",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",position:"relative",overflow:"hidden",transition:"all 0.35s var(--ease-out)" }}>
+                            <div style={{ position:"absolute",top:0,left:0,right:0,height:3,background:item.grad }} />
+                            <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:4,fontSize:10 }}>{item.label}</span>
+                            <span className="body-sm" style={{ color:"var(--ink)",fontWeight:500 }}>{item.val}</span>
+                          </a>
+                        ))}
+                      </div>
+                      <div style={{ display:"flex",alignItems:"flex-start",gap:12,marginTop:14 }}>
+                        <span style={{ color:"var(--gold-lt)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                        <p className="body-md" style={{ color:"rgba(252,250,244,0.85)",lineHeight:1.7,margin:0 }}>Office: Vedhara Group, Delhi NCR, India</p>
+                      </div>
+                    </>
+                  ) : (
+                    sec.bullets.map((item,bi)=>(
+                      <div key={bi} style={{ display:"flex",alignItems:"flex-start",gap:12,marginBottom:10 }}>
+                        <span style={{ color:"var(--gold-lt)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                        <p className="body-md" style={{ color:"rgba(252,250,244,0.85)",lineHeight:1.7,margin:0 }}>{item}</p>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </ScrollReveal>
