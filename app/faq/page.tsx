@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export const metadata: Metadata = { title:"Real Estate FAQ | Property Buying, Selling, NRI & Investment Questions | Vedhara Group Delhi NCR", description:"Answers to the most common real estate questions in Delhi NCR: buying costs, stamp duty, RERA, home loans, NRI property rules, rental agreements, capital gains, and independent investment advisory. Clear, verified answers from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
 
 const topics = [
-  { title:"Buying Process", desc:"Base prices, stamp duty, GST, home loans, and documentation — everything that goes into buying a property in Delhi NCR." },
+  { title:"Buying Process", desc:"Base prices, stamp duty, GST, home loans, and documentation, everything that goes into buying a property in Delhi NCR." },
   { title:"RERA & Legal", desc:"RERA protections, EDC/IDC, registration, agreements, and the legal checks that keep your transaction safe." },
   { title:"NRI Services", desc:"What NRIs can buy, home loans, Power of Attorney, and NRE/NRO banking rules for property in India." },
   { title:"Selling & Pricing", desc:"How properties are priced, capital gains tax, documentation, and how to get a fair value for your asset." },
@@ -31,8 +31,8 @@ const faqGroups = [
     label:"RERA, Legal & Compliance",
     icon:"⚖️",
     faqs:[
-      { q:"What is RERA and how does it protect property buyers in Delhi NCR?", a:"RERA (Real Estate Regulatory Authority) is a central government Act administered by state-level authorities — HRERA in Haryana, UP RERA in Uttar Pradesh, and Delhi RERA in Delhi. It mandates developer registration, requires regular construction progress reporting, caps advance payment at 10% before agreement, and provides a complaint mechanism for buyers against builders. Every project Vedhara recommends is verified for RERA registration before listing." },
-      { q:"Is Vedhara Group a builder or a broker?", a:"Neither in the traditional sense. Vedhara Group is an independent real estate advisory and brokerage firm. We are not a builder (we don't develop properties). We are a RERA-compliant property advisor and channel partner who represents buyers, sellers, investors, and NRIs, and lists verified projects from developer partners. Our independence means we have no developer inventory to push — advice comes first." },
+      { q:"What is RERA and how does it protect property buyers in Delhi NCR?", a:"RERA (Real Estate Regulatory Authority) is a central government Act administered by state-level authorities, HRERA in Haryana, UP RERA in Uttar Pradesh, and Delhi RERA in Delhi. It mandates developer registration, requires regular construction progress reporting, caps advance payment at 10% before agreement, and provides a complaint mechanism for buyers against builders. Every project Vedhara recommends is verified for RERA registration before listing." },
+      { q:"Is Vedhara Group a builder or a broker?", a:"Neither in the traditional sense. Vedhara Group is an independent real estate advisory and brokerage firm. We are not a builder (we don't develop properties). We are a RERA-compliant property advisor and channel partner who represents buyers, sellers, investors, and NRIs, and lists verified projects from developer partners. Our independence means we have no developer inventory to push; advice comes first." },
       { q:"What are EDC, IDC, and PLC charges on new projects?", a:"EDC (External Development Charges) and IDC (Internal Development Charges) fund infrastructure such as roads, sewers, electricity, and common areas, and are set by the state authority. PLC (Preferential Location Charges) is a premium for units with a preferred view or location within a project, such as park-facing or corner units. These are added to the base price and should be itemised in the allotment letter. Always ask for a full cost sheet that lists EDC, IDC, and PLC separately." },
       { q:"Is an 11-month rent agreement legally valid in Delhi NCR?", a:"Yes. 11-month agreements are legally valid and widely used across Delhi NCR specifically to avoid the mandatory registration requirement that applies to agreements of 12 months or more. For higher-value rentals, Vedhara recommends registered agreements regardless of tenure to strengthen enforceability and protect both owner and tenant." },
       { q:"Do I need a lawyer when buying a property in India?", a:"While not mandatory, an independent legal review of the title documents is strongly recommended for any high-value transaction. A lawyer or a verification specialist checks the chain of title, encumbrances, pending litigation, and municipal dues. Vedhara's Verification Framework performs these checks internally, and we will flag any risk we find rather than push the deal through." },
@@ -52,7 +52,7 @@ const faqGroups = [
     label:"Selling Your Property & Pricing",
     icon:"📈",
     faqs:[
-      { q:"How should I price my property in Delhi NCR?", a:"A realistic price is based on recent comparable sales (comps) in your micro-market, adjusted for floor, facing, age, legal clearances, and amenities — not on what other sellers are asking. Overpricing leads to long listing periods and eventually a lower sale price. Vedhara prepares a pricing analysis from verified transaction data and will tell you honestly if your expectation is above the market." },
+      { q:"How should I price my property in Delhi NCR?", a:"A realistic price is based on recent comparable sales (comps) in your micro-market, adjusted for floor, facing, age, legal clearances, and amenities, not on what other sellers are asking. Overpricing leads to long listing periods and eventually a lower sale price. Vedhara prepares a pricing analysis from verified transaction data and will tell you honestly if your expectation is above the market." },
       { q:"What is capital gains tax when I sell my property?", a:"Profits from selling a property are subject to capital gains tax. For properties held over 24 months, gains are treated as long-term and taxed at 20% with indexation benefit; for short-term holdings, gains are added to your income and taxed at your slab rate. You can reduce tax by reinvesting in another residential property under Section 54 or in specified capital gains bonds under Section 54EC, subject to conditions. Vedhara recommends consulting a tax professional before structuring the sale." },
       { q:"What documents do I need to sell my property in India?", a:"You will need the original title deed, the sale agreement, the latest property tax receipts, the approved building plan, the occupancy certificate (if applicable), and a no-objection certificate from the housing society or association where relevant. Buyers and banks will also ask for the previous chain of sale deeds to verify an unbroken title. Vedhara can help you assemble a complete, bank-ready document file." },
     ],
@@ -62,7 +62,7 @@ const faqGroups = [
     icon:"💼",
     faqs:[
       { q:"What is Vedhara's independent investment advisory approach?", a:"Vedhara does not earn commission by pushing any developer's inventory. Every recommendation starts with the client's requirement, budget, and timeline, not our margin. We analyse micro-markets, infrastructure developments, rental demand, and price trends before shortlisting, and we will tell you when a property is not a good buy even if it means losing the engagement." },
-      { q:"Which NCR micro-markets are currently strong for investment?", a:"Investment strength depends on your horizon and budget. Emerging corridors near new expressways, metro extensions, and upcoming commercial hubs — such as parts of New Gurugram, Dwarka Expressway, and select Noida and Greater Noida zones — have shown meaningful appreciation. Rental demand is strongest near IT corridors and education hubs. Vedhara publishes a monthly Ground Report with micro-market data to help you decide on evidence rather than hype." },
+      { q:"Which NCR micro-markets are currently strong for investment?", a:"Investment strength depends on your horizon and budget. Emerging corridors near new expressways, metro extensions, and upcoming commercial hubs, such as parts of New Gurugram, Dwarka Expressway, and select Noida and Greater Noida zones, have shown meaningful appreciation. Rental demand is strongest near IT corridors and education hubs. Vedhara publishes a monthly Ground Report with micro-market data to help you decide on evidence rather than hype." },
       { q:"What is the minimum investment to start in Delhi NCR real estate?", a:"Entry points vary widely by location and project type. Budget micro-markets may offer units from roughly ₹30–40 lakh, mid-market options from ₹60 lakh to ₹1.2 crore, and luxury or commercial investment from ₹2 crore upward. Construction-linked payment plans can spread the outlay over several years. Vedhara will help you identify realistic options for your budget rather than showing properties above your means." },
     ],
   },
@@ -104,7 +104,7 @@ export default function FAQPage() {
               Everything You Need to Know<br /><span style={{ color:"#d4a843" }}>Before Your Next Move</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              From RERA regulations to stamp duty rates, NRI investment rules to rental agreements, find clear answers to the most common property questions we hear every day at Vedhara. Every answer is grounded in current rules and micro-market data — never generic advice.
+              From RERA regulations to stamp duty rates, NRI investment rules to rental agreements, find clear answers to the most common property questions we hear every day at Vedhara. Every answer is grounded in current rules and micro-market data, never generic advice.
             </p>
           </ScrollReveal>
         </div>
@@ -122,7 +122,7 @@ export default function FAQPage() {
                 Find the Answer,<br /><span style={{ color:"var(--gold-lt)" }}>Skip the Jargon</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
-                Six topics cover the questions we answer most — each one explained in plain language, backed by the rules that actually apply.
+                Six topics cover the questions we answer most, each one explained in plain language, backed by the rules that actually apply.
               </p>
             </div>
           </ScrollReveal>
@@ -160,7 +160,7 @@ export default function FAQPage() {
                 Delhi NCR Property Rules,<br /><span style={{ color:"#d4a843" }}>At a Glance</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
-                The numbers and rules that matter most, summarised from current government rates and RERA requirements — and how Vedhara answers your questions on top of them.
+                The numbers and rules that matter most, summarised from current government rates and RERA requirements, and how Vedhara answers your questions on top of them.
               </p>
             </div>
           </ScrollReveal>
@@ -192,7 +192,7 @@ export default function FAQPage() {
                 <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   A good answer starts with the right question. Here is how we make sure the advice you get is accurate, current, and genuinely useful.
                 </p>
-                {["Every answer is grounded in current RERA rules and micro-market data, not generic advice","We verify facts against project RERA numbers, government circulars, and bank lending rates","You get a named advisor, not a call centre, for every follow-up question","No cost and no obligation for the first consultation — we answer first and advise later","If a question is outside our expertise, we say so and point you to a trusted specialist","We never manufacture urgency: if the right move is to wait, we will tell you"].map(item=>(
+                {["Every answer is grounded in current RERA rules and micro-market data, not generic advice","We verify facts against project RERA numbers, government circulars, and bank lending rates","You get a named advisor, not a call centre, for every follow-up question","No cost and no obligation for the first consultation; we answer first and advise later","If a question is outside our expertise, we say so and point you to a trusted specialist","We never manufacture urgency: if the right move is to wait, we will tell you"].map(item=>(
                   <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
                     <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
                     <span className="body-md" style={{ color:"var(--slate)",lineHeight:1.7 }}>{item}</span>
@@ -208,6 +208,7 @@ export default function FAQPage() {
         title="Delhi NCR Property FAQ"
         dark={false}
         groups={faqGroups}
+        decor
       />
       <CTASection />
     </>
