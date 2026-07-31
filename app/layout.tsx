@@ -22,7 +22,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
-        <link rel="canonical" href="https://www.vedharagroup.com" />
         <link rel="llms.txt" href="/llms.txt" />
         <meta name="theme-color" content="#0F1E38" />
       </head>
@@ -36,8 +35,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           slogan:"Wisdom Rooted. Futures Built.",
           telephone:"+91-98106-47063", email:"contact@vedharagroup.com",
           address:{ "@type":"PostalAddress", addressLocality:"Delhi", addressRegion:"Delhi", addressCountry:"IN" },
-          areaServed:[{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Ghaziabad"},{name:"Greater Noida"}],
-          knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","RERA Verified Property Listings","NRI Property Investment India"],
+          areaServed:[{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Ghaziabad"},{name:"Greater Noida"},{name:"Chandigarh"},{name:"Mohali"},{name:"Panchkula"},{name:"Zirakpur"},{name:"Kharar"}],
+          knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","RERA Verified Property Listings","NRI Property Investment India","Chandigarh Tricity Real Estate","Property Advisory Mohali Panchkula","GMADA HRERA Punjab RERA Due Diligence"],
           sameAs:["https://www.linkedin.com/company/vedhara-group","https://www.instagram.com/vedharagroup"],
         }} />
         <CustomCursor />
