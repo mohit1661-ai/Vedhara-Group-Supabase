@@ -309,19 +309,30 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </div>
           </div>
 
-          {/* RIGHT: Verification + quick links - glass backdrop, clean text */}
+          {/* RIGHT: Premium verification + tools card */}
           <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
-            <div className="glass-navy" style={{ padding:"14px 18px",display:"flex",alignItems:"center",gap:12,marginBottom:10,animation:"float 6s ease-in-out infinite 1s" }}>
-              <div style={{ width:38,height:38,borderRadius:"50%",background:"rgba(212,168,67,0.2)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,flexShrink:0,color:"var(--gold-lt)" }}>✓</div>
-              <div>
-                <p style={{ fontFamily:"var(--t-head)",fontSize:12,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 1px",letterSpacing:"0.03em",textShadow:"0 1px 4px rgba(0,0,0,0.2)" }}>Vedhara Verification Framework</p>
-                <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:300,color:"rgba(255,255,255,0.7)",margin:0,textShadow:"0 1px 4px rgba(0,0,0,0.2)" }}>5 checks published on every listing</p>
+            <div className="glass-navy" style={{ borderRadius:16,overflow:"hidden",boxShadow:"0 24px 60px rgba(9,15,29,0.5), 0 0 44px rgba(212,168,67,0.08)",animation:"float 6s ease-in-out infinite" }}>
+              {/* Gold top accent */}
+              <div style={{ height:3,background:"linear-gradient(90deg,var(--gold-dk),var(--gold-lt) 50%,var(--gold-dk))" }} />
+              {/* Verification framework */}
+              <div style={{ display:"flex",alignItems:"center",gap:14,padding:"18px 20px 16px" }}>
+                <div style={{ width:46,height:46,borderRadius:"50%",background:"linear-gradient(135deg,rgba(212,168,67,0.28),rgba(212,168,67,0.08))",border:"1px solid rgba(212,168,67,0.45)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0,color:"var(--gold-lt)",boxShadow:"0 0 22px rgba(212,168,67,0.3), inset 0 0 12px rgba(212,168,67,0.15)" }}>✓</div>
+                <div>
+                  <p style={{ fontFamily:"var(--t-head)",fontSize:12.5,fontWeight:600,color:"var(--gold-lt)",margin:"0 0 2px",letterSpacing:"0.04em",lineHeight:1.35,textShadow:"0 1px 6px rgba(0,0,0,0.3)" }}>Vedhara Verification Framework</p>
+                  <p style={{ fontFamily:"var(--t-body)",fontSize:11,fontWeight:400,color:"rgba(255,255,255,0.75)",margin:0,lineHeight:1.5 }}>5 checks published on every listing</p>
+                </div>
               </div>
-            </div>
-            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:1,background:"rgba(212,168,67,0.06)" }}>
-              {[{i:"📊",t:"ROI Calculator",h:"/calculators"},{i:"🌐",t:"NRI Services",h:"/nri-services"},{i:"🔍",t:"Verify Property",h:"/verification-center"},{i:"📈",t:"Invest in NCR",h:"/investment-advisory"}].map(item=>(
-                <Link key={item.t} href={item.h} className="hero-quick-link"><span className="hero-quick-icon">{item.i}</span>{item.t}</Link>
-              ))}
+              {/* Gold divider */}
+              <div style={{ height:1,margin:"0 20px",background:"linear-gradient(90deg,transparent,rgba(212,168,67,0.45),transparent)" }} />
+              {/* Quick links */}
+              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,padding:"14px 14px 16px" }}>
+                {[{i:"📊",t:"ROI Calculator",h:"/calculators"},{i:"🌐",t:"NRI Services",h:"/nri-services"},{i:"🔍",t:"Verify Property",h:"/verification-center"},{i:"📈",t:"Invest in NCR",h:"/investment-advisory"}].map(item=>(
+                  <Link key={item.t} href={item.h} className="hero-quick-link">
+                    <span className="hero-quick-icon">{item.i}</span>
+                    <span className="hero-quick-text">{item.t}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -338,10 +349,11 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;gap:32px!important;}.hero-right{max-width:400px;margin:0 auto;}}
         @media(max-width:600px){.hero-tagline{margin-bottom:8px!important;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:8px!important;}}
-        .hero-quick-link{display:block;padding:13px 16px;font-family:var(--t-head);font-size:10.5px;font-weight:500;color:#ffffff;text-decoration:none;background:transparent;transition:background 0.25s,color 0.25s;letter-spacing:0.02em;}
-        .hero-quick-link:hover{background:rgba(212,168,67,0.1);color:var(--gold-lt);}
-        .hero-quick-icon{margin-right:6px;color:var(--gold-lt);transition:color 0.25s;}
-        .hero-quick-link:hover .hero-quick-icon{color:var(--gold);}
+        .hero-quick-link{display:flex;align-items:center;gap:9px;padding:12px 12px;font-family:var(--t-head);font-size:11px;font-weight:500;color:#ffffff;text-decoration:none;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;letter-spacing:0.02em;transition:all 0.25s ease;}
+        .hero-quick-link:hover{background:rgba(212,168,67,0.12);border-color:rgba(212,168,67,0.4);color:var(--gold-lt);transform:translateY(-2px);box-shadow:0 10px 24px rgba(9,15,29,0.45);}
+        .hero-quick-icon{width:30px;height:30px;border-radius:8px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all 0.25s;}
+        .hero-quick-link:hover .hero-quick-icon{background:rgba(212,168,67,0.3);border-color:rgba(212,168,67,0.45);}
+        .hero-quick-text{white-space:nowrap;}
         .trust-strip{display:flex;align-items:center;flex-wrap:nowrap;gap:18px;}
         .trust-item{display:flex;align-items:center;gap:9px;white-space:nowrap;}
         .trust-label{font-family:var(--t-head);font-size:11px;font-weight:600;color:rgba(255,255,255,0.95);letter-spacing:0.04em;text-shadow:0 1px 8px rgba(9,15,29,0.55);}
