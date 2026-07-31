@@ -1,0 +1,8 @@
+export const servicePages = {
+  buy: { ... },
+  sell: { ... },
+  rent: { ... },
+  commercial: { ... },
+  luxury: { ... },
+  propertyManagement: { ... }
+};
