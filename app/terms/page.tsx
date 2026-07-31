@@ -238,7 +238,7 @@ export default function TermsPage() {
                 What We <span style={{ color:"var(--gold-lt)" }}>Ask of You</span>
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
-                Four simple expectations that keep the website safe, accurate, and useful for everyone.
+                Four simple expectations that keep the website safe,<br />accurate, and useful for everyone.
               </p>
             </div>
           </ScrollReveal>
