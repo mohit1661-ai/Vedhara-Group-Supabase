@@ -114,6 +114,50 @@ export const servicePages: Record<string, ServicePageContent> = {
         q: "Does Vedhara help with corporate office leasing too?",
         a: "Yes, corporate office leasing has its own dedicated advisory covering space planning, location strategy, and lease negotiation. Contact us for details on our corporate leasing support.",
       },
+      {
+        q: "Is commercial real estate a better investment than residential in Delhi NCR?",
+        a: "Commercial assets typically offer higher rental yields (often 7–9% or more) than residential property (commonly 2–4%) in most Delhi NCR micro-markets, with standardised leases and stronger rental growth potential. However, commercial spaces carry higher vacancy risk, larger ticket sizes, and different tax obligations. The right choice depends on your capital, holding horizon, and income goals — Vedhara can run a comparative yield and appreciation analysis on specific assets before you commit.",
+      },
+      {
+        q: "What rental yield can I expect from commercial property in Gurugram or Noida?",
+        a: "Gross rental yields for good commercial assets in Gurugram and Noida typically range between 7% and 10%, depending on location, asset class (office, retail, industrial), and lease structure. Pre-leased properties may show a slightly lower initial yield but carry far lower vacancy risk. We benchmark every property against comparable transactions before recommending a purchase.",
+      },
+      {
+        q: "What is a pre-leased commercial property, and is it a good investment?",
+        a: "A pre-leased property comes with an existing tenant and a signed lease in place, so you receive rent from day one. These assets generally have lower vacancy risk and are easier to finance, but the purchase price may already reflect the income stream. We verify the tenant profile, lease terms, escalation clauses, and lock-in periods before recommending one.",
+      },
+      {
+        q: "Can NRIs buy commercial property in India, and are there restrictions?",
+        a: "Yes, NRIs and OCI card holders can freely purchase commercial property in India, and can repatriate rental income and sale proceeds subject to FEMA and RBI guidelines. Agricultural land and farmhouses remain restricted for NRIs. We coordinate documentation, PAN and bank account setup, and repatriation guidance with our legal and tax partners.",
+      },
+      {
+        q: "What taxes apply on buying or renting commercial property — stamp duty and GST?",
+        a: "On purchase, under-construction commercial property attracts 12% GST in addition to stamp duty and registration, whose rates differ across Delhi, Haryana, and Uttar Pradesh. Ready-to-move-in commercial purchases are generally outside GST but still attract stamp duty and registration. Leasing commercial space typically attracts 18% GST. Because rates and surcharges change, we share the current applicable figures for the specific property and recommend a CA review for your exact situation.",
+      },
+      {
+        q: "How is capital gains tax calculated when I sell a commercial property?",
+        a: "If you hold the property for more than 24 months, the gain is treated as long-term and currently attracts 12.5% without indexation for sales on or after 23 July 2024; short-term gains are added to your income and taxed at your slab rate. Costs such as stamp duty, brokerage, and capital improvements can be added to your cost basis, and exemptions under Sections 54/54EC may apply to reinvested gains. A chartered accountant can compute the exact liability for your case.",
+      },
+      {
+        q: "How do I choose the right retail or showroom location for my business?",
+        a: "We evaluate footfall patterns, catchment demographics, visibility and signage, accessibility and parking, nearby anchor tenants, and current vacancy in the same corridor. We also verify zoning and local compliance so the space is genuinely usable for your business type before you sign anything.",
+      },
+      {
+        q: "What due diligence should I do before buying a commercial property?",
+        a: "We run our five-point Verification Framework covering the title chain, developer or builder history, approvals and zoning, encumbrances, and price benchmarking. For commercial assets we additionally review lease deeds (if tenanted), occupancy certificates, fire NOCs, and the municipal or authority approvals relevant to the specific property.",
+      },
+      {
+        q: "Do banks finance commercial property purchases, and what is the typical LTV?",
+        a: "Yes, commercial property loans are widely available — typically financing 70–80% of the value with tenures up to 15–20 years and rates usually a little higher than home loans. Loan-to-value and eligibility depend on the property's income potential and your profile. We help shortlist lenders and prepare the documentation.",
+      },
+      {
+        q: "Is it better to buy or lease commercial space for my business?",
+        a: "Buying builds equity and protects against rental inflation but locks up capital and reduces flexibility; leasing preserves cash for the business and makes relocation or scaling easier. The right answer depends on your cash flow, growth plans, and tax position. We map the buy-versus-lease economics for your specific requirement before you decide.",
+      },
+      {
+        q: "Which are the best commercial micro-markets in Delhi NCR right now?",
+        a: "Gurugram's Golf Course Road and MG Road corridors remain strong for offices and retail, Noida's Sector 18 and the Yamuna Expressway belt for retail and logistics, and the NH-48/NH-8 corridors for industrial and warehousing. The 'best' location depends on your asset class and target tenants — we shortlist based on current demand, rental trends, and absorption data rather than hearsay.",
+      },
     ],
     ctaLabel: "Discuss Your Commercial Requirement",
   },
