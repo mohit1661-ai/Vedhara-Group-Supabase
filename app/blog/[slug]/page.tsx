@@ -216,7 +216,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                       <h3 style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{other.title}</h3>
                       <p className="body-sm" style={{ color:"var(--slate)",fontSize:11.5,lineHeight:1.7,flex:1 }}>{other.excerpt}</p>
                       <div style={{ paddingTop:14,marginTop:10,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                        <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-dk)",display:"inline-flex",alignItems:"center",gap:4 }}>Read Article →</span>
+                        <span className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,transition:"all 0.2s",cursor:"pointer" }}>Read Article →</span>
                       </div>
                     </div>
                   </div>
