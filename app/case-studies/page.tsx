@@ -5,7 +5,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import AnimatedStats from "@/components/sections/AnimatedStats";
 
-export const metadata: Metadata = { title:"Real Estate Case Studies | Vedhara Group | Delhi NCR Property Advisory Success Stories", description:"Real Delhi NCR real estate case studies from Vedhara Group: NRI property purchase, portfolio restructuring, corporate lease negotiation, first-time home buying in Faridabad, rent-to-buy strategies and pre-launch investment with measurable outcomes.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
+export const metadata: Metadata = { title:"Real Estate Case Studies | Delhi NCR Property Advisory Success Stories", description:"Real Delhi NCR real estate case studies from Vedhara Group: NRI property purchase, portfolio restructuring, corporate lease negotiation, first-time home buying in Faridabad, rent-to-buy strategies and pre-launch investment with measurable outcomes.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
 
 const cases = [
   {

@@ -6,7 +6,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR | Office, Retail & Industrial | Vedhara Group", description:"Independent commercial property advisory in Delhi NCR, office space leasing, retail site selection, industrial shed, and commercial property acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
+export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR | Office, Retail & Industrial", description:"Independent commercial property advisory in Delhi NCR, office space leasing, retail site selection, industrial shed, and commercial property acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
 
 interface CommercialListing {
   id:string;

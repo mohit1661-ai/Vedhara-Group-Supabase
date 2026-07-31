@@ -6,7 +6,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Rent Property in Delhi NCR | Residential & Commercial Rentals | Vedhara Group", description:"Find verified rental properties in Delhi, Gurugram, Noida, Faridabad and Ghaziabad. Tenant advisory, landlord representation, and transparent lease terms.", alternates:{ canonical:"https://www.vedharagroup.com/rent" } };
+export const metadata: Metadata = { title:"Rent Property in Delhi NCR | Residential & Commercial Rentals", description:"Find verified rental properties in Delhi, Gurugram, Noida, Faridabad and Ghaziabad. Tenant advisory, landlord representation, and transparent lease terms.", alternates:{ canonical:"https://www.vedharagroup.com/rent" } };
 
 interface RentalListing {
   id:string;

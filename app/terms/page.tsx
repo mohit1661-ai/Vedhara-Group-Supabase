@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title:"Terms & Conditions | Vedhara Group | Website & Advisory Service Terms",
+  title:"Terms & Conditions | Website & Advisory Service Terms",
   description:"Terms and conditions for using the Vedhara Group website, calculators, verification framework, and advisory services across Delhi NCR. Clear guidance on liability, IP, and your responsibilities.",
   alternates:{ canonical:"https://www.vedharagroup.com/terms" },
 };

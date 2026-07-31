@@ -7,7 +7,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Property Management Services in Delhi NCR | NRI & Investor Owners | Vedhara Group", description:"Professional property management in Delhi NCR, tenant sourcing, rent collection, maintenance coordination, and remote reporting for NRI owners and investors.", alternates:{ canonical:"https://www.vedharagroup.com/property-management" } };
+export const metadata: Metadata = { title:"Property Management Services in Delhi NCR | NRI & Investor Owners", description:"Professional property management in Delhi NCR, tenant sourcing, rent collection, maintenance coordination, and remote reporting for NRI owners and investors.", alternates:{ canonical:"https://www.vedharagroup.com/property-management" } };
 
 const content = servicePages["property-management"];
 

@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title:"Privacy Policy | Vedhara Group | How We Collect, Use & Protect Your Data",
+  title:"Privacy Policy | How We Collect, Use & Protect Your Data",
   description:"Vedhara Group privacy policy: how we collect, use, store, and protect your personal data across Delhi NCR real estate advisory, brokerage, and NRI services. We never sell your data. Full user rights explained.",
   alternates:{ canonical:"https://www.vedharagroup.com/privacy" },
 };

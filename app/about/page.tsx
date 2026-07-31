@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 
 export const metadata: Metadata = {
-  title:"About Vedhara Group | Independent Real Estate Advisory Firm in Delhi NCR",
+  title:"About Us | Independent Real Estate Advisory Firm in Delhi NCR",
   description:"Vedhara Group is a RERA-compliant independent property advisory firm in Delhi NCR helping buyers, sellers, investors, and NRIs make verified real estate decisions across Gurugram, Noida, Faridabad, and Ghaziabad.",
   alternates:{ canonical:"https://www.vedharagroup.com/about" },
 };

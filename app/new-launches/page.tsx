@@ -4,7 +4,7 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"New Property Launches in Delhi NCR | Verified Upcoming Projects | Vedhara Group", description:"Upcoming and recently launched RERA-verified property projects across Gurugram, Noida, Faridabad, and Delhi from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
+export const metadata: Metadata = { title:"New Property Launches in Delhi NCR | Verified Upcoming Projects", description:"Upcoming and recently launched RERA-verified property projects across Gurugram, Noida, Faridabad, and Delhi from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
 
 interface LaunchProject {
   id:string;
