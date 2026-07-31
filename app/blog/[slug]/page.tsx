@@ -49,11 +49,15 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       <VideoHeroSection>
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>{post.category}</p>
-        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,4.5vw,52px)",color:"var(--light)",lineHeight:1.12,marginBottom:20,maxWidth:880,margin:"0 auto 20px" }}>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,4.5vw,52px)",color:"var(--light)",lineHeight:1.12,maxWidth:880,margin:"0 auto 20px" }}>
           {post.title}
         </h1>
-        <p className="body-sm" style={{ color:"rgba(255,255,255,0.75)",margin:"0 auto",maxWidth:520 }}>
-          By the Vedhara Group Advisory Team · {post.readTime} · {post.category}
+        <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:10,flexWrap:"wrap",marginBottom:16 }}>
+          <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(212,168,67,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.4)" }}>{post.category}</span>
+          <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.85)",border:"1px solid rgba(255,255,255,0.2)" }}>{post.readTime}</span>
+        </div>
+        <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:"0 auto",maxWidth:520 }}>
+          Written by the Vedhara Group Advisory Team, grounded in real transaction data across Delhi NCR.
         </p>
       </VideoHeroSection>
 
@@ -80,30 +84,67 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         </div>
       </div>
 
+      {/* What This Guide Covers – Vibrant Cream Cards on Navy */}
+      <section style={{ background:"var(--navy)",padding:"56px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:40 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>What This Guide Covers</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
+                The Four Sections,<br /><span style={{ color:"var(--gold-lt)" }}>Explored In Depth</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:620,margin:"0 auto" }}>
+                Each section below is grounded in current market data and the questions we answer every day for clients across Delhi NCR.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:20 }} className="grid-2">
+            {post.sections.map((sec,si)=>(
+              <ScrollReveal key={sec.heading} delay={si*80} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
+                  <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
+                  <div style={{ padding:"24px 20px 24px",flex:1,display:"flex",flexDirection:"column",textAlign:"center",alignItems:"center" }}>
+                    <div style={{ width:40,height:40,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:12,flexShrink:0 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)" }}>{si+1}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:400,fontSize:17,color:"var(--navy)",lineHeight:1.35 }}>{sec.heading}</h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Article body */}
-      <section style={{ background:"var(--cream)",padding:"20px 32px 64px" }}>
-        <div style={{ maxWidth:800,margin:"0 auto" }}>
+      <section style={{ background:"var(--cream)",padding:"64px 32px" }}>
+        <div style={{ maxWidth:820,margin:"0 auto" }}>
           {post.sections.map((sec,si)=>(
             <ScrollReveal key={sec.heading} delay={si*40}>
-              <div style={{ marginBottom:44 }}>
-                <div style={{ display:"flex",alignItems:"flex-start",gap:14,marginBottom:18 }}>
-                  <span className="v-line" style={{ flexShrink:0,marginTop:6 }} />
-                  <h2 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(24px,3vw,32px)",color:"var(--navy)",lineHeight:1.2 }}>
+              <div style={{ marginBottom:56 }}>
+                <div style={{ display:"flex",alignItems:"center",gap:14,marginBottom:22 }}>
+                  <div style={{ width:34,height:34,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0 }}>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)" }}>{si+1}</span>
+                  </div>
+                  <h2 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(24px,3vw,34px)",color:"var(--navy)",lineHeight:1.2,margin:0 }}>
                     {sec.heading}
                   </h2>
                 </div>
                 {sec.paragraphs.map((para,pi)=>(
-                  <p key={pi} className="body-md" style={{ color:"var(--slate)",lineHeight:1.85,fontSize:14.5,marginBottom:16 }}>
+                  <p key={pi} className="body-md" style={{ color:"var(--slate)",lineHeight:1.9,fontSize:15,marginBottom:18 }}>
                     {para}
                   </p>
                 ))}
                 {sec.list && (
-                  <div style={{ background:"var(--light)",border:"1px solid rgba(212,168,67,0.25)",borderRadius:12,padding:"20px 24px",marginTop:6 }}>
-                    <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:12 }}>Key Points</p>
+                  <div className="gold-frame-card gfc-cream" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
+                    <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:14 }}>Key Points</p>
                     {sec.list.map((item,li)=>(
-                      <div key={li} style={{ display:"flex",alignItems:"flex-start",gap:10,marginBottom:8 }}>
-                        <span style={{ color:"var(--gold-dk)",fontSize:13,lineHeight:1.6,flexShrink:0 }}>◆</span>
-                        <p style={{ fontFamily:"var(--t-body)",fontSize:13.5,color:"var(--ink)",lineHeight:1.7,margin:0 }}>{item}</p>
+                      <div key={li} style={{ display:"flex",alignItems:"flex-start",gap:12,marginBottom:10 }}>
+                        <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                        <p className="body-md" style={{ color:"var(--ink)",lineHeight:1.7,margin:0 }}>{item}</p>
                       </div>
                     ))}
                   </div>
