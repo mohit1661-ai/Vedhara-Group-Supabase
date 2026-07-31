@@ -140,12 +140,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                   </p>
                 ))}
                 {sec.list && (
-                  <div className="gold-frame-card gfc-cream" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
-                    <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:14 }}>Key Points</p>
+                  <div className="gold-frame-card gfc-navy" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(0,0,0,0.2)" }}>
+                    <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:14 }}>Key Points</p>
                     {sec.list.map((item,li)=>(
                       <div key={li} style={{ display:"flex",alignItems:"flex-start",gap:12,marginBottom:10 }}>
-                        <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
-                        <p className="body-md" style={{ color:"var(--ink)",lineHeight:1.7,margin:0 }}>{item}</p>
+                        <span style={{ color:"var(--gold-lt)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                        <p className="body-md" style={{ color:"rgba(252,250,244,0.85)",lineHeight:1.7,margin:0 }}>{item}</p>
                       </div>
                     ))}
                   </div>
