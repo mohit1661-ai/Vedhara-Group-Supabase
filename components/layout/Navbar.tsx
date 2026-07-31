@@ -34,7 +34,7 @@ export default function Navbar() {
       }}>
         <nav style={{ maxWidth:1320,margin:"0 auto",padding:"0 32px",height:"100%",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
           {/* Logo mark, swaps between white/gold (transparent hero) and navy/gold (scrolled) */}
-          <Link href="/" style={{ textDecoration:"none",display:"flex",alignItems:"center",position:"relative",height:56 }} aria-label="Vedhara Group home">
+          <Link href="/" style={{ textDecoration:"none",display:"flex",alignItems:"center",position:"relative",height:"var(--nav-logo-h)" }} aria-label="Vedhara Group home">
             <Image
               src="/vedhara-logo-white.png"
               alt="Vedhara Group"
@@ -42,7 +42,7 @@ export default function Navbar() {
               height={56}
               priority
               style={{
-                height: 56, width: "auto",
+                height: "var(--nav-logo-h)", width: "auto",
                 position: scrolled ? "absolute" : "static",
                 opacity: scrolled ? 0 : 1,
                 transition: "opacity 0.3s ease",
@@ -56,7 +56,7 @@ export default function Navbar() {
               height={56}
               priority
               style={{
-                height: 56, width: "auto",
+                height: "var(--nav-logo-h)", width: "auto",
                 position: scrolled ? "static" : "absolute",
                 top: 0, left: 0,
                 opacity: scrolled ? 1 : 0,
