@@ -71,7 +71,7 @@ const careersFaqs = [
   { q:"Do you hire freshers without real estate experience?", a:"Absolutely. Our Junior Advisor role explicitly welcomes freshers and includes structured training on the Verification Framework, market research, and transaction documentation, with mentorship from senior advisors." },
   { q:"What does the interview process look like?", a:"Typically two to three rounds: a CV and portfolio review, a discovery conversation, and a role-specific discussion covering real scenarios you would actually handle. We keep the process short, transparent, and give honest feedback at every step." },
   { q:"Is RERA certification or training provided?", a:"Yes. For advisory roles we sponsor RERA certification and provide access to PropTech tools, along with mentorship from advisors with 15+ years of market experience. Continuous learning is a core part of the role." },
-  { q:"How are advisors measured — is there sales pressure?", a:"No sales targets and no transaction-volume pressure. Advisors are measured on client satisfaction, verification quality, and long-term outcomes, because that is the model that built Vedhara's reputation." },
+  { q:"How are advisors measured, and is there any sales pressure?", a:"No sales targets and no transaction-volume pressure. Advisors are measured on client satisfaction, verification quality, and long-term outcomes, because that is the model that built Vedhara's reputation." },
 ];
 
 export default function CareersPage() {

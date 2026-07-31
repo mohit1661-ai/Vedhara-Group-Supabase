@@ -1,7 +1,7 @@
 /**
  * /api/leads
  *
- * GET — returns all saved leads as JSON.
+ * GET: returns all saved leads as JSON.
  * Protected by ADMIN_SECRET env var.
  *
  * Usage:

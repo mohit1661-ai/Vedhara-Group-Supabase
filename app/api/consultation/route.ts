@@ -1,7 +1,7 @@
 /**
  * /api/consultation
  *
- * POST — accepts a consultation request from the contact form.
+ * POST: accepts a consultation request from the contact form.
  *
  * Flow:
  *  1. Rate-limit by IP (5 requests / 10 min)
@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
     await writeLead(lead);
   } catch (err) {
     console.error("[Lead write failed]", err);
-    // Continue — don't fail the user request over a save error
+    // Continue; don't fail the user request over a save error
   }
 
   // 6. Email (non-blocking)

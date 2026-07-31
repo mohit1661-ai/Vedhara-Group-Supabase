@@ -98,7 +98,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "Who is responsible for maintenance and repairs during a tenancy?",
-        a: "Generally, structural and major repairs are the landlord's responsibility, while minor wear-and-tear and day-to-day consumables are the tenant's — but the exact split is defined in the lease agreement. We make sure this is written clearly so there are no surprises when something needs fixing.",
+        a: "Generally, structural and major repairs are the landlord's responsibility, while minor wear-and-tear and day-to-day consumables are the tenant's; the exact split is defined in the lease agreement. We make sure this is written clearly so there are no surprises when something needs fixing.",
       },
       {
         q: "How does Vedhara screen tenants for landlords?",
@@ -140,7 +140,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "Is commercial real estate a better investment than residential in Delhi NCR?",
-        a: "Commercial assets typically offer higher rental yields (often 7–9% or more) than residential property (commonly 2–4%) in most Delhi NCR micro-markets, with standardised leases and stronger rental growth potential. However, commercial spaces carry higher vacancy risk, larger ticket sizes, and different tax obligations. The right choice depends on your capital, holding horizon, and income goals — Vedhara can run a comparative yield and appreciation analysis on specific assets before you commit.",
+        a: "Commercial assets typically offer higher rental yields (often 7–9% or more) than residential property (commonly 2–4%) in most Delhi NCR micro-markets, with standardised leases and stronger rental growth potential. However, commercial spaces carry higher vacancy risk, larger ticket sizes, and different tax obligations. The right choice depends on your capital, holding horizon, and income goals; Vedhara can run a comparative yield and appreciation analysis on specific assets before you commit.",
       },
       {
         q: "What rental yield can I expect from commercial property in Gurugram or Noida?",
@@ -155,7 +155,7 @@ export const servicePages: Record<string, ServicePageContent> = {
         a: "Yes, NRIs and OCI card holders can freely purchase commercial property in India, and can repatriate rental income and sale proceeds subject to FEMA and RBI guidelines. Agricultural land and farmhouses remain restricted for NRIs. We coordinate documentation, PAN and bank account setup, and repatriation guidance with our legal and tax partners.",
       },
       {
-        q: "What taxes apply on buying or renting commercial property — stamp duty and GST?",
+        q: "What taxes apply on buying or renting commercial property, including stamp duty and GST?",
         a: "On purchase, under-construction commercial property attracts 12% GST in addition to stamp duty and registration, whose rates differ across Delhi, Haryana, and Uttar Pradesh. Ready-to-move-in commercial purchases are generally outside GST but still attract stamp duty and registration. Leasing commercial space typically attracts 18% GST. Because rates and surcharges change, we share the current applicable figures for the specific property and recommend a CA review for your exact situation.",
       },
       {
@@ -172,7 +172,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "Do banks finance commercial property purchases, and what is the typical LTV?",
-        a: "Yes, commercial property loans are widely available — typically financing 70–80% of the value with tenures up to 15–20 years and rates usually a little higher than home loans. Loan-to-value and eligibility depend on the property's income potential and your profile. We help shortlist lenders and prepare the documentation.",
+        a: "Yes, commercial property loans are widely available; typically financing 70–80% of the value with tenures up to 15–20 years and rates usually a little higher than home loans. Loan-to-value and eligibility depend on the property's income potential and your profile. We help shortlist lenders and prepare the documentation.",
       },
       {
         q: "Is it better to buy or lease commercial space for my business?",
@@ -180,7 +180,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "Which are the best commercial micro-markets in Delhi NCR right now?",
-        a: "Gurugram's Golf Course Road and MG Road corridors remain strong for offices and retail, Noida's Sector 18 and the Yamuna Expressway belt for retail and logistics, and the NH-48/NH-8 corridors for industrial and warehousing. The 'best' location depends on your asset class and target tenants — we shortlist based on current demand, rental trends, and absorption data rather than hearsay.",
+        a: "Gurugram's Golf Course Road and MG Road corridors remain strong for offices and retail, Noida's Sector 18 and the Yamuna Expressway belt for retail and logistics, and the NH-48/NH-8 corridors for industrial and warehousing. The 'best' location depends on your asset class and target tenants; we shortlist based on current demand, rental trends, and absorption data rather than hearsay.",
       },
     ],
     ctaLabel: "Discuss Your Commercial Requirement",
@@ -210,7 +210,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "What is the typical budget for a luxury property in Delhi NCR?",
-        a: "Luxury in Delhi NCR generally starts around ₹2–3 crore and can range well above ₹20 crore for penthouses, farmhouses, and branded residences. The exact threshold depends on location and asset type — a premium apartment on Golf Course Road, a duplex in DLF, or an independent floor in Vasant Kunj each sit at different price points, and we curate accordingly.",
+        a: "Luxury in Delhi NCR generally starts around ₹2–3 crore and can range well above ₹20 crore for penthouses, farmhouses, and branded residences. The exact threshold depends on location and asset type; a premium apartment on Golf Course Road, a duplex in DLF, or an independent floor in Vasant Kunj each sit at different price points, and we curate accordingly.",
       },
       {
         q: "Do you have off-market or unlisted luxury properties?",
@@ -226,7 +226,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "Is there a fee to use the Luxury desk?",
-        a: "In most cases buyers are not charged a direct fee — Vedhara is compensated through the seller or developer side, disclosed on the specific listing. For highly bespoke engagements, such as portfolio acquisitions or complex off-market deals, a fixed advisory fee may apply and is always agreed in writing before work begins.",
+        a: "In most cases buyers are not charged a direct fee; Vedhara is compensated through the seller or developer side, disclosed on the specific listing. For highly bespoke engagements, such as portfolio acquisitions or complex off-market deals, a fixed advisory fee may apply and is always agreed in writing before work begins.",
       },
       {
         q: "What makes a property 'luxury' in Delhi NCR?",
@@ -260,7 +260,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "How is Vedhara different from a regular real estate agent or broker?",
-        a: "Unlike a broker who facilitates a one-time transaction, Vedhara provides ongoing operational management — tenant sourcing, lease administration, rent collection, maintenance coordination, and periodic reporting. We act as your long-term property operations partner, not a middleman.",
+        a: "Unlike a broker who facilitates a one-time transaction, Vedhara provides ongoing operational management; tenant sourcing, lease administration, rent collection, maintenance coordination, and periodic reporting. We act as your long-term property operations partner, not a middleman.",
       },
       {
         q: "What kind of reporting do property owners receive?",
@@ -268,7 +268,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "How does Vedhara screen potential tenants?",
-        a: "Our screening includes identity verification, employment and income checks, prior landlord references, credit history review, and rental track record assessment — all documented and shared with the owner before lease finalisation.",
+        a: "Our screening includes identity verification, employment and income checks, prior landlord references, credit history review, and rental track record assessment; all documented and shared with the owner before lease finalisation.",
       },
       {
         q: "What happens if a tenant damages the property or defaults on rent?",

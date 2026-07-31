@@ -126,7 +126,7 @@ export default function TeamPage() {
             {teamMembers.map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100}>
                 <div className="team-card" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",overflow:"hidden",transition:"all 0.4s var(--ease-out)" }}>
-                  {/* Full-width photo banner — like featured properties, taller for portrait */}
+                  {/* Full-width photo banner: like featured properties, taller for portrait */}
                   <div style={{ height:280,background:member.gradient,display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden" }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.08) 0%,transparent 60%)" }} />
                     <div style={{ width:130,height:130,borderRadius:14,background:"rgba(15,30,56,0.35)",border:"2px solid rgba(255,255,255,0.25)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)",position:"relative",zIndex:1,boxShadow:"0 12px 36px rgba(0,0,0,0.2)" }}>

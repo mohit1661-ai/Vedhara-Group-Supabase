@@ -1,6 +1,6 @@
 /**
  * /api/health
- * Simple uptime check — useful for monitoring services.
+ * Simple uptime check: useful for monitoring services.
  */
 import { NextResponse } from "next/server";
 export async function GET() {
