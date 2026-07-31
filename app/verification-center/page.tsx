@@ -229,10 +229,7 @@ export default function VerificationCenterPage() {
           max-width: calc(50% - 12px) !important;
           width: 100% !important;
         }
-        .d-line{display:inline;}
-        @media(min-width:901px){
-          .d-line{display:block;}
-        }
+        .d-line{display:block;}
         @media(max-width:700px){
           .grid-2{grid-template-columns:1fr!important;}
           .vrf-last { display:block !important; }
