@@ -12,7 +12,7 @@ export default function Footer() {
       {/* Main */}
       <div style={{ maxWidth:1320,margin:"0 auto",padding:"56px 32px 32px" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1fr",gap:40,paddingBottom:48,borderBottom:"1px solid rgba(255,255,255,0.06)" }} className="footer-grid">
-          <div>
+          <div className="footer-brand">
             <div style={{ marginBottom:16 }}>
               <Image
                 src="/vedhara-logo-white.png"
@@ -67,9 +67,18 @@ export default function Footer() {
       <style>{`
         .footer-link-item{font-family:var(--t-body);font-size:12.5px;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;}
         .footer-link-item:hover{color:var(--gold-lt);}
-        @media(max-width:1100px){.footer-grid{grid-template-columns:1fr 1fr 1fr!important;}}
-        @media(max-width:720px){.footer-grid{grid-template-columns:1fr 1fr!important;}}
-        @media(max-width:480px){.footer-grid{grid-template-columns:1fr!important;}}
+        /* Desktop: 5-column brand + 4 link columns. Tablet/mobile: brand full-width on top, links in a balanced 2x2 */
+        @media(max-width:1100px){
+          .footer-grid{grid-template-columns:1fr 1fr!important;column-gap:32px;}
+          .footer-brand{grid-column:1 / -1!important;}
+        }
+        @media(max-width:480px){
+          .footer-grid{grid-template-columns:1fr 1fr!important;column-gap:24px;}
+          .footer-brand{grid-column:1 / -1!important;}
+        }
+        @media(max-width:360px){
+          .footer-grid{grid-template-columns:1fr!important;}
+        }
       `}</style>
     </footer>
   );
