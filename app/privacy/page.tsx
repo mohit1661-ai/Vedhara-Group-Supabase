@@ -1,27 +1,117 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import JsonLd from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = { title:"Privacy Policy | Vedhara Group", description:"Vedhara Group privacy policy, how we collect, use, and protect your personal information.", alternates:{ canonical:"https://www.vedharagroup.com/privacy" } };
+export const metadata: Metadata = {
+  title:"Privacy Policy | Vedhara Group | How We Collect, Use & Protect Your Data",
+  description:"Vedhara Group privacy policy: how we collect, use, store, and protect your personal data across Delhi NCR real estate advisory, brokerage, and NRI services. We never sell your data. Full user rights explained.",
+  alternates:{ canonical:"https://www.vedharagroup.com/privacy" },
+};
 
 const sections = [
-  ["Information We Collect","We collect information you provide directly (name, phone, email, enquiry details) and standard analytics data. We do not sell your personal information to third parties. In some cases, we may collect property-related documents when you request specific advisory services."],
-  ["How We Use It","We use your contact information to respond to consultation requests and provide the service you have requested. Analytics data is used to improve the website experience. We may use your contact details to send service-related communications and, with your consent, periodic market insights such as the Ground Report."],
-  ["Data Storage","Contact form submissions are stored securely on encrypted servers. We retain enquiry data for a maximum of 2 years or until you request deletion. Transaction-related records may be retained longer to comply with legal and regulatory obligations."],
-  ["Third-Party Sharing","We do not sell, rent, or trade your personal data. We may share data with service providers (e.g., CRM, email delivery) who process data on our behalf under strict confidentiality agreements. We do not share data with developers or third-party marketers without your explicit consent."],
-  ["Your Rights","You may request access to, correction of, or deletion of your personal data at any time by emailing contact@vedharagroup.com. You may also withdraw consent for marketing communications at any time."],
-  ["Contact","For privacy-related queries or data requests: contact@vedharagroup.com or +91 98106 47063."],
+  {
+    id:"collect",
+    title:"Information We Collect",
+    body:"We collect only the information needed to respond to your enquiries and deliver our advisory, brokerage, and NRI services. We never sell your personal data to third parties.",
+    bullets:[
+      "Information you provide directly, such as your name, phone number, email address, budget, and property preferences when you submit a consultation or contact request.",
+      "Analytics and technical data, including pages visited, device type, browser, referral source, and approximate location, used to improve the website experience.",
+      "Property-related documents and preferences when you engage us for specific services, such as NRI purchase support or portfolio review.",
+      "Records of communication, including calls, emails, and WhatsApp conversations, so we can maintain an accurate service history.",
+    ],
+  },
+  {
+    id:"use",
+    title:"How We Use Your Information",
+    body:"Every use of your data is tied to delivering a service you asked for or complying with the law. We do not repurpose your information for unrelated marketing without your consent.",
+    bullets:[
+      "Responding to consultation requests, enquiries, and service follow-ups.",
+      "Delivering advisory, brokerage, rental, and property-management services you request.",
+      "Improving the website through aggregated analytics and user behaviour insights.",
+      "Sending service-related communications and, with your consent, periodic market insights such as the Ground Report.",
+      "Meeting legal, regulatory, and fraud-prevention obligations.",
+    ],
+  },
+  {
+    id:"storage",
+    title:"Data Storage & Security",
+    body:"Your data is stored on encrypted servers with access restricted to authorised team members who need it to serve you. We apply industry-standard safeguards to protect your information.",
+    bullets:[
+      "Contact-form and enquiry data is retained for a maximum of two years, or until you request deletion.",
+      "Transaction-related records may be retained longer to comply with legal and regulatory obligations.",
+      "Access to personal data is limited to staff handling your engagement, under confidentiality commitments.",
+    ],
+  },
+  {
+    id:"sharing",
+    title:"Third-Party Sharing",
+    body:"We share your data only where necessary to deliver our services or comply with the law. We never sell, rent, or trade personal information.",
+    bullets:[
+      "Service providers such as CRM, email-delivery, and analytics platforms process data on our behalf under strict confidentiality agreements.",
+      "We do not share data with developers, builders, or third-party marketers without your explicit consent.",
+      "We may disclose information where required by law, regulation, or legal process.",
+    ],
+  },
+  {
+    id:"rights",
+    title:"Your Rights & Choices",
+    body:"You remain in control of your personal data. Contact us at any time to exercise your rights, and we will respond promptly.",
+    bullets:[
+      "Request access to the personal data we hold about you.",
+      "Request correction of inaccurate or incomplete information.",
+      "Request deletion of your data, subject to legal retention obligations.",
+      "Withdraw consent for marketing communications at any time.",
+    ],
+  },
+  {
+    id:"contact",
+    title:"Contact & Data Requests",
+    body:"For any privacy-related query, data request, or concern, reach out to our team and we will respond within a reasonable time.",
+    bullets:[
+      "Email: contact@vedharagroup.com",
+      "Phone and WhatsApp: +91 98106 47063",
+      "Office: Vedhara Group, Delhi NCR, India",
+    ],
+  },
 ];
+
+const faqs = [
+  { q:"Does Vedhara Group sell my personal data?", a:"No. Vedhara Group does not sell, rent, or trade personal information to third parties. Data is shared only with service providers who process it on our behalf under confidentiality agreements, or where required by law." },
+  { q:"How long does Vedhara keep my information?", a:"Enquiry and contact-form data is retained for a maximum of two years, or until you request deletion. Transaction-related records may be kept longer to comply with legal and regulatory obligations." },
+  { q:"Can I see what data Vedhara holds about me?", a:"Yes. You may request a copy of the personal data we hold by emailing contact@vedharagroup.com. We will respond promptly and, where required, correct or delete the data." },
+  { q:"How do I opt out of marketing communications?", a:"You can withdraw consent for marketing communications at any time by replying to any message, using the unsubscribe link, or emailing contact@vedharagroup.com. Service-related communications will still be sent where required." },
+];
+
+const schema = {
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  name:metadata.title,
+  description:metadata.description,
+  publisher:{ "@type":"Organization", name:"Vedhara Group" },
+  inLanguage:"en",
+  dateModified:"2026-07-31",
+};
 
 export default function PrivacyPage() {
   return (
     <>
+      <JsonLd data={schema} />
       <VideoHeroSection>
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
-        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5vw,56px)",color:"var(--light)",lineHeight:1.1,marginBottom:14 }}>Privacy Policy</h1>
-        <p className="body-sm" style={{ color:"rgba(252,250,244,0.35)" }}>Last updated: July 2026</p>
+        <p className="eyebrow" style={{ marginBottom:18 }}>Legal &amp; Compliance</p>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,4.5vw,52px)",color:"var(--light)",lineHeight:1.12,maxWidth:880,margin:"0 auto 20px" }}>
+          Privacy Policy
+        </h1>
+        <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:10,flexWrap:"wrap",marginBottom:16 }}>
+          <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(212,168,67,0.15)",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.4)" }}>Last Updated · July 2026</span>
+          <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"4px 12px",borderRadius:20,background:"rgba(255,255,255,0.08)",color:"rgba(255,255,255,0.85)",border:"1px solid rgba(255,255,255,0.2)" }}>Applies to vedharagroup.com</span>
+        </div>
+        <p className="body-sm" style={{ color:"rgba(255,255,255,0.7)",margin:"0 auto",maxWidth:520 }}>
+          A plain-language explanation of what data we collect, why we collect it, and the rights you hold over it.
+        </p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}
@@ -30,33 +120,124 @@ export default function PrivacyPage() {
       </div>
 
       {/* Intro block */}
-      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 0" }}>
-        <div style={{ maxWidth:700,margin:"0 auto" }}>
+      <div style={{ background:"var(--cream)",textAlign:"center",padding:"48px 32px 48px" }}>
+        <div style={{ maxWidth:720,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Your Privacy Matters</p>
+            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Your Privacy Matters</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              How We Handle<br /><span style={{ color:"var(--gold-dk)" }}>Your Data</span>
+              How We Handle <span style={{ color:"#d4a843" }}>Your Data</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              Vedhara Group respects your privacy. This policy explains what information we collect, how we use it, and what rights you have over your data.
+              Vedhara Group respects your privacy. This policy explains what information we collect across our website and advisory services, how we use it, how we protect it, and the rights you hold over your personal data. Wherever you are in the world, we are committed to handling your information transparently and securely.
             </p>
           </ScrollReveal>
         </div>
       </div>
 
-      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:760,margin:"0 auto" }}>
-          {sections.map(([t,b],i)=>(
-            <ScrollReveal key={t} delay={i*60}>
-              <div style={{ marginBottom:36,paddingBottom:36,borderBottom:"1px solid rgba(42,45,53,0.08)" }}>
-                <h2 className="heading-md" style={{ color:"var(--gold-dk)",marginBottom:12 }}>{t}</h2>
-                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8 }}>{b}</p>
+      {/* What this policy covers – vibrant cream cards on navy */}
+      <section style={{ background:"var(--navy)",padding:"56px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:40 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>What This Policy Covers</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
+                Six Areas,<br /><span style={{ color:"var(--gold-lt)" }}>Explained Transparently</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:620,margin:"0 auto" }}>
+                Each section below sets out exactly how your information is handled. Tap a card to jump straight to that section.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="grid-3">
+            {sections.map((sec,si)=>(
+              <ScrollReveal key={sec.id} delay={si*70} style={{ display:"flex" }}>
+                <a href={`#${sec.id}`} style={{ textDecoration:"none",display:"flex",flex:1 }}>
+                  <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",flexDirection:"column",boxShadow:"0 8px 24px rgba(0,0,0,0.15)",cursor:"pointer" }}>
+                    <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))",flexShrink:0 }} />
+                    <div style={{ padding:"24px 20px 24px",flex:1,display:"flex",flexDirection:"column",textAlign:"center",alignItems:"center" }}>
+                      <div style={{ width:40,height:40,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:12,flexShrink:0 }}>
+                        <span style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)" }}>{si+1}</span>
+                      </div>
+                      <h3 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:400,fontSize:17,color:"var(--navy)",lineHeight:1.35 }}>{sec.title}</h3>
+                    </div>
+                  </div>
+                </a>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed sections */}
+      <section style={{ background:"var(--cream)",padding:"64px 32px" }}>
+        <div style={{ maxWidth:820,margin:"0 auto" }}>
+          {sections.map((sec,si)=>(
+            <ScrollReveal key={sec.id} delay={si*40}>
+              <div id={sec.id} style={{ marginBottom:56,scrollMarginTop:120 }}>
+                <div style={{ display:"flex",alignItems:"center",gap:14,marginBottom:22 }}>
+                  <div style={{ width:34,height:34,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0 }}>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)" }}>{si+1}</span>
+                  </div>
+                  <h2 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(24px,3vw,34px)",color:"var(--navy)",lineHeight:1.2,margin:0 }}>
+                    {sec.title}
+                  </h2>
+                </div>
+                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.9,fontSize:15,marginBottom:18 }}>{sec.body}</p>
+                <div className="gold-frame-card gfc-cream" style={{ padding:"26px 28px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
+                  <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:14 }}>In Plain Terms</p>
+                  {sec.bullets.map((item,bi)=>(
+                    <div key={bi} style={{ display:"flex",alignItems:"flex-start",gap:12,marginBottom:10 }}>
+                      <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:14,lineHeight:1 }}>◆</span>
+                      <p className="body-md" style={{ color:"var(--ink)",lineHeight:1.7,margin:0 }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </ScrollReveal>
           ))}
         </div>
       </section>
+
+      {/* Our commitment – vibrant cream ✓ cards on navy */}
+      <section style={{ background:"var(--navy)",padding:"56px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-8%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1100,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:40 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>Our Commitment</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
+                What We <span style={{ color:"var(--gold-lt)" }}>Promise You</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:600,margin:"0 auto" }}>
+                Four commitments that guide every decision we make with your data.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:20 }} className="grid-2">
+            {[
+              "We never sell your personal information to third parties.",
+              "We only collect data needed to serve you or comply with the law.",
+              "We protect your data with encryption and restricted access.",
+              "You can access, correct, or delete your data whenever you choose.",
+            ].map((item,ti)=>(
+              <ScrollReveal key={ti} delay={ti*70} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",alignItems:"center",gap:14,padding:"18px 20px",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>
+                  <div style={{ width:38,height:38,borderRadius:"50%",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0 }}>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)" }}>✓</span>
+                  </div>
+                  <p style={{ fontFamily:"var(--t-head)",fontSize:12.5,fontWeight:600,color:"var(--navy)",lineHeight:1.5,margin:0 }}>{item}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQSection title="Privacy Policy, FAQ" faqs={faqs} dark={false} decor />
 
       <CTASection />
     </>
