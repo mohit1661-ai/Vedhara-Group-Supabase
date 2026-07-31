@@ -4,8 +4,8 @@ export const servicePages: Record<string, ServicePageContent> = {
   buy: {
     slug: "buy",
     eyebrow: "Buy With Confidence",
-    h1: "Browse Verified Properties",
-    h1Accent: "Independent Advice",
+    h1: "Buy Verified Property",
+    h1Accent: "in Delhi NCR",
     intro:
       "Trust our expert guidance through verified listings, from initial shortlisting to final paperwork, with your interests always first.",
     included: [
@@ -36,8 +36,8 @@ export const servicePages: Record<string, ServicePageContent> = {
   sell: {
     slug: "sell",
     eyebrow: "Sell Strategically",
-    h1: "Sell at What Your Property",
-    h1Accent: "Is Actually Worth",
+    h1: "Sell Property in Delhi NCR,",
+    h1Accent: "at What It's Actually Worth",
     intro:
       "Most sellers either underprice out of urgency or overprice out of attachment. Vedhara helps you price, and sell, based on real market data.",
     included: [
@@ -67,8 +67,8 @@ export const servicePages: Record<string, ServicePageContent> = {
   rent: {
     slug: "rent",
     eyebrow: "Rent & Lease Advisory",
-    h1: "Renting, Done",
-    h1Accent: "The Transparent Way",
+    h1: "Rent Property in Delhi NCR,",
+    h1Accent: "Done The Transparent Way",
     intro:
       "Whether you're a tenant searching for the right home or a landlord seeking a reliable tenant, Vedhara ensures the process is transparent and fair for both sides.",
     includedTitle: "For Tenants",
@@ -238,8 +238,8 @@ export const servicePages: Record<string, ServicePageContent> = {
   "property-management": {
     slug: "property-management",
     eyebrow: "Property Management",
-    h1: "Your Property",
-    h1Accent: "Managed Remotely",
+    h1: "Property Management Services,",
+    h1Accent: "Your Property, Managed Remotely",
     intro:
       "For owners who don't want to chase tenants, coordinate repairs, or track rent, Vedhara handles the operational side of ownership.",
     included: [

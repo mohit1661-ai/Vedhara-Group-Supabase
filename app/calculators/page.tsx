@@ -181,7 +181,7 @@ export default function CalculatorsPage() {
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Free Tools</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-            Four Free Calculators,<br /><span style={{ color:"var(--gold-lt)" }}>No Sign-Up, No Phone Number</span>
+            Four Free Property Calculators,<br /><span style={{ color:"var(--gold-lt)" }}>No Sign-Up, No Phone Number</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>
             Every property decision in Delhi NCR comes down to numbers. These four tools are free, instant, and available without sharing your contact details. Run the numbers first. Then talk to an advisor.

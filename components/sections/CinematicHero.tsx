@@ -286,7 +286,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             </div>
 
             <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"var(--light)",marginBottom:28,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(36px)",transition:"all 0.8s ease 0.3s" }}>
-              Property Decisions<br />in Delhi NCR,<br /><em className="gold-shimmer" style={{ fontSize:"inherit",fontStyle:"italic" }}>Backed by Verification.</em>
+              Real Estate Advisory<br />in Delhi NCR,<br /><em className="gold-shimmer" style={{ fontSize:"inherit",fontStyle:"italic" }}>Backed by Verification.</em>
             </h1>
 
             {/* Exact sub-headline from Word doc */}

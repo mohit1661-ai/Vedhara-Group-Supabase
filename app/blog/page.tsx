@@ -21,7 +21,7 @@ export default function BlogPage() {
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Blog</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-          Delhi NCR Property<br /><span style={{ color:"var(--gold-lt)" }}>Insights & Guides</span>
+          Delhi NCR Real Estate Blog,<br /><span style={{ color:"var(--gold-lt)" }}>Insights & Guides</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Research-backed articles on market trends, RERA, NRI investment, rental yields, and home buying across Delhi NCR.</p>
       </VideoHeroSection>

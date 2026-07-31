@@ -99,8 +99,8 @@ export default function TeamPage() {
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Leadership</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"var(--light)",lineHeight:1.02,marginBottom:24 }}>
-          The People Behind<br />
-          <span style={{ color:"var(--gold-lt)" }}>Your Property Decisions.</span>
+          The Real Estate Advisory Team<br />
+          <span style={{ color:"var(--gold-lt)" }}>Behind Your Property Decisions.</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 32px" }}>
           Every client at Vedhara Group works with a named senior advisor, not a rotating team. Meet the leadership that sets the standard.
