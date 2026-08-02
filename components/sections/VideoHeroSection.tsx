@@ -216,6 +216,15 @@ export default function VideoHeroSection({
           willChange: "transform",
         }}
       >
+        {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
+        <img
+          src={poster}
+          alt=""
+          aria-hidden
+          loading="eager"
+          decoding="async"
+          className="video-bg"
+        />
         <video
           ref={videoRef}
           autoPlay

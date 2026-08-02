@@ -169,6 +169,15 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           willChange: "transform",
         }}
       >
+        {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
+        <img
+          src="/hero-poster.jpg"
+          alt=""
+          aria-hidden
+          loading="eager"
+          decoding="async"
+          className="video-bg"
+        />
         <video
           ref={videoRef}
           autoPlay
