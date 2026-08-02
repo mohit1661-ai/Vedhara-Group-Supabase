@@ -7,7 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 
 export const metadata: Metadata = {
   title:"Our Team | Real Estate Advisory Leadership",
-  description:"Meet the leadership behind Vedhara Group: D.R Sharma (Founder & CEO), Mohit Sharma (MD), Kusum Sharma and Bharat (Director).",
+  description:"Meet Vedhara Group's leadership, serving Delhi NCR & North India: D.R Sharma (Founder & CEO), Mohit Sharma (MD), Kusum Sharma and Bharat (Director).",
   alternates:{ canonical:"https://www.vedharagroup.com/team" },
 };
 
