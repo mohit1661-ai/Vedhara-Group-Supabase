@@ -7,7 +7,7 @@ import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title:"Privacy Policy | Data Collection & Protection",
-  description:"How Vedhara Group collects, uses and protects your data across Delhi NCR real estate advisory and NRI services. We never sell your data.",
+  description:"How Vedhara Group collects, uses and protects your data across North India real estate advisory and NRI services. We never sell your data.",
   alternates:{ canonical:"https://www.vedharagroup.com/privacy" },
 };
 

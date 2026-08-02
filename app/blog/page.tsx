@@ -5,7 +5,7 @@ import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { blogPosts } from "@/lib/data/blogPosts";
 
-export const metadata: Metadata = { title:"Delhi NCR Real Estate Blog", description:"Expert insights on the Delhi NCR property market: price trends, RERA updates, NRI investing, stamp duty, rental yields and home loans.", alternates:{ canonical:"https://www.vedharagroup.com/blog" } };
+export const metadata: Metadata = { title:"Delhi NCR Real Estate Blog", description:"Expert insights on the North India property market: Delhi NCR, Gurugram, Faridabad, Manesar & Chandigarh price trends, RERA, NRI investing and home loans.", alternates:{ canonical:"https://www.vedharagroup.com/blog" } };
 
 const reasons = [
   { title:"Written by Advisors, Not by Writers", desc:"Every article is researched and written by Vedhara's advisory team from real client transactions and daily ground-level exposure across Delhi NCR. We never outsource content or repurpose developer press releases." },
@@ -23,7 +23,7 @@ export default function BlogPage() {
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Delhi NCR Real Estate Blog,<br /><span style={{ color:"var(--gold-lt)" }}>Insights & Guides</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Research-backed articles on market trends, RERA, NRI investment, rental yields, and home buying across Delhi NCR.</p>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Research-backed articles on market trends, RERA, NRI investment, rental yields, and home buying across Delhi NCR and North India.</p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}
@@ -41,7 +41,7 @@ export default function BlogPage() {
               Expert Knowledge for<br /><span style={{ color:"#d4a843" }}>Smarter Property Decisions</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              From market trends to legal guides, our articles are written by Vedhara's advisory team based on real transaction data and ground-level experience across Delhi NCR.
+              From market trends to legal guides, our articles are written by Vedhara's advisory team based on real transaction data and ground-level experience across Delhi NCR, Faridabad, Manesar and Chandigarh.
             </p>
           </ScrollReveal>
         </div>

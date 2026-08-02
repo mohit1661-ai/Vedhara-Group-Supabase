@@ -8,7 +8,7 @@ import CustomCursor from "@/components/ui/CustomCursor";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedharagroup.com"),
   title: { default: "Vedhara Group | Verified Property Advisory in Delhi NCR, Buy, Sell, Invest", template: "%s | Vedhara Group" },
-  description: "Delhi NCR's independent real estate advisory firm. Verified listings, transparent fees, and free investment tools across Gurugram, Noida, Faridabad & Ghaziabad.",
+  description: "North India's independent real estate advisory firm. Verified listings, transparent fees and free tools across Delhi NCR, Faridabad, Manesar & Chandigarh.",
   openGraph: { type:"website", locale:"en_IN", siteName:"Vedhara Group", url:"https://www.vedharagroup.com", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group, Independent Real Estate Advisory Delhi NCR" }] },
   twitter: { card:"summary_large_image", images:["/og-default.jpg"] },
   robots: { index:true, follow:true, googleBot:{ index:true, follow:true, "max-image-preview":"large", "max-snippet":-1 } },
@@ -31,12 +31,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           "@id":"https://www.vedharagroup.com/#organization",
           name:"Vedhara Group", legalName:"Vedhara Group Pvt. Ltd.",
           url:"https://www.vedharagroup.com",
-          description:"Vedhara Group is an independent real estate advisory and brokerage firm offering verified developer-partner listings and investment advisory across Delhi NCR.",
+          description:"Vedhara Group is an independent real estate advisory and brokerage firm offering verified developer-partner listings and investment advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India.",
           slogan:"Wisdom Rooted. Futures Built.",
           telephone:"+91-98106-47063", email:"contact@vedharagroup.com",
           address:{ "@type":"PostalAddress", addressLocality:"Delhi", addressRegion:"Delhi", addressCountry:"IN" },
-          areaServed:[{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Ghaziabad"},{name:"Greater Noida"},{name:"Chandigarh"},{name:"Mohali"},{name:"Panchkula"},{name:"Zirakpur"},{name:"Kharar"}],
-          knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","RERA Verified Property Listings","NRI Property Investment India","Chandigarh Tricity Real Estate","Property Advisory Mohali Panchkula","GMADA HRERA Punjab RERA Due Diligence"],
+          areaServed:[{name:"Delhi NCR"},{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Manesar"},{name:"Ghaziabad"},{name:"Greater Noida"},{name:"Chandigarh"},{name:"Mohali"},{name:"Panchkula"},{name:"Zirakpur"},{name:"Kharar"},{name:"North India"}],
+          knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","Property Advisory Faridabad","Commercial Property Manesar","Real Estate North India","Chandigarh Tricity Real Estate","Property Advisory Mohali Panchkula","GMADA HRERA Punjab RERA Due Diligence","RERA Verified Property Listings","NRI Property Investment India"],
           sameAs:["https://www.linkedin.com/company/vedhara-group","https://www.instagram.com/vedharagroup"],
         }} />
         <CustomCursor />

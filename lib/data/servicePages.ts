@@ -7,7 +7,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Buy Verified Property",
     h1Accent: "in Delhi NCR",
     intro:
-      "Trust our expert guidance through verified listings, from initial shortlisting to final paperwork, with your interests always first.",
+      "Trust our expert guidance through verified residential and commercial property across Delhi NCR, Faridabad, Manesar and Chandigarh, from initial shortlisting to final paperwork, with your interests always first.",
     included: [
       "Goal-mapping session to understand budget, location priorities, and long-term plans",
       "Curated shortlist based on the Vedhara Verification Framework, not a flood of irrelevant listings",
@@ -39,7 +39,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Sell Property in Delhi NCR,",
     h1Accent: "at What It's Actually Worth",
     intro:
-      "Most sellers either underprice out of urgency or overprice out of attachment. Vedhara helps you price, and sell, based on real market data.",
+      "Most sellers either underprice out of urgency or overprice out of attachment. Vedhara helps you price, and sell, property across Delhi NCR, Faridabad, Manesar and Chandigarh based on real market data.",
     included: [
       "Comparative market analysis to determine a realistic, defensible asking price",
       "Access to Vedhara's network of pre-qualified buyers and investors",
@@ -70,7 +70,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Rent Property in Delhi NCR,",
     h1Accent: "Done The Transparent Way",
     intro:
-      "Whether you're a tenant searching for the right home or a landlord seeking a reliable tenant, Vedhara ensures the process is transparent and fair for both sides.",
+      "Whether you're a tenant searching for the right home or a landlord seeking a reliable tenant across Delhi NCR, Faridabad, Manesar or Chandigarh, Vedhara ensures the process is transparent and fair for both sides.",
     includedTitle: "For Tenants",
     included: [
       "Verified listings matched to your budget, location, and lifestyle needs",
@@ -121,7 +121,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Commercial Real Estate,",
     h1Accent: "Backed by Data",
     intro:
-      "Retail footfall, office accessibility, mixed-use zoning, commercial real estate has its own rules. Vedhara's advisory is built around them.",
+      "Retail footfall, office accessibility, mixed-use zoning, commercial real estate has its own rules. Vedhara's advisory across Delhi NCR, Faridabad and Manesar is built around them.",
     included: [
       "Site selection based on footfall, accessibility, and zoning analysis",
       "Valuation and rent benchmarking against comparable commercial spaces",
@@ -180,7 +180,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
       {
         q: "Which are the best commercial micro-markets in Delhi NCR right now?",
-        a: "Gurugram's Golf Course Road and MG Road corridors remain strong for offices and retail, Noida's Sector 18 and the Yamuna Expressway belt for retail and logistics, and the NH-48/NH-8 corridors for industrial and warehousing. The 'best' location depends on your asset class and target tenants; we shortlist based on current demand, rental trends, and absorption data rather than hearsay.",
+        a: "Gurugram's Golf Course Road and MG Road corridors remain strong for offices and retail, Noida's Sector 18 and the Yamuna Expressway belt for retail and logistics, and the NH-48/NH-8 corridors including Manesar and Faridabad for industrial and warehousing. The 'best' location depends on your asset class and target tenants; we shortlist based on current demand, rental trends, and absorption data rather than hearsay.",
       },
     ],
     ctaLabel: "Discuss Your Commercial Requirement",
@@ -191,7 +191,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Luxury Properties",
     h1Accent: "Premium Advisory",
     intro:
-      "Luxury real estate demands discretion, speed, and an advisor who understands what premium buyers actually value. Vedhara's luxury desk is built for exactly that.",
+      "Luxury real estate demands discretion, speed, and an advisor who understands what premium buyers actually value. Vedhara's luxury desk across Delhi NCR, Chandigarh Tricity and North India is built for exactly that.",
     included: [
       "Private, curated shortlist of premium residences from verified developers",
       "Discreet, scheduling-flexible site visits",
@@ -241,7 +241,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     h1: "Property Management Services,",
     h1Accent: "Your Property, Managed Remotely",
     intro:
-      "For owners who don't want to chase tenants, coordinate repairs, or track rent, Vedhara handles the operational side of ownership.",
+      "For owners who don't want to chase tenants, coordinate repairs, or track rent across Delhi NCR, Faridabad, Chandigarh or North India, Vedhara handles the operational side of ownership.",
     included: [
       "Tenant sourcing, screening, and lease management",
       "Rent collection and timely owner payouts",

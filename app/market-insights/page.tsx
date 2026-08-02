@@ -5,7 +5,7 @@ import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights", description:"Independent real estate market analysis for Delhi NCR: price trends, locality demand and investment hotspots from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/market-insights" } };
+export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights", description:"Independent real estate market analysis for Delhi NCR, Faridabad, Manesar, Chandigarh & North India: price trends, locality demand and investment hotspots.", alternates:{ canonical:"https://www.vedharagroup.com/market-insights" } };
 
 const themes = [
   { title:"Delhi NCR Premium Segment", body:"Post-2022 price appreciation has been significant across Gurugram and Noida Expressway premium corridors. The ₹1.5Cr–3Cr segment remains the most active nationally, driven by end-user demand from corporate employment growth." },
@@ -57,7 +57,7 @@ const whoForItems = [
 const marketFaqs: FAQItem[] = [
   {
     q:"How does Vedhara gather its market intelligence?",
-    a:"Vedhara's market insights are compiled from verified transaction data, RERA filings, developer disclosures, and our own advisory team's ground-level assessments across Delhi NCR micro-markets. We do not rely on aggregated portal data alone.",
+    a:"Vedhara's market insights are compiled from verified transaction data, RERA filings, developer disclosures, and our own advisory team's ground-level assessments across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. We do not rely on aggregated portal data alone.",
   },
   {
     q:"Is the Ground Report available for free?",
@@ -103,7 +103,7 @@ export default function MarketInsightsPage() {
                 Data-Driven Perspective<br /><span style={{ color:"var(--gold-dk)" }}>on Delhi NCR Real Estate</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              Vedhara's research team tracks price movements, infrastructure developments, and demand patterns across Delhi NCR's micro-markets. Our insights are grounded in verified transaction data and ground-level assessments, not aggregated portal listings.
+              Vedhara's research team tracks price movements, infrastructure developments, and demand patterns across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. Our insights are grounded in verified transaction data and ground-level assessments, not aggregated portal listings.
             </p>
           </ScrollReveal>
         </div>

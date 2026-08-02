@@ -7,7 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Buy Verified Property in Delhi NCR", description:"Buy verified residential and commercial property in Delhi, Gurugram, Noida, Faridabad and Ghaziabad with RERA-verified listings.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
+export const metadata: Metadata = { title:"Buy Verified Property in Delhi NCR", description:"Buy verified residential and commercial property in Delhi NCR, Faridabad, Manesar, Chandigarh and across North India with RERA-verified listings.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
 
 interface PropertyListing {
   id:string;
@@ -176,7 +176,7 @@ export default function BuyPage() {
           <ScrollReveal delay={120}>
             <div style={{ textAlign:"center",marginTop:40 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Don&apos;t see what you&apos;re looking for? Our full inventory spans 500+ verified listings across Delhi NCR.
+                Don&apos;t see what you&apos;re looking for? Our full inventory spans 500+ verified listings across Delhi NCR, Faridabad, Manesar, Chandigarh and North India.
               </p>
               <Link href="/contact" className="btn btn-primary">
                 Talk to an Advisor →

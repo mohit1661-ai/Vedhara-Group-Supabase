@@ -5,7 +5,7 @@ import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Client Success Stories | Delhi NCR", description:"Real client outcomes from Vedhara Group's independent real estate advisory across Delhi NCR, from first-time buyers in Noida to NRI investors in Gurugram.", alternates:{ canonical:"https://www.vedharagroup.com/success-stories" } };
+export const metadata: Metadata = { title:"Client Success Stories | Delhi NCR", description:"Real client outcomes from Vedhara Group's independent advisory across Delhi NCR, Faridabad, Chandigarh & North India, from first-time buyers to NRI investors.", alternates:{ canonical:"https://www.vedharagroup.com/success-stories" } };
 
 const stories = [
   {
@@ -129,7 +129,7 @@ export default function SuccessStoriesPage() {
                 <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Do</p>
                 <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What We Do</h2>
                 <p className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.8,marginBottom:24 }}>
-                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR. We do not sell developer inventory, earn commissions, or push pre-launch projects. Our revenue comes entirely from client-paid advisory fees, which means every recommendation is aligned with your interest, not a developer&apos;s margin.
+                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR, Faridabad, Manesar and North India. We do not sell developer inventory, earn commissions, or push pre-launch projects. Our revenue comes entirely from client-paid advisory fees, which means every recommendation is aligned with your interest, not a developer&apos;s margin.
                 </p>
                 {["Property search & shortlisting across all NCR micro-markets","Price negotiation, legal due diligence & transaction management","NRI remote advisory with full power-of-attorney coordination","Portfolio strategy, rental analysis & exit planning"].map(item=>(
                   <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>

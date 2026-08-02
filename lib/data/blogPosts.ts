@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     readTime:"8 min read",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
     metaTitle:"Delhi NCR Property Price Trends 2026 | Gurugram & Noida",
-    metaDescription:"Delhi NCR property price trends 2026 covering Gurugram, Noida, Greater Noida, Faridabad and Delhi. Data-backed insights on where prices are moving.",
+    metaDescription:"Delhi NCR property price trends 2026 covering Gurugram, Noida, Faridabad, Manesar, Delhi and North India. Data-backed insights on where prices are moving.",
     keywords:["Delhi NCR property prices","Gurugram real estate trends","Noida property rates 2026","Greater Noida investment","Dwarka Expressway property","where to invest in Delhi NCR"],
     excerpt:"Detailed price-per-sqft analysis across Gurugram, Noida, Faridabad, and Delhi micro-markets. Understand where prices are moving and why, with data-driven insights for buyers and investors across Delhi NCR.",
     intro:[
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     readTime:"10 min read",
     gradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#D4A843 100%)",
     metaTitle:"RERA Delhi NCR Guide 2026 | HRERA, UP RERA & Delhi RERA",
-    metaDescription:"RERA guide for Delhi NCR home buyers: HRERA Gurugram, UP RERA Noida and Delhi RERA registration, buyer protection and the complaint process.",
+    metaDescription:"RERA guide for North India home buyers: HRERA Gurugram, UP RERA Noida and Delhi RERA registration, buyer protection and the complaint process.",
     keywords:["RERA Delhi NCR","HRERA Gurugram","UP RERA Noida","Delhi RERA","RERA registration check","RERA complaint process","RERA act 2016 buyer protection"],
     excerpt:"Everything you need to know about RERA registration, buyer protection, project status verification, and complaint mechanisms across Haryana RERA, UP RERA, and Delhi RERA.",
     intro:[
@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     readTime:"12 min read",
     gradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#6a8aaa 100%)",
     metaTitle:"NRI Property Investment in Delhi NCR | FEMA & Repatriation",
-    metaDescription:"NRI property investment guide for Delhi NCR: FEMA compliance, NRI home loans, TDS on sale, repatriation and remote property management.",
+    metaDescription:"NRI property investment guide for North India: FEMA compliance, NRI home loans, TDS on sale, repatriation and remote property management.",
     keywords:["NRI property investment India","NRI home loan","FEMA rules property","TDS on NRI property sale","repatriation of sale proceeds","power of attorney NRI","NRI property tax India"],
     excerpt:"Complete guide for NRIs investing in Delhi NCR real estate from UAE, USA, UK, Canada, and Singapore. Covering FEMA compliance, TDS on sale, rental repatriation, and remote property management.",
     intro:[
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
     readTime:"7 min read",
     gradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
     metaTitle:"Stamp Duty Delhi NCR 2026 | Haryana, UP & Delhi Compared",
-    metaDescription:"Compare 2026 stamp duty and registration charges across Delhi, Gurugram, Noida and Faridabad, including women buyer concessions and circle rates.",
+    metaDescription:"Compare 2026 stamp duty and registration charges across Delhi, Gurugram, Noida, Faridabad and Chandigarh, including women buyer concessions and circle rates.",
     keywords:["stamp duty Delhi NCR 2026","stamp duty Haryana 2026","registration charges UP","stamp duty for women buyers","circle rate Delhi","property registration charges"],
     excerpt:"Compare stamp duty rates, registration charges, and total acquisition costs across Delhi, Gurugram (Haryana), Noida (UP), and Faridabad. Includes recent budget changes and concessions for women buyers.",
     intro:[
@@ -290,7 +290,7 @@ export const blogPosts: BlogPost[] = [
     readTime:"9 min read",
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#D4A843 100%)",
     metaTitle:"Rental Yields in Delhi NCR 2026 | Gurugram vs Noida",
-    metaDescription:"Data-backed 2026 comparison of gross and net rental yields in Gurugram, Noida and Faridabad for buy-to-let investors.",
+    metaDescription:"Data-backed 2026 comparison of gross and net rental yields in Gurugram, Noida, Faridabad and Chandigarh for buy-to-let investors.",
     keywords:["rental yield Gurugram","rental income Noida","rental yield Faridabad","buy to let India","property investment returns","rental yield calculation"],
     excerpt:"Data-backed comparison of gross and net rental yields across Delhi NCR's major micro-markets. Analysis of tenant demand, vacancy rates, and capital appreciation potential for buy-to-let investors.",
     intro:[
@@ -359,7 +359,7 @@ export const blogPosts: BlogPost[] = [
     readTime:"11 min read",
     gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
     metaTitle:"Home Loan Guide Delhi NCR 2026 | Rates, Eligibility & EMI",
-    metaDescription:"2026 home loan guide for Delhi NCR property: interest rates, eligibility, EMI calculation, and Section 24 and 80C tax benefits.",
+    metaDescription:"2026 home loan guide for Delhi NCR and North India property: interest rates, eligibility, EMI calculation, and Section 24 and 80C tax benefits.",
     keywords:["home loan interest rates 2026","home loan eligibility India","home loan tax benefit","Section 24","Section 80C","first-time home buyer India","EMI calculator"],
     excerpt:"Current home loan interest rates from top banks and HFCs for Delhi NCR property, eligibility criteria, EMI calculator guidance, Section 24 and Section 80C tax benefits, and tips for first-time buyers.",
     intro:[

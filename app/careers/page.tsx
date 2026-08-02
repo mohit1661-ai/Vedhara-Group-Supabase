@@ -5,7 +5,7 @@ import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Careers | Real Estate Advisory Jobs in Delhi NCR", description:"Join Vedhara Group's independent real estate advisory team in Delhi NCR. Open positions in advisory, research, NRI services, and property management.", alternates:{ canonical:"https://www.vedharagroup.com/careers" } };
+export const metadata: Metadata = { title:"Careers | Real Estate Advisory Jobs in Delhi NCR", description:"Join Vedhara Group's independent real estate advisory team across Delhi NCR & North India. Open roles in advisory, research, NRI and property management.", alternates:{ canonical:"https://www.vedharagroup.com/careers" } };
 
 const openRoles = [
   {
@@ -13,7 +13,7 @@ const openRoles = [
     location:"Gurugram",
     type:"Full-Time",
     dept:"Advisory",
-    desc:"Advise HNI and NRI clients on property acquisition across Delhi NCR. Manage end-to-end transaction lifecycle from shortlisting to registration.",
+    desc:"Advise HNI and NRI clients on property acquisition across Delhi NCR and North India. Manage end-to-end transaction lifecycle from shortlisting to registration.",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
   },
   {

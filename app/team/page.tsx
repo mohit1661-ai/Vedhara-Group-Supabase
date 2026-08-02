@@ -56,7 +56,7 @@ const teamMembers = [
     title:"Director – Developer & Strategic Partnerships",
     initials:"BH",
     gradient:"linear-gradient(135deg,#1a3a5c,#B8922A)",
-    description:"Bharat leads Vedhara Group's developer partnerships and strategic alliances across Delhi NCR. His deep relationships with leading developers, combined with a rigorous evaluation framework, ensure that only projects meeting Vedhara's five-point Verification Framework make it to the platform. He manages the entire partnership lifecycle from initial due diligence through ongoing compliance monitoring, giving clients the confidence that every listed project has been independently vetted before they ever see it.",
+    description:"Bharat leads Vedhara Group's developer partnerships and strategic alliances across Delhi NCR and North India. His deep relationships with leading developers, combined with a rigorous evaluation framework, ensure that only projects meeting Vedhara's five-point Verification Framework make it to the platform. He manages the entire partnership lifecycle from initial due diligence through ongoing compliance monitoring, giving clients the confidence that every listed project has been independently vetted before they ever see it.",
     philosophy:"A listing is only as good as the verification behind it. Our partners know that we hold every project to the same standard we promise our clients.",
     stats:[
       { num:"50+", label:"Developer Partners" },

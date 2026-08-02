@@ -5,7 +5,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import AnimatedStats from "@/components/sections/AnimatedStats";
 
-export const metadata: Metadata = { title:"Real Estate Case Studies | Delhi NCR", description:"Real Delhi NCR real estate case studies: NRI purchase, portfolio restructuring, corporate lease negotiation and first-time home buying.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
+export const metadata: Metadata = { title:"Real Estate Case Studies | Delhi NCR", description:"Real real estate case studies across Delhi NCR, Faridabad & Chandigarh: NRI purchase, portfolio restructuring, lease negotiation and first-time buying.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
 
 const cases = [
   {
@@ -91,7 +91,7 @@ export default function CaseStudiesPage() {
               Every Engagement Teaches Us<br /><span style={{ color:"#d4a843" }}>Something New</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:48 }}>
-              These case studies represent some of the more complex and rewarding advisory engagements we have handled across Gurugram, Noida, Faridabad, and the wider Delhi NCR region. Each one reflects our commitment to thoroughness, transparency, and client-first outcomes, whether we are guiding a first-time buyer, an NRI investor, or a corporate tenant, regardless of transaction size. Real client journeys, verified outcomes, and the measurable impact of independent advisory.
+              These case studies represent some of the more complex and rewarding advisory engagements we have handled across Gurugram, Noida, Faridabad, Manesar, Chandigarh and the wider North India region. Each one reflects our commitment to thoroughness, transparency, and client-first outcomes, whether we are guiding a first-time buyer, an NRI investor, or a corporate tenant, regardless of transaction size. Real client journeys, verified outcomes, and the measurable impact of independent advisory.
             </p>
           </ScrollReveal>
         </div>

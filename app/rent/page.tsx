@@ -7,7 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Rent Property in Delhi NCR | Verified Rentals", description:"Find verified rental properties in Delhi, Gurugram, Noida, Faridabad and Ghaziabad. Tenant advisory, landlord representation, and transparent lease terms.", alternates:{ canonical:"https://www.vedharagroup.com/rent" } };
+export const metadata: Metadata = { title:"Rent Property in Delhi NCR | Verified Rentals", description:"Find verified rental properties across Delhi NCR, Faridabad, Manesar and Chandigarh. Tenant advisory, landlord representation and transparent lease terms.", alternates:{ canonical:"https://www.vedharagroup.com/rent" } };
 
 interface RentalListing {
   id:string;
@@ -199,7 +199,7 @@ export default function RentPage() {
           <ScrollReveal delay={120}>
             <div style={{ textAlign:"center",marginTop:32 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Don&apos;t see what you&apos;re looking for? We have 80+ verified rental listings across Delhi NCR.
+                Don&apos;t see what you&apos;re looking for? We have 80+ verified rental listings across Delhi NCR, Faridabad, Manesar and Chandigarh.
               </p>
               <Link href="/contact?service=rent" className="btn btn-primary">
                 Get Rental Assistance →

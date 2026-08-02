@@ -4,7 +4,7 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"New Property Launches in Delhi NCR", description:"Upcoming and recently launched RERA-verified property projects across Gurugram, Noida, Faridabad, and Delhi from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
+export const metadata: Metadata = { title:"New Property Launches in Delhi NCR", description:"RERA-verified new property launches across Delhi NCR, Faridabad, Manesar, Chandigarh and North India from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
 
 interface LaunchProject {
   id:string;
@@ -172,7 +172,7 @@ export default function NewLaunchesPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
             Verified New Property Launches<br /><span style={{ color:"var(--gold-lt)" }}>Across Delhi NCR</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Every project listed passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Verified new projects across Delhi NCR, Faridabad, Manesar, Chandigarh and North India — every listing passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}

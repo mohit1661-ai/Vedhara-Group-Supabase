@@ -7,7 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR", description:"Independent commercial property advisory in Delhi NCR, office space leasing, retail site selection, industrial shed, and commercial property acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
+export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR", description:"Independent commercial property advisory in Delhi NCR, Faridabad & Manesar: office space leasing, retail site selection, industrial sheds and acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
 
 interface CommercialListing {
   id:string;
@@ -166,7 +166,7 @@ export default function CommercialPage() {
           <ScrollReveal delay={120}>
             <div style={{ textAlign:"center",marginTop:32 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Looking for something specific? We have 40+ commercial properties across Delhi NCR.
+                Looking for something specific? We have 40+ commercial properties across Delhi NCR, Faridabad and Manesar.
               </p>
               <Link href="/contact?service=commercial" className="btn btn-primary">
                 Discuss Your Commercial Requirement →

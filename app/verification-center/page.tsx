@@ -9,7 +9,7 @@ import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title:"Property Verification Center | How Vedhara Verifies",
-  description:"Vedhara Group's five-point property Verification Framework: RERA status, builder history, approvals, price fairness and document checks.",
+  description:"Vedhara's five-point property Verification Framework across Delhi NCR, Faridabad, Manesar, Chandigarh & North India: RERA status, approvals and fair pricing.",
   alternates:{ canonical:"https://www.vedharagroup.com/verification-center" },
 };
 
@@ -199,7 +199,7 @@ export default function VerificationCenterPage() {
                     A Verified badge on a Vedhara listing means the project passed all five checks at the time of publishing. It is a rigorous starting signal, not a substitute for independent legal due diligence before you sign any agreement.
                   </p>
                   <p className="body-sm" style={{ color:"var(--slate)",margin:0,lineHeight:1.75,borderTop:"1px solid rgba(42,45,53,0.06)",paddingTop:12 }}>
-                    We recommend every buyer engage their own property lawyer for final document review, and can provide referrals to trusted legal professionals in Delhi NCR.
+                    We recommend every buyer engage their own property lawyer for final document review, and can provide referrals to trusted legal professionals in Delhi NCR and North India.
                   </p>
                 </div>
               </div>

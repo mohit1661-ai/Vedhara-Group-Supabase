@@ -4,14 +4,14 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR", description:"Explore Vedhara Group's full range of property advisory services, buying, selling, renting, commercial, investment, luxury, and NRI services across Delhi NCR.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
+export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR", description:"Vedhara Group's full range of real estate advisory services across Delhi NCR, Faridabad, Manesar, Chandigarh & North India: buy, sell, rent, invest and NRI.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
 const services = [
   { icon:"B",title:"Buy Property",href:"/buy",desc:"Independent guidance through verified listings from shortlist to registration.",gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
   { icon:"S",title:"Sell Property",href:"/sell",desc:"Strategic pricing and qualified buyer access for fair-value sales.",gradient:"linear-gradient(135deg,#0F1E38,#2a4a6a)" },
   { icon:"R",title:"Rent Property",href:"/rent",desc:"Verified rentals with transparent lease terms for tenants and landlords.",gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
   { icon:"C",title:"Commercial Real Estate",href:"/commercial",desc:"Site selection and lease advisory for retail, office, and industrial spaces.",gradient:"linear-gradient(135deg,#1a1a2e,#D4A843)" },
   { icon:"L",title:"Luxury Properties",href:"/luxury",desc:"Curated premium residences with white-glove advisory service.",gradient:"linear-gradient(135deg,#0F1E38,#D4A843)" },
-  { icon:"N",title:"New Launches",href:"/new-launches",desc:"Verified upcoming developer projects across Delhi NCR.",gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+  { icon:"N",title:"New Launches",href:"/new-launches",desc:"Verified upcoming developer projects across Delhi NCR, Faridabad, Manesar and Chandigarh.",gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
   { icon:"I",title:"Investment Advisory",href:"/investment-advisory",desc:"Portfolio-level real estate strategy for long-term investors.",gradient:"linear-gradient(135deg,#0F1E38,#4a7a9f)" },
   { icon:"N",title:"NRI Services",href:"/nri-services",desc:"Remote-friendly advisory for Indian diaspora worldwide.",gradient:"linear-gradient(135deg,#0F1E38,#3a6a8f)" },
   { icon:"P",title:"Property Management",href:"/property-management",desc:"Tenant and maintenance management for property owners.",gradient:"linear-gradient(135deg,#0F1E38,#5a6070)" },

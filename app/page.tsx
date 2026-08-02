@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Vedhara Group | Verified Property Advisory in Delhi NCR",
-  description: "Delhi NCR's independent real estate advisory firm. Buy, sell, invest, or manage property across Gurugram, Noida, Faridabad & Ghaziabad with verified listings.",
+  description: "North India's independent real estate advisory firm. Buy, sell or invest across Delhi NCR, Faridabad, Manesar & Chandigarh with verified listings.",
   alternates: { canonical: "https://www.vedharagroup.com" },
 };
 
@@ -38,7 +38,7 @@ const tools = [
 /* Word doc FAQs, Page 1 */
 const homeFaqs = [
   { q:"Is Vedhara Group a property developer or builder?", a:"No. Vedhara Group is an independent real estate advisory and brokerage firm operating across Delhi NCR. We do not build, develop, or own properties. We represent buyers, sellers, tenants, investors, and NRIs independently, and list only verified projects from developer partners." },
-  { q:"Which areas of Delhi NCR does Vedhara Group cover?", a:"Vedhara Group covers property transactions across Delhi, Gurugram, Noida, Greater Noida, Faridabad, Ghaziabad, Sonipat, and surrounding NCR micro-markets. Contact us with your specific location requirement." },
+  { q:"Which areas of Delhi NCR does Vedhara Group cover?", a:"Vedhara Group covers property transactions across Delhi NCR, Gurugram, Noida, Greater Noida, Faridabad, Manesar, Ghaziabad, Sonipat, Chandigarh and across North India micro-markets. Contact us with your specific location requirement." },
   { q:"How does Vedhara verify the properties it lists?", a:"Every partner project passes five checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness benchmarked against government circle rates and registered transactions, and title document availability. Results are published on the listing page, not hidden in fine print." },
   { q:"Does Vedhara charge buyers a fee?", a:"In most cases, no direct fee is charged to buyers. Vedhara earns standard market brokerage commission paid by the developer or seller side, disclosed on every specific listing. For portfolio-level investment advisory, an optional flat retainer is available." },
   { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators: ROI & Rental Yield, EMI, Stamp Duty, and Affordability, are completely free and require no account, phone number, or email address to use." },

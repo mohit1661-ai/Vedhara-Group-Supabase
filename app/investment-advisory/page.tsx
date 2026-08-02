@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
   title:"Real Estate Investment Advisory in Delhi NCR",
-  description:"Build a high-yield real estate portfolio in Delhi NCR with rental yield analysis, locality selection and buy-to-invest strategy.",
+  description:"Build a high-yield real estate portfolio across Delhi NCR, Faridabad, Manesar, Chandigarh & North India with rental yield analysis and buy-to-invest strategy.",
   alternates:{ canonical:"https://www.vedharagroup.com/investment-advisory" },
 };
 
@@ -31,7 +31,7 @@ const corridors = [
 
 const faqs = [
   { q:"What rental yield can I expect from property investment in Delhi NCR?", a:"Gross rental yields in Delhi NCR typically range from 2.5% to 5% for residential property, depending on locality, unit size, and furnishing. Commercial property, retail and office, delivers 6–9% gross yields in established locations. Noida Expressway corridor and Gurugram Sohna Road are currently among the stronger residential yield markets in NCR." },
-  { q:"Is Delhi NCR real estate a good investment in 2025–26?", a:"Delhi NCR's residential market has seen sustained price appreciation since 2022, particularly in Gurugram, Noida Expressway, and premium Delhi micro-markets. Investment viability depends heavily on which micro-market, which project, and at what price, which is exactly what Vedhara's investment advisory is designed to assess independently." },
+  { q:"Is Delhi NCR real estate a good investment in 2025–26?", a:"Delhi NCR's residential market has seen sustained price appreciation since 2022, particularly in Gurugram, Noida Expressway, Faridabad, Manesar, and premium Delhi micro-markets, with Chandigarh Tricity and other North India markets gaining investor interest. Investment viability depends heavily on which micro-market, which project, and at what price, which is exactly what Vedhara's investment advisory is designed to assess independently." },
   { q:"What is the minimum capital needed to invest in Delhi NCR property?", a:"Entry-level investment properties (1BHK/2BHK in Greater Noida West, Ghaziabad, or Faridabad) start from approximately ₹25–40 lakh. Premium investment properties in Gurugram and Noida Expressway typically start from ₹80 lakh–₹1.5 Cr. Commercial investment typically starts from ₹50 lakh for retail shop units in NCR." },
   { q:"Does Vedhara offer tax planning advice for real estate investments?", a:"Vedhara provides strategic investment advisory including general awareness of capital gains tax (LTCG/STCG), Section 54/54F exemptions, and rental income taxation. For specific tax structuring, we recommend engaging a qualified CA, and can refer trusted tax professionals from our network." },
 ];

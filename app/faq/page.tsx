@@ -5,7 +5,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Real Estate FAQ | Delhi NCR Property Advice", description:"Clear, verified answers to the most common Delhi NCR real estate questions: buying costs, stamp duty, RERA, home loans, NRI rules and rentals.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
+export const metadata: Metadata = { title:"Real Estate FAQ | Delhi NCR Property Advice", description:"Verified answers to common North India real estate questions across Delhi NCR, Faridabad, Manesar & Chandigarh: stamp duty, RERA, home loans and NRI rules.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
 
 const topics = [
   { title:"Buying Process", desc:"Base prices, stamp duty, GST, home loans, and documentation, everything that goes into buying a property in Delhi NCR." },
@@ -174,7 +174,7 @@ export default function FAQPage() {
                 <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>The Numbers</p>
                 <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>Costs &amp; Rules That Apply</h2>
                 <p className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.8,marginBottom:24 }}>
-                  These figures reflect current norms across Delhi NCR. State-specific rates vary, and your advisor will confirm the exact numbers for your transaction.
+                  These figures reflect current norms across Delhi NCR, Faridabad, Manesar and Chandigarh. State-specific rates vary, and your advisor will confirm the exact numbers for your transaction.
                 </p>
                 {["Stamp duty between 4% and 7% depending on the state and buyer category","Registration charge of 1% of the property value in most NCR states","GST of 5% on under-construction properties; nil on ready-to-move","RERA registration mandatory for all new residential projects before sale","NRI buyers can purchase residential and commercial property without RBI approval","Long-term capital gains taxed at 20% with indexation after 24 months of holding"].map(item=>(
                   <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>

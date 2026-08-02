@@ -300,7 +300,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
 
             {/* Exact sub-headline from Word doc */}
             <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(255,255,255,0.85)",lineHeight:1.85,maxWidth:580,marginBottom:40,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(24px)",transition:"all 0.8s ease 0.45s" }}>
-              Vedhara Group is an independent real estate advisory firm serving buyers, sellers, investors, NRIs, and first-time homebuyers across Delhi, Gurugram, Noida, Faridabad, Ghaziabad, and Greater Noida. Every property we recommend has passed our five-point Verification Framework, and we publish exactly what we found on the listing itself.
+              Vedhara Group is an independent real estate advisory firm serving buyers, sellers, investors, NRIs, and first-time homebuyers across Delhi NCR, Gurugram, Noida, Faridabad, Manesar, Ghaziabad, Chandigarh and across North India. Every property we recommend has passed our five-point Verification Framework, and we publish exactly what we found on the listing itself.
             </p>
 
             <div style={{ display:"flex",gap:14,flexWrap:"wrap",marginBottom:52,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.6s" }}>
