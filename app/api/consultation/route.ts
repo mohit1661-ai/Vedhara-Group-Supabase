@@ -14,6 +14,7 @@
 import { NextRequest, NextResponse }         from "next/server";
 import { writeLead, generateId, type Lead }  from "@/lib/leads";
 import { sendLeadNotification }              from "@/lib/email";
+import { sendLeadToTitan }                   from "@/lib/titan";
 import { isRateLimited }                     from "@/lib/rateLimit";
 import { validate, sanitise, type FormInput } from "@/lib/validation";
 
@@ -74,9 +75,12 @@ export async function POST(req: NextRequest) {
     // Continue; don't fail the user request over a save error
   }
 
-  // 6. Email (non-blocking)
+  // 6. Email + Titan CRM (both non-blocking)
   sendLeadNotification(lead).catch(err =>
     console.error("[Email notification failed]", err)
+  );
+  sendLeadToTitan(lead).catch(err =>
+    console.error("[Titan notification failed]", err)
   );
 
   // 7. Respond
