@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
+import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { blogPosts } from "@/lib/data/blogPosts";
 
@@ -166,6 +167,16 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <RelatedLinksSection
+        title="Related advisory pages"
+        intro="These pages help readers move from insight to action by connecting blog content with the services, verification, and contact resources they need next."
+        background="cream"
+        links={[
+          { href:"/services", label:"Explore the full service suite", description:"See how advisory, property management, and investment support work together in one journey." },
+          { href:"/verification-center", label:"Understand the verification framework", description:"Learn how every recommendation is checked before it reaches a client or buyer." },
+          { href:"/contact", label:"Book a consultation", description:"Talk to an advisor for tailored support after you read the blog content." },
+        ]}
+      />
       <CTASection />
     </>
   );

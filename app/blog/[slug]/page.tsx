@@ -46,7 +46,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   return (
     <>
       <JsonLd data={schema} />
-      <VideoHeroSection>
+      <VideoHeroSection videoSrc={post.videoSrc} posterAlt={post.title}>
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>{post.category}</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,4.5vw,52px)",color:"var(--light)",lineHeight:1.12,maxWidth:880,margin:"0 auto 20px" }}>

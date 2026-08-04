@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 /* ── Gold Particles Canvas ── */
@@ -149,7 +150,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
       ref={heroRef}
       className="video-hero"
       style={{
-        minHeight: "100vh",
+        minHeight: "100svh",
         display: "flex",
         alignItems: "center",
         paddingTop: "var(--nav-h)",
@@ -170,12 +171,13 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
         }}
       >
         {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
-        <img
+        <Image
           src="/hero-poster.jpg"
           alt=""
           aria-hidden
-          loading="eager"
-          decoding="async"
+          fill
+          priority
+          sizes="100vw"
           className="video-bg"
         />
         <video
@@ -184,7 +186,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{
@@ -193,6 +195,8 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            objectPosition: "center center",
+            transform: "translateZ(0)",
           }}
           poster="/hero-poster.jpg"
         >

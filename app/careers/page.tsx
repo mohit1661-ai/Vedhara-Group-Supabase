@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -59,7 +58,7 @@ const openRoles = [
 ];
 
 const values = [
-  { title:"Independent Advice First", desc:"No commissions from any developer; every recommendation starts with the client's needs, not our margin." },
+  { title:"Independent Advice First", desc:"No commissions from any developer; every recommendation starts with the client&apos;s needs, not our margin." },
   { title:"Verification Before Listing", desc:"Every property passes our five-point Verification Framework before it reaches you. No exceptions." },
   { title:"Transparent Fees, Always", desc:"Our fee structure is disclosed upfront, in writing, with absolutely no hidden charges." },
   { title:"One Advisor, End-to-End", desc:"A single named advisor owns your journey from first consultation to final registration." },
@@ -83,7 +82,7 @@ export default function CareersPage() {
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Build a Career in<br /><span style={{ color:"var(--gold-lt)" }}>Real Estate Advisory</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Join Delhi NCR's fastest-growing independent advisory firm. No sales pressure, no targets, just honest advice and verified outcomes.</p>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Join Delhi NCR&apos;s fastest-growing independent advisory firm. No sales pressure, no targets, just honest advice and verified outcomes.</p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}

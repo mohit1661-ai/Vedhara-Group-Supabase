@@ -4,6 +4,7 @@ import CTASection from "@/components/sections/CTASection";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
 
 export interface ServicePageContent {
   slug:string; eyebrow:string; h1:string; h1Accent?:string;
@@ -60,7 +61,16 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
           </ScrollReveal>
         </div>
       </section>
-      {!hideFAQ && <><FAQSection faqs={content.faqs} /><CTASection /></>}
+      {!hideFAQ && <><FAQSection faqs={content.faqs} /><RelatedLinksSection
+        title="Related pages"
+        intro="These service and advisory pages help visitors continue their journey with the right next step after exploring this service."
+        background="cream"
+        links={[
+          { href:"/blog", label:"Read the market blog", description:"Go deeper into market trends, legal guides, and financing advice that supports this service." },
+          { href:"/verification-center", label:"View the verification framework", description:"See how every property recommendation is checked before it reaches the market." },
+          { href:"/contact", label:"Speak to an advisor", description:"Book a consultation for tailored guidance based on your property goals." },
+        ]}
+      /><CTASection /></>}
     </>
   );
 }

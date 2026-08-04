@@ -5,6 +5,7 @@ import AnimatedStats from "@/components/sections/AnimatedStats";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
 
 export const metadata: Metadata = {
   title: "Vedhara Group | Verified Property Advisory in Delhi NCR",
@@ -426,6 +427,16 @@ export default function HomePage() {
       </section>
 
       <FAQSection faqs={homeFaqs} />
+      <RelatedLinksSection
+        title="Explore the full property journey"
+        intro="These pages connect buyers, investors, sellers, and NRIs to the right next step with deeper guidance and stronger internal relevance."
+        background="cream"
+        links={[
+          { href:"/buy", label:"Buy Property in Delhi NCR", description:"Explore verified residential options and understand how to shortlist the right project with confidence." },
+          { href:"/blog", label:"Real Estate Blog & Market Guides", description:"Read in-depth articles on price trends, RERA, home loans, and NRI investment strategies." },
+          { href:"/verification-center", label:"Verification Center", description:"See the framework we use to validate every listing before it reaches the market." },
+        ]}
+      />
     </>
   );
 }

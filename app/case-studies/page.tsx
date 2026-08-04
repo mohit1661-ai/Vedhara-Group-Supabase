@@ -36,7 +36,7 @@ const cases = [
     gradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#D4A843 100%)",
   },
   {
-    title:"First-Time Buyer Journey in Faridabad's NH-19 Corridor",
+    title:"First-Time Buyer Journey in Faridabad&apos;s NH-19 Corridor",
     client:"Mr. & Mrs. Verma",
     challenge:"Young couple with a ₹80 lakh budget wanted a 3 BHK in Faridabad but were unsure about locality, project quality, and the buying process.",
     approach:"Educated them on the buying process, RERA verification, and stamp duty calculations. Shortlisted 5 projects across NH-19 corridor, arranged site visits, and negotiated pricing with two developers.",
@@ -73,7 +73,7 @@ export default function CaseStudiesPage() {
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
           Real Estate Case Studies:<br /><span style={{ color:"var(--gold-lt)" }}>Advisory in Action, Results That Speak</span>
         </h1>
-        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Detailed accounts of how Vedhara's advisory approach translated into measurable outcomes for real clients across Delhi NCR.</p>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Detailed accounts of how Vedhara&apos;s advisory approach translated into measurable outcomes for real clients across Delhi NCR.</p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}
@@ -255,7 +255,7 @@ export default function CaseStudiesPage() {
       <FAQSection
         faqs={[
           { q:"Are the names and details in these case studies real?", a:"For privacy and confidentiality, we use representative descriptions rather than full identifying information. Every engagement reflects a genuine transaction handled by our advisory team, with figures and outcomes accurately represented." },
-          { q:"How does Vedhara's advisory differ from a typical broker?", a:"We are an independent advisory and brokerage firm. We earn no developer commission tied to pushing inventory, so every recommendation starts with your needs. The case studies above show the kind of measurable outcomes this independence produces, from price reductions to portfolio yield improvements." },
+          { q:"How does Vedhara&apos;s advisory differ from a typical broker?", a:"We are an independent advisory and brokerage firm. We earn no developer commission tied to pushing inventory, so every recommendation starts with your needs. The case studies above show the kind of measurable outcomes this independence produces, from price reductions to portfolio yield improvements." },
           { q:"Can Vedhara handle a case like mine remotely?", a:"Yes. Many of our engagements, especially for NRI clients based in the UAE, USA, UK, Canada, and Singapore, are managed end-to-end remotely. We coordinate title checks, Power of Attorney, remittances, registration, and property management on your behalf." },
           { q:"What does it cost to engage Vedhara for a similar outcome?", a:"Our fee structure is transparent and disclosed in writing before any engagement begins. For many buyer and seller mandates we work on a success-based fee, and for advisory and management work we use fixed, agreed fees with no hidden charges." },
         ]}

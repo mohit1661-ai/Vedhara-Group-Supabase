@@ -30,7 +30,7 @@ export default function AnimatedStats() {
       <div style={{ position:"absolute",top:"10%",left:"-6%",width:520,height:520,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
       <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }} className="stats-row">
-          {stats.map((s,i)=>(
+          {stats.map((s)=>(
             <div key={s.label} className="hover-lift stat-card" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.25)",borderRadius:16,overflow:"hidden",boxShadow:"0 12px 28px rgba(0,0,0,0.25)" }}>
               <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold))" }} />
               <div className="stat-inner" style={{ padding:"26px 18px 26px",textAlign:"center" }}>

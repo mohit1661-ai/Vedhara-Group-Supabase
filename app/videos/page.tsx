@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 
 export const metadata: Metadata = {
   title: "Vedhara Group Videos | Delhi NCR Real Estate Films",
@@ -62,22 +63,20 @@ export default function VideosPage() {
       <JsonLd data={jsonLd} />
 
       {/* Hero */}
-      <section className="page-hero animated-gradient" style={{ textAlign:"center", padding:"120px 32px 72px" }}>
-        <div style={{ maxWidth:760, margin:"0 auto" }}>
-          <span className="v-line" style={{ margin:"0 auto 18px" }} />
-          <p className="eyebrow" style={{ marginBottom:16 }}>Vedhara Group Films</p>
-          <h1 className="heading-xl" style={{ color:"var(--light)", lineHeight:1.08, marginBottom:20 }}>
-            Watch How We Work,<br /><em style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, color:"var(--gold-lt)" }}>Across Delhi NCR & North India</em>
-          </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)", maxWidth:600, margin:"0 auto" }}>
-            See verified property advisory in action through buying, selling, renting, NRI services, luxury homes and our five-point verification framework, filmed across Delhi NCR, Faridabad, Manesar, Chandigarh and beyond.
-          </p>
-        </div>
-      </section>
+      <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Homepage%20Video.mp4">
+        <span className="v-line" style={{ margin:"0 auto 18px" }} />
+        <p className="eyebrow" style={{ marginBottom:16 }}>Vedhara Group Films</p>
+        <h1 className="heading-xl" style={{ color:"var(--light)", lineHeight:1.08, marginBottom:20 }}>
+          Watch How We Work,<br /><em style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, color:"var(--gold-lt)" }}>Across Delhi NCR & North India</em>
+        </h1>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)", maxWidth:600, margin:"0 auto" }}>
+          See verified property advisory in action through buying, selling, renting, NRI services, luxury homes and our five-point verification framework, filmed across Delhi NCR, Faridabad, Manesar, Chandigarh and beyond.
+        </p>
+      </VideoHeroSection>
 
       {/* Video grid with each video as primary content on this watch page */}
       <section style={{ background:"var(--cream)", padding:"72px 32px" }}>
-        <div style={{ maxWidth:1200, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(320px,1fr))", gap:32, alignItems:"stretch" }}>
+        <div style={{ maxWidth:1200, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(min(100%, 320px), 1fr))", gap:32, alignItems:"stretch" }}>
           {videos.map((v, i) => (
             <ScrollReveal key={v.file} delay={(i % 3) * 80}>
               <article style={{ background:"var(--navy)", borderRadius:10, overflow:"hidden", border:"1px solid rgba(212,168,67,0.25)", boxShadow:"0 12px 40px rgba(9,15,29,0.18)", display:"flex", flexDirection:"column", height:"100%" }}>

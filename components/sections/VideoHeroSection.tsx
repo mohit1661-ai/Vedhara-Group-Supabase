@@ -32,6 +32,8 @@ interface Props {
   videoSrc?: string;
   /** Optional poster image shown before video loads. */
   poster?: string;
+  /** Accessible alt text for the poster fallback image. */
+  posterAlt?: string;
   /** Override the gradient overlay colors. Default is a semi-transparent navy->gold gradient. */
   overlayGradient?: string;
   /** Disable 3D mouse-tilt effect for this instance */
@@ -119,6 +121,7 @@ export default function VideoHeroSection({
   children,
   videoSrc = "/videos/hero-bg.mp4",
   poster = "/hero-poster.jpg",
+  posterAlt = "",
   overlayGradient,
   disableTilt,
   disableParallax,
@@ -249,8 +252,7 @@ export default function VideoHeroSection({
         {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
         <Image
           src={poster}
-          alt=""
-          aria-hidden
+          alt={posterAlt}
           fill
           priority
           sizes="100vw"

@@ -9,9 +9,9 @@ export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights
 
 const themes = [
   { title:"Delhi NCR Premium Segment", body:"Post-2022 price appreciation has been significant across Gurugram and Noida Expressway premium corridors. The ₹1.5Cr–3Cr segment remains the most active nationally, driven by end-user demand from corporate employment growth." },
-  { title:"Faridabad Undervaluation", body:"Faridabad's NH-19 corridor offers similar connectivity to south Gurugram at significantly lower price points, increasingly attractive to buyers priced out of premium Gurugram sectors. Entry prices 30–40% below comparable Gurugram inventory." },
+  { title:"Faridabad Undervaluation", body:"Faridabad&apos;s NH-19 corridor offers similar connectivity to south Gurugram at significantly lower price points, increasingly attractive to buyers priced out of premium Gurugram sectors. Entry prices 30–40% below comparable Gurugram inventory." },
   { title:"Noida Expressway Infrastructure", body:"Upcoming Jewar Airport (Noida International Airport), the Aqua Line Metro extension, and Film City development are material value drivers for Noida Expressway and Greater Noida localities. Projects in the 10–15 km radius are well-positioned." },
-  { title:"Rental Market Tightening", body:"Corporate demand recovery post-2023 has tightened rental supply in Cyber City (Gurugram) and Noida's Sector 62/63 IT corridors. Rental yields in these locations have improved from 2021 lows to 3.5–4.5% gross." },
+  { title:"Rental Market Tightening", body:"Corporate demand recovery post-2023 has tightened rental supply in Cyber City (Gurugram) and Noida&apos;s Sector 62/63 IT corridors. Rental yields in these locations have improved from 2021 lows to 3.5–4.5% gross." },
 ];
 
 const differentiators = [
@@ -57,7 +57,7 @@ const whoForItems = [
 const marketFaqs: FAQItem[] = [
   {
     q:"How does Vedhara gather its market intelligence?",
-    a:"Vedhara's market insights are compiled from verified transaction data, RERA filings, developer disclosures, and our own advisory team's ground-level assessments across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. We do not rely on aggregated portal data alone.",
+    a:"Vedhara&apos;s market insights are compiled from verified transaction data, RERA filings, developer disclosures, and our own advisory team&apos;s ground-level assessments across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. We do not rely on aggregated portal data alone.",
   },
   {
     q:"Is the Ground Report available for free?",
@@ -103,7 +103,7 @@ export default function MarketInsightsPage() {
                 Data-Driven Perspective<br /><span style={{ color:"var(--gold-dk)" }}>on Delhi NCR Real Estate</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              Vedhara's research team tracks price movements, infrastructure developments, and demand patterns across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. Our insights are grounded in verified transaction data and ground-level assessments, not aggregated portal listings.
+              Vedhara&apos;s research team tracks price movements, infrastructure developments, and demand patterns across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. Our insights are grounded in verified transaction data and ground-level assessments, not aggregated portal listings.
             </p>
           </ScrollReveal>
         </div>
@@ -116,8 +116,8 @@ export default function MarketInsightsPage() {
             <div className="gold-frame-card gfc-navy" style={{ padding:"44px 36px",boxShadow:"0 16px 40px rgba(9,15,29,0.2)",display:"flex",flexDirection:"column" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
               <div style={{ flex:1 }}>
-                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What's Included</p>
-                <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What's Included</h2>
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What&apos;s Included</p>
+                <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What&apos;s Included</h2>
                 {includedItems.map(item=>(
                   <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>
                     <span style={{ color:"var(--gold)",flexShrink:0,marginTop:2,fontSize:16,fontWeight:700,lineHeight:1 }}>✓</span>

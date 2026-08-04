@@ -10,6 +10,7 @@ export interface BlogPost {
   category:string;
   readTime:string;
   gradient:string;
+  videoSrc:string;
   metaTitle:string;
   metaDescription:string;
   keywords:string[];
@@ -27,6 +28,7 @@ export const blogPosts: BlogPost[] = [
     category:"Market Trends",
     readTime:"8 min read",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
+    videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
     metaTitle:"Delhi NCR Property Price Trends 2026 | Gurugram & Noida",
     metaDescription:"Delhi NCR property price trends 2026 covering Gurugram, Noida, Faridabad, Manesar, Delhi and North India. Data-backed insights on where prices are moving.",
     keywords:["Delhi NCR property prices","Gurugram real estate trends","Noida property rates 2026","Greater Noida investment","Dwarka Expressway property","where to invest in Delhi NCR"],
@@ -94,6 +96,7 @@ export const blogPosts: BlogPost[] = [
     category:"Legal & Compliance",
     readTime:"10 min read",
     gradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#D4A843 100%)",
+    videoSrc:"/videos/Property%20Verification.mp4",
     metaTitle:"RERA Delhi NCR Guide 2026 | HRERA, UP RERA & Delhi RERA",
     metaDescription:"RERA guide for North India home buyers: HRERA Gurugram, UP RERA Noida and Delhi RERA registration, buyer protection and the complaint process.",
     keywords:["RERA Delhi NCR","HRERA Gurugram","UP RERA Noida","Delhi RERA","RERA registration check","RERA complaint process","RERA act 2016 buyer protection"],
@@ -157,6 +160,7 @@ export const blogPosts: BlogPost[] = [
     category:"NRI Services",
     readTime:"12 min read",
     gradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#6a8aaa 100%)",
+    videoSrc:"/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video.mp4",
     metaTitle:"NRI Property Investment in Delhi NCR | FEMA & Repatriation",
     metaDescription:"NRI property investment guide for North India: FEMA compliance, NRI home loans, TDS on sale, repatriation and remote property management.",
     keywords:["NRI property investment India","NRI home loan","FEMA rules property","TDS on NRI property sale","repatriation of sale proceeds","power of attorney NRI","NRI property tax India"],
@@ -220,6 +224,7 @@ export const blogPosts: BlogPost[] = [
     category:"Buying Guide",
     readTime:"7 min read",
     gradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
+    videoSrc:"/videos/Real%20Estate%20Calculator.mp4",
     metaTitle:"Stamp Duty Delhi NCR 2026 | Haryana, UP & Delhi Compared",
     metaDescription:"Compare 2026 stamp duty and registration charges across Delhi, Gurugram, Noida, Faridabad and Chandigarh, including women buyer concessions and circle rates.",
     keywords:["stamp duty Delhi NCR 2026","stamp duty Haryana 2026","registration charges UP","stamp duty for women buyers","circle rate Delhi","property registration charges"],
@@ -289,6 +294,7 @@ export const blogPosts: BlogPost[] = [
     category:"Investment",
     readTime:"9 min read",
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#D4A843 100%)",
+    videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
     metaTitle:"Rental Yields in Delhi NCR 2026 | Gurugram vs Noida",
     metaDescription:"Data-backed 2026 comparison of gross and net rental yields in Gurugram, Noida, Faridabad and Chandigarh for buy-to-let investors.",
     keywords:["rental yield Gurugram","rental income Noida","rental yield Faridabad","buy to let India","property investment returns","rental yield calculation"],
@@ -358,6 +364,7 @@ export const blogPosts: BlogPost[] = [
     category:"Finance",
     readTime:"11 min read",
     gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
+    videoSrc:"/videos/Real%20Estate%20Calculator.mp4",
     metaTitle:"Home Loan Guide Delhi NCR 2026 | Rates, Eligibility & EMI",
     metaDescription:"2026 home loan guide for Delhi NCR and North India property: interest rates, eligibility, EMI calculation, and Section 24 and 80C tax benefits.",
     keywords:["home loan interest rates 2026","home loan eligibility India","home loan tax benefit","Section 24","Section 80C","first-time home buyer India","EMI calculator"],
