@@ -106,6 +106,10 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
     // Load immediately — no deferral
     video.preload = "auto";
     video.load();
+    // Pause video on unmount so it doesn't keep playing during page navigation
+    return () => {
+      video.pause();
+    };
   }, []);
 
   /* ── Force autoplay (browsers often block <video autoplay>) ── */

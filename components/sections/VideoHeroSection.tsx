@@ -143,12 +143,15 @@ export default function VideoHeroSection({
 
     if (video.readyState >= 3) {
       setVideoLoaded(true);
-      return;
     }
 
     const handleLoadedData = () => setVideoLoaded(true);
     video.addEventListener("loadeddata", handleLoadedData, { once: true });
-    return () => video.removeEventListener("loadeddata", handleLoadedData);
+    return () => {
+      video.removeEventListener("loadeddata", handleLoadedData);
+      // Pause video on unmount so it doesn't keep playing during page navigation
+      video.pause();
+    };
   }, [videoSrc]);
 
   /* ── Force autoplay when video is loaded ── */
@@ -265,21 +268,8 @@ export default function VideoHeroSection({
           background: "#090f1d",
         }}
       >
-        {/* Poster fallback — fades out when video loads to avoid showing homepage poster on all pages */}
-        {videoSrc ? (
-          <Image
-            src={poster}
-            alt={posterAlt}
-            fill
-            priority
-            sizes="100vw"
-            className="video-bg"
-            style={{
-              opacity: videoLoaded ? 0 : 1,
-              transition: "opacity 1s ease",
-            }}
-          />
-        ) : (
+        {/* Only show poster if NO video (e.g. privacy/terms) — avoids homepage poster flash on video pages */}
+        {!videoSrc && (
           <Image
             src={poster}
             alt={posterAlt}
