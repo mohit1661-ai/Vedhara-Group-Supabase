@@ -8,8 +8,8 @@ import { blogPosts } from "@/lib/data/blogPosts";
 export const metadata: Metadata = { title:"Delhi NCR Real Estate Blog", description:"Expert insights on the North India property market: Delhi NCR, Gurugram, Faridabad, Manesar & Chandigarh price trends, RERA, NRI investing and home loans.", alternates:{ canonical:"https://www.vedharagroup.com/blog" } };
 
 const reasons = [
-  { title:"Written by Advisors, Not by Writers", desc:"Every article is researched and written by Vedhara's advisory team from real client transactions and daily ground-level exposure across Delhi NCR. We never outsource content or repurpose developer press releases." },
-  { title:"Data-Backed Market Analysis", desc:"Price trends, rental yields, and micro-market analyses are derived from Vedhara's proprietary transaction database, actual deal prices, not asking prices or third-party aggregators." },
+  { title:"Written by Advisors, Not by Writers", desc:"Every article is researched and written by Vedhara&apos;s advisory team from real client transactions and daily ground-level exposure across Delhi NCR. We never outsource content or repurpose developer press releases." },
+  { title:"Data-Backed Market Analysis", desc:"Price trends, rental yields, and micro-market analyses are derived from Vedhara&apos;s proprietary transaction database, actual deal prices, not asking prices or third-party aggregators." },
   { title:"Practical Guides for Real Decisions", desc:"Step-by-step RERA guides, stamp duty walkthroughs, and NRI repatriation checklists structured so you can act. No fluff and no jargon, just what to know before you buy, sell, or invest." },
   { title:"Reviewed & Kept Current", desc:"Each article is reviewed by our legal team for regulatory accuracy and updated quarterly to reflect RERA changes, budget announcements, and shifting market conditions." },
 ];
@@ -17,7 +17,7 @@ const reasons = [
 export default function BlogPage() {
   return (
     <>
-      <VideoHeroSection>
+      <VideoHeroSection videoSrc="/videos/Blog Page Hero Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Blog</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
@@ -41,7 +41,7 @@ export default function BlogPage() {
               Expert Knowledge for<br /><span style={{ color:"#d4a843" }}>Smarter Property Decisions</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
-              From market trends to legal guides, our articles are written by Vedhara's advisory team based on real transaction data and ground-level experience across Delhi NCR, Faridabad, Manesar and Chandigarh.
+              From market trends to legal guides, our articles are written by Vedhara&apos;s advisory team based on real transaction data and ground-level experience across Delhi NCR, Faridabad, Manesar and Chandigarh.
             </p>
           </ScrollReveal>
         </div>
@@ -89,7 +89,7 @@ export default function BlogPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:40 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>Why Read Vedhara's Blog</p>
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>Why Read Vedhara&apos;s Blog</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
                 Content You Can Trust,<br /><span style={{ color:"var(--gold-lt)" }}>Insights You Can Use</span>
               </h2>
