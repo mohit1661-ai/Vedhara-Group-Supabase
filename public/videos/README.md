@@ -27,7 +27,14 @@ Resolution: 1920x1080 or higher
 | /commercial           | commercial-aerial.mp4               |
 | /luxury               | luxury-interior.mp4                 |
 | /new-launches         | construction-timelapse.mp4          |
-| /services             | office-building.mp4                 |
+| /services             | All Services Hero Video.mp4         |
+| /careers              | careers hero video.mp4              |
+| /case-studies         | Case Studies Hero Video.mp4        |
+| /faq                  | FAQ Hub Hero Video.mp4             |
+| /property-management  | Property Management Hero Video.mp4 |
+| /team                 | Our Team Hero Video.mp4            |
+| /success-stories      | Success Stories Hero Video.mp4     |
+| /market-insights      | Market Insights Hero Video.mp4     |
 | /contact              | lobby-reception.mp4                 |
 | All others            | cityscape-drone.mp4 (fallback)      |
 

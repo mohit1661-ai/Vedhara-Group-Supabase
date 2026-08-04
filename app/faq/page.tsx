@@ -82,7 +82,7 @@ export default function FAQPage() {
   return (
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"FAQ", href:"/faq" }]} />
-      <VideoHeroSection>
+      <VideoHeroSection videoSrc="/videos/FAQ%20Hub%20Hero%20Video.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>FAQ Hub</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>

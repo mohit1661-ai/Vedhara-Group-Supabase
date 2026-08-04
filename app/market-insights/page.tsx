@@ -80,7 +80,7 @@ const marketFaqs: FAQItem[] = [
 export default function MarketInsightsPage() {
   return (
     <>
-      <VideoHeroSection videoSrc="/videos/Property%20Investment.mp4">
+      <VideoHeroSection videoSrc="/videos/Market%20Insights%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Research &amp; Insights</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
