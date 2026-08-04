@@ -99,20 +99,13 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
     }
   }, []);
 
-  /* ── Defer video start so the poster (LCP) paints first; same video quality ── */
+  /* ── Start video loading immediately for faster autoplay on all devices ── */
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const start = () => {
-      video.preload = "auto";
-      video.load();
-    };
-    if (typeof requestIdleCallback === "function") {
-      requestIdleCallback(start, { timeout: 1500 });
-    } else {
-      setTimeout(start, 400);
-    }
-    return () => {};
+    // Preload metadata immediately so browser knows video dimensions and can prepare for autoplay
+    video.preload = "metadata";
+    video.load();
   }, []);
 
   /* ── Force autoplay (browsers often block <video autoplay>) ── */
@@ -121,6 +114,32 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
     videoRef.current.play().catch(() => {
       /* Autoplay still blocked - user interaction will resume */
     });
+  }, [videoLoaded]);
+
+  /* ── Resume video on user interaction if autoplay was blocked ── */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const resumeVideo = () => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+      // Remove listeners after first interaction
+      document.removeEventListener("click", resumeVideo);
+      document.removeEventListener("touchstart", resumeVideo);
+      document.removeEventListener("keydown", resumeVideo);
+    };
+
+    document.addEventListener("click", resumeVideo, { passive: true });
+    document.addEventListener("touchstart", resumeVideo, { passive: true });
+    document.addEventListener("keydown", resumeVideo, { passive: true });
+
+    return () => {
+      document.removeEventListener("click", resumeVideo);
+      document.removeEventListener("touchstart", resumeVideo);
+      document.removeEventListener("keydown", resumeVideo);
+    };
   }, [videoLoaded]);
 
   /* ── Multi-layer parallax ── */
@@ -202,7 +221,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{

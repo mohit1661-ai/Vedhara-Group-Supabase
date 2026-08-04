@@ -159,9 +159,8 @@ export default function VideoHeroSection({
     const video = videoRef.current;
     if (!video || !shouldLoadVideo) return;
 
-    // Start the video download only once the hero is near the viewport so the
-    // poster/LCP element paints first. Same video, same quality, just deferred.
-    video.preload = "auto";
+    // Preload metadata immediately when section is near viewport for faster autoplay
+    video.preload = "metadata";
     video.load();
 
     if (video.readyState >= 3) {
@@ -173,6 +172,39 @@ export default function VideoHeroSection({
     video.addEventListener("loadeddata", handleLoadedData, { once: true });
     return () => video.removeEventListener("loadeddata", handleLoadedData);
   }, [shouldLoadVideo]);
+
+  /* ── Force autoplay when video is loaded ── */
+  useEffect(() => {
+    if (!videoLoaded || !videoRef.current) return;
+    videoRef.current.play().catch(() => {
+      /* Autoplay blocked - will retry on user interaction */
+    });
+  }, [videoLoaded]);
+
+  /* ── Resume video on user interaction if autoplay was blocked ── */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const resumeVideo = () => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+      document.removeEventListener("click", resumeVideo);
+      document.removeEventListener("touchstart", resumeVideo);
+      document.removeEventListener("keydown", resumeVideo);
+    };
+
+    document.addEventListener("click", resumeVideo, { passive: true });
+    document.addEventListener("touchstart", resumeVideo, { passive: true });
+    document.addEventListener("keydown", resumeVideo, { passive: true });
+
+    return () => {
+      document.removeEventListener("click", resumeVideo);
+      document.removeEventListener("touchstart", resumeVideo);
+      document.removeEventListener("keydown", resumeVideo);
+    };
+  }, [videoLoaded]);
 
   /* ── Parallax on scroll ── */
   useEffect(() => {
@@ -269,7 +301,7 @@ export default function VideoHeroSection({
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           className="video-bg"
           style={{
             opacity: videoLoaded ? 1 : 0,
