@@ -22,7 +22,7 @@ interface WatchVideo {
 }
 
 const videos: WatchVideo[] = [
-  { file:"Vedhara Group Delhi NCR Homepage Video.mp4", title:"Vedhara Group Verified Property Advisory", desc:"Our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
+  { file:"Homepage Hero Video.mp4", title:"Vedhara Group Verified Property Advisory", desc:"Our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
   { file:"Vedhara Group Gurgaon Real Estate About Page Video.mp4", title:"About Vedhara Group Trusted Advisory", desc:"The people and the principle behind Vedhara: independent by design, client-first by default." },
   { file:"Vedhara Group Delhi NCR Buy Page Video.mp4", title:"Buy Verified Property in Delhi NCR", desc:"How we shortlist, verify and negotiate on your behalf when you buy across Delhi NCR and North India." },
   { file:"Vedhara Group Delhi NCR Sell Page Video (1).mp4", title:"Sell Property at Fair Market Value", desc:"Strategic pricing, qualified buyer access and end-to-end sale management across Delhi NCR and Chandigarh." },
@@ -36,7 +36,6 @@ const videos: WatchVideo[] = [
   { file:"Property Verification.mp4", title:"Five-Point Verification Framework", desc:"How we check RERA status, approvals, price fairness and documents before any listing is published." },
   { file:"Property Real Estate Contact.mp4", title:"Book a Free Real Estate Consultation", desc:"No pitch, no pressure. Start with an honest conversation about your property goals." },
   { file:"Real Estate Calculator.mp4", title:"Free Real Estate Calculators", desc:"EMI, stamp duty, ROI and affordability calculators, free with no sign-up required." },
-  { file:"hero-bg.mp4", title:"North India Real Estate Film", desc:"An ambient look at the regions Vedhara serves across Delhi NCR and North India." },
 ];
 
 const jsonLd = {

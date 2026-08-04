@@ -78,7 +78,7 @@ function Particles() {
   );
 }
 
-export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ videoSrc?:string }) {
+export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Video.mp4" }:{ videoSrc?:string }) {
   const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
