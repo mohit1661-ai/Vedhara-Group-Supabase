@@ -78,7 +78,17 @@ function Particles() {
   );
 }
 
-export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Video.mp4" }:{ videoSrc?:string }) {
+interface CinematicHeroProps {
+  /** Desktop (high-quality) video source. */
+  videoSrc?: string;
+  /** Mobile (lightweight) video source, used below 768px for fast autoplay. */
+  videoSrcMobile?: string;
+}
+
+export default function CinematicHero({
+  videoSrc = "/videos/Homepage%20Hero%20Video%20Desktop.mp4",
+  videoSrcMobile,
+}: CinematicHeroProps) {
   const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -99,26 +109,32 @@ export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Vi
     }
   }, []);
 
-  /* ── Start video loading immediately for faster autoplay on all devices ── */
+  /* ── Kick off muted autoplay immediately + listen for loaded data ── */
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    // Load immediately — no deferral
-    video.preload = "auto";
-    video.load();
+    // Muted autoplay is permitted by browsers, so start playing right away.
+    video.muted = true;
+    video.defaultMuted = true;
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
+    const onData = () => {
+      setVideoLoaded(true);
+      tryPlay();
+    };
+    if (video.readyState >= 3) {
+      setVideoLoaded(true);
+    } else {
+      video.addEventListener("loadeddata", onData, { once: true });
+      video.addEventListener("canplay", onData, { once: true });
+    }
     // Pause video on unmount so it doesn't keep playing during page navigation
     return () => {
+      video.removeEventListener("loadeddata", onData);
+      video.removeEventListener("canplay", onData);
       video.pause();
     };
   }, []);
-
-  /* ── Force autoplay (browsers often block <video autoplay>) ── */
-  useEffect(() => {
-    if (!videoLoaded || !videoRef.current) return;
-    videoRef.current.play().catch(() => {
-      /* Autoplay still blocked - user interaction will resume */
-    });
-  }, [videoLoaded]);
 
   /* ── Resume video on user interaction if autoplay was blocked ── */
   useEffect(() => {
@@ -144,18 +160,26 @@ export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Vi
       document.removeEventListener("touchstart", resumeVideo);
       document.removeEventListener("keydown", resumeVideo);
     };
-  }, [videoLoaded]);
+  }, []);
 
-  /* ── Multi-layer parallax ── */
+  /* ── Multi-layer parallax (rAF-throttled, GPU-friendly) ── */
   useEffect(() => {
     const hero = heroRef.current;
     const bg = bgRef.current;
     const outer = contentOuterRef.current;
     if (!hero || !bg || !outer) return;
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const scrollY = window.scrollY;
-      bg.style.transform = `translateY(${scrollY * 0.05}px)`;
-      outer.style.transform = `translateY(${scrollY * 0.025}px)`;
+      bg.style.transform = `translate3d(0, ${scrollY * 0.05}px, 0)`;
+      outer.style.transform = `translate3d(0, ${scrollY * 0.025}px, 0)`;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -231,11 +255,10 @@ export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Vi
           loop
           playsInline
           preload="auto"
-          onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{
             opacity: videoLoaded ? 1 : 0,
-            transition: "opacity 1.8s ease",
+            transition: "opacity 0.8s ease",
             width: "100%",
             height: "100%",
             objectFit: "cover",
@@ -243,10 +266,14 @@ export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Vi
             transform: "translateZ(0)",
           }}
         >
-          <source
-            src={videoSrc}
-            type="video/mp4"
-          />
+          {videoSrcMobile ? (
+            <>
+              <source src={videoSrc} media="(min-width: 768px)" type="video/mp4" />
+              <source src={videoSrcMobile} type="video/mp4" />
+            </>
+          ) : (
+            <source src={videoSrc} type="video/mp4" />
+          )}
         </video>
       </div>
 
@@ -332,7 +359,7 @@ export default function CinematicHero({ videoSrc = "/videos/Homepage%20Hero%20Vi
         }}
       />
 
-      <div className="hero-content" style={{ position:"relative",zIndex:3,maxWidth:1320,margin:"0 auto",padding:"80px 32px 60px",width:"100%" }}>
+      <div ref={contentOuterRef} className="hero-content" style={{ position:"relative",zIndex:3,maxWidth:1320,margin:"0 auto",padding:"80px 32px 60px",width:"100%" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 380px",gap:80,alignItems:"center" }} className="hero-inner">
           {/* LEFT */}
           <div>

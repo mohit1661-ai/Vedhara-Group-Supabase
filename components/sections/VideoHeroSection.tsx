@@ -28,8 +28,10 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  /** Path to MP4 video. Default uses a high-quality real estate aerial. */
+  /** Path to MP4 video (desktop / high-quality). */
   videoSrc?: string;
+  /** Optional lightweight MP4 used on mobile (<768px) for fast autoplay. */
+  videoSrcMobile?: string;
   /** Optional poster image shown before video loads. */
   poster?: string;
   /** Accessible alt text for the poster fallback image. */
@@ -120,6 +122,7 @@ function Particles({ baseOpacity = 0.25 }) {
 export default function VideoHeroSection({
   children,
   videoSrc,
+  videoSrcMobile,
   poster = "/hero-poster.jpg",
   posterAlt = "",
   overlayGradient,
@@ -132,35 +135,34 @@ export default function VideoHeroSection({
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  /* ── Start loading video immediately on mount for instant playback ── */
+  /* ── Start loading + muted autoplay immediately on mount for instant playback ── */
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !videoSrc) return;
 
-    // Load immediately — no deferral
-    video.preload = "auto";
-    video.load();
+    // Muted autoplay is permitted by browsers, so start right away.
+    video.muted = true;
+    video.defaultMuted = true;
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
 
+    const handleReady = () => {
+      setVideoLoaded(true);
+      tryPlay();
+    };
     if (video.readyState >= 3) {
       setVideoLoaded(true);
+    } else {
+      video.addEventListener("loadeddata", handleReady, { once: true });
+      video.addEventListener("canplay", handleReady, { once: true });
     }
-
-    const handleLoadedData = () => setVideoLoaded(true);
-    video.addEventListener("loadeddata", handleLoadedData, { once: true });
     return () => {
-      video.removeEventListener("loadeddata", handleLoadedData);
+      video.removeEventListener("loadeddata", handleReady);
+      video.removeEventListener("canplay", handleReady);
       // Pause video on unmount so it doesn't keep playing during page navigation
       video.pause();
     };
   }, [videoSrc]);
-
-  /* ── Force autoplay when video is loaded ── */
-  useEffect(() => {
-    if (!videoLoaded || !videoRef.current) return;
-    videoRef.current.play().catch(() => {
-      /* Autoplay blocked - will retry on user interaction */
-    });
-  }, [videoLoaded]);
 
   /* ── Resume video on user interaction if autoplay was blocked ── */
   useEffect(() => {
@@ -185,33 +187,49 @@ export default function VideoHeroSection({
       document.removeEventListener("touchstart", resumeVideo);
       document.removeEventListener("keydown", resumeVideo);
     };
-  }, [videoLoaded]);
+  }, []);
 
-  /* ── Parallax on scroll ── */
+  /* ── Parallax on scroll (rAF-throttled, GPU-friendly) ── */
   useEffect(() => {
     if (disableParallax) return;
     const hero = sectionRef.current;
     const bg = bgRef.current;
     if (!hero || !bg) return;
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const rect = hero.getBoundingClientRect();
       const speed = 0.06;
       // Parallax the video background
-      bg.style.transform = `translateY(${rect.top * speed}px)`;
+      bg.style.transform = `translate3d(0, ${rect.top * speed}px, 0)`;
       // Parallax the content at a different speed
       if (contentRef.current) {
-        contentRef.current.style.transform = `translateY(${rect.top * 0.025}px)`;
+        contentRef.current.style.transform = `translate3d(0, ${rect.top * 0.025}px, 0)`;
+      }
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [disableParallax]);
 
-  /* ── 3D tilt on mouse move ── */
+  /* ── 3D tilt on mouse move (preserves parallax translate3d) ── */
   useEffect(() => {
     if (disableTilt) return;
     const hero = sectionRef.current;
     if (!hero) return;
+    // Track the current parallax Y offset so tilt doesn't wipe it out.
+    let parallaxY = 0;
+    const applyContent = () => {
+      if (contentRef.current) {
+        contentRef.current.style.perspective = "1000px";
+      }
+    };
+    applyContent();
     const onMouseMove = (e: MouseEvent) => {
       const rect = hero.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -219,22 +237,26 @@ export default function VideoHeroSection({
       const tiltX = y * -2.4;
       const tiltY = x * 2.4;
       if (contentRef.current) {
-        contentRef.current.style.transform = contentRef.current.style.transform.replace(
-          /translateY\([^)]+\)/,
-          ""
-        );
-        contentRef.current.style.perspective = "1000px";
-        contentRef.current.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(20px)`;
+        contentRef.current.style.transform = `translate3d(0, ${parallaxY}px, 0) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(20px)`;
       }
     };
     const onMouseLeave = () => {
       if (contentRef.current) {
-        contentRef.current.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px)";
+        contentRef.current.style.transform = `translate3d(0, ${parallaxY}px, 0)`;
       }
     };
+    // Keep the parallax Y value in sync with the scroll effect.
+    const heroEl = hero;
+    const computeParallax = () => {
+      const rect = heroEl.getBoundingClientRect();
+      parallaxY = rect.top * 0.025;
+    };
+    window.addEventListener("scroll", computeParallax, { passive: true });
+    computeParallax();
     hero.addEventListener("mousemove", onMouseMove, { passive: true });
     hero.addEventListener("mouseleave", onMouseLeave, { passive: true });
     return () => {
+      window.removeEventListener("scroll", computeParallax);
       hero.removeEventListener("mousemove", onMouseMove);
       hero.removeEventListener("mouseleave", onMouseLeave);
     };
@@ -290,7 +312,7 @@ export default function VideoHeroSection({
             className="video-bg"
             style={{
               opacity: videoLoaded ? 1 : 0,
-              transition: "opacity 1.8s ease",
+              transition: "opacity 0.8s ease",
               width: "100%",
               height: "100%",
               objectFit: "cover",
@@ -298,7 +320,14 @@ export default function VideoHeroSection({
               transform: "translateZ(0)",
             }}
           >
-            <source src={videoSrc} type="video/mp4" />
+            {videoSrcMobile ? (
+              <>
+                <source src={videoSrc} media="(min-width: 768px)" type="video/mp4" />
+                <source src={videoSrcMobile} type="video/mp4" />
+              </>
+            ) : (
+              <source src={videoSrc} type="video/mp4" />
+            )}
           </video>
         )}
       </div>

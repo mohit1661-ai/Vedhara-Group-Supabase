@@ -48,7 +48,10 @@ const homeFaqs = [
 export default function HomePage() {
   return (
     <>
-      <CinematicHero videoSrc="/videos/Homepage%20Hero%20Video.mp4" />
+      <CinematicHero
+        videoSrc="/videos/Homepage%20Hero%20Video%20Desktop.mp4"
+        videoSrcMobile="/videos/Homepage%20Hero%20Video%20Mobile.mp4"
+      />
       <AnimatedStats />
 
       {/* ══ VERIFICATION FRAMEWORK ══ */}
