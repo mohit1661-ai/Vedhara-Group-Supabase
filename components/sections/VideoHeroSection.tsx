@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState, ReactNode } from "react";
 
 /**
@@ -123,18 +124,47 @@ export default function VideoHeroSection({
   disableParallax,
 }: Props) {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  /* ── Catch video already loaded before React attached onLoadedData ── */
+  /* ── Load hero video only when the section is near the viewport to save bandwidth on first paint ── */
   useEffect(() => {
     const video = videoRef.current;
-    if (video && video.readyState >= 3) {
-      setVideoLoaded(true);
-    }
+    if (!video) return;
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
+      if (entry?.isIntersecting) {
+        setShouldLoadVideo(true);
+        observer.disconnect();
+      }
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      rootMargin: "200px 0px",
+      threshold: 0.1,
+    });
+    observer.observe(video);
+
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoadVideo) return;
+
+    if (video.readyState >= 3) {
+      setVideoLoaded(true);
+      return;
+    }
+
+    const handleLoadedData = () => setVideoLoaded(true);
+    video.addEventListener("loadeddata", handleLoadedData, { once: true });
+    return () => video.removeEventListener("loadeddata", handleLoadedData);
+  }, [shouldLoadVideo]);
 
   /* ── Parallax on scroll ── */
   useEffect(() => {
@@ -200,7 +230,7 @@ export default function VideoHeroSection({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "75vh",
+        minHeight: "100svh",
       }}
     >
       {/* ── Video Background (parallax layer) ── */}
@@ -217,12 +247,13 @@ export default function VideoHeroSection({
         }}
       >
         {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
-        <img
+        <Image
           src={poster}
           alt=""
           aria-hidden
-          loading="eager"
-          decoding="async"
+          fill
+          priority
+          sizes="100vw"
           className="video-bg"
         />
         <video
@@ -231,8 +262,7 @@ export default function VideoHeroSection({
           muted
           loop
           playsInline
-          preload="metadata"
-          onLoadedData={() => setVideoLoaded(true)}
+          preload="auto"
           className="video-bg"
           style={{
             opacity: videoLoaded ? 1 : 0,
@@ -240,6 +270,8 @@ export default function VideoHeroSection({
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            objectPosition: "center center",
+            transform: "translateZ(0)",
           }}
           poster={poster}
         >
@@ -259,6 +291,20 @@ export default function VideoHeroSection({
               }
         }
       />
+
+      <div
+        ref={contentRef}
+        className="hero-content"
+        style={{
+          position: "relative",
+          zIndex: 4,
+          width: "min(100%, 760px)",
+          padding: "0 24px",
+          textAlign: "center",
+        }}
+      >
+        {children}
+      </div>
 
       {/* ── Subtle scan-line overlay for cinematic feel ── */}
       <div
@@ -320,20 +366,6 @@ export default function VideoHeroSection({
       {/* ── Gold particles ── */}
       <Particles baseOpacity={0.3} />
 
-      {/* ── Content ── */}
-      <div
-        ref={contentRef}
-        style={{
-          maxWidth: 800,
-          margin: "0 auto",
-          position: "relative",
-          zIndex: 4,
-          transition: "transform 0.15s ease-out",
-          willChange: "transform",
-        }}
-      >
-        {children}
-      </div>
 
       {/* ── Developer note (visible in dev only) ── */}
       {process.env.NODE_ENV === "development" && (
