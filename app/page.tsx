@@ -65,7 +65,7 @@ export default function HomePage() {
                 <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28,maxWidth:480 }}>
                   Most property portals list whatever inventory developers hand them. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework, five documented checks that we publish in plain language on every listing page. No jargon. No fine print. Just the facts.
                 </p>
-                <Link href="/verification-center" className="btn btn-ghost" style={{ color:"var(--gold)" }}>
+                <Link href="/verification-center" className="btn btn-ghost cta-pill">
                   See the Full Verification Framework →
                 </Link>
               </div>
@@ -111,7 +111,7 @@ export default function HomePage() {
                 </h2>
               </div>
             </ScrollReveal>
-            <Link href="/services" className="btn btn-ghost" style={{ color:"var(--gold)",flexShrink:0 }}>All Services →</Link>
+            <Link href="/services" className="btn btn-ghost cta-pill" style={{ flexShrink:0 }}>All Services →</Link>
           </div>
           <ServicesGrid />
         </div>
