@@ -159,6 +159,11 @@ export default function VideoHeroSection({
     const video = videoRef.current;
     if (!video || !shouldLoadVideo) return;
 
+    // Start the video download only once the hero is near the viewport so the
+    // poster/LCP element paints first. Same video, same quality, just deferred.
+    video.preload = "auto";
+    video.load();
+
     if (video.readyState >= 3) {
       setVideoLoaded(true);
       return;
@@ -264,7 +269,7 @@ export default function VideoHeroSection({
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           className="video-bg"
           style={{
             opacity: videoLoaded ? 1 : 0,

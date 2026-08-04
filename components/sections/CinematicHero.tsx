@@ -99,6 +99,22 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
     }
   }, []);
 
+  /* ── Defer video start so the poster (LCP) paints first; same video quality ── */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const start = () => {
+      video.preload = "auto";
+      video.load();
+    };
+    if (typeof requestIdleCallback === "function") {
+      requestIdleCallback(start, { timeout: 1500 });
+    } else {
+      setTimeout(start, 400);
+    }
+    return () => {};
+  }, []);
+
   /* ── Force autoplay (browsers often block <video autoplay>) ── */
   useEffect(() => {
     if (!videoLoaded || !videoRef.current) return;
@@ -186,7 +202,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{
