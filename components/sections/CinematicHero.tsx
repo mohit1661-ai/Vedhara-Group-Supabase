@@ -103,8 +103,8 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    // Preload metadata immediately so browser knows video dimensions and can prepare for autoplay
-    video.preload = "metadata";
+    // Load immediately — no deferral
+    video.preload = "auto";
     video.load();
   }, []);
 
@@ -203,9 +203,10 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           top: 0,
           zIndex: 0,
           willChange: "transform",
+          background: "#090f1d",
         }}
       >
-        {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
+        {/* Poster fades out when video loads */}
         <Image
           src="/hero-poster.jpg"
           alt=""
@@ -214,6 +215,10 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           priority
           sizes="100vw"
           className="video-bg"
+          style={{
+            opacity: videoLoaded ? 0 : 1,
+            transition: "opacity 1s ease",
+          }}
         />
         <video
           ref={videoRef}
@@ -221,7 +226,7 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           onLoadedData={() => setVideoLoaded(true)}
           className="video-bg"
           style={{
@@ -233,7 +238,6 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
             objectPosition: "center center",
             transform: "translateZ(0)",
           }}
-          poster="/hero-poster.jpg"
         >
           <source
             src={videoSrc}

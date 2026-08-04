@@ -127,42 +127,18 @@ export default function VideoHeroSection({
   disableParallax,
 }: Props) {
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  /* ── Load hero video only when the section is near the viewport to save bandwidth on first paint ── */
-  useEffect(() => {
-    if (!videoSrc) return; // No video to load
-    
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      const [entry] = entries;
-      if (entry?.isIntersecting) {
-        setShouldLoadVideo(true);
-        observer.disconnect();
-      }
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      rootMargin: "200px 0px",
-      threshold: 0.1,
-    });
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, [videoSrc]);
-
+  /* ── Start loading video immediately on mount for instant playback ── */
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !shouldLoadVideo || !videoSrc) return;
+    if (!video || !videoSrc) return;
 
-    // Preload metadata immediately when section is near viewport for faster autoplay
-    video.preload = "metadata";
+    // Load immediately — no deferral
+    video.preload = "auto";
     video.load();
 
     if (video.readyState >= 3) {
@@ -173,7 +149,7 @@ export default function VideoHeroSection({
     const handleLoadedData = () => setVideoLoaded(true);
     video.addEventListener("loadeddata", handleLoadedData, { once: true });
     return () => video.removeEventListener("loadeddata", handleLoadedData);
-  }, [shouldLoadVideo]);
+  }, [videoSrc]);
 
   /* ── Force autoplay when video is loaded ── */
   useEffect(() => {
@@ -286,17 +262,33 @@ export default function VideoHeroSection({
           top: 0,
           zIndex: 0,
           willChange: "transform",
+          background: "#090f1d",
         }}
       >
-        {/* Always-visible poster fallback: stays on-screen even if the video is blocked/deferred on mobile */}
-        <Image
-          src={poster}
-          alt={posterAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="video-bg"
-        />
+        {/* Poster fallback — fades out when video loads to avoid showing homepage poster on all pages */}
+        {videoSrc ? (
+          <Image
+            src={poster}
+            alt={posterAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="video-bg"
+            style={{
+              opacity: videoLoaded ? 0 : 1,
+              transition: "opacity 1s ease",
+            }}
+          />
+        ) : (
+          <Image
+            src={poster}
+            alt={posterAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="video-bg"
+          />
+        )}
         {videoSrc && (
           <video
             ref={videoRef}
@@ -304,7 +296,7 @@ export default function VideoHeroSection({
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             className="video-bg"
             style={{
               opacity: videoLoaded ? 1 : 0,
@@ -315,7 +307,6 @@ export default function VideoHeroSection({
               objectPosition: "center center",
               transform: "translateZ(0)",
             }}
-            poster={poster}
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
