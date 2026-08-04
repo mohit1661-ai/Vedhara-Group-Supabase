@@ -242,25 +242,25 @@ export default function CinematicHero({ videoSrc = "/videos/hero-bg.mp4" }:{ vid
         </video>
       </div>
 
-      {/* ── Gradient overlay (balanced for text readability) ── */}
+      {/* ── Gradient overlay (lighter to reveal more video quality) ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 1,
           background:
-            "linear-gradient(135deg, rgba(9,15,29,0.5) 0%, rgba(15,30,56,0.3) 40%, rgba(9,15,29,0.45) 100%)",
+            "linear-gradient(135deg, rgba(9,15,29,0.35) 0%, rgba(15,30,56,0.2) 40%, rgba(9,15,29,0.3) 100%)",
         }}
       />
 
-      {/* ── Radial vignette ── */}
+      {/* ── Radial vignette (subtler) ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 1,
           background:
-            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.15) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 70% at 30% 50%, rgba(15,30,56,0.08) 0%, transparent 70%)",
         }}
       />
 

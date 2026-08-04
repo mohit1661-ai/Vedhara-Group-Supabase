@@ -119,7 +119,7 @@ function Particles({ baseOpacity = 0.25 }) {
 
 export default function VideoHeroSection({
   children,
-  videoSrc = "/videos/hero-bg.mp4",
+  videoSrc,
   poster = "/hero-poster.jpg",
   posterAlt = "",
   overlayGradient,
@@ -135,8 +135,10 @@ export default function VideoHeroSection({
 
   /* ── Load hero video only when the section is near the viewport to save bandwidth on first paint ── */
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    if (!videoSrc) return; // No video to load
+    
+    const section = sectionRef.current;
+    if (!section) return;
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
@@ -150,14 +152,14 @@ export default function VideoHeroSection({
       rootMargin: "200px 0px",
       threshold: 0.1,
     });
-    observer.observe(video);
+    observer.observe(section);
 
     return () => observer.disconnect();
-  }, []);
+  }, [videoSrc]);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !shouldLoadVideo) return;
+    if (!video || !shouldLoadVideo || !videoSrc) return;
 
     // Preload metadata immediately when section is near viewport for faster autoplay
     video.preload = "metadata";
@@ -295,30 +297,32 @@ export default function VideoHeroSection({
           sizes="100vw"
           className="video-bg"
         />
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="video-bg"
-          style={{
-            opacity: videoLoaded ? 1 : 0,
-            transition: "opacity 1.8s ease",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center center",
-            transform: "translateZ(0)",
-          }}
-          poster={poster}
-        >
-          <source src={videoSrc} type="video/mp4" />
-        </video>
+        {videoSrc && (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="video-bg"
+            style={{
+              opacity: videoLoaded ? 1 : 0,
+              transition: "opacity 1.8s ease",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center center",
+              transform: "translateZ(0)",
+            }}
+            poster={poster}
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        )}
       </div>
 
-      {/* ── Overlay (balanced for text readability while keeping video visible) ── */}
+      {/* ── Overlay (lighter to reveal more video quality while keeping text readable) ── */}
       <div
         className="video-overlay"
         style={
@@ -326,7 +330,7 @@ export default function VideoHeroSection({
             ? { background: overlayGradient }
             : {
                 background:
-                  "linear-gradient(135deg, rgba(9,15,29,0.78) 0%, rgba(15,30,56,0.60) 40%, rgba(9,15,29,0.72) 100%)",
+                  "linear-gradient(135deg, rgba(9,15,29,0.55) 0%, rgba(15,30,56,0.35) 40%, rgba(9,15,29,0.5) 100%)",
               }
         }
       />

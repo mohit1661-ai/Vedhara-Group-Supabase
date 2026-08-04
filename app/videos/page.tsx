@@ -63,7 +63,7 @@ export default function VideosPage() {
       <JsonLd data={jsonLd} />
 
       {/* Hero */}
-      <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Homepage%20Video.mp4">
+      <VideoHeroSection videoSrc="/videos/Homepage%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 18px" }} />
         <p className="eyebrow" style={{ marginBottom:16 }}>Vedhara Group Films</p>
         <h1 className="heading-xl" style={{ color:"var(--light)", lineHeight:1.08, marginBottom:20 }}>

@@ -48,7 +48,7 @@ const homeFaqs = [
 export default function HomePage() {
   return (
     <>
-      <CinematicHero videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Homepage%20Video.mp4" />
+      <CinematicHero videoSrc="/videos/Homepage%20Hero%20Video.mp4" />
       <AnimatedStats />
 
       {/* ══ VERIFICATION FRAMEWORK ══ */}
