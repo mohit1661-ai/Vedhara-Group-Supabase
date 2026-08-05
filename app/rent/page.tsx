@@ -23,6 +23,7 @@ interface RentalListing {
   status:"Available"|"Recently Leased"|"Under Offer";
   highlights:string[];
   image:string;
+  pos?:string;
   alt?:string;
 }
 

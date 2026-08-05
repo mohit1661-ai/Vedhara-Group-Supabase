@@ -21,6 +21,7 @@ interface LuxuryListing {
   status:"Available"|"Under Offer"|"Sold";
   highlights:string[];
   image:string;
+  pos?:string;
   alt?:string;
 }
 

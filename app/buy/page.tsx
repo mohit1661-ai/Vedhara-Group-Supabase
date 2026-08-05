@@ -21,6 +21,7 @@ interface PropertyListing {
   status:"Ready to Move"|"Possession Oct 2026"|"Possession Dec 2026"|"Under Construction";
   highlights:string[];
   image:string;
+  pos?:string;
   alt?:string;
 }
 

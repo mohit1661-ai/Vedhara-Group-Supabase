@@ -20,6 +20,7 @@ interface CommercialListing {
   status:"Available"|"Leased"|"Under Offer";
   highlights:string[];
   image:string;
+  pos?:string;
   alt?:string;
 }
 

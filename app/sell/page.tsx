@@ -21,6 +21,7 @@ interface SellListing {
   status:"Available for Sale"|"Under Offer"|"Sold";
   highlights:string[];
   image:string;
+  pos?:string;
   alt?:string;
 }
 

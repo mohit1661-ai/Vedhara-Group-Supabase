@@ -83,6 +83,7 @@ interface TricityListing {
   status:"Ready to Move"|"Possession Dec 2026"|"Under Construction"|"Available for Sale";
   highlights:string[];
   image:string;
+  pos?:string;
   alt?:string;
 }
 
