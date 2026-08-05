@@ -36,8 +36,8 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Ready to Move",
     highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"],
-    image:"https://images.pexels.com/photos/37266412/pexels-photo-37266412.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"The Cullinan Heights luxury apartment building in Sector 150, Noida",
+    image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida",
   },
   {
     id:"ved-002",

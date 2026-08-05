@@ -91,9 +91,9 @@ const sellListings: SellListing[] = [
     type:"Plotted",
     status:"Available for Sale",
     highlights:["Sector 150","Corner Plot","All Approvals","Immediate Registration"],
-    image:"https://images.pexels.com/photos/7104647/pexels-photo-7104647.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"Serene Garden Plot residential plot in Sector 150, Noida",
+    image:"https://images.pexels.com/photos/15422584/pexels-photo-15422584.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"50%",
+    alt:"Serene Garden Plot green residential plot land in Sector 150, Noida",
   },
   {
     id:"ved-s06",

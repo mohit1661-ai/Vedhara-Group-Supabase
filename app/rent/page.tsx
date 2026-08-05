@@ -120,8 +120,8 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["MG Road Front","High Footfall","Washroom","Loading Bay"],
-    image:"https://images.pexels.com/photos/12522753/pexels-photo-12522753.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"Galleria Business Hub retail space on MG Road, Gurugram",
+    image:"https://images.pexels.com/photos/13425897/pexels-photo-13425897.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Galleria Business Hub retail mall on MG Road, Gurugram",
   },
 ];
 
