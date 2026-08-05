@@ -44,6 +44,7 @@ const commercialListings: CommercialListing[] = [
     status:"Available",
     highlights:["High Footfall","Market Centre","Loading Bay","Signage Visible"],
     image:"https://images.pexels.com/photos/17391304/pexels-photo-17391304.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"83%",
   },
   {
     id:"ved-c03",
@@ -66,6 +67,7 @@ const commercialListings: CommercialListing[] = [
     status:"Available",
     highlights:["Plug & Play","Meeting Rooms","Cafeteria","Networking Events"],
     image:"https://images.pexels.com/photos/36926207/pexels-photo-36926207.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"62%",
   },
   {
     id:"ved-c05",
@@ -88,6 +90,7 @@ const commercialListings: CommercialListing[] = [
     status:"Under Offer",
     highlights:["MG Road Frontage","Corporate Zone","Basement Parking","100% Power Backup"],
     image:"https://images.pexels.com/photos/30704251/pexels-photo-30704251.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"59%",
   },
 ];
 
@@ -128,7 +131,7 @@ export default function CommercialPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>

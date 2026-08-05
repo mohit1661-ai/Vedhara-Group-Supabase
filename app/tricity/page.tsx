@@ -46,11 +46,13 @@ const jurisdictions = [
   {
     title:"Chandigarh Estate Office", applies:"Chandigarh UT", mono:"EO",
     image:"https://images.pexels.com/photos/34968154/pexels-photo-34968154.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
     body:"No separate RERA authority is yet functional in Chandigarh UT. Allotments, resale permissions, and NOCs are handled by the Chandigarh Administration's Estate Office under the 1960 Rules. Title checks focus on the registered chain, allotment letters, and Estate Office approvals.",
   },
   {
     title:"GMADA", applies:"Mohali · Zirakpur · Kharar · New Chandigarh", mono:"GM",
     image:"https://images.pexels.com/photos/33848325/pexels-photo-33848325.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"79%",
     body:"Punjab projects are planned and approved by GMADA. We verify the sector's sanctioned layout, the project's approval status, and whether the unit sits inside an approved or unauthorised colony before any recommendation.",
   },
   {
@@ -92,6 +94,7 @@ const tricityListings: TricityListing[] = [
     status:"Ready to Move",
     highlights:["Estate Office NOC","Freehold Title","Golf Course View","Clubhouse Access"],
     image:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"58%",
   },
   {
     id:"ved-t02",
@@ -116,6 +119,7 @@ const tricityListings: TricityListing[] = [
     status:"Possession Dec 2026",
     highlights:["Punjab RERA","IT Park Proximity","Gated Community","Metro Proposed"],
     image:"https://images.pexels.com/photos/35229793/pexels-photo-35229793.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
   },
   {
     id:"ved-t04",
@@ -128,6 +132,7 @@ const tricityListings: TricityListing[] = [
     status:"Under Construction",
     highlights:["GMADA Approved","High Appreciation","Smart Home","Panoramic Balcony"],
     image:"https://images.pexels.com/photos/11442140/pexels-photo-11442140.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"98%",
   },
   {
     id:"ved-t05",
@@ -140,6 +145,7 @@ const tricityListings: TricityListing[] = [
     status:"Ready to Move",
     highlights:["High Footfall","GMADA Zone","Signage Visible","Car Parking"],
     image:"https://images.pexels.com/photos/11840337/pexels-photo-11840337.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"69%",
   },
   {
     id:"ved-t06",
@@ -252,7 +258,7 @@ export default function TricityPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>

@@ -47,6 +47,7 @@ const featuredListings: PropertyListing[] = [
     status:"Possession Oct 2026",
     highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"],
     image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
   },
   {
     id:"ved-003",
@@ -59,6 +60,7 @@ const featuredListings: PropertyListing[] = [
     status:"Possession Dec 2026",
     highlights:["RERA Registered","Metro Proximity","85% Open Area","Premium Finishes"],
     image:"https://images.pexels.com/photos/7672058/pexels-photo-7672058.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
   },
   {
     id:"ved-004",
@@ -71,6 +73,7 @@ const featuredListings: PropertyListing[] = [
     status:"Ready to Move",
     highlights:["RERA Registered","LEED Platinum","24hr Security","100+ Car Parking"],
     image:"https://images.pexels.com/photos/5859961/pexels-photo-5859961.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
   },
   {
     id:"ved-005",
@@ -95,6 +98,7 @@ const featuredListings: PropertyListing[] = [
     status:"Under Construction",
     highlights:["RERA Registered","South Delhi","Premium Location","High Appreciation"],
     image:"https://images.pexels.com/photos/35114454/pexels-photo-35114454.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"80%",
   },
 ];
 
@@ -140,7 +144,7 @@ export default function BuyPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>

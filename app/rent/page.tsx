@@ -39,6 +39,7 @@ const rentalListings: RentalListing[] = [
     status:"Available",
     highlights:["Gurugram prime location","Gated Society","Parking Included","Power Backup"],
     image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"0%",
   },
   {
     id:"ved-r02",
@@ -53,6 +54,7 @@ const rentalListings: RentalListing[] = [
     status:"Available",
     highlights:["Noida Sec 44","Metro 500m","Balcony","24hr Water"],
     image:"https://images.pexels.com/photos/27085225/pexels-photo-27085225.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"61%",
   },
   {
     id:"ved-r03",
@@ -67,6 +69,7 @@ const rentalListings: RentalListing[] = [
     status:"Available",
     highlights:["IT/Tech Hub","Conference Room","Pantry","24hr Security"],
     image:"https://images.pexels.com/photos/5859962/pexels-photo-5859962.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"95%",
   },
   {
     id:"ved-r04",
@@ -81,6 +84,7 @@ const rentalListings: RentalListing[] = [
     status:"Available",
     highlights:["South Delhi","Lawns & Park","Covered Parking","Close to Airport"],
     image:"https://images.pexels.com/photos/34623003/pexels-photo-34623003.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"80%",
   },
   {
     id:"ved-r05",
@@ -95,6 +99,7 @@ const rentalListings: RentalListing[] = [
     status:"Under Offer",
     highlights:["Lake View","Premium Finishes","Clubhouse","Modular Kitchen"],
     image:"https://images.pexels.com/photos/4792297/pexels-photo-4792297.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"63%",
   },
   {
     id:"ved-r06",
@@ -150,7 +155,7 @@ export default function RentPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     {/* Status badge */}

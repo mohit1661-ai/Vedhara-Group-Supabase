@@ -47,6 +47,7 @@ const luxuryListings: LuxuryListing[] = [
     status:"Available",
     highlights:["Lake Front","Private Garden","Modular Kitchen","Home Theatre"],
     image:"https://images.pexels.com/photos/16573669/pexels-photo-16573669.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"72%",
   },
   {
     id:"ved-l03",
@@ -59,6 +60,7 @@ const luxuryListings: LuxuryListing[] = [
     status:"Available",
     highlights:["South Delhi Prime","Heritage Architecture","Landscaped Lawns","Staff Quarters"],
     image:"https://images.pexels.com/photos/33985273/pexels-photo-33985273.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"31%",
   },
   {
     id:"ved-l04",
@@ -83,6 +85,7 @@ const luxuryListings: LuxuryListing[] = [
     status:"Available",
     highlights:["GK II Address","Rooftop Terrace","Puja Room","Family Lounge"],
     image:"https://images.pexels.com/photos/1630114/pexels-photo-1630114.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"16%",
   },
   {
     id:"ved-l06",
@@ -95,6 +98,7 @@ const luxuryListings: LuxuryListing[] = [
     status:"Available",
     highlights:["Golf Estate","Private Pool","Club Membership","Aravalli Views"],
     image:"https://images.pexels.com/photos/36676879/pexels-photo-36676879.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"63%",
   },
 ];
 
@@ -135,7 +139,7 @@ export default function LuxuryPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>

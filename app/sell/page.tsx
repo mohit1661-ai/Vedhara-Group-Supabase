@@ -35,6 +35,7 @@ const sellListings: SellListing[] = [
     status:"Available for Sale",
     highlights:["Dwarka Prime","Park Facing","3 Sidus Open","Vastu Compliant"],
     image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"19%",
   },
   {
     id:"ved-s02",
@@ -59,6 +60,7 @@ const sellListings: SellListing[] = [
     status:"Available for Sale",
     highlights:["Commercial Zone","Leased Until Apr 27","High ROI","Corner Location"],
     image:"https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"67%",
   },
   {
     id:"ved-s04",
@@ -71,6 +73,7 @@ const sellListings: SellListing[] = [
     status:"Available for Sale",
     highlights:["Golf Course View","Private Terrace","Smart Home","Jacuzzi"],
     image:"https://images.pexels.com/photos/35203563/pexels-photo-35203563.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"28%",
   },
   {
     id:"ved-s05",
@@ -83,6 +86,7 @@ const sellListings: SellListing[] = [
     status:"Available for Sale",
     highlights:["Sector 150","Corner Plot","All Approvals","Immediate Registration"],
     image:"https://images.pexels.com/photos/8314510/pexels-photo-8314510.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"10%",
   },
   {
     id:"ved-s06",
@@ -95,6 +99,7 @@ const sellListings: SellListing[] = [
     status:"Under Offer",
     highlights:["South Delhi Prime","Heritage Architecture","Large Courtyard","Rare Offering"],
     image:"https://images.pexels.com/photos/33520069/pexels-photo-33520069.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"32%",
   },
 ];
 
@@ -140,7 +145,7 @@ export default function SellPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>

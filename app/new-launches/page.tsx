@@ -19,6 +19,7 @@ interface LaunchProject {
   status:"Just Launched"|"Pre-Launch"|"Under Construction"|"Phase 2 Released";
   highlights:string[];
   image:string;
+  pos?:string;
 }
 
 const launchFaqs: FAQItem[] = [
@@ -57,6 +58,7 @@ const launchProjects: LaunchProject[] = [
     status:"Just Launched",
     highlights:["RERA Applied","53 Towers","7 Acres Green","Club & Pool"],
     image:"https://images.pexels.com/photos/38341175/pexels-photo-38341175.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"84%",
   },
   {
     id:"ved-n02",
@@ -70,6 +72,7 @@ const launchProjects: LaunchProject[] = [
     status:"Pre-Launch",
     highlights:["Limited Inventory","Golf Course Road","Private Elevator","Concierge"],
     image:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"71%",
   },
   {
     id:"ved-n03",
@@ -83,6 +86,7 @@ const launchProjects: LaunchProject[] = [
     status:"Just Launched",
     highlights:["LEED Platinum","Metro Connector","Food Court","24hr Operation"],
     image:"https://images.pexels.com/photos/36903834/pexels-photo-36903834.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"84%",
   },
   {
     id:"ved-n04",
@@ -96,6 +100,7 @@ const launchProjects: LaunchProject[] = [
     status:"Under Construction",
     highlights:["RERA Registered","35% Open Space","School Tie-up","Lake View"],
     image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"66%",
   },
   {
     id:"ved-n05",
@@ -109,6 +114,7 @@ const launchProjects: LaunchProject[] = [
     status:"Under Construction",
     highlights:["RERA Registered","Golf Course View","70% Sold","Possession Apr 2028"],
     image:"https://images.pexels.com/photos/30368780/pexels-photo-30368780.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"74%",
   },
   {
     id:"ved-n06",
@@ -122,6 +128,7 @@ const launchProjects: LaunchProject[] = [
     status:"Phase 2 Released",
     highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
     image:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
   },
   {
     id:"ved-n07",
@@ -135,6 +142,7 @@ const launchProjects: LaunchProject[] = [
     status:"Just Launched",
     highlights:["RERA Applied","Metro 800m","Neighbourhood Mall","Landscaped Gardens"],
     image:"https://images.pexels.com/photos/30381835/pexels-photo-30381835.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"82%",
   },
   {
     id:"ved-n08",
@@ -213,7 +221,7 @@ export default function NewLaunchesPage() {
                       alt={project.projectName}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: project.pos || "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>

@@ -171,6 +171,7 @@ export default function HomePage() {
                 config:"4,500 sq.ft. Office",
                 size:"4,500 sq.ft.",
                 image:"https://images.pexels.com/photos/5859961/pexels-photo-5859961.jpeg?auto=compress&cs=tinysrgb&w=900",
+                pos:"100%",
                 link:"/commercial",
                 tag:"Ready to Move",
               },
@@ -182,6 +183,7 @@ export default function HomePage() {
                 config:"3 BHK + Servant",
                 size:"2,150 sq.ft.",
                 image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
+                pos:"100%",
                 link:"/new-launches",
                 tag:"Possession Oct 2026",
               },
@@ -193,6 +195,7 @@ export default function HomePage() {
                 config:"3 BHK",
                 size:"1,550 sq.ft.",
                 image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
+                pos:"0%",
                 link:"/rent",
                 tag:"Available",
               },
@@ -204,6 +207,7 @@ export default function HomePage() {
                 config:"450 sq.yds.",
                 size:"450 sq.yds.",
                 image:"https://images.pexels.com/photos/8314510/pexels-photo-8314510.jpeg?auto=compress&cs=tinysrgb&w=900",
+                pos:"10%",
                 link:"/sell",
                 tag:"Available for Sale",
               },
@@ -216,7 +220,7 @@ export default function HomePage() {
                       alt={p.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover" }}
+                      style={{ objectFit:"cover", objectPosition: p.pos || "50% 50%" }}
                     />
                     {/* subtle dark overlay for text legibility */}
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
