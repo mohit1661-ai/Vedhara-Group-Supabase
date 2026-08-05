@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
@@ -60,6 +61,94 @@ const freeholdLeasehold = [
   { t:"Freehold", d:"Full ownership of land and structure with no time limit. Transferable by registered sale deed without the authority's permission in most cases. Generally preferred and carries a price premium over comparable leasehold." },
   { t:"Leasehold", d:"Ownership of the structure with the land on a long lease (typically 99 years) from the authority. Transfer requires the authority's permission or NOC, and conversion to freehold is possible in many sectors at prescribed charges." },
   { t:"The Tricity Nuance", d:"Chandigarh is majority freehold with leasehold pockets; Panchkula was historically leasehold and many sectors have converted to freehold; Mohali and GMADA sectors are predominantly freehold. Always confirm the tenure on the title, not on the brochure." },
+];
+
+interface TricityListing {
+  id:string;
+  title:string;
+  location:string;
+  price:string;
+  config:string;
+  size:string;
+  type:"Residential"|"Luxury"|"Commercial"|"Plotted";
+  status:"Ready to Move"|"Possession Dec 2026"|"Under Construction"|"Available for Sale";
+  highlights:string[];
+  image:string;
+}
+
+const tricityListings: TricityListing[] = [
+  {
+    id:"ved-t01",
+    title:"The Corbusier Residences",
+    location:"Sector 17, Chandigarh",
+    price:"₹ 6.75 Cr",
+    config:"4 BHK + Study",
+    size:"2,850 sq.ft.",
+    type:"Residential",
+    status:"Ready to Move",
+    highlights:["Estate Office NOC","Freehold Title","Golf Course View","Clubhouse Access"],
+    image:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900",
+  },
+  {
+    id:"ved-t02",
+    title:"Sukna Lakefront Villas",
+    location:"Sector 4, Panchkula",
+    price:"₹ 8.90 Cr",
+    config:"5 BHK Villa",
+    size:"4,200 sq.ft.",
+    type:"Luxury",
+    status:"Ready to Move",
+    highlights:["HRERA Registered","Lake Front","Freehold Converted","Private Garden"],
+    image:"https://images.pexels.com/photos/37433082/pexels-photo-37433082.jpeg?auto=compress&cs=tinysrgb&w=900",
+  },
+  {
+    id:"ved-t03",
+    title:"Aero City Heights",
+    location:"Airport Road, Mohali",
+    price:"₹ 2.65 Cr",
+    config:"3 BHK",
+    size:"1,650 sq.ft.",
+    type:"Residential",
+    status:"Possession Dec 2026",
+    highlights:["Punjab RERA","IT Park Proximity","Gated Community","Metro Proposed"],
+    image:"https://images.pexels.com/photos/35229793/pexels-photo-35229793.jpeg?auto=compress&cs=tinysrgb&w=900",
+  },
+  {
+    id:"ved-t04",
+    title:"New Chandigarh Skyline",
+    location:"Sector 101, New Chandigarh",
+    price:"₹ 4.20 Cr",
+    config:"4 BHK",
+    size:"2,350 sq.ft.",
+    type:"Residential",
+    status:"Under Construction",
+    highlights:["GMADA Approved","High Appreciation","Smart Home","Panoramic Balcony"],
+    image:"https://images.pexels.com/photos/11442140/pexels-photo-11442140.jpeg?auto=compress&cs=tinysrgb&w=900",
+  },
+  {
+    id:"ved-t05",
+    title:"Zirakpur Metro Square",
+    location:"VIP Road, Zirakpur",
+    price:"₹ 1.85 Cr",
+    config:"1,800 sq.ft. Retail",
+    size:"1,800 sq.ft.",
+    type:"Commercial",
+    status:"Ready to Move",
+    highlights:["High Footfall","GMADA Zone","Signage Visible","Car Parking"],
+    image:"https://images.pexels.com/photos/11840337/pexels-photo-11840337.jpeg?auto=compress&cs=tinysrgb&w=900",
+  },
+  {
+    id:"ved-t06",
+    title:"Kharar Green County",
+    location:"Kharar, Mohali",
+    price:"₹ 2.10 Cr",
+    config:"300 sq.yds. Plot",
+    size:"300 sq.yds.",
+    type:"Plotted",
+    status:"Available for Sale",
+    highlights:["GMADA Approved","Corner Plot","Clear Title","Immediate Registry"],
+    image:"https://images.pexels.com/photos/8322791/pexels-photo-8322791.jpeg?auto=compress&cs=tinysrgb&w=900",
+  },
 ];
 
 const faqs = [
@@ -127,6 +216,86 @@ export default function TricityPage() {
             <p className="body-lg" style={{ color:"var(--slate)" }}>
               Chandigarh Tricity sits across three jurisdictions, Chandigarh UT, Punjab, and Haryana, each with its own authority, stamp duty, and RERA situation. A title that is clean in Mohali can be unverifiable in Chandigarh. Our job is to make that complexity your advantage: verified approvals, honest tenure, and pricing benchmarked to real registered transactions.
             </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Featured Tricity Properties */}
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:60 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Featured Listings</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                Verified Properties<span style={{ color:"var(--gold-lt)" }}> in Tricity</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
+                Every listing is RERA/HRERA-verified and independently assessed through the Vedhara Verification Framework.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="prop-grid">
+            {tricityListings.map((property,index)=>(
+              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
+                <Link href="/contact?service=tricity" className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                  {/* Image area */}
+                  <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
+                    <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
+                        {property.status}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
+                        {property.type}
+                      </span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
+                    <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:14,flex:1,alignContent:"flex-start" }}>
+                      {property.highlights.map(h=>(
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 8px",background:"rgba(212,168,67,0.08)",color:"var(--gold-dk)",borderRadius:3 }}>
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{property.price}</p>
+                      <span className="btn-ghost" style={{ color:"var(--gold)",fontSize:9,display:"inline-flex",alignItems:"center",gap:4 }}>
+                        Inquire →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={120}>
+            <div style={{ textAlign:"center",marginTop:40 }}>
+              <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
+                Don&apos;t see what you&apos;re looking for? Our full inventory spans Chandigarh, Mohali, Panchkula, Zirakpur, Kharar and New Chandigarh.
+              </p>
+              <Link href="/contact" className="btn btn-primary">
+                Talk to an Advisor →
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

@@ -38,7 +38,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Available",
     highlights:["Gurugram prime location","Gated Society","Parking Included","Power Backup"],
-    image:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-r02",
@@ -52,7 +52,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Available",
     highlights:["Noida Sec 44","Metro 500m","Balcony","24hr Water"],
-    image:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/27085225/pexels-photo-27085225.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-r03",
@@ -66,7 +66,7 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["IT/Tech Hub","Conference Room","Pantry","24hr Security"],
-    image:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/5859962/pexels-photo-5859962.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-r04",
@@ -80,7 +80,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Available",
     highlights:["South Delhi","Lawns & Park","Covered Parking","Close to Airport"],
-    image:"https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/34623003/pexels-photo-34623003.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-r05",
@@ -94,7 +94,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Under Offer",
     highlights:["Lake View","Premium Finishes","Clubhouse","Modular Kitchen"],
-    image:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/4792297/pexels-photo-4792297.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-r06",
@@ -108,7 +108,7 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["MG Road Front","High Footfall","Washroom","Loading Bay"],
-    image:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/12522753/pexels-photo-12522753.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 

@@ -32,7 +32,7 @@ const commercialListings: CommercialListing[] = [
     type:"Office",
     status:"Available",
     highlights:["Golf Course Road","LEED Gold","Deal Floor","24hr Security"],
-    image:"https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/38340685/pexels-photo-38340685.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-c02",
@@ -43,7 +43,7 @@ const commercialListings: CommercialListing[] = [
     type:"Retail",
     status:"Available",
     highlights:["High Footfall","Market Centre","Loading Bay","Signage Visible"],
-    image:"https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/17391304/pexels-photo-17391304.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-c03",
@@ -54,7 +54,7 @@ const commercialListings: CommercialListing[] = [
     type:"Industrial",
     status:"Available",
     highlights:["NH-48 Access","Heavy Power","Warehouse","Loading Dock"],
-    image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/4115457/pexels-photo-4115457.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-c04",
@@ -65,7 +65,7 @@ const commercialListings: CommercialListing[] = [
     type:"Co-working",
     status:"Available",
     highlights:["Plug & Play","Meeting Rooms","Cafeteria","Networking Events"],
-    image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/36926207/pexels-photo-36926207.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-c05",
@@ -76,7 +76,7 @@ const commercialListings: CommercialListing[] = [
     type:"Land",
     status:"Available",
     highlights:["Mixed-Use Zoning","Noida Authority","Corner Plot","Ideal for Mall"],
-    image:"https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/32370508/pexels-photo-32370508.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-c06",
@@ -87,7 +87,7 @@ const commercialListings: CommercialListing[] = [
     type:"Office",
     status:"Under Offer",
     highlights:["MG Road Frontage","Corporate Zone","Basement Parking","100% Power Backup"],
-    image:"https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/30704251/pexels-photo-30704251.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 

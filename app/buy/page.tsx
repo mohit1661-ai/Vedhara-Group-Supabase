@@ -34,7 +34,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Ready to Move",
     highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"],
-    image:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/33911286/pexels-photo-33911286.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-002",
@@ -46,7 +46,7 @@ const featuredListings: PropertyListing[] = [
     type:"Luxury",
     status:"Possession Oct 2026",
     highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"],
-    image:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-003",
@@ -58,7 +58,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Possession Dec 2026",
     highlights:["RERA Registered","Metro Proximity","85% Open Area","Premium Finishes"],
-    image:"https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/7672058/pexels-photo-7672058.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-004",
@@ -70,7 +70,7 @@ const featuredListings: PropertyListing[] = [
     type:"Commercial",
     status:"Ready to Move",
     highlights:["RERA Registered","LEED Platinum","24hr Security","100+ Car Parking"],
-    image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/5859961/pexels-photo-5859961.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-005",
@@ -82,7 +82,7 @@ const featuredListings: PropertyListing[] = [
     type:"Luxury",
     status:"Ready to Move",
     highlights:["RERA Registered","Park Facing","Private Pool","Modular Kitchen"],
-    image:"https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/4497544/pexels-photo-4497544.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-006",
@@ -94,7 +94,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Under Construction",
     highlights:["RERA Registered","South Delhi","Premium Location","High Appreciation"],
-    image:"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/35114454/pexels-photo-35114454.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 

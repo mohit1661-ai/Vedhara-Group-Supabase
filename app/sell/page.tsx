@@ -34,7 +34,7 @@ const sellListings: SellListing[] = [
     type:"Residential",
     status:"Available for Sale",
     highlights:["Dwarka Prime","Park Facing","3 Sidus Open","Vastu Compliant"],
-    image:"https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-s02",
@@ -46,7 +46,7 @@ const sellListings: SellListing[] = [
     type:"Residential",
     status:"Available for Sale",
     highlights:["Golf Course Extn","Clubhouse","Covered Parking","High Floor"],
-    image:"https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/7672060/pexels-photo-7672060.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-s03",
@@ -58,7 +58,7 @@ const sellListings: SellListing[] = [
     type:"Commercial",
     status:"Available for Sale",
     highlights:["Commercial Zone","Leased Until Apr 27","High ROI","Corner Location"],
-    image:"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-s04",
@@ -70,7 +70,7 @@ const sellListings: SellListing[] = [
     type:"Luxury",
     status:"Available for Sale",
     highlights:["Golf Course View","Private Terrace","Smart Home","Jacuzzi"],
-    image:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/35203563/pexels-photo-35203563.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-s05",
@@ -82,7 +82,7 @@ const sellListings: SellListing[] = [
     type:"Plotted",
     status:"Available for Sale",
     highlights:["Sector 150","Corner Plot","All Approvals","Immediate Registration"],
-    image:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/8314510/pexels-photo-8314510.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-s06",
@@ -94,7 +94,7 @@ const sellListings: SellListing[] = [
     type:"Luxury",
     status:"Under Offer",
     highlights:["South Delhi Prime","Heritage Architecture","Large Courtyard","Rare Offering"],
-    image:"https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/33520069/pexels-photo-33520069.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 

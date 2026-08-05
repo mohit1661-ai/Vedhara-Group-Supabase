@@ -56,7 +56,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Just Launched",
     highlights:["RERA Applied","53 Towers","7 Acres Green","Club & Pool"],
-    image:"https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/38341175/pexels-photo-38341175.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n02",
@@ -69,7 +69,7 @@ const launchProjects: LaunchProject[] = [
     type:"Luxury",
     status:"Pre-Launch",
     highlights:["Limited Inventory","Golf Course Road","Private Elevator","Concierge"],
-    image:"https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n03",
@@ -82,7 +82,7 @@ const launchProjects: LaunchProject[] = [
     type:"Commercial",
     status:"Just Launched",
     highlights:["LEED Platinum","Metro Connector","Food Court","24hr Operation"],
-    image:"https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/36903834/pexels-photo-36903834.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n04",
@@ -95,7 +95,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Under Construction",
     highlights:["RERA Registered","35% Open Space","School Tie-up","Lake View"],
-    image:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n05",
@@ -108,7 +108,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Under Construction",
     highlights:["RERA Registered","Golf Course View","70% Sold","Possession Apr 2028"],
-    image:"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/30368780/pexels-photo-30368780.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n06",
@@ -121,7 +121,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Phase 2 Released",
     highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
-    image:"https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n07",
@@ -134,7 +134,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Just Launched",
     highlights:["RERA Applied","Metro 800m","Neighbourhood Mall","Landscaped Gardens"],
-    image:"https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/30381835/pexels-photo-30381835.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n08",
@@ -147,7 +147,7 @@ const launchProjects: LaunchProject[] = [
     type:"Plotted",
     status:"Under Construction",
     highlights:["RERA Registered","Gated Community","Plots Available","Bank Tied-up"],
-    image:"https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/7765190/pexels-photo-7765190.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-n09",
@@ -160,7 +160,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Pre-Launch",
     highlights:["Early Bird Pricing","RERA Applied","Noida Extension","High Appreciation Zone"],
-    image:"https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/31325988/pexels-photo-31325988.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 

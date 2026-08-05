@@ -34,7 +34,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Penthouse",
     status:"Available",
     highlights:["Panoramic View","Private Terrace","Jacuzzi","Butler Service"],
-    image:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-l02",
@@ -46,7 +46,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Villa",
     status:"Available",
     highlights:["Lake Front","Private Garden","Modular Kitchen","Home Theatre"],
-    image:"https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/16573669/pexels-photo-16573669.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-l03",
@@ -58,7 +58,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Estate",
     status:"Available",
     highlights:["South Delhi Prime","Heritage Architecture","Landscaped Lawns","Staff Quarters"],
-    image:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/33985273/pexels-photo-33985273.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-l04",
@@ -70,7 +70,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Penthouse",
     status:"Under Offer",
     highlights:["Sky Deck","Private Elevator","Wine Cellar","Smart Home"],
-    image:"https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/8082227/pexels-photo-8082227.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-l05",
@@ -82,7 +82,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Independent Floor",
     status:"Available",
     highlights:["GK II Address","Rooftop Terrace","Puja Room","Family Lounge"],
-    image:"https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/1630114/pexels-photo-1630114.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-l06",
@@ -94,7 +94,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Villa",
     status:"Available",
     highlights:["Golf Estate","Private Pool","Club Membership","Aravalli Views"],
-    image:"https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=900&q=80",
+    image:"https://images.pexels.com/photos/36676879/pexels-photo-36676879.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 
