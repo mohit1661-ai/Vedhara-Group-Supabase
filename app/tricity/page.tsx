@@ -56,6 +56,7 @@ const jurisdictions = [
   {
     title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab · Haryana", mono:"RA",
     image:"https://images.pexels.com/photos/33217250/pexels-photo-33217250.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"50% 70%",
     body:"Mohali, Zirakpur, Kharar and New Chandigarh fall under Punjab RERA (PSIARA/PunRERA); Panchkula falls under HRERA (Haryana). RERA registration, quarterly progress filings, and complaint history are checked on the correct state portal for each project.",
   },
 ];
@@ -315,13 +316,15 @@ export default function TricityPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0,1fr))", gap:1, background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0,1fr))", gap:24 }} className="grid-3">
             {markets.slice(0, 3).map((m, i) => (
               <ScrollReveal key={m.name} delay={i * 60}>
-                <div className="svc-card" style={{ borderRadius:0, height:"100%", padding:"34px 28px", display:"flex", flexDirection:"column" }}>
-                  <div className="gold-accent" />
-                  <p className="eyebrow" style={{ marginBottom:8, letterSpacing:"0.16em" }}>{m.tag}</p>
-                  <h3 className="svc-card-title" style={{ fontSize:17, marginBottom:10 }}>{m.name}</h3>
+                <div className="svc-card mm-card" style={{ display:"flex", flexDirection:"column", padding:"30px 26px 24px" }}>
+                  <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16 }}>
+                    <span className="mm-tag">{m.tag}</span>
+                    <div className="gold-accent" style={{ margin:0, flex:1 }} />
+                  </div>
+                  <h3 className="svc-card-title" style={{ fontSize:18, marginBottom:10 }}>{m.name}</h3>
                   <p className="svc-card-desc" style={{ marginBottom:16 }}>{m.desc}</p>
                   <div style={{ marginTop:"auto", paddingTop:14, borderTop:"1px solid rgba(212,168,67,0.22)" }}>
                     <ul style={{ margin:0, padding:0, listStyle:"none" }}>
@@ -338,13 +341,15 @@ export default function TricityPage() {
             ))}
           </div>
           {/* Remaining two markets centred so the last row has no empty cell */}
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0,1fr))", gap:1, background:"rgba(42,45,53,0.08)", marginTop:1 }} className="grid-2 svc-card-alt journey-center-row">
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0,1fr))", gap:24, marginTop:24 }} className="grid-2 journey-center-row">
             {markets.slice(3).map((m, i) => (
               <ScrollReveal key={m.name} delay={(i + 3) * 60}>
-                <div className="svc-card" style={{ borderRadius:0, height:"100%", padding:"34px 28px", display:"flex", flexDirection:"column" }}>
-                  <div className="gold-accent" />
-                  <p className="eyebrow" style={{ marginBottom:8, letterSpacing:"0.16em" }}>{m.tag}</p>
-                  <h3 className="svc-card-title" style={{ fontSize:17, marginBottom:10 }}>{m.name}</h3>
+                <div className="svc-card mm-card" style={{ display:"flex", flexDirection:"column", padding:"30px 26px 24px" }}>
+                  <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16 }}>
+                    <span className="mm-tag">{m.tag}</span>
+                    <div className="gold-accent" style={{ margin:0, flex:1 }} />
+                  </div>
+                  <h3 className="svc-card-title" style={{ fontSize:18, marginBottom:10 }}>{m.name}</h3>
                   <p className="svc-card-desc" style={{ marginBottom:16 }}>{m.desc}</p>
                   <div style={{ marginTop:"auto", paddingTop:14, borderTop:"1px solid rgba(212,168,67,0.22)" }}>
                     <ul style={{ margin:0, padding:0, listStyle:"none" }}>
@@ -383,7 +388,7 @@ export default function TricityPage() {
                 <div className="team-card hover-lift" style={{ display:"block", background:"var(--cream)", border:"1px solid rgba(212,168,67,0.15)", borderRadius:16, overflow:"hidden", textDecoration:"none", height:"100%" }}>
                   {/* Image banner with authority monogram */}
                   <div style={{ height:170, position:"relative", overflow:"hidden" }}>
-                    <Image src={j.image} alt={j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover" }} />
+                    <Image src={j.image} alt={j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover", objectPosition:j.pos || "50% 50%" }} />
                     <div style={{ position:"absolute", inset:0, background:"linear-gradient(180deg,rgba(9,15,29,0.10) 0%,rgba(9,15,29,0.55) 100%)" }} />
                     <div style={{ position:"absolute", bottom:14, left:14, width:52, height:52, borderRadius:10, background:"rgba(15,30,56,0.65)", border:"2px solid rgba(212,168,67,0.45)", display:"flex", alignItems:"center", justifyContent:"center", backdropFilter:"blur(6px)", zIndex:1 }}>
                       <span style={{ fontFamily:"var(--t-head)", fontSize:18, fontWeight:700, color:"var(--gold-lt)", letterSpacing:"0.05em" }}>{j.mono}</span>

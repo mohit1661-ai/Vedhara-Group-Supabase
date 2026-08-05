@@ -158,6 +158,13 @@ img,video{max-width:100%;height:auto;}
 .svc-card-alt > :nth-child(even) .svc-card{background:var(--cream);}
 .svc-card-alt > :nth-child(even) .svc-card:hover{background:var(--navy)!important;}
 
+/* Micro-Market cards (tricity) — unified cream idle, navy hover, gold-framed */
+.mm-card{height:100%;border:1px solid rgba(212,168,67,0.22);border-radius:12px;box-shadow:0 12px 32px rgba(9,15,29,0.06);transition:transform 0.4s var(--ease-spring),box-shadow 0.4s ease,border-color 0.35s ease;}
+.mm-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(9,15,29,0.2);border-color:rgba(212,168,67,0.35);}
+.mm-card .mm-tag{font-family:var(--t-head);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);background:rgba(212,168,67,0.12);padding:4px 10px;border-radius:3px;white-space:nowrap;display:inline-block;transition:background 0.35s,color 0.35s;}
+.mm-card:hover .mm-tag{background:rgba(212,168,67,0.18);color:var(--gold-lt);}
+.mm-card:hover .svc-card-desc{color:#ffffff;}
+
 /* Investment Advisory corridor grid: swap positions 3 & 4 colour */
 @media(min-width: 1025px){
   .corridor-grid > :nth-child(3){background:var(--cream)!important;}
@@ -328,7 +335,7 @@ img,video{max-width:100%;height:auto;}
 @media(max-width:768px){.grid-2,.grid-3,.grid-4,.grid-5{grid-template-columns:1fr!important;}.grid-6{grid-template-columns:repeat(2,1fr)!important;}}
 
 /* Journey-style grids: centre a leftover last row (e.g. 5 cards in a 3-col grid) */
-.journey-center-row{max-width:66.667%;margin-left:auto;margin-right:auto;}
+.journey-center-row{max-width:66%;margin-left:auto;margin-right:auto;}
 @media(max-width:768px){.journey-center-row{max-width:100%;}}
 
 /* Mobile: make CTAs full-width for better tap targets */
