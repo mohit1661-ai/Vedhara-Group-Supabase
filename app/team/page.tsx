@@ -98,7 +98,7 @@ export default function TeamPage() {
       <VideoHeroSection videoSrc="/videos/Our%20Team%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Leadership</p>
-        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(36px,6vw,72px)",color:"var(--light)",lineHeight:1.02,marginBottom:24 }}>
+        <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>
           The Real Estate Advisory Team<br />
           <span style={{ color:"var(--gold-lt)" }}>Behind Your Property Decisions.</span>
         </h1>

@@ -239,7 +239,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     slug: "property-management",
     eyebrow: "Property Management",
     h1: "Property Management Services,",
-    h1Accent: "Your Property, Managed Remotely",
+    h1Accent: "Managed Remotely",
     intro:
       "For owners who don't want to chase tenants, coordinate repairs, or track rent across Delhi NCR, Faridabad, Chandigarh or North India, Vedhara handles the operational side of ownership.",
     included: [

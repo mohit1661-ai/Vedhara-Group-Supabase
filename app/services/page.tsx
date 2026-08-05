@@ -109,8 +109,8 @@ export default function ServicesPage() {
       <VideoHeroSection videoSrc="/videos/All%20Services%20Hero%20Video.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>All Services</p>
-          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-            Real Estate Advisory Services<br /><span style={{ color:"var(--gold-lt)" }}>for Every Stage of Your Property Journey</span>
+          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,5vw,56px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>
+            Real Estate Advisory Services<br /><span style={{ color:"var(--gold-lt)" }}>for Every Property Journey</span>
           </h1>
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Independent guidance tailored to your specific goals,<br className="br-desktop" />from your first home to a multi-property portfolio.</p>
       </VideoHeroSection>

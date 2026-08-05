@@ -212,7 +212,7 @@ export default function TricityPage() {
       >
         <span className="v-line" style={{ margin:"0 auto 16px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Chandigarh Tricity</p>
-        <h1 style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, fontSize:"clamp(36px,6vw,76px)", color:"var(--light)", lineHeight:1.05, marginBottom:26 }}>
+        <h1 style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, fontSize:"clamp(32px,5vw,50px)", color:"var(--light)", lineHeight:1.1, marginBottom:26 }}>
           Real Estate in Chandigarh Tricity.<br />
           <span style={{ color:"var(--gold-lt)" }}>Verified, Whatever the Jurisdiction.</span>
         </h1>

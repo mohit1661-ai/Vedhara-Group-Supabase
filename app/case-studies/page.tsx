@@ -71,7 +71,7 @@ export default function CaseStudiesPage() {
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Case Studies</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
-          Real Estate Case Studies:<br /><span style={{ color:"var(--gold-lt)" }}>Advisory in Action, Results That Speak</span>
+          Real Estate Case Studies:<br /><span style={{ color:"var(--gold-lt)" }}>Advisory in Action</span>
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Detailed accounts of how Vedhara&apos;s advisory approach translated into measurable outcomes for real clients across Delhi NCR.</p>
       </VideoHeroSection>
