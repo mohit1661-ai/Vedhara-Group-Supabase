@@ -38,6 +38,8 @@ yarn-error.log*
 
 # lighthouse local audit artifacts
 /.lighthouse-temp/
+/lighthouse-report.json
+/lighthouse-report-prod.json
 
 # typescript
 *.tsbuildinfo
