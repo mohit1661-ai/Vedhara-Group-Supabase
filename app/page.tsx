@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import CinematicHero from "@/components/sections/CinematicHero";
 import AnimatedStats from "@/components/sections/AnimatedStats";
 import ServicesGrid from "@/components/sections/ServicesGrid";
@@ -147,7 +148,7 @@ export default function HomePage() {
                 price:"₹ 4.85 Cr",
                 config:"4 BHK + Study",
                 size:"2,450 sq.ft.",
-                gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
+                image:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80",
                 link:"/buy",
                 tag:"Ready to Move",
               },
@@ -158,7 +159,7 @@ export default function HomePage() {
                 price:"₹ 12.80 Cr",
                 config:"5 BHK + Pool",
                 size:"4,200 sq.ft.",
-                gradient:"linear-gradient(135deg,#0F1E38 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+                image:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80",
                 link:"/luxury",
                 tag:"Available",
               },
@@ -169,7 +170,7 @@ export default function HomePage() {
                 price:"₹ 8.50 Cr",
                 config:"4,500 sq.ft. Office",
                 size:"4,500 sq.ft.",
-                gradient:"linear-gradient(135deg,#1a1a2e 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+                image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
                 link:"/commercial",
                 tag:"Ready to Move",
               },
@@ -180,7 +181,7 @@ export default function HomePage() {
                 price:"₹ 6.20 Cr",
                 config:"3 BHK + Servant",
                 size:"2,150 sq.ft.",
-                gradient:"linear-gradient(135deg,#16243F 0%,#2a3f6f 50%,#D4A843 100%)",
+                image:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
                 link:"/new-launches",
                 tag:"Possession Oct 2026",
               },
@@ -191,7 +192,7 @@ export default function HomePage() {
                 price:"₹ 58,000/mo",
                 config:"3 BHK",
                 size:"1,550 sq.ft.",
-                gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#4a7a9f 100%)",
+                image:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80",
                 link:"/rent",
                 tag:"Available",
               },
@@ -202,20 +203,25 @@ export default function HomePage() {
                 price:"₹ 4.50 Cr",
                 config:"450 sq.yds.",
                 size:"450 sq.yds.",
-                gradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+                image:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
                 link:"/sell",
                 tag:"Available for Sale",
               },
             ].map((p,i)=>(
               <ScrollReveal key={p.title} delay={i*80}>
                 <Link href={p.link} className="hover-lift" style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
-                  <div style={{ height:180,background:p.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {p.title}
-                    </div>
+                  <div style={{ height:190,position:"relative",overflow:"hidden" }}>
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    {/* subtle dark overlay for text legibility */}
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {p.tag}
                       </span>
                     </div>
