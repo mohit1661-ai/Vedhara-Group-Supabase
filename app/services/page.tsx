@@ -4,6 +4,7 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import Image from "next/image";
 export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR", description:"Vedhara Group's full range of real estate advisory services across Delhi NCR, Faridabad, Manesar, Chandigarh & North India: buy, sell, rent, invest and NRI.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
 const services = [
   { icon:"B",title:"Buy Property",href:"/buy",desc:"Independent guidance through verified listings from shortlist to registration.",gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
@@ -50,6 +51,9 @@ const featuredProperties = [
     tagHref:"/buy",
     desc:"4 BHK verified residence ready to move.",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
+    image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"50%",
+    alt:"The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida",
   },
   {
     id:"fp-02",
@@ -60,6 +64,9 @@ const featuredProperties = [
     tagHref:"/rent",
     desc:"Fully furnished 3 BHK in prime Gurugram.",
     gradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#6a8aaa 100%)",
+    image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"0%",
+    alt:"The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
   },
   {
     id:"fp-03",
@@ -70,16 +77,22 @@ const featuredProperties = [
     tagHref:"/sell",
     desc:"4 BHK independent floor for sale.",
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a4a2a 100%)",
+    image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"19%",
+    alt:"Sunset Villa independent floor in Sector 23, Dwarka, Delhi",
   },
   {
     id:"fp-04",
     title:"One Horizon Center",
-    location:"Sector 43, Gurugram",
+    location:"Golf Course Road, Gurugram",
     price:"₹ 12.50 Cr",
     tag:"Commercial",
     tagHref:"/commercial",
     desc:"4,800 sq.ft. LEED Gold office space.",
     gradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#D4A843 100%)",
+    image:"https://images.pexels.com/photos/38340685/pexels-photo-38340685.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"50%",
+    alt:"One Horizon Center office tower on Golf Course Road, Gurugram",
   },
   {
     id:"fp-05",
@@ -90,6 +103,9 @@ const featuredProperties = [
     tagHref:"/luxury",
     desc:"5 BHK penthouse with panoramic views.",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+    image:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"50%",
+    alt:"One Golf Course Penthouse luxury penthouse on Golf Course Road, Gurugram",
   },
   {
     id:"fp-06",
@@ -100,6 +116,9 @@ const featuredProperties = [
     tagHref:"/new-launches",
     desc:"Pre-launch bookings open at Prestige Group.",
     gradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
+    image:"https://images.pexels.com/photos/38341175/pexels-photo-38341175.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"84%",
+    alt:"Aura Sky Villas by Prestige Group in Sector 152, Noida",
   },
 ];
 
@@ -169,18 +188,23 @@ export default function ServicesPage() {
             {featuredProperties.map((p,i)=>(
               <ScrollReveal key={p.id} delay={i*80} style={{ display:"flex" }}>
                 <Link href={p.tagHref} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
-                  <div style={{ height:180,background:p.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {p.title}
-                    </div>
+                  <div style={{ height:180,background:p.gradient,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                    <Image
+                      src={p.image}
+                      alt={p.alt || p.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover", objectPosition: p.pos ? (p.pos.indexOf(" ") > -1 ? p.pos : "50% " + p.pos) : "50% 50%" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.10) 0%,rgba(9,15,29,0.50) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {p.tag}
                       </span>
                     </div>
                   </div>
                   <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{p.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{p.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--ink)",marginBottom:10,lineHeight:1.4,flex:1 }}>{p.desc}</p>
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
