@@ -44,15 +44,18 @@ const markets = [
 
 const jurisdictions = [
   {
-    title:"Chandigarh Estate Office", applies:"Chandigarh UT",
+    title:"Chandigarh Estate Office", applies:"Chandigarh UT", mono:"EO",
+    image:"https://images.pexels.com/photos/34968154/pexels-photo-34968154.jpeg?auto=compress&cs=tinysrgb&w=900",
     body:"No separate RERA authority is yet functional in Chandigarh UT. Allotments, resale permissions, and NOCs are handled by the Chandigarh Administration's Estate Office under the 1960 Rules. Title checks focus on the registered chain, allotment letters, and Estate Office approvals.",
   },
   {
-    title:"GMADA", applies:"Mohali · Zirakpur · Kharar · New Chandigarh",
+    title:"GMADA", applies:"Mohali · Zirakpur · Kharar · New Chandigarh", mono:"GM",
+    image:"https://images.pexels.com/photos/33848325/pexels-photo-33848325.jpeg?auto=compress&cs=tinysrgb&w=900",
     body:"Punjab projects are planned and approved by GMADA. We verify the sector's sanctioned layout, the project's approval status, and whether the unit sits inside an approved or unauthorised colony before any recommendation.",
   },
   {
-    title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab · Haryana",
+    title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab · Haryana", mono:"RA",
+    image:"https://images.pexels.com/photos/33217250/pexels-photo-33217250.jpeg?auto=compress&cs=tinysrgb&w=900",
     body:"Mohali, Zirakpur, Kharar and New Chandigarh fall under Punjab RERA (PSIARA/PunRERA); Panchkula falls under HRERA (Haryana). RERA registration, quarterly progress filings, and complaint history are checked on the correct state portal for each project.",
   },
 ];
@@ -312,21 +315,43 @@ export default function TricityPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(340px,1fr))", gap:24 }} className="grid-3">
-            {markets.map((m, i) => (
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0,1fr))", gap:1, background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
+            {markets.slice(0, 3).map((m, i) => (
               <ScrollReveal key={m.name} delay={i * 60}>
-                <div className="gold-frame-card gfc-cream hover-lift" style={{ padding:"34px 30px", height:"100%", position:"relative", overflow:"hidden" }}>
-                  <span aria-hidden style={{ position:"absolute", top:-12, right:14, fontFamily:"var(--t-head)", fontSize:76, fontWeight:700, lineHeight:1, color:"rgba(212,168,67,0.13)", pointerEvents:"none" }}>0{i+1}</span>
-                  <div style={{ width:40, height:2, background:"var(--gold)", marginBottom:18 }} />
-                  <p className="eyebrow" style={{ color:"var(--gold-dk)", marginBottom:10, letterSpacing:"0.16em" }}>{m.tag}</p>
-                  <h3 className="heading-lg" style={{ color:"var(--navy)", fontSize:"clamp(22px,2.6vw,27px)", marginBottom:12 }}>{m.name}</h3>
-                  <p className="body-md" style={{ color:"var(--slate)", lineHeight:1.7, marginBottom:18 }}>{m.desc}</p>
-                  <div style={{ borderTop:"1px solid rgba(212,168,67,0.18)", paddingTop:16, marginTop:"auto" }}>
+                <div className="svc-card" style={{ borderRadius:0, height:"100%", padding:"34px 28px", display:"flex", flexDirection:"column" }}>
+                  <div className="gold-accent" />
+                  <p className="eyebrow" style={{ marginBottom:8, letterSpacing:"0.16em" }}>{m.tag}</p>
+                  <h3 className="svc-card-title" style={{ fontSize:17, marginBottom:10 }}>{m.name}</h3>
+                  <p className="svc-card-desc" style={{ marginBottom:16 }}>{m.desc}</p>
+                  <div style={{ marginTop:"auto", paddingTop:14, borderTop:"1px solid rgba(212,168,67,0.22)" }}>
                     <ul style={{ margin:0, padding:0, listStyle:"none" }}>
                       {m.points.map(p => (
-                        <li key={p} style={{ display:"flex", gap:10, marginBottom:9, alignItems:"flex-start" }}>
-                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:12, lineHeight:1.7 }}>◆</span>
-                          <span className="body-md" style={{ color:"var(--ink)", lineHeight:1.6 }}>{p}</span>
+                        <li key={p} style={{ display:"flex", gap:9, marginBottom:7, alignItems:"flex-start" }}>
+                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:10, lineHeight:1.6 }}>◆</span>
+                          <span className="svc-card-desc" style={{ fontSize:11.5, lineHeight:1.55, margin:0 }}>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          {/* Remaining two markets centred so the last row has no empty cell */}
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0,1fr))", gap:1, background:"rgba(42,45,53,0.08)", marginTop:1 }} className="grid-2 svc-card-alt journey-center-row">
+            {markets.slice(3).map((m, i) => (
+              <ScrollReveal key={m.name} delay={(i + 3) * 60}>
+                <div className="svc-card" style={{ borderRadius:0, height:"100%", padding:"34px 28px", display:"flex", flexDirection:"column" }}>
+                  <div className="gold-accent" />
+                  <p className="eyebrow" style={{ marginBottom:8, letterSpacing:"0.16em" }}>{m.tag}</p>
+                  <h3 className="svc-card-title" style={{ fontSize:17, marginBottom:10 }}>{m.name}</h3>
+                  <p className="svc-card-desc" style={{ marginBottom:16 }}>{m.desc}</p>
+                  <div style={{ marginTop:"auto", paddingTop:14, borderTop:"1px solid rgba(212,168,67,0.22)" }}>
+                    <ul style={{ margin:0, padding:0, listStyle:"none" }}>
+                      {m.points.map(p => (
+                        <li key={p} style={{ display:"flex", gap:9, marginBottom:7, alignItems:"flex-start" }}>
+                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:10, lineHeight:1.6 }}>◆</span>
+                          <span className="svc-card-desc" style={{ fontSize:11.5, lineHeight:1.55, margin:0 }}>{p}</span>
                         </li>
                       ))}
                     </ul>
@@ -352,15 +377,30 @@ export default function TricityPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(320px,1fr))", gap:24 }} className="grid-3">
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0,1fr))", gap:24 }} className="grid-3">
             {jurisdictions.map((j, i) => (
               <ScrollReveal key={j.title} delay={i * 60}>
-                <div className="glass-navy hover-lift" style={{ padding:"34px 30px", height:"100%", position:"relative", overflow:"hidden", borderTop:"2px solid rgba(212,168,67,0.65)" }}>
-                  <span aria-hidden style={{ position:"absolute", top:-12, right:14, fontFamily:"var(--t-head)", fontSize:76, fontWeight:700, lineHeight:1, color:"rgba(232,201,112,0.10)", pointerEvents:"none" }}>0{i+1}</span>
-                  <div style={{ width:40, height:2, background:"var(--gold)", marginBottom:18 }} />
-                  <p className="eyebrow" style={{ color:"var(--gold-lt)", marginBottom:10, letterSpacing:"0.16em" }}>{j.applies}</p>
-                  <h3 className="heading-lg" style={{ color:"var(--light)", fontSize:"clamp(20px,2.4vw,25px)", marginBottom:12 }}>{j.title}</h3>
-                  <p className="body-md" style={{ color:"rgba(252,250,244,0.74)", lineHeight:1.7, marginBottom:0 }}>{j.body}</p>
+                <div className="team-card hover-lift" style={{ display:"block", background:"var(--cream)", border:"1px solid rgba(212,168,67,0.15)", borderRadius:16, overflow:"hidden", textDecoration:"none", height:"100%" }}>
+                  {/* Image banner with authority monogram */}
+                  <div style={{ height:170, position:"relative", overflow:"hidden" }}>
+                    <Image src={j.image} alt={j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover" }} />
+                    <div style={{ position:"absolute", inset:0, background:"linear-gradient(180deg,rgba(9,15,29,0.10) 0%,rgba(9,15,29,0.55) 100%)" }} />
+                    <div style={{ position:"absolute", bottom:14, left:14, width:52, height:52, borderRadius:10, background:"rgba(15,30,56,0.65)", border:"2px solid rgba(212,168,67,0.45)", display:"flex", alignItems:"center", justifyContent:"center", backdropFilter:"blur(6px)", zIndex:1 }}>
+                      <span style={{ fontFamily:"var(--t-head)", fontSize:18, fontWeight:700, color:"var(--gold-lt)", letterSpacing:"0.05em" }}>{j.mono}</span>
+                    </div>
+                  </div>
+                  {/* Content */}
+                  <div style={{ padding:20, display:"flex", flexDirection:"column", height:"calc(100% - 170px)" }}>
+                    <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:6 }}>
+                      <span style={{ fontFamily:"var(--t-head)", fontSize:8.5, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", padding:"3px 8px", background:"rgba(212,168,67,0.12)", color:"var(--gold-dk)", borderRadius:3 }}>{j.applies}</span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)", fontSize:16, fontWeight:700, color:"var(--navy)", marginBottom:6, marginTop:4 }}>{j.title}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)", lineHeight:1.7, fontSize:12, margin:"0 0 12px", flex:1 }}>{j.body}</p>
+                    <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", borderTop:"1px solid rgba(212,168,67,0.2)", paddingTop:12 }}>
+                      <span style={{ fontFamily:"var(--t-head)", fontSize:9.5, fontWeight:700, color:"var(--gold-dk)", textTransform:"uppercase", letterSpacing:"0.06em" }}>Verified Authority</span>
+                      <span style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:700, color:"var(--gold)", textTransform:"uppercase", letterSpacing:"0.06em", display:"inline-flex", alignItems:"center", gap:4 }}>Check Process →</span>
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -381,14 +421,13 @@ export default function TricityPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:24 }} className="grid-3">
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0,1fr))", gap:1, background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
             {freeholdLeasehold.map((f, i) => (
               <ScrollReveal key={f.t} delay={i * 60}>
-                <div className="gold-frame-card gfc-navy hover-lift" style={{ padding:"34px 30px", height:"100%", position:"relative", overflow:"hidden" }}>
-                  <span aria-hidden style={{ position:"absolute", top:-12, right:14, fontFamily:"var(--t-head)", fontSize:76, fontWeight:700, lineHeight:1, color:"rgba(232,201,112,0.10)", pointerEvents:"none" }}>0{i+1}</span>
-                  <div style={{ width:40, height:2, background:"var(--gold)", marginBottom:18 }} />
-                  <h3 className="heading-lg" style={{ color:"var(--gold-lt)", fontSize:"clamp(20px,2.4vw,25px)", marginBottom:12 }}>{f.t}</h3>
-                  <p className="body-md" style={{ color:"rgba(252,250,244,0.8)", lineHeight:1.7, marginBottom:0 }}>{f.d}</p>
+                <div className="svc-card" style={{ borderRadius:0, height:"100%", padding:"34px 28px", display:"flex", flexDirection:"column" }}>
+                  <div className="gold-accent" />
+                  <h3 className="svc-card-title" style={{ fontSize:18, marginBottom:10 }}>{f.t}</h3>
+                  <p className="svc-card-desc" style={{ marginBottom:0 }}>{f.d}</p>
                 </div>
               </ScrollReveal>
             ))}
