@@ -20,6 +20,7 @@ interface LaunchProject {
   highlights:string[];
   image:string;
   pos?:string;
+  alt?:string;
 }
 
 const launchFaqs: FAQItem[] = [
@@ -59,6 +60,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["RERA Applied","53 Towers","7 Acres Green","Club & Pool"],
     image:"https://images.pexels.com/photos/38341175/pexels-photo-38341175.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"84%",
+    alt:"Aura Sky Villas by Prestige Group in Sector 152, Noida",
   },
   {
     id:"ved-n02",
@@ -73,6 +75,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["Limited Inventory","Golf Course Road","Private Elevator","Concierge"],
     image:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"71%",
+    alt:"The Presidential luxury project by DLF in Sector 63A, Gurugram",
   },
   {
     id:"ved-n03",
@@ -87,6 +90,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["LEED Platinum","Metro Connector","Food Court","24hr Operation"],
     image:"https://images.pexels.com/photos/36903834/pexels-photo-36903834.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"84%",
+    alt:"Central Business Park commercial offices by Godrej in Sector 44, Gurugram",
   },
   {
     id:"ved-n04",
@@ -101,6 +105,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["RERA Registered","35% Open Space","School Tie-up","Lake View"],
     image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"66%",
+    alt:"Emerald County residential project by Tata Housing in Sector 150, Noida",
   },
   {
     id:"ved-n05",
@@ -115,6 +120,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["RERA Registered","Golf Course View","70% Sold","Possession Apr 2028"],
     image:"https://images.pexels.com/photos/30368780/pexels-photo-30368780.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"74%",
+    alt:"Imperial Heights residential project by M3M India on Southern Peripheral Road, Gurugram",
   },
   {
     id:"ved-n06",
@@ -129,6 +135,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
     image:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
+    alt:"The Green Mile affordable luxury project by Signature Global on Sohna Road, Gurugram",
   },
   {
     id:"ved-n07",
@@ -143,6 +150,7 @@ const launchProjects: LaunchProject[] = [
     highlights:["RERA Applied","Metro 800m","Neighbourhood Mall","Landscaped Gardens"],
     image:"https://images.pexels.com/photos/30381835/pexels-photo-30381835.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"82%",
+    alt:"Santorini Bay residential project by Sobha in Sector 47, Faridabad",
   },
   {
     id:"ved-n08",
@@ -155,7 +163,9 @@ const launchProjects: LaunchProject[] = [
     type:"Plotted",
     status:"Under Construction",
     highlights:["RERA Registered","Gated Community","Plots Available","Bank Tied-up"],
-    image:"https://images.pexels.com/photos/7765190/pexels-photo-7765190.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/8330963/pexels-photo-8330963.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"Oakwood Estate gated community project by Antriksh Group in Sector 77, Noida",
   },
   {
     id:"ved-n09",
@@ -169,6 +179,7 @@ const launchProjects: LaunchProject[] = [
     status:"Pre-Launch",
     highlights:["Early Bird Pricing","RERA Applied","Noida Extension","High Appreciation Zone"],
     image:"https://images.pexels.com/photos/31325988/pexels-photo-31325988.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Altius Tower residential project by Brigade Group in Sector 152, Noida",
   },
 ];
 
@@ -218,7 +229,7 @@ export default function NewLaunchesPage() {
                   <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     <Image
                       src={project.image}
-                      alt={project.projectName}
+                      alt={project.alt || project.projectName}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: project.pos ? (project.pos.indexOf(" ") > -1 ? project.pos : "50% " + project.pos) : "50% 50%" }}

@@ -23,6 +23,7 @@ interface RentalListing {
   status:"Available"|"Recently Leased"|"Under Offer";
   highlights:string[];
   image:string;
+  alt?:string;
 }
 
 const rentalListings: RentalListing[] = [
@@ -40,6 +41,7 @@ const rentalListings: RentalListing[] = [
     highlights:["Gurugram prime location","Gated Society","Parking Included","Power Backup"],
     image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"0%",
+    alt:"The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
   },
   {
     id:"ved-r02",
@@ -55,6 +57,7 @@ const rentalListings: RentalListing[] = [
     highlights:["Noida Sec 44","Metro 500m","Balcony","24hr Water"],
     image:"https://images.pexels.com/photos/27085225/pexels-photo-27085225.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"61%",
+    alt:"Palm Grove Apartments 2 BHK rental in Sector 44, Noida",
   },
   {
     id:"ved-r03",
@@ -70,6 +73,7 @@ const rentalListings: RentalListing[] = [
     highlights:["IT/Tech Hub","Conference Room","Pantry","24hr Security"],
     image:"https://images.pexels.com/photos/5859962/pexels-photo-5859962.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"95%",
+    alt:"Corporate Square office space for rent in Sector 62, Gurugram",
   },
   {
     id:"ved-r04",
@@ -85,6 +89,7 @@ const rentalListings: RentalListing[] = [
     highlights:["South Delhi","Lawns & Park","Covered Parking","Close to Airport"],
     image:"https://images.pexels.com/photos/34623003/pexels-photo-34623003.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"80%",
+    alt:"Vasant Residency 3 BHK rental in Vasant Kunj, Delhi",
   },
   {
     id:"ved-r05",
@@ -100,6 +105,7 @@ const rentalListings: RentalListing[] = [
     highlights:["Lake View","Premium Finishes","Clubhouse","Modular Kitchen"],
     image:"https://images.pexels.com/photos/4792297/pexels-photo-4792297.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"63%",
+    alt:"Lake Vista Heights 4 BHK rental with lake view in Sector 150, Noida",
   },
   {
     id:"ved-r06",
@@ -114,6 +120,7 @@ const rentalListings: RentalListing[] = [
     status:"Available",
     highlights:["MG Road Front","High Footfall","Washroom","Loading Bay"],
     image:"https://images.pexels.com/photos/12522753/pexels-photo-12522753.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Galleria Business Hub retail space on MG Road, Gurugram",
   },
 ];
 
@@ -152,7 +159,7 @@ export default function RentPage() {
                   <div style={{ height:180,position:"relative",overflow:"hidden" }}>
                     <Image
                       src={property.image}
-                      alt={property.title}
+                      alt={property.alt || property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}

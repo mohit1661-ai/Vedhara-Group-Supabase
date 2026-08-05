@@ -21,6 +21,7 @@ interface SellListing {
   status:"Available for Sale"|"Under Offer"|"Sold";
   highlights:string[];
   image:string;
+  alt?:string;
 }
 
 const sellListings: SellListing[] = [
@@ -36,6 +37,7 @@ const sellListings: SellListing[] = [
     highlights:["Dwarka Prime","Park Facing","3 Sidus Open","Vastu Compliant"],
     image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"19%",
+    alt:"Sunset Villa independent floor in Sector 23, Dwarka, Delhi",
   },
   {
     id:"ved-s02",
@@ -48,6 +50,7 @@ const sellListings: SellListing[] = [
     status:"Available for Sale",
     highlights:["Golf Course Extn","Clubhouse","Covered Parking","High Floor"],
     image:"https://images.pexels.com/photos/7672060/pexels-photo-7672060.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Green Valley Apartment 3 BHK for sale in Sector 49, Gurugram",
   },
   {
     id:"ved-s03",
@@ -61,6 +64,7 @@ const sellListings: SellListing[] = [
     highlights:["Commercial Zone","Leased Until Apr 27","High ROI","Corner Location"],
     image:"https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"67%",
+    alt:"Lotus Business Center commercial office space in Sector 44, Gurugram",
   },
   {
     id:"ved-s04",
@@ -74,6 +78,7 @@ const sellListings: SellListing[] = [
     highlights:["Golf Course View","Private Terrace","Smart Home","Jacuzzi"],
     image:"https://images.pexels.com/photos/35203563/pexels-photo-35203563.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"28%",
+    alt:"Royal Heritage Penthouse luxury penthouse on Golf Course Road, Gurugram",
   },
   {
     id:"ved-s05",
@@ -85,8 +90,9 @@ const sellListings: SellListing[] = [
     type:"Plotted",
     status:"Available for Sale",
     highlights:["Sector 150","Corner Plot","All Approvals","Immediate Registration"],
-    image:"https://images.pexels.com/photos/8314510/pexels-photo-8314510.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"10%",
+    image:"https://images.pexels.com/photos/7104647/pexels-photo-7104647.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"Serene Garden Plot residential plot in Sector 150, Noida",
   },
   {
     id:"ved-s06",
@@ -100,6 +106,7 @@ const sellListings: SellListing[] = [
     highlights:["South Delhi Prime","Heritage Architecture","Large Courtyard","Rare Offering"],
     image:"https://images.pexels.com/photos/33520069/pexels-photo-33520069.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"32%",
+    alt:"Heritage Haveli heritage mansion in Mehrauli, South Delhi",
   },
 ];
 
@@ -142,7 +149,7 @@ export default function SellPage() {
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
                       src={property.image}
-                      alt={property.title}
+                      alt={property.alt || property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}

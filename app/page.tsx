@@ -148,7 +148,8 @@ export default function HomePage() {
                 price:"₹ 4.85 Cr",
                 config:"4 BHK + Study",
                 size:"2,450 sq.ft.",
-                image:"https://images.pexels.com/photos/33911286/pexels-photo-33911286.jpeg?auto=compress&cs=tinysrgb&w=900",
+                image:"https://images.pexels.com/photos/37266412/pexels-photo-37266412.jpeg?auto=compress&cs=tinysrgb&w=900",
+                alt:"The Cullinan Heights luxury apartment building in Sector 150, Noida",
                 link:"/buy",
                 tag:"Ready to Move",
               },
@@ -160,6 +161,7 @@ export default function HomePage() {
                 config:"5 BHK + Pool",
                 size:"4,200 sq.ft.",
                 image:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=900",
+                alt:"One Golf Course Penthouse luxury penthouse on Golf Course Road, Gurugram",
                 link:"/luxury",
                 tag:"Available",
               },
@@ -170,8 +172,9 @@ export default function HomePage() {
                 price:"₹ 8.50 Cr",
                 config:"4,500 sq.ft. Office",
                 size:"4,500 sq.ft.",
-                image:"https://images.pexels.com/photos/5859961/pexels-photo-5859961.jpeg?auto=compress&cs=tinysrgb&w=900",
+                image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
                 pos:"100%",
+                alt:"One Golden Mile commercial office building in Sector 62, Gurugram",
                 link:"/commercial",
                 tag:"Ready to Move",
               },
@@ -184,6 +187,7 @@ export default function HomePage() {
                 size:"2,150 sq.ft.",
                 image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
                 pos:"100%",
+                alt:"Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
                 link:"/new-launches",
                 tag:"Possession Oct 2026",
               },
@@ -196,6 +200,7 @@ export default function HomePage() {
                 size:"1,550 sq.ft.",
                 image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
                 pos:"0%",
+                alt:"The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
                 link:"/rent",
                 tag:"Available",
               },
@@ -206,8 +211,9 @@ export default function HomePage() {
                 price:"₹ 4.50 Cr",
                 config:"450 sq.yds.",
                 size:"450 sq.yds.",
-                image:"https://images.pexels.com/photos/8314510/pexels-photo-8314510.jpeg?auto=compress&cs=tinysrgb&w=900",
-                pos:"10%",
+                image:"https://images.pexels.com/photos/7104647/pexels-photo-7104647.jpeg?auto=compress&cs=tinysrgb&w=900",
+                pos:"100%",
+                alt:"Serene Garden Plot residential plot in Sector 150, Noida",
                 link:"/sell",
                 tag:"Available for Sale",
               },
@@ -217,7 +223,7 @@ export default function HomePage() {
                   <div style={{ height:190,position:"relative",overflow:"hidden" }}>
                     <Image
                       src={p.image}
-                      alt={p.title}
+                      alt={p.alt || p.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: p.pos ? (p.pos.indexOf(" ") > -1 ? p.pos : "50% " + p.pos) : "50% 50%" }}

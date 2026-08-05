@@ -21,6 +21,7 @@ interface LuxuryListing {
   status:"Available"|"Under Offer"|"Sold";
   highlights:string[];
   image:string;
+  alt?:string;
 }
 
 const luxuryListings: LuxuryListing[] = [
@@ -35,6 +36,7 @@ const luxuryListings: LuxuryListing[] = [
     status:"Available",
     highlights:["Panoramic View","Private Terrace","Jacuzzi","Butler Service"],
     image:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"One Golf Course Penthouse luxury penthouse on Golf Course Road, Gurugram",
   },
   {
     id:"ved-l02",
@@ -48,6 +50,7 @@ const luxuryListings: LuxuryListing[] = [
     highlights:["Lake Front","Private Garden","Modular Kitchen","Home Theatre"],
     image:"https://images.pexels.com/photos/16573669/pexels-photo-16573669.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"72%",
+    alt:"Sovereign Villa lakefront luxury villa in Sector 150, Noida",
   },
   {
     id:"ved-l03",
@@ -61,6 +64,7 @@ const luxuryListings: LuxuryListing[] = [
     highlights:["South Delhi Prime","Heritage Architecture","Landscaped Lawns","Staff Quarters"],
     image:"https://images.pexels.com/photos/33985273/pexels-photo-33985273.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"31%",
+    alt:"The Claridge Estate heritage luxury mansion in Jubilee Hills, Delhi",
   },
   {
     id:"ved-l04",
@@ -73,6 +77,7 @@ const luxuryListings: LuxuryListing[] = [
     status:"Under Offer",
     highlights:["Sky Deck","Private Elevator","Wine Cellar","Smart Home"],
     image:"https://images.pexels.com/photos/8082227/pexels-photo-8082227.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Skydeck Residence luxury penthouse in Sector 62, Gurugram",
   },
   {
     id:"ved-l05",
@@ -86,6 +91,7 @@ const luxuryListings: LuxuryListing[] = [
     highlights:["GK II Address","Rooftop Terrace","Puja Room","Family Lounge"],
     image:"https://images.pexels.com/photos/1630114/pexels-photo-1630114.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"16%",
+    alt:"Magnolia Mansion luxury independent floor in Greater Kailash II, Delhi",
   },
   {
     id:"ved-l06",
@@ -99,6 +105,7 @@ const luxuryListings: LuxuryListing[] = [
     highlights:["Golf Estate","Private Pool","Club Membership","Aravalli Views"],
     image:"https://images.pexels.com/photos/36676879/pexels-photo-36676879.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"63%",
+    alt:"Tuscan Valley Retreat luxury villa with pool on Sohna Road, Gurugram",
   },
 ];
 
@@ -136,7 +143,7 @@ export default function LuxuryPage() {
                   <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     <Image
                       src={property.image}
-                      alt={property.title}
+                      alt={property.alt || property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}

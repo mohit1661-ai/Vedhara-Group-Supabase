@@ -21,6 +21,7 @@ interface PropertyListing {
   status:"Ready to Move"|"Possession Oct 2026"|"Possession Dec 2026"|"Under Construction";
   highlights:string[];
   image:string;
+  alt?:string;
 }
 
 const featuredListings: PropertyListing[] = [
@@ -35,6 +36,7 @@ const featuredListings: PropertyListing[] = [
     status:"Ready to Move",
     highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"],
     image:"https://images.pexels.com/photos/37266412/pexels-photo-37266412.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"The Cullinan Heights luxury apartment building in Sector 150, Noida",
   },
   {
     id:"ved-002",
@@ -48,6 +50,7 @@ const featuredListings: PropertyListing[] = [
     highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"],
     image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
+    alt:"Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
   },
   {
     id:"ved-003",
@@ -61,6 +64,7 @@ const featuredListings: PropertyListing[] = [
     highlights:["RERA Registered","Metro Proximity","85% Open Area","Premium Finishes"],
     image:"https://images.pexels.com/photos/7672058/pexels-photo-7672058.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
+    alt:"Platinum Towers residential high-rise on Dwarka Expressway, Gurugram",
   },
   {
     id:"ved-004",
@@ -74,6 +78,7 @@ const featuredListings: PropertyListing[] = [
     highlights:["RERA Registered","LEED Platinum","24hr Security","100+ Car Parking"],
     image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
+    alt:"One Golden Mile commercial office building in Sector 62, Gurugram",
   },
   {
     id:"ved-005",
@@ -86,6 +91,7 @@ const featuredListings: PropertyListing[] = [
     status:"Ready to Move",
     highlights:["RERA Registered","Park Facing","Private Pool","Modular Kitchen"],
     image:"https://images.pexels.com/photos/20581232/pexels-photo-20581232.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Veda Forest Villas luxury villas in Sector 150, Noida",
   },
   {
     id:"ved-006",
@@ -99,6 +105,7 @@ const featuredListings: PropertyListing[] = [
     highlights:["RERA Registered","South Delhi","Premium Location","High Appreciation"],
     image:"https://images.pexels.com/photos/35114454/pexels-photo-35114454.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"80%",
+    alt:"Magnolia Court premium apartments in Greater Kailash II, Delhi",
   },
 ];
 
@@ -141,7 +148,7 @@ export default function BuyPage() {
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
                       src={property.image}
-                      alt={property.title}
+                      alt={property.alt || property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}

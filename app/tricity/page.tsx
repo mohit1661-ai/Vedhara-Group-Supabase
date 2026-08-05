@@ -47,18 +47,21 @@ const jurisdictions = [
     title:"Chandigarh Estate Office", applies:"Chandigarh UT", mono:"EO",
     image:"https://images.pexels.com/photos/34968154/pexels-photo-34968154.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
+    alt:"Chandigarh Estate Office for property allotments and NOCs in Chandigarh UT",
     body:"No separate RERA authority is yet functional in Chandigarh UT. Allotments, resale permissions, and NOCs are handled by the Chandigarh Administration's Estate Office under the 1960 Rules. Title checks focus on the registered chain, allotment letters, and Estate Office approvals.",
   },
   {
     title:"GMADA", applies:"Mohali · Zirakpur · Kharar · New Chandigarh", mono:"GM",
     image:"https://images.pexels.com/photos/33848325/pexels-photo-33848325.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"79%",
+    alt:"GMADA office for sector approvals in Mohali, Zirakpur and Kharar",
     body:"Punjab projects are planned and approved by GMADA. We verify the sector's sanctioned layout, the project's approval status, and whether the unit sits inside an approved or unauthorised colony before any recommendation.",
   },
   {
     title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab · Haryana", mono:"RA",
     image:"https://images.pexels.com/photos/33217250/pexels-photo-33217250.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"50% 70%",
+    alt:"Punjab RERA and HRERA registration office for real estate projects in Punjab and Haryana",
     body:"Mohali, Zirakpur, Kharar and New Chandigarh fall under Punjab RERA (PSIARA/PunRERA); Panchkula falls under HRERA (Haryana). RERA registration, quarterly progress filings, and complaint history are checked on the correct state portal for each project.",
   },
 ];
@@ -80,6 +83,7 @@ interface TricityListing {
   status:"Ready to Move"|"Possession Dec 2026"|"Under Construction"|"Available for Sale";
   highlights:string[];
   image:string;
+  alt?:string;
 }
 
 const tricityListings: TricityListing[] = [
@@ -95,6 +99,7 @@ const tricityListings: TricityListing[] = [
     highlights:["Estate Office NOC","Freehold Title","Golf Course View","Clubhouse Access"],
     image:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"58%",
+    alt:"The Corbusier Residences apartment building in Sector 17, Chandigarh",
   },
   {
     id:"ved-t02",
@@ -107,6 +112,7 @@ const tricityListings: TricityListing[] = [
     status:"Ready to Move",
     highlights:["HRERA Registered","Lake Front","Freehold Converted","Private Garden"],
     image:"https://images.pexels.com/photos/37433082/pexels-photo-37433082.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Sukna Lakefront Villas luxury villas in Sector 4, Panchkula",
   },
   {
     id:"ved-t03",
@@ -120,6 +126,7 @@ const tricityListings: TricityListing[] = [
     highlights:["Punjab RERA","IT Park Proximity","Gated Community","Metro Proposed"],
     image:"https://images.pexels.com/photos/35229793/pexels-photo-35229793.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
+    alt:"Aero City Heights apartments on Airport Road, Mohali",
   },
   {
     id:"ved-t04",
@@ -133,6 +140,7 @@ const tricityListings: TricityListing[] = [
     highlights:["GMADA Approved","High Appreciation","Smart Home","Panoramic Balcony"],
     image:"https://images.pexels.com/photos/11442140/pexels-photo-11442140.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"98%",
+    alt:"New Chandigarh Skyline apartments in Sector 101, New Chandigarh",
   },
   {
     id:"ved-t05",
@@ -146,6 +154,7 @@ const tricityListings: TricityListing[] = [
     highlights:["High Footfall","GMADA Zone","Signage Visible","Car Parking"],
     image:"https://images.pexels.com/photos/11840337/pexels-photo-11840337.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"69%",
+    alt:"Zirakpur Metro Square retail space on VIP Road, Zirakpur",
   },
   {
     id:"ved-t06",
@@ -157,7 +166,9 @@ const tricityListings: TricityListing[] = [
     type:"Plotted",
     status:"Available for Sale",
     highlights:["GMADA Approved","Corner Plot","Clear Title","Immediate Registry"],
-    image:"https://images.pexels.com/photos/8322791/pexels-photo-8322791.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/9716228/pexels-photo-9716228.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"Kharar Green County residential plot in Kharar, Mohali",
   },
 ];
 
@@ -255,7 +266,7 @@ export default function TricityPage() {
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
                       src={property.image}
-                      alt={property.title}
+                      alt={property.alt || property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
@@ -394,7 +405,7 @@ export default function TricityPage() {
                 <div className="team-card hover-lift" style={{ display:"block", background:"var(--cream)", border:"1px solid rgba(212,168,67,0.15)", borderRadius:16, overflow:"hidden", textDecoration:"none", height:"100%" }}>
                   {/* Image banner with authority monogram */}
                   <div style={{ height:170, position:"relative", overflow:"hidden" }}>
-                    <Image src={j.image} alt={j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover", objectPosition: j.pos ? (j.pos.indexOf(" ") > -1 ? j.pos : "50% " + j.pos) : "50% 50%" }} />
+                    <Image src={j.image} alt={j.alt || j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover", objectPosition: j.pos ? (j.pos.indexOf(" ") > -1 ? j.pos : "50% " + j.pos) : "50% 50%" }} />
                     <div style={{ position:"absolute", inset:0, background:"linear-gradient(180deg,rgba(9,15,29,0.10) 0%,rgba(9,15,29,0.55) 100%)" }} />
                     <div style={{ position:"absolute", bottom:14, left:14, width:52, height:52, borderRadius:10, background:"rgba(15,30,56,0.65)", border:"2px solid rgba(212,168,67,0.45)", display:"flex", alignItems:"center", justifyContent:"center", backdropFilter:"blur(6px)", zIndex:1 }}>
                       <span style={{ fontFamily:"var(--t-head)", fontSize:18, fontWeight:700, color:"var(--gold-lt)", letterSpacing:"0.05em" }}>{j.mono}</span>

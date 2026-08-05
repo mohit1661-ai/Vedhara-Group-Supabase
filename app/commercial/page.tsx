@@ -20,6 +20,7 @@ interface CommercialListing {
   status:"Available"|"Leased"|"Under Offer";
   highlights:string[];
   image:string;
+  alt?:string;
 }
 
 const commercialListings: CommercialListing[] = [
@@ -33,6 +34,7 @@ const commercialListings: CommercialListing[] = [
     status:"Available",
     highlights:["Golf Course Road","LEED Gold","Deal Floor","24hr Security"],
     image:"https://images.pexels.com/photos/38340685/pexels-photo-38340685.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"One Horizon Center office tower on Golf Course Road, Gurugram",
   },
   {
     id:"ved-c02",
@@ -45,6 +47,7 @@ const commercialListings: CommercialListing[] = [
     highlights:["High Footfall","Market Centre","Loading Bay","Signage Visible"],
     image:"https://images.pexels.com/photos/17391304/pexels-photo-17391304.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"83%",
+    alt:"Retail Arcade commercial shop in Sector 18, Noida",
   },
   {
     id:"ved-c03",
@@ -55,7 +58,9 @@ const commercialListings: CommercialListing[] = [
     type:"Industrial",
     status:"Available",
     highlights:["NH-48 Access","Heavy Power","Warehouse","Loading Dock"],
-    image:"https://images.pexels.com/photos/4115457/pexels-photo-4115457.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/12347763/pexels-photo-12347763.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"50%",
+    alt:"Industrial Shed Complex warehouse in Bhiwadi, Rajasthan NCR",
   },
   {
     id:"ved-c04",
@@ -68,6 +73,7 @@ const commercialListings: CommercialListing[] = [
     highlights:["Plug & Play","Meeting Rooms","Cafeteria","Networking Events"],
     image:"https://images.pexels.com/photos/36926207/pexels-photo-36926207.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"62%",
+    alt:"Cyber Park co-working office space in Sector 67, Gurugram",
   },
   {
     id:"ved-c05",
@@ -78,7 +84,9 @@ const commercialListings: CommercialListing[] = [
     type:"Land",
     status:"Available",
     highlights:["Mixed-Use Zoning","Noida Authority","Corner Plot","Ideal for Mall"],
-    image:"https://images.pexels.com/photos/32370508/pexels-photo-32370508.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/20227375/pexels-photo-20227375.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"Commercial plot for mixed-use development in Sector 150, Noida",
   },
   {
     id:"ved-c06",
@@ -91,6 +99,7 @@ const commercialListings: CommercialListing[] = [
     highlights:["MG Road Frontage","Corporate Zone","Basement Parking","100% Power Backup"],
     image:"https://images.pexels.com/photos/30704251/pexels-photo-30704251.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"59%",
+    alt:"Platinum Business Centre corporate office on MG Road, Gurugram",
   },
 ];
 
@@ -128,7 +137,7 @@ export default function CommercialPage() {
                   <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     <Image
                       src={property.image}
-                      alt={property.title}
+                      alt={property.alt || property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
