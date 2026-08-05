@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -94,25 +95,24 @@ export default function TricityPage() {
       <JsonLd data={serviceSchema} />
 
       {/* Hero */}
-      <section style={{ background:"linear-gradient(180deg,var(--navy) 0%,var(--navy-mid) 60%,var(--navy) 100%)", padding:"84px 32px 88px", textAlign:"center", position:"relative", overflow:"hidden" }}>
-        <div style={{ position:"absolute", top:"-20%", left:"-10%", width:560, height:560, borderRadius:"50%", background:"radial-gradient(circle,rgba(212,168,67,0.10) 0%,transparent 70%)", pointerEvents:"none" }} />
-        <div style={{ position:"absolute", bottom:"-30%", right:"-8%", width:640, height:640, borderRadius:"50%", background:"radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 70%)", pointerEvents:"none" }} />
-        <div style={{ maxWidth:820, margin:"0 auto", position:"relative", zIndex:1 }}>
-          <span className="v-line" style={{ margin:"0 auto 16px" }} />
-          <p className="eyebrow" style={{ marginBottom:18 }}>Chandigarh Tricity</p>
-          <h1 style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, fontSize:"clamp(36px,6vw,76px)", color:"var(--light)", lineHeight:1.05, marginBottom:26 }}>
-            Real Estate in Chandigarh Tricity.<br />
-            <span style={{ color:"var(--gold-lt)" }}>Verified, Whatever the Jurisdiction.</span>
-          </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)", maxWidth:600, margin:"0 auto 30px" }}>
-            Three states, three rulebooks, one market. From the Chandigarh Estate Office to GMADA and HRERA, we make Tricity property safe to buy, sell and invest in, no matter which side of the border it sits.
-          </p>
-          <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap" }}>
-            <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
-            <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group%2C%20I%20need%20advice%20on%20Chandigarh%20Tricity%20property" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"transparent", color:"rgba(255,255,255,0.8)", border:"1px solid rgba(255,255,255,0.22)" }}>WhatsApp Us</a>
-          </div>
+      <VideoHeroSection
+        videoSrc="/videos/Chandigarh%20Tricity%20Hero%20Desktop.mp4"
+        videoSrcMobile="/videos/Chandigarh%20Tricity%20Hero%20Mobile.mp4"
+      >
+        <span className="v-line" style={{ margin:"0 auto 16px" }} />
+        <p className="eyebrow" style={{ marginBottom:18 }}>Chandigarh Tricity</p>
+        <h1 style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, fontSize:"clamp(36px,6vw,76px)", color:"var(--light)", lineHeight:1.05, marginBottom:26 }}>
+          Real Estate in Chandigarh Tricity.<br />
+          <span style={{ color:"var(--gold-lt)" }}>Verified, Whatever the Jurisdiction.</span>
+        </h1>
+        <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)", maxWidth:600, margin:"0 auto 30px" }}>
+          Three states, three rulebooks, one market. From the Chandigarh Estate Office to GMADA and HRERA, we make Tricity property safe to buy, sell and invest in, no matter which side of the border it sits.
+        </p>
+        <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap" }}>
+          <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
+          <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group%2C%20I%20need%20advice%20on%20Chandigarh%20Tricity%20property" target="_blank" rel="noopener noreferrer" className="btn btn-outline">WhatsApp Us</a>
         </div>
-      </section>
+      </VideoHeroSection>
 
       {/* Intro */}
       <section style={{ background:"var(--cream)", padding:"72px 32px" }}>
