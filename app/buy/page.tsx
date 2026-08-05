@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
@@ -19,7 +20,7 @@ interface PropertyListing {
   type:"Residential"|"Commercial"|"Luxury"|"Plotted";
   status:"Ready to Move"|"Possession Oct 2026"|"Possession Dec 2026"|"Under Construction";
   highlights:string[];
-  imageGradient:string;
+  image:string;
 }
 
 const featuredListings: PropertyListing[] = [
@@ -33,7 +34,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Ready to Move",
     highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"],
-    imageGradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
+    image:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-002",
@@ -45,7 +46,7 @@ const featuredListings: PropertyListing[] = [
     type:"Luxury",
     status:"Possession Oct 2026",
     highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"],
-    imageGradient:"linear-gradient(135deg,#16243F 0%,#2a3f6f 50%,#D4A843 100%)",
+    image:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-003",
@@ -57,7 +58,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Possession Dec 2026",
     highlights:["RERA Registered","Metro Proximity","85% Open Area","Premium Finishes"],
-    imageGradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
+    image:"https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-004",
@@ -69,7 +70,7 @@ const featuredListings: PropertyListing[] = [
     type:"Commercial",
     status:"Ready to Move",
     highlights:["RERA Registered","LEED Platinum","24hr Security","100+ Car Parking"],
-    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+    image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-005",
@@ -81,7 +82,7 @@ const featuredListings: PropertyListing[] = [
     type:"Luxury",
     status:"Ready to Move",
     highlights:["RERA Registered","Park Facing","Private Pool","Modular Kitchen"],
-    imageGradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+    image:"https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-006",
@@ -93,7 +94,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Under Construction",
     highlights:["RERA Registered","South Delhi","Premium Location","High Appreciation"],
-    imageGradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a3a2a 100%)",
+    image:"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -133,13 +134,17 @@ export default function BuyPage() {
               <ScrollReveal key={property.id} delay={index * 80}>
                 <Link href="/contact?service=buy" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
-                  <div style={{ height:180,flexShrink:0,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {property.title}
-                    </div>
+                  <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
                       </span>
                     </div>
@@ -152,6 +157,7 @@ export default function BuyPage() {
                         {property.type}
                       </span>
                     </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:14,flex:1,alignContent:"flex-start" }}>

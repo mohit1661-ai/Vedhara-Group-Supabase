@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
@@ -19,7 +20,7 @@ interface LuxuryListing {
   type:"Penthouse"|"Villa"|"Independent Floor"|"Estate";
   status:"Available"|"Under Offer"|"Sold";
   highlights:string[];
-  imageGradient:string;
+  image:string;
 }
 
 const luxuryListings: LuxuryListing[] = [
@@ -33,7 +34,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Penthouse",
     status:"Available",
     highlights:["Panoramic View","Private Terrace","Jacuzzi","Butler Service"],
-    imageGradient:"linear-gradient(135deg,#0F1E38 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+    image:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-l02",
@@ -45,7 +46,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Villa",
     status:"Available",
     highlights:["Lake Front","Private Garden","Modular Kitchen","Home Theatre"],
-    imageGradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+    image:"https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-l03",
@@ -57,7 +58,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Estate",
     status:"Available",
     highlights:["South Delhi Prime","Heritage Architecture","Landscaped Lawns","Staff Quarters"],
-    imageGradient:"linear-gradient(135deg,#1a0a2a 0%,#3a1a4a 50%,#5a2a6a 100%)",
+    image:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-l04",
@@ -69,7 +70,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Penthouse",
     status:"Under Offer",
     highlights:["Sky Deck","Private Elevator","Wine Cellar","Smart Home"],
-    imageGradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#4a7a9f 100%)",
+    image:"https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-l05",
@@ -81,7 +82,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Independent Floor",
     status:"Available",
     highlights:["GK II Address","Rooftop Terrace","Puja Room","Family Lounge"],
-    imageGradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a4a2a 100%)",
+    image:"https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-l06",
@@ -93,7 +94,7 @@ const luxuryListings: LuxuryListing[] = [
     type:"Villa",
     status:"Available",
     highlights:["Golf Estate","Private Pool","Club Membership","Aravalli Views"],
-    imageGradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
+    image:"https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -128,13 +129,17 @@ export default function LuxuryPage() {
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
-                  <div style={{ height:180,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {property.title}
-                    </div>
+                  <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
                       </span>
                     </div>
@@ -145,6 +150,7 @@ export default function LuxuryPage() {
                         {property.type}
                       </span>
                     </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>

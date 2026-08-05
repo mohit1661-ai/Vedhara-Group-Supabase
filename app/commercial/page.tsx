@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
@@ -18,7 +19,7 @@ interface CommercialListing {
   type:"Office"|"Retail"|"Industrial"|"Co-working"|"Land";
   status:"Available"|"Leased"|"Under Offer";
   highlights:string[];
-  imageGradient:string;
+  image:string;
 }
 
 const commercialListings: CommercialListing[] = [
@@ -31,7 +32,7 @@ const commercialListings: CommercialListing[] = [
     type:"Office",
     status:"Available",
     highlights:["Golf Course Road","LEED Gold","Deal Floor","24hr Security"],
-    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#D4A843 100%)",
+    image:"https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-c02",
@@ -42,7 +43,7 @@ const commercialListings: CommercialListing[] = [
     type:"Retail",
     status:"Available",
     highlights:["High Footfall","Market Centre","Loading Bay","Signage Visible"],
-    imageGradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a4a2a 100%)",
+    image:"https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-c03",
@@ -53,7 +54,7 @@ const commercialListings: CommercialListing[] = [
     type:"Industrial",
     status:"Available",
     highlights:["NH-48 Access","Heavy Power","Warehouse","Loading Dock"],
-    imageGradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a4a 50%,#2a5a6a 100%)",
+    image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-c04",
@@ -64,7 +65,7 @@ const commercialListings: CommercialListing[] = [
     type:"Co-working",
     status:"Available",
     highlights:["Plug & Play","Meeting Rooms","Cafeteria","Networking Events"],
-    imageGradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#4a7a9a 100%)",
+    image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-c05",
@@ -75,7 +76,7 @@ const commercialListings: CommercialListing[] = [
     type:"Land",
     status:"Available",
     highlights:["Mixed-Use Zoning","Noida Authority","Corner Plot","Ideal for Mall"],
-    imageGradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+    image:"https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-c06",
@@ -86,7 +87,7 @@ const commercialListings: CommercialListing[] = [
     type:"Office",
     status:"Under Offer",
     highlights:["MG Road Frontage","Corporate Zone","Basement Parking","100% Power Backup"],
-    imageGradient:"linear-gradient(135deg,#1a0a2a 0%,#3a1a4a 50%,#5a2a6a 100%)",
+    image:"https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -121,13 +122,17 @@ export default function CommercialPage() {
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
-                  <div style={{ height:180,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {property.title}
-                    </div>
+                  <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
                       </span>
                     </div>
@@ -138,6 +143,7 @@ export default function CommercialPage() {
                         {property.type}
                       </span>
                     </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>

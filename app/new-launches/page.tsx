@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -17,7 +18,7 @@ interface LaunchProject {
   type:"Residential"|"Luxury"|"Commercial"|"Plotted";
   status:"Just Launched"|"Pre-Launch"|"Under Construction"|"Phase 2 Released";
   highlights:string[];
-  imageGradient:string;
+  image:string;
 }
 
 const launchFaqs: FAQItem[] = [
@@ -55,7 +56,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Just Launched",
     highlights:["RERA Applied","53 Towers","7 Acres Green","Club & Pool"],
-    imageGradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
+    image:"https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n02",
@@ -68,7 +69,7 @@ const launchProjects: LaunchProject[] = [
     type:"Luxury",
     status:"Pre-Launch",
     highlights:["Limited Inventory","Golf Course Road","Private Elevator","Concierge"],
-    imageGradient:"linear-gradient(135deg,#16243F 0%,#D4A843 30%,#E8C970 100%)",
+    image:"https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n03",
@@ -81,7 +82,7 @@ const launchProjects: LaunchProject[] = [
     type:"Commercial",
     status:"Just Launched",
     highlights:["LEED Platinum","Metro Connector","Food Court","24hr Operation"],
-    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#4a4a7a 100%)",
+    image:"https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n04",
@@ -94,7 +95,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Under Construction",
     highlights:["RERA Registered","35% Open Space","School Tie-up","Lake View"],
-    imageGradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+    image:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n05",
@@ -107,7 +108,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Under Construction",
     highlights:["RERA Registered","Golf Course View","70% Sold","Possession Apr 2028"],
-    imageGradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a4a2a 100%)",
+    image:"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n06",
@@ -120,7 +121,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Phase 2 Released",
     highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
-    imageGradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
+    image:"https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n07",
@@ -133,7 +134,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Just Launched",
     highlights:["RERA Applied","Metro 800m","Neighbourhood Mall","Landscaped Gardens"],
-    imageGradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
+    image:"https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n08",
@@ -146,7 +147,7 @@ const launchProjects: LaunchProject[] = [
     type:"Plotted",
     status:"Under Construction",
     highlights:["RERA Registered","Gated Community","Plots Available","Bank Tied-up"],
-    imageGradient:"linear-gradient(135deg,#1a2a1a 0%,#2a4a2a 50%,#3a6a3a 100%)",
+    image:"https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-n09",
@@ -159,7 +160,7 @@ const launchProjects: LaunchProject[] = [
     type:"Residential",
     status:"Pre-Launch",
     highlights:["Early Bird Pricing","RERA Applied","Noida Extension","High Appreciation Zone"],
-    imageGradient:"linear-gradient(135deg,#1a0a2a 0%,#2a1a4a 50%,#3a2a6a 100%)",
+    image:"https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -206,18 +207,17 @@ export default function NewLaunchesPage() {
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
                   {/* Image area */}
-                  <div style={{ height:180,background:project.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ textAlign:"center",position:"relative",zIndex:1 }}>
-                      <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",padding:"0 20px",marginBottom:4 }}>
-                        {project.projectName}
-                      </div>
-                      <div style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:600,color:"rgba(255,255,255,0.45)",letterSpacing:"0.08em",textTransform:"uppercase" }}>
-                        {project.developer}
-                      </div>
-                    </div>
+                  <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                    <Image
+                      src={project.image}
+                      alt={project.projectName}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {project.status}
                       </span>
                     </div>
@@ -230,6 +230,7 @@ export default function NewLaunchesPage() {
                         {project.type}
                       </span>
                     </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{project.projectName}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{project.location}</p>
 
                     {/* Details grid */}

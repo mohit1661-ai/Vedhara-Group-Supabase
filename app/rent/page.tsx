@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
@@ -21,7 +22,7 @@ interface RentalListing {
   type:"Residential"|"Commercial";
   status:"Available"|"Recently Leased"|"Under Offer";
   highlights:string[];
-  imageGradient:string;
+  image:string;
 }
 
 const rentalListings: RentalListing[] = [
@@ -37,7 +38,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Available",
     highlights:["Gurugram prime location","Gated Society","Parking Included","Power Backup"],
-    imageGradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#4a7a9f 100%)",
+    image:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-r02",
@@ -51,7 +52,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Available",
     highlights:["Noida Sec 44","Metro 500m","Balcony","24hr Water"],
-    imageGradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#6a8aaa 100%)",
+    image:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-r03",
@@ -65,7 +66,7 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["IT/Tech Hub","Conference Room","Pantry","24hr Security"],
-    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+    image:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-r04",
@@ -79,7 +80,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Available",
     highlights:["South Delhi","Lawns & Park","Covered Parking","Close to Airport"],
-    imageGradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a4a2a 100%)",
+    image:"https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-r05",
@@ -93,7 +94,7 @@ const rentalListings: RentalListing[] = [
     type:"Residential",
     status:"Under Offer",
     highlights:["Lake View","Premium Finishes","Clubhouse","Modular Kitchen"],
-    imageGradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#3a5a3a 100%)",
+    image:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-r06",
@@ -107,7 +108,7 @@ const rentalListings: RentalListing[] = [
     type:"Commercial",
     status:"Available",
     highlights:["MG Road Front","High Footfall","Washroom","Loading Bay"],
-    imageGradient:"linear-gradient(135deg,#2a2a4a 0%,#4a4a7a 50%,#D4A843 100%)",
+    image:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -143,14 +144,18 @@ export default function RentPage() {
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
                   {/* Image area */}
-                  <div style={{ height:180,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {property.title}
-                    </div>
+                  <div style={{ height:180,position:"relative",overflow:"hidden" }}>
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     {/* Status badge */}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
                       </span>
                     </div>
@@ -167,6 +172,7 @@ export default function RentPage() {
                         {property.furnished}
                       </span>
                     </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
@@ -19,7 +20,7 @@ interface SellListing {
   type:"Residential"|"Commercial"|"Luxury"|"Plotted";
   status:"Available for Sale"|"Under Offer"|"Sold";
   highlights:string[];
-  imageGradient:string;
+  image:string;
 }
 
 const sellListings: SellListing[] = [
@@ -33,7 +34,7 @@ const sellListings: SellListing[] = [
     type:"Residential",
     status:"Available for Sale",
     highlights:["Dwarka Prime","Park Facing","3 Sidus Open","Vastu Compliant"],
-    imageGradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#3a6a8f 100%)",
+    image:"https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-s02",
@@ -45,7 +46,7 @@ const sellListings: SellListing[] = [
     type:"Residential",
     status:"Available for Sale",
     highlights:["Golf Course Extn","Clubhouse","Covered Parking","High Floor"],
-    imageGradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#5a7a9a 100%)",
+    image:"https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-s03",
@@ -57,7 +58,7 @@ const sellListings: SellListing[] = [
     type:"Commercial",
     status:"Available for Sale",
     highlights:["Commercial Zone","Leased Until Apr 27","High ROI","Corner Location"],
-    imageGradient:"linear-gradient(135deg,#1a1a2e 0%,#D4A843 30%,#E8C970 70%,#F0DBA8 100%)",
+    image:"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-s04",
@@ -69,7 +70,7 @@ const sellListings: SellListing[] = [
     type:"Luxury",
     status:"Available for Sale",
     highlights:["Golf Course View","Private Terrace","Smart Home","Jacuzzi"],
-    imageGradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#D4A843 100%)",
+    image:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-s05",
@@ -81,7 +82,7 @@ const sellListings: SellListing[] = [
     type:"Plotted",
     status:"Available for Sale",
     highlights:["Sector 150","Corner Plot","All Approvals","Immediate Registration"],
-    imageGradient:"linear-gradient(135deg,#0a1a0a 0%,#1a3a1a 50%,#2a5a2a 100%)",
+    image:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
   },
   {
     id:"ved-s06",
@@ -93,7 +94,7 @@ const sellListings: SellListing[] = [
     type:"Luxury",
     status:"Under Offer",
     highlights:["South Delhi Prime","Heritage Architecture","Large Courtyard","Rare Offering"],
-    imageGradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#6a3a2a 100%)",
+    image:"https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -133,13 +134,17 @@ export default function SellPage() {
               <ScrollReveal key={property.id} delay={index * 80}>
                 <Link href="/contact?service=sell" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
-                  <div style={{ height:180,flexShrink:0,background:property.imageGradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden" }}>
-                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
-                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:18,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 20px",position:"relative",zIndex:1 }}>
-                      {property.title}
-                    </div>
+                  <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
                       </span>
                     </div>
@@ -152,6 +157,7 @@ export default function SellPage() {
                         {property.type}
                       </span>
                     </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:14,flex:1,alignContent:"flex-start" }}>
