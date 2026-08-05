@@ -258,7 +258,7 @@ export default function TricityPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
@@ -394,7 +394,7 @@ export default function TricityPage() {
                 <div className="team-card hover-lift" style={{ display:"block", background:"var(--cream)", border:"1px solid rgba(212,168,67,0.15)", borderRadius:16, overflow:"hidden", textDecoration:"none", height:"100%" }}>
                   {/* Image banner with authority monogram */}
                   <div style={{ height:170, position:"relative", overflow:"hidden" }}>
-                    <Image src={j.image} alt={j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover", objectPosition:j.pos || "50% 50%" }} />
+                    <Image src={j.image} alt={j.title} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover", objectPosition: j.pos ? (j.pos.indexOf(" ") > -1 ? j.pos : "50% " + j.pos) : "50% 50%" }} />
                     <div style={{ position:"absolute", inset:0, background:"linear-gradient(180deg,rgba(9,15,29,0.10) 0%,rgba(9,15,29,0.55) 100%)" }} />
                     <div style={{ position:"absolute", bottom:14, left:14, width:52, height:52, borderRadius:10, background:"rgba(15,30,56,0.65)", border:"2px solid rgba(212,168,67,0.45)", display:"flex", alignItems:"center", justifyContent:"center", backdropFilter:"blur(6px)", zIndex:1 }}>
                       <span style={{ fontFamily:"var(--t-head)", fontSize:18, fontWeight:700, color:"var(--gold-lt)", letterSpacing:"0.05em" }}>{j.mono}</span>

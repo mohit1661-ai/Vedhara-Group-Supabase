@@ -34,7 +34,7 @@ const featuredListings: PropertyListing[] = [
     type:"Residential",
     status:"Ready to Move",
     highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"],
-    image:"https://images.pexels.com/photos/33911286/pexels-photo-33911286.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/37266412/pexels-photo-37266412.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-002",
@@ -72,7 +72,7 @@ const featuredListings: PropertyListing[] = [
     type:"Commercial",
     status:"Ready to Move",
     highlights:["RERA Registered","LEED Platinum","24hr Security","100+ Car Parking"],
-    image:"https://images.pexels.com/photos/5859961/pexels-photo-5859961.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"100%",
   },
   {
@@ -85,7 +85,7 @@ const featuredListings: PropertyListing[] = [
     type:"Luxury",
     status:"Ready to Move",
     highlights:["RERA Registered","Park Facing","Private Pool","Modular Kitchen"],
-    image:"https://images.pexels.com/photos/4497544/pexels-photo-4497544.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/20581232/pexels-photo-20581232.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     id:"ved-006",
@@ -144,7 +144,7 @@ export default function BuyPage() {
                       alt={property.title}
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover", objectPosition: property.pos || "50% 50%" }}
+                      style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
                     />
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
