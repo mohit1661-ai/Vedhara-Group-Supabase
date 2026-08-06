@@ -171,6 +171,7 @@ export default function BlogPage() {
         title="Related advisory pages"
         intro="These pages help readers move from insight to action by connecting blog content with the services, verification, and contact resources they need next."
         background="cream"
+        variant="journey"
         links={[
           { href:"/services", label:"Explore the full service suite", description:"See how advisory, property management, and investment support work together in one journey." },
           { href:"/verification-center", label:"Understand the verification framework", description:"Learn how every recommendation is checked before it reaches a client or buyer." },
