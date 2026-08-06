@@ -392,8 +392,8 @@ export default function HomePage() {
               { name:"Kusum Sharma", title:"Director – Investment Advisory", initials:"KS", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
               { name:"Bharat", title:"Director – Developer & Strategic Partnerships", initials:"BH", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
             ].map((member,i)=>(
-              <ScrollReveal key={member.name} delay={i*100}>
-                <div className="team-card hover-lift" style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+              <ScrollReveal key={member.name} delay={i*100} style={{ display:"flex" }}>
+                <div className="team-card hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,width:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Full-width photo banner */}
                   <div style={{ height:200,background:"linear-gradient(135deg,rgba(212,168,67,0.3),rgba(15,30,56,0.7),rgba(212,168,67,0.2))",display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden" }}>
                     <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
@@ -402,14 +402,14 @@ export default function HomePage() {
                     </div>
                   </div>
                   {/* Content - matching featured properties style */}
-                  <div style={{ padding:20 }}>
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
                     <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:6 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
                         {member.title}
                       </span>
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:6,marginTop:4 }}>{member.name}</h3>
-                    <p className="body-sm" style={{ color:"var(--slate)",lineHeight:1.7,fontSize:12,margin:"0 0 12px" }}>
+                    <p className="body-sm" style={{ color:"var(--slate)",lineHeight:1.7,fontSize:12,margin:"0 0 12px",flex:1 }}>
                       {member.desc}
                     </p>
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
