@@ -7,13 +7,13 @@ import FAQSection from "@/components/sections/FAQSection";
 
 export const metadata: Metadata = {
   title:"Our Team | Real Estate Advisory Leadership",
-  description:"Meet Vedhara Group's leadership, serving Delhi NCR & North India: D.R Sharma (Founder & CEO), Mohit Sharma (MD), Kusum Sharma and Bharat (Director).",
+  description:"Meet Vedhara Group's leadership, serving Delhi NCR & North India: Mr. D.R Sharma (Founder & CEO), Mr. Mohit Sharma (MD), Ms. Kusum Sharma and Mr. Bharat (Director).",
   alternates:{ canonical:"https://www.vedharagroup.com/team" },
 };
 
 const teamMembers = [
   {
-    name:"D.R Sharma",
+    name:"Mr. D.R Sharma",
     title:"Founder & Chief Executive Officer",
     initials:"DS",
     gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)",
@@ -26,7 +26,7 @@ const teamMembers = [
     ],
   },
   {
-    name:"Mohit Sharma",
+    name:"Mr. Mohit Sharma",
     title:"Managing Director",
     initials:"MS",
     gradient:"linear-gradient(135deg,#16243F,#D4A843)",
@@ -39,7 +39,7 @@ const teamMembers = [
     ],
   },
   {
-    name:"Kusum Sharma",
+    name:"Ms. Kusum Sharma",
     title:"Director – Investment Advisory",
     initials:"KS",
     gradient:"linear-gradient(135deg,#2a3f6f,#E8C970)",
@@ -52,8 +52,8 @@ const teamMembers = [
     ],
   },
   {
-    name:"Bharat",
-    title:"Director – Developer & Strategic Partnerships",
+    name:"Mr. Bharat",
+    title:"Director – Strategic Partnerships",
     initials:"BH",
     gradient:"linear-gradient(135deg,#1a3a5c,#B8922A)",
     description:"Bharat leads Vedhara Group's developer partnerships and strategic alliances across Delhi NCR and North India. His deep relationships with leading developers, combined with a rigorous evaluation framework, ensure that only projects meeting Vedhara's five-point Verification Framework make it to the platform. He manages the entire partnership lifecycle from initial due diligence through ongoing compliance monitoring, giving clients the confidence that every listed project has been independently vetted before they ever see it.",
