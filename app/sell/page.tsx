@@ -8,7 +8,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { servicePages } from "@/lib/data/servicePages";
 
-export const metadata: Metadata = { title:"Sell Property in Delhi NCR | Get Fair Market Value", description:"Sell your property in Delhi NCR, Faridabad, Manesar or Chandigarh at the right price. Strategic pricing, qualified buyer access and end-to-end sale management.", alternates:{ canonical:"https://www.vedharagroup.com/sell" } };
+export const metadata: Metadata = { title:"Sell Property in Delhi NCR", description:"Sell your property in Delhi NCR, Faridabad, Manesar or Chandigarh at the right price. Strategic pricing, qualified buyer access and end-to-end sale management.", alternates:{ canonical:"https://www.vedharagroup.com/sell" } };
 
 interface SellListing {
   id:string;

@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 
 export const metadata: Metadata = {
-  title: "Vedhara Group Videos | Delhi NCR Real Estate Films",
+  title: "Delhi NCR Real Estate Videos",
   description: "Watch Vedhara Group's real estate films across Delhi NCR, Faridabad, Manesar & Chandigarh for verified buying, selling, NRI, luxury and verification.",
   alternates: { canonical: "https://www.vedharagroup.com/videos" },
 };

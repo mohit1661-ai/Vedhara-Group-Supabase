@@ -58,7 +58,7 @@ function Particles({ baseOpacity = 0.25 }) {
     };
     resize();
     window.addEventListener("resize", resize);
-    const particles = Array.from({ length: 45 }, () => ({
+    const particles = Array.from({ length: window.innerWidth < 768 ? 22 : 45 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.25,
@@ -66,7 +66,8 @@ function Particles({ baseOpacity = 0.25 }) {
       size: Math.random() * 1.6 + 0.3,
       alpha: Math.random() * 0.3 + 0.05,
     }));
-    let raf: number;
+    let raf = 0;
+    let running = true;
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
@@ -98,10 +99,18 @@ function Particles({ baseOpacity = 0.25 }) {
       }
       raf = requestAnimationFrame(draw);
     };
+    // Pause the animation when the tab is hidden (invisible to users, saves CPU).
+    const onVis = () => {
+      if (document.hidden) { running = false; cancelAnimationFrame(raf); }
+      else if (!running) { running = true; draw(); }
+    };
+    document.addEventListener("visibilitychange", onVis);
     draw();
     return () => {
+      running = false;
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", onVis);
     };
   }, [baseOpacity]);
   return (

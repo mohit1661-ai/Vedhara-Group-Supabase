@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title:"Property Verification Center | How Vedhara Verifies",
+  title:"Property Verification Framework",
   description:"Vedhara's five-point property Verification Framework across Delhi NCR, Faridabad, Manesar & North India: RERA, approvals and fair pricing.",
   alternates:{ canonical:"https://www.vedharagroup.com/verification-center" },
 };
