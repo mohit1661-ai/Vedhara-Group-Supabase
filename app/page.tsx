@@ -387,7 +387,7 @@ export default function HomePage() {
 
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24 }} className="grid-4">
             {[
-              { name:"Deshraj Sharma", title:"Founder & CEO", initials:"DS", desc:"20+ years guiding families through Delhi NCR's real estate market with transparency and independent advice." },
+              { name:"Mr. D.R Sharma", title:"Founder & CEO", initials:"DS", desc:"20+ years guiding families through Delhi NCR's real estate market with transparency and independent advice." },
               { name:"Mohit Sharma", title:"Managing Director", initials:"MS", desc:"Delivers tailored property strategies for HNI clients, NRIs, and first-time homebuyers alike." },
               { name:"Kusum Sharma", title:"Director – Investment Advisory", initials:"KS", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
               { name:"Bharat", title:"Director – Developer & Strategic Partnerships", initials:"BH", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
