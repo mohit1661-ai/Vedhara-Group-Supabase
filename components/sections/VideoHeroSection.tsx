@@ -308,7 +308,7 @@ export default function VideoHeroSection({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             className="video-bg"
             style={{
               opacity: videoLoaded ? 1 : 0,

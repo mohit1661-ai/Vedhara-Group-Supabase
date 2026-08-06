@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = { title:"Real Estate FAQ | Delhi NCR Property Advice", description:"Verified answers to common North India real estate questions across Delhi NCR, Faridabad, Manesar & Chandigarh: stamp duty, RERA, home loans and NRI rules.", alternates:{ canonical:"https://www.vedharagroup.com/faq" } };
 
@@ -78,9 +79,16 @@ const faqGroups = [
   },
 ];
 
+const faqSchema = {
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  mainEntity: faqGroups.flatMap(g => g.faqs).map(f => ({ "@type":"Question", name:f.q, acceptedAnswer:{ "@type":"Answer", text:f.a } })),
+};
+
 export default function FAQPage() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"FAQ", href:"/faq" }]} />
       <VideoHeroSection videoSrc="/videos/FAQ%20Hub%20Hero%20Video.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />

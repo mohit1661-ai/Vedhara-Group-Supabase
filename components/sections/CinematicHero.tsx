@@ -89,17 +89,11 @@ export default function CinematicHero({
   videoSrc = "/videos/Homepage%20Hero%20Video%20Desktop.mp4",
   videoSrcMobile,
 }: CinematicHeroProps) {
-  const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const contentOuterRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(t);
-  }, []);
 
   /* ── Catch video already loaded before React attached onLoadedData ── */
   useEffect(() => {
@@ -254,7 +248,7 @@ export default function CinematicHero({
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="video-bg"
           style={{
             opacity: videoLoaded ? 1 : 0,
@@ -363,27 +357,27 @@ export default function CinematicHero({
         <div style={{ display:"grid",gridTemplateColumns:"1fr 380px",gap:80,alignItems:"center" }} className="hero-inner">
           {/* LEFT */}
           <div>
-            <div className="hero-tagline" style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease 0.15s" }}>
+            <div className="hero-tagline" style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",animation:"heroRise 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s backwards" }}>
               <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",animation:"pulseRing 2.5s infinite",display:"block" }} />
               <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory · Verified Listings · Delhi NCR</span>
             </div>
 
-            <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"var(--light)",marginBottom:28,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(36px)",transition:"all 0.8s ease 0.3s" }}>
+            <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"var(--light)",marginBottom:28,animation:"heroRiseNoFade 0.6s cubic-bezier(0.22,1,0.36,1) 0.05s backwards" }}>
               Real Estate Advisory<br /><em className="gold-shimmer" style={{ fontSize:"inherit",fontStyle:"italic" }}>in Delhi NCR, Verified.</em>
             </h1>
 
             {/* Exact sub-headline from Word doc */}
-            <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(255,255,255,0.85)",lineHeight:1.85,maxWidth:580,marginBottom:40,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(24px)",transition:"all 0.8s ease 0.45s" }}>
+            <p style={{ fontFamily:"var(--t-body)",fontSize:16,fontWeight:300,color:"rgba(255,255,255,0.85)",lineHeight:1.85,maxWidth:580,marginBottom:40,animation:"heroRiseNoFade 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s backwards" }}>
               Vedhara Group is an independent real estate advisory firm serving buyers, sellers, investors, NRIs, and first-time homebuyers across Delhi NCR, Gurugram, Noida, Faridabad, Manesar, Ghaziabad, Chandigarh and across North India. Every property we recommend has passed our five-point Verification Framework, and we publish exactly what we found on the listing itself.
             </p>
 
-            <div style={{ display:"flex",gap:14,flexWrap:"wrap",marginBottom:52,opacity:loaded?1:0,transform:loaded?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.6s" }}>
+            <div style={{ display:"flex",gap:14,flexWrap:"wrap",marginBottom:52,animation:"heroRise 0.8s cubic-bezier(0.22,1,0.36,1) 0.6s backwards" }}>
               <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
               <Link href="/buy" className="btn btn-outline">Explore Verified Listings →</Link>
             </div>
 
             {/* Trust strip from Word doc */}
-            <div className="trust-strip" style={{ opacity:loaded?1:0,transition:"opacity 0.8s ease 0.75s" }}>
+            <div className="trust-strip" style={{ animation:"heroFade 0.8s ease 0.75s backwards" }}>
               {["RERA Compliant","Transparent Fees","Verified Developer Partners","4 Free Property Tools","NRI Desk Available"].map(t=>(
                 <div key={t} className="trust-item">
                   <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",display:"block",boxShadow:"0 0 8px rgba(232,201,112,0.6)",flexShrink:0 }} />
@@ -394,7 +388,7 @@ export default function CinematicHero({
           </div>
 
           {/* RIGHT: Premium verification + tools card */}
-          <div style={{ opacity:loaded?1:0,transform:loaded?"translateX(0)":"translateX(48px)",transition:"all 0.9s ease 0.55s" }} className="hero-right">
+          <div style={{ animation:"heroSlideX 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s backwards" }} className="hero-right">
             <div className="glass-navy" style={{ borderRadius:16,overflow:"hidden",boxShadow:"0 24px 60px rgba(9,15,29,0.5), 0 0 44px rgba(212,168,67,0.08)",animation:"float 6s ease-in-out infinite" }}>
               {/* Gold top accent */}
               <div style={{ height:3,background:"linear-gradient(90deg,var(--gold-dk),var(--gold-lt) 50%,var(--gold-dk))" }} />
@@ -422,7 +416,7 @@ export default function CinematicHero({
         </div>
 
         {/* Scroll indicator */}
-        <div style={{ position:"absolute",bottom:-20,left:"50%",transform:"translateX(-50%)",display:"flex",flexDirection:"column",alignItems:"center",gap:8,opacity:loaded?0.45:0,transition:"opacity 1s ease 1s" }}>
+        <div style={{ position:"absolute",bottom:-20,left:"50%",transform:"translateX(-50%)",display:"flex",flexDirection:"column",alignItems:"center",gap:8,animation:"heroFadeDim 1s ease 1s backwards" }}>
           <span style={{ fontFamily:"var(--t-head)",fontSize:8,letterSpacing:"0.2em",textTransform:"uppercase",color:"rgba(255,255,255,0.6)" }}>Scroll</span>
           <div style={{ width:28,height:46,border:"1.5px solid rgba(255,255,255,0.18)",borderRadius:14,display:"flex",justifyContent:"center",paddingTop:6 }}>
             <div style={{ width:3,height:8,borderRadius:2,background:"var(--gold-lt)",animation:"float 2s ease-in-out infinite" }} />

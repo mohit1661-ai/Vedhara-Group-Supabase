@@ -2,6 +2,8 @@
 
 > Vedhara Group is North India's independent real estate advisory firm. We help buyers, sellers, renters, investors, and NRIs make verified property decisions across Delhi NCR (Gurugram, Noida, Faridabad, Manesar, Ghaziabad, Delhi), Chandigarh Tricity, and expanding across North India. We are independent by design — no developer tie-ups — and every listing passes a publicly documented five-point Verification Framework covering RERA status, builder delivery history, project-level approvals, price fairness, and document availability.
 
+> Full details (leadership, services, verification framework, tools, FAQs, contact): [llms-full.txt](https://www.vedharagroup.com/llms-full.txt)
+
 ## Key pages
 
 - [Home](https://www.vedharagroup.com/): Overview of Vedhara Group's verified property advisory, Buy, Sell, Invest, and the independent Verification Framework.

@@ -4,7 +4,7 @@ import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata: Metadata = { title:"Client Success Stories | Delhi NCR", description:"Real client outcomes from Vedhara Group's independent advisory across Delhi NCR, Faridabad, Chandigarh & North India, from first-time buyers to NRI investors.", alternates:{ canonical:"https://www.vedharagroup.com/success-stories" } };
+export const metadata: Metadata = { title:"Client Success Stories | Delhi NCR", description:"Real client outcomes from Vedhara Group's independent advisory across Delhi NCR, Faridabad, Chandigarh & North India, from first-time buyers to NRIs.", alternates:{ canonical:"https://www.vedharagroup.com/success-stories" } };
 
 const stories = [
   {

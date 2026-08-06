@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
   title:"Real Estate Investment Advisory in Delhi NCR",
-  description:"Build a high-yield real estate portfolio across Delhi NCR, Faridabad, Manesar, Chandigarh & North India with rental yield analysis and buy-to-invest strategy.",
+  description:"Build a high-yield real estate portfolio across Delhi NCR, Faridabad, Manesar & North India with rental yield analysis and buy-to-invest strategy.",
   alternates:{ canonical:"https://www.vedharagroup.com/investment-advisory" },
 };
 

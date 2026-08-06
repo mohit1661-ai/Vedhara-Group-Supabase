@@ -5,7 +5,7 @@ import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import Image from "next/image";
-export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR", description:"Vedhara Group's full range of real estate advisory services across Delhi NCR, Faridabad, Manesar, Chandigarh & North India: buy, sell, rent, invest and NRI.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
+export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR", description:"Vedhara Group's full real estate advisory across Delhi NCR, Faridabad, Manesar & Chandigarh: buy, sell, rent, invest and NRI services.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
 const services = [
   { icon:"B",title:"Buy Property",href:"/buy",desc:"Independent guidance through verified listings from shortlist to registration.",gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
   { icon:"S",title:"Sell Property",href:"/sell",desc:"Strategic pricing and qualified buyer access for fair-value sales.",gradient:"linear-gradient(135deg,#0F1E38,#2a4a6a)" },

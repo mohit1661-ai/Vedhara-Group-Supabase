@@ -62,13 +62,13 @@ export default function Footer() {
           <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:8 }}>Cities We Serve</p>
           <div style={{ display:"flex",flexWrap:"wrap",gap:8 }}>
             {["Delhi","Gurugram","Noida","Greater Noida","Faridabad","Ghaziabad","Chandigarh","Mohali","Panchkula","Zirakpur"].map(city=>(
-              <span key={city} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(255,255,255,0.5)" }}>{city} ·</span>
+              <span key={city} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(255,255,255,0.72)" }}>{city} ·</span>
             ))}
           </div>
         </div>
         <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12,paddingTop:18 }}>
-          <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.4)",margin:0 }}>© {new Date().getFullYear()} Vedhara Group Pvt. Ltd. All Rights Reserved.</p>
-          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(232,201,112,0.5)",margin:0 }}>vedharagroup.com</p>
+          <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"rgba(255,255,255,0.65)",margin:0 }}>© {new Date().getFullYear()} Vedhara Group Pvt. Ltd. All Rights Reserved.</p>
+          <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"rgba(232,201,112,0.9)",margin:0 }}>vedharagroup.com</p>
         </div>
       </div>
       <style>{`

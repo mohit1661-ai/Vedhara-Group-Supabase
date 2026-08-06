@@ -9,7 +9,7 @@ import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title:"Property Verification Center | How Vedhara Verifies",
-  description:"Vedhara's five-point property Verification Framework across Delhi NCR, Faridabad, Manesar, Chandigarh & North India: RERA status, approvals and fair pricing.",
+  description:"Vedhara's five-point property Verification Framework across Delhi NCR, Faridabad, Manesar & North India: RERA, approvals and fair pricing.",
   alternates:{ canonical:"https://www.vedharagroup.com/verification-center" },
 };
 
