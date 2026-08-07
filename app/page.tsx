@@ -389,8 +389,8 @@ export default function HomePage() {
             {[
               { name:"Mr. D.R Sharma", title:"Founder & CEO", initials:"DS", photo:"/Images/D.R Sharma.JPG", desc:"20+ years guiding families through Delhi NCR's real estate market with transparency and independent advice." },
               { name:"Mr. Mohit Sharma", title:"Managing Director", initials:"MS", photo:"/Images/Mohit Sharma.PNG", desc:"Delivers tailored property strategies for HNI clients, NRIs, and first-time homebuyers alike." },
-              { name:"Ms. Kusum Sharma", title:"Director – Investment Advisory", initials:"KS", photo:"", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
-              { name:"Mr. Bharat", title:"Director – Strategic Partnerships", initials:"BH", photo:"", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
+              { name:"Ms. Kusum Sharma", title:"Director – Strategic Partnerships", initials:"KS", photo:"", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
+              { name:"Mr. Bharat", title:"Director – Investment Advisory", initials:"BH", photo:"", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
             ].map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100} style={{ display:"flex" }}>
                 <div className="team-card hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,width:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>

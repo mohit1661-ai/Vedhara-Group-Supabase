@@ -43,30 +43,30 @@ const teamMembers = [
   },
   {
     name:"Ms. Kusum Sharma",
-    title:"Director – Investment Advisory",
+    title:"Director – Strategic Partnerships",
     initials:"KS",
     photo:"",
     gradient:"linear-gradient(135deg,#2a3f6f,#E8C970)",
-    description:"Kusum Sharma leads Vedhara Group's Investment Advisory vertical, specialising in portfolio-level property strategy for UHNI clients, family offices, and long-term investors. Her expertise spans capital appreciation corridor identification, rental yield optimisation, exit strategy planning, and cross-city portfolio diversification across Delhi NCR micro-markets. She is also the driving force behind the firm's NRI desk, ensuring distance never compromises the quality of property decision-making.",
-    philosophy:"Real estate wealth is built in the buying, not the selling. The right purchase with the right thesis is half the work done.",
-    stats:[
-      { num:"15+", label:"Years Investment Experience" },
-      { num:"200+", label:"Portfolios Advised" },
-      { num:"85%", label:"Client Repeat Rate" },
-    ],
-  },
-  {
-    name:"Mr. Bharat",
-    title:"Director – Strategic Partnerships",
-    initials:"BH",
-    photo:"",
-    gradient:"linear-gradient(135deg,#1a3a5c,#B8922A)",
-    description:"Bharat leads Vedhara Group's developer partnerships and strategic alliances across Delhi NCR and North India. His deep relationships with leading developers, combined with a rigorous evaluation framework, ensure that only projects meeting Vedhara's five-point Verification Framework make it to the platform. He manages the entire partnership lifecycle from initial due diligence through ongoing compliance monitoring, giving clients the confidence that every listed project has been independently vetted before they ever see it.",
+    description:"Kusum Sharma leads Vedhara Group's developer partnerships and strategic alliances across Delhi NCR and North India. Her deep relationships with leading developers, combined with a rigorous evaluation framework, ensure that only projects meeting Vedhara's five-point Verification Framework make it to the platform. She manages the entire partnership lifecycle from initial due diligence through ongoing compliance monitoring, giving clients the confidence that every listed project has been independently vetted before they ever see it.",
     philosophy:"A listing is only as good as the verification behind it. Our partners know that we hold every project to the same standard we promise our clients.",
     stats:[
       { num:"50+", label:"Developer Partners" },
       { num:"200+", label:"Verified Projects" },
       { num:"5", label:"Verification Checks" },
+    ],
+  },
+  {
+    name:"Mr. Bharat",
+    title:"Director – Investment Advisory",
+    initials:"BH",
+    photo:"",
+    gradient:"linear-gradient(135deg,#1a3a5c,#B8922A)",
+    description:"Bharat leads Vedhara Group's Investment Advisory vertical, specialising in portfolio-level property strategy for UHNI clients, family offices, and long-term investors. His expertise spans capital appreciation corridor identification, rental yield optimisation, exit strategy planning, and cross-city portfolio diversification across Delhi NCR micro-markets. He is also the driving force behind the firm's NRI desk, ensuring distance never compromises the quality of property decision-making.",
+    philosophy:"Real estate wealth is built in the buying, not the selling. The right purchase with the right thesis is half the work done.",
+    stats:[
+      { num:"15+", label:"Years Investment Experience" },
+      { num:"200+", label:"Portfolios Advised" },
+      { num:"85%", label:"Client Repeat Rate" },
     ],
   },
 ];
@@ -86,14 +86,14 @@ const stats = [
 ];
 
 const faqs = [
-  { q:"How do I know which team member to speak with?", a:"Your first conversation is always a discovery call. Based on your requirements, we introduce you to the most relevant team member. For most buyers, sellers, and NRIs, this will be Mohit Sharma or Kusum Sharma depending on the nature of your requirement." },
+  { q:"How do I know which team member to speak with?", a:"Your first conversation is always a discovery call. Based on your requirements, we introduce you to the most relevant team member. For most buyers, sellers, and NRIs, this will be Mohit Sharma or Bharat depending on the nature of your requirement." },
   { q:"Can I speak directly with the Founder?", a:"D.R Sharma is personally involved in all strategic client engagements and complex transactions. If your requirement involves portfolio-level investment, cross-city strategy, or high-value negotiations, the initial consultation will include direct access to the Founder." },
   { q:"How do you ensure your advice is unbiased if you work with developers?", a:"Independence is the foundation of our practice. We maintain no exclusive tie-ups with any developer, which means we can recommend, or recommend against, any project in the market. Our advisors are evaluated on client satisfaction and long-term outcomes, not on which project you choose. Every recommendation is documented with the rationale, and clients are encouraged to verify our claims independently." },
-  { q:"Is the team available for weekend consultations?", a:"Yes. NRI clients and working professionals can schedule weekend and evening IST video consultations. Kusum Sharma's NRI desk operates dedicated Saturday and Sunday slots from 10 AM to 4 PM IST. Standard weekday appointments are available from 9 AM to 7 PM." },
+  { q:"Is the team available for weekend consultations?", a:"Yes. NRI clients and working professionals can schedule weekend and evening IST video consultations. Bharat's NRI desk operates dedicated Saturday and Sunday slots from 10 AM to 4 PM IST. Standard weekday appointments are available from 9 AM to 7 PM." },
   { q:"What happens after I finalise a property? Does your team help with registration?", a:"Absolutely. Our support extends through the entire lifecycle, from offer negotiation and earnest money deposit coordination to legal document verification, bank loan facilitation, registration appointment scheduling, and post-possession handover support. Your named advisor stays with you until you have the keys in your hand and the registry in your name. We do not disappear after the deal." },
   { q:"How large is the Vedhara Group team?", a:"Vedhara Group operates a lean, senior-led team model. Every client engagement is managed by a named senior advisor from day one, supported by dedicated research and documentation specialists. This structure ensures continuity, accountability, and depth; you speak with the person who makes decisions, not a junior associate reading from a script." },
   { q:"Which micro-markets in Delhi NCR does your team cover?", a:"Our team has evaluated over 10,000 properties across Gurugram (Golf Course Road, Golf Course Extn Road, Dwarka Expressway, Sectors 43-115), Noida & Greater Noida (Sector 150, 137, 168, Tech Zone 4), Faridabad (Neharpar, Sector 81-89), and Ghaziabad (Raj Nagar Extension, Indirapuram, Vaishali). If a property is listed anywhere in Delhi NCR, we have ground-level data on the micro-market." },
-  { q:"Can you manage my property remotely if I am an NRI?", a:"Yes. Kusum Sharma's NRI vertical covers the full lifecycle: property selection via video walkthroughs, documentation through e-signature and power of attorney, purchase completion with remote coordination, and then ongoing property management, rent collection, maintenance coordination, tenant management, and periodic inspection reports with photo and video documentation. You do not need to be physically present at any stage." },
+  { q:"Can you manage my property remotely if I am an NRI?", a:"Yes. Bharat's NRI vertical covers the full lifecycle: property selection via video walkthroughs, documentation through e-signature and power of attorney, purchase completion with remote coordination, and then ongoing property management, rent collection, maintenance coordination, tenant management, and periodic inspection reports with photo and video documentation. You do not need to be physically present at any stage." },
   { q:"What makes Vedhara Group different from a regular real estate agent?", a:"A regular agent typically represents a developer or a seller and earns commission only when you buy from their listed properties. Vedhara Group works as a fiduciary advisor; we are not bound to any developer, we publish our verification framework publicly, we assign a named senior advisor to every client, and we stay engaged through possession and beyond. Our repeat client rate of 85% and our published verification process are the two markers that most clearly separate us from the conventional brokerage model." },
 ];
 
