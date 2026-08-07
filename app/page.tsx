@@ -327,8 +327,8 @@ export default function HomePage() {
             <div style={{ display:"flex",flexDirection:"column",gap:8,minWidth:260 }}>
               {[{l:"Weekend Slots",v:"Sat & Sun 10AM–4PM IST"},{l:"Walkthrough SLA",v:"Video within 48 hours"},{l:"Documentation",v:"E-signature supported"},{l:"Compliance",v:"FEMA & Section 195 guided"},{l:"Communication",v:"Single named advisor"}].map(item=>(
                 <div key={item.l} className="glass nri-desk-card" style={{ padding:"13px 18px",display:"flex",justifyContent:"space-between",gap:12 }}>
-                  <span className="caption" style={{ color:"rgba(255,255,255,0.35)" }}>{item.l}</span>
-                  <span className="body-sm" style={{ color:"#fff",textAlign:"right" }}>{item.v}</span>
+                  <span className="caption" style={{ color:"#fff" }}>{item.l}</span>
+                  <span className="body-sm" style={{ color:"var(--gold-lt)",textAlign:"right" }}>{item.v}</span>
                 </div>
               ))}
             </div>
