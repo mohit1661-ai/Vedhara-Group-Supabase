@@ -199,7 +199,9 @@ async function appendViaWebhook(lead: Lead): Promise<void> {
     method: "POST",
     headers,
     body: JSON.stringify(payload),
-    signal: AbortSignal.timeout(8000),
+    // Apps Script web apps have a cold-start + 302 redirect, so allow up to
+    // 30s. This runs non-blocking so it never delays the form response.
+    signal: AbortSignal.timeout(30000),
   });
   if (!res.ok) {
     throw new Error(`Webhook failed (${res.status}): ${(await res.text()).slice(0, 300)}`);

@@ -49,7 +49,8 @@ function doPost(e) {
   try {
     data = JSON.parse(e.postData.contents);
   } catch (err) {
-    return json_({ success: false, error: "Invalid JSON" }, 400);
+    // Return a non-2xx so the site connector logs a failure.
+    throw new Error("Invalid JSON payload");
   }
 
   var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -79,7 +80,7 @@ function doPost(e) {
     String(data.message || data.notes || ""),
   ]);
 
-  return json_({ success: true, row: sheet.getLastRow() }, 200);
+  return json_({ success: true, row: sheet.getLastRow() });
 }
 
 /** Quick smoke test — run this manually after deploying to verify the URL. */
@@ -104,9 +105,9 @@ function testWebhook() {
   Logger.log("Test lead sent to: " + url);
 }
 
-/** Helper: JSON response with a status code. */
-function json_(obj, code) {
+/** Helper: JSON response. (TextOutput has no status-code setter, so Apps
+ *  Script always returns 200 on success / 500 on a thrown error.) */
+function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setStatusCode(code);
+    .setMimeType(ContentService.MimeType.JSON);
 }
