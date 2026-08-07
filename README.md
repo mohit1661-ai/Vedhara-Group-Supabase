@@ -21,7 +21,7 @@ North India's independent real estate advisory firm. Verified listings, transpar
 
 - **Next.js 16** (App Router, Turbopack) + React 19 + TypeScript
 - **Tailwind CSS 4** + a custom navy/gold design system in app/globals.css
-- **Supabase** (optional, lead storage) · **Resend** (optional, email) · **Titan** (optional, CRM webhook)
+- **Supabase** (optional, lead storage) · **Resend** (optional, email) · **Titan** (optional, CRM webhook) · **Google Sheets** (optional, Excel lead sheet via Apps Script webhook)
 
 ---
 
@@ -61,10 +61,55 @@ Copy `.env.example` → `.env.local` and fill in the values. **Never commit `.en
 | `TITAN_WEBHOOK_URL` | No | Titan CRM webhook endpoint |
 | `TITAN_API_KEY` | No | Bearer token for the Titan webhook |
 | `TITAN_LEAD_SOURCE` | No | Lead source label sent to Titan |
+| `GOOGLE_SHEETS_ID` | No | Spreadsheet ID from your share link (native API mode) |
+| `GOOGLE_SHEETS_CREDENTIALS` | No | Base64 of the service-account JSON (native API mode) |
+| `GOOGLE_SHEETS_WEBHOOK_URL` | No | Google Sheets/Excel web-app URL (webhook mode) |
+| `GOOGLE_SHEETS_API_KEY` | No | Optional secret header (`x-api-key`) for the sheet webhook |
+| `GOOGLE_OAUTH_TOKEN_URL` | No | Advanced: override Google's OAuth token endpoint (testing/proxy) |
+| `GOOGLE_SHEETS_API_BASE` | No | Advanced: override the Sheets API base URL (testing/proxy) |
 | `ADMIN_SECRET` | No | Password to view leads via /api/leads |
 | `NEXT_PUBLIC_SITE_URL` | No | Public site URL (defaults to https://www.vedharagroup.com) |
 
 \* Without Supabase vars, leads fall back to a local JSON file (data/leads.json) — fine for dev, but set them in production for durable storage.
+
+---
+
+## 📊 Google Sheets / Excel Lead Connector
+
+Every "Book a Free Consultation" submission is written to **Supabase**, **emailed** to `contact@vedharagroup.com` (via Resend), **forwarded to your CRM** (Titan) when configured, and **appended as a row to your Google Sheet** (opens in Excel, exportable to .xlsx).
+
+**This project's spreadsheet:**
+`https://docs.google.com/spreadsheets/d/1Fy6kUI9ooPDHME5qbD1pDCuTFCgPTBsUvUhM29EY_TU`
+
+Pick one of two modes:
+
+### Option A — Native Google Sheets API (recommended)
+Writes directly to the spreadsheet by ID using a service account. One-time setup (~5 min):
+
+1. **Google Cloud Console** → create/select a project → **APIs & Services → Enable the Google Sheets API**.
+2. **Create a service account** (Credentials → Create credentials → Service account) and **download its JSON key**.
+3. Open the spreadsheet above → **Share** → add the service account email (from the JSON `client_email`) as **Editor**.
+4. Generate the two env values:
+   ```bash
+   node scripts/sheets-env.mjs "path/to/service-account.json"
+   ```
+5. Paste the printed `GOOGLE_SHEETS_ID` + `GOOGLE_SHEETS_CREDENTIALS` into `.env.local` and Vercel.
+
+Each lead is appended to the **first tab** of the spreadsheet as a row:
+`Timestamp (IST) · Lead ID · Full Name · Phone · Email · Interest · Time Zone · Source Page · Message`.
+
+### Option B — Apps Script webhook (zero keys)
+1. In the spreadsheet: **Extensions → Apps Script** → paste **`scripts/GoogleSheetsAppScript.gs`** → Save.
+2. **Deploy → New deployment → ⚙️ → Web app** → *Execute as:* **Me** → *Who has access:* **Anyone** → Deploy.
+3. Copy the `/exec` URL into `GOOGLE_SHEETS_WEBHOOK_URL` (Vercel + `.env.local`).
+4. Run `testWebhook` in the Apps Script editor to verify.
+
+> `GOOGLE_SHEETS_WEBHOOK_URL` can also point to any spreadsheet automation
+> (Zapier, Make, n8n, SheetDB, Excel Power Automate) — it just needs to accept
+> a JSON POST and store the row.
+
+> Dev/testing: `scripts/mock-google-sheets.mjs` runs a local fake OAuth + Sheets
+> server so you can verify the native connector without touching Google.
 
 ---
 
@@ -104,11 +149,12 @@ components/
   layout/               # Navbar, Footer, Breadcrumbs
 lib/
   data/blogPosts.ts     # Blog content + metaTitle/metaDescription
-  supabase.ts, email.ts, titan.ts, leads.ts, validation.ts, rateLimit.ts
+  supabase.ts, email.ts, titan.ts, sheets.ts, leads.ts, validation.ts, rateLimit.ts
 public/
   llms.txt              # LLM index (per llms.txt spec)
   llms-full.txt         # Full LLM-readable company profile
 scripts/crawl-audit.mjs # Crawler audit tool
+scripts/GoogleSheetsAppScript.gs # Apps Script → Google Sheets lead receiver
 ```
 
 ---

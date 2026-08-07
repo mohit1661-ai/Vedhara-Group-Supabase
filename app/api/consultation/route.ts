@@ -8,13 +8,16 @@
  *  2. Validate + sanitise all fields server-side
  *  3. Save lead → Supabase (if configured) or local JSON file
  *  4. Send email notification via Resend (if RESEND_API_KEY set)
- *  5. Return structured JSON response
+ *  5. Forward to Titan CRM (if TITAN_WEBHOOK_URL set)
+ *  6. Append to Google Sheets / Excel (if GOOGLE_SHEETS_WEBHOOK_URL set)
+ *  7. Return structured JSON response
  */
 
 import { NextRequest, NextResponse }         from "next/server";
 import { writeLead, generateId, type Lead }  from "@/lib/leads";
 import { sendLeadNotification }              from "@/lib/email";
 import { sendLeadToTitan }                   from "@/lib/titan";
+import { appendLeadToGoogleSheets }          from "@/lib/sheets";
 import { isRateLimited }                     from "@/lib/rateLimit";
 import { validate, sanitise, type FormInput } from "@/lib/validation";
 
@@ -75,12 +78,15 @@ export async function POST(req: NextRequest) {
     // Continue; don't fail the user request over a save error
   }
 
-  // 6. Email + Titan CRM (both non-blocking)
+  // 6. Email + Titan CRM + Google Sheets (all non-blocking)
   sendLeadNotification(lead).catch(err =>
     console.error("[Email notification failed]", err)
   );
   sendLeadToTitan(lead).catch(err =>
     console.error("[Titan notification failed]", err)
+  );
+  appendLeadToGoogleSheets(lead).catch(err =>
+    console.error("[Google Sheets notification failed]", err)
   );
 
   // 7. Respond
