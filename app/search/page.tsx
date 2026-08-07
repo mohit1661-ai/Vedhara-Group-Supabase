@@ -4,6 +4,7 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import FilterSelect from "@/components/ui/FilterSelect";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import {
@@ -46,6 +47,24 @@ const TYPES: { label: string; value?: SearchType }[] = [
   { label: "Penthouse", value: "penthouse" },
   { label: "Plot", value: "plot" },
   { label: "Commercial", value: "commercial" },
+];
+
+const BUY_OPTS = [
+  { value: "any", label: "Any Budget" },
+  { value: "under1", label: "Under ₹1 Cr" },
+  { value: "1-3", label: "₹1 – 3 Cr" },
+  { value: "3-5", label: "₹3 – 5 Cr" },
+  { value: "5-10", label: "₹5 – 10 Cr" },
+  { value: "10plus", label: "₹10 Cr+" },
+];
+
+const RENT_OPTS = [
+  { value: "any", label: "Any Monthly Rent" },
+  { value: "under20k", label: "Under ₹20K /mo" },
+  { value: "20k-50k", label: "₹20K – 50K /mo" },
+  { value: "50k-1l", label: "₹50K – 1L /mo" },
+  { value: "1l-2l", label: "₹1L – 2L /mo" },
+  { value: "2lplus", label: "₹2L+ /mo" },
 ];
 
 function buildHref(f: { q?: string; mode?: SearchMode; type?: string; budget?: string }) {
@@ -124,35 +143,22 @@ export default async function SearchPage({
                 <input className="input-field" id="q" name="q" type="text" placeholder="e.g. 3 BHK in Gurugram, penthouse, villa…" defaultValue={q} />
               </div>
               <div style={{ flex: "1 1 160px" }}>
-                <label className="input-label" htmlFor="type">Type</label>
-                <select className="input-field" id="type" name="type" defaultValue={type || "any"}>
-                  {TYPES.map((t) => (
-                    <option key={t.value || "any"} value={t.value || "any"}>{t.label}</option>
-                  ))}
-                </select>
+                <label className="input-label">Type</label>
+                <FilterSelect
+                  id="type"
+                  label="Any Type"
+                  options={TYPES.map((t) => ({ value: t.value || "any", label: t.label }))}
+                  value={type || "any"}
+                />
               </div>
               <div style={{ flex: "1 1 160px" }}>
-                <label className="input-label" htmlFor="budget">Budget</label>
-                <select className="input-field" id="budget" name="budget" defaultValue={budget || "any"}>
-                  <option value="any">Any Budget</option>
-                  {mode === "rent" ? (
-                    <>
-                      <option value="under20k">Under ₹20K /mo</option>
-                      <option value="20k-50k">₹20K – 50K /mo</option>
-                      <option value="50k-1l">₹50K – 1L /mo</option>
-                      <option value="1l-2l">₹1L – 2L /mo</option>
-                      <option value="2lplus">₹2L+ /mo</option>
-                    </>
-                  ) : (
-                    <>
-                      <option value="under1">Under ₹1 Cr</option>
-                      <option value="1-3">₹1 – 3 Cr</option>
-                      <option value="3-5">₹3 – 5 Cr</option>
-                      <option value="5-10">₹5 – 10 Cr</option>
-                      <option value="10plus">₹10 Cr+</option>
-                    </>
-                  )}
-                </select>
+                <label className="input-label">Budget</label>
+                <FilterSelect
+                  id="budget"
+                  label="Any Budget"
+                  options={mode === "rent" ? RENT_OPTS : BUY_OPTS}
+                  value={budget || "any"}
+                />
               </div>
               <div style={{ flex: "1 1 120px", display: "flex", alignItems: "flex-end" }}>
                 <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>Search</button>
@@ -203,8 +209,8 @@ export default async function SearchPage({
           {results.length > 0 ? (
             <div className="prop-grid">
               {results.map((property, index) => (
-                <ScrollReveal key={property.id} delay={index * 60} style={{ display: "flex" }}>
-                  <Link href={property.link} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, background: "#fff", border: "1px solid rgba(212,168,67,0.18)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
+                <ScrollReveal key={property.id} delay={index * 60} style={{ display: "flex", minWidth: 0 }}>
+                  <Link href={property.link} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0, background: "#fff", border: "1px solid rgba(212,168,67,0.18)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
                     <div style={{ height: 180, flexShrink: 0, position: "relative", overflow: "hidden" }}>
                       <Image
                         src={property.image}

@@ -3,11 +3,21 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import FilterSelect from "@/components/ui/FilterSelect";
 
 const modes = [
   { key: "buy", label: "Buy" },
   { key: "rent", label: "Rent" },
   { key: "sell", label: "Sell" },
+];
+
+const TYPES = [
+  { value: "any", label: "Any Type" },
+  { value: "apartment", label: "Apartment" },
+  { value: "villa", label: "Villa" },
+  { value: "plot", label: "Plot / Land" },
+  { value: "penthouse", label: "Penthouse" },
+  { value: "commercial", label: "Commercial" },
 ];
 
 const popular = [
@@ -157,39 +167,12 @@ export default function PropertySearch() {
               />
             </div>
             <div className="ps-field">
-              <label className="ps-label" htmlFor="ps-type">
-                Type
-              </label>
-              <select
-                id="ps-type"
-                className="ps-input"
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-              >
-                <option value="any">Any Type</option>
-                <option value="apartment">Apartment</option>
-                <option value="villa">Villa</option>
-                <option value="plot">Plot / Land</option>
-                <option value="penthouse">Penthouse</option>
-                <option value="commercial">Commercial</option>
-              </select>
+              <label className="ps-label">Type</label>
+              <FilterSelect label="Any Type" options={TYPES} value={type} onChange={setType} />
             </div>
             <div className="ps-field">
-              <label className="ps-label" htmlFor="ps-budget">
-                {mode === "rent" ? "Monthly Rent" : "Budget"}
-              </label>
-              <select
-                id="ps-budget"
-                className="ps-input"
-                value={budget}
-                onChange={(e) => setBudget(e.target.value)}
-              >
-                {budgets.map((b) => (
-                  <option key={b.value} value={b.value}>
-                    {b.label}
-                  </option>
-                ))}
-              </select>
+              <label className="ps-label">{mode === "rent" ? "Monthly Rent" : "Budget"}</label>
+              <FilterSelect label="Any Budget" options={budgets} value={budget} onChange={setBudget} />
             </div>
             <button type="submit" className="ps-submit">
               Search
@@ -214,7 +197,6 @@ export default function PropertySearch() {
           border-radius: 18px;
           padding: 22px;
           box-shadow: 0 30px 60px -30px rgba(9,15,29,0.6);
-          backdrop-filter: blur(6px);
         }
         .ps-modes { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
         .ps-mode {
