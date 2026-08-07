@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ConsultationModal from "@/components/ui/ConsultationModal";
 
 const navLinks = [
   { label:"About",     href:"/about" },
@@ -17,6 +18,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [consultOpen, setConsultOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(()=>{
     const fn=()=>setScrolled(window.scrollY>50);
@@ -76,7 +78,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden-mobile" style={{ display:"flex",alignItems:"center",gap:16 }}>
             <a href="tel:+919810647063" style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:600,color:scrolled?"var(--navy)":"rgba(255,255,255,0.7)",textDecoration:"none",transition:"color 0.3s" }}>+91 98106 47063</a>
-            <Link href="/contact" className="btn btn-primary" style={{ padding:"10px 22px",fontSize:10 }}>Free Consultation</Link>
+            <button type="button" onClick={()=>setConsultOpen(true)} className="btn btn-primary" style={{ padding:"10px 22px",fontSize:10 }}>Free Consultation</button>
           </div>
 
           {/* Hamburger */}
@@ -92,24 +94,29 @@ export default function Navbar() {
           <div style={{ padding:"16px 24px 24px" }}>
             {navLinks.map(l=>(<Link key={l.href} href={l.href} onClick={()=>setOpen(false)} style={{ display:"block",fontFamily:"var(--t-head)",fontSize:14,fontWeight:500,color:"var(--ink)",textDecoration:"none",padding:"13px 0",borderBottom:"1px solid rgba(42,45,53,0.06)" }}>{l.label}</Link>))}
             <div style={{ display:"flex",gap:10,marginTop:16 }}>
-              <Link href="/contact" onClick={()=>setOpen(false)} className="btn btn-dark" style={{ flex:1,justifyContent:"center",padding:"14px" }}>Free Consultation</Link>
+              <button type="button" onClick={()=>{setOpen(false); setConsultOpen(true);}} className="btn btn-dark" style={{ flex:1,justifyContent:"center",padding:"14px" }}>Free Consultation</button>
               <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ flex:1,justifyContent:"center",padding:"14px",background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp</a>
             </div>
           </div>
         </div>
       </header>
-
+        {/* Consultation popup — opened from the Free Consultation CTA */}
+        <ConsultationModal open={consultOpen} onClose={()=>setConsultOpen(false)} />
       {/* Mobile sticky CTA */}
       <div className="show-mobile" style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:999,background:"var(--navy)",borderTop:"1px solid rgba(212,168,67,0.2)",display:"none" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr 1fr" }}>
           {[
             { label:"Call",  href:"tel:+919810647063",bg:"transparent" },
             { label:"Chat",  href:"https://wa.me/919810647063",bg:"transparent" },
-            { label:"Book",  href:"/contact",bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))" },
-          ].map(item=>(
+            { label:"Book",  bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))" },
+          ].map(item=> item.href ? (
             <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"10px 8px",textDecoration:"none",background:item.bg,borderRight:"1px solid rgba(255,255,255,0.06)" }}>
               <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
             </a>
+          ) : (
+            <button key={item.label} type="button" onClick={()=>setConsultOpen(true)} style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"10px 8px",background:item.bg,border:"none",borderRight:"1px solid rgba(255,255,255,0.06)",cursor:"pointer" }}>
+              <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
+            </button>
           ))}
         </div>
       </div>

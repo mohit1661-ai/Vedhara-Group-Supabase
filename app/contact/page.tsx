@@ -5,6 +5,7 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection from "@/components/sections/FAQSection";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ConsultationForm from "@/components/ui/ConsultationForm";
 
 const contactFaqs = [
   { q:"How quickly will I hear back after submitting the form?", a:"A Vedhara advisor responds within 24 hours during business hours. No spam, ever; the first contact is simply a conversation about what you are trying to achieve." },
@@ -14,15 +15,8 @@ const contactFaqs = [
   { q:"Can NRIs book a consultation from abroad?", a:"Yes. Our NRI desk offers weekend (Saturday and Sunday) and weekday evening IST slots to accommodate clients across UAE/Gulf, UK, North America, and APAC time zones." },
 ];
 
-const interests = [
-  "Buy Property","Sell Property","Rent / Lease","Commercial Real Estate",
-  "Investment Advisory","NRI Services","Property Management","Luxury Properties","General Enquiry",
-];
-
 export default function ContactPage() {
-  const [form, setForm] = useState({ fullName:"",phone:"",email:"",interest:"",message:"",timezone:"" });
-  const [status, setStatus] = useState<"idle"|"submitting"|"success"|"error">("idle");
-  const up = (k:string,v:string) => setForm(p=>({...p,[k]:v}));
+  const [status, setStatus] = useState<"idle"|"success">("idle");
 
   // On success the whole page is swapped for the thank-you hero, but the
   // browser keeps the old scroll position (down at the form) → the user would
@@ -32,14 +26,6 @@ export default function ContactPage() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [status]);
-
-  const submit = async (e:React.FormEvent) => {
-    e.preventDefault(); setStatus("submitting");
-    try {
-      const res = await fetch("/api/consultation",{ method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...form,interestArea:form.interest.toLowerCase().replace(/\s+/g,"_"),sourcePage:"/contact"}) });
-      setStatus(res.ok?"success":"error");
-    } catch { setStatus("error"); }
-  };
 
   if (status==="success") return (
     <section className="page-hero animated-gradient" style={{ minHeight:"60vh",display:"flex",alignItems:"center",textAlign:"center" }}>
@@ -146,46 +132,11 @@ export default function ContactPage() {
 
           {/* FORM SIDE */}
           <ScrollReveal delay={120} direction="right">
-            <div className="form-card" style={{ background:"var(--navy)",border:"1px solid rgba(212,168,67,0.2)",padding:"40px 36px",position:"relative",boxShadow:"0 12px 48px rgba(9,15,29,0.28)" }}>
-              {/* Gold top accent */}
-              <div style={{ position:"absolute",top:0,left:36,right:36,height:2.5,background:"linear-gradient(90deg,transparent,var(--cream),var(--cream),var(--cream),transparent)",opacity:0.5 }} />
-              <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>Book Your Free Consultation</h2>
-              <form onSubmit={submit} style={{ display:"flex",flexDirection:"column",gap:18 }}>
-                <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:14 }} className="grid-2">
-                  <div>
-                    <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Full Name <span style={{ color:"var(--gold)" }}>*</span></label>
-                    <input type="text" required value={form.fullName} onChange={e=>up("fullName",e.target.value)} className="input-field" placeholder="Your full name" />
-                  </div>
-                  <div>
-                    <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Phone <span style={{ color:"var(--gold)" }}>*</span></label>
-                    <input type="tel" required value={form.phone} onChange={e=>up("phone",e.target.value)} className="input-field" placeholder="+91 or country code" />
-                  </div>
-                </div>
-                <div>
-                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Email Address</label>
-                  <input type="email" value={form.email} onChange={e=>up("email",e.target.value)} className="input-field" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>I Am Interested In <span style={{ color:"var(--gold)" }}>*</span></label>
-                  <select required value={form.interest} onChange={e=>up("interest",e.target.value)} className="input-field">
-                    <option value="">Select a service…</option>
-                    {interests.map(i=><option key={i} value={i}>{i}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Time Zone (NRI clients)</label>
-                  <input type="text" value={form.timezone} onChange={e=>up("timezone",e.target.value)} className="input-field" placeholder="e.g. UAE, GMT+4 / UK, BST" />
-                </div>
-                <div>
-                  <label className="input-label" style={{color:"rgba(255,255,255,0.65)"}}>Message (optional)</label>
-                  <textarea rows={4} value={form.message} onChange={e=>up("message",e.target.value)} className="input-field" placeholder="Tell us about your property goals…" style={{ resize:"none" }} />
-                </div>
-                <button type="submit" disabled={status==="submitting"} className="btn btn-dark" style={{ width:"100%",justifyContent:"center",opacity:status==="submitting"?0.6:1 }}>
-                  {status==="submitting"?"Sending…":"Book a Free Consultation"}
-                </button>
-                {status==="error" && <p className="body-sm" style={{ color:"#B23A3A",textAlign:"center" }}>Something went wrong; please try WhatsApp or call us directly.</p>}
-                <p className="caption" style={{ color:"rgba(255,255,255,0.4)",textAlign:"center" }}>We respond within 24 hours during business hours. No spam, ever.</p>
-              </form>
+            {/* Gold gradient frame — luxury card that matches the popup form */}
+            <div style={{ padding:1,background:"linear-gradient(165deg, rgba(212,168,67,0.5), rgba(212,168,67,0.12) 30%, rgba(212,168,67,0.28) 65%, rgba(212,168,67,0.5))",borderRadius:18,boxShadow:"0 18px 60px rgba(9,15,29,0.35)" }}>
+              <div style={{ background:"var(--navy)",borderRadius:17,padding:"40px 36px 34px" }}>
+                <ConsultationForm sourcePage="/contact" onSuccess={()=>setStatus("success")} />
+              </div>
             </div>
           </ScrollReveal>
         </div>

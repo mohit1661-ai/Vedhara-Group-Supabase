@@ -94,11 +94,20 @@ interface CinematicHeroProps {
   videoSrcMobile?: string;
 }
 
+/* ── Hero "4 parts" — image cards that expand a short detail on click ── */
+const heroParts = [
+  { t:"ROI Calculator",        h:"/calculators",           img:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Four free calculators: ROI & rental yield, home loan EMI, stamp duty and affordability. No sign-up needed." },
+  { t:"NRI Services",          h:"/nri-services",          img:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Remote-first advisory for NRIs — video walkthroughs, documentation support and weekend IST slots." },
+  { t:"Verify Property",       h:"/verification-center",   img:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Every listing passes our 5-point Verification Framework, and we publish exactly what we found." },
+  { t:"Invest in NCR",         h:"/investment-advisory",   img:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Independent portfolio strategy across Delhi NCR micro-markets, with transparent fees and a named advisor." },
+];
+
 export default function CinematicHero({
   videoSrc = "/videos/Homepage%20Hero%20Video%20Desktop.mp4",
   videoSrcMobile,
 }: CinematicHeroProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const contentOuterRef = useRef<HTMLDivElement>(null);
@@ -411,15 +420,44 @@ export default function CinematicHero({
               </div>
               {/* Gold divider */}
               <div style={{ height:1,margin:"0 20px",background:"linear-gradient(90deg,transparent,rgba(212,168,67,0.45),transparent)" }} />
-              {/* Quick links */}
-              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,padding:"14px 14px 16px" }}>
-                {[{i:"📊",t:"ROI Calculator",h:"/calculators"},{i:"🌐",t:"NRI Services",h:"/nri-services"},{i:"🔍",t:"Verify Property",h:"/verification-center"},{i:"📈",t:"Invest in NCR",h:"/investment-advisory"}].map(item=>(
-                  <Link key={item.t} href={item.h} className="hero-quick-link">
-                    <span className="hero-quick-icon">{item.i}</span>
-                    <span className="hero-quick-text">{item.t}</span>
-                  </Link>
+              {/* The 4 parts — image cards; click to expand a short detail */}
+              <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,padding:"14px 14px 0" }}>
+                {heroParts.map((p, idx) => (
+                  <button
+                    key={p.t}
+                    type="button"
+                    onClick={()=>setActiveCard(activeCard===idx?null:idx)}
+                    aria-expanded={activeCard===idx}
+                    className="hero-part-card"
+                    style={{
+                      position:"relative",
+                      overflow:"hidden",
+                      borderRadius:10,
+                      height:120,
+                      border:`1px solid ${activeCard===idx?"rgba(212,168,67,0.6)":"rgba(212,168,67,0.32)"}`,
+                      cursor:"pointer",
+                      padding:0,
+                      background:"var(--navy)",
+                      textAlign:"left",
+                      transition:"border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease",
+                    }}
+                  >
+                    <Image src={p.img} alt="" fill sizes="180px" className="hero-part-img" style={{ objectFit:"cover" }} />
+                    {/* Light overlay so the image stays bright and clear in the static state */}
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg, rgba(15,30,56,0.05) 0%, rgba(15,30,56,0.62) 100%)" }} />
+                    <div style={{ position:"relative",display:"flex",flexDirection:"column",height:"100%",padding:"12px",justifyContent:"flex-end",alignItems:"flex-start" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:600,color:"#fff",letterSpacing:"0.04em",lineHeight:1.3,textShadow:"0 1px 8px rgba(9,15,29,0.65)" }}>{p.t}</span>
+                    </div>
+                    {activeCard===idx && <div style={{ position:"absolute",top:0,left:0,right:0,height:2,background:"var(--gold-lt)" }} />}
+                  </button>
                 ))}
               </div>
+              {activeCard!==null && (
+                <div style={{ margin:"10px 14px 14px",padding:"12px 14px",background:"rgba(212,168,67,0.08)",border:"1px solid rgba(212,168,67,0.3)",borderRadius:10,animation:"heroRise 0.3s ease" }}>
+                  <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,fontWeight:400,color:"rgba(255,255,255,0.92)",lineHeight:1.6,margin:"0 0 8px" }}>{heroParts[activeCard].d}</p>
+                  <Link href={heroParts[activeCard].h} style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:600,color:"var(--gold-lt)",textDecoration:"none",letterSpacing:"0.04em" }}>Explore {heroParts[activeCard].t} →</Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -441,6 +479,9 @@ export default function CinematicHero({
         .hero-quick-icon{width:30px;height:30px;border-radius:8px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all 0.25s;}
         .hero-quick-link:hover .hero-quick-icon{background:rgba(212,168,67,0.3);border-color:rgba(212,168,67,0.45);}
         .hero-quick-text{white-space:nowrap;}
+        .hero-part-img{opacity:0.85;transition:opacity 0.3s ease;}
+        .hero-part-card:hover{transform:translateY(-2px);border-color:rgba(212,168,67,0.6);box-shadow:0 10px 24px rgba(9,15,29,0.45);}
+        .hero-part-card:hover .hero-part-img{opacity:1;}
         .trust-strip{display:flex;align-items:center;flex-wrap:nowrap;gap:18px;}
         .trust-item{display:flex;align-items:center;gap:9px;white-space:nowrap;}
         .trust-label{font-family:var(--t-head);font-size:11px;font-weight:600;color:rgba(255,255,255,0.95);letter-spacing:0.04em;text-shadow:0 1px 8px rgba(9,15,29,0.55);}
