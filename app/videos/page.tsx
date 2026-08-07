@@ -23,7 +23,7 @@ interface WatchVideo {
 
 const videos: WatchVideo[] = [
   { file:"Homepage Hero Video Desktop.mp4", title:"Vedhara Group Verified Property Advisory", desc:"Our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
-  { file:"Homepage Hero Video Mobile.mp4", title:"Vedhara Group Verified Property Advisory (Mobile)", desc:"Our flagship advisory film in a mobile-optimised format — verified real estate across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
+  { file:"Homepage Hero Video Mobile.mp4", title:"Vedhara Group Verified Property Advisory (Mobile)", desc:"Our flagship advisory film in a mobile-optimised format, verified real estate across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
   { file:"Vedhara Group Gurgaon Real Estate About Page Video.mp4", title:"About Vedhara Group Trusted Advisory", desc:"The people and the principle behind Vedhara: independent by design, client-first by default." },
   { file:"Vedhara Group Delhi NCR Buy Page Video.mp4", title:"Buy Verified Property in Delhi NCR", desc:"How we shortlist, verify and negotiate on your behalf when you buy across Delhi NCR and North India." },
   { file:"Vedhara Group Delhi NCR Sell Page Video (1).mp4", title:"Sell Property at Fair Market Value", desc:"Strategic pricing, qualified buyer access and end-to-end sale management across Delhi NCR and Chandigarh." },
@@ -37,17 +37,17 @@ const videos: WatchVideo[] = [
   { file:"Property Verification.mp4", title:"Five-Point Verification Framework", desc:"How we check RERA status, approvals, price fairness and documents before any listing is published." },
   { file:"Property Real Estate Contact.mp4", title:"Book a Free Real Estate Consultation", desc:"No pitch, no pressure. Start with an honest conversation about your property goals." },
   { file:"Real Estate Calculator.mp4", title:"Free Real Estate Calculators", desc:"EMI, stamp duty, ROI and affordability calculators, free with no sign-up required." },
-  { file:"All Services Hero Video.mp4", title:"Vedhara Group Real Estate Advisory Services", desc:"The full range of Vedhara's independent real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India — buy, sell, rent, invest and NRI services." },
-  { file:"Blog Page Hero Video.mp4", title:"Vedhara Group Property Insights Blog", desc:"Guides and market insights on Delhi NCR property — RERA, pricing trends, NRI investing and more from the Vedhara Group blog." },
-  { file:"careers hero video.mp4", title:"Careers at Vedhara Group", desc:"Join Vedhara Group — a career in independent, client-first real estate advisory across Delhi NCR and North India." },
-  { file:"Case Studies Hero Video.mp4", title:"Vedhara Group Client Case Studies", desc:"Real client journeys — buying, selling and investing in Delhi NCR property with Vedhara Group's verified advisory." },
-  { file:"Chandigarh Tricity Hero Desktop.mp4", title:"Chandigarh Tricity Property Advisory", desc:"Verified property advisory across Chandigarh, Mohali, Panchkula and Zirakpur — the Tricity market with Vedhara Group." },
-  { file:"Chandigarh Tricity Hero Mobile.mp4", title:"Chandigarh Tricity Property Advisory (Mobile)", desc:"Vedhara Group's Chandigarh Tricity property advisory in a mobile-optimised format — Chandigarh, Mohali, Panchkula and Zirakpur." },
+  { file:"All Services Hero Video.mp4", title:"Vedhara Group Real Estate Advisory Services", desc:"The full range of Vedhara's independent real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India, buy, sell, rent, invest and NRI services." },
+  { file:"Blog Page Hero Video.mp4", title:"Vedhara Group Property Insights Blog", desc:"Guides and market insights on Delhi NCR property, RERA, pricing trends, NRI investing and more from the Vedhara Group blog." },
+  { file:"careers hero video.mp4", title:"Careers at Vedhara Group", desc:"Join Vedhara Group, a career in independent, client-first real estate advisory across Delhi NCR and North India." },
+  { file:"Case Studies Hero Video.mp4", title:"Vedhara Group Client Case Studies", desc:"Real client journeys, buying, selling and investing in Delhi NCR property with Vedhara Group's verified advisory." },
+  { file:"Chandigarh Tricity Hero Desktop.mp4", title:"Chandigarh Tricity Property Advisory", desc:"Verified property advisory across Chandigarh, Mohali, Panchkula and Zirakpur, the Tricity market with Vedhara Group." },
+  { file:"Chandigarh Tricity Hero Mobile.mp4", title:"Chandigarh Tricity Property Advisory (Mobile)", desc:"Vedhara Group's Chandigarh Tricity property advisory in a mobile-optimised format, Chandigarh, Mohali, Panchkula and Zirakpur." },
   { file:"FAQ Hub Hero Video.mp4", title:"Vedhara Group FAQ – Property Questions Answered", desc:"Answers to common questions about buying, selling, renting and investing in Delhi NCR property with Vedhara Group." },
-  { file:"Market Insights Hero Video.mp4", title:"Delhi NCR Property Market Insights", desc:"Data-backed market insights on Delhi NCR, Faridabad, Manesar and Chandigarh — pricing, trends and opportunities from Vedhara Group." },
-  { file:"Our Team Hero Video.mp4", title:"Meet the Vedhara Group Team", desc:"The advisors behind Vedhara Group — independent by design, client-first by default across Delhi NCR and North India." },
+  { file:"Market Insights Hero Video.mp4", title:"Delhi NCR Property Market Insights", desc:"Data-backed market insights on Delhi NCR, Faridabad, Manesar and Chandigarh, pricing, trends and opportunities from Vedhara Group." },
+  { file:"Our Team Hero Video.mp4", title:"Meet the Vedhara Group Team", desc:"The advisors behind Vedhara Group, independent by design, client-first by default across Delhi NCR and North India." },
   { file:"Property Management Hero Video.mp4", title:"Vedhara Group Property Management", desc:"Tenant, maintenance and rental management for property owners across Delhi NCR and Chandigarh with Vedhara Group." },
-  { file:"Success Stories Hero Video.mp4", title:"Vedhara Group Success Stories", desc:"Client success stories — verified property journeys across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
+  { file:"Success Stories Hero Video.mp4", title:"Vedhara Group Success Stories", desc:"Client success stories, verified property journeys across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
 ];
 
 const jsonLd = {

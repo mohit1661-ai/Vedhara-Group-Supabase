@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import CinematicHero from "@/components/sections/CinematicHero";
 import AnimatedStats from "@/components/sections/AnimatedStats";
+import FeaturedProperties from "@/components/sections/FeaturedProperties";
+import PropertySearch from "@/components/sections/PropertySearch";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -54,6 +56,55 @@ export default function HomePage() {
         videoSrcMobile="/videos/Homepage%20Hero%20Video%20Mobile.mp4"
       />
       <AnimatedStats />
+
+      {/* ══ PROPERTY SEARCH — real-estate search bar ══ */}
+      <PropertySearch />
+
+      {/* ══ EXPLORE BY MARKET — attention-grabbing opener (market browse, distinct from services) ══ */}
+      <section style={{ background:"var(--cream)",padding:"72px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"0%",left:"-8%",width:520,height:520,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.07) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ marginBottom:14 }}>Explore by Market</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
+                Find Your Next Property in{" "}
+                <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Delhi NCR</em>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:660,margin:"16px auto 0" }}>
+                Pick a market to explore verified listings in that micro-market, benchmarked prices, live inventory and published project due diligence. No unverified projects. Ever.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:18 }} className="grid-3">
+            {[
+              { t:"Gurugram", s:"Golf Course Road & prime sectors", h:"/gurugram", img:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"Noida", s:"Sector 150 & the Expressway corridor", h:"/noida", img:"https://images.pexels.com/photos/35114454/pexels-photo-35114454.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"Greater Noida", s:"Plots, townships & new projects", h:"/greater-noida", img:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"South Delhi", s:"Lutyens', Vasant Vihar & Greater Kailash", h:"/south-delhi", img:"https://images.pexels.com/photos/1630114/pexels-photo-1630114.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"Chandigarh Tricity", s:"Chandigarh, Mohali & Panchkula", h:"/tricity", img:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"Commercial Hubs", s:"Sector 62, MG Road & Noida Expressway", h:"/commercial", img:"https://images.pexels.com/photos/38340685/pexels-photo-38340685.jpeg?auto=compress&cs=tinysrgb&w=900" },
+            ].map((c,i)=>(
+              <ScrollReveal key={c.t} delay={i*70}>
+                <Link href={c.h} className="hover-lift" style={{ display:"block",position:"relative",height:268,borderRadius:16,overflow:"hidden",textDecoration:"none",border:"1px solid rgba(212,168,67,0.25)" }}>
+                  <Image src={c.img} alt={`${c.t}, ${c.s}`} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit:"cover" }} />
+                  <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.12) 0%,rgba(9,15,29,0.82) 100%)" }} />
+                  <div style={{ position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"24px 24px 22px" }}>
+                    <h3 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:26,color:"var(--light)",margin:0,lineHeight:1.1 }}>{c.t}</h3>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,fontWeight:400,color:"rgba(255,255,255,0.78)",margin:"6px 0 14px" }}>{c.s}</p>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:5 }}>Explore {c.t} →</span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ FEATURED PROPERTIES (showcase listings early — real-estate-first flow) ══ */}
+      <FeaturedProperties />
 
       {/* ══ VERIFICATION FRAMEWORK ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
@@ -122,153 +173,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ FEATURED PROPERTIES ══ */}
-      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
-        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
-          <ScrollReveal>
-            <div style={{ textAlign:"center",marginBottom:36 }}>
-              <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Featured Properties</p>
-              <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:16 }}>
-                Explore Premium Listings<span style={{ color:"var(--gold-lt)" }}> Across Delhi NCR</span>
-              </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.55)",maxWidth:560,margin:"0 auto" }}>
-                Hand-picked properties from our verified inventory, each independently assessed through the Vedhara Verification Framework.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="prop-grid">
-            {[
-              {
-                category:"Residential",
-                title:"The Cullinan Heights",
-                location:"Sector 150, Noida",
-                price:"₹ 4.85 Cr",
-                config:"4 BHK + Study",
-                size:"2,450 sq.ft.",
-                image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
-                alt:"The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida",
-                link:"/buy",
-                tag:"Ready to Move",
-              },
-              {
-                category:"Luxury",
-                title:"One Golf Course Penthouse",
-                location:"Golf Course Road, Gurugram",
-                price:"₹ 12.80 Cr",
-                config:"5 BHK + Pool",
-                size:"4,200 sq.ft.",
-                image:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=900",
-                alt:"One Golf Course Penthouse luxury penthouse on Golf Course Road, Gurugram",
-                link:"/luxury",
-                tag:"Available",
-              },
-              {
-                category:"Commercial",
-                title:"One Golden Mile",
-                location:"Sector 62, Gurugram",
-                price:"₹ 8.50 Cr",
-                config:"4,500 sq.ft. Office",
-                size:"4,500 sq.ft.",
-                image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
-                pos:"100%",
-                alt:"One Golden Mile commercial office building in Sector 62, Gurugram",
-                link:"/commercial",
-                tag:"Ready to Move",
-              },
-              {
-                category:"New Launch",
-                title:"Amaryllis Residences",
-                location:"Golf Course Road, Gurugram",
-                price:"₹ 6.20 Cr",
-                config:"3 BHK + Servant",
-                size:"2,150 sq.ft.",
-                image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
-                pos:"100%",
-                alt:"Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
-                link:"/new-launches",
-                tag:"Possession Oct 2026",
-              },
-              {
-                category:"Rental",
-                title:"The Aspen Residency",
-                location:"Sector 57, Gurugram",
-                price:"₹ 58,000/mo",
-                config:"3 BHK",
-                size:"1,550 sq.ft.",
-                image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
-                pos:"0%",
-                alt:"The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
-                link:"/rent",
-                tag:"Available",
-              },
-              {
-                category:"Plotted",
-                title:"Serene Garden Plot",
-                location:"Sector 150, Noida",
-                price:"₹ 4.50 Cr",
-                config:"450 sq.yds.",
-                size:"450 sq.yds.",
-                image:"https://images.pexels.com/photos/15422584/pexels-photo-15422584.jpeg?auto=compress&cs=tinysrgb&w=900",
-                pos:"50%",
-                alt:"Serene Garden Plot green residential plot land in Sector 150, Noida",
-                link:"/sell",
-                tag:"Available for Sale",
-              },
-            ].map((p,i)=>(
-              <ScrollReveal key={p.title} delay={i*80}>
-                <Link href={p.link} className="hover-lift" style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
-                  <div style={{ height:190,position:"relative",overflow:"hidden" }}>
-                    <Image
-                      src={p.image}
-                      alt={p.alt || p.title}
-                      fill
-                      sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover", objectPosition: p.pos ? (p.pos.indexOf(" ") > -1 ? p.pos : "50% " + p.pos) : "50% 50%" }}
-                    />
-                    {/* subtle dark overlay for text legibility */}
-                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
-                    <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
-                        {p.tag}
-                      </span>
-                    </div>
-                  </div>
-                  <div style={{ padding:20 }}>
-                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
-                        {p.category}
-                      </span>
-                    </div>
-                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{p.title}</h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{p.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{p.config} · {p.size}</p>
-                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
-                      <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{p.price}</p>
-                      <span className="btn-ghost" style={{ color:"var(--gold)",fontSize:9,display:"inline-flex",alignItems:"center",gap:4 }}>
-                        View Details →
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={120}>
-            <div style={{ textAlign:"center",marginTop:32 }}>
-              <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Our full inventory spans 500+ verified listings across Delhi NCR.
-              </p>
-              <Link href="/buy" className="btn btn-primary">
-                Browse All Properties →
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ══ FEATURED PROPERTIES — moved up; now rendered via <FeaturedProperties /> (components/sections/FeaturedProperties.tsx) ══ */}
 
       {/* ══ WHY VEDHARA ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>

@@ -192,7 +192,7 @@ export default function NewLaunchesPage() {
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>
             Verified New Property Launches<br /><span style={{ color:"var(--gold-lt)" }}>Across Delhi NCR</span>
           </h1>
-          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Verified new projects across Delhi NCR, Faridabad, Manesar, Chandigarh and North India — every listing passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Verified new projects across Delhi NCR, Faridabad, Manesar, Chandigarh and North India, every listing passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
       </VideoHeroSection>
 
       {/* Gold differentiator */}

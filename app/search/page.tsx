@@ -1,0 +1,299 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import FAQSection from "@/components/sections/FAQSection";
+import CTASection from "@/components/sections/CTASection";
+import {
+  filterListings,
+  searchSummary,
+  type SearchMode,
+  type SearchType,
+} from "@/lib/data/searchListings";
+
+export const metadata: Metadata = {
+  title: "Search Verified Properties | Vedhara Group",
+  description:
+    "Search verified properties across Gurugram, Noida, Greater Noida, South Delhi, Chandigarh Tricity, Faridabad and Ghaziabad. Buy, rent or sell with RERA-verified listings.",
+  alternates: { canonical: "https://www.vedharagroup.com/search" },
+};
+
+const CITY_LINKS = [
+  { label: "Gurugram", href: "/gurugram" },
+  { label: "Noida", href: "/noida" },
+  { label: "Greater Noida", href: "/greater-noida" },
+  { label: "South Delhi", href: "/south-delhi" },
+  { label: "Chandigarh", href: "/chandigarh" },
+  { label: "Mohali", href: "/mohali" },
+  { label: "Panchkula", href: "/panchkula" },
+  { label: "Faridabad", href: "/faridabad" },
+  { label: "Ghaziabad", href: "/ghaziabad" },
+];
+
+const MODES: { label: string; value?: SearchMode }[] = [
+  { label: "All" },
+  { label: "Buy", value: "buy" },
+  { label: "Rent", value: "rent" },
+  { label: "Sell", value: "sell" },
+];
+
+const TYPES: { label: string; value?: SearchType }[] = [
+  { label: "All Types" },
+  { label: "Apartment", value: "apartment" },
+  { label: "Villa", value: "villa" },
+  { label: "Penthouse", value: "penthouse" },
+  { label: "Plot", value: "plot" },
+  { label: "Commercial", value: "commercial" },
+];
+
+function buildHref(f: { q?: string; mode?: SearchMode; type?: string; budget?: string }) {
+  const p = new URLSearchParams();
+  if (f.q) p.set("q", f.q);
+  if (f.mode && f.mode !== "buy") p.set("mode", f.mode);
+  if (f.type && f.type !== "any") p.set("type", f.type);
+  if (f.budget && f.budget !== "any") p.set("budget", f.budget);
+  const s = p.toString();
+  return s ? `/search?${s}` : "/search";
+}
+
+const FAQS = [
+  { q: "Which cities can I search properties in?", a: "Our verified search covers Gurugram, Noida, Greater Noida, South Delhi, Chandigarh, Mohali, Panchkula, Faridabad and Ghaziabad. Every listing shown is independently assessed through the Vedhara Verification Framework, with RERA/HRERA registration and title checks completed before it goes live." },
+  { q: "Are the search results real and verified?", a: "Yes. Every listing in the search index comes from our live inventory across the Buy, Rent, Sell, Commercial, Luxury, New Launches and Tricity pages, and passes our five-check verification: registration, builder delivery history, project approvals, price fairness and title documents. We publish what we verify, and we never show unverified inventory." },
+  { q: "Can I search by budget in thousands or lakhs?", a: "Yes. In Buy mode the budget filter shows ranges in lakhs and crores, while in Rent mode it switches to monthly rent in thousands and lakhs (for example Under ₹20K, ₹20K–50K, ₹50K–1L, ₹1L–2L, ₹2L+). Just switch the Buy/Rent/Sell toggle and the budget options update automatically." },
+  { q: "What happens if I don't find what I'm looking for?", a: "Our search index is a curated subset of the full inventory. If you don't see a match, reach out through the 'Talk to an Advisor' option and we'll shortlist verified options from our full database across all nine cities, including off-market and upcoming projects." },
+  { q: "Can NRIs search and enquire from overseas?", a: "Yes. The search works from anywhere, and every enquiry is handled by our NRI desk with video consultations, verified documentation and e-signatures. You can explore listings now and connect with an advisor for a remote due-diligence walkthrough." },
+];
+
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const sp = await searchParams;
+  const q = typeof sp.q === "string" ? sp.q : "";
+  const mode = (typeof sp.mode === "string" ? sp.mode : "") as SearchMode | "";
+  const type = (typeof sp.type === "string" ? sp.type : "") as SearchType | "";
+  const budget = typeof sp.budget === "string" ? sp.budget : "";
+
+  const results = filterListings({
+    q: q || undefined,
+    mode: mode || undefined,
+    type: type || undefined,
+    budget: budget || undefined,
+  });
+
+  const summary = searchSummary({ q: q || undefined, mode: mode || undefined, type: type || undefined, budget: budget || undefined });
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SearchAction",
+    name: "Vedhara Group Property Search",
+    query: summary,
+    target: { "@type": "EntryPoint", urlTemplate: "https://www.vedharagroup.com/search?q={query}" },
+  };
+
+  return (
+    <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Search", href: "/search" }]} />
+      <JsonLd data={schema} />
+
+      {/* Hero */}
+      <section style={{ background: "var(--navy)", padding: "64px 32px 56px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: "-20%", right: "-8%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign: "center", marginBottom: 32 }}>
+              <span className="v-line" style={{ margin: "0 auto 14px" }} />
+              <p className="eyebrow" style={{ color: "var(--gold-lt)", marginBottom: 12 }}>Search Verified Listings</p>
+              <h1 className="heading-xl" style={{ color: "var(--light)", marginBottom: 12 }}>
+                Find Your Property<span style={{ color: "var(--gold-lt)" }}> Across NCR & Tricity</span>
+              </h1>
+              <p className="body-lg" style={{ color: "rgba(252,250,244,0.55)", maxWidth: 640, margin: "0 auto" }}>
+                {summary}, every result verified through the Vedhara Verification Framework.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Search form */}
+          <form action="/search" method="get" style={{ background: "var(--cream)", borderRadius: 16, padding: 20, boxShadow: "0 20px 50px rgba(0,0,0,0.25)", maxWidth: 900, margin: "0 auto" }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <div style={{ flex: "2 1 260px" }}>
+                <label className="input-label" htmlFor="q">Keyword / Property</label>
+                <input className="input-field" id="q" name="q" type="text" placeholder="e.g. 3 BHK in Gurugram, penthouse, villa…" defaultValue={q} />
+              </div>
+              <div style={{ flex: "1 1 160px" }}>
+                <label className="input-label" htmlFor="type">Type</label>
+                <select className="input-field" id="type" name="type" defaultValue={type || "any"}>
+                  {TYPES.map((t) => (
+                    <option key={t.value || "any"} value={t.value || "any"}>{t.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div style={{ flex: "1 1 160px" }}>
+                <label className="input-label" htmlFor="budget">Budget</label>
+                <select className="input-field" id="budget" name="budget" defaultValue={budget || "any"}>
+                  <option value="any">Any Budget</option>
+                  {mode === "rent" ? (
+                    <>
+                      <option value="under20k">Under ₹20K /mo</option>
+                      <option value="20k-50k">₹20K – 50K /mo</option>
+                      <option value="50k-1l">₹50K – 1L /mo</option>
+                      <option value="1l-2l">₹1L – 2L /mo</option>
+                      <option value="2lplus">₹2L+ /mo</option>
+                    </>
+                  ) : (
+                    <>
+                      <option value="under1">Under ₹1 Cr</option>
+                      <option value="1-3">₹1 – 3 Cr</option>
+                      <option value="3-5">₹3 – 5 Cr</option>
+                      <option value="5-10">₹5 – 10 Cr</option>
+                      <option value="10plus">₹10 Cr+</option>
+                    </>
+                  )}
+                </select>
+              </div>
+              <div style={{ flex: "1 1 120px", display: "flex", alignItems: "flex-end" }}>
+                <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>Search</button>
+              </div>
+            </div>
+
+            {/* Mode tabs */}
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
+              {MODES.map((m) => {
+                const active = (m.value || "buy") === (mode || "buy");
+                const href = buildHref({ q: q || undefined, mode: m.value, type: type || undefined, budget: budget || undefined });
+                return (
+                  <Link key={m.label} href={href} style={{
+                    fontFamily: "var(--t-head)", fontSize: 12, fontWeight: 700, letterSpacing: "0.02em",
+                    padding: "8px 18px", borderRadius: 20, textDecoration: "none",
+                    background: active ? "var(--gold)" : "rgba(15,30,56,0.06)",
+                    color: active ? "var(--navy)" : "var(--slate)",
+                    border: active ? "none" : "1px solid rgba(15,30,56,0.12)",
+                  }}>
+                    {m.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section style={{ background: "var(--cream)", padding: "60px 32px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <ScrollReveal>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
+              <div>
+                <p className="eyebrow" style={{ marginBottom: 8 }}>Results</p>
+                <h2 className="heading-xl" style={{ color: "var(--navy)", fontSize: "clamp(24px,3vw,32px)", margin: 0 }}>
+                  {results.length} Verified Listing{results.length === 1 ? "" : "s"}
+                </h2>
+              </div>
+              {(q || mode || type || budget) && (
+                <Link href="/search" style={{ fontFamily: "var(--t-head)", fontSize: 12, color: "var(--gold-dk)", textDecoration: "none", borderBottom: "1px solid var(--gold)" }}>
+                  ✕ Clear all filters
+                </Link>
+              )}
+            </div>
+          </ScrollReveal>
+
+          {results.length > 0 ? (
+            <div className="prop-grid">
+              {results.map((property, index) => (
+                <ScrollReveal key={property.id} delay={index * 60} style={{ display: "flex" }}>
+                  <Link href={property.link} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, background: "#fff", border: "1px solid rgba(212,168,67,0.18)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
+                    <div style={{ height: 180, flexShrink: 0, position: "relative", overflow: "hidden" }}>
+                      <Image
+                        src={property.image}
+                        alt={property.alt || property.title}
+                        fill
+                        sizes="(max-width: 1024px) 50vw, 33vw"
+                        style={{ objectFit: "cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
+                      />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
+                      <div style={{ position: "absolute", top: 14, right: 14, zIndex: 2 }}>
+                        <span style={{ fontFamily: "var(--t-head)", fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", padding: "4px 10px", borderRadius: 20, background: "rgba(9,15,29,0.55)", color: "rgba(255,255,255,0.95)", border: "1px solid rgba(255,255,255,0.25)", backdropFilter: "blur(4px)" }}>
+                          {property.tag}
+                        </span>
+                      </div>
+                    </div>
+                    <div style={{ padding: 20, flex: 1, display: "flex", flexDirection: "column" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
+                        <span style={{ fontFamily: "var(--t-head)", fontSize: 8.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 8px", background: "rgba(212,168,67,0.12)", color: "var(--gold-dk)", borderRadius: 3 }}>
+                          {property.category}
+                        </span>
+                        <span style={{ fontFamily: "var(--t-head)", fontSize: 8.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 8px", background: "rgba(15,30,56,0.06)", color: "var(--navy)", borderRadius: 3 }}>
+                          {property.mode === "rent" ? "Rent" : property.mode === "sell" ? "Sale" : "Buy"}
+                        </span>
+                      </div>
+                      <h3 style={{ fontFamily: "var(--t-head)", fontSize: 15, fontWeight: 700, color: "var(--navy)", marginBottom: 6, lineHeight: 1.3 }}>{property.title}</h3>
+                      <p style={{ fontFamily: "var(--t-body)", fontSize: 11.5, color: "var(--slate)", marginBottom: 4 }}>{property.location}</p>
+                      <p style={{ fontFamily: "var(--t-body)", fontSize: 13, color: "var(--navy)", marginBottom: 10, lineHeight: 1.4 }}>{property.config} · {property.size}</p>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(212,168,67,0.2)", paddingTop: 12, marginTop: "auto", flexShrink: 0 }}>
+                        <p style={{ fontFamily: "var(--t-head)", fontSize: 17, fontWeight: 700, color: "var(--navy)", margin: 0 }}>{property.price}</p>
+                        <span className="btn-ghost" style={{ color: "var(--gold)", fontSize: 9, display: "inline-flex", alignItems: "center", gap: 4 }}>
+                          View →
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          ) : (
+            <div style={{ background: "#fff", border: "1px dashed rgba(212,168,67,0.4)", borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
+              <p className="eyebrow" style={{ marginBottom: 12 }}>No Exact Matches</p>
+              <h2 style={{ fontFamily: "var(--t-head)", fontSize: 22, fontWeight: 700, color: "var(--navy)", marginBottom: 12 }}>
+                Try a city, or broaden your filters
+              </h2>
+              <p className="body-md" style={{ color: "var(--slate)", maxWidth: 520, margin: "0 auto 24px" }}>
+                Our full inventory is wider than the search index. Browse a city page or talk to an advisor for off-market and upcoming options.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: 24 }}>
+                {CITY_LINKS.map((c) => (
+                  <Link key={c.href} href={c.href} style={{ fontFamily: "var(--t-head)", fontSize: 11.5, fontWeight: 600, padding: "8px 14px", borderRadius: 20, background: "rgba(212,168,67,0.1)", color: "var(--gold-dk)", textDecoration: "none", border: "1px solid rgba(212,168,67,0.3)" }}>
+                    {c.label} →
+                  </Link>
+                ))}
+              </div>
+              <Link href="/contact" className="btn btn-dark">Talk to an Advisor →</Link>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Explore by city */}
+      <section style={{ background: "var(--light)", padding: "60px 32px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+              <span className="v-line" style={{ margin: "0 auto 14px" }} />
+              <p className="eyebrow" style={{ marginBottom: 12 }}>Explore by City</p>
+              <h2 className="heading-xl" style={{ color: "var(--navy)", margin: 0 }}>
+                Verified Listings Across <em className="display-gold">NCR & Tricity</em>
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid-3">
+            {CITY_LINKS.map((c, i) => (
+              <ScrollReveal key={c.href} delay={i * 60}>
+                <Link href={c.href} className="svc-card hover-lift" style={{ display: "block", textDecoration: "none", textAlign: "center", padding: "28px 20px" }}>
+                  <h3 style={{ fontFamily: "var(--t-head)", fontSize: 16, fontWeight: 700, color: "var(--navy)", marginBottom: 6 }}>{c.label}</h3>
+                  <p style={{ fontFamily: "var(--t-body)", fontSize: 12, color: "var(--slate)", margin: 0 }}>
+                    Buy · Rent · Sell · Invest →
+                  </p>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQSection title="Search & Verification Questions" faqs={FAQS} dark decor />
+      <CTASection />
+    </>
+  );
+}

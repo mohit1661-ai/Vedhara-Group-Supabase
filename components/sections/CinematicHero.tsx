@@ -97,7 +97,7 @@ interface CinematicHeroProps {
 /* ── Hero "4 parts" — image cards that expand a short detail on click ── */
 const heroParts = [
   { t:"ROI Calculator",        h:"/calculators",           img:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Four free calculators: ROI & rental yield, home loan EMI, stamp duty and affordability. No sign-up needed." },
-  { t:"NRI Services",          h:"/nri-services",          img:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Remote-first advisory for NRIs — video walkthroughs, documentation support and weekend IST slots." },
+  { t:"NRI Services",          h:"/nri-services",          img:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Remote-first advisory for NRIs, video walkthroughs, documentation support and weekend IST slots." },
   { t:"Verify Property",       h:"/verification-center",   img:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Every listing passes our 5-point Verification Framework, and we publish exactly what we found." },
   { t:"Invest in NCR",         h:"/investment-advisory",   img:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Independent portfolio strategy across Delhi NCR micro-markets, with transparent fees and a named advisor." },
 ];
