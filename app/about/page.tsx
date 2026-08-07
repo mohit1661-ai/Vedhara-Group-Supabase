@@ -68,7 +68,7 @@ export default function AboutPage() {
               <p className="body-md" style={{ color:"var(--slate)",marginBottom:28,lineHeight:1.85 }}>
                 We set out to build something genuinely different, an advisory firm that lists verified developer-partner projects, publishes exactly how we verify them, discloses how we are paid, and assigns you a named, dedicated advisor from day one.
               </p>
-              <Link href="/verification-center" className="btn btn-ghost" style={{ color:"var(--gold)" }}>See Our Verification Framework →</Link>
+              <Link href="/verification-center" className="btn btn-ghost cta-pill">See Our Verification Framework →</Link>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150} direction="right">
