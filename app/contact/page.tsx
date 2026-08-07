@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -23,6 +23,15 @@ export default function ContactPage() {
   const [form, setForm] = useState({ fullName:"",phone:"",email:"",interest:"",message:"",timezone:"" });
   const [status, setStatus] = useState<"idle"|"submitting"|"success"|"error">("idle");
   const up = (k:string,v:string) => setForm(p=>({...p,[k]:v}));
+
+  // On success the whole page is swapped for the thank-you hero, but the
+  // browser keeps the old scroll position (down at the form) → the user would
+  // land looking at the footer. Scroll to top so the message is in view.
+  useEffect(() => {
+    if (status === "success") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [status]);
 
   const submit = async (e:React.FormEvent) => {
     e.preventDefault(); setStatus("submitting");
