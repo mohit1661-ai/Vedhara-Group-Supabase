@@ -10,6 +10,9 @@ import type { Lead } from "./leads";
 export async function sendLeadNotification(lead: Lead): Promise<void> {
   const apiKey  = process.env.RESEND_API_KEY;
   const toEmail = process.env.NOTIFY_EMAIL || "contact@vedharagroup.com";
+  // Sender can be overridden (e.g. RESEND_FROM="onboarding@resend.dev" to test
+  // before the domain is verified; use the real sender once verified).
+  const fromAddr = process.env.RESEND_FROM || "Vedhara Website <noreply@vedharagroup.com>";
 
   if (!apiKey) {
     console.log("[Email] RESEND_API_KEY not set, skipping notification");
@@ -63,7 +66,7 @@ export async function sendLeadNotification(lead: Lead): Promise<void> {
       method: "POST",
       headers: { "Authorization":`Bearer ${apiKey}`, "Content-Type":"application/json" },
       body: JSON.stringify({
-        from:    "Vedhara Website <noreply@vedharagroup.com>",
+        from:    fromAddr,
         to:      [toEmail],
         subject: `New Lead: ${lead.full_name}, ${lead.interest}`,
         html,
