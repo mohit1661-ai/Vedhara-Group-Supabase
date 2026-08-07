@@ -58,7 +58,7 @@ const openRoles = [
 ];
 
 const values = [
-  { title:"Independent Advice First", desc:"No commissions from any developer; every recommendation starts with the client&apos;s needs, not our margin." },
+  { title:"Independent Advice First", desc:"Commissions are disclosed on both sides, in line with standard real-estate practice; every recommendation still starts with the client&apos;s needs, not our margin." },
   { title:"Verification Before Listing", desc:"Every property passes our five-point Verification Framework before it reaches you. No exceptions." },
   { title:"Transparent Fees, Always", desc:"Our fee structure is disclosed upfront, in writing, with absolutely no hidden charges." },
   { title:"One Advisor, End-to-End", desc:"A single named advisor owns your journey from first consultation to final registration." },

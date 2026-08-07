@@ -128,7 +128,7 @@ export default function SuccessStoriesPage() {
                 <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>What We Do</p>
                 <h2 className="heading-lg" style={{ color:"var(--light)",marginBottom:24 }}>What We Do</h2>
                 <p className="body-md" style={{ color:"rgba(252,250,244,0.78)",lineHeight:1.8,marginBottom:24 }}>
-                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR, Faridabad, Manesar and North India. We do not sell developer inventory, earn commissions, or push pre-launch projects. Our revenue comes entirely from client-paid advisory fees, which means every recommendation is aligned with your interest, not a developer&apos;s margin.
+                  Vedhara Group provides end-to-end independent real estate advisory across Delhi NCR, Faridabad, Manesar and North India. We do not sell developer inventory or push pre-launch projects. Commissions are fully disclosed on both the buyer and seller sides, in line with standard real-estate practice, which means every recommendation is aligned with your interest, not a developer&apos;s margin.
                 </p>
                 {["Property search & shortlisting across all NCR micro-markets","Price negotiation, legal due diligence & transaction management","NRI remote advisory with full power-of-attorney coordination","Portfolio strategy, rental analysis & exit planning"].map(item=>(
                   <div key={item} style={{ display:"flex",gap:14,marginBottom:14,alignItems:"flex-start" }}>
@@ -179,7 +179,7 @@ export default function SuccessStoriesPage() {
 
           <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:24 }}>
             {[
-              { title:"No Commission, No Conflict", desc:"Unlike brokers who earn from developers, our fee is paid by the client. This simple difference drives everything, from property selection to price negotiation." },
+              { title:"Disclosed Commission, No Conflict", desc:"Commissions are fully disclosed on both the buyer and seller sides, in line with standard real-estate practice. Transparency drives everything, from property selection to price negotiation." },
               { title:"Five-Point Verification", desc:"Every property we recommend passes title verification, RERA compliance, construction quality assessment, market price benchmarking, and exit liquidity check." },
               { title:"Named Advisor, End-to-End", desc:"From first consultation to possession, a single senior advisor owns your engagement. No handoffs, no junior associates learning on your transaction." },
               { title:"Post-Purchase Support", desc:"Our relationship does not end at registration. We help with rental management, property tax compliance, resale advisory, and portfolio rebalancing." },

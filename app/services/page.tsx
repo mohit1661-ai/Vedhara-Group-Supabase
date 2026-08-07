@@ -21,7 +21,7 @@ const services = [
 const servicesFaqs: FAQItem[] = [
   {
     q:"Does Vedhara charge a fee for all services?",
-    a:"Vedhara's advisory model varies by service. Buy-side assistance is typically complimentary (the seller or developer pays the commission), while sell-side, property management, and dedicated advisory engagements operate on a disclosed fee basis. We always clarify the fee structure before any engagement begins.",
+    a:"Vedhara's advisory model varies by service. A disclosed commission applies on both the buyer and seller sides, in line with the standard rules and practices followed by real estate businesses, while sell-side, property management, and dedicated advisory engagements operate on a disclosed fee basis. We always clarify the fee structure before any engagement begins.",
   },
   {
     q:"Can I use multiple Vedhara services at the same time?",
