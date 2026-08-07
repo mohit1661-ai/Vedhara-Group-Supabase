@@ -111,7 +111,7 @@ const featuredListings: PropertyListing[] = [
 ];
 
 const buyFaqs = [
-  { q:"Do I pay Vedhara a fee to buy a property?", a:"In most cases, no direct fee is charged to buyers; Vedhara is compensated through standard brokerage commission paid by the seller or developer side, disclosed on the specific listing." },
+  { q:"Do I pay Vedhara a fee to buy a property?", a:"In most cases, Vedhara charges a disclosed commission on both the buyer and seller sides, in line with the standard rules and practices followed by real estate businesses. The commission is clearly stated on every specific listing." },
   { q:"Can I see properties that aren't from partner developers?", a:"Our listed inventory comes from verified partner developers. If you've already found a property elsewhere and want an independent opinion on it, our advisory team can offer a Second Opinion review as a separate engagement." },
   { q:"How does the Verification Framework protect buyers?", a:"Every property we list passes five documented checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness, and title document availability. Results are published on every listing page." },
   { q:"What if I need help after purchasing?", a:"Our relationship does not end at registration. Post-purchase support includes handover coordination, utility connections, property tax guidance, and referrals for interior design and moving services." },

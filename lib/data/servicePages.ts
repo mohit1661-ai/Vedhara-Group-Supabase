@@ -24,7 +24,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     faqs: [
       {
         q: "Do I pay Vedhara a fee to buy a property?",
-        a: "In most cases, no direct fee is charged to buyers; Vedhara is compensated through standard brokerage commission paid by the seller or developer side, disclosed on the specific listing.",
+        a: "In most cases, Vedhara charges a disclosed commission on both the buyer and seller sides, in line with the standard rules and practices followed by real estate businesses. The commission is clearly stated on every specific listing.",
       },
       {
         q: "Can I see properties that aren't from partner developers?",
