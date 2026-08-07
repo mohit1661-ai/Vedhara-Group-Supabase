@@ -18,7 +18,6 @@ const popular = [
   { label: "Office in Sector 62", href: "/search?mode=buy&type=commercial" },
   { label: "Villa in Panchkula", href: "/panchkula" },
   { label: "Apartments in Chandigarh", href: "/chandigarh" },
-  { label: "Plots in Mohali", href: "/mohali" },
 ];
 
 const BUY_BUDGETS = [
@@ -119,9 +118,9 @@ export default function PropertySearch() {
       <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <span className="v-line" style={{ margin: "0 auto 14px" }} />
-          <p className="eyebrow" style={{ color: "var(--gold-lt)", marginBottom: 10 }}>
-            Search Properties
-          </p>
+          <h2 className="heading-xl" style={{ color: "var(--light)", margin: "0 0 12px", lineHeight: 1.1 }}>
+            Search Properties<span style={{ color: "var(--gold-lt)" }}> Across NCR &amp; Tricity</span>
+          </h2>
           <p className="body-lg" style={{ color: "rgba(252,250,244,0.8)", margin: 0 }}>
             Verified listings across Gurugram, Noida, Greater Noida, South Delhi &amp; the Tricity,
             every one passing the Vedhara Verification Framework.
@@ -222,11 +221,16 @@ export default function PropertySearch() {
           font-family: var(--t-head); font-size: 10.5px; font-weight: 700;
           letter-spacing: 0.12em; text-transform: uppercase;
           padding: 8px 18px; border-radius: 999px; cursor: pointer;
-          border: 1px solid rgba(255,255,255,0.35);
-          background: rgba(255,255,255,0.12); color: #ffffff;
+          border: 1px solid rgba(15,30,56,0.14);
+          background: var(--navy); color: #ffffff;
+          box-shadow: 0 10px 24px -12px rgba(9,15,29,0.5);
           transition: all 0.25s ease;
         }
-        .ps-mode:hover { border-color: var(--gold-lt); background: rgba(255,255,255,0.2); color: #ffffff; }
+        .ps-mode:hover {
+          background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+          color: var(--navy); border-color: var(--gold);
+          box-shadow: 0 8px 20px -8px rgba(212,168,67,0.6);
+        }
         .ps-mode-active {
           background: linear-gradient(135deg, var(--gold), var(--gold-dk));
           color: var(--navy); border-color: var(--gold); box-shadow: 0 8px 20px -8px rgba(212,168,67,0.6);
@@ -258,6 +262,7 @@ export default function PropertySearch() {
         .ps-pop-label {
           font-family: var(--t-head); font-size: 9px; font-weight: 700;
           letter-spacing: 0.14em; text-transform: uppercase; color: rgba(252,250,244,0.55);
+          flex-basis: 100%; margin-bottom: 2px;
         }
         .ps-chip {
           font-family: var(--t-body); font-size: 12px; color: var(--light);

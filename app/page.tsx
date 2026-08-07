@@ -154,20 +154,22 @@ export default function HomePage() {
       </section>
 
       {/* ══ SERVICES ══ */}
-      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:1320,margin:"0 auto" }}>
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"-12%",left:"-6%",width:520,height:520,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ position:"absolute",bottom:"-18%",right:"-6%",width:620,height:620,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.06) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
           <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:52,flexWrap:"wrap",gap:20 }}>
             <ScrollReveal>
               <div>
                 <span className="v-line" />
-                <p className="eyebrow" style={{ marginBottom:14 }}>What We Do</p>
-                <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
+                <p className="eyebrow" style={{ marginBottom:14,color:"var(--gold-lt)" }}>What We Do</p>
+                <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1 }}>
                   Advisory for Every Stage of{" "}
-                  <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Your Property Journey</em>
+                  <em className="display-gold" style={{ fontSize:"inherit" }}>Your Property Journey</em>
                 </h2>
               </div>
             </ScrollReveal>
-            <Link href="/services" className="btn btn-ghost cta-pill" style={{ flexShrink:0 }}>All Services →</Link>
+            <Link href="/services" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-dk))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Services →</Link>
           </div>
           <ServicesGrid />
         </div>

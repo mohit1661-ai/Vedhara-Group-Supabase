@@ -11,15 +11,40 @@ const services = [
 ];
 export default function ServicesGrid() {
   return (
-    <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-4 svc-card-alt services-grid">
-      {services.map(svc=>(
-        <Link key={svc.href} href={svc.href} className="svc-card" style={{ borderRadius:0 }}>
-          <div className="gold-accent"></div>
-          <h3 className="svc-card-title">{svc.title}</h3>
-          <p className="svc-card-desc">{svc.desc}</p>
-          <span className="svc-card-arrow">Learn More →</span>
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="svc-new-grid" style={{ display:"grid",gridTemplateColumns:"repeat(4, minmax(0,1fr))", gap:16 }}>
+        {services.map((svc,i)=>(
+          <Link key={svc.href} href={svc.href} className="svc-new-card">
+            <span className="svc-new-index" aria-hidden="true">{String(i+1).padStart(2,"0")}</span>
+            <h3 className="svc-new-title">{svc.title}</h3>
+            <p className="svc-new-desc">{svc.desc}</p>
+            <span className="svc-new-arrow">Learn More →</span>
+          </Link>
+        ))}
+      </div>
+      <style>{`
+        .svc-new-card {
+          position: relative; display: flex; flex-direction: column;
+          background: linear-gradient(165deg, #FDFBF4 0%, #F7EEDC 100%);
+          border: 1px solid rgba(212,168,67,0.4);
+          border-radius: 16px; padding: 26px 24px 22px; text-decoration: none;
+          box-shadow: 0 18px 40px -24px rgba(9,15,29,0.55);
+          overflow: hidden;
+          transition: transform 0.35s var(--ease-spring), box-shadow 0.35s ease, border-color 0.3s ease;
+        }
+        .svc-new-card::before {
+          content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+          background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+        }
+        .svc-new-card:hover { transform: translateY(-6px); box-shadow: 0 30px 54px -24px rgba(9,15,29,0.65); border-color: var(--gold); }
+        .svc-new-index { font-family: var(--t-display); font-style: italic; font-weight: 300; font-size: 42px; line-height: 1; color: rgba(184,146,42,0.3); margin-bottom: 14px; display: block; }
+        .svc-new-title { font-family: var(--t-head); font-size: 15.5px; font-weight: 700; color: var(--navy); margin: 0 0 10px; line-height: 1.25; }
+        .svc-new-desc { font-family: var(--t-body); font-size: 12.5px; color: var(--slate); line-height: 1.6; margin: 0 0 18px; flex: 1; }
+        .svc-new-arrow { font-family: var(--t-head); font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dk); display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s ease; }
+        .svc-new-card:hover .svc-new-arrow { gap: 10px; }
+        @media (max-width: 1024px) { .svc-new-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
+        @media (max-width: 640px) { .svc-new-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
+    </>
   );
 }
