@@ -112,7 +112,7 @@ export default function HomePage() {
               { t:"Gurugram", s:"Golf Course Road & prime sectors", h:"/gurugram", img:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900" },
               { t:"Noida", s:"Sector 150 & the Expressway corridor", h:"/noida", img:"https://images.pexels.com/photos/35114454/pexels-photo-35114454.jpeg?auto=compress&cs=tinysrgb&w=900" },
               { t:"Greater Noida", s:"Plots, townships & new projects", h:"/greater-noida", img:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900" },
-              { t:"South Delhi", s:"Lutyens', Vasant Vihar & Greater Kailash", h:"/south-delhi", img:"https://images.pexels.com/photos/1630114/pexels-photo-1630114.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"South Delhi", s:"Lutyens', Vasant Vihar & Greater Kailash", h:"/south-delhi", img:"https://images.pexels.com/photos/789750/pexels-photo-789750.jpeg?auto=compress&cs=tinysrgb&w=900" },
               { t:"Chandigarh Tricity", s:"Chandigarh, Mohali & Panchkula", h:"/tricity", img:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900" },
               { t:"Commercial Hubs", s:"Sector 62, MG Road & Noida Expressway", h:"/commercial", img:"https://images.pexels.com/photos/38340685/pexels-photo-38340685.jpeg?auto=compress&cs=tinysrgb&w=900" },
             ].map((c,i)=>(
