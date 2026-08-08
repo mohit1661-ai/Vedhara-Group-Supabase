@@ -1,3 +1,5 @@
+import { newBlogPosts } from "./blogPostsNew";
+
 export interface ArticleSection {
   heading: string;
   paragraphs: string[];
@@ -22,6 +24,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  ...newBlogPosts,
   {
     slug:"delhi-ncr-property-price-trends-2026",
     title:"Delhi NCR Property Price Trends 2026: A Comprehensive Micro-Market Analysis",
