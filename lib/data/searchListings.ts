@@ -110,6 +110,15 @@ const L: SearchListing[] = [
   { id:"ved-pk3", title:"Sector 19 Plots", location:"Sector 19, Panchkula", city:"panchkula", price:"₹ 1.45 Cr", value:145, config:"200 sq.yds. Plot", size:"200 sq.yds.", type:"plot", mode:"sell", category:"Plotted", image:img(16408959), pos:"11%", alt:"Sector 19 residential plots for sale in Panchkula", link:"/panchkula", tag:"Available for Sale", keywords:kw("sector 19 panchkula plot land for sale pkl") },
   { id:"ved-mo2", title:"Aero City Heights", location:"Airport Road, Mohali", city:"mohali", price:"₹ 2.65 Cr", value:265, config:"3 BHK", size:"1,650 sq.ft.", type:"apartment", mode:"buy", category:"Residential", image:img(35229793), pos:"100%", alt:"Aero City Heights 3 BHK apartments on Airport Road, Mohali", link:"/mohali", tag:"Possession Dec 2026", keywords:kw("aero city heights mohali airport road 3 bhk apartment flat buy it park") },
   { id:"ved-mo3", title:"Sector 91 Flats Rent", location:"Sector 91, Mohali", city:"mohali", price:"₹ 20,000/mo", value:20000, config:"2 BHK", size:"1,150 sq.ft.", type:"apartment", mode:"rent", category:"Residential", image:img(11643330), pos:"66%", alt:"Sector 91 2 BHK rental flats in Mohali", link:"/mohali", tag:"Available", keywords:kw("sector 91 mohali 2 bhk apartment flat rent lease") },
+
+  // ── MATHURA & VRINDAVAN ────────────────────────────────
+  { id:"ved-mv1", title:"Prem Mandir Villas", location:"Prem Mandir Road, Vrindavan", city:"mathura-vrindavan", price:"₹ 1.65 Cr", value:165, config:"4 BHK Villa", size:"2,400 sq.ft.", type:"villa", mode:"buy", category:"Residential", image:img(28054849), pos:"90%", alt:"Prem Mandir 4 BHK luxury villa in Vrindavan, Mathura", link:"/mathura-vrindavan", tag:"Ready to Move", keywords:kw("prem mandir vrindavan mathura 4 bhk villa house bungalow buy braj gated community temple town") },
+  { id:"ved-mv2", title:"Dwarkadhish Residences", location:"Dwarkadhish Temple Road, Mathura", city:"mathura-vrindavan", price:"₹ 72 Lakhs", value:72, config:"3 BHK", size:"1,380 sq.ft.", type:"apartment", mode:"buy", category:"Residential", image:img(37224965), pos:"79%", alt:"Dwarkadhish Temple Road 3 BHK residences in Mathura", link:"/mathura-vrindavan", tag:"Ready to Move", keywords:kw("dwarkadhish mathura 3 bhk apartment flat house buy temple town krishna janmabhoomi") },
+  { id:"ved-mv3", title:"Vrindavan Gated Plots", location:"Vrindavan, Mathura", city:"mathura-vrindavan", price:"₹ 28 Lakhs", value:28, config:"120 sq.yds. Plot", size:"120 sq.yds.", type:"plot", mode:"buy", category:"Plotted", image:img(33974297), pos:"86%", alt:"Vrindavan gated residential plots in Mathura", link:"/mathura-vrindavan", tag:"Available for Sale", keywords:kw("vrindavan plots mathura plot land for sale gated community yamuna expressway yeida buy braj") },
+  { id:"ved-mv4", title:"Holi Gate Retail", location:"Holi Gate, Mathura", city:"mathura-vrindavan", price:"₹ 1.85 Cr", value:185, config:"1,000 sq.ft. Retail", size:"1,000 sq.ft.", type:"commercial", mode:"buy", category:"Commercial", image:img(31763620), pos:"31%", alt:"Holi Gate retail space for sale in Mathura", link:"/mathura-vrindavan", tag:"Ready to Move", keywords:kw("holi gate mathura retail shop commercial space showroom buy market footfall") },
+  { id:"ved-mv5", title:"Mathura Cantt Rental Flats", location:"Mathura Cantt, Mathura", city:"mathura-vrindavan", price:"₹ 25,000/mo", value:25000, config:"3 BHK", size:"1,250 sq.ft.", type:"apartment", mode:"rent", category:"Residential", image:img(13812522), pos:"50%", alt:"Mathura Cantt 3 BHK rental flats", link:"/mathura-vrindavan", tag:"Available", keywords:kw("mathura cantt 3 bhk apartment flat rent lease railway station") },
+  { id:"ved-mv6", title:"Vrindavan Serviced Suites", location:"Prem Mandir Road, Vrindavan", city:"mathura-vrindavan", price:"₹ 28,000/mo", value:28000, config:"2 BHK Serviced", size:"900 sq.ft.", type:"apartment", mode:"rent", category:"Luxury", image:img(27459248), pos:"59%", alt:"Prem Mandir serviced suites for rent in Vrindavan", link:"/mathura-vrindavan", tag:"Available", keywords:kw("vrindavan serviced apartment guest house rent tourism hotel managed fully furnished prem mandir") },
+  { id:"ved-mv7", title:"Govardhan Road Plots", location:"Govardhan Road, Vrindavan", city:"mathura-vrindavan", price:"₹ 34 Lakhs", value:34, config:"150 sq.yds. Plot", size:"150 sq.yds.", type:"plot", mode:"sell", category:"Plotted", image:img(32370506), pos:"80%", alt:"Govardhan Road residential plots for sale in Vrindavan", link:"/mathura-vrindavan", tag:"Available for Sale", keywords:kw("govardhan road vrindavan plot land for sale pilgrimage corridor braj mathura") },
 ];
 
 export const searchListings = L;
@@ -157,6 +166,13 @@ const ALIASES: Record<string, string> = {
   pkl: "panchkula",
   fbd: "faridabad",
   gzb: "ghaziabad",
+  vridavan: "vrindavan",
+  vrandavan: "vrindavan",
+  brindavan: "vrindavan",
+  vrindaban: "vrindavan",
+  vrundavan: "vrindavan",
+  muttra: "mathura",
+  mathuravrindavan: "mathura vrindavan",
 };
 
 /** Alternate city names (incl. common misspellings) appended to every listing's haystack. */
@@ -171,6 +187,7 @@ const CITY_ALIASES: Record<string, string> = {
   panchkula: "panchkula pkl",
   faridabad: "faridabad fbd",
   ghaziabad: "ghaziabad gzb",
+  "mathura-vrindavan": "mathura vrindavan vridavan vrandavan brindavan vrindaban vrundavan muttra gokul barsana govardhan nandgaon braj",
 };
 
 /** Real-estate search phrases users type, generated per type & mode. */

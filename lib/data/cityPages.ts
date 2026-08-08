@@ -929,6 +929,101 @@ const ghaziabad: CityPageData = {
   schemaDescription: "Independent real estate advisory across Ghaziabad: verified buying, selling and investing in Indirapuram, Raj Nagar Extension, Vaishali and Crossings Republik with UP RERA due diligence.",
 };
 
+/* ═══════════════════════════════════════════════════════════════
+   MATHURA & VRINDAVAN
+   ═══════════════════════════════════════════════════════════════ */
+const mathuraVrindavan: CityPageData = {
+  slug: "mathura-vrindavan",
+  name: "Mathura & Vrindavan",
+  metaTitle: "Real Estate in Mathura & Vrindavan | Verified Property Advisory",
+  metaDescription: "Buy, rent or invest in Mathura Vrindavan property with verified listings. Yamuna Expressway plots, Vrindavan villas & temple-town homes with UP RERA due diligence.",
+  heroVideo: "/videos/mathura-vrindavan-city.mp4",
+  heroPoster: img(11969919),
+  eyebrow: "Mathura & Vrindavan",
+  h1: "Real Estate in Mathura & Vrindavan.",
+  h1Accent: "The Braj Heartland, Verified.",
+  heroBody:
+    "Mathura and Vrindavan blend India's most sacred pilgrimage corridor with one of its fastest-appreciating land markets: the Yamuna Expressway. From Vrindavan's gated villas to YEIDA-approved plotted sectors, we verify every listing against UP RERA and the MVDA master plan before it reaches you.",
+  introEyebrow: "Why Mathura & Vrindavan",
+  introTitle: "A Sacred City, A Serious Market.",
+  introAccent: "Faith Meets Infrastructure.",
+  introBody:
+    "Few markets pair devotion with development like Braj. Lakhs of pilgrims visit Vrindavan's Prem Mandir and ISKCON every year, while the Yamuna Expressway and the upcoming high-speed rail station make Mathura a credible commuting and investment corridor. We turn that rare combination into an advantage: verified approvals, tourism-aware advice and pricing benchmarked to registered transactions.",
+  listingsEyebrow: "Featured Listings",
+  listingsTitle: "Verified Properties",
+  listingsAccent: "in Mathura & Vrindavan",
+  listingsSub:
+    "Every listing is UP RERA-verified and independently assessed through the Vedhara Verification Framework.",
+  listings: [
+    { id:"mv-01", title:"Vrindavan Gated Plots", location:"Vrindavan, Mathura", price:"₹ 28 L", config:"120 sq.yds. Plot", size:"120 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["YEIDA Approved","Clear Title","Gated Community","High Appreciation"], image:img(33974297), pos:"86%", alt:"Vrindavan gated residential plots in Mathura" },
+    { id:"mv-02", title:"Yamuna Expressway Farm Plots", location:"Yamuna Expressway, Mathura", price:"₹ 42 L", config:"200 sq.yds. Plot", size:"200 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["YEIDA Approved","Expressway Frontage","Clear Title","Immediate Registry"], image:img(35101084), pos:"100%", alt:"Yamuna Expressway farm plots near Mathura" },
+    { id:"mv-03", title:"Prem Mandir Villas", location:"Prem Mandir Road, Vrindavan", price:"₹ 1.65 Cr", config:"4 BHK Villa", size:"2,400 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["RERA Registered","Gated Community","Private Garden","Premium Finishes"], image:img(28054849), pos:"90%", alt:"Prem Mandir luxury villa in Vrindavan" },
+    { id:"mv-04", title:"Dwarkadhish Residences", location:"Dwarkadhish Temple Road, Mathura", price:"₹ 72 L", config:"3 BHK", size:"1,380 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["RERA Registered","Temple Proximity","Gated Complex","Premium Finishes"], image:img(37224965), pos:"79%", alt:"Dwarkadhish residences in Mathura" },
+    { id:"mv-05", title:"Holi Gate Retail", location:"Holi Gate, Mathura", price:"₹ 1.85 Cr", config:"1,000 sq.ft. Retail", size:"1,000 sq.ft.", type:"Commercial", status:"Ready to Move", highlights:["High Footfall","Market Centre","Signage Visible","Loading Bay"], image:img(31763620), pos:"31%", alt:"Holi Gate retail space in Mathura" },
+    { id:"mv-06", title:"ISKCON Avenue Apartments", location:"ISKCON Road, Vrindavan", price:"₹ 58 L", config:"2 BHK", size:"1,050 sq.ft.", type:"Residential", status:"Under Construction", highlights:["RERA Registered","Temple Proximity","Gated Community","Clubhouse"], image:img(7031604), pos:"16%", alt:"ISKCON Avenue apartments in Vrindavan" },
+    { id:"mv-07", title:"Mathura Cantt Flats", location:"Mathura Cantt", price:"₹ 66 L", config:"3 BHK", size:"1,250 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["RERA Registered","Railway Proximity","Gated Complex","Premium Finishes"], image:img(13812522), pos:"50%", alt:"Mathura Cantonment flats" },
+    { id:"mv-08", title:"Govardhan Road Plots", location:"Govardhan Road, Vrindavan", price:"₹ 34 L", config:"150 sq.yds. Plot", size:"150 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["Clear Title","Pilgrimage Corridor","Affordable","Immediate Registry"], image:img(32370506), pos:"80%", alt:"Govardhan Road residential plots in Vrindavan" },
+    { id:"mv-09", title:"Serviced Apartment (Tourism)", location:"Chatikara Road, Vrindavan", price:"₹ 48 L", config:"1 BHK Serviced", size:"650 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["Tourism Demand","Fully Furnished","Hotel Managed","High Occupancy"], image:img(19279351), pos:"71%", alt:"Tourism serviced apartment in Vrindavan" },
+    { id:"mv-10", title:"Gokul Riverside Residences", location:"Gokul, Mathura", price:"₹ 52 L", config:"3 BHK", size:"1,200 sq.ft.", type:"Residential", status:"Under Construction", highlights:["RERA Registered","Yamuna Views","Gated Community","Affordable"], image:img(9170385), pos:"100%", alt:"Gokul riverside residences in Mathura" },
+    { id:"mv-11", title:"Barsana Farm Villa", location:"Barsana Road, Mathura", price:"₹ 1.25 Cr", config:"3 BHK Farmhouse", size:"5,000 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["Heritage Town","Private Land","Farmhouse Living","Premium Finishes"], image:img(3027448), pos:"56%", alt:"Barsana farm villa in Braj region" },
+    { id:"mv-12", title:"NH-19 Commercial Plaza", location:"NH-19 (Agra Road), Mathura", price:"₹ 2.40 Cr", config:"1,500 sq.ft. Retail", size:"1,500 sq.ft.", type:"Commercial", status:"Ready to Move", highlights:["Highway Frontage","High Footfall","Loading Bay","Signage Visible"], image:img(15301578), pos:"50%", alt:"NH-19 commercial plaza in Mathura" },
+    { id:"mv-13", title:"Vrindavan Garden Villas", location:"Raman Reti, Vrindavan", price:"₹ 95 L", config:"3 BHK Villa", size:"1,800 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["RERA Registered","Gated Community","Private Garden","Temple Proximity"], image:img(87223), pos:"100%", alt:"Raman Reti garden villas in Vrindavan" },
+    { id:"mv-14", title:"Radha Rani Heights", location:"Radha Rani Temple Road, Barsana", price:"₹ 78 L", config:"3 BHK", size:"1,450 sq.ft.", type:"Residential", status:"Under Construction", highlights:["RERA Registered","Heritage Town","Gated Community","Premium Finishes"], image:img(21071043), pos:"100%", alt:"Radha Rani Heights apartments in Barsana" },
+    { id:"mv-15", title:"Nandgaon Green Plots", location:"Nandgaon, Mathura", price:"₹ 22 L", config:"100 sq.yds. Plot", size:"100 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["Clear Title","Affordable","Pilgrimage Town","Green Locality"], image:img(5827062), pos:"37%", alt:"Nandgaon residential plots in Braj" },
+    { id:"mv-16", title:"Mathura Mall Avenue", location:"Bhuteshwar, Mathura", price:"₹ 1.95 Cr", config:"1,200 sq.ft. Retail", size:"1,200 sq.ft.", type:"Commercial", status:"Ready to Move", highlights:["High Footfall","Market Centre","Signage Visible","Parking"], image:img(11666903), pos:"67%", alt:"Bhuteshwar commercial retail in Mathura" },
+    { id:"mv-17", title:"Yamuna Ghat Heritage Residences", location:"Yamuna Ghat Road, Mathura", price:"₹ 88 L", config:"3 BHK", size:"1,550 sq.ft.", type:"Residential", status:"Under Construction", highlights:["RERA Registered","Yamuna Views","Gated Complex","Temple Proximity"], image:img(31656173), pos:"71%", alt:"Yamuna Ghat heritage residences in Mathura" },
+    { id:"mv-18", title:"Vrindavan Serviced Suites", location:"Prem Mandir Road, Vrindavan", price:"₹ 62 L", config:"2 BHK Serviced", size:"900 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["Tourism Demand","Fully Furnished","Hotel Managed","High Occupancy"], image:img(27459248), pos:"59%", alt:"Prem Mandir serviced suites in Vrindavan" },
+    { id:"mv-19", title:"Kosi Kalan Farm Plots", location:"Kosi Kalan, Mathura", price:"₹ 38 L", config:"250 sq.yds. Plot", size:"250 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["Clear Title","Expressway Proximity","Affordable","High Appreciation"], image:img(12993967), pos:"100%", alt:"Kosi Kalan farm plots in Mathura" },
+    { id:"mv-20", title:"Mathura-Vrindavan Enclave", location:"Chatikara Road, Vrindavan", price:"₹ 1.05 Cr", config:"3 BHK Villa", size:"1,900 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["RERA Registered","Gated Community","Private Garden","Premium Finishes"], image:img(36611285), pos:"50%", alt:"Mathura-Vrindavan enclave villa" },
+  ],
+  microMarkets: {
+    eyebrow: "The Micro-Markets",
+    title: "Sacred Corridors, Real Returns.",
+    accent: "One Standard of Care.",
+    items: [
+      { name:"Vrindavan", tag:"Spiritual Hub", desc:"The temple heart of Braj — Prem Mandir, ISKCON and Banke Bihari draw pilgrims year-round. Gated plots and villas here enjoy both lifestyle value and strong tourism-driven rental demand.", points:["Prem Mandir & ISKCON","Gated villas & plots","Tourism rentals"] },
+      { name:"Yamuna Expressway Corridor", tag:"High Appreciation", desc:"The 165-km expressway linking Greater Noida to Agra is reshaping Mathura's outskirts. YEIDA-approved plotted sectors near interchange points carry the region's strongest land appreciation.", points:["YEIDA approvals","Expressway frontage","Land appreciation"] },
+      { name:"Mathura City", tag:"Established", desc:"Dwarkadhish, Holi Gate and the Cantonment anchor mature residential and commercial pockets with schools, hospitals and the railway junction. Stable values and complete infrastructure.", points:["Mature infrastructure","Railway connectivity","Stable values"] },
+      { name:"Barsana & Nandgaon", tag:"Heritage", desc:"The birthplace of Radha Rani and home to Lathmar Holi. Growing demand for farmhouses, heritage villas and tourism properties as the Braj circuit develops.", points:["Heritage circuit","Farmhouse living","Tourism growth"] },
+      { name:"Govardhan & Gokul", tag:"Pilgrimage Belt", desc:"Sacred towns along the 84-kos Braj parikrama. Affordable plots and riverside residences with steady devotional footfall and improving road connectivity.", points:["Pilgrimage corridor","Affordable plots","Yamuna views"] },
+    ],
+  },
+  authorities: {
+    eyebrow: "Authority Guide",
+    title: "Who Approves, Who Registers,",
+    accent: "and Who You Can Trust",
+    items: [
+      { title:"Uttar Pradesh RERA", applies:"Mathura & Vrindavan", mono:"UP", image:img(33217250), pos:"50% 70%", alt:"Uttar Pradesh RERA registration office for Mathura Vrindavan projects", body:"All new projects in Mathura and Vrindavan must register with UP RERA (rera.up.gov.in). We verify registration numbers, quarterly progress reports and complaint history on the official portal before any listing goes live." },
+      { title:"MVDA (Mathura Vrindavan Development Authority)", applies:"Master Plan & Plots", mono:"MV", image:img(34968154), pos:"100%", alt:"Mathura Vrindavan Development Authority for master plan and plot approvals", body:"MVDA prepares the regional master plan and sanctions layouts and plot allotments. We verify master plan zoning, sector approvals and any outstanding dues before recommending plotted or commercial development." },
+      { title:"Yamuna Expressway Industrial Development Authority", applies:"Expressway Corridor", mono:"YE", image:img(33848325), pos:"79%", alt:"Yamuna Expressway Industrial Development Authority for YEIDA sectors", body:"YEIDA governs notified sectors along the Yamuna Expressway, including several near Mathura. For corridor projects we confirm YEIDA allotment, land use and payment schedules directly on the official portal." },
+    ],
+  },
+  guide: {
+    eyebrow: "Market Guide",
+    title: "Before You Buy in Mathura & Vrindavan",
+    accent: "Three Things That Actually Matter",
+    items: [
+      { t:"Verify UP RERA & Land Use", d:"Registered projects file quarterly reports on rera.up.gov.in. For land, we confirm MVDA master plan zoning and YEIDA notification so you never buy outside the sanctioned plan." },
+      { t:"Check Temple-Town Approvals", d:"Parts of Mathura and Vrindavan sit in heritage and pilgrimage zones with specific construction rules. We verify sanctioned plans, floor-area rules and clearances before you commit." },
+      { t:"Benchmark to Circle Rate", d:"Corridor plots can carry speculative pricing. We compare against registered transactions and circle rates in the same sector before advising." },
+    ],
+  },
+  faqTitle: "Mathura & Vrindavan Questions, Answered Straight",
+  faqs: [
+    { q:"Is it a good time to invest in Mathura Vrindavan property?", a:"Yes, particularly for long-horizon buyers. Vrindavan offers steady tourism-driven rentals, while YEIDA-approved plots along the Yamuna Expressway carry strong appreciation potential as infrastructure develops." },
+    { q:"What are the land prices on the Yamuna Expressway near Mathura?", a:"Rates vary by sector and distance from interchange points. Plotted land in notified YEIDA sectors near Mathura typically starts in the ₹2,000–₹4,000 per sq.ft. range depending on location, approvals and frontage. We benchmark every shortlist to recent registered transactions." },
+    { q:"Is Vrindavan property good for rental income?", a:"Vrindavan's year-round pilgrimage creates consistent demand for serviced apartments, guest houses and rental villas, especially around Prem Mandir, ISKCON and Banke Bihari. Hotel-managed serviced units often achieve higher occupancy than conventional residential." },
+    { q:"Which is better to buy: Mathura or Vrindavan?", a:"It depends on your goal. Mathura offers mature living with railway and highway connectivity; Vrindavan offers temple-town lifestyle and tourism rentals. For land appreciation, the Yamuna Expressway corridor around both cities tends to outperform." },
+    { q:"How will the high-speed rail station affect Mathura property?", a:"The proposed Delhi–Varanasi high-speed rail corridor includes a station near Mathura, which is expected to improve connectivity and lift demand in surrounding areas. We track sanctioned infrastructure and factor it into location advice." },
+    { q:"Can an NRI buy property in Mathura Vrindavan?", a:"Yes. NRIs can freely buy residential and commercial property in Mathura and Vrindavan through NRE/NRO channels without RBI approval. Our NRI desk manages the complete remote purchase, including UP RERA and MVDA checks." },
+    { q:"What are the stamp duty and registration charges in Mathura?", a:"Mathura follows Uttar Pradesh stamp duty (around 7%, with a reduced rate for women buyers) plus registration and mutation charges. We compute the exact all-in cost for your property at the time of transaction." },
+    { q:"How does Vedhara verify Mathura Vrindavan listings?", a:"Every listing passes our five-check framework: UP RERA registration, builder delivery history, project approvals and master plan zoning, price fairness and title documents. Results are published on every listing page." },
+  ],
+  schemaName: "Real Estate Advisory in Mathura & Vrindavan",
+  schemaAreaServed: ["Mathura", "Vrindavan"],
+  schemaDescription: "Independent real estate advisory across Mathura and Vrindavan: verified buying, selling and investing in Vrindavan villas, Yamuna Expressway plots and Mathura city homes with UP RERA and MVDA due diligence.",
+};
+
 export const cityPages: Record<string, CityPageData> = {
   gurugram,
   noida,
@@ -939,4 +1034,5 @@ export const cityPages: Record<string, CityPageData> = {
   panchkula,
   faridabad,
   ghaziabad,
+  "mathura-vrindavan": mathuraVrindavan,
 };

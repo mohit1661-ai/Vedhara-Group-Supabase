@@ -56,6 +56,7 @@ const videos: WatchVideo[] = [
   { file:"panchkula-city.mp4", title:"Real Estate in Panchkula – City Tour", desc:"Panchkula's green, landscaped cityscape seen from above, part of Vedhara Group's verified property advisory in the Tricity market." },
   { file:"faridabad-city.mp4", title:"Real Estate in Faridabad – City Tour", desc:"An aerial view of Faridabad's busy, developed metro landscape, part of Vedhara Group's verified property advisory across Delhi NCR." },
   { file:"ghaziabad-city.mp4", title:"Real Estate in Ghaziabad – City Tour", desc:"Aerial views of Ghaziabad's residential and development corridors, part of Vedhara Group's verified property advisory across Delhi NCR." },
+  { file:"mathura-vrindavan-city.mp4", title:"Real Estate in Mathura & Vrindavan – City Tour", desc:"A cinematic aerial view of Mathura's and Vrindavan's sacred temple town at sunrise, part of Vedhara Group's verified property advisory across the Braj heartland." },
 ];
 
 const jsonLd = {

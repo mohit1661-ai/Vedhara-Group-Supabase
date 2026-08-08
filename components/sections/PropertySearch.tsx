@@ -25,6 +25,7 @@ const popular = [
   { label: "Penthouse on Golf Course Road", href: "/gurugram" },
   { label: "Plots in Greater Noida", href: "/greater-noida" },
   { label: "2 BHK in Noida", href: "/noida" },
+  { label: "Villa in Vrindavan", href: "/mathura-vrindavan" },
   { label: "Office in Sector 62", href: "/search?mode=buy&type=commercial" },
   { label: "Villa in Panchkula", href: "/panchkula" },
   { label: "Apartments in Chandigarh", href: "/chandigarh" },

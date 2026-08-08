@@ -61,7 +61,7 @@ export default function Footer() {
         <div style={{ padding:"18px 0 16px",borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
           <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:8 }}>Cities We Serve</p>
           <div style={{ display:"flex",flexWrap:"wrap",gap:8 }}>
-            {[{ c:"Delhi", h:"/south-delhi" },{ c:"Gurugram", h:"/gurugram" },{ c:"Noida", h:"/noida" },{ c:"Greater Noida", h:"/greater-noida" },{ c:"Faridabad", h:"/faridabad" },{ c:"Ghaziabad", h:"/ghaziabad" },{ c:"Chandigarh", h:"/chandigarh" },{ c:"Mohali", h:"/mohali" },{ c:"Panchkula", h:"/panchkula" },{ c:"Zirakpur", h:"/tricity" }].map(city=>(
+            {[{ c:"Delhi", h:"/south-delhi" },{ c:"Gurugram", h:"/gurugram" },{ c:"Noida", h:"/noida" },{ c:"Greater Noida", h:"/greater-noida" },{ c:"Faridabad", h:"/faridabad" },{ c:"Ghaziabad", h:"/ghaziabad" },{ c:"Chandigarh", h:"/chandigarh" },{ c:"Mohali", h:"/mohali" },{ c:"Panchkula", h:"/panchkula" },{ c:"Zirakpur", h:"/tricity" },{ c:"Mathura & Vrindavan", h:"/mathura-vrindavan" }].map(city=>(
               <Link key={city.c} href={city.h} style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"rgba(255,255,255,0.72)",textDecoration:"none",transition:"color 0.2s" }} className="footer-city-link">{city.c} ·</Link>
             ))}
           </div>

@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Search Verified Properties | Vedhara Group",
   description:
-    "Search verified properties across Gurugram, Noida, Greater Noida, South Delhi, Chandigarh Tricity, Faridabad and Ghaziabad. Buy, rent or sell with RERA-verified listings.",
+    "Search verified properties across Gurugram, Noida, Greater Noida, South Delhi, Chandigarh Tricity, Faridabad, Ghaziabad and Mathura Vrindavan. Buy, rent or sell with RERA-verified listings.",
   alternates: { canonical: "https://www.vedharagroup.com/search" },
 };
 
@@ -35,6 +35,7 @@ const CITY_LINKS = [
   { label: "Panchkula", href: "/panchkula", img: cityImg(37433082), sub: "Sector 19 & the foothills" },
   { label: "Faridabad", href: "/faridabad", img: cityImg(30381835), sub: "Sector 21C & the NH-44 corridor" },
   { label: "Ghaziabad", href: "/ghaziabad", img: cityImg(30368780), sub: "Vaishali, Indirapuram & Raj Nagar" },
+  { label: "Mathura & Vrindavan", href: "/mathura-vrindavan", img: cityImg(11969919), sub: "Yamuna Expressway & Vrindavan" },
 ];
 
 const MODES: { label: string; value?: SearchMode }[] = [
@@ -322,8 +323,10 @@ export default async function SearchPage({
             </div>
           </ScrollReveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18 }} className="grid-3">
-            {CITY_LINKS.map((c, i) => (
-              <ScrollReveal key={c.href} delay={i * 60}>
+            {CITY_LINKS.map((c, i) => {
+              const orphan = i === CITY_LINKS.length - 1 && CITY_LINKS.length % 3 === 1;
+              return (
+              <ScrollReveal key={c.href} delay={i * 60} style={orphan ? { gridColumn: "2 / 3" } : undefined}>
                 <Link href={c.href} className="hover-lift" style={{ display: "block", position: "relative", height: 240, borderRadius: 16, overflow: "hidden", textDecoration: "none", border: "1px solid rgba(212,168,67,0.25)" }}>
                   <Image src={c.img} alt={`${c.label} real estate, ${c.sub}`} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit: "cover" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(9,15,29,0.12) 0%,rgba(9,15,29,0.82) 100%)" }} />
@@ -334,7 +337,8 @@ export default async function SearchPage({
                   </div>
                 </Link>
               </ScrollReveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
