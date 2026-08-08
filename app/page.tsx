@@ -11,6 +11,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
 import HomeConsultationSection from "@/components/sections/HomeConsultationSection";
+import { blogPosts } from "@/lib/data/blogPosts";
 
 export const metadata: Metadata = {
   title: "Vedhara Group | Verified Property Advisory in Delhi NCR",
@@ -39,6 +40,18 @@ const tools = [
   { title:"Home Loan EMI Calculator", desc:"Monthly EMI, total interest, and year-by-year amortisation schedule." },
   { title:"Stamp Duty & Registration", desc:"State-wise stamp duty and registration charges, Delhi, Haryana & UP." },
   { title:"Affordability Calculator", desc:"Realistic property budget based on standard bank lending norms." },
+];
+
+const steps = [
+  { num:"01", title:"Share Your Requirement", desc:"Tell us your budget, preferred locations and goals. A named senior advisor, never a call centre, responds within one working day." },
+  { num:"02", title:"We Verify Everything", desc:"Every shortlisted property passes our five-point Verification Framework. RERA, approvals, price and title all checked, and the results published on the listing." },
+  { num:"03", title:"Get Honest Advice", desc:"You receive a clear recommendation with fully disclosed fees. Buy, sell or invest with complete transparency and no pressure." },
+];
+
+const testimonials = [
+  { name:"Mr. & Mrs. Kapoor", detail:"First-time buyers · Sector 150, Noida", quote:"Vedhara saved us from making an expensive mistake on a project with title issues. They found us a better property at a lower price." },
+  { name:"Mr. Arjun Mehta", detail:"NRI (Dubai) · Gurugram sale handled remotely", quote:"I never had to travel. Vedhara handled everything from tenant negotiation to final registration via video, email, and their local team." },
+  { name:"Dr. Priya Sharma", detail:"Investor · Gurugram & Noida Expressway", quote:"The decision framework Vedhara uses gave me confidence to invest across two cities. The rental yield analysis was spot on." },
 ];
 
 /* Word doc FAQs, Page 1 */
@@ -86,6 +99,42 @@ export default function HomePage() {
         videoSrcMobile="/videos/Homepage%20Hero%20Video%20Mobile.mp4"
       />
       <AnimatedStats />
+
+      {/* Gold hairline — rhythm separator */}
+      <div style={{ background:"var(--navy)",padding:"0 32px" }}>
+        <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
+      {/* ══ HOW IT WORKS — three steps for first-time visitors ══ */}
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:48 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>How It Works</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
+                Three Steps to a{" "}
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Verified Property Decision</em>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
+                Independent advice, verified information and a transparent process, from your first enquiry to your final decision.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
+            {steps.map((s,i)=>(
+              <ScrollReveal key={s.num} delay={i*90} style={{ display:"flex" }}>
+                <div className="svc-card" style={{ borderRadius:0,height:"100%",flex:1 }}>
+                  <div className="gold-accent" />
+                  <p className="eyebrow" style={{ marginBottom:12 }}>Step {s.num}</p>
+                  <h3 className="svc-card-title">{s.title}</h3>
+                  <p className="svc-card-desc">{s.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ══ PROPERTY SEARCH — real-estate search bar ══ */}
       <PropertySearch />
@@ -384,6 +433,58 @@ export default function HomePage() {
         ]}
       />
 
+      {/* Gold hairline — rhythm separator */}
+      <div style={{ background:"var(--cream)",padding:"0 32px" }}>
+        <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
+      {/* ══ LATEST INSIGHTS — recent articles ══ */}
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"10%",right:"-6%",width:520,height:520,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:44,flexWrap:"wrap",gap:20 }}>
+              <div>
+                <span className="v-line" style={{ margin:"0 0 14px" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:12 }}>Market Insights</p>
+                <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1 }}>
+                  Latest Insights From{" "}
+                  <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Our Advisors</em>
+                </h2>
+              </div>
+              <Link href="/blog" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-dk))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Articles →</Link>
+            </div>
+          </ScrollReveal>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="grid-3">
+            {blogPosts.slice(0,3).map((post,i)=>(
+              <ScrollReveal key={post.slug} delay={i*80} style={{ display:"flex" }}>
+                <div className="hover-lift" style={{ flex:1,display:"flex",flexDirection:"column",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden" }}>
+                  <div style={{ height:140,background:post.gradient,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0 }}>
+                    <div style={{ position:"absolute",inset:0,background:"radial-gradient(circle at 30% 40%,rgba(255,255,255,0.06) 0%,transparent 60%)" }} />
+                    <div style={{ position:"absolute",top:12,right:12,zIndex:2 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"3px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>{post.category}</span>
+                    </div>
+                    <div style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:14,color:"rgba(255,255,255,0.85)",textAlign:"center",padding:"0 24px",position:"relative",zIndex:1,lineHeight:1.4 }}>
+                      {post.title.length > 65 ? post.title.substring(0,65)+"…" : post.title}
+                    </div>
+                  </div>
+                  <div style={{ padding:"20px 24px 22px",flex:1,display:"flex",flexDirection:"column" }}>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{post.readTime}</p>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
+                    <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
+                    <div style={{ paddingTop:14,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
+                      <Link href={`/blog/${post.slug}`} style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold)",display:"inline-flex",alignItems:"center",gap:4,textDecoration:"none" }}>
+                        Read Article →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ FINAL CTA ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px",textAlign:"center" }}>
         <ScrollReveal>
@@ -405,6 +506,50 @@ export default function HomePage() {
       </section>
 
       <FAQSection faqs={homeFaqs} />
+
+      {/* Gold hairline — rhythm separator */}
+      <div style={{ background:"var(--navy)",padding:"0 32px" }}>
+        <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
+      {/* ══ CLIENT SUCCESS STORIES — testimonials ══ */}
+      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:44 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Client Success Stories</p>
+              <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
+                Real Clients.{" "}
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Real Outcomes.</em>
+              </h2>
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
+                Every story is a genuine Vedhara engagement, shared with permission. No stock photos, no fictional scenarios, no sales scripts.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
+            {testimonials.map((t,i)=>(
+              <ScrollReveal key={t.name} delay={i*90} style={{ display:"flex" }}>
+                <Link href="/success-stories" style={{ textDecoration:"none",display:"block",flex:1 }}>
+                  <div className="svc-card" style={{ borderRadius:0,height:"100%" }}>
+                    <div className="gold-accent" />
+                    <h3 className="svc-card-title">{t.name}</h3>
+                    <p className="svc-card-desc">{t.quote}</p>
+                    <p className="svc-card-desc" style={{ fontSize:10.5,letterSpacing:"0.06em",textTransform:"uppercase",marginTop:-4 }}>{t.detail}</p>
+                    <span className="svc-card-arrow">Read Story →</span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={120}>
+            <div style={{ textAlign:"center",marginTop:36 }}>
+              <Link href="/success-stories" className="btn btn-dark">Read More Success Stories →</Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ══ CONSULTATION FORM — lead capture above the footer ══ */}
       <HomeConsultationSection />
