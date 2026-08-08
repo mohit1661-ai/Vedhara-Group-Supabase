@@ -70,7 +70,7 @@ const RENT_OPTS = [
 function buildHref(f: { q?: string; mode?: SearchMode; type?: string; budget?: string }) {
   const p = new URLSearchParams();
   if (f.q) p.set("q", f.q);
-  if (f.mode && f.mode !== "buy") p.set("mode", f.mode);
+  if (f.mode) p.set("mode", f.mode);
   if (f.type && f.type !== "any") p.set("type", f.type);
   if (f.budget && f.budget !== "any") p.set("budget", f.budget);
   const s = p.toString();
@@ -137,6 +137,7 @@ export default async function SearchPage({
 
           {/* Search form */}
           <form action="/search" method="get" style={{ background: "var(--cream)", borderRadius: 16, padding: 20, boxShadow: "0 20px 50px rgba(0,0,0,0.25)", maxWidth: 900, margin: "0 auto" }}>
+            {mode && <input type="hidden" name="mode" value={mode} />}
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <div style={{ flex: "2 1 260px" }}>
                 <label className="input-label" htmlFor="q">Keyword / Property</label>
@@ -168,7 +169,7 @@ export default async function SearchPage({
             {/* Mode tabs */}
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
               {MODES.map((m) => {
-                const active = (m.value || "buy") === (mode || "buy");
+                const active = (m.value || "") === (mode || "");
                 const href = buildHref({ q: q || undefined, mode: m.value, type: type || undefined, budget: budget || undefined });
                 return (
                   <Link key={m.label} href={href} style={{

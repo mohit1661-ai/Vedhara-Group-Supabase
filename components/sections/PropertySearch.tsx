@@ -59,12 +59,11 @@ export default function PropertySearch() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const p = new URLSearchParams();
+    p.set("mode", mode);
     if (loc.trim()) p.set("q", loc.trim());
-    if (mode !== "buy") p.set("mode", mode);
     if (type !== "any") p.set("type", type);
     if (budget !== "any") p.set("budget", budget);
-    const qs = p.toString();
-    router.push(qs ? `/search?${qs}` : "/search");
+    router.push(`/search?${p.toString()}`);
   }
 
   return (
