@@ -181,7 +181,8 @@ export default async function SearchPage({
             loop
             playsInline
             preload="metadata"
-            aria-hidden
+            title="Vedhara Group property verification film"
+            aria-label="Vedhara Group property verification film"
             className="video-bg"
             style={{ objectFit: "cover" }}
           >

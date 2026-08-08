@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import JsonLd from "@/components/seo/JsonLd";
 import CinematicHero from "@/components/sections/CinematicHero";
 import AnimatedStats from "@/components/sections/AnimatedStats";
 import FeaturedProperties from "@/components/sections/FeaturedProperties";
@@ -48,9 +49,37 @@ const homeFaqs = [
   { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators: ROI & Rental Yield, EMI, Stamp Duty, and Affordability, are completely free and require no account, phone number, or email address to use." },
 ];
 
+const homeSchema = {
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "@id":"https://www.vedharagroup.com/#webpage",
+  url:"https://www.vedharagroup.com",
+  name:"Vedhara Group | Verified Property Advisory in Delhi NCR",
+  description:"North India's independent real estate advisory firm. Buy, sell or invest across Delhi NCR, Faridabad, Manesar & Chandigarh with verified listings.",
+  isPartOf:{"@id":"https://www.vedharagroup.com/#website"},
+  about:{"@id":"https://www.vedharagroup.com/#organization"},
+  inLanguage:"en-IN",
+  mainEntity: {
+    "@type":"ItemList",
+    name:"Vedhara Group Services",
+    itemListElement: [
+      { "@type":"ListItem", position:1, item:{ "@type":"Service", name:"Buy Property in Delhi NCR", url:"https://www.vedharagroup.com/buy" } },
+      { "@type":"ListItem", position:2, item:{ "@type":"Service", name:"Sell Property in Delhi NCR", url:"https://www.vedharagroup.com/sell" } },
+      { "@type":"ListItem", position:3, item:{ "@type":"Service", name:"Rent Property in Delhi NCR", url:"https://www.vedharagroup.com/rent" } },
+      { "@type":"ListItem", position:4, item:{ "@type":"Service", name:"Commercial Real Estate", url:"https://www.vedharagroup.com/commercial" } },
+      { "@type":"ListItem", position:5, item:{ "@type":"Service", name:"Luxury Properties", url:"https://www.vedharagroup.com/luxury" } },
+      { "@type":"ListItem", position:6, item:{ "@type":"Service", name:"New Property Launches", url:"https://www.vedharagroup.com/new-launches" } },
+      { "@type":"ListItem", position:7, item:{ "@type":"Service", name:"Investment Advisory", url:"https://www.vedharagroup.com/investment-advisory" } },
+      { "@type":"ListItem", position:8, item:{ "@type":"Service", name:"NRI Property Services", url:"https://www.vedharagroup.com/nri-services" } },
+      { "@type":"ListItem", position:9, item:{ "@type":"Service", name:"Property Management", url:"https://www.vedharagroup.com/property-management" } },
+    ],
+  },
+};
+
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homeSchema} />
       <CinematicHero
         videoSrc="/videos/Homepage%20Hero%20Video%20Desktop.mp4"
         videoSrcMobile="/videos/Homepage%20Hero%20Video%20Mobile.mp4"

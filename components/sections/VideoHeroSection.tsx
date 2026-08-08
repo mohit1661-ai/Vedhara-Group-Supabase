@@ -319,6 +319,8 @@ export default function VideoHeroSection({
             playsInline
             preload="metadata"
             className="video-bg"
+            title={posterAlt || "Vedhara Group cinematic property film"}
+            aria-label={posterAlt || "Vedhara Group cinematic property film"}
             style={{
               opacity: videoLoaded ? 1 : 0,
               transition: "opacity 0.8s ease",

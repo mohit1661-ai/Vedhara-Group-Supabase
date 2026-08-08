@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -10,6 +11,18 @@ export const metadata: Metadata = {
   title:"About Us | Real Estate Advisory in Delhi NCR",
   description:"RERA-compliant independent property advisory across Delhi NCR, Faridabad, Manesar, Chandigarh & North India for buyers, sellers, investors and NRIs.",
   alternates:{ canonical:"https://www.vedharagroup.com/about" },
+};
+
+const aboutSchema = {
+  "@context":"https://schema.org",
+  "@type":"AboutPage",
+  "@id":"https://www.vedharagroup.com/about",
+  name:"About Vedhara Group | Independent Real Estate Advisory in Delhi NCR",
+  description:"RERA-compliant independent property advisory across Delhi NCR, Faridabad, Manesar, Chandigarh & North India for buyers, sellers, investors and NRIs.",
+  url:"https://www.vedharagroup.com/about",
+  mainEntity:{"@id":"https://www.vedharagroup.com/#organization"},
+  about:{"@id":"https://www.vedharagroup.com/#organization"},
+  inLanguage:"en-IN",
 };
 
 const values = [
@@ -38,6 +51,7 @@ const faqs = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={aboutSchema} />
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"About Us", href:"/about" }]} />
       <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Gurgaon%20Real%20Estate%20About%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />

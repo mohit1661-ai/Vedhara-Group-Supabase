@@ -107,6 +107,8 @@ export default function VideosPage() {
                     controls
                     preload="metadata"
                     poster={`/watch/${enc(`thumb-${v.file.replace(/\.mp4$/,"")}.jpg`)}`}
+                    title={v.title}
+                    aria-label={v.title}
                     style={{ width:"100%", aspectRatio:"16/9", display:"block", background:"#000" }}
                   >
                     <source src={`/watch/${enc(v.file)}`} type="video/mp4" />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
 import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
@@ -15,9 +16,29 @@ const reasons = [
   { title:"Reviewed & Kept Current", desc:"Each article is reviewed by our legal team for regulatory accuracy and updated quarterly to reflect RERA changes, budget announcements, and shifting market conditions." },
 ];
 
+const blogSchema = {
+  "@context":"https://schema.org",
+  "@type":"Blog",
+  "@id":"https://www.vedharagroup.com/blog",
+  headline:"Delhi NCR Real Estate Blog",
+  description:"Expert insights on the North India property market: Delhi NCR, Gurugram, Faridabad, Manesar & Chandigarh price trends, RERA, NRI investing and home loans.",
+  publisher:{"@id":"https://www.vedharagroup.com/#organization"},
+  inLanguage:"en-IN",
+  blogPost: blogPosts.map((p)=>({
+    "@type":"BlogPosting",
+    headline:p.title,
+    url:`https://www.vedharagroup.com/blog/${p.slug}`,
+    datePublished:"2026-01-01",
+    dateModified:"2026-08-08",
+    description:p.metaDescription || p.excerpt,
+    author:{"@type":"Organization",name:"Vedhara Group"},
+  })),
+};
+
 export default function BlogPage() {
   return (
     <>
+      <JsonLd data={blogSchema} />
       <VideoHeroSection videoSrc="/videos/Blog Page Hero Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Blog</p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
@@ -10,6 +11,18 @@ export const metadata: Metadata = {
   title:"Our Team | Real Estate Advisory Leadership",
   description:"Meet Vedhara Group's leadership: Mr. D.R Sharma (Founder & CEO), Mr. Mohit Sharma (MD), Ms. Kusum Sharma & Mr. Bharat, serving Delhi NCR & North India.",
   alternates:{ canonical:"https://www.vedharagroup.com/team" },
+};
+
+const teamSchema = {
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  name:"Vedhara Group Leadership Team",
+  itemListElement: [
+    { "@type":"ListItem", position:1, item:{ "@type":"Person", name:"D.R Sharma", jobTitle:"Founder & Chief Executive Officer", worksFor:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:2, item:{ "@type":"Person", name:"Mohit Sharma", jobTitle:"Managing Director", worksFor:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:3, item:{ "@type":"Person", name:"Kusum Sharma", jobTitle:"Director, Strategic Partnerships", worksFor:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:4, item:{ "@type":"Person", name:"Bharat", jobTitle:"Director, Investment Advisory", worksFor:{"@id":"https://www.vedharagroup.com/#organization"} } },
+  ],
 };
 
 const teamMembers = [
@@ -100,6 +113,7 @@ const faqs = [
 export default function TeamPage() {
   return (
     <>
+      <JsonLd data={teamSchema} />
       <VideoHeroSection videoSrc="/videos/Our%20Team%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Leadership</p>

@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import Image from "next/image";
 export const metadata: Metadata = { title:"Real Estate Advisory Services in Delhi NCR", description:"Vedhara Group's full real estate advisory across Delhi NCR, Faridabad, Manesar & Chandigarh: buy, sell, rent, invest and NRI services.", alternates:{ canonical:"https://www.vedharagroup.com/services" } };
+const servicesSchema = {
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  name:"Real Estate Advisory Services in Delhi NCR",
+  itemListElement: [
+    { "@type":"ListItem", position:1, item:{ "@type":"Service", name:"Buy Property", url:"https://www.vedharagroup.com/buy", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:2, item:{ "@type":"Service", name:"Sell Property", url:"https://www.vedharagroup.com/sell", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:3, item:{ "@type":"Service", name:"Rent Property", url:"https://www.vedharagroup.com/rent", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:4, item:{ "@type":"Service", name:"Commercial Real Estate Advisory", url:"https://www.vedharagroup.com/commercial", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:5, item:{ "@type":"Service", name:"Luxury Properties", url:"https://www.vedharagroup.com/luxury", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:6, item:{ "@type":"Service", name:"New Launches", url:"https://www.vedharagroup.com/new-launches", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:7, item:{ "@type":"Service", name:"Investment Advisory", url:"https://www.vedharagroup.com/investment-advisory", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:8, item:{ "@type":"Service", name:"NRI Services", url:"https://www.vedharagroup.com/nri-services", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+    { "@type":"ListItem", position:9, item:{ "@type":"Service", name:"Property Management", url:"https://www.vedharagroup.com/property-management", provider:{"@id":"https://www.vedharagroup.com/#organization"} } },
+  ],
+};
 const services = [
   { icon:"B",title:"Buy Property",href:"/buy",desc:"Independent guidance through verified listings from shortlist to registration.",gradient:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
   { icon:"S",title:"Sell Property",href:"/sell",desc:"Strategic pricing and qualified buyer access for fair-value sales.",gradient:"linear-gradient(135deg,#0F1E38,#2a4a6a)" },
@@ -125,6 +142,7 @@ const featuredProperties = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesSchema} />
       <VideoHeroSection videoSrc="/videos/All%20Services%20Hero%20Video.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>All Services</p>

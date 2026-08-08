@@ -268,6 +268,8 @@ export default function CinematicHero({
           playsInline
           preload="metadata"
           className="video-bg"
+          title="Vedhara Group homepage cinematic property film"
+          aria-label="Vedhara Group homepage cinematic property film"
           style={{
             opacity: videoLoaded ? 1 : 0,
             transition: "opacity 0.8s ease",

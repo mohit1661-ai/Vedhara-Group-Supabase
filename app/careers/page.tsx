@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -73,9 +74,21 @@ const careersFaqs = [
   { q:"How are advisors measured, and is there any sales pressure?", a:"No sales targets and no transaction-volume pressure. Advisors are measured on client satisfaction, verification quality, and long-term outcomes, because that is the model that built Vedhara's reputation." },
 ];
 
+const careersSchema = {
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "@id":"https://www.vedharagroup.com/careers",
+  url:"https://www.vedharagroup.com/careers",
+  name:"Real Estate Advisory Jobs in Delhi NCR",
+  description:"Join Vedhara Group's independent advisory team across Delhi NCR & North India. Open roles in advisory, research, NRI and property management.",
+  isPartOf:{"@id":"https://www.vedharagroup.com/#website"},
+  inLanguage:"en-IN",
+};
+
 export default function CareersPage() {
   return (
     <>
+      <JsonLd data={careersSchema} />
       <VideoHeroSection videoSrc="/videos/careers%20hero%20video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Careers</p>
