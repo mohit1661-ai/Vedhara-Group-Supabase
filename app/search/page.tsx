@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import FilterSelect from "@/components/ui/FilterSelect";
+import ScrollToResults from "@/components/ui/ScrollToResults";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import {
@@ -104,6 +105,54 @@ export default async function SearchPage({
   });
 
   const summary = searchSummary({ q: q || undefined, mode: mode || undefined, type: type || undefined, budget: budget || undefined });
+  const hasQuery = !!(q || mode || type || budget);
+
+  const fieldsRow = (
+    <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+      <div style={{ flex: "2 1 260px" }}>
+        <label className="input-label" htmlFor="q">Keyword / Property</label>
+        <input className="input-field" id="q" name="q" type="text" placeholder="e.g. 3 BHK in Gurugram, penthouse, villa…" defaultValue={q} />
+      </div>
+      <div style={{ flex: "1 1 160px" }}>
+        <label className="input-label">Type</label>
+        <FilterSelect
+          id="type"
+          label="Any Type"
+          options={TYPES.map((t) => ({ value: t.value || "any", label: t.label }))}
+          value={type || "any"}
+        />
+      </div>
+      <div style={{ flex: "1 1 160px" }}>
+        <label className="input-label">Budget</label>
+        <FilterSelect
+          id="budget"
+          label="Any Budget"
+          options={mode === "rent" ? RENT_OPTS : BUY_OPTS}
+          value={budget || "any"}
+        />
+      </div>
+      <div style={{ flex: "1 1 120px", display: "flex", alignItems: "flex-end" }}>
+        <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>Search</button>
+      </div>
+    </div>
+  );
+
+  const modeTabs = (onNavy: boolean) =>
+    MODES.map((m) => {
+      const active = (m.value || "") === (mode || "");
+      const href = buildHref({ q: q || undefined, mode: m.value, type: type || undefined, budget: budget || undefined });
+      return (
+        <Link key={m.label} href={href} style={{
+          fontFamily: "var(--t-head)", fontSize: 12, fontWeight: 700, letterSpacing: "0.02em",
+          padding: "8px 18px", borderRadius: 20, textDecoration: "none",
+          background: active ? "var(--gold)" : onNavy ? "rgba(212,168,67,0.1)" : "rgba(15,30,56,0.06)",
+          color: active ? "var(--navy)" : onNavy ? "var(--gold-lt)" : "var(--slate)",
+          border: active ? "none" : onNavy ? "1px solid rgba(212,168,67,0.35)" : "1px solid rgba(15,30,56,0.12)",
+        }}>
+          {m.label}
+        </Link>
+      );
+    });
 
   const schema = {
     "@context": "https://schema.org",
@@ -117,6 +166,7 @@ export default async function SearchPage({
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Search", href: "/search" }]} />
       <JsonLd data={schema} />
+      <ScrollToResults active={hasQuery} />
 
       {/* Hero */}
       <section className="page-hero" style={{ background: "var(--navy)", position: "relative", overflow: "hidden" }}>
@@ -138,58 +188,14 @@ export default async function SearchPage({
           {/* Search form */}
           <form action="/search" method="get" style={{ background: "var(--cream)", borderRadius: 16, padding: 20, boxShadow: "0 20px 50px rgba(0,0,0,0.25)", maxWidth: 900, margin: "0 auto" }}>
             {mode && <input type="hidden" name="mode" value={mode} />}
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <div style={{ flex: "2 1 260px" }}>
-                <label className="input-label" htmlFor="q">Keyword / Property</label>
-                <input className="input-field" id="q" name="q" type="text" placeholder="e.g. 3 BHK in Gurugram, penthouse, villa…" defaultValue={q} />
-              </div>
-              <div style={{ flex: "1 1 160px" }}>
-                <label className="input-label">Type</label>
-                <FilterSelect
-                  id="type"
-                  label="Any Type"
-                  options={TYPES.map((t) => ({ value: t.value || "any", label: t.label }))}
-                  value={type || "any"}
-                />
-              </div>
-              <div style={{ flex: "1 1 160px" }}>
-                <label className="input-label">Budget</label>
-                <FilterSelect
-                  id="budget"
-                  label="Any Budget"
-                  options={mode === "rent" ? RENT_OPTS : BUY_OPTS}
-                  value={budget || "any"}
-                />
-              </div>
-              <div style={{ flex: "1 1 120px", display: "flex", alignItems: "flex-end" }}>
-                <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>Search</button>
-              </div>
-            </div>
-
-            {/* Mode tabs */}
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
-              {MODES.map((m) => {
-                const active = (m.value || "") === (mode || "");
-                const href = buildHref({ q: q || undefined, mode: m.value, type: type || undefined, budget: budget || undefined });
-                return (
-                  <Link key={m.label} href={href} style={{
-                    fontFamily: "var(--t-head)", fontSize: 12, fontWeight: 700, letterSpacing: "0.02em",
-                    padding: "8px 18px", borderRadius: 20, textDecoration: "none",
-                    background: active ? "var(--gold)" : "rgba(15,30,56,0.06)",
-                    color: active ? "var(--navy)" : "var(--slate)",
-                    border: active ? "none" : "1px solid rgba(15,30,56,0.12)",
-                  }}>
-                    {m.label}
-                  </Link>
-                );
-              })}
-            </div>
+            {fieldsRow}
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>{modeTabs(false)}</div>
           </form>
         </div>
       </section>
 
       {/* Results */}
-      <section style={{ background: "var(--cream)", padding: "60px 32px" }}>
+      <section id="results" style={{ background: "var(--cream)", padding: "60px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
