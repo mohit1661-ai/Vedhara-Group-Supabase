@@ -173,8 +173,25 @@ export default async function SearchPage({
 
       {/* Hero */}
       <section className="page-hero" style={{ background: "var(--navy)", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: "-20%", right: "-8%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
+        {/* Luxury video background — aligned with the rest of the site's cinematic heroes */}
+        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden
+            className="video-bg"
+            style={{ objectFit: "cover" }}
+          >
+            <source src="/videos/Property%20Verification.mp4" type="video/mp4" />
+          </video>
+        </div>
+        {/* Navy overlay keeps the search text and form crisp over the video */}
+        <div className="video-overlay" />
+        <div style={{ position: "absolute", top: "-20%", right: "-8%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 70%)", pointerEvents: "none", zIndex: 2 }} />
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 3 }}>
           <ScrollReveal>
             <div style={{ textAlign: "center", marginBottom: 32 }}>
               <span className="v-line" style={{ margin: "0 auto 14px" }} />

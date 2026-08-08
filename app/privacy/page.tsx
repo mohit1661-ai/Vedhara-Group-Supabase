@@ -105,7 +105,12 @@ export default function PrivacyPage() {
   return (
     <>
       <JsonLd data={schema} />
-      <VideoHeroSection>
+      <VideoHeroSection
+        videoSrc="/videos/Homepage%20Hero%20Video%20Desktop.mp4"
+        videoSrcMobile="/videos/Homepage%20Hero%20Video%20Mobile.mp4"
+        poster="/hero-poster.jpg"
+        posterAlt="Vedhara Group brand film behind the privacy policy"
+      >
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Legal &amp; Compliance</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,4.5vw,52px)",color:"var(--light)",lineHeight:1.12,maxWidth:880,margin:"0 auto 20px" }}>

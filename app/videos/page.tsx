@@ -48,6 +48,14 @@ const videos: WatchVideo[] = [
   { file:"Our Team Hero Video.mp4", title:"Meet the Vedhara Group Team", desc:"The advisors behind Vedhara Group, independent by design, client-first by default across Delhi NCR and North India." },
   { file:"Property Management Hero Video.mp4", title:"Vedhara Group Property Management", desc:"Tenant, maintenance and rental management for property owners across Delhi NCR and Chandigarh with Vedhara Group." },
   { file:"Success Stories Hero Video.mp4", title:"Vedhara Group Success Stories", desc:"Client success stories, verified property journeys across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
+  { file:"gurugram-city.mp4", title:"Real Estate in Gurugram – City Tour", desc:"A cinematic aerial tour of Gurugram's skyline and business districts, part of Vedhara Group's verified property advisory across Gurgaon and Delhi NCR." },
+  { file:"noida-city.mp4", title:"Real Estate in Noida – City Tour", desc:"An aerial tour of Noida's modern towers and developing sectors, part of Vedhara Group's verified property advisory across Noida and Delhi NCR." },
+  { file:"greater-noida-city.mp4", title:"Real Estate in Greater Noida – City Tour", desc:"A cinematic aerial view of Greater Noida's infrastructure and growth corridors, part of Vedhara Group's verified property advisory." },
+  { file:"south-delhi-city.mp4", title:"Real Estate in South Delhi – City Tour", desc:"Iconic Delhi landmarks and South Delhi's premium residential character, part of Vedhara Group's verified property advisory." },
+  { file:"mohali-city.mp4", title:"Real Estate in Mohali – City Tour", desc:"An aerial tour of Mohali's modern development and growth, part of Vedhara Group's verified property advisory in the Tricity market." },
+  { file:"panchkula-city.mp4", title:"Real Estate in Panchkula – City Tour", desc:"Panchkula's green, landscaped cityscape seen from above, part of Vedhara Group's verified property advisory in the Tricity market." },
+  { file:"faridabad-city.mp4", title:"Real Estate in Faridabad – City Tour", desc:"An aerial view of Faridabad's busy, developed metro landscape, part of Vedhara Group's verified property advisory across Delhi NCR." },
+  { file:"ghaziabad-city.mp4", title:"Real Estate in Ghaziabad – City Tour", desc:"Aerial views of Ghaziabad's residential and development corridors, part of Vedhara Group's verified property advisory across Delhi NCR." },
 ];
 
 const jsonLd = {
