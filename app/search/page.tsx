@@ -119,7 +119,7 @@ export default async function SearchPage({
       <JsonLd data={schema} />
 
       {/* Hero */}
-      <section style={{ background: "var(--navy)", padding: "64px 32px 56px", position: "relative", overflow: "hidden" }}>
+      <section className="page-hero" style={{ background: "var(--navy)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "-20%", right: "-8%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle,rgba(212,168,67,0.08) 0%,transparent 70%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <ScrollReveal>
