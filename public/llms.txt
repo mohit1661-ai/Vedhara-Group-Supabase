@@ -1,6 +1,6 @@
 # Vedhara Group
 
-> Vedhara Group is North India's independent real estate advisory firm. We help buyers, sellers, renters, investors, and NRIs make verified property decisions across Delhi NCR (Gurugram, Noida, Faridabad, Manesar, Ghaziabad, Delhi), Chandigarh Tricity, and expanding across North India. We are independent by design — no developer tie-ups — and every listing passes a publicly documented five-point Verification Framework covering RERA status, builder delivery history, project-level approvals, price fairness, and document availability.
+> Vedhara Group is North India's independent real estate advisory firm. We help buyers, sellers, renters, investors, and NRIs make verified property decisions across Delhi NCR (Gurugram, Noida, Faridabad, Manesar, Ghaziabad, Delhi), Chandigarh Tricity, and expanding across North India. We are independent by design; no developer tie-ups; and every listing passes a publicly documented five-point Verification Framework covering RERA status, builder delivery history, project-level approvals, price fairness, and document availability.
 
 > Full details (leadership, services, verification framework, tools, FAQs, contact): [llms-full.txt](https://www.vedharagroup.com/llms-full.txt)
 
@@ -26,16 +26,16 @@
 - [Calculators](https://www.vedharagroup.com/calculators): Free EMI, stamp duty (Delhi, Haryana, UP), ROI/rental yield, and affordability calculators.
 - [Search Verified Properties](https://www.vedharagroup.com/search): Search verified listings across all nine cities with buy/rent/sell filters.
 - [Videos](https://www.vedharagroup.com/videos): Vedhara Group films on advisory, verification, services and city tours across Delhi NCR, Tricity and Mathura & Vrindavan.
-- [Gurugram](https://www.vedharagroup.com/gurugram): Verified property advisory in Gurugram — Golf Course Road, Dwarka Expressway, Sectors 43–115.
-- [Noida](https://www.vedharagroup.com/noida): Verified property advisory in Noida — Sector 150, 137, 168, Expressway corridor.
-- [Greater Noida](https://www.vedharagroup.com/greater-noida): Verified property advisory in Greater Noida — plots, townships and new projects.
-- [South Delhi](https://www.vedharagroup.com/south-delhi): Verified property advisory in South Delhi — Lutyens', Vasant Vihar, Greater Kailash.
-- [Chandigarh](https://www.vedharagroup.com/chandigarh): Verified property advisory in Chandigarh — Sector 17 and the Capitol Complex.
-- [Mohali](https://www.vedharagroup.com/mohali): Verified property advisory in Mohali — Sector 82 and the airport belt.
-- [Panchkula](https://www.vedharagroup.com/panchkula): Verified property advisory in Panchkula — Sector 19 and the foothills.
-- [Faridabad](https://www.vedharagroup.com/faridabad): Verified property advisory in Faridabad — Sector 21C and the NH-44 corridor.
-- [Ghaziabad](https://www.vedharagroup.com/ghaziabad): Verified property advisory in Ghaziabad — Vaishali, Indirapuram, Raj Nagar.
-- [Mathura & Vrindavan](https://www.vedharagroup.com/mathura-vrindavan): Verified property advisory in Mathura & Vrindavan — Yamuna Expressway plots, Vrindavan villas.
+- [Gurugram](https://www.vedharagroup.com/gurugram): Verified property advisory in Gurugram: Golf Course Road, Dwarka Expressway, Sectors 43–115.
+- [Noida](https://www.vedharagroup.com/noida): Verified property advisory in Noida: Sector 150, 137, 168, Expressway corridor.
+- [Greater Noida](https://www.vedharagroup.com/greater-noida): Verified property advisory in Greater Noida: plots, townships and new projects.
+- [South Delhi](https://www.vedharagroup.com/south-delhi): Verified property advisory in South Delhi: Lutyens', Vasant Vihar, Greater Kailash.
+- [Chandigarh](https://www.vedharagroup.com/chandigarh): Verified property advisory in Chandigarh: Sector 17 and the Capitol Complex.
+- [Mohali](https://www.vedharagroup.com/mohali): Verified property advisory in Mohali: Sector 82 and the airport belt.
+- [Panchkula](https://www.vedharagroup.com/panchkula): Verified property advisory in Panchkula: Sector 19 and the foothills.
+- [Faridabad](https://www.vedharagroup.com/faridabad): Verified property advisory in Faridabad: Sector 21C and the NH-44 corridor.
+- [Ghaziabad](https://www.vedharagroup.com/ghaziabad): Verified property advisory in Ghaziabad: Vaishali, Indirapuram, Raj Nagar.
+- [Mathura & Vrindavan](https://www.vedharagroup.com/mathura-vrindavan): Verified property advisory in Mathura & Vrindavan: Yamuna Expressway plots, Vrindavan villas.
 - [Careers](https://www.vedharagroup.com/careers): Open roles in advisory, research, NRI services, and property management.
 - [Contact](https://www.vedharagroup.com/contact): Book a free consultation; NRI desk available on weekends (IST).
 

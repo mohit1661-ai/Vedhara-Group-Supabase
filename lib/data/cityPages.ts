@@ -981,7 +981,7 @@ const mathuraVrindavan: CityPageData = {
     title: "Sacred Corridors, Real Returns.",
     accent: "One Standard of Care.",
     items: [
-      { name:"Vrindavan", tag:"Spiritual Hub", desc:"The temple heart of Braj — Prem Mandir, ISKCON and Banke Bihari draw pilgrims year-round. Gated plots and villas here enjoy both lifestyle value and strong tourism-driven rental demand.", points:["Prem Mandir & ISKCON","Gated villas & plots","Tourism rentals"] },
+      { name:"Vrindavan", tag:"Spiritual Hub", desc:"The temple heart of Braj; Prem Mandir, ISKCON and Banke Bihari draw pilgrims year-round. Gated plots and villas here enjoy both lifestyle value and strong tourism-driven rental demand.", points:["Prem Mandir & ISKCON","Gated villas & plots","Tourism rentals"] },
       { name:"Yamuna Expressway Corridor", tag:"High Appreciation", desc:"The 165-km expressway linking Greater Noida to Agra is reshaping Mathura's outskirts. YEIDA-approved plotted sectors near interchange points carry the region's strongest land appreciation.", points:["YEIDA approvals","Expressway frontage","Land appreciation"] },
       { name:"Mathura City", tag:"Established", desc:"Dwarkadhish, Holi Gate and the Cantonment anchor mature residential and commercial pockets with schools, hospitals and the railway junction. Stable values and complete infrastructure.", points:["Mature infrastructure","Railway connectivity","Stable values"] },
       { name:"Barsana & Nandgaon", tag:"Heritage", desc:"The birthplace of Radha Rani and home to Lathmar Holi. Growing demand for farmhouses, heritage villas and tourism properties as the Braj circuit develops.", points:["Heritage circuit","Farmhouse living","Tourism growth"] },

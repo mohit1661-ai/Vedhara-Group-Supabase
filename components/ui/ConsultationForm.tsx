@@ -7,16 +7,23 @@ const interests = [
 ];
 
 /**
- * The consultation form used on the Contact page and in the navbar popup.
+ * The consultation form used on the Contact page, in the navbar popup, and on
+ * the homepage lead-capture section.
  * Posts to /api/consultation (Supabase + email + Google Sheets + CRM).
  * The parent decides what to show on success via `onSuccess`.
+ *
+ * `variant` switches the palette:
+ *   "dark"  (default) — for navy/dark surfaces (contact page, navbar modal).
+ *   "light"           — for cream/light surfaces (homepage section).
  */
 export default function ConsultationForm({
   sourcePage,
   onSuccess,
+  variant = "dark",
 }: {
   sourcePage: string;
   onSuccess?: () => void;
+  variant?: "dark" | "light";
 }) {
   const [form, setForm] = useState({ fullName:"",phone:"",email:"",interest:"",message:"",timezone:"" });
   const [status, setStatus] = useState<"idle"|"submitting"|"error">("idle");
@@ -43,7 +50,7 @@ export default function ConsultationForm({
   };
 
   return (
-    <div className="lux-form">
+    <div className={`lux-form${variant === "light" ? " lux-form--light" : ""}`}>
       {/* Refined luxury header */}
       <div className="lux-header">
         <span className="lux-eyebrow">Complimentary Consultation</span>
@@ -107,6 +114,18 @@ export default function ConsultationForm({
         .lux-error{font-family:var(--t-body);font-size:12px;color:#E08A8A;text-align:center;margin:0;}
         .lux-note{font-family:var(--t-body);font-size:10.5px;letter-spacing:0.04em;color:rgba(255,255,255,0.38);text-align:center;margin:0;}
         @media(max-width:520px){.lux-row{grid-template-columns:1fr;}}
+        /* ── Light variant — for cream surfaces (homepage section) ── */
+        .lux-form--light .lux-eyebrow{color:var(--gold-dk);}
+        .lux-form--light .lux-title{color:var(--navy);}
+        .lux-form--light .lux-title em{color:var(--gold-dk);}
+        .lux-form--light .lux-sub{color:var(--slate);}
+        .lux-form--light .lux-label{color:var(--gold-dk);}
+        .lux-form--light .lux-req{color:var(--gold-dk);}
+        .lux-form--light .lux-input{background:rgba(15,30,56,0.045);border:1px solid rgba(212,168,67,0.45);color:var(--navy);}
+        .lux-form--light .lux-input::placeholder{color:rgba(42,45,53,0.42);}
+        .lux-form--light .lux-input:focus{border-color:var(--gold-dk);background:rgba(255,255,255,0.7);box-shadow:0 0 0 3px rgba(212,168,67,0.18), 0 0 22px rgba(212,168,67,0.22);}
+        .lux-form--light .lux-input option{color:var(--ink);background:var(--cream);}
+        .lux-form--light .lux-note{color:rgba(42,45,53,0.45);}
       `}</style>
     </div>
   );

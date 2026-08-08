@@ -10,6 +10,7 @@ import ServicesGrid from "@/components/sections/ServicesGrid";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
+import HomeConsultationSection from "@/components/sections/HomeConsultationSection";
 
 export const metadata: Metadata = {
   title: "Vedhara Group | Verified Property Advisory in Delhi NCR",
@@ -403,6 +404,9 @@ export default function HomePage() {
           { href:"/verification-center", label:"Verification Center", description:"See the framework we use to validate every listing before it reaches the market." },
         ]}
       />
+
+      {/* ══ CONSULTATION FORM — lead capture above the footer ══ */}
+      <HomeConsultationSection />
     </>
   );
 }
