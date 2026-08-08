@@ -22,16 +22,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.vedharagroup.com/search" },
 };
 
+const cityImg = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
+
 const CITY_LINKS = [
-  { label: "Gurugram", href: "/gurugram" },
-  { label: "Noida", href: "/noida" },
-  { label: "Greater Noida", href: "/greater-noida" },
-  { label: "South Delhi", href: "/south-delhi" },
-  { label: "Chandigarh", href: "/chandigarh" },
-  { label: "Mohali", href: "/mohali" },
-  { label: "Panchkula", href: "/panchkula" },
-  { label: "Faridabad", href: "/faridabad" },
-  { label: "Ghaziabad", href: "/ghaziabad" },
+  { label: "Gurugram", href: "/gurugram", img: cityImg(11729105), sub: "Golf Course Road & prime sectors" },
+  { label: "Noida", href: "/noida", img: cityImg(31684126), sub: "Sector 150 & the Expressway corridor" },
+  { label: "Greater Noida", href: "/greater-noida", img: cityImg(15422584), sub: "Plots, townships & new projects" },
+  { label: "South Delhi", href: "/south-delhi", img: cityImg(20418771), sub: "Lutyens', Vasant Vihar & GK" },
+  { label: "Chandigarh", href: "/chandigarh", img: cityImg(32355381), sub: "Sector 17 & the Capitol Complex" },
+  { label: "Mohali", href: "/mohali", img: cityImg(35229793), sub: "Sector 82 & the airport belt" },
+  { label: "Panchkula", href: "/panchkula", img: cityImg(37433082), sub: "Sector 19 & the foothills" },
+  { label: "Faridabad", href: "/faridabad", img: cityImg(30381835), sub: "Sector 21C & the NH-44 corridor" },
+  { label: "Ghaziabad", href: "/ghaziabad", img: cityImg(30368780), sub: "Vaishali, Indirapuram & Raj Nagar" },
 ];
 
 const MODES: { label: string; value?: SearchMode }[] = [
@@ -278,6 +281,15 @@ export default async function SearchPage({
         </div>
       </section>
 
+      {/* Minimal divider between the listings and Explore by City */}
+      <section style={{ background: "var(--cream)", padding: "28px 32px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", gap: 18 }}>
+          <span style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,168,67,0.5))" }} />
+          <span style={{ width: 7, height: 7, background: "var(--gold)", transform: "rotate(45deg)", flexShrink: 0 }} />
+          <span style={{ flex: 1, height: 1, background: "linear-gradient(90deg, rgba(212,168,67,0.5), transparent)" }} />
+        </div>
+      </section>
+
       {/* Explore by city */}
       <section style={{ background: "var(--light)", padding: "60px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -290,14 +302,17 @@ export default async function SearchPage({
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid-3">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18 }} className="grid-3">
             {CITY_LINKS.map((c, i) => (
               <ScrollReveal key={c.href} delay={i * 60}>
-                <Link href={c.href} className="svc-card hover-lift" style={{ display: "block", textDecoration: "none", textAlign: "center", padding: "28px 20px" }}>
-                  <h3 style={{ fontFamily: "var(--t-head)", fontSize: 16, fontWeight: 700, color: "var(--navy)", marginBottom: 6 }}>{c.label}</h3>
-                  <p style={{ fontFamily: "var(--t-body)", fontSize: 12, color: "var(--slate)", margin: 0 }}>
-                    Buy · Rent · Sell · Invest →
-                  </p>
+                <Link href={c.href} className="hover-lift" style={{ display: "block", position: "relative", height: 240, borderRadius: 16, overflow: "hidden", textDecoration: "none", border: "1px solid rgba(212,168,67,0.25)" }}>
+                  <Image src={c.img} alt={`${c.label} real estate, ${c.sub}`} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit: "cover" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(9,15,29,0.12) 0%,rgba(9,15,29,0.82) 100%)" }} />
+                  <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "22px 22px 20px" }}>
+                    <h3 style={{ fontFamily: "var(--t-display)", fontStyle: "italic", fontWeight: 300, fontSize: 24, color: "var(--light)", margin: 0, lineHeight: 1.1 }}>{c.label}</h3>
+                    <p style={{ fontFamily: "var(--t-body)", fontSize: 12, fontWeight: 400, color: "rgba(255,255,255,0.78)", margin: "6px 0 14px" }}>{c.sub}</p>
+                    <span style={{ fontFamily: "var(--t-head)", fontSize: 9.5, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--gold-lt)", display: "inline-flex", alignItems: "center", gap: 5 }}>Explore {c.label} →</span>
+                  </div>
                 </Link>
               </ScrollReveal>
             ))}
