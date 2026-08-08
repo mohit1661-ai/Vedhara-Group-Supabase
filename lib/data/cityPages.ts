@@ -370,7 +370,7 @@ const southDelhi: CityPageData = {
   heroPoster: img(20418771),
   eyebrow: "South Delhi",
   h1: "Real Estate in South Delhi.",
-  h1Accent: "The Address That Needs No Introduction.",
+  h1Accent: "Delhi's Most Coveted Address, Verified.",
   heroBody:
     "Lutyens' Delhi, Vasant Vihar, Greater Kailash, Defence Colony, South Delhi is the capital's most coveted residential market. Scarcity, legacy titles and high ticket sizes make independent verification non-negotiable. We verify title, approvals and price on every South Delhi listing.",
   introEyebrow: "Why South Delhi",
@@ -656,7 +656,7 @@ const panchkula: CityPageData = {
   heroPoster: img(37433082),
   eyebrow: "Panchkula",
   h1: "Real Estate in Panchkula.",
-  h1Accent: "The Green, Planned Haryana Neighbour, Verified.",
+  h1Accent: "Green, Planned Haryana, Verified.",
   heroBody:
     "Panchkula is the green, quiet Haryana neighbour of Chandigarh, planned sectors, lakefront villas and family-friendly streets. We verify HRERA registration, freehold-conversion status and pricing on every listing so you buy with certainty.",
   introEyebrow: "Why Panchkula",
@@ -751,7 +751,7 @@ const faridabad: CityPageData = {
   heroPoster: img(30381835),
   eyebrow: "Faridabad",
   h1: "Real Estate in Faridabad.",
-  h1Accent: "Delhi's Affordable, Connected Neighbour, Verified.",
+  h1Accent: "Delhi's Affordable Neighbour, Verified.",
   heroBody:
     "Faridabad offers some of Delhi NCR's most affordable planned living, minutes from Delhi with the metro and the Expressway. We verify HRERA registration, approvals and price fairness on every Faridabad listing.",
   introEyebrow: "Why Faridabad",

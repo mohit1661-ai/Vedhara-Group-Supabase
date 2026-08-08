@@ -372,6 +372,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <RelatedLinksSection
+        title="Explore the full property journey"
+        intro="These pages connect buyers, investors, sellers, and NRIs to the right next step with deeper guidance and stronger internal relevance."
+        background="cream"
+        variant="journey"
+        links={[
+          { href:"/buy", label:"Buy Property in Delhi NCR", description:"Explore verified residential options and understand how to shortlist the right project with confidence." },
+          { href:"/blog", label:"Real Estate Blog & Market Guides", description:"Read in-depth articles on price trends, RERA, home loans, and NRI investment strategies." },
+          { href:"/verification-center", label:"Verification Center", description:"See the framework we use to validate every listing before it reaches the market." },
+        ]}
+      />
+
       {/* ══ FINAL CTA ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px",textAlign:"center" }}>
         <ScrollReveal>
@@ -393,17 +405,6 @@ export default function HomePage() {
       </section>
 
       <FAQSection faqs={homeFaqs} />
-      <RelatedLinksSection
-        title="Explore the full property journey"
-        intro="These pages connect buyers, investors, sellers, and NRIs to the right next step with deeper guidance and stronger internal relevance."
-        background="cream"
-        variant="journey"
-        links={[
-          { href:"/buy", label:"Buy Property in Delhi NCR", description:"Explore verified residential options and understand how to shortlist the right project with confidence." },
-          { href:"/blog", label:"Real Estate Blog & Market Guides", description:"Read in-depth articles on price trends, RERA, home loans, and NRI investment strategies." },
-          { href:"/verification-center", label:"Verification Center", description:"See the framework we use to validate every listing before it reaches the market." },
-        ]}
-      />
 
       {/* ══ CONSULTATION FORM — lead capture above the footer ══ */}
       <HomeConsultationSection />
