@@ -61,6 +61,33 @@ const stories = [
     tags:["Commercial","Lease","Gurugram","Corporate"],
     gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
   },
+  {
+    title:"NRI Bought a Tricity Apartment Without Flying Back",
+    client:"Ms. Kavita Rao (Toronto-based)",
+    location:"Zirakpur, Chandigarh Tricity",
+    outcome:"2 BHK in a verified project at ₹78 L, full POA-based purchase coordinated from Canada",
+    quote:"I had almost signed with another firm that pushed a project with pending approvals. Vedhara flagged it in the very first call and found me a genuinely verified alternative.",
+    tags:["NRI","Buy","Tricity","Remote","POA"],
+    gradient:"linear-gradient(135deg,#0a1a2e 0%,#1f3a5f 50%,#4a6f9a 100%)",
+  },
+  {
+    title:"HNI Rebalanced a Portfolio for Better Yield and Liquidity",
+    client:"Mr. Rohit Malhotra",
+    location:"South Delhi & Gurugram",
+    outcome:"Sold two underperforming assets, redeployed ₹4.6 Cr into an income-generating commercial and residential mix",
+    quote:"Vedhara showed me with data that two of my holdings were bleeding opportunity cost. The rebalancing lifted my blended yield while improving my exit options.",
+    tags:["HNI","Portfolio","Rebalancing","Delhi","Gurugram"],
+    gradient:"linear-gradient(135deg,#1a1a3a 0%,#2a2a5a 50%,#D4A843 100%)",
+  },
+  {
+    title:"First Investment Property for a Young Professional",
+    client:"Mr. Sahil Verma",
+    location:"Greater Noida West",
+    outcome:"1 BHK under-construction unit at ₹42 L, structured to be EMI-neutral with rental upside",
+    quote:"As a first-time investor I needed someone to walk me through every risk. Vedhara did the math with me line by line before I committed a single rupee.",
+    tags:["First-Time Investor","Residential","Greater Noida"],
+    gradient:"linear-gradient(135deg,#0f1e2a 0%,#1a3a4a 50%,#3a6a7a 100%)",
+  },
 ];
 
 const storiesFaqs = [

@@ -532,12 +532,12 @@ export default function HomePage() {
             {testimonials.map((t,i)=>(
               <ScrollReveal key={t.name} delay={i*90} style={{ display:"flex" }}>
                 <Link href="/success-stories" style={{ textDecoration:"none",display:"block",flex:1 }}>
-                  <div className="svc-card" style={{ borderRadius:0,height:"100%" }}>
+                  <div className="svc-card" style={{ borderRadius:0,height:"100%",display:"flex",flexDirection:"column" }}>
                     <div className="gold-accent" />
                     <h3 className="svc-card-title">{t.name}</h3>
                     <p className="svc-card-desc">{t.quote}</p>
                     <p className="svc-card-desc" style={{ fontSize:10.5,letterSpacing:"0.06em",textTransform:"uppercase",marginTop:-4 }}>{t.detail}</p>
-                    <span className="svc-card-arrow">Read Story →</span>
+                    <span className="svc-card-arrow" style={{ marginTop:"auto" }}>Read Story →</span>
                   </div>
                 </Link>
               </ScrollReveal>
