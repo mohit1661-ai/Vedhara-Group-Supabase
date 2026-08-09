@@ -57,7 +57,7 @@ export default function FAQSection({ faqs=[], title, dark=true, groups, decor }:
             return (
               <div key={gi}>
                 <div style={{ padding:"18px 28px 10px",background:dark?"rgba(255,255,255,0.02)":"rgba(42,45,53,0.03)",borderBottom:`1px solid ${bc}` }}>
-                  <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:dark?"var(--gold-lt)":"var(--gold-dk)",margin:0 }}>
+                  <p style={{ fontFamily:"var(--t-head)",fontSize:10.5,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:dark?"var(--gold-lt)":"var(--gold-ink)",margin:0 }}>
                     {g.icon?`${g.icon}  `:""}{g.label}
                   </p>
                 </div>

@@ -98,9 +98,9 @@ export default function MarketInsightsPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Market Intelligence</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Market Intelligence</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Data-Driven Perspective<br /><span style={{ color:"var(--gold-dk)" }}>on Delhi NCR Real Estate</span>
+                Data-Driven Perspective<br /><span style={{ color:"var(--gold-ink)" }}>on Delhi NCR Real Estate</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               Vedhara&apos;s research team tracks price movements, infrastructure developments, and demand patterns across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. Our insights are grounded in verified transaction data and ground-level assessments, not aggregated portal listings.
@@ -134,7 +134,7 @@ export default function MarketInsightsPage() {
             <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)",display:"flex",flexDirection:"column" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
               <div style={{ flex:1 }}>
-                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who This Is For</p>
+                <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Who This Is For</p>
                 <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who This Is For</h2>
                 {whoForItems.map(item=>(
                   <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>
@@ -157,9 +157,9 @@ export default function MarketInsightsPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:52 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Why Vedhara</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Why Vedhara</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Market Intelligence,<br /><span style={{ color:"var(--gold-dk)" }}>Done Differently</span>
+                Market Intelligence,<br /><span style={{ color:"var(--gold-ink)" }}>Done Differently</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 Most market research tells you what happened. Vedhara tells you what it means and why it matters for your next property decision.
@@ -174,7 +174,7 @@ export default function MarketInsightsPage() {
                   <div style={{ height:3,background:"linear-gradient(90deg,var(--gold),var(--gold-lt))",flexShrink:0 }} />
                   <div style={{ padding:"28px 28px 24px",flex:1,display:"flex",flexDirection:"column" }}>
                     <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:12 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
                       <div style={{ flex:1,height:1,background:"rgba(212,168,67,0.12)" }} />
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>{d.title}</h3>

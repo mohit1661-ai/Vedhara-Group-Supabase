@@ -228,7 +228,7 @@ export default async function SearchPage({
                 </h2>
               </div>
               {(q || mode || type || budget) && (
-                <Link href="/search" style={{ fontFamily: "var(--t-head)", fontSize: 12, color: "var(--gold-dk)", textDecoration: "none", borderBottom: "1px solid var(--gold)" }}>
+                <Link href="/search" style={{ fontFamily: "var(--t-head)", fontSize: 12, color: "var(--gold-ink)", textDecoration: "none", borderBottom: "1px solid var(--gold)" }}>
                   ✕ Clear all filters
                 </Link>
               )}
@@ -258,7 +258,7 @@ export default async function SearchPage({
                     </div>
                     <div style={{ padding: 20, flex: 1, display: "flex", flexDirection: "column" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
-                        <span style={{ fontFamily: "var(--t-head)", fontSize: 8.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 8px", background: "rgba(212,168,67,0.12)", color: "var(--gold-dk)", borderRadius: 3 }}>
+                        <span style={{ fontFamily: "var(--t-head)", fontSize: 8.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 8px", background: "rgba(212,168,67,0.12)", color: "var(--gold-ink)", borderRadius: 3 }}>
                           {property.category}
                         </span>
                         <span style={{ fontFamily: "var(--t-head)", fontSize: 8.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 8px", background: "rgba(15,30,56,0.06)", color: "var(--navy)", borderRadius: 3 }}>
@@ -290,7 +290,7 @@ export default async function SearchPage({
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: 24 }}>
                 {CITY_LINKS.map((c) => (
-                  <Link key={c.href} href={c.href} style={{ fontFamily: "var(--t-head)", fontSize: 11.5, fontWeight: 600, padding: "8px 14px", borderRadius: 20, background: "rgba(212,168,67,0.1)", color: "var(--gold-dk)", textDecoration: "none", border: "1px solid rgba(212,168,67,0.3)" }}>
+                  <Link key={c.href} href={c.href} style={{ fontFamily: "var(--t-head)", fontSize: 11.5, fontWeight: 600, padding: "8px 14px", borderRadius: 20, background: "rgba(212,168,67,0.1)", color: "var(--gold-ink)", textDecoration: "none", border: "1px solid rgba(212,168,67,0.3)" }}>
                     {c.label} →
                   </Link>
                 ))}

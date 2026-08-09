@@ -74,8 +74,8 @@ export default function ConsultationForm({
           <input type="email" value={form.email} onChange={e=>up("email",e.target.value)} className="lux-input" placeholder="your@email.com" />
         </div>
         <div>
-          <label className="lux-label">I Am Interested In <span className="lux-req">*</span></label>
-          <select required value={form.interest} onChange={e=>up("interest",e.target.value)} className="lux-input">
+          <label className="lux-label" htmlFor="interest">I Am Interested In <span className="lux-req">*</span></label>
+          <select id="interest" required value={form.interest} onChange={e=>up("interest",e.target.value)} className="lux-input">
             <option value="">Select a service…</option>
             {interests.map(i=><option key={i} value={i}>{i}</option>)}
           </select>
@@ -115,17 +115,17 @@ export default function ConsultationForm({
         .lux-note{font-family:var(--t-body);font-size:10.5px;letter-spacing:0.04em;color:rgba(255,255,255,0.38);text-align:center;margin:0;}
         @media(max-width:520px){.lux-row{grid-template-columns:1fr;}}
         /* ── Light variant — for cream surfaces (homepage section) ── */
-        .lux-form--light .lux-eyebrow{color:var(--gold-dk);}
+        .lux-form--light .lux-eyebrow{color:var(--gold-ink);}
         .lux-form--light .lux-title{color:var(--navy);}
-        .lux-form--light .lux-title em{color:var(--gold-dk);}
+        .lux-form--light .lux-title em{color:var(--gold-ink);}
         .lux-form--light .lux-sub{color:var(--slate);}
-        .lux-form--light .lux-label{color:var(--gold-dk);}
-        .lux-form--light .lux-req{color:var(--gold-dk);}
+        .lux-form--light .lux-label{color:var(--gold-ink);}
+        .lux-form--light .lux-req{color:var(--gold-ink);}
         .lux-form--light .lux-input{background:rgba(15,30,56,0.045);border:1px solid rgba(212,168,67,0.45);color:var(--navy);}
         .lux-form--light .lux-input::placeholder{color:rgba(42,45,53,0.42);}
         .lux-form--light .lux-input:focus{border-color:var(--gold-dk);background:rgba(255,255,255,0.7);box-shadow:0 0 0 3px rgba(212,168,67,0.18), 0 0 22px rgba(212,168,67,0.22);}
         .lux-form--light .lux-input option{color:var(--ink);background:var(--cream);}
-        .lux-form--light .lux-note{color:rgba(42,45,53,0.45);}
+        .lux-form--light .lux-note{color:var(--slate);}
       `}</style>
     </div>
   );

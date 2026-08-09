@@ -173,7 +173,7 @@ export default function ContactPage() {
         }
         .service-tag:hover {
           border-color: var(--gold);
-          color: var(--gold-dk);
+          color: var(--gold-ink);
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(212,168,67,0.15);
         }

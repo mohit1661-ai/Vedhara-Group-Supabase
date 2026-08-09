@@ -46,7 +46,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
           <ScrollReveal delay={120} direction="right">
             <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
               <span className="v-line" style={{ background:"var(--gold)" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>{content.whoForTitle||"Who This Is For"}</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>{content.whoForTitle||"Who This Is For"}</p>
               <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>{content.whoForTitle||"Who This Is For"}</h2>
               {content.whoFor.map(item=>(
                 <div key={item} style={{ display:"flex",gap:14,marginBottom:16,alignItems:"flex-start" }}>

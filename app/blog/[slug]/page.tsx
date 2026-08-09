@@ -72,9 +72,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <div style={{ maxWidth:720,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Overview</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Overview</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Understanding the <span style={{ color:"#d4a843" }}>Big Picture</span>
+              Understanding the <span style={{ color:"var(--gold-ink)" }}>Big Picture</span>
             </h2>
             {post.intro.map((para,idx)=>(
               <p key={idx} className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:14 }}>
@@ -196,9 +196,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:40 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Keep Reading</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Keep Reading</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:12 }}>
-                More Articles for <span style={{ color:"#d4a843" }}>Property Buyers</span>
+                More Articles for <span style={{ color:"var(--gold-ink)" }}>Property Buyers</span>
               </h2>
             </div>
           </ScrollReveal>
@@ -212,7 +212,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                       <span style={{ position:"relative",zIndex:1,fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"3px 10px",borderRadius:20,background:"rgba(255,255,255,0.12)",color:"rgba(255,255,255,0.9)",border:"1px solid rgba(255,255,255,0.25)" }}>{other.category}</span>
                     </div>
                     <div style={{ padding:"18px 20px 20px",flex:1,display:"flex",flexDirection:"column" }}>
-                      <p style={{ fontFamily:"var(--t-body)",fontSize:10,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{other.readTime}</p>
+                      <p style={{ fontFamily:"var(--t-body)",fontSize:10,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{other.readTime}</p>
                       <h3 style={{ fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{other.title}</h3>
                       <p className="body-sm" style={{ color:"var(--slate)",fontSize:11.5,lineHeight:1.7,flex:1 }}>{other.excerpt}</p>
                       <div style={{ paddingTop:14,marginTop:10,borderTop:"1px solid rgba(212,168,67,0.15)" }}>

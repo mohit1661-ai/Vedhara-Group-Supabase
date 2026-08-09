@@ -165,7 +165,7 @@ export default function TeamPage() {
                   <div style={{ padding:"24px 32px 28px" }}>
                     <div style={{ marginBottom:18 }}>
                       <h3 style={{ fontFamily:"var(--t-head)",fontSize:22,fontWeight:700,color:"var(--navy)",marginBottom:4 }}>{member.name}</h3>
-                      <p style={{ fontFamily:"var(--t-body)",fontSize:12,color:"var(--gold-dk)",letterSpacing:"0.04em",margin:0,textTransform:"uppercase" }}>{member.title}</p>
+                      <p style={{ fontFamily:"var(--t-body)",fontSize:12,color:"var(--gold-ink)",letterSpacing:"0.04em",margin:0,textTransform:"uppercase" }}>{member.title}</p>
                     </div>
                     <p className="body-sm" style={{ color:"var(--slate)",lineHeight:1.85,marginBottom:20 }}>
                       {member.description}
@@ -180,7 +180,7 @@ export default function TeamPage() {
                     <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.06)",borderRadius:6,overflow:"hidden" }}>
                       {member.stats.map(stat=>(
                         <div key={stat.label} style={{ padding:"12px 8px",textAlign:"center",background:"var(--cream)" }}>
-                          <div style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--gold-dk)",lineHeight:1,marginBottom:4 }}>{stat.num}</div>
+                          <div style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--gold-ink)",lineHeight:1,marginBottom:4 }}>{stat.num}</div>
                           <div style={{ fontFamily:"var(--t-body)",fontSize:8.5,color:"var(--slate)",textTransform:"uppercase",letterSpacing:"0.06em" }}>{stat.label}</div>
                         </div>
                       ))}

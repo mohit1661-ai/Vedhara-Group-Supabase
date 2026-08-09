@@ -111,10 +111,10 @@ export default function HomePage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>How It Works</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>How It Works</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
                 Three Steps to a{" "}
-                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Verified Property Decision</em>
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Verified Property Decision</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
                 Independent advice, verified information and a transparent process, from your first enquiry to your final decision.
@@ -248,7 +248,7 @@ export default function HomePage() {
                 </h2>
               </div>
             </ScrollReveal>
-            <Link href="/services" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-dk))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Services →</Link>
+            <Link href="/services" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Services →</Link>
           </div>
           <ServicesGrid />
         </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
               <p className="eyebrow" style={{ marginBottom:14 }}>Why Vedhara</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
                 The Standard Others in Delhi NCR{" "}
-                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Are Still Catching Up To</em>
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Are Still Catching Up To</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:720,margin:"16px auto 0" }}>
                 Most real estate platforms are developer-distribution channels disguised as advisors: unverified listings, developer-set pricing, and sales-driven teams. Vedhara is different: published due-diligence on every listing, transparent fees, and one named advisor from day one.
@@ -328,10 +328,10 @@ export default function HomePage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:36 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Decide With Data</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Decide With Data</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:16 }}>
                 Four Free Tools,{" "}
-                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>No Sign-Up Required</em>
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>No Sign-Up Required</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
                 Every property decision in Delhi NCR comes down to numbers. These four tools are free, instant, and available without sharing your contact details. Run the numbers first. Then talk to an advisor.
@@ -399,7 +399,7 @@ export default function HomePage() {
                   {/* Content - matching featured properties style */}
                   <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
                     <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:6 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
                         {member.title}
                       </span>
                     </div>
@@ -408,7 +408,7 @@ export default function HomePage() {
                       {member.desc}
                     </p>
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em" }}>Vedhara Group</span>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em" }}>Vedhara Group</span>
                       <Link href="/team" style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,color:"var(--gold)",textTransform:"uppercase",letterSpacing:"0.06em",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:4 }}>
                         View Bio →
                       </Link>
@@ -452,7 +452,7 @@ export default function HomePage() {
                   <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Our Advisors</em>
                 </h2>
               </div>
-              <Link href="/blog" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-dk))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Articles →</Link>
+              <Link href="/blog" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Articles →</Link>
             </div>
           </ScrollReveal>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="grid-3">
@@ -469,7 +469,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div style={{ padding:"20px 24px 22px",flex:1,display:"flex",flexDirection:"column" }}>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{post.readTime}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{post.readTime}</p>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
                     <div style={{ paddingTop:14,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
@@ -492,7 +492,7 @@ export default function HomePage() {
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:20 }}>
               Your Next Property Decision Deserves{" "}
-              <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Independent Advice.</em>
+              <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Independent Advice.</em>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28 }}>
               Whether you are buying, selling, investing, or managing property from abroad, start with an honest conversation, not a sales pitch.
@@ -518,10 +518,10 @@ export default function HomePage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:44 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Client Success Stories</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Client Success Stories</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1 }}>
                 Real Clients.{" "}
-                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Real Outcomes.</em>
+                <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Real Outcomes.</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
                 Every story is a genuine Vedhara engagement, shared with permission. No stock photos, no fictional scenarios, no sales scripts.

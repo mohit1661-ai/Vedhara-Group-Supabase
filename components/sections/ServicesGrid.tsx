@@ -40,7 +40,7 @@ export default function ServicesGrid() {
         .svc-new-index { font-family: var(--t-display); font-style: italic; font-weight: 300; font-size: 42px; line-height: 1; color: rgba(184,146,42,0.3); margin-bottom: 14px; display: block; }
         .svc-new-title { font-family: var(--t-head); font-size: 15.5px; font-weight: 700; color: var(--navy); margin: 0 0 10px; line-height: 1.25; }
         .svc-new-desc { font-family: var(--t-body); font-size: 12.5px; color: var(--slate); line-height: 1.6; margin: 0 0 18px; flex: 1; }
-        .svc-new-arrow { font-family: var(--t-head); font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dk); display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s ease; }
+        .svc-new-arrow { font-family: var(--t-head); font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-ink); display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s ease; }
         .svc-new-card:hover .svc-new-arrow { gap: 10px; }
         @media (max-width: 1024px) { .svc-new-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
         @media (max-width: 640px) { .svc-new-grid { grid-template-columns: 1fr !important; } }

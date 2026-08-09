@@ -135,9 +135,9 @@ export default function PrivacyPage() {
         <div style={{ maxWidth:900,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Your Privacy Matters</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Your Privacy Matters</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              How We Handle <br className="br-desktop" /><span style={{ color:"#d4a843" }}>Your Data</span>
+              How We Handle <br className="br-desktop" /><span style={{ color:"var(--gold-ink)" }}>Your Data</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               Vedhara Group respects your privacy. This policy explains what we collect and how we use it.<br className="br-desktop" />How we protect it, and the rights you hold over it. Wherever you are, we handle your data transparently and securely.

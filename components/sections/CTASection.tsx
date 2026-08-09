@@ -9,7 +9,7 @@ export default function CTASection() {
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:20 }}>
             Ready to Make Your{" "}
-            <em className="display-gold" style={{ fontSize:"inherit",color:"#d4a843" }}>Next Property Move?</em>
+            <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Next Property Move?</em>
           </h2>
           <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28 }}>
             Independent advisory · Verified listings · Free consultation

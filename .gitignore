@@ -52,3 +52,6 @@ next-env.d.ts
 # Lead data (local dev only — on Vercel use /tmp)
 /data/
 leads.json
+
+lh*.json
+lighthouse-*.json

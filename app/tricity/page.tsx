@@ -283,7 +283,7 @@ export default function TricityPage() {
                   {/* Content */}
                   <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
                     <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
                         {property.type}
                       </span>
                     </div>
@@ -292,7 +292,7 @@ export default function TricityPage() {
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:14,flex:1,alignContent:"flex-start" }}>
                       {property.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 8px",background:"rgba(212,168,67,0.08)",color:"var(--gold-dk)",borderRadius:3 }}>
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 8px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
                           {h}
                         </span>
                       ))}
@@ -415,12 +415,12 @@ export default function TricityPage() {
                   {/* Content */}
                   <div style={{ padding:20, display:"flex", flexDirection:"column", height:"calc(100% - 170px)" }}>
                     <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:6 }}>
-                      <span style={{ fontFamily:"var(--t-head)", fontSize:8.5, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", padding:"3px 8px", background:"rgba(212,168,67,0.12)", color:"var(--gold-dk)", borderRadius:3 }}>{j.applies}</span>
+                      <span style={{ fontFamily:"var(--t-head)", fontSize:8.5, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", padding:"3px 8px", background:"rgba(212,168,67,0.12)", color:"var(--gold-ink)", borderRadius:3 }}>{j.applies}</span>
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)", fontSize:16, fontWeight:700, color:"var(--navy)", marginBottom:6, marginTop:4 }}>{j.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)", lineHeight:1.7, fontSize:12, margin:"0 0 12px", flex:1 }}>{j.body}</p>
                     <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", borderTop:"1px solid rgba(212,168,67,0.2)", paddingTop:12 }}>
-                      <span style={{ fontFamily:"var(--t-head)", fontSize:9.5, fontWeight:700, color:"var(--gold-dk)", textTransform:"uppercase", letterSpacing:"0.06em" }}>Verified Authority</span>
+                      <span style={{ fontFamily:"var(--t-head)", fontSize:9.5, fontWeight:700, color:"var(--gold-ink)", textTransform:"uppercase", letterSpacing:"0.06em" }}>Verified Authority</span>
                       <span style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:700, color:"var(--gold)", textTransform:"uppercase", letterSpacing:"0.06em", display:"inline-flex", alignItems:"center", gap:4 }}>Check Process →</span>
                     </div>
                   </div>

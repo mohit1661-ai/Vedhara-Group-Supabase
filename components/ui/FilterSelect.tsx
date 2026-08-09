@@ -160,7 +160,7 @@ export default function FilterSelect({
           transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
         .fs-btn:hover, .fs-btn:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,168,67,0.18); outline: none; }
-        .fs-caret { font-size: 11px; color: var(--gold-dk); transition: transform 0.25s ease; flex-shrink: 0; }
+        .fs-caret { font-size: 11px; color: var(--gold-ink); transition: transform 0.25s ease; flex-shrink: 0; }
         .fs-caret.open { transform: rotate(180deg); }
         .fs-opt {
           font-family: var(--t-body); font-size: 13.5px; color: var(--navy); text-align: left;
@@ -168,7 +168,7 @@ export default function FilterSelect({
           padding: 9px 12px; cursor: pointer; transition: background 0.2s ease, color 0.2s ease;
         }
         .fs-opt:hover { background: rgba(212,168,67,0.12); }
-        .fs-opt.active { background: linear-gradient(135deg, var(--gold), var(--gold-dk)); font-weight: 700; }
+        .fs-opt.active { background: linear-gradient(135deg, var(--gold), var(--gold-lt)); font-weight: 700; }
       `}</style>
     </div>
   );

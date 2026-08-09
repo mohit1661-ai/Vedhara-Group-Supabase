@@ -208,20 +208,20 @@ export default function PropertySearch() {
           transition: all 0.25s ease;
         }
         .ps-mode:hover {
-          background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+          background: linear-gradient(135deg, var(--gold), var(--gold-lt));
           color: var(--navy); border-color: var(--gold);
           box-shadow: 0 8px 20px -8px rgba(212,168,67,0.6);
         }
         .ps-mode-active {
-          background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+          background: linear-gradient(135deg, var(--gold), var(--gold-lt));
           color: var(--navy); border-color: var(--gold); box-shadow: 0 8px 20px -8px rgba(212,168,67,0.6);
         }
-        .ps-mode-active:hover { background: linear-gradient(135deg, var(--gold), var(--gold-dk)); color: var(--navy); }
+        .ps-mode-active:hover { background: linear-gradient(135deg, var(--gold), var(--gold-lt)); color: var(--navy); }
         .ps-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr auto; gap: 12px; align-items: end; }
         .ps-field { display: flex; flex-direction: column; gap: 6px; }
         .ps-label {
           font-family: var(--t-head); font-size: 9px; font-weight: 700;
-          letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dk);
+          letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink);
         }
         .ps-input {
           font-family: var(--t-body); font-size: 14px; color: var(--navy);
@@ -234,7 +234,7 @@ export default function PropertySearch() {
         .ps-submit {
           font-family: var(--t-head); font-size: 11px; font-weight: 700;
           letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy);
-          background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+          background: linear-gradient(135deg, var(--gold), var(--gold-lt));
           border: none; border-radius: 10px; padding: 13px 26px; cursor: pointer;
           white-space: nowrap; transition: transform 0.2s ease, box-shadow 0.25s ease;
         }

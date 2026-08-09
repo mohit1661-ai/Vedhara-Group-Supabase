@@ -124,7 +124,7 @@ export default function FeaturedProperties() {
                 </div>
                 <div style={{ padding:20 }}>
                   <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
-                    <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-dk)",borderRadius:3 }}>
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
                       {p.category}
                     </span>
                   </div>

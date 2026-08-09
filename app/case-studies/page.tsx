@@ -86,9 +86,9 @@ export default function CaseStudiesPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Featured Engagements</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Featured Engagements</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Every Engagement Teaches Us<br /><span style={{ color:"#d4a843" }}>Something New</span>
+              Every Engagement Teaches Us<br /><span style={{ color:"var(--gold-ink)" }}>Something New</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:48 }}>
               These case studies represent some of the more complex and rewarding advisory engagements we have handled across Gurugram, Noida, Faridabad, Manesar, Chandigarh and the wider North India region. Each one reflects our commitment to thoroughness, transparency, and client-first outcomes, whether we are guiding a first-time buyer, an NRI investor, or a corporate tenant, regardless of transaction size. Real client journeys, verified outcomes, and the measurable impact of independent advisory.
@@ -150,9 +150,9 @@ export default function CaseStudiesPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Our Expertise</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Our Expertise</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Advisory Across the<br /><span style={{ color:"#d4a843" }}>Full Property Lifecycle</span>
+                Advisory Across the<br /><span style={{ color:"var(--gold-ink)" }}>Full Property Lifecycle</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 From first-time buyers to portfolio investors, our advisory covers every stage of the real estate journey, in every major corridor of Delhi NCR.
@@ -182,7 +182,7 @@ export default function CaseStudiesPage() {
             <ScrollReveal delay={120} direction="right">
               <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
                 <span className="v-line" style={{ background:"var(--gold)" }} />
-                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Strategy</p>
+                <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Strategy</p>
                 <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Strategy &amp; Portfolio Management</h2>
                 <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   Beyond individual transactions, we help clients build, manage, and optimise their real estate portfolios for long-term wealth creation, tax efficiency, and risk diversification.
@@ -205,9 +205,9 @@ export default function CaseStudiesPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Client Journeys</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Client Journeys</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Real Problems,<br /><span style={{ color:"#d4a843" }}>Verified Results</span>
+                Real Problems,<br /><span style={{ color:"var(--gold-ink)" }}>Verified Results</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 A closer look at six engagements that show how independent advisory creates measurable value for buyers, sellers, investors, and corporate clients across Delhi NCR.
@@ -229,18 +229,18 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
                   <div style={{ padding:"24px 24px 20px",flex:1,display:"flex",flexDirection:"column" }}>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:2 }}>{c.client}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:2 }}>{c.client}</p>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{c.title}</h3>
                     <div style={{ marginBottom:10 }}>
-                      <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:2 }}>Challenge</p>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--gold-ink)",marginBottom:2 }}>Challenge</p>
                       <p className="body-sm" style={{ color:"var(--slate)",fontSize:11.5,lineHeight:1.6 }}>{c.challenge}</p>
                     </div>
                     <div style={{ marginBottom:10 }}>
-                      <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:2 }}>Approach</p>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--gold-ink)",marginBottom:2 }}>Approach</p>
                       <p className="body-sm" style={{ color:"var(--slate)",fontSize:11.5,lineHeight:1.6 }}>{c.approach}</p>
                     </div>
                     <div style={{ padding:"12px 14px",background:"rgba(212,168,67,0.06)",borderRadius:8,borderLeft:"2px solid var(--gold)",marginTop:"auto" }}>
-                      <p style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--gold-dk)",marginBottom:2 }}>Outcome</p>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--gold-ink)",marginBottom:2 }}>Outcome</p>
                       <p className="body-sm" style={{ color:"var(--ink)",fontSize:11.5,lineHeight:1.6,margin:0 }}>{c.outcome}</p>
                     </div>
                   </div>

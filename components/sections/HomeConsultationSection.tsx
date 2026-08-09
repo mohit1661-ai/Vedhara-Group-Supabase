@@ -73,7 +73,7 @@ export default function HomeConsultationSection() {
             <div style={{ background:"var(--light)", borderRadius:17, padding:"38px 36px 32px" }}>
               {done ? (
                 <div style={{ textAlign:"center", padding:"28px 8px" }}>
-                  <div style={{ width:56, height:56, margin:"0 auto 20px", borderRadius:"50%", background:"rgba(212,168,67,0.18)", border:"1px solid rgba(212,168,67,0.55)", display:"flex", alignItems:"center", justifyContent:"center", color:"var(--gold-dk)", fontSize:24 }}>✓</div>
+                  <div style={{ width:56, height:56, margin:"0 auto 20px", borderRadius:"50%", background:"rgba(212,168,67,0.18)", border:"1px solid rgba(212,168,67,0.55)", display:"flex", alignItems:"center", justifyContent:"center", color:"var(--gold-ink)", fontSize:24 }}>✓</div>
                   <h3 className="heading-lg" style={{ color:"var(--navy)", marginBottom:10, lineHeight:1.2 }}>Thank you for reaching out</h3>
                   <p className="body-md" style={{ color:"var(--slate)", margin:"0 0 24px" }}>
                     A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.

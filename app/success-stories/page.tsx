@@ -94,9 +94,9 @@ export default function SuccessStoriesPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Client Outcomes</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Client Outcomes</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Every Client Has a Story,<br /><span style={{ color:"#d4a843" }}>Here Are a Few</span>
+              Every Client Has a Story,<br /><span style={{ color:"var(--gold-ink)" }}>Here Are a Few</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               From first-time buyers in Noida to NRI investors in Dubai and corporate tenants in Gurugram, each engagement reflects the same commitment, independent advice, verified information, and transparent process.
@@ -111,9 +111,9 @@ export default function SuccessStoriesPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>How We Help Clients Succeed</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>How We Help Clients Succeed</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                The Vedhara Approach to<br /><span style={{ color:"#d4a843" }}>Client Outcomes</span>
+                The Vedhara Approach to<br /><span style={{ color:"var(--gold-ink)" }}>Client Outcomes</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 Independent advice, verified properties, and a fee structure that aligns with your interest, not a developer&apos;s margin.
@@ -143,7 +143,7 @@ export default function SuccessStoriesPage() {
             <ScrollReveal delay={120} direction="right">
               <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
                 <span className="v-line" style={{ background:"var(--gold)" }} />
-                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Who We Serve</p>
+                <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Who We Serve</p>
                 <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who We Serve</h2>
                 <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   Our clients range from first-time home buyers in Faridabad to HNI investors managing multi-crore portfolios across Noida, Gurugram, and Delhi. We also serve a significant base of NRI clients across UAE, USA, UK, Canada, and Singapore who rely on us for end-to-end remote advisory and transaction management.
@@ -193,7 +193,7 @@ export default function SuccessStoriesPage() {
                     <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:14 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",padding:"3px 8px",background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderRadius:3,flexShrink:0 }}>Vedhara</span>
                       <div style={{ flex:1,height:1,background:"rgba(212,168,67,0.15)" }} />
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,color:"var(--gold-dk)",opacity:0.5 }}>0{i+1}</span>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,color:"var(--gold-ink)",opacity:0.5 }}>0{i+1}</span>
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:16,fontWeight:700,color:"var(--navy)",marginBottom:10,lineHeight:1.3 }}>{item.title}</h3>
                     <p className="body-md" style={{ color:"var(--slate)",fontSize:13,lineHeight:1.8,flex:1 }}>{item.desc}</p>
@@ -223,7 +223,7 @@ export default function SuccessStoriesPage() {
                     </div>
                   </div>
                   <div style={{ padding:"24px 24px 20px",flex:1,display:"flex",flexDirection:"column" }}>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:2 }}>{s.client}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:2 }}>{s.client}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--slate)",marginBottom:8 }}>{s.location}</p>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{s.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{s.outcome}</p>

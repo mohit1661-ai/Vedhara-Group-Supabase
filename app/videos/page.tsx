@@ -119,7 +119,7 @@ export default function VideosPage() {
                   <p className="eyebrow" style={{ color:"var(--gold)", marginBottom:8, fontSize:10 }}>
                     Vedhara Group · Film {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="heading-lg" style={{ color:"var(--light)", fontSize:22, lineHeight:1.25, marginBottom:10 }}>{v.title}</h3>
+                  <h2 className="heading-lg" style={{ color:"var(--light)", fontSize:22, lineHeight:1.25, marginBottom:10 }}>{v.title}</h2>
                   <p className="body-md" style={{ color:"rgba(252,250,244,0.7)", margin:0, fontSize:13.5, lineHeight:1.65 }}>{v.desc}</p>
                 </div>
               </article>

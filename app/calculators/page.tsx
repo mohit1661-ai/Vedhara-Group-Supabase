@@ -216,7 +216,7 @@ export default function CalculatorsPage() {
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
             <h2 className="heading-xl" style={{ color:"var(--navy)",lineHeight:1.1,marginBottom:20 }}>
               Run the Numbers, Then{" "}
-              <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-dk)" }}>Talk to an Advisor.</em>
+              <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Talk to an Advisor.</em>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28 }}>
               Calculators give you the data. A conversation gives you the context. Speak with a Vedhara advisor to understand what the numbers mean for your specific situation.

@@ -131,9 +131,9 @@ export default function TermsPage() {
         <div style={{ maxWidth:900,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Website Terms of Use</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Website Terms of Use</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Understanding Your <br className="br-desktop" /><span style={{ color:"#d4a843" }}>Rights &amp; Responsibilities</span>
+              Understanding Your <br className="br-desktop" /><span style={{ color:"var(--gold-ink)" }}>Rights &amp; Responsibilities</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               These terms govern your use of our website and its tools. By accessing this site, you agree to the terms below.<br className="br-desktop" />For specific advisory engagements, separate contracts apply. Read carefully to understand your rights and responsibilities.

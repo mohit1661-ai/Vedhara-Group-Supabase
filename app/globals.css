@@ -1,7 +1,7 @@
 @import "tailwindcss";
 :root {
   --navy:#0F1E38;--navy-mid:#16243F;--navy-deep:#090F1D;
-  --gold:#D4A843;--gold-lt:#E8C970;--gold-dk:#B8922A;
+  --gold:#D4A843;--gold-lt:#E8C970;--gold-dk:#B8922A;--gold-ink:#7C6213;
   --cream:#F9F6EF;
   --ink:#2A2D35;--slate:#5A6070;
   --light:#F5F0E8;
@@ -52,7 +52,7 @@ img,video{max-width:100%;height:auto;}
 .heading-xl{font-family:var(--t-head);font-size:clamp(32px,5vw,56px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;}
 .heading-lg{font-family:var(--t-head);font-size:clamp(24px,3.5vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.015em;}
 .heading-md{font-family:var(--t-head);font-size:clamp(20px,2.8vw,30px);font-weight:600;line-height:1.25;}
-.eyebrow{font-family:var(--t-head);font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dk);}
+.eyebrow{font-family:var(--t-head);font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-ink);}
 .video-hero .eyebrow{color:var(--gold-lt);} /* brighter gold so hero eyebrows read clearly over video */
 .body-lg{font-family:var(--t-body);font-size:16px;font-weight:300;line-height:1.85;}
 .body-md{font-family:var(--t-body);font-size:14px;line-height:1.75;}

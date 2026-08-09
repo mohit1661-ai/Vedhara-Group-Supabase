@@ -55,7 +55,7 @@ export default function Footer() {
             </div>          </div>
           {cols.map(col=>(
             <div key={col.title}>
-              <h4 style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:18 }}>{col.title}</h4>
+              <h2 style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:"var(--gold-lt)",marginBottom:18 }}>{col.title}</h2>
               {col.links.map(link=>(<Link key={link.h} href={link.h} className="footer-nav-link">{link.l}</Link>))}
             </div>
           ))}

@@ -58,9 +58,9 @@ export default function BlogPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Latest Articles</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Latest Articles</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Expert Knowledge for<br /><span style={{ color:"#d4a843" }}>Smarter Property Decisions</span>
+              Expert Knowledge for<br /><span style={{ color:"var(--gold-ink)" }}>Smarter Property Decisions</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               From market trends to legal guides, our articles are written by Vedhara&apos;s advisory team based on real transaction data and ground-level experience across Delhi NCR, Faridabad, Manesar and Chandigarh.
@@ -88,7 +88,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div style={{ padding:"20px 24px 24px",flex:1,display:"flex",flexDirection:"column" }}>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-dk)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{post.readTime}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em",fontWeight:600,marginBottom:4 }}>{post.readTime}</p>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
                     <div style={{ paddingTop:16,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
@@ -149,9 +149,9 @@ export default function BlogPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Topics We Cover</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Topics We Cover</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Everything You Need to Know<br /><span style={{ color:"#d4a843" }}>About Delhi NCR Real Estate</span>
+                Everything You Need to Know<br /><span style={{ color:"var(--gold-ink)" }}>About Delhi NCR Real Estate</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:600,margin:"0 auto" }}>
                 From market trends to legal guides, we cover every aspect of<br className="br-mobile" /> property in Delhi NCR.

@@ -35,7 +35,7 @@ export default function RelatedLinksSection({
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <span className="v-line" style={{ margin: "0 auto 14px" }} />
-          <p className="eyebrow" style={{ color: isNavy ? "var(--gold-lt)" : "#d4a843", marginBottom: 12 }}>
+          <p className="eyebrow" style={{ color: isNavy ? "var(--gold-lt)" : "var(--gold-ink)", marginBottom: 12 }}>
             {title}
           </p>
           <h2 className="heading-xl" style={{ color: isNavy ? "var(--light)" : "var(--navy)", marginBottom: 12 }}>
@@ -93,7 +93,7 @@ export default function RelatedLinksSection({
                       fontWeight: 700,
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      color: "var(--gold-dk)",
+                      color: "var(--gold-ink)",
                       marginBottom: 10,
                     }}
                   >

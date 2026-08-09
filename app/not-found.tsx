@@ -5,7 +5,7 @@ export default function NotFound() {
     <section style={{ background:"linear-gradient(180deg,var(--navy) 0%,var(--navy-mid) 60%,var(--navy) 100%)", minHeight:"72vh", display:"flex", alignItems:"center", justifyContent:"center", textAlign:"center", padding:"80px 32px" }}>
       <div style={{ maxWidth:600, margin:"0 auto" }}>
         <span className="v-line" style={{ margin:"0 auto 16px" }} />
-        <p className="eyebrow" style={{ marginBottom:12 }}>404 · Page Not Found</p>
+        <p className="eyebrow" style={{ marginBottom:12,color:"var(--gold-lt)" }}>404 · Page Not Found</p>
         <h1 style={{ fontFamily:"var(--t-display)", fontStyle:"italic", fontWeight:300, fontSize:"clamp(40px,7vw,84px)", color:"var(--light)", lineHeight:1.05, marginBottom:20 }}>
           This Address<br /><span style={{ color:"var(--gold-lt)" }}>Doesn&rsquo;t Exist</span>
         </h1>

@@ -101,9 +101,9 @@ export default function FAQPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Common Questions</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Common Questions</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Everything You Need to Know<br /><span style={{ color:"#d4a843" }}>Before Your Next Move</span>
+              Everything You Need to Know<br /><span style={{ color:"var(--gold-ink)" }}>Before Your Next Move</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8 }}>
               From RERA regulations to stamp duty rates, NRI investment rules to rental agreements, find clear answers to the most common property questions we hear every day at Vedhara. Every answer is grounded in current rules and micro-market data, never generic advice.
@@ -157,9 +157,9 @@ export default function FAQPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Quick Reference</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Quick Reference</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Delhi NCR Property Rules,<br /><span style={{ color:"#d4a843" }}>At a Glance</span>
+                Delhi NCR Property Rules,<br /><span style={{ color:"var(--gold-ink)" }}>At a Glance</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 The numbers and rules that matter most, summarised from current government rates and RERA requirements, and how Vedhara answers your questions on top of them.
@@ -189,7 +189,7 @@ export default function FAQPage() {
             <ScrollReveal delay={120} direction="right">
               <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
                 <span className="v-line" style={{ background:"var(--gold)" }} />
-                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>How We Answer</p>
+                <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>How We Answer</p>
                 <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Our Promise to You</h2>
                 <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   A good answer starts with the right question. Here is how we make sure the advice you get is accurate, current, and genuinely useful.

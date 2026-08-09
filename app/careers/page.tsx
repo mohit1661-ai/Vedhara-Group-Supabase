@@ -108,9 +108,9 @@ export default function CareersPage() {
         <div style={{ maxWidth:700,margin:"0 auto" }}>
           <ScrollReveal>
             <span className="v-line" style={{ margin:"0 auto 14px" }} />
-            <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Join Our Team</p>
+            <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Join Our Team</p>
             <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-              Work With Purpose,<br /><span style={{ color:"#d4a843" }}>Advise With Integrity</span>
+              Work With Purpose,<br /><span style={{ color:"var(--gold-ink)" }}>Advise With Integrity</span>
             </h2>
             <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:48 }}>
               Vedhara Group is building the region&apos;s most trusted independent real estate advisory firm. We are looking for individuals who value transparency, rigour, and long-term client relationships over short-term commissions. If you are ready to build a career defined by trust, expertise, and lasting client relationships, not by sales targets and transaction volume, you will find a home here.
@@ -165,9 +165,9 @@ export default function CareersPage() {
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:48 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>What We Offer</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>What We Offer</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                More Than a Job,<br /><span style={{ color:"#d4a843" }}>A Career With Purpose</span>
+                More Than a Job,<br /><span style={{ color:"var(--gold-ink)" }}>A Career With Purpose</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"0 auto" }}>
                 At Vedhara, you will work on meaningful problems with a team that values depth over speed, and integrity over short-term gain.
@@ -197,7 +197,7 @@ export default function CareersPage() {
             <ScrollReveal delay={120} direction="right">
               <div className="gold-frame-card gfc-cream" style={{ padding:"44px 36px",boxShadow:"0 8px 24px rgba(9,15,29,0.06)" }}>
                 <span className="v-line" style={{ background:"var(--gold)" }} />
-                <p className="eyebrow" style={{ color:"var(--gold-dk)",marginBottom:14 }}>Culture &amp; Growth</p>
+                <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Culture &amp; Growth</p>
                 <h2 className="heading-lg" style={{ color:"var(--navy)",marginBottom:24 }}>Who We&apos;re Looking For</h2>
                 <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:24 }}>
                   We are not looking for salespeople. We are looking for advisors who value trust, transparency, and long-term relationships over short-term commissions. If this describes you, you will thrive here.
@@ -220,9 +220,9 @@ export default function CareersPage() {
           <ScrollReveal>
             <div style={{ marginBottom:48,textAlign:"center" }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
-              <p className="eyebrow" style={{ color:"#d4a843",marginBottom:14 }}>Open Positions</p>
+              <p className="eyebrow" style={{ color:"var(--gold-ink)",marginBottom:14 }}>Open Positions</p>
               <h2 className="heading-xl" style={{ color:"var(--navy)",marginBottom:16 }}>
-                Join the<span style={{ color:"#d4a843" }}> Team</span>
+                Join the<span style={{ color:"var(--gold-ink)" }}> Team</span>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
                 If you see a role that fits, send your CV to{" "}
