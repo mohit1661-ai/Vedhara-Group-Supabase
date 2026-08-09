@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import VideoOnHover from "@/components/ui/VideoOnHover";
 
 /**
  * Homepage "Featured Properties" showcase — premium property cards on a navy
@@ -53,16 +54,17 @@ export default function FeaturedProperties() {
             },
             {
               category:"Commercial",
-              title:"One Golden Mile",
-              location:"Sector 62, Gurugram",
-              price:"₹ 8.50 Cr",
-              config:"4,500 sq.ft. Office",
-              size:"4,500 sq.ft.",
-              image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
-              pos:"100%",
-              alt:"One Golden Mile commercial office building in Sector 62, Gurugram",
+              title:"Commercial Land for JV",
+              location:"Sector 67, Ansal Essencia, Gurgaon",
+              price:"₹ 160 Cr Outright",
+              config:"1.75 Acre · JV ₹35 Cr (50:50)",
+              size:"FSI 1,33,000 sq.ft.",
+              image:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
+              video:"/videos/Commercial%20Land%20Available%20for%20JV%20in%20Gurgaon%20Video.mp4",
+              poster:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
+              alt:"Commercial land available for JV in Sector 67, Ansal Essencia, Gurgaon",
               link:"/commercial",
-              tag:"Ready to Move",
+              tag:"JV Opportunity",
             },
             {
               category:"New Launch",
@@ -107,15 +109,26 @@ export default function FeaturedProperties() {
             <ScrollReveal key={p.title} delay={i*80}>
               <Link href={p.link} className="hover-lift" style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                 <div style={{ height:190,position:"relative",overflow:"hidden" }}>
-                  <Image
-                    src={p.image}
-                    alt={p.alt || p.title}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                    style={{ objectFit:"cover", objectPosition: p.pos ? (p.pos.indexOf(" ") > -1 ? p.pos : "50% " + p.pos) : "50% 50%" }}
-                  />
+                  {p.video ? (
+                    <VideoOnHover src={p.video} poster={p.poster} alt={p.alt || p.title} />
+                  ) : (
+                    <Image
+                      src={p.image}
+                      alt={p.alt || p.title}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover", objectPosition: p.pos ? (p.pos.indexOf(" ") > -1 ? p.pos : "50% " + p.pos) : "50% 50%" }}
+                    />
+                  )}
                   {/* subtle dark overlay for text legibility */}
-                  <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
+                  <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)",pointerEvents:"none" }} />
+                  {p.video && (
+                    <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
+                        ▶ Video Tour
+                      </span>
+                    </div>
+                  )}
                   <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
                     <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                       {p.tag}
@@ -131,10 +144,10 @@ export default function FeaturedProperties() {
                   <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{p.title}</h3>
                   <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{p.location}</p>
                   <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{p.config} · {p.size}</p>
-                  <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8,borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
+                  <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
                     <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{p.price}</p>
-                    <span className="btn-ghost" style={{ color:"var(--gold)",fontSize:9,display:"inline-flex",alignItems:"center",gap:4,textAlign:"right" }}>
-                      See the Full Verification Framework →
+                    <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
+                      Inquire →
                     </span>
                   </div>
                 </div>

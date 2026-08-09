@@ -270,8 +270,8 @@ export default async function SearchPage({
                       <p style={{ fontFamily: "var(--t-body)", fontSize: 13, color: "var(--navy)", marginBottom: 10, lineHeight: 1.4 }}>{property.config} · {property.size}</p>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(212,168,67,0.2)", paddingTop: 12, marginTop: "auto", flexShrink: 0 }}>
                         <p style={{ fontFamily: "var(--t-head)", fontSize: 17, fontWeight: 700, color: "var(--navy)", margin: 0 }}>{property.price}</p>
-                        <span className="btn-ghost" style={{ color: "var(--gold)", fontSize: 9, display: "inline-flex", alignItems: "center", gap: 4 }}>
-                          View →
+                        <span style={{ fontFamily: "var(--t-head)", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 5, padding: "10px 16px", background: "var(--navy)", color: "var(--gold-lt)", borderRadius: 6, whiteSpace: "nowrap" }}>
+                          Inquire →
                         </span>
                       </div>
                     </div>

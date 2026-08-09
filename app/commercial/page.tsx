@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
+import VideoOnHover from "@/components/ui/VideoOnHover";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -15,16 +16,40 @@ interface CommercialListing {
   title:string;
   location:string;
   price:string;
+  priceNote?:string;
   size:string;
   type:"Office"|"Retail"|"Industrial"|"Co-working"|"Land";
-  status:"Available"|"Leased"|"Under Offer";
+  status:"Available"|"Leased"|"Under Offer"|"JV Opportunity";
   highlights:string[];
   image:string;
+  video?:string;
+  poster?:string;
+  images?:string[];
   pos?:string;
   alt?:string;
 }
 
 const commercialListings: CommercialListing[] = [
+  {
+    id:"ved-c07",
+    title:"Commercial Land for JV",
+    location:"Sector 67, Ansal Essencia, Gurgaon",
+    price:"₹ 160 Cr Outright",
+    priceNote:"JV: ₹35 Cr (non-adjustable) · 50:50",
+    size:"1.75 Acre",
+    type:"Land",
+    status:"JV Opportunity",
+    highlights:["FSI 1,33,000 sq.ft.","Salable 2,60,000 sq.ft.","Structure G+3","Frontage 220 ft","Front road 60 m","M3M · IREO · Bestech · Emaar · BPTP"],
+    image:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
+    video:"/videos/Commercial%20Land%20Available%20for%20JV%20in%20Gurgaon%20Video.mp4",
+    poster:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
+    images:[
+      "/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
+      "/Images/Digital%20Plan%20Gurgaon%20Commercial%20Land.jpeg",
+      "/Images/Digital%20Plan%20Gurgaon%20Commercial%20Land%20Image.jpeg",
+    ],
+    alt:"Commercial land available for JV in Sector 67, Ansal Essencia, Gurgaon",
+  },
   {
     id:"ved-c01",
     title:"One Horizon Center",
@@ -136,14 +161,25 @@ export default function CommercialPage() {
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
                   <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
-                    <Image
-                      src={property.image}
-                      alt={property.alt || property.title}
-                      fill
-                      sizes="(max-width: 1024px) 50vw, 33vw"
-                      style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
-                    />
-                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
+                    {property.video ? (
+                      <VideoOnHover src={property.video} poster={property.poster} alt={property.alt || property.title} />
+                    ) : (
+                      <Image
+                        src={property.image}
+                        alt={property.alt || property.title}
+                        fill
+                        sizes="(max-width: 1024px) 50vw, 33vw"
+                        style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
+                      />
+                    )}
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)",pointerEvents:"none" }} />
+                    {property.video && (
+                      <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
+                        <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
+                          ▶ Video Tour
+                        </span>
+                      </div>
+                    )}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
@@ -166,11 +202,21 @@ export default function CommercialPage() {
                         </span>
                       ))}
                     </div>
+                    {property.images && property.images.length > 0 && (
+                      <div style={{ display:"flex",gap:6,marginBottom:10,flexShrink:0 }}>
+                        {property.images.map((img,idx)=>(
+                          <img key={idx} src={img} alt={`${property.title} — plan ${idx+1}`} loading="lazy" style={{ width:"33.33%",height:54,objectFit:"cover",borderRadius:6,border:"1px solid rgba(212,168,67,0.25)",background:"var(--cream)" }} />
+                        ))}
+                      </div>
+                    )}
                     <div style={{ flex:1 }} />
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Price</p>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{property.price}</p>
+                        {property.priceNote && (
+                          <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:600,color:"var(--gold-ink)",margin:"2px 0 0" }}>{property.priceNote}</p>
+                        )}
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
                         Inquire →
