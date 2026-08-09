@@ -110,7 +110,8 @@ export default function ConsultationForm({
         .lux-input::placeholder{color:rgba(255,255,255,0.35);}
         .lux-input:focus{border-color:var(--gold-lt);background:rgba(255,255,255,0.07);box-shadow:0 0 0 3px rgba(212,168,67,0.12), 0 0 22px rgba(212,168,67,0.18);}
         .lux-input option{color:var(--ink);background:var(--cream);}
-        .lux-submit{margin-top:4px;}
+        .lux-submit{margin-top:4px;background:linear-gradient(135deg,var(--gold),var(--gold-lt))!important;color:var(--navy)!important;box-shadow:0 10px 26px -12px rgba(212,168,67,0.65)!important;}
+        .lux-form--light .lux-submit{background:linear-gradient(135deg,#E0B75A,#F0D685)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 12px 30px -12px rgba(212,168,67,0.85)!important;}
         .lux-error{font-family:var(--t-body);font-size:12px;color:#E08A8A;text-align:center;margin:0;}
         .lux-note{font-family:var(--t-body);font-size:10.5px;letter-spacing:0.04em;color:rgba(255,255,255,0.38);text-align:center;margin:0;}
         @media(max-width:520px){.lux-row{grid-template-columns:1fr;}}
