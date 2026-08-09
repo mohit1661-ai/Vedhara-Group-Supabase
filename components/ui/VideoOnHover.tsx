@@ -52,6 +52,7 @@ export default function VideoOnHover({ src, poster, alt }: VideoOnHoverProps) {
         loop
         playsInline
         preload="metadata"
+        aria-hidden="true"
         onPlaying={() => setReady(true)}
         style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:showVideo?1:0, transition:"opacity 0.35s ease", pointerEvents:"none" }}
       />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import VideoOnHover from "@/components/ui/VideoOnHover";
+import ImageSliderOnHover from "@/components/ui/ImageSliderOnHover";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -18,13 +19,14 @@ interface CommercialListing {
   price:string;
   priceNote?:string;
   size:string;
-  type:"Office"|"Retail"|"Industrial"|"Co-working"|"Land";
-  status:"Available"|"Leased"|"Under Offer"|"JV Opportunity";
+  type:"Office"|"Retail"|"Industrial"|"Co-working"|"Land"|"Commercial";
+  status:"Available"|"Leased"|"Under Offer"|"JV Opportunity"|"For Sale";
   highlights:string[];
   image:string;
   video?:string;
   poster?:string;
   images?:string[];
+  gallery?:string[];
   pos?:string;
   alt?:string;
 }
@@ -43,12 +45,52 @@ const commercialListings: CommercialListing[] = [
     image:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
     video:"/videos/Commercial%20Land%20Available%20for%20JV%20in%20Gurgaon%20Video.mp4",
     poster:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
-    images:[
+    gallery:[
       "/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
       "/Images/Digital%20Plan%20Gurgaon%20Commercial%20Land.jpeg",
       "/Images/Digital%20Plan%20Gurgaon%20Commercial%20Land%20Image.jpeg",
     ],
     alt:"Commercial land available for JV in Sector 67, Ansal Essencia, Gurgaon",
+  },
+  {
+    id:"ved-c08",
+    title:"Rented Commercial Building for Sale",
+    location:"Udyog Vihar 2, Gurgaon",
+    price:"₹ 270 Cr Demand",
+    priceNote:"Rent ₹1.65 Cr / month",
+    size:"4,000 sq. m. plot",
+    type:"Commercial",
+    status:"For Sale",
+    highlights:["4,000 sq. m. plot","₹1.65 Cr/month rent","Newly constructed, fully furnished","Reliable existing tenant","Payment 50:50"],
+    image:"/Images/udyog-vihar-01.jpeg",
+    images:[
+      "/Images/udyog-vihar-01.jpeg",
+      "/Images/udyog-vihar-02.jpeg",
+      "/Images/udyog-vihar-03.jpeg",
+      "/Images/udyog-vihar-04.jpeg",
+      "/Images/udyog-vihar-05.jpeg",
+      "/Images/udyog-vihar-06.jpeg",
+      "/Images/udyog-vihar-07.jpeg",
+      "/Images/udyog-vihar-08.jpeg",
+      "/Images/udyog-vihar-09.jpeg",
+      "/Images/udyog-vihar-10.jpeg",
+      "/Images/udyog-vihar-11.jpeg",
+      "/Images/udyog-vihar-12.jpeg",
+      "/Images/udyog-vihar-13.jpeg",
+      "/Images/udyog-vihar-14.jpeg",
+      "/Images/udyog-vihar-15.jpeg",
+      "/Images/udyog-vihar-16.jpeg",
+      "/Images/udyog-vihar-17.jpeg",
+      "/Images/udyog-vihar-18.jpeg",
+      "/Images/udyog-vihar-19.jpeg",
+    ],
+    gallery:[
+      "/Images/udyog-vihar-01.jpeg",
+      "/Images/udyog-vihar-02.jpeg",
+      "/Images/udyog-vihar-03.jpeg",
+      "/Images/udyog-vihar-05.jpeg",
+    ],
+    alt:"Rented commercial building for sale in Udyog Vihar 2, Gurgaon",
   },
   {
     id:"ved-c01",
@@ -163,6 +205,8 @@ export default function CommercialPage() {
                   <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     {property.video ? (
                       <VideoOnHover src={property.video} poster={property.poster} alt={property.alt || property.title} />
+                    ) : property.images && property.images.length > 0 ? (
+                      <ImageSliderOnHover images={property.images} alt={property.alt || property.title} />
                     ) : (
                       <Image
                         src={property.image}
@@ -173,13 +217,19 @@ export default function CommercialPage() {
                       />
                     )}
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)",pointerEvents:"none" }} />
-                    {property.video && (
+                    {property.video ? (
                       <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
                         <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
                           ▶ Video Tour
                         </span>
                       </div>
-                    )}
+                    ) : property.images && property.images.length > 0 ? (
+                      <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
+                        <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
+                          📷 {property.images.length} Photos
+                        </span>
+                      </div>
+                    ) : null}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
@@ -202,13 +252,16 @@ export default function CommercialPage() {
                         </span>
                       ))}
                     </div>
-                    {property.images && property.images.length > 0 && (
-                      <div style={{ display:"flex",gap:6,marginBottom:10,flexShrink:0 }}>
-                        {property.images.map((img,idx)=>(
-                          <img key={idx} src={img} alt={`${property.title} — plan ${idx+1}`} loading="lazy" style={{ width:"33.33%",height:54,objectFit:"cover",borderRadius:6,border:"1px solid rgba(212,168,67,0.25)",background:"var(--cream)" }} />
-                        ))}
-                      </div>
-                    )}
+                    {property.gallery && property.gallery.length > 0 && (() => {
+                      const thumbW = 100 / property.gallery.length;
+                      return (
+                        <div style={{ display:"flex",gap:6,marginBottom:10,flexShrink:0 }}>
+                          {property.gallery.map((img,idx)=>(
+                            <img key={idx} src={img} alt={`${property.title} — photo ${idx+1}`} loading="lazy" style={{ width:`${thumbW}%`,height:54,objectFit:"cover",borderRadius:6,border:"1px solid rgba(212,168,67,0.25)",background:"var(--cream)" }} />
+                          ))}
+                        </div>
+                      );
+                    })()}
                     <div style={{ flex:1 }} />
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
                       <div>
