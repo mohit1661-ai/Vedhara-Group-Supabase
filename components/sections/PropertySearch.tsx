@@ -21,13 +21,13 @@ const TYPES = [
 ];
 
 const popular = [
-  { label: "3 BHK in Gurugram", href: "/gurugram" },
-  { label: "Penthouse on Golf Course Road", href: "/gurugram" },
-  { label: "Plots in Greater Noida", href: "/greater-noida" },
-  { label: "2 BHK in Noida", href: "/noida" },
-  { label: "Villa in Vrindavan", href: "/mathura-vrindavan" },
-  { label: "Office in Sector 62", href: "/search?mode=buy&type=commercial" },
-  { label: "Apartments in Chandigarh", href: "/chandigarh" },
+  { label: "3 BHK in Gurugram", href: "/search?mode=buy&type=apartment&q=3%20bhk%20gurugram" },
+  { label: "Penthouse on Golf Course Road", href: "/search?mode=buy&type=penthouse&q=golf%20course%20road" },
+  { label: "Plots in Greater Noida", href: "/search?type=plot&q=greater%20noida" },
+  { label: "2 BHK in Noida", href: "/search?mode=buy&type=apartment&q=noida%202%20bhk" },
+  { label: "Villa in Vrindavan", href: "/search?mode=buy&type=villa&q=vrindavan" },
+  { label: "Office in Sector 62", href: "/search?mode=buy&type=commercial&q=sector%2062" },
+  { label: "Apartments in Chandigarh", href: "/search?mode=buy&type=apartment&q=chandigarh" },
 ];
 
 const BUY_BUDGETS = [
