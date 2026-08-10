@@ -133,7 +133,7 @@ export default function ContactPage() {
           {/* FORM SIDE */}
           <ScrollReveal delay={120} direction="right">
             {/* Gold gradient frame — luxury card that matches the popup form */}
-            <div style={{ padding:1,background:"linear-gradient(165deg, rgba(212,168,67,0.5), rgba(212,168,67,0.12) 30%, rgba(212,168,67,0.28) 65%, rgba(212,168,67,0.5))",borderRadius:18,boxShadow:"0 18px 60px rgba(9,15,29,0.35)" }}>
+            <div className="form-card" style={{ padding:1,background:"linear-gradient(165deg, rgba(212,168,67,0.5), rgba(212,168,67,0.12) 30%, rgba(212,168,67,0.28) 65%, rgba(212,168,67,0.5))",borderRadius:18,boxShadow:"0 18px 60px rgba(9,15,29,0.35)" }}>
               <div style={{ background:"var(--navy)",borderRadius:17,padding:"40px 36px 34px" }}>
                 <ConsultationForm sourcePage="/contact" onSuccess={()=>setStatus("success")} />
               </div>
@@ -178,11 +178,12 @@ export default function ContactPage() {
           box-shadow: 0 4px 12px rgba(212,168,67,0.15);
         }
         .form-card {
-          transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+          transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+          will-change: transform;
         }
         .form-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 20px 56px rgba(9,15,29,0.35) !important;
+          transform: translateY(-6px) scale(1.012);
+          box-shadow: 0 24px 64px rgba(9,15,29,0.4), 0 0 0 1px rgba(212,168,67,0.35), 0 0 44px rgba(212,168,67,0.28) !important;
         }
         .contact-detail-row {
           transition: all 0.3s ease;
