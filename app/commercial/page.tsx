@@ -32,6 +32,43 @@ interface CommercialListing {
 }
 
 const commercialListings: CommercialListing[] = [
+  // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  {
+    id:"ved-c10",
+    title:"Commercial Building for Sale",
+    location:"Udyog Vihar Phase 5, Gurugram",
+    price:"₹ 40 Cr Demand",
+    priceNote:"40,000 sq.ft. built-up",
+    size:"1,000 sq. m. plot",
+    type:"Commercial",
+    status:"For Sale",
+    highlights:["Udyog Vihar 5","1,000 sq. m. plot","40,000 sq.ft. built-up","Established commercial zone"],
+    image:"/Images/udyog-vihar-05.jpeg",
+    images:[
+      "/Images/udyog-vihar-05.jpeg",
+      "/Images/udyog-vihar-07.jpeg",
+      "/Images/udyog-vihar-09.jpeg",
+    ],
+    gallery:[
+      "/Images/udyog-vihar-05.jpeg",
+      "/Images/udyog-vihar-07.jpeg",
+      "/Images/udyog-vihar-09.jpeg",
+    ],
+    alt:"Commercial building for sale in Udyog Vihar Phase 5, Gurugram",
+  },
+  {
+    id:"ved-c11",
+    title:"MG Road Commercial Building",
+    location:"Sector 16, Gurugram",
+    price:"₹ 25 Cr Demand",
+    size:"1,000 sq. m. plot",
+    type:"Commercial",
+    status:"For Sale",
+    highlights:["MG Road","Opp. Sector 14","1,000 sq. m. plot","Prime commercial corridor"],
+    image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"Commercial building for sale in Sector 16 on MG Road, Gurugram",
+  },
   {
     id:"ved-c07",
     title:"Commercial Land for JV",

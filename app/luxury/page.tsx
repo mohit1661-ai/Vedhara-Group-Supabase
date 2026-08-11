@@ -26,6 +26,20 @@ interface LuxuryListing {
 }
 
 const luxuryListings: LuxuryListing[] = [
+  // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  {
+    id:"ved-l07",
+    title:"Sector 15 Duplex Kothi",
+    location:"Sector 15 Part 2, Gurugram",
+    price:"₹ 18 Cr",
+    config:"4 BHK + Servant Quarter",
+    size:"502 sq.yds.",
+    type:"Villa",
+    status:"Available",
+    highlights:["Prime Sector 15","Duplex Layout","Servant Quarter","NH-8 Connectivity"],
+    image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Sector 15 duplex kothi villa in Gurugram",
+  },
   {
     id:"ved-l01",
     title:"One Golf Course Penthouse",

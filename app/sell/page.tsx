@@ -26,6 +26,20 @@ interface SellListing {
 }
 
 const sellListings: SellListing[] = [
+  // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  {
+    id:"ved-s07",
+    title:"NH-8 Facing Plot, Sector 15",
+    location:"Sector 15 Part 2, Gurugram",
+    askingPrice:"₹ 18.50 Cr",
+    config:"500 sq.yds. Plot",
+    size:"500 sq.yds.",
+    type:"Plotted",
+    status:"Available for Sale",
+    highlights:["Main NH-8 Facing","Green Belt Facing","Cheque Flexible","Prime Location"],
+    image:"https://images.pexels.com/photos/11201060/pexels-photo-11201060.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"NH-8 facing residential plot in Sector 15 Part 2, Gurugram",
+  },
   {
     id:"ved-s01",
     title:"Sunset Villa",
