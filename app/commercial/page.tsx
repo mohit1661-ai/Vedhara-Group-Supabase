@@ -87,12 +87,8 @@ const commercialListings: CommercialListing[] = [
     type:"Commercial",
     status:"For Sale",
     highlights:["MG Road","Opp. Sector 14","1,000 sq. m. plot","Prime commercial corridor"],
-    image:"/Images/MG%20Road%20Commercial%20Building%20Images.webp",
-    images:[
-      "/Images/MG%20Road%20Commercial%20Building%20Images.webp",
-      "/Images/Office%20Space%20in%20MG%20Road%20Gurgaon.webp",
-      "/Images/Commercia%20Office%20Space%20in%20MG%20Road%20Gurgaon.jpg",
-    ],
+    image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
     gallery:[
       "/Images/MG%20Road%20Commercial%20Building%20Images.webp",
       "/Images/Office%20Space%20in%20MG%20Road%20Gurgaon.webp",
@@ -347,7 +343,8 @@ export default function CommercialPage() {
                         </span>
                       ))}
                     </div>
-                    {/* Small photo cards — click to open the full-size lightbox viewer. Uses the full photo set (scroller appears when > 4 photos). */}
+                    <div style={{ flex:1 }} />
+                    {/* Small photo cards — click to open the full-size lightbox viewer. Uses the full photo set (scroller appears when > 4 photos). Bottom-anchored so the gallery + CTA row stay aligned across all cards. */}
                     <ListingGallery
                       images={property.images && property.images.length > 0
                         ? property.images
@@ -356,14 +353,12 @@ export default function CommercialPage() {
                           : [property.image]}
                       title={property.title}
                     />
-                    <div style={{ flex:1 }} />
-                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0,minHeight:73 }}>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Price</p>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{property.price}</p>
-                        {property.priceNote && (
-                          <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:600,color:"var(--gold-ink)",margin:"2px 0 0" }}>{property.priceNote}</p>
-                        )}
+                        {/* Always reserve the note line so every card's CTA row has the same height → gallery + Inquire button stay aligned across cards. */}
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:600,color:"var(--gold-ink)",margin:"2px 0 0" }}>{property.priceNote || "\u00A0"}</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
                         Inquire →

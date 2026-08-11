@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 
 /**
@@ -18,6 +18,7 @@ interface ListingGalleryProps {
 export default function ListingGallery({ images, title }: ListingGalleryProps) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
 
   const close = useCallback(() => setOpen(false), []);
   const next = useCallback(
@@ -64,6 +65,30 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
     setOpen(true);
   };
 
+  // Scroll the thumbnail strip by roughly one viewport of thumbnails.
+  const scrollStrip = (dir: -1 | 1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.round(el.clientWidth * 0.85), behavior: "smooth" });
+  };
+
+  const arrowBtn = (dir: -1 | 1) => (
+    <button
+      type="button"
+      aria-label={dir === -1 ? "Previous photos" : "Next photos"}
+      onClick={(e) => { e.preventDefault(); e.stopPropagation(); scrollStrip(dir); }}
+      style={{
+        width: 30, height: 54, flexShrink: 0, cursor: "pointer",
+        borderRadius: 6, border: "1px solid rgba(212,168,67,0.35)",
+        background: "var(--navy)", color: "var(--gold-lt)",
+        fontFamily: "var(--t-head)", fontSize: 18, fontWeight: 700, lineHeight: 1,
+        display: "flex", alignItems: "center", justifyContent: "center",
+      }}
+    >
+      {dir === -1 ? "‹" : "›"}
+    </button>
+  );
+
   const renderThumb = (img: string, i: number) => (
     <div
       key={i}
@@ -107,12 +132,14 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
   return (
     <>
       {scroll ? (
-        <div style={{ position: "relative", marginBottom: 10, flexShrink: 0 }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 6, marginBottom: 10, flexShrink: 0, height: 69 }}>
+          {arrowBtn(-1)}
           <div
+            ref={scrollerRef}
             className="lg-scroll"
             style={{
-              display: "flex", gap: 6, overflowX: "auto",
-              scrollSnapType: "x mandatory", paddingBottom: 5,
+              flex: 1, minWidth: 0, height: 69, display: "flex", gap: 6, overflowX: "auto",
+              scrollSnapType: "x mandatory", paddingBottom: 5, alignItems: "flex-start",
             }}
           >
             {images.map(renderThumb)}
@@ -130,14 +157,14 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
               </span>
             </div>
           </div>
-          <style>{`.lg-scroll { scrollbar-width: thin; scrollbar-color: rgba(212,168,67,0.55) transparent; } .lg-scroll::-webkit-scrollbar { height: 5px; } .lg-scroll::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.55); border-radius: 4px; } .lg-scroll::-webkit-scrollbar-track { background: transparent; }`}</style>
+          {arrowBtn(1)}
         </div>
       ) : (
-        <div style={{ display: "flex", gap: 6, marginBottom: 10, flexShrink: 0 }}>
+        <div style={{ display: "flex", gap: 6, marginBottom: 10, flexShrink: 0, height: 69, alignItems: "flex-start" }}>
           {images.map(renderThumb)}
         </div>
       )}
-      <style>{`.lg-thumb:hover .lg-zoom { opacity: 1; }`}</style>
+      <style>{`.lg-thumb:hover .lg-zoom { opacity: 1; } .lg-scroll { scrollbar-width: thin; scrollbar-color: rgba(212,168,67,0.55) transparent; } .lg-scroll::-webkit-scrollbar { height: 5px; } .lg-scroll::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.55); border-radius: 4px; } .lg-scroll::-webkit-scrollbar-track { background: transparent; }`}</style>
 
       {open && createPortal(
         <div
