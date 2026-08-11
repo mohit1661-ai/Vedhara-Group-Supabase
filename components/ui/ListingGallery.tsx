@@ -143,19 +143,6 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
             }}
           >
             {images.map(renderThumb)}
-            {/* pinned photo-count chip that stays visible while scrolling */}
-            <div
-              onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
-              style={{
-                position: "sticky", right: 0, flexShrink: 0,
-                display: "flex", alignItems: "center", paddingLeft: 10,
-                background: "linear-gradient(90deg, transparent, var(--cream) 45%)",
-              }}
-            >
-              <span style={{ fontFamily: "var(--t-head)", fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", padding: "4px 8px", borderRadius: 12, background: "var(--navy)", color: "var(--gold-lt)", border: "1px solid rgba(212,168,67,0.35)", whiteSpace: "nowrap" }}>
-                {images.length} Photos
-              </span>
-            </div>
           </div>
           {arrowBtn(1)}
         </div>
