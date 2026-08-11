@@ -326,7 +326,7 @@ export default async function SearchPage({
             {CITY_LINKS.map((c, i) => {
               const orphan = i === CITY_LINKS.length - 1 && CITY_LINKS.length % 3 === 1;
               return (
-              <ScrollReveal key={c.href} delay={i * 60} style={orphan ? { gridColumn: "2 / 3" } : undefined}>
+              <ScrollReveal key={c.href} delay={i * 60} className={orphan ? "city-orphan" : undefined}>
                 <Link href={c.href} className="hover-lift" style={{ display: "block", position: "relative", height: 240, borderRadius: 16, overflow: "hidden", textDecoration: "none", border: "1px solid rgba(212,168,67,0.25)" }}>
                   <Image src={c.img} alt={`${c.label} real estate, ${c.sub}`} fill sizes="(max-width: 1024px) 50vw, 33vw" style={{ objectFit: "cover" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(9,15,29,0.12) 0%,rgba(9,15,29,0.82) 100%)" }} />

@@ -336,6 +336,16 @@ img,video{max-width:100%;height:auto;}
 /* Responsive */
 .show-mobile{display:none;}
 @media(max-width:1024px){.hidden-mobile{display:none!important;}.show-mobile{display:block!important;}}
+
+/* Mobile/tablet: reserve space for the fixed bottom Call/Chat/Book bar so it
+   never covers the footer's last content (copyright line) when scrolled to end. */
+@media(max-width:1024px){body{padding-bottom:56px;}}
+
+/* /search "Explore by City": center the last lone card on the 3-col grid,
+   but let it span the full single column on mobile/tablet (≤768px) — the
+   old inline `gridColumn:2 / 3` collapsed every even card to ~1px there. */
+.city-orphan{grid-column:2 / 3;}
+@media(max-width:768px){.city-orphan{grid-column:auto;}}
 .br-mobile{display:none;}
 @media(max-width:1024px){.br-mobile{display:inline;}}
 .br-desktop{display:inline;}
