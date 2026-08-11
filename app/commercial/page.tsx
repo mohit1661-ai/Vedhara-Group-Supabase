@@ -87,8 +87,17 @@ const commercialListings: CommercialListing[] = [
     type:"Commercial",
     status:"For Sale",
     highlights:["MG Road","Opp. Sector 14","1,000 sq. m. plot","Prime commercial corridor"],
-    image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
+    image:"/Images/MG%20Road%20Commercial%20Building%20Images.webp",
+    images:[
+      "/Images/MG%20Road%20Commercial%20Building%20Images.webp",
+      "/Images/Office%20Space%20in%20MG%20Road%20Gurgaon.webp",
+      "/Images/Commercia%20Office%20Space%20in%20MG%20Road%20Gurgaon.jpg",
+    ],
+    gallery:[
+      "/Images/MG%20Road%20Commercial%20Building%20Images.webp",
+      "/Images/Office%20Space%20in%20MG%20Road%20Gurgaon.webp",
+      "/Images/Commercia%20Office%20Space%20in%20MG%20Road%20Gurgaon.jpg",
+    ],
     alt:"Commercial building for sale in Sector 16 on MG Road, Gurugram",
   },
   {
@@ -338,9 +347,13 @@ export default function CommercialPage() {
                         </span>
                       ))}
                     </div>
-                    {/* Small photo cards — click to open the full-size lightbox viewer */}
+                    {/* Small photo cards — click to open the full-size lightbox viewer. Uses the full photo set (scroller appears when > 4 photos). */}
                     <ListingGallery
-                      images={property.gallery && property.gallery.length > 0 ? property.gallery : [property.image]}
+                      images={property.images && property.images.length > 0
+                        ? property.images
+                        : property.gallery && property.gallery.length > 0
+                          ? property.gallery
+                          : [property.image]}
                       title={property.title}
                     />
                     <div style={{ flex:1 }} />

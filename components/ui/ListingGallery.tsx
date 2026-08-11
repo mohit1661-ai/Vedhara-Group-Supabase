@@ -51,6 +51,10 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
 
   if (!images || images.length === 0) return null;
 
+  // More than 4 photos → show a horizontal scroller (thumbnails stay a fixed
+  // comfortable size and users can swipe/scroll to the rest). 4 or fewer → all
+  // fit in a single row.
+  const scroll = images.length > 4;
   const thumbW = 100 / images.length;
 
   const openAt = (i: number) => (e: React.MouseEvent) => {
@@ -60,48 +64,79 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
     setOpen(true);
   };
 
+  const renderThumb = (img: string, i: number) => (
+    <div
+      key={i}
+      role="button"
+      tabIndex={0}
+      onClick={openAt(i)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); openAt(i)(e as unknown as React.MouseEvent); }
+      }}
+      title={images.length > 1 ? `View photo ${i + 1} of ${images.length}` : "View photo"}
+      aria-label={`${title || "Property"} photo ${i + 1}`}
+      className="lg-thumb"
+      style={{
+        width: scroll ? 72 : `${thumbW}%`,
+        height: 54,
+        borderRadius: 6,
+        border: "1px solid rgba(212,168,67,0.25)",
+        background: "var(--cream)",
+        cursor: "zoom-in",
+        overflow: "hidden",
+        position: "relative",
+        display: "block",
+        flexShrink: scroll ? 0 : 1,
+        scrollSnapAlign: "start",
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={img}
+        alt={`${title || "Property"} — photo ${i + 1}`}
+        loading="lazy"
+        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+      />
+      {/* subtle zoom hint on hover */}
+      <span className="lg-zoom" style={{ position: "absolute", inset: 0, background: "rgba(9,15,29,0.32)", opacity: 0, transition: "opacity 0.2s ease", display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
+        <span style={{ fontFamily: "var(--t-head)", fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.95)" }}>🔍 View</span>
+      </span>
+    </div>
+  );
+
   return (
     <>
-      <div style={{ display: "flex", gap: 6, marginBottom: 10, flexShrink: 0 }}>
-        {images.map((img, i) => (
+      {scroll ? (
+        <div style={{ position: "relative", marginBottom: 10, flexShrink: 0 }}>
           <div
-            key={i}
-            role="button"
-            tabIndex={0}
-            onClick={openAt(i)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); openAt(i)(e as unknown as React.MouseEvent); }
-            }}
-            title={images.length > 1 ? `View photo ${i + 1} of ${images.length}` : "View photo"}
-            aria-label={`${title || "Property"} photo ${i + 1}`}
-            className="lg-thumb"
+            className="lg-scroll"
             style={{
-              width: `${thumbW}%`,
-              height: 54,
-              borderRadius: 6,
-              border: "1px solid rgba(212,168,67,0.25)",
-              background: "var(--cream)",
-              cursor: "zoom-in",
-              overflow: "hidden",
-              position: "relative",
-              display: "block",
-              flexShrink: 1,
+              display: "flex", gap: 6, overflowX: "auto",
+              scrollSnapType: "x mandatory", paddingBottom: 5,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={img}
-              alt={`${title || "Property"} — photo ${i + 1}`}
-              loading="lazy"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-            />
-            {/* subtle zoom hint on hover */}
-            <span className="lg-zoom" style={{ position: "absolute", inset: 0, background: "rgba(9,15,29,0.32)", opacity: 0, transition: "opacity 0.2s ease", display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-              <span style={{ fontFamily: "var(--t-head)", fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.95)" }}>🔍 View</span>
-            </span>
+            {images.map(renderThumb)}
+            {/* pinned photo-count chip that stays visible while scrolling */}
+            <div
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+              style={{
+                position: "sticky", right: 0, flexShrink: 0,
+                display: "flex", alignItems: "center", paddingLeft: 10,
+                background: "linear-gradient(90deg, transparent, var(--cream) 45%)",
+              }}
+            >
+              <span style={{ fontFamily: "var(--t-head)", fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", padding: "4px 8px", borderRadius: 12, background: "var(--navy)", color: "var(--gold-lt)", border: "1px solid rgba(212,168,67,0.35)", whiteSpace: "nowrap" }}>
+                {images.length} Photos
+              </span>
+            </div>
           </div>
-        ))}
-      </div>
+          <style>{`.lg-scroll { scrollbar-width: thin; scrollbar-color: rgba(212,168,67,0.55) transparent; } .lg-scroll::-webkit-scrollbar { height: 5px; } .lg-scroll::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.55); border-radius: 4px; } .lg-scroll::-webkit-scrollbar-track { background: transparent; }`}</style>
+        </div>
+      ) : (
+        <div style={{ display: "flex", gap: 6, marginBottom: 10, flexShrink: 0 }}>
+          {images.map(renderThumb)}
+        </div>
+      )}
       <style>{`.lg-thumb:hover .lg-zoom { opacity: 1; }`}</style>
 
       {open && createPortal(
