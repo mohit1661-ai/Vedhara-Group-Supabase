@@ -3,6 +3,100 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoOnHover from "@/components/ui/VideoOnHover";
 
+type FeaturedProperty = {
+  category: string;
+  title: string;
+  location: string;
+  price: string;
+  config: string;
+  size: string;
+  image: string;
+  alt?: string;
+  link: string;
+  tag: string;
+  pos?: string;
+  video?: string;
+  poster?: string;
+};
+
+const featuredProperties: FeaturedProperty[] = [
+  // ONE PER CATEGORY — one commercial, one residential, one luxury, etc. (newest first)
+  {
+    category: "Luxury",
+    title: "Sector 15 Duplex Kothi",
+    location: "Sector 15 Part 2, Gurugram",
+    price: "₹ 18 Cr",
+    config: "4 BHK + Servant Quarter",
+    size: "502 sq.yds.",
+    image: "https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "Sector 15 duplex kothi villa in Gurugram",
+    link: "/luxury",
+    tag: "Available for Sale",
+  },
+  {
+    category: "Plotted",
+    title: "NH-8 Facing Plot, Sector 15",
+    location: "Sector 15 Part 2, Gurugram",
+    price: "₹ 18.50 Cr",
+    config: "500 sq.yds. Plot",
+    size: "500 sq.yds.",
+    image: "https://images.pexels.com/photos/11201060/pexels-photo-11201060.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "NH-8 facing residential plot in Sector 15 Part 2, Gurugram",
+    link: "/sell",
+    tag: "Available for Sale",
+  },
+  {
+    category: "Commercial",
+    title: "Commercial Building, Udyog Vihar 5",
+    location: "Udyog Vihar Phase 5, Gurugram",
+    price: "₹ 40 Cr",
+    config: "40,000 sq.ft. Built-up",
+    size: "1,000 sq. m.",
+    image: "/Images/udyog-vihar-05.jpeg",
+    alt: "Commercial building for sale in Udyog Vihar Phase 5, Gurugram",
+    link: "/commercial",
+    tag: "For Sale",
+  },
+  {
+    category: "Residential",
+    title: "The Cullinan Heights",
+    location: "Sector 150, Noida",
+    price: "₹ 4.85 Cr",
+    config: "4 BHK + Study",
+    size: "2,450 sq.ft.",
+    image: "https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt: "The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida",
+    link: "/buy",
+    tag: "Ready to Move",
+  },
+  {
+    category: "New Launch",
+    title: "Amaryllis Residences",
+    location: "Golf Course Road, Gurugram",
+    price: "₹ 6.20 Cr",
+    config: "3 BHK + Servant",
+    size: "2,150 sq.ft.",
+    image: "https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos: "100%",
+    alt: "Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
+    link: "/new-launches",
+    tag: "Possession Oct 2026",
+  },
+  {
+    category: "Rental",
+    title: "The Aspen Residency",
+    location: "Sector 57, Gurugram",
+    price: "₹ 58,000/mo",
+    config: "3 BHK",
+    size: "1,550 sq.ft.",
+    image: "https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos: "0%",
+    alt: "The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
+    link: "/rent",
+    tag: "Available",
+  },
+];
+
 /**
  * Homepage "Featured Properties" showcase — premium property cards on a navy
  * band. Extracted from app/page.tsx so it can be positioned prominently right
@@ -27,135 +121,7 @@ export default function FeaturedProperties() {
         </ScrollReveal>
 
         <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="prop-grid">
-          {[
-            // NEWEST LISTINGS FIRST
-            {
-              category:"Luxury",
-              title:"Sector 15 Duplex Kothi",
-              location:"Sector 15 Part 2, Gurugram",
-              price:"₹ 18 Cr",
-              config:"4 BHK + Servant Quarter",
-              size:"502 sq.yds.",
-              image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
-              alt:"Sector 15 duplex kothi villa in Gurugram",
-              link:"/luxury",
-              tag:"Available for Sale",
-            },
-            {
-              category:"Plotted",
-              title:"NH-8 Facing Plot, Sector 15",
-              location:"Sector 15 Part 2, Gurugram",
-              price:"₹ 18.50 Cr",
-              config:"500 sq.yds. Plot",
-              size:"500 sq.yds.",
-              image:"https://images.pexels.com/photos/11201060/pexels-photo-11201060.jpeg?auto=compress&cs=tinysrgb&w=900",
-              alt:"NH-8 facing residential plot in Sector 15 Part 2, Gurugram",
-              link:"/sell",
-              tag:"Available for Sale",
-            },
-            {
-              category:"Commercial",
-              title:"Commercial Building, Udyog Vihar 5",
-              location:"Udyog Vihar Phase 5, Gurugram",
-              price:"₹ 40 Cr",
-              config:"40,000 sq.ft. Built-up",
-              size:"1,000 sq. m.",
-              image:"/Images/udyog-vihar-05.jpeg",
-              alt:"Commercial building for sale in Udyog Vihar Phase 5, Gurugram",
-              link:"/commercial",
-              tag:"For Sale",
-            },
-            {
-              category:"Commercial",
-              title:"MG Road Commercial Building",
-              location:"Sector 16, Gurugram",
-              price:"₹ 25 Cr",
-              config:"Commercial Building",
-              size:"1,000 sq. m.",
-              image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
-              pos:"100%",
-              alt:"Commercial building for sale in Sector 16 on MG Road, Gurugram",
-              link:"/commercial",
-              tag:"For Sale",
-            },
-            {
-              category:"Residential",
-              title:"The Cullinan Heights",
-              location:"Sector 150, Noida",
-              price:"₹ 4.85 Cr",
-              config:"4 BHK + Study",
-              size:"2,450 sq.ft.",
-              image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
-              alt:"The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida",
-              link:"/buy",
-              tag:"Ready to Move",
-            },
-            {
-              category:"Luxury",
-              title:"One Golf Course Penthouse",
-              location:"Golf Course Road, Gurugram",
-              price:"₹ 12.80 Cr",
-              config:"5 BHK + Pool",
-              size:"4,200 sq.ft.",
-              image:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=900",
-              alt:"One Golf Course Penthouse luxury penthouse on Golf Course Road, Gurugram",
-              link:"/luxury",
-              tag:"Available",
-            },
-            {
-              category:"Commercial",
-              title:"Commercial Land for JV",
-              location:"Sector 67, Ansal Essencia, Gurgaon",
-              price:"₹ 160 Cr Outright",
-              config:"1.75 Acre · JV ₹35 Cr (50:50)",
-              size:"FSI 1,33,000 sq.ft.",
-              image:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
-              video:"/videos/Commercial%20Land%20Available%20for%20JV%20in%20Gurgaon%20Video.mp4",
-              poster:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
-              alt:"Commercial land available for JV in Sector 67, Ansal Essencia, Gurgaon",
-              link:"/commercial",
-              tag:"JV Opportunity",
-            },
-            {
-              category:"New Launch",
-              title:"Amaryllis Residences",
-              location:"Golf Course Road, Gurugram",
-              price:"₹ 6.20 Cr",
-              config:"3 BHK + Servant",
-              size:"2,150 sq.ft.",
-              image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
-              pos:"100%",
-              alt:"Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
-              link:"/new-launches",
-              tag:"Possession Oct 2026",
-            },
-            {
-              category:"Rental",
-              title:"The Aspen Residency",
-              location:"Sector 57, Gurugram",
-              price:"₹ 58,000/mo",
-              config:"3 BHK",
-              size:"1,550 sq.ft.",
-              image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
-              pos:"0%",
-              alt:"The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
-              link:"/rent",
-              tag:"Available",
-            },
-            {
-              category:"Plotted",
-              title:"Serene Garden Plot",
-              location:"Sector 150, Noida",
-              price:"₹ 4.50 Cr",
-              config:"450 sq.yds.",
-              size:"450 sq.yds.",
-              image:"https://images.pexels.com/photos/15422584/pexels-photo-15422584.jpeg?auto=compress&cs=tinysrgb&w=900",
-              pos:"50%",
-              alt:"Serene Garden Plot green residential plot land in Sector 150, Noida",
-              link:"/sell",
-              tag:"Available for Sale",
-            },
-          ].map((p,i)=>(
+          {featuredProperties.map((p,i)=>(
             <ScrollReveal key={p.title} delay={i*80}>
               <Link href={p.link} className="hover-lift" style={{ display:"block",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                 <div style={{ height:190,position:"relative",overflow:"hidden" }}>
