@@ -37,6 +37,9 @@ function kw(...parts: string[]) {
 }
 
 const L: SearchListing[] = [
+  // ── NEW NOIDA FOR-SALE LISTINGS (newest first) ──────
+  { id:"ved-n16a", title:"Pre-Rented Commercial Building", location:"Film City, Sector 16A, Noida", city:"noida", price:"₹ 220 Cr", value:22000, config:"165,319 sq.ft. Built-up", size:"4,034 sq.yds.", type:"commercial", mode:"sell", category:"Commercial", image:"/Images/film-city-noida-aerial.jpeg", alt:"Pre-rented commercial building for sale at Film City, Sector 16A, Noida", link:"/commercial", tag:"Available for Sale", keywords:kw("film city noida sector 16a gautam budh nagar pre rented commercial building for sale 220 cr 165319 sqft 4034 sq yds lease 90 year rent income") },
+
   // ── NEW GURUGRAM FOR-SALE LISTINGS (newest first) ──────
   { id:"ved-g15a", title:"Sector 15 Duplex Kothi", location:"Sector 15 Part 2, Gurugram", city:"gurugram", price:"₹ 18 Cr", value:1800, config:"4 BHK + Servant Quarter", size:"502 sq.yds.", type:"villa", mode:"sell", category:"Luxury", image:img(35808145), alt:"Sector 15 duplex kothi villa in Gurugram", link:"/luxury", tag:"Available for Sale", keywords:kw("sector 15 gurugram gurgaon kothi duplex villa 4 bhk servant quarter sell luxury mg road nh8") },
   { id:"ved-g15b", title:"NH-8 Facing Plot, Sector 15", location:"Sector 15 Part 2, Gurugram", city:"gurugram", price:"₹ 18.50 Cr", value:1850, config:"500 sq.yds. Plot", size:"500 sq.yds.", type:"plot", mode:"sell", category:"Plotted", image:img(11201060), alt:"NH-8 facing residential plot in Sector 15 Part 2, Gurugram", link:"/sell", tag:"Available for Sale", keywords:kw("sector 15 gurugram gurgaon nh8 nh 8 facing green belt plot land for sale cheque flexible") },

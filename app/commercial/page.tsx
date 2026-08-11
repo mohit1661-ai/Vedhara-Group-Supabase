@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
 
 export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR", description:"Independent commercial property advisory in Delhi NCR, Faridabad & Manesar: office space leasing, retail site selection, industrial sheds and acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
@@ -33,6 +34,27 @@ interface CommercialListing {
 
 const commercialListings: CommercialListing[] = [
   // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  {
+    id:"ved-c12",
+    title:"Pre-Rented Commercial Building",
+    location:"Film City, Sector 16A, Noida",
+    price:"₹ 220 Cr Demand",
+    priceNote:"Rent ₹1.41 Cr / month · Pre-rented",
+    size:"4,034 sq.yds. plot · 165,319 sq.ft. built-up",
+    type:"Commercial",
+    status:"For Sale",
+    highlights:["Pre-rented income asset","165,319 sq.ft. built-up","Basement + Stilt + 9 floors","90-yr Noida lease from 2006","Escalation 10–15% every 3–5 yrs","South-West facing"],
+    image:"/Images/film-city-noida-aerial.jpeg",
+    images:[
+      "/Images/film-city-noida-aerial.jpeg",
+      "/Images/film-city-noida-02.jpeg",
+    ],
+    gallery:[
+      "/Images/film-city-noida-aerial.jpeg",
+      "/Images/film-city-noida-02.jpeg",
+    ],
+    alt:"Pre-rented commercial building for sale at Film City, Sector 16A, Noida",
+  },
   {
     id:"ved-c10",
     title:"Commercial Building for Sale",
@@ -316,16 +338,11 @@ export default function CommercialPage() {
                         </span>
                       ))}
                     </div>
-                    {property.gallery && property.gallery.length > 0 && (() => {
-                      const thumbW = 100 / property.gallery.length;
-                      return (
-                        <div style={{ display:"flex",gap:6,marginBottom:10,flexShrink:0 }}>
-                          {property.gallery.map((img,idx)=>(
-                            <img key={idx} src={img} alt={`${property.title} — photo ${idx+1}`} loading="lazy" style={{ width:`${thumbW}%`,height:54,objectFit:"cover",borderRadius:6,border:"1px solid rgba(212,168,67,0.25)",background:"var(--cream)" }} />
-                          ))}
-                        </div>
-                      );
-                    })()}
+                    {/* Small photo cards — click to open the full-size lightbox viewer */}
+                    <ListingGallery
+                      images={property.gallery && property.gallery.length > 0 ? property.gallery : [property.image]}
+                      title={property.title}
+                    />
                     <div style={{ flex:1 }} />
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
                       <div>
