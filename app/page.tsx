@@ -409,7 +409,7 @@ export default function HomePage() {
                     </p>
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12 }}>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,color:"var(--gold-ink)",textTransform:"uppercase",letterSpacing:"0.06em" }}>Vedhara Group</span>
-                      <Link href="/team" style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,color:"var(--gold)",textTransform:"uppercase",letterSpacing:"0.06em",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:4 }}>
+                      <Link href="/team" style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap",textDecoration:"none" }}>
                         View Bio →
                       </Link>
                     </div>
@@ -473,7 +473,7 @@ export default function HomePage() {
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
                     <div style={{ paddingTop:14,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                      <Link href={`/blog/${post.slug}`} style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold)",display:"inline-flex",alignItems:"center",gap:4,textDecoration:"none" }}>
+                      <Link href={`/blog/${post.slug}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
                         Read Article →
                       </Link>
                     </div>
