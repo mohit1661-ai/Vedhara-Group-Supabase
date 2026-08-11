@@ -105,11 +105,10 @@ img,video{max-width:100%;height:auto;}
 .nav-link-dark{color:var(--ink);}
 .nav-link-dark:hover{color:var(--gold-lt);}
 
-/* Cursor */
-.cursor-dot{width:6px;height:6px;background:var(--gold-lt);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.cursor-ring{width:28px;height:28px;border:1px solid rgba(232,201,112,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.3s var(--ease-out),height 0.3s var(--ease-out),border-color 0.3s;}
+/* Cursor — pointer-driven (CustomCursor.tsx reveals only for a mouse pointer) */
+.cursor-dot{width:6px;height:6px;background:var(--gold-lt);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity 0.25s ease;}
+.cursor-ring{width:28px;height:28px;border:1px solid rgba(232,201,112,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:0;transition:width 0.3s var(--ease-out),height 0.3s var(--ease-out),border-color 0.3s,opacity 0.25s ease;}
 .cursor-ring.hover{width:44px;height:44px;border-color:rgba(232,201,112,0.9);}
-@media(hover:none){.cursor-dot,.cursor-ring{display:none;}}
 
 /* Video hero */
 .video-hero{position:relative;overflow:hidden;}
@@ -373,3 +372,74 @@ img,video{max-width:100%;height:auto;}
 .team-card{border-radius:12px;transition:transform 0.4s var(--ease-out),box-shadow 0.4s var(--ease-out);}
 .team-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(9,15,29,0.12);}
 @media(max-width:1024px){.team-card-header{padding:28px 20px!important;}}
+
+/* ── Touch devices (mobile & tablet): cards respond to taps ────────────────
+   Touch screens have no mouse, so CSS :hover only fires as a "sticky" state
+   after a tap — leaving cards raised/flipped until you tap somewhere else.
+   On touch we (1) neutralise that sticky hover so cards settle back, and
+   (2) give cards immediate press feedback while the finger is down.
+   Desktop (hover-capable) is completely unaffected. */
+@media (hover: none) {
+
+  /* Neutralise sticky hover lift/shadow on touch */
+  .hover-lift:hover,
+  .mm-card:hover,
+  .gold-frame-card:hover,
+  .team-card:hover,
+  .nri-desk-card:hover,
+  .btn:hover,
+  .btn-ghost:hover,
+  .cta-pill:hover,
+  .btn-primary:hover,
+  .btn-dark:hover,
+  .btn-outline:hover {
+    transform:none !important;
+    box-shadow:none !important;
+    filter:none !important;
+  }
+  .check-grid > :first-child .hover-lift:hover,
+  .check-grid > :last-child .hover-lift:hover{
+    background:var(--cream) !important;
+  }
+  .check-grid > :first-child .hover-lift:hover h3,
+  .check-grid > :last-child .hover-lift:hover h3{color:var(--navy)!important;}
+  .check-grid > :first-child .hover-lift:hover p,
+  .check-grid > :last-child .hover-lift:hover p{color:var(--slate)!important;}
+  .check-grid > :first-child .hover-lift:hover span,
+  .check-grid > :last-child .hover-lift:hover span{color:var(--gold)!important;}
+
+  /* Neutralise sticky stat-card flip + lift on touch */
+  .stat-card:hover{
+    background:var(--navy);
+    border-color:rgba(212,168,67,0.15);
+    transform:none !important;
+    box-shadow:none !important;
+  }
+  .stat-card:hover .stat-num{color:var(--gold-lt);}
+  .stat-card:hover .stat-label{color:rgba(255,255,255,0.75);}
+  .stat-card:hover .stat-accent{background:var(--gold-lt);}
+
+  /* Immediate press feedback while tapping */
+  .hover-lift:active,
+  .mm-card:active,
+  .gold-frame-card:active,
+  .team-card:active,
+  .nri-desk-card:active,
+  .btn:active,
+  .cta-pill:active,
+  .btn-primary:active,
+  .btn-dark:active {
+    transform:translateY(-4px) scale(1.01) !important;
+    box-shadow:0 16px 40px rgba(9,15,29,0.28) !important;
+    filter:brightness(1.05) !important;
+  }
+  .stat-card:active{
+    background:var(--cream) !important;
+    border-color:rgba(42,45,53,0.06);
+    transform:translateY(-4px) scale(1.01) !important;
+    box-shadow:0 16px 40px rgba(9,15,29,0.28) !important;
+  }
+  .stat-card:active .stat-num{color:var(--navy)!important;}
+  .stat-card:active .stat-label{color:var(--slate)!important;}
+  .stat-card:active .stat-accent{background:var(--gold)!important;}
+}
