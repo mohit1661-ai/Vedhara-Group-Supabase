@@ -35,6 +35,27 @@ interface CommercialListing {
 const commercialListings: CommercialListing[] = [
   // NEWEST LISTINGS FIRST — add new properties at the top of this array
   {
+    id:"ved-c13",
+    title:"Fortune Questa",
+    location:"Udyog Vihar Phase VII, Sector 35, Gurugram",
+    price:"₹ 150 Cr Demand",
+    priceNote:"A/C Load 568 KW (COP 5.0) · 300 KW (COP 6.15 + heat recovery) · Lighting Load 150 KW (1.5W/sq.ft.)",
+    size:"2.84 lakh sq. ft. total leasable · 40,000 sq. ft. floor plate · Efficiency 70%",
+    type:"Office",
+    status:"For Sale",
+    highlights:["LEED Silver Certified","Single ownership (not strata-titled)","2.84 lakh sq. ft. leasable area","40,000 sq. ft. floor plates","500 cars parking across 3 basement levels","NH-8 frontage · ~1.75L vehicles/day","Within 5 km (sanctioned station)","Airport Distance 25 km (International)"],
+    image:"/Images/udyog-vihar-01.jpeg",
+    images:[
+      "/Images/udyog-vihar-01.jpeg",
+      "/Images/udyog-vihar-02.jpeg",
+    ],
+    gallery:[
+      "/Images/udyog-vihar-01.jpeg",
+      "/Images/udyog-vihar-02.jpeg",
+    ],
+    alt:"LEED Silver Grade-A office building on NH-8, Gurugram",
+  },
+  {
     id:"ved-c12",
     title:"Pre-Rented Commercial Building",
     location:"Film City, Sector 16A, Noida",

@@ -37,6 +37,9 @@ function kw(...parts: string[]) {
 }
 
 const L: SearchListing[] = [
+  // ── NEW GURUGRAM COMMERCIAL LISTING (newest first) ──────
+  { id:"ved-g16", title:"Fortune Questa", location:"Udyog Vihar Phase VII, Sector 35, Gurugram", city:"gurugram", price:"₹ 150 Cr", value:15000, config:"A/C Load 568 KW · 300 KW (COP 6.15 + heat recovery)", size:"2.84 lakh sq. ft. total", type:"commercial", mode:"sell", category:"Commercial", image:"/Images/udyog-vihar-01.jpeg", alt:"LEED Silver Grade-A office building on NH-8, Gurugram", link:"/commercial", tag:"Available for Sale", keywords:kw("fortune questa gurugram udoyog vihar sector 35 leed silver office space nh-8 grade a it ites") },
+
   // ── NEW NOIDA FOR-SALE LISTINGS (newest first) ──────
   { id:"ved-n16a", title:"Pre-Rented Commercial Building", location:"Film City, Sector 16A, Noida", city:"noida", price:"₹ 220 Cr", value:22000, config:"165,319 sq.ft. Built-up", size:"4,034 sq.yds.", type:"commercial", mode:"sell", category:"Commercial", image:"/Images/film-city-noida-aerial.jpeg", alt:"Pre-rented commercial building for sale at Film City, Sector 16A, Noida", link:"/commercial", tag:"Available for Sale", keywords:kw("film city noida sector 16a gautam budh nagar pre rented commercial building for sale 220 cr 165319 sqft 4034 sq yds lease 90 year rent income") },
 
