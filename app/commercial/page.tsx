@@ -49,10 +49,14 @@ const commercialListings: CommercialListing[] = [
     images:[
       "https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=500",
       "https://images.pexels.com/photos/35426261/pexels-photo-35426261.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/7235808/pexels-photo-7235808.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/9943267/pexels-photo-9943267.jpeg?auto=compress&cs=tinysrgb&w=500",
     ],
     gallery:[
       "https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=500",
       "https://images.pexels.com/photos/35426261/pexels-photo-35426261.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/7235808/pexels-photo-7235808.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/9943267/pexels-photo-9943267.jpeg?auto=compress&cs=tinysrgb&w=500",
     ],
     alt:"LEED Silver Grade-A office building on NH-8, Gurugram",
   },
