@@ -39,7 +39,7 @@ const commercialListings: CommercialListing[] = [
     title:"Fortune Questa",
     location:"Udyog Vihar Phase VII, Sector 35, Gurugram",
     price:"₹ 150 Cr Demand",
-    size:"2.84 lakh sq. ft. total leasable · 40,000 sq. ft. floor plate · Efficiency 70%",
+    size:"",
     type:"Office",
     status:"For Sale",
     highlights:["LEED Silver Certified","Single ownership (not strata-titled)","2.84 lakh sq. ft. leasable area","40,000 sq. ft. floor plates","NH-8 frontage · ~1.75L vehicles/day","Within 5 km (sanctioned station)","Airport Distance 25 km (International)"],
@@ -48,12 +48,12 @@ const commercialListings: CommercialListing[] = [
     images:[
       "https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=500",
       "https://images.pexels.com/photos/35426261/pexels-photo-35426261.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "https://images.pexels.com/photos/fortune-questa-location-map.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "/Images/fortune-questa-location-map.webp",
     ],
     gallery:[
       "https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=500",
       "https://images.pexels.com/photos/35426261/pexels-photo-35426261.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "https://images.pexels.com/photos/fortune-questa-location-map.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "/Images/fortune-questa-location-map.webp",
     ],
     alt:"LEED Silver Grade-A office building on NH-8, Gurugram",
   },
