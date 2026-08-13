@@ -95,8 +95,8 @@ export default function HomePage() {
     <>
       <JsonLd data={homeSchema} />
       <CinematicHero
-        videoSrc="/videos/Homepage%20Hero%20Video%20Desktop.mp4"
-        videoSrcMobile="/videos/Homepage%20Hero%20Video%20Mobile.mp4"
+        videoSrc="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4"
+        videoSrcMobile="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4"
       />
       <AnimatedStats />
 
