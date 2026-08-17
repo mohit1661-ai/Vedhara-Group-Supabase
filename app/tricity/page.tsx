@@ -421,7 +421,7 @@ export default function TricityPage() {
                     <p className="body-sm" style={{ color:"var(--slate)", lineHeight:1.7, fontSize:12, margin:"0 0 12px", flex:1 }}>{j.body}</p>
                     <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", borderTop:"1px solid rgba(212,168,67,0.2)", paddingTop:12 }}>
                       <span style={{ fontFamily:"var(--t-head)", fontSize:9.5, fontWeight:700, color:"var(--gold-ink)", textTransform:"uppercase", letterSpacing:"0.06em" }}>Verified Authority</span>
-                      <span style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:700, color:"var(--gold)", textTransform:"uppercase", letterSpacing:"0.06em", display:"inline-flex", alignItems:"center", gap:4 }}>Check Process →</span>
+                      <Link href="/verification-center" style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:700, color:"var(--gold)", textTransform:"uppercase", letterSpacing:"0.06em", display:"inline-flex", alignItems:"center", gap:4, textDecoration:"none" }}>Check Process →</Link>
                     </div>
                   </div>
                 </div>
