@@ -1,0 +1,317 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import VideoHeroSection from "@/components/sections/VideoHeroSection";
+import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
+export const metadata: Metadata = { title:"New Property Launches in Delhi NCR", description:"RERA-verified new property launches across Delhi NCR, Faridabad, Manesar, Chandigarh and North India from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
+
+interface LaunchProject {
+  id:string;
+  projectName:string;
+  developer:string;
+  location:string;
+  startingPrice:string;
+  configs:string;
+  possession:string;
+  type:"Residential"|"Luxury"|"Commercial"|"Plotted";
+  status:"Just Launched"|"Pre-Launch"|"Under Construction"|"Phase 2 Released";
+  highlights:string[];
+  image:string;
+  pos?:string;
+  alt?:string;
+}
+
+const launchFaqs: FAQItem[] = [
+  {
+    q:"Are all projects on this page RERA-verified?",
+    a:"Yes. Every project shown on this page passes Vedhara's five-point Verification Framework, which includes RERA registration or application confirmation, builder track record assessment, legal title review, project progress verification, and pricing transparency.",
+  },
+  {
+    q:"Can I book a unit before the official launch?",
+    a:"For projects marked 'Pre-Launch' or 'Phase 2 Released', early registration is often possible through our channel. Register your interest and we will coordinate priority access and early-bird pricing with the developer.",
+  },
+  {
+    q:"Is there any fee to register interest in a project?",
+    a:"No. Registering interest with Vedhara is completely free and non-binding. You will receive project updates, pricing as it becomes available, and an invitation to site visits before any commitment.",
+  },
+  {
+    q:"How do you select which new launches to feature?",
+    a:"We feature projects from developers who meet our Verification Framework standards, established track record, clean legal title, realistic timelines, and transparent pricing. We do not accept listings from unverified sources.",
+  },
+  {
+    q:"Can I get a personalised shortlist of upcoming projects?",
+    a:"Absolutely. Contact our team with your budget, preferred locations, and configuration requirements. We will curate a shortlist of upcoming and recently launched projects that match your profile.",
+  },
+];
+
+const launchProjects: LaunchProject[] = [
+  {
+    id:"ved-n01",
+    projectName:"Aura Sky Villas",
+    developer:"Prestige Group",
+    location:"Sector 152, Noida",
+    startingPrice:"₹ 1.85 Cr",
+    configs:"2, 3, 4 BHK",
+    possession:"Dec 2028",
+    type:"Residential",
+    status:"Just Launched",
+    highlights:["RERA Applied","53 Towers","7 Acres Green","Club & Pool"],
+    image:"https://images.pexels.com/photos/38341175/pexels-photo-38341175.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"84%",
+    alt:"Aura Sky Villas by Prestige Group in Sector 152, Noida",
+  },
+  {
+    id:"ved-n02",
+    projectName:"The Presidential",
+    developer:"DLF",
+    location:"Sector 63A, Gurugram",
+    startingPrice:"₹ 3.20 Cr",
+    configs:"3, 4 BHK + Penthouse",
+    possession:"Mar 2029",
+    type:"Luxury",
+    status:"Pre-Launch",
+    highlights:["Limited Inventory","Golf Course Road","Private Elevator","Concierge"],
+    image:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"71%",
+    alt:"The Presidential luxury project by DLF in Sector 63A, Gurugram",
+  },
+  {
+    id:"ved-n03",
+    projectName:"Central Business Park",
+    developer:"Godrej Properties",
+    location:"Sector 44, Gurugram",
+    startingPrice:"₹ 95 Lakhs",
+    configs:"500-2,500 sq.ft. Offices",
+    possession:"Jun 2028",
+    type:"Commercial",
+    status:"Just Launched",
+    highlights:["LEED Platinum","Metro Connector","Food Court","24hr Operation"],
+    image:"https://images.pexels.com/photos/36903834/pexels-photo-36903834.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"84%",
+    alt:"Central Business Park commercial offices by Godrej in Sector 44, Gurugram",
+  },
+  {
+    id:"ved-n04",
+    projectName:"Emerald County",
+    developer:"Tata Housing",
+    location:"Sector 150, Noida",
+    startingPrice:"₹ 2.45 Cr",
+    configs:"3, 4, 5 BHK",
+    possession:"Sep 2028",
+    type:"Residential",
+    status:"Under Construction",
+    highlights:["RERA Registered","35% Open Space","School Tie-up","Lake View"],
+    image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"66%",
+    alt:"Emerald County residential project by Tata Housing in Sector 150, Noida",
+  },
+  {
+    id:"ved-n05",
+    projectName:"Imperial Heights",
+    developer:"M3M India",
+    location:"Southern Peripheral Road, Gurugram",
+    startingPrice:"₹ 2.85 Cr",
+    configs:"3, 4 BHK",
+    possession:"Apr 2028",
+    type:"Residential",
+    status:"Under Construction",
+    highlights:["RERA Registered","Golf Course View","70% Sold","Possession Apr 2028"],
+    image:"https://images.pexels.com/photos/30368780/pexels-photo-30368780.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"74%",
+    alt:"Imperial Heights residential project by M3M India on Southern Peripheral Road, Gurugram",
+  },
+  {
+    id:"ved-n06",
+    projectName:"The Green Mile",
+    developer:"Signature Global",
+    location:"Sector 36, Sohna Road, Gurugram",
+    startingPrice:"₹ 1.55 Cr",
+    configs:"2, 3 BHK",
+    possession:"Phase 2, Dec 2027",
+    type:"Residential",
+    status:"Phase 2 Released",
+    highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
+    image:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"The Green Mile affordable luxury project by Signature Global on Sohna Road, Gurugram",
+  },
+  {
+    id:"ved-n07",
+    projectName:"Santorini Bay",
+    developer:"Sobha Ltd.",
+    location:"Sector 47, Faridabad",
+    startingPrice:"₹ 1.25 Cr",
+    configs:"2, 3 BHK + Retail Shops",
+    possession:"Aug 2028",
+    type:"Residential",
+    status:"Just Launched",
+    highlights:["RERA Applied","Metro 800m","Neighbourhood Mall","Landscaped Gardens"],
+    image:"https://images.pexels.com/photos/30381835/pexels-photo-30381835.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"82%",
+    alt:"Santorini Bay residential project by Sobha in Sector 47, Faridabad",
+  },
+  {
+    id:"ved-n08",
+    projectName:"Oakwood Estate",
+    developer:"Antriksh Group",
+    location:"Sector 77, Noida",
+    startingPrice:"₹ 1.85 Cr",
+    configs:"3, 4 BHK + Plots",
+    possession:"Plots Ready; Tower Dec 2028",
+    type:"Plotted",
+    status:"Under Construction",
+    highlights:["RERA Registered","Gated Community","Plots Available","Bank Tied-up"],
+    image:"https://images.pexels.com/photos/8330963/pexels-photo-8330963.jpeg?auto=compress&cs=tinysrgb&w=900",
+    pos:"100%",
+    alt:"Oakwood Estate gated community project by Antriksh Group in Sector 77, Noida",
+  },
+  {
+    id:"ved-n09",
+    projectName:"Altius Tower",
+    developer:"Brigade Group",
+    location:"Sector 152, Noida",
+    startingPrice:"₹ 2.15 Cr",
+    configs:"3, 4 BHK",
+    possession:"Feb 2029",
+    type:"Residential",
+    status:"Pre-Launch",
+    highlights:["Early Bird Pricing","RERA Applied","Noida Extension","High Appreciation Zone"],
+    image:"https://images.pexels.com/photos/31325988/pexels-photo-31325988.jpeg?auto=compress&cs=tinysrgb&w=900",
+    alt:"Altius Tower residential project by Brigade Group in Sector 152, Noida",
+  },
+];
+
+export default function NewLaunchesPage() {
+  return (
+    <>
+      <VideoHeroSection videoSrc="/videos/New%20Launches.mp4">
+          <span className="v-line" style={{ margin:"0 auto 14px" }} />
+          <p className="eyebrow" style={{ marginBottom:18 }}>New Launches</p>
+          <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>
+            Verified New Property Launches<br /><span style={{ color:"var(--gold-lt)" }}>Across Delhi NCR</span>
+          </h1>
+          <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>Verified new projects across Delhi NCR, Faridabad, Manesar, Chandigarh and North India, every listing passes our five-point Verification Framework before publishing. No unverified launches, ever.</p>
+      </VideoHeroSection>
+
+      {/* Gold differentiator */}
+      <div style={{ background:"var(--navy)",padding:"0 32px" }}>
+        <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
+      </div>
+
+      {/* Upcoming & New Launch Projects */}
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign:"center",marginBottom:60 }}>
+              <span className="v-line" style={{ margin:"0 auto 14px" }} />
+              <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Verified Projects</p>
+              <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:16 }}>
+                Recently Launched &amp;<span style={{ color:"var(--gold-lt)" }}> Upcoming Projects</span>
+              </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.48)",maxWidth:560,margin:"0 auto" }}>
+                Directly from Vedhara&apos;s verified developer partners, no speculative listings, no unapproved projects.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="prop-grid">
+            {launchProjects.map((project,index)=>(
+              <ScrollReveal key={project.id} delay={index * 80} style={{ display:"flex" }}>
+                <Link
+                  href="/contact?service=new-launches"
+                  className="hover-lift"
+                  style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
+                >
+                  {/* Image area */}
+                  <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                    <Image
+                      src={project.image}
+                      alt={project.alt || project.projectName}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      style={{ objectFit:"cover", objectPosition: project.pos ? (project.pos.indexOf(" ") > -1 ? project.pos : "50% " + project.pos) : "50% 50%" }}
+                    />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
+                    <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
+                        {project.status}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
+                        {project.type}
+                      </span>
+                    </div>
+                    <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{project.projectName}</h3>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{project.location}</p>
+
+                    {/* Details grid */}
+                    <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px 16px",marginBottom:10,padding:"10px 0",borderTop:"1px solid rgba(212,168,67,0.15)",borderBottom:"1px solid rgba(212,168,67,0.15)" }}>
+                      <div>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Configurations</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--ink)" }}>{project.configs}</p>
+                      </div>
+                      <div>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Possession</p>
+                        <p style={{ fontFamily:"var(--t-body)",fontSize:12.5,color:"var(--ink)" }}>{project.possession}</p>
+                      </div>
+                    </div>
+
+                    {/* Highlights */}
+                    <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
+                      {project.highlights.map(h=>(
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div style={{ flex:1 }} />
+
+                    {/* CTA - left to right */}
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                      <div>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",margin:0 }}>{project.startingPrice}</p>
+                      </div>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
+                        Register Interest →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <ScrollReveal delay={120}>
+            <div style={{ textAlign:"center",marginTop:52 }}>
+              <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
+                Want early access to projects before they&apos;re publicly announced? Subscribe to the Ground Report.
+              </p>
+              <div style={{ display:"flex",gap:16,justifyContent:"center",flexWrap:"wrap" }}>
+                <Link href="/contact?service=new-launches" className="btn btn-primary">
+                  Get Project Brochure →
+                </Link>
+                <Link href="/market-insights" className="btn btn-outline">
+                  Subscribe to Ground Report →
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FAQSection faqs={launchFaqs} title="New Launches FAQ" dark={false} />
+    </>
+  );
+}
