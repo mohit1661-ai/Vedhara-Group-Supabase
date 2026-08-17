@@ -35,6 +35,33 @@ interface CommercialListing {
 const commercialListings: CommercialListing[] = [
   // NEWEST LISTINGS FIRST — add new properties at the top of this array
   {
+    id:"ved-c14",
+    title:"Laxman Public School",
+    location:"Hauz Khas Enclave, South Delhi",
+    price:"₹ 450 Cr (Negotiable)",
+    priceNote:"Rental ₹25 L/mo · Hostel ₹1.95 Cr/mo",
+    size:"8.5 Acres (4 Owned + 4.5 Leased from DDA) · ~1 Lakh sq.ft. Built-up",
+    type:"Commercial",
+    status:"For Sale",
+    highlights:["Running 40+ Years · CBSE · Co-Ed","Nursery–Class XII · 4,400 Students","160 Teaching + 40 Support Staff","Hostel: 1,300 Residents · 35 Buses","Cricket, Tennis, Basketball, Swimming Pool","Society-Owned · Zero Loans or Liability","Rentals: Bank, 2 Canteens, FIITJEE, Aakash"],
+    image:"/Images/Laxman%20Public%20School%20Image%20-%203.jpg",
+    images:[
+      "/Images/Laxman%20Public%20School%20Image%20-%203.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%201.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%202.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%204.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%205.jpg",
+    ],
+    gallery:[
+      "/Images/Laxman%20Public%20School%20Image%20-%203.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%201.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%202.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%204.jpg",
+      "/Images/Laxman%20Public%20School%20Image%20-%205.jpg",
+    ],
+    alt:"Laxman Public School exterior building in Hauz Khas Enclave, South Delhi",
+  },
+  {
     id:"ved-c13",
     title:"Fortune Questa",
     location:"Udyog Vihar Phase VII, Sector 35, Gurugram",

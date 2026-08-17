@@ -37,6 +37,9 @@ function kw(...parts: string[]) {
 }
 
 const L: SearchListing[] = [
+  // ── NEW SOUTH DELHI INSTITUTIONAL LISTING (newest first) ──────
+  { id:"ved-sd7", title:"Laxman Public School", location:"Hauz Khas Enclave, South Delhi", city:"south-delhi", price:"₹ 450 Cr (Negotiable)", value:45000, config:"Nursery–12th CBSE · 4,400 Students · 160 Teaching + 40 Non-Teaching Staff · 35 Buses · Cricket, Tennis, Basketball, Swimming · Hostel: 1,300 Residents @ ₹15,000/mo · Rental Income: ₹25 Lakh/mo", size:"8.5 Acres (4 Owned + 4.5 Leased from DDA) · ~1 Lakh sq.ft. Built-up", type:"commercial", mode:"sell", category:"Institutional", image:"/Images/Laxman%20Public%20School%20Image%20-%203.jpg", alt:"Laxman Public School exterior building in Hauz Khas Enclave, South Delhi", link:"/commercial", tag:"Available for Sale", keywords:kw("laxman public school hauz khas enclave south delhi cbse school 4400 students 8.5 acres 1 lakh sqft built up hostel 1300 residents rental income 25 lakh monthly 450 cr for sale institutional property") },
+
   // ── NEW GURUGRAM COMMERCIAL LISTING (newest first) ──────
   { id:"ved-g16", title:"Fortune Questa", location:"Udyog Vihar Phase VII, Sector 35, Gurugram", city:"gurugram", price:"₹ 150 Cr", value:15000, config:"A/C Load 568 KW · 300 KW (COP 6.15 + heat recovery)", size:"2.84 lakh sq. ft. total", type:"commercial", mode:"sell", category:"Commercial", image:"https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=900", alt:"LEED Silver Grade-A office building on NH-8, Gurugram", link:"/commercial", tag:"Available for Sale", keywords:kw("fortune questa gurugram udoyog vihar sector 35 leed silver office space nh-8 grade a it ites") },
 
