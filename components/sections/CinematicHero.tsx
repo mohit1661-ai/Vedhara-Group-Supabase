@@ -92,6 +92,8 @@ interface CinematicHeroProps {
   videoSrc?: string;
   /** Mobile (lightweight) video source, used below 768px for fast autoplay. */
   videoSrcMobile?: string;
+  /** Optional poster image shown before video loads. */
+  poster?: string;
 }
 
 /* ── Hero "4 parts" — image cards that expand a short detail on click ── */
@@ -105,6 +107,7 @@ const heroParts = [
 export default function CinematicHero({
   videoSrc = "/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4",
   videoSrcMobile,
+  poster,
 }: CinematicHeroProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoSrcReady, setVideoSrcReady] = useState(false);
@@ -122,8 +125,6 @@ export default function CinematicHero({
       el.currentTime = 0;
       if (videoSrc) {
         el.src = videoSrc;
-        el.preload = "auto";
-        el.load();
       }
       setVideoSrcReady(true);
     }
@@ -254,13 +255,30 @@ export default function CinematicHero({
           background: "#090f1d",
         }}
       >
+        {poster && (
+          <Image
+            src={poster}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="video-bg"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center center",
+              opacity: videoLoaded ? 0 : 1,
+              transition: "opacity 0.8s ease",
+              zIndex: 1,
+            }}
+          />
+        )}
         <video
           ref={videoRefCallback}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           className="video-bg"
           title="Vedhara Group homepage cinematic property film"
           aria-label="Vedhara Group homepage cinematic property film"
@@ -272,6 +290,8 @@ export default function CinematicHero({
             objectFit: "cover",
             objectPosition: "center center",
             transform: "translateZ(0)",
+            position: "relative",
+            zIndex: 2,
           }}
         />
       </div>
