@@ -35,6 +35,37 @@ interface CommercialListing {
 const commercialListings: CommercialListing[] = [
   // NEWEST LISTINGS FIRST — add new properties at the top of this array
   {
+    id:"ved-c15",
+    title:"Pre-Leased Industrial Estate",
+    location:"Ghiloth Industrial Area, Neemrana, Rajasthan",
+    price:"₹ 250 Cr Demand",
+    priceNote:"₹225 Cr Net (Non-Negotiable) · Rent ₹1.60 Cr/mo",
+    size:"",
+    type:"Industrial",
+    status:"For Sale",
+    highlights:[
+      "20-Acre Approved Industrial Plot",
+      "6.5 Lakh sq.ft. Shed Area Across 3 Sheds",
+      "1.10 Lakh sq.ft. RCC · Ground + 2 Floors",
+      "Top MNC · Electronics Manufacturing",
+      "Fresh 12-Year Lease · 3-Year Lock-in",
+    ],
+    image:"/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%204.jpg",
+    images:[
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%204.jpg",
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-1.webp",
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%202.webp",
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%203.webp",
+    ],
+    gallery:[
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%204.jpg",
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-1.webp",
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%202.webp",
+      "/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%203.webp",
+    ],
+    alt:"Pre-leased industrial estate with MNC electronics manufacturing tenant in Ghiloth Industrial Area, Neemrana",
+  },
+  {
     id:"ved-c14",
     title:"Laxman Public School",
     location:"Hauz Khas Enclave, South Delhi",
