@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Property Calculators | ROI, EMI, Stamp Duty | Vedhara Group",
     description: "Use 4 free property calculators: ROI & rental yield, home loan EMI, stamp duty, and affordability. No sign-up required.",
+    images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group, Independent Real Estate Advisory Delhi NCR" }],
   },
   alternates:{ canonical:"https://www.vedharagroup.com/calculators" },
 };

@@ -79,8 +79,8 @@ const img = (id: number) =>
 const gurugram: CityPageData = {
   slug: "gurugram",
   name: "Gurugram",
-  metaTitle: "Gurugram Property Advisory | Golf Course Road & Dwarka Expert - Vedhara",
-  metaDescription: "Verified property advisory in Gurugram. Independent due diligence on Golf Course Road, Dwarka Expressway, Sohna Road and Sector 62. Haryana RERA checked, prices benchmarked to registered transactions.",
+  metaTitle: "Gurugram Property Advisory | Golf Course Rd",
+  metaDescription: "Verified Gurugram property advisory. Golf Course Road, Dwarka Expressway, Sohna Road and Sector 62. HRERA checked, prices benchmarked to registered transactions.",
   heroVideo: "/videos/gurugram-city.mp4",
   heroPoster: img(11729105),
   eyebrow: "Gurugram",
@@ -100,7 +100,7 @@ const gurugram: CityPageData = {
     "Every listing is Haryana RERA-verified and independently assessed through the Vedhara Verification Framework.",
   listings: [
     // NEWEST LISTINGS FIRST — add new properties at the top of this array
-    { id:"gg-25", title:"Fully Furnished Pre-Rented Building", location:"Sector 32, Gurugram", price:"₹ 200 Cr", config:"Commercial · Pre-Rented", size:"1,25,000 sq.ft. Leased", type:"Commercial", status:"Available for Sale", highlights:["Rent ₹1.17 Cr/mo","Single Reputed Tenant","B2 + 5 Floors","New Lease · 3-Yr Lock-in"], image:img(210723), alt:"Fully furnished pre-rented commercial building with single reputed tenant in Sector 32, Gurugram" },
+    { id:"gg-25", title:"Fully Furnished Pre-Rented Building", location:"Sector 32, Gurugram", price:"₹ 200 Cr", config:"Commercial · Pre-Rented", size:"1,25,000 sq.ft. Leased", type:"Commercial", status:"Available for Sale", highlights:["Rent ₹1.17 Cr/mo","Single Reputed Tenant","B2 + 5 Floors","New Lease · 3-Yr Lock-in"], image:"/Images/Fully%20Newly%20Furnished%20rented%20building%20in%20Sector%2032%20Gurgaon.webp", alt:"Fully furnished pre-rented commercial building with single reputed tenant in Sector 32, Gurugram" },
     { id:"gg-21", title:"Sector 15 Duplex Kothi", location:"Sector 15 Part 2, Gurugram", price:"₹ 18 Cr", config:"4 BHK + Servant Quarter", size:"502 sq.yds.", type:"Luxury", status:"Available for Sale", highlights:["Prime Sector 15","Duplex Villa","Servant Quarter","NH-8 Connectivity"], image:img(35808145), alt:"Sector 15 duplex kothi villa in Gurugram" },
     { id:"gg-22", title:"NH-8 Facing Plot, Sector 15", location:"Sector 15 Part 2, Gurugram", price:"₹ 18.50 Cr", config:"500 sq.yds. Plot", size:"500 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["Main NH-8 Facing","Green Belt Facing","Cheque Flexible","Prime Location"], image:img(11201060), alt:"NH-8 facing residential plot in Sector 15 Part 2, Gurugram" },
     { id:"gg-23", title:"Commercial Building, Udyog Vihar 5", location:"Udyog Vihar Phase 5, Gurugram", price:"₹ 40 Cr", config:"Commercial Building", size:"1,000 sq. m.", type:"Commercial", status:"Available for Sale", highlights:["40,000 sq.ft. Built-up","Established Commercial Zone","1,000 sq. m. Plot"], image:"/Images/udyog-vihar-05.jpeg", alt:"Commercial building for sale in Udyog Vihar Phase 5, Gurugram" },
@@ -180,8 +180,8 @@ const gurugram: CityPageData = {
 const noida: CityPageData = {
   slug: "noida",
   name: "Noida",
-  metaTitle: "Noida Real Estate Advisory | Sector 150 & Expressway Expertise - Vedhara",
-  metaDescription: "Independent property advisory across Noida. Sector 150, Expressway corridor and established sectors verified through UP RERA. Transparent fees, named advisor from day one.",
+  metaTitle: "Noida Real Estate Advisory | Sector 150",
+  metaDescription: "Independent property advisory across Noida. Sector 150 and the Expressway corridor, UP RERA verified, transparent fees and a named advisor from day one.",
   heroVideo: "/videos/noida-city.mp4",
   heroPoster: img(31684126),
   eyebrow: "Noida",
@@ -277,8 +277,8 @@ const noida: CityPageData = {
 const greaterNoida: CityPageData = {
   slug: "greater-noida",
   name: "Greater Noida",
-  metaTitle: "Greater Noida Property Advisory | Plots, Townships & New Projects - Vedhara",
-  metaDescription: "Verified plots, apartments and township projects in Greater Noida. GNIDA & YEIDA approvals checked, UP RERA compliance verified, price benchmarking against circle rates.",
+  metaTitle: "Greater Noida Property | Plots & Projects",
+  metaDescription: "Verified plots, apartments and township projects in Greater Noida. GNIDA and YEIDA approvals checked, UP RERA verified, prices benchmarked to circle rates.",
   heroVideo: "/videos/greater-noida-city.mp4",
   heroPoster: img(15422584),
   eyebrow: "Greater Noida",
@@ -372,8 +372,8 @@ const greaterNoida: CityPageData = {
 const southDelhi: CityPageData = {
   slug: "south-delhi",
   name: "South Delhi",
-  metaTitle: "South Delhi Luxury Property Advisory | Lutyens & Vasant Vihar - Vedhara",
-  metaDescription: "Luxury property advisory for South Delhi. Lutyens', Vasant Vihar, Greater Kailash and Defence Colony. Title verification, independent floor approvals and documented due diligence.",
+  metaTitle: "South Delhi Luxury Property Advisory",
+  metaDescription: "Luxury property advisory for South Delhi. Lutyens, Vasant Vihar, Greater Kailash and Defence Colony with title verification and documented due diligence.",
   heroVideo: "/videos/south-delhi-city.mp4",
   heroPoster: img(20418771),
   eyebrow: "South Delhi",
@@ -467,8 +467,8 @@ const southDelhi: CityPageData = {
 const chandigarh: CityPageData = {
   slug: "chandigarh",
   name: "Chandigarh",
-  metaTitle: "Chandigarh Property Advisory | Tricity Expertise & Estate Office Guidance - Vedhara",
-  metaDescription: "Verified property advisory in Chandigarh Tricity. Estate Office rules clarified, NOC checks completed, freehold conversion guidance with published verification results.",
+  metaTitle: "Chandigarh Property Advisory | Tricity",
+  metaDescription: "Verified property advisory in Chandigarh Tricity. Estate Office rules, NOC checks and freehold conversion guidance with published verification results.",
   heroVideo: "/videos/Chandigarh%20Tricity%20Hero%20Desktop.mp4",
   heroVideoMobile: "/videos/Chandigarh%20Tricity%20Hero%20Mobile.mp4",
   heroPoster: img(32355381),
@@ -563,7 +563,7 @@ const chandigarh: CityPageData = {
 const mohali: CityPageData = {
   slug: "mohali",
   name: "Mohali",
-  metaTitle: "Mohali Real Estate Advisory | GMADA Sectors & IT Corridor - Vedhara",
+  metaTitle: "Mohali Real Estate Advisory | GMADA",
   metaDescription: "Independent property advisory in Mohali. GMADA-approved sectors, IT corridor projects and new launches verified through Punjab RERA with transparent fee disclosure.",
   heroVideo: "/videos/mohali-city.mp4",
   heroPoster: img(35229793),
@@ -658,7 +658,7 @@ const mohali: CityPageData = {
 const panchkula: CityPageData = {
   slug: "panchkula",
   name: "Panchkula",
-  metaTitle: "Panchkula Property Advisory | HRERA Verified & Freehold Guidance - Vedhara",
+  metaTitle: "Panchkula Property Advisory | HRERA",
   metaDescription: "Verified property advisory in Panchkula. HRERA compliance checked, freehold-conversion guidance provided, prices benchmarked against registered local transactions.",
   heroVideo: "/videos/panchkula-city.mp4",
   heroPoster: img(37433082),
@@ -753,7 +753,7 @@ const panchkula: CityPageData = {
 const faridabad: CityPageData = {
   slug: "faridabad",
   name: "Faridabad",
-  metaTitle: "Faridabad Property Advisory | Neharpar & Sector 79 Expertise - Vedhara",
+  metaTitle: "Faridabad Property Advisory | Neharpar",
   metaDescription: "Property advisory across Faridabad. Neharpar, Sector 47 and Sector 79 verified listings with HRERA due diligence and honest price benchmarking.",
   heroVideo: "/videos/faridabad-city.mp4",
   heroPoster: img(30381835),
@@ -848,7 +848,7 @@ const faridabad: CityPageData = {
 const ghaziabad: CityPageData = {
   slug: "ghaziabad",
   name: "Ghaziabad",
-  metaTitle: "Ghaziabad Real Estate Advisory | Raj Nagar & Indirapuram Verified - Vedhara",
+  metaTitle: "Ghaziabad Property Advisory | Verified",
   metaDescription: "Independent property advisory in Ghaziabad. Raj Nagar Extension, Indirapuram and Vaishali verified through UP RERA with published due-diligence results.",
   heroVideo: "/videos/ghaziabad-city.mp4",
   heroPoster: img(30368780),
@@ -943,7 +943,7 @@ const ghaziabad: CityPageData = {
 const mathuraVrindavan: CityPageData = {
   slug: "mathura-vrindavan",
   name: "Mathura & Vrindavan",
-  metaTitle: "Mathura & Vrindavan Property Advisory | Yamuna Expressway & Temple Town - Vedhara",
+  metaTitle: "Mathura & Vrindavan Property Advisory",
   metaDescription: "Verified property listings in Mathura and Vrindavan. Yamuna Expressway plots, temple-town homes and villa projects checked through UP RERA compliance.",
   heroVideo: "/videos/mathura-vrindavan-city.mp4",
   heroPoster: img(11969919),

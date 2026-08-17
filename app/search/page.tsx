@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Search Verified Properties | Vedhara Group",
   description:
-    "Search verified properties across Gurugram, Noida, Greater Noida, South Delhi, Chandigarh Tricity, Faridabad, Ghaziabad and Mathura Vrindavan. Buy, rent or sell with RERA-verified listings.",
+    "Search verified properties across Gurugram, Noida, Greater Noida, South Delhi, Chandigarh Tricity and Faridabad. Buy, rent or sell with RERA-verified listings.",
   alternates: { canonical: "https://www.vedharagroup.com/search" },
 };
 
