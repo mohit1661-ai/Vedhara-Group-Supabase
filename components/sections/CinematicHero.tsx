@@ -11,15 +11,13 @@ function Particles() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    if (typeof window !== "undefined" && window.matchMedia && window.matchMedia("(pointer: coarse)").matches) return;
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     };
     resize();
-    window.addEventListener("resize", resize, { passive: true });
-    const count = window.innerWidth < 768 ? 20 : 40;
-    const particles = Array.from({ length: count }, () => ({
+    window.addEventListener("resize", resize);
+    const particles = Array.from({ length: window.innerWidth < 768 ? 32 : 70 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
@@ -31,8 +29,7 @@ function Particles() {
     let running = true;
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
+      particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
         if (p.x < 0) p.x = canvas.width;
@@ -43,9 +40,25 @@ function Particles() {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(232,201,112,${p.alpha})`;
         ctx.fill();
+      });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / 120)})`;
+            ctx.lineWidth = 0.4;
+            ctx.stroke();
+          }
+        }
       }
       raf = requestAnimationFrame(draw);
     };
+    // Pause the animation when the tab is hidden (invisible to users, saves CPU).
     const onVis = () => {
       if (document.hidden) { running = false; cancelAnimationFrame(raf); }
       else if (!running) { running = true; draw(); }
@@ -79,7 +92,7 @@ interface CinematicHeroProps {
   videoSrc?: string;
   /** Mobile (lightweight) video source, used below 768px for fast autoplay. */
   videoSrcMobile?: string;
-  /** Optional poster image shown before video loads. */
+  /** Poster image shown behind the video until it loads (LCP element). */
   poster?: string;
 }
 
@@ -105,11 +118,16 @@ export default function CinematicHero({
   const contentOuterRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Ref callback to reset playback position after mount — src is on the element for instant fetch
+  // Ref callback to set src after mount — prevents browser from restoring stale playback position
   const videoRefCallback = (el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
       el.currentTime = 0;
+      if (videoSrc) {
+        el.src = videoSrc;
+        el.preload = "auto";
+        el.load();
+      }
       setVideoSrcReady(true);
     }
   };
@@ -239,31 +257,27 @@ export default function CinematicHero({
           background: "#090f1d",
         }}
       >
-        {poster && (
-          <Image
-            src={poster}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="video-bg"
+        {poster ? (
+          <div
+            aria-hidden="true"
             style={{
-              objectFit: "cover",
-              objectPosition: "center center",
+              position: "absolute",
+              inset: 0,
+              backgroundImage: `url(${poster})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
               opacity: videoLoaded ? 0 : 1,
               transition: "opacity 0.8s ease",
-              zIndex: 1,
             }}
           />
-        )}
+        ) : null}
         <video
           ref={videoRefCallback}
-          src={videoSrc}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           className="video-bg"
           title="Vedhara Group homepage cinematic property film"
           aria-label="Vedhara Group homepage cinematic property film"
@@ -275,8 +289,6 @@ export default function CinematicHero({
             objectFit: "cover",
             objectPosition: "center center",
             transform: "translateZ(0)",
-            position: "relative",
-            zIndex: 2,
           }}
         />
       </div>
@@ -465,7 +477,7 @@ export default function CinematicHero({
 
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;gap:32px!important;}.hero-right{max-width:400px;margin:0 auto;}}
-        @media(max-width:600px){.hero-tagline{margin-bottom:8px!important;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:10px!important;}}
+        @media(max-width:600px){.hero-tagline{margin-bottom:8px!important;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:8px!important;}}
         .hero-quick-link{display:flex;align-items:center;gap:9px;padding:12px 12px;font-family:var(--t-head);font-size:11px;font-weight:500;color:#ffffff;text-decoration:none;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;letter-spacing:0.02em;transition:all 0.25s ease;}
         .hero-quick-link:hover{background:rgba(212,168,67,0.12);border-color:rgba(212,168,67,0.4);color:var(--gold-lt);transform:translateY(-2px);box-shadow:0 10px 24px rgba(9,15,29,0.45);}
         .hero-quick-icon{width:30px;height:30px;border-radius:8px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all 0.25s;}

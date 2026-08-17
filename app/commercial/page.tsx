@@ -35,6 +35,40 @@ interface CommercialListing {
 const commercialListings: CommercialListing[] = [
   // NEWEST LISTINGS FIRST — add new properties at the top of this array
   {
+    id:"ved-c16",
+    title:"Fully Furnished Pre-Rented Building",
+    location:"Sector 32, Gurugram",
+    price:"₹ 200 Cr Demand",
+    priceNote:"Rent ₹1.17 Cr/mo · Pre-Rented",
+    size:"",
+    type:"Commercial",
+    status:"For Sale",
+    highlights:[
+      "4,000 sq.m. Plot · B2 + 5 Floors",
+      "1,25,000 sq.ft. Leased Area",
+      "Single Tenant · Highly Reputed Company",
+      "Newly & Fully Furnished · Running",
+      "New Lease · 3-Year Lock-in",
+      "15% Escalation Every 3 Years",
+    ],
+    image:"https://images.pexels.com/photos/210723/pexels-photo-210723.jpeg?auto=compress&cs=tinysrgb&w=900",
+    images:[
+      "https://images.pexels.com/photos/210723/pexels-photo-210723.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/358549/pexels-photo-358549.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/15202224/pexels-photo-15202224.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/7534170/pexels-photo-7534170.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/19893586/pexels-photo-19893586.jpeg?auto=compress&cs=tinysrgb&w=500",
+    ],
+    gallery:[
+      "https://images.pexels.com/photos/210723/pexels-photo-210723.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/358549/pexels-photo-358549.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/15202224/pexels-photo-15202224.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/7534170/pexels-photo-7534170.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/19893586/pexels-photo-19893586.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    ],
+    alt:"Fully furnished pre-rented commercial building with single reputed tenant in Sector 32, Gurugram",
+  },
+  {
     id:"ved-c15",
     title:"Pre-Leased Industrial Estate",
     location:"Ghiloth Industrial Area, Neemrana, Rajasthan",
