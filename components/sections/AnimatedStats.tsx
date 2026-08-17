@@ -43,7 +43,7 @@ export default function AnimatedStats() {
           ))}
         </div>
       </div>
-      <style>{`.stats-row{grid-template-columns:repeat(4,1fr)!important;}@media(max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)!important;}}@media(max-width:600px){.stats-row{grid-template-columns:repeat(2,1fr)!important;gap:12px!important;}.stats-row .stat-inner{padding:20px 10px 20px!important;}.stats-row .stat-counter{font-size:clamp(18px,4vw,26px)!important;}.stats-row .stat-label{font-size:7.5px!important;letter-spacing:0.06em!important;}}`}</style>
+      <style>{`.stats-row{grid-template-columns:repeat(4,1fr)!important;}@media(max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)!important;}}@media(max-width:600px){.stats-row{grid-template-columns:repeat(2,1fr)!important;gap:12px!important;}.stats-row .stat-inner{padding:20px 10px 20px!important;}.stats-row .stat-counter{font-size:clamp(18px,4vw,26px)!important;}.stats-row .stat-label{font-size:10px!important;letter-spacing:0.06em!important;}}`}</style>
     </section>
   );
 }

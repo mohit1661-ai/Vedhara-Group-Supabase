@@ -5,7 +5,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import AnimatedStats from "@/components/sections/AnimatedStats";
 
-export const metadata: Metadata = { title:"Real Estate Case Studies | Delhi NCR", description:"Real real estate case studies across Delhi NCR, Faridabad & Chandigarh: NRI purchase, portfolio restructuring, lease negotiation and first-time buying.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
+export const metadata: Metadata = { title:"Real Estate Case Studies | Delhi NCR", description:"Real estate case studies across Delhi NCR, Faridabad & Chandigarh: NRI purchase, portfolio restructuring, lease negotiation and first-time buying.", alternates:{ canonical:"https://www.vedharagroup.com/case-studies" } };
 
 const cases = [
   {

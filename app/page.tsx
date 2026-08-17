@@ -96,6 +96,22 @@ export default function HomePage() {
       {/* Preload hero video so the browser starts fetching before client JS hydrates */}
       <link rel="preload" as="video" href="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=3" />
       <JsonLd data={homeSchema} />
+      {[
+        { name:"D.R Sharma", jobTitle:"Founder & Chief Executive Officer", url:"https://www.vedharagroup.com/team", image:"/Images/Mr. D.R Sharma.png" },
+        { name:"Mohit Sharma", jobTitle:"Managing Director", url:"https://www.vedharagroup.com/team", image:"/Images/Mr. Mohit Sharma.png" },
+        { name:"Kusum Sharma", jobTitle:"Director, Strategic Partnerships", url:"https://www.vedharagroup.com/team", image:"/Images/Ms Kusum Sharma.png" },
+        { name:"Bharat", jobTitle:"Director, Investment Advisory", url:"https://www.vedharagroup.com/team", image:"/Images/Mr. Bharat.png" },
+      ].map(m => (
+        <JsonLd key={m.name} data={{
+          "@context":"https://schema.org",
+          "@type":"Person",
+          name:m.name,
+          jobTitle:m.jobTitle,
+          worksFor:{"@id":"https://www.vedharagroup.com/#organization"},
+          url:m.url,
+          image:m.image,
+        }} />
+      ))}
       <CinematicHero
         videoSrc="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=3"
         videoSrcMobile="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=3"

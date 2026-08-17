@@ -21,7 +21,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug:stri
     description:post.metaDescription,
     keywords:post.keywords,
     alternates:{ canonical:`https://www.vedharagroup.com/blog/${post.slug}` },
-    openGraph:{ title:post.metaTitle, description:post.metaDescription, type:"article", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:post.metaTitle }] },
+    openGraph:{
+      title:post.metaTitle || post.title,
+      description:post.metaDescription,
+      type:"article",
+      publishedTime:post.datePublished,
+      modifiedTime:post.dateModified,
+      images:[{ url:"/og-default.jpg", width:1200, height:630, alt:post.title }],
+    },
   };
 }
 
@@ -30,15 +37,27 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const post = blogPosts.find((p)=>p.slug===slug);
   if(!post) notFound();
 
+  const wordCount = post.sections.reduce((acc, s) => acc + s.paragraphs.join(" ").split(/\s+/).length, 0)
+    + post.intro.join(" ").split(/\s+/).length
+    + post.takeaways.join(" ").split(/\s+/).length;
+
   const schema = {
     "@context":"https://schema.org",
     "@type":"Article",
     headline:post.title,
     description:post.metaDescription,
-    author:{ "@type":"Organization", name:"Vedhara Group" },
-    publisher:{ "@type":"Organization", name:"Vedhara Group" },
+    datePublished:post.datePublished,
+    dateModified:post.dateModified,
+    image:"/og-default.jpg",
+    author:{ "@type":"Person", name:"Mohit Sharma", jobTitle:"Managing Director" },
+    publisher:{ "@type":"Organization", name:"Vedhara Group", "@id":"https://www.vedharagroup.com/#organization" },
     mainEntityOfPage:`https://www.vedharagroup.com/blog/${post.slug}`,
     keywords:post.keywords.join(", "),
+    wordCount,
+    speakable:{
+      "@type":"SpeakableSpecification",
+      cssSelector:[".article-takeaways"],
+    },
   };
 
   const others = blogPosts.filter((p)=>p.slug!==slug).slice(0,3);
@@ -172,7 +191,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
               </p>
             </div>
           </ScrollReveal>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:20 }} className="grid-2">
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:20 }} className="grid-2 article-takeaways">
             {post.takeaways.map((take,ti)=>(
               <ScrollReveal key={ti} delay={ti*70} style={{ display:"flex" }}>
                 <div className="hover-lift" style={{ background:"var(--cream)",border:"1px solid rgba(212,168,67,0.2)",borderRadius:16,overflow:"hidden",flex:1,display:"flex",alignItems:"center",gap:14,padding:"18px 20px",boxShadow:"0 8px 24px rgba(0,0,0,0.15)" }}>

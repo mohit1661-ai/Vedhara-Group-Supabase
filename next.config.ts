@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       {
         source: "/(.*)",
         headers: [
+          { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains; preload" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -28,6 +29,11 @@ const nextConfig: NextConfig = {
       {
         source: "/watch/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
+      // Favicons & PWA icons — immutable cache.
+      {
+        source: "/(favicon|apple-touch-icon|android-chrome-.*\\.png)",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       // Team photos & brand images.
       {

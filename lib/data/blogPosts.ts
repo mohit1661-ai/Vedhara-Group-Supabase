@@ -11,6 +11,8 @@ export interface BlogPost {
   title:string;
   category:string;
   readTime:string;
+  datePublished:string;
+  dateModified:string;
   gradient:string;
   videoSrc:string;
   metaTitle:string;
@@ -30,6 +32,8 @@ export const blogPosts: BlogPost[] = [
     title:"Delhi NCR Property Price Trends 2026: A Comprehensive Micro-Market Analysis",
     category:"Market Trends",
     readTime:"8 min read",
+    datePublished:"2026-01-05",
+    dateModified:"2026-08-12",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
     videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
     metaTitle:"Delhi NCR Property Price Trends 2026",
@@ -98,6 +102,8 @@ export const blogPosts: BlogPost[] = [
     title:"RERA in Delhi NCR: Complete Guide for Home Buyers in Gurugram, Noida & Delhi",
     category:"Legal & Compliance",
     readTime:"10 min read",
+    datePublished:"2026-01-20",
+    dateModified:"2026-07-10",
     gradient:"linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 50%,#D4A843 100%)",
     videoSrc:"/videos/Property%20Verification.mp4",
     metaTitle:"RERA Guide for Delhi NCR Home Buyers",
@@ -162,6 +168,8 @@ export const blogPosts: BlogPost[] = [
     title:"NRI Property Investment in Delhi NCR: Taxation, Repatriation & Remote Management Guide",
     category:"NRI Services",
     readTime:"12 min read",
+    datePublished:"2026-02-10",
+    dateModified:"2026-07-25",
     gradient:"linear-gradient(135deg,#16243F 0%,#2a4a6a 50%,#6a8aaa 100%)",
     videoSrc:"/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video.mp4",
     metaTitle:"NRI Property Investment in Delhi NCR",
@@ -226,6 +234,8 @@ export const blogPosts: BlogPost[] = [
     title:"Stamp Duty and Registration Charges in Delhi NCR: State-by-State Breakdown 2026",
     category:"Buying Guide",
     readTime:"7 min read",
+    datePublished:"2026-03-10",
+    dateModified:"2026-08-01",
     gradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
     videoSrc:"/videos/Real%20Estate%20Calculator.mp4",
     metaTitle:"Stamp Duty Charges in Delhi NCR 2026",
@@ -296,6 +306,8 @@ export const blogPosts: BlogPost[] = [
     title:"Rental Yields in Gurugram vs Noida vs Faridabad: Where Should You Invest in 2026?",
     category:"Investment",
     readTime:"9 min read",
+    datePublished:"2026-04-10",
+    dateModified:"2026-08-08",
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#D4A843 100%)",
     videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
     metaTitle:"Rental Yields in Delhi NCR 2026",
@@ -366,6 +378,8 @@ export const blogPosts: BlogPost[] = [
     title:"Home Loan Guide for Delhi NCR Property: Interest Rates, Eligibility & Tax Benefits 2026",
     category:"Finance",
     readTime:"11 min read",
+    datePublished:"2026-05-05",
+    dateModified:"2026-08-15",
     gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
     videoSrc:"/videos/Real%20Estate%20Calculator.mp4",
     metaTitle:"Home Loan Guide for Delhi NCR 2026",

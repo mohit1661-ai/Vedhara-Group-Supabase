@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedharagroup.com"),
   title: { default: "Vedhara Group | Verified Property Advisory in Delhi NCR, Buy, Sell, Invest", template: "%s | Vedhara Group" },
   description: "North India's independent real estate advisory firm. Verified listings, transparent fees and free tools across Delhi NCR, Faridabad, Manesar & Chandigarh.",
-  openGraph: { type:"website", locale:"en_IN", siteName:"Vedhara Group", url:"https://www.vedharagroup.com", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group, Independent Real Estate Advisory Delhi NCR" }] },
+  openGraph: { type:"website", locale:"en_IN", siteName:"Vedhara Group", url:"https://www.vedharagroup.com", title: { absolute: "Vedhara Group | Verified Property Advisory in Delhi NCR" }, description: "North India's independent real estate advisory firm. Buy, sell or invest across Delhi NCR with verified listings.", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group, Independent Real Estate Advisory Delhi NCR" }] },
   twitter: { card:"summary_large_image", site:"@vedharagroup", creator:"@vedharagroup", images:["/og-default.jpg"] },
   robots: { index:true, follow:true, googleBot:{ index:true, follow:true, "max-image-preview":"large", "max-snippet":-1 } },
 };
@@ -23,8 +23,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-IN" className={`${cormorant.variable} ${poppins.variable} ${roboto.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="llms.txt" href="/llms.txt" />
         <link rel="llms-full" href="/llms-full.txt" />
+        <link rel="me" href="https://www.linkedin.com/company/vedharagroup/" />
+        <link rel="me" href="https://www.instagram.com/vedharagroup" />
         <meta name="theme-color" content="#0F1E38" />
       </head>
       <body style={{ display:"flex", flexDirection:"column", minHeight:"100vh" }}>
@@ -38,6 +43,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           telephone:"+91-98106-47063", email:"contact@vedharagroup.com",
           address:{ "@type":"PostalAddress", addressLocality:"Delhi", addressRegion:"Delhi", addressCountry:"IN" },
           areaServed:[{name:"Delhi NCR"},{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Manesar"},{name:"Ghaziabad"},{name:"Greater Noida"},{name:"Chandigarh"},{name:"Mohali"},{name:"Panchkula"},{name:"Zirakpur"},{name:"Kharar"},{name:"North India"}],
+          foundingDate:"2015", logo:"https://www.vedharagroup.com/vedhara-logo-white.png",
+          openingHoursSpecification:[
+            { "@type":"OpeningHoursSpecification", dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday"], opens:"09:00", closes:"19:00" },
+            { "@type":"OpeningHoursSpecification", dayOfWeek:["Saturday","Sunday"], opens:"10:00", closes:"16:00" }
+          ],
           knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","Property Advisory Faridabad","Commercial Property Manesar","Real Estate North India","Chandigarh Tricity Real Estate","Property Advisory Mohali Panchkula","GMADA HRERA Punjab RERA Due Diligence","RERA Verified Property Listings","NRI Property Investment India"],
           sameAs:["https://www.linkedin.com/company/vedharagroup/","https://www.instagram.com/vedharagroup"],
         }} />
