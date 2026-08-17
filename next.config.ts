@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "images.pexels.com" },
@@ -21,24 +22,24 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
         ],
       },
-      // Long-lived caching for media (hero videos, watch-page copies).
+      // Long-lived caching for media (hero videos, watch-page copies). Versioned via query string.
       {
         source: "/videos/:path*",
-        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
         source: "/watch/:path*",
-        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       // Favicons & PWA icons — immutable cache.
       {
         source: "/(favicon|apple-touch-icon|android-chrome-.*\\.png)",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
-      // Team photos & brand images.
+      // Team photos & brand images — long cache (content rarely changes).
       {
         source: "/Images/:path*",
-        headers: [{ key: "Cache-Control", value: "public, max-age=604800" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=604800" }],
       },
       // LLM-index files: short cache so crawlers see fresh updates quickly.
       {

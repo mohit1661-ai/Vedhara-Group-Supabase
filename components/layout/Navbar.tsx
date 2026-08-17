@@ -2,7 +2,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ConsultationModal from "@/components/ui/ConsultationModal";
+import dynamic from "next/dynamic";
+
+const ConsultationModal = dynamic(() => import("@/components/ui/ConsultationModal"), { ssr: false });
 
 const navLinks = [
   { label:"About",     href:"/about" },

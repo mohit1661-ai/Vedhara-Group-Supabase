@@ -93,8 +93,8 @@ const homeSchema = {
 export default function HomePage() {
   return (
     <>
-      {/* Preload hero video so the browser starts fetching before client JS hydrates */}
-      <link rel="preload" as="video" href="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=3" />
+      {/* Preload hero poster (LCP element) — highest priority, before video */}
+      <link rel="preload" as="image" href="/videos/homepage-hero-poster.jpg" imageSrcSet="/_next/image?url=%2Fvideos%2Fhomepage-hero-poster.jpg&w=1920&q=80 1920w" imageSizes="100vw" />
       <JsonLd data={homeSchema} />
       {[
         { name:"D.R Sharma", jobTitle:"Founder & Chief Executive Officer", url:"https://www.vedharagroup.com/team", image:"/Images/Mr. D.R Sharma.png" },
@@ -400,7 +400,7 @@ export default function HomePage() {
               <ScrollReveal key={member.name} delay={i*100} style={{ display:"flex" }}>
                 <div className="team-card hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,width:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   <div style={{ height:200,position:"relative",overflow:"hidden" }}>
-                    <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="400px" quality={100} style={{ objectFit:"cover",objectPosition:"center top" }} />
+                    <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="400px" quality={80} style={{ objectFit:"cover",objectPosition:"center top" }} />
                   </div>
                   {/* Content - matching featured properties style */}
                   <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>

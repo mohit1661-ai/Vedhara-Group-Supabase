@@ -11,13 +11,15 @@ function Particles() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    if (typeof window !== "undefined" && window.matchMedia && window.matchMedia("(pointer: coarse)").matches) return;
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
     resize();
-    window.addEventListener("resize", resize);
-    const particles = Array.from({ length: window.innerWidth < 768 ? 32 : 70 }, () => ({
+    window.addEventListener("resize", resize, { passive: true });
+    const count = window.innerWidth < 768 ? 20 : 40;
+    const particles = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
@@ -29,7 +31,8 @@ function Particles() {
     let running = true;
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
         if (p.x < 0) p.x = canvas.width;
@@ -40,25 +43,9 @@ function Particles() {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(232,201,112,${p.alpha})`;
         ctx.fill();
-      });
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / 120)})`;
-            ctx.lineWidth = 0.4;
-            ctx.stroke();
-          }
-        }
       }
       raf = requestAnimationFrame(draw);
     };
-    // Pause the animation when the tab is hidden (invisible to users, saves CPU).
     const onVis = () => {
       if (document.hidden) { running = false; cancelAnimationFrame(raf); }
       else if (!running) { running = true; draw(); }

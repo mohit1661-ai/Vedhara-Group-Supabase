@@ -142,7 +142,7 @@ export default function TeamPage() {
               <ScrollReveal key={member.name} delay={i*100}>
                 <div className="team-card" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",overflow:"hidden",transition:"all 0.4s var(--ease-out)" }}>
                   <div style={{ height:280,position:"relative",overflow:"hidden" }}>
-                    <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="600px" quality={100} style={{ objectFit:"cover",objectPosition:"center top" }} />
+                    <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="600px" quality={80} style={{ objectFit:"cover",objectPosition:"center top" }} />
                   </div>
                   {/* Content */}
                   <div style={{ padding:"24px 32px 28px" }}>
