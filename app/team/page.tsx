@@ -29,8 +29,7 @@ const teamMembers = [
   {
     name:"Mr. D.R Sharma",
     title:"Founder & Chief Executive Officer",
-    initials:"DS",
-    photo:"/Images/D.R Sharma.JPG",
+    photo:"/Images/Mr. D.R Sharma.png",
     gradient:"linear-gradient(135deg,#0F1E38,#2a3f6f)",
     description:"With over two decades of experience in Delhi NCR's real estate landscape, D.R Sharma founded Vedhara Group on the principle that property advisory should be independent, transparent, and genuinely client-first. He oversees the firm's strategic direction, partnership framework, and the Vedhara Verification Framework that underpins every listing on the platform. His leadership has built an organisation where the client's interest, not the developer's commission, drives every recommendation.",
     philosophy:"Every property decision changes a family's future. We treat that responsibility with the seriousness it deserves, not as a transaction to be closed.",
@@ -43,8 +42,7 @@ const teamMembers = [
   {
     name:"Mr. Mohit Sharma",
     title:"Managing Director",
-    initials:"MS",
-    photo:"/Images/Mohit Sharma.PNG",
+    photo:"/Images/Mr. Mohit Sharma.png",
     gradient:"linear-gradient(135deg,#16243F,#D4A843)",
     description:"Mohit Sharma brings strategic rigour and operational depth to Vedhara Group's daily operations. As Managing Director, he is responsible for client advisory standards, team development, and ensuring that every client engagement reflects the firm's commitment to transparency and independence. He works directly with high-net-worth individuals, NRIs, and first-time homebuyers alike, tailoring property strategies that align with each client's unique financial goals and timeline.",
     philosophy:"Great advice is simple: understand the client's life first, then find the property that fits. Everything else is noise.",
@@ -57,8 +55,7 @@ const teamMembers = [
   {
     name:"Ms. Kusum Sharma",
     title:"Director – Strategic Partnerships",
-    initials:"KS",
-    photo:"",
+    photo:"/Images/Ms Kusum Sharma.png",
     gradient:"linear-gradient(135deg,#2a3f6f,#E8C970)",
     description:"Kusum Sharma leads Vedhara Group's developer partnerships and strategic alliances across Delhi NCR and North India. Her deep relationships with leading developers, combined with a rigorous evaluation framework, ensure that only projects meeting Vedhara's five-point Verification Framework make it to the platform. She manages the entire partnership lifecycle from initial due diligence through ongoing compliance monitoring, giving clients the confidence that every listed project has been independently vetted before they ever see it.",
     philosophy:"A listing is only as good as the verification behind it. Our partners know that we hold every project to the same standard we promise our clients.",
@@ -71,8 +68,7 @@ const teamMembers = [
   {
     name:"Mr. Bharat",
     title:"Director – Investment Advisory",
-    initials:"BH",
-    photo:"",
+    photo:"/Images/Mr. Bharat.png",
     gradient:"linear-gradient(135deg,#1a3a5c,#B8922A)",
     description:"Bharat leads Vedhara Group's Investment Advisory vertical, specialising in portfolio-level property strategy for UHNI clients, family offices, and long-term investors. His expertise spans capital appreciation corridor identification, rental yield optimisation, exit strategy planning, and cross-city portfolio diversification across Delhi NCR micro-markets. He is also the driving force behind the firm's NRI desk, ensuring distance never compromises the quality of property decision-making.",
     philosophy:"Real estate wealth is built in the buying, not the selling. The right purchase with the right thesis is half the work done.",
@@ -145,21 +141,8 @@ export default function TeamPage() {
             {teamMembers.map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100}>
                 <div className="team-card" style={{ background:"var(--cream)",border:"1px solid rgba(42,45,53,0.08)",overflow:"hidden",transition:"all 0.4s var(--ease-out)" }}>
-                  {/* Full-width photo banner: like featured properties, taller for portrait */}
-                  <div style={{ height:280,background:"var(--navy)",position:"relative",overflow:"hidden" }}>
-                    <Image src="https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" fill sizes="600px" style={{ objectFit:"cover",objectPosition:"center" }} />
-                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.3) 0%,rgba(9,15,29,0.72) 100%)" }} />
-                    <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",zIndex:2 }}>
-                      {member.photo ? (
-                        <div style={{ position:"relative",width:186,height:250,borderRadius:12,overflow:"hidden",border:"2px solid rgba(212,168,67,0.55)",boxShadow:"0 16px 40px rgba(0,0,0,0.45)",background:"var(--cream)" }}>
-                          <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="220px" style={{ objectFit:"cover",objectPosition:"center top" }} />
-                        </div>
-                      ) : (
-                        <div style={{ width:130,height:130,borderRadius:14,background:"rgba(15,30,56,0.5)",border:"2px solid rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)",boxShadow:"0 12px 36px rgba(0,0,0,0.25)" }}>
-                          <span style={{ fontFamily:"var(--t-head)",fontSize:42,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
-                        </div>
-                      )}
-                    </div>
+                  <div style={{ height:280,position:"relative",overflow:"hidden" }}>
+                    <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="600px" quality={100} style={{ objectFit:"cover",objectPosition:"center top" }} />
                   </div>
                   {/* Content */}
                   <div style={{ padding:"24px 32px 28px" }}>

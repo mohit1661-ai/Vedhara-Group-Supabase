@@ -376,28 +376,15 @@ export default function HomePage() {
 
           <div style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24 }} className="grid-4">
             {[
-              { name:"Mr. D.R Sharma", title:"Founder & CEO", initials:"DS", photo:"/Images/D.R Sharma.JPG", desc:"20+ years guiding families through Delhi NCR's real estate market with transparency and independent advice." },
-              { name:"Mr. Mohit Sharma", title:"Managing Director", initials:"MS", photo:"/Images/Mohit Sharma.PNG", desc:"Delivers tailored property strategies for HNI clients, NRIs, and first-time homebuyers alike." },
-              { name:"Ms. Kusum Sharma", title:"Director – Strategic Partnerships", initials:"KS", photo:"", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
-              { name:"Mr. Bharat", title:"Director – Investment Advisory", initials:"BH", photo:"", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
+              { name:"Mr. D.R Sharma", title:"Founder & CEO", photo:"/Images/Mr. D.R Sharma.png", desc:"20+ years guiding families through Delhi NCR's real estate market with transparency and independent advice." },
+              { name:"Mr. Mohit Sharma", title:"Managing Director", photo:"/Images/Mr. Mohit Sharma.png", desc:"Delivers tailored property strategies for HNI clients, NRIs, and first-time homebuyers alike." },
+              { name:"Ms. Kusum Sharma", title:"Director – Strategic Partnerships", photo:"/Images/Ms Kusum Sharma.png", desc:"Ensures every listed project passes Vedhara's rigorous five-point Verification Framework." },
+              { name:"Mr. Bharat", title:"Director – Investment Advisory", photo:"/Images/Mr. Bharat.png", desc:"Specialises in portfolio-level strategy, NRI advisory, and long-term wealth creation through real estate." },
             ].map((member,i)=>(
               <ScrollReveal key={member.name} delay={i*100} style={{ display:"flex" }}>
                 <div className="team-card hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,width:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
-                  {/* Full-width photo banner: real-estate backdrop + centered portrait */}
-                  <div style={{ height:200,background:"var(--navy)",position:"relative",overflow:"hidden" }}>
-                    <Image src="https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" fill sizes="400px" style={{ objectFit:"cover",objectPosition:"center" }} />
-                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.3) 0%,rgba(9,15,29,0.72) 100%)" }} />
-                    <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",zIndex:2 }}>
-                      {member.photo ? (
-                        <div style={{ position:"relative",width:122,height:164,borderRadius:10,overflow:"hidden",border:"2px solid rgba(212,168,67,0.55)",boxShadow:"0 12px 32px rgba(0,0,0,0.4)",background:"var(--cream)" }}>
-                          <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="140px" style={{ objectFit:"cover",objectPosition:"center top" }} />
-                        </div>
-                      ) : (
-                        <div style={{ width:96,height:96,borderRadius:12,background:"rgba(15,30,56,0.5)",border:"2px solid rgba(212,168,67,0.35)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(8px)" }}>
-                          <span style={{ fontFamily:"var(--t-head)",fontSize:32,fontWeight:700,color:"var(--gold-lt)",letterSpacing:"0.05em" }}>{member.initials}</span>
-                        </div>
-                      )}
-                    </div>
+                  <div style={{ height:200,position:"relative",overflow:"hidden" }}>
+                    <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="400px" quality={100} style={{ objectFit:"cover",objectPosition:"center top" }} />
                   </div>
                   {/* Content - matching featured properties style */}
                   <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
