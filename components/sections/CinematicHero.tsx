@@ -118,14 +118,11 @@ export default function CinematicHero({
   const contentOuterRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Ref callback to set src after mount — prevents browser from restoring stale playback position
+  // Ref callback to reset playback position after mount — src is on the element for instant fetch
   const videoRefCallback = (el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
       el.currentTime = 0;
-      if (videoSrc) {
-        el.src = videoSrc;
-      }
       setVideoSrcReady(true);
     }
   };
@@ -274,6 +271,7 @@ export default function CinematicHero({
         )}
         <video
           ref={videoRefCallback}
+          src={videoSrc}
           autoPlay
           muted
           loop
