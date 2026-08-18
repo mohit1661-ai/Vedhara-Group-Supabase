@@ -170,9 +170,9 @@ export default function VideoHeroSection({
         // so the first paint never waits on the download. Only Save-Data/2G keeps the poster.
         if (slow) return;
         if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(start, { timeout: 3000 });
+          window.requestIdleCallback(start, { timeout: 900 });
         } else {
-          setTimeout(start, 2000);
+          setTimeout(start, 700);
         }
       }
     }
