@@ -11,6 +11,9 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent:"ClaudeBot", allow:"/", disallow:["/videos/"] },
       { userAgent:"PerplexityBot", allow:"/", disallow:["/videos/"] },
     ],
-    sitemap:"https://www.vedharagroup.com/sitemap.xml",
+    sitemap:[
+      "https://www.vedharagroup.com/sitemap.xml",
+      "https://www.vedharagroup.com/sitemap-videos.xml",
+    ],
   };
 }

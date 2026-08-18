@@ -145,21 +145,34 @@ export default function VideoHeroSection({
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  // Ref callback to force currentTime = 0 and set src after mount
-  // Using preload="none" initially prevents browser from restoring playback position
+  // Ref callback to force currentTime = 0 and set src after mount.
+  // Video download is deferred until the browser is idle so it doesn't compete
+  // with the hero text/poster on first paint (mobile LCP); Save-Data/2G keeps the poster.
   const videoRefCallback = (el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
       // Force to start from beginning - runs synchronously on mount
       el.currentTime = 0;
-      // Set src directly on the video element (not via <source>) to prevent browser restore
       if (videoSrc) {
-        el.src = videoSrc;
-        el.preload = "auto";
-        el.load(); // Force reload with new src
+        const start = () => {
+          if (!el.isConnected) return;
+          el.src = videoSrc;
+          el.preload = "auto";
+          el.load();
+          setVideoSrcReady(true);
+        };
+        const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+        const slow = !!conn && (!!conn.saveData || /2g/.test(conn.effectiveType || ""));
+        // Mobile gets the poster only — city hero videos run 7–17 MB and wreck
+        // mobile LCP/TBT; videos autoplay on desktop broadband only.
+        const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+        if (slow || mobile) return;
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(start, { timeout: 3000 });
+        } else {
+          setTimeout(start, 2000);
+        }
       }
-      // Set src after mount to prevent browser restore
-      setVideoSrcReady(true);
     }
   };
 
@@ -327,15 +340,18 @@ export default function VideoHeroSection({
           background: "#090f1d",
         }}
       >
-        {/* Only show poster if NO video (e.g. privacy/terms) — avoids homepage poster flash on video pages */}
-        {!videoSrc && (
+        {/* Poster under the video: the permanent hero background on mobile
+            (heavy hero videos don't autoplay there) and the pre-video surface
+            on desktop. Crossfades out once the video starts playing. */}
+        {poster && (
           <Image
             src={poster}
-            alt={posterAlt}
+            alt={videoSrc ? "" : posterAlt}
             fill
             priority
             sizes="100vw"
             className="video-bg"
+            style={{ opacity: videoLoaded ? 0 : 1, transition: "opacity 0.8s ease" }}
           />
         )}
         {videoSrc && (

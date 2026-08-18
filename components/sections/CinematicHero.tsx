@@ -118,17 +118,33 @@ export default function CinematicHero({
   const contentOuterRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Ref callback to set src after mount — prevents browser from restoring stale playback position
+  // Ref callback to set src after mount — prevents browser from restoring stale playback position.
+  // The heavy video download is deferred until the browser is idle so it never competes with
+  // the LCP poster/text on slow mobile connections; on Save-Data/2G the poster stays.
   const videoRefCallback = (el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
       el.currentTime = 0;
       if (videoSrc) {
-        el.src = videoSrc;
-        el.preload = "auto";
-        el.load();
+        const start = () => {
+          if (!el.isConnected) return;
+          el.src = videoSrc;
+          el.preload = "auto";
+          el.load();
+          setVideoSrcReady(true);
+        };
+        const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+        const slow = !!conn && (!!conn.saveData || /2g/.test(conn.effectiveType || ""));
+        // Mobile gets the poster only — a 30 MB autoplaying hero video destroys
+        // mobile LCP/TBT; the cinematic video plays on desktop broadband.
+        const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+        if (slow || mobile) return;
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(start, { timeout: 3000 });
+        } else {
+          setTimeout(start, 2000);
+        }
       }
-      setVideoSrcReady(true);
     }
   };
 
@@ -258,14 +274,20 @@ export default function CinematicHero({
         }}
       >
         {poster ? (
-          <div
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={poster}
+            alt=""
             aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
             style={{
               position: "absolute",
               inset: 0,
-              backgroundImage: `url(${poster})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center center",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center center",
               opacity: videoLoaded ? 0 : 1,
               transition: "opacity 0.8s ease",
             }}

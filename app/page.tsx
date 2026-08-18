@@ -93,8 +93,8 @@ const homeSchema = {
 export default function HomePage() {
   return (
     <>
-      {/* Preload hero poster (LCP element) — highest priority, before video */}
-      <link rel="preload" as="image" href="/videos/homepage-hero-poster.jpg" imageSrcSet="/_next/image?url=%2Fvideos%2Fhomepage-hero-poster.jpg&w=1920&q=80 1920w" imageSizes="100vw" />
+      {/* Preload hero poster (LCP element) — must match the raw URL CinematicHero renders */}
+      <link rel="preload" as="image" href="/videos/homepage-hero-poster.jpg" fetchPriority="high" />
       <JsonLd data={homeSchema} />
       {[
         { name:"D.R Sharma", jobTitle:"Founder & Chief Executive Officer", url:"https://www.vedharagroup.com/team", image:"/Images/Mr. D.R Sharma.png" },
