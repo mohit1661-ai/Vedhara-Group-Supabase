@@ -459,10 +459,10 @@ section:not(.video-hero):not(.page-hero){content-visibility:auto;contain-intrins
 
 /* PropertySearch backdrop — responsive source so mobile doesn't download the 1600px original */
 .property-search-bg{
-  background-image:url("https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=700");
+  background-image:url("/Images/property-search-backdrop-mobile.jpg");
 }
 @media (min-width: 1201px){
   .property-search-bg{
-    background-image:url("https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-image:url("/Images/property-search-backdrop.jpg");
   }
 }
