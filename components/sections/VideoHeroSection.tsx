@@ -147,7 +147,7 @@ export default function VideoHeroSection({
 
   // Ref callback to force currentTime = 0 and set src after mount.
   // Video download is deferred until the browser is idle so it doesn't compete
-  // with the hero text/poster on first paint (mobile LCP); Save-Data/2G keeps the poster.
+  // with the hero text on first paint (LCP) on any device; Save-Data/2G keeps the poster.
   const videoRefCallback = (el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
@@ -163,10 +163,9 @@ export default function VideoHeroSection({
         };
         const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
         const slow = !!conn && (!!conn.saveData || /2g/.test(conn.effectiveType || ""));
-        // Mobile gets the poster only — city hero videos run 7–17 MB and wreck
-        // mobile LCP/TBT; videos autoplay on desktop broadband only.
-        const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
-        if (slow || mobile) return;
+        // Hero videos autoplay on mobile too (muted/playsInline), deferred to idle
+        // so the first paint never waits on the download. Only Save-Data/2G keeps the poster.
+        if (slow) return;
         if ("requestIdleCallback" in window) {
           window.requestIdleCallback(start, { timeout: 3000 });
         } else {

@@ -120,7 +120,7 @@ export default function CinematicHero({
 
   // Ref callback to set src after mount — prevents browser from restoring stale playback position.
   // The heavy video download is deferred until the browser is idle so it never competes with
-  // the LCP poster/text on slow mobile connections; on Save-Data/2G the poster stays.
+  // the LCP hero content on any device; on Save-Data/2G the poster stays.
   const videoRefCallback = (el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
@@ -135,10 +135,9 @@ export default function CinematicHero({
         };
         const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
         const slow = !!conn && (!!conn.saveData || /2g/.test(conn.effectiveType || ""));
-        // Mobile gets the poster only — a 30 MB autoplaying hero video destroys
-        // mobile LCP/TBT; the cinematic video plays on desktop broadband.
-        const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
-        if (slow || mobile) return;
+        // Hero videos autoplay on mobile too (muted/playsInline), deferred to idle
+        // so the first paint never waits on the download. Only Save-Data/2G keeps the poster.
+        if (slow) return;
         if ("requestIdleCallback" in window) {
           window.requestIdleCallback(start, { timeout: 3000 });
         } else {
