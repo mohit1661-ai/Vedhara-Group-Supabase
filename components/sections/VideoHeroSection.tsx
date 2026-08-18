@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState, ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, ReactNode } from "react";
 
 /**
  * VideoHeroSection, Cinematic 3D video hero for sub-pages.
@@ -148,7 +148,10 @@ export default function VideoHeroSection({
   // Ref callback to force currentTime = 0 and set src after mount.
   // Video download is deferred until the browser is idle so it doesn't compete
   // with the hero text on first paint (LCP) on any device; Save-Data/2G keeps the poster.
-  const videoRefCallback = (el: HTMLVideoElement | null) => {
+  // useCallback keeps the identity stable so React never re-runs it on re-render —
+  // a re-run would re-assign src and call load() again, restarting the video
+  // and flashing the hero on screen.
+  const videoRefCallback = useCallback((el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
       // Force to start from beginning - runs synchronously on mount
@@ -173,7 +176,7 @@ export default function VideoHeroSection({
         }
       }
     }
-  };
+  }, [videoSrc]);
 
   /* ── Start loading + muted autoplay immediately on mount for instant playback ── */
   useEffect(() => {
@@ -189,18 +192,14 @@ export default function VideoHeroSection({
     tryPlay();
 
     const handleReady = () => {
+      // Do NOT reset currentTime here — on mobile the loadeddata/canplay events
+      // can arrive after playback has already begun, and rewinding mid-load is
+      // what makes the hero flash/restart. A freshly created video starts at 0.
       setVideoLoaded(true);
-      // Ensure video starts from 0 even if browser restored position
-      if (video.currentTime > 0) {
-        video.currentTime = 0;
-      }
       tryPlay();
     };
     if (video.readyState >= 3) {
       setVideoLoaded(true);
-      if (video.currentTime > 0) {
-        video.currentTime = 0;
-      }
     } else {
       video.addEventListener("loadeddata", handleReady, { once: true });
       video.addEventListener("canplay", handleReady, { once: true });

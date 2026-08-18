@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -121,7 +121,10 @@ export default function CinematicHero({
   // Ref callback to set src after mount — prevents browser from restoring stale playback position.
   // The heavy video download is deferred until the browser is idle so it never competes with
   // the LCP hero content on any device; on Save-Data/2G the poster stays.
-  const videoRefCallback = (el: HTMLVideoElement | null) => {
+  // useCallback keeps the identity stable so React never re-runs it on re-render —
+  // a re-run would re-assign src and call load() again, restarting the video
+  // and flashing the hero on screen.
+  const videoRefCallback = useCallback((el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
       el.currentTime = 0;
@@ -145,7 +148,7 @@ export default function CinematicHero({
         }
       }
     }
-  };
+  }, [videoSrc]);
 
   /* ── Start muted autoplay once src is set ── */
   useEffect(() => {
@@ -159,13 +162,14 @@ export default function CinematicHero({
     tryPlay();
 
     const handleReady = () => {
+      // Do NOT reset currentTime here — on mobile the loadeddata/canplay events
+      // can arrive after playback has already begun, and rewinding mid-load is
+      // what makes the hero flash/restart. A freshly created video starts at 0.
       setVideoLoaded(true);
-      if (video.currentTime > 0) video.currentTime = 0;
       tryPlay();
     };
     if (video.readyState >= 3) {
       setVideoLoaded(true);
-      if (video.currentTime > 0) video.currentTime = 0;
     } else {
       video.addEventListener("loadeddata", handleReady, { once: true });
       video.addEventListener("canplay", handleReady, { once: true });
