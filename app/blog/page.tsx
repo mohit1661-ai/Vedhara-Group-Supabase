@@ -27,7 +27,7 @@ const blogSchema = {
   blogPost: blogPosts.map((p)=>({
     "@type":"BlogPosting",
     headline:p.title,
-    url:`https://www.vedharagroup.com/blog/${p.slug}`,
+    url:`https://www.vedharagroup.com/${p.path ?? "blog"}/${p.slug}`,
     datePublished:p.datePublished,
     dateModified:p.dateModified,
     description:p.metaDescription || p.excerpt,
@@ -92,7 +92,7 @@ export default function BlogPage() {
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
                     <div style={{ paddingTop:16,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                      <Link href={`/blog/${post.slug}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
+                      <Link href={`/${post.path ?? "blog"}/${post.slug}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
                         Read Article →
                       </Link>
                     </div>
@@ -194,6 +194,7 @@ export default function BlogPage() {
         background="cream"
         variant="journey"
         links={[
+          { href:"/insights", label:"Browse data-driven market insights", description:"Deep research reports on Dwarka Expressway, Gurugram and Delhi NCR price trends and forecasts." },
           { href:"/services", label:"Explore the full service suite", description:"See how advisory, property management, and investment support work together in one journey." },
           { href:"/verification-center", label:"Understand the verification framework", description:"Learn how every recommendation is checked before it reaches a client or buyer." },
           { href:"/contact", label:"Book a consultation", description:"Talk to an advisor for tailored support after you read the blog content." },

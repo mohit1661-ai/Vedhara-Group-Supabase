@@ -404,7 +404,7 @@ export default function CommercialPage() {
             {commercialListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact?service=commercial"
+                  href="/contact#commercial"
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -490,7 +490,7 @@ export default function CommercialPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Looking for something specific? We have 40+ commercial properties across Delhi NCR, Faridabad and Manesar.
               </p>
-              <Link href="/contact?service=commercial" className="btn btn-primary">
+              <Link href="/contact#commercial" className="btn btn-primary">
                 Discuss Your Commercial Requirement →
               </Link>
             </div>

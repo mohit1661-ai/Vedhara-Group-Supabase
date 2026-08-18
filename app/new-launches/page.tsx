@@ -221,7 +221,7 @@ export default function NewLaunchesPage() {
             {launchProjects.map((project,index)=>(
               <ScrollReveal key={project.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact?service=new-launches"
+                  href="/contact#new-launches"
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -298,7 +298,7 @@ export default function NewLaunchesPage() {
                 Want early access to projects before they&apos;re publicly announced? Subscribe to the Ground Report.
               </p>
               <div style={{ display:"flex",gap:16,justifyContent:"center",flexWrap:"wrap" }}>
-                <Link href="/contact?service=new-launches" className="btn btn-primary">
+                <Link href="/contact#new-launches" className="btn btn-primary">
                   Get Project Brochure →
                 </Link>
                 <Link href="/market-insights" className="btn btn-outline">

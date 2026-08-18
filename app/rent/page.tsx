@@ -152,7 +152,7 @@ export default function RentPage() {
             {rentalListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact?service=rent"
+                  href="/contact#rent"
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -220,7 +220,7 @@ export default function RentPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Don&apos;t see what you&apos;re looking for? We have 80+ verified rental listings across Delhi NCR, Faridabad, Manesar and Chandigarh.
               </p>
-              <Link href="/contact?service=rent" className="btn btn-primary">
+              <Link href="/contact#rent" className="btn btn-primary">
                 Get Rental Assistance →
               </Link>
             </div>

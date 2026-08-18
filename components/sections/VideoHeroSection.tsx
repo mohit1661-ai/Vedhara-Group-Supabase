@@ -340,18 +340,18 @@ export default function VideoHeroSection({
           background: "#090f1d",
         }}
       >
-        {/* Poster under the video: the permanent hero background on mobile
-            (heavy hero videos don't autoplay there) and the pre-video surface
-            on desktop. Crossfades out once the video starts playing. */}
-        {poster && (
+        {/* Poster is shown only when the section has NO video (e.g. legal pages
+            with a static hero). On video pages the poster is suppressed so a
+            foreign/old poster frame never flashes before that page's own video
+            loads — the navy layer + content hold the hero until it fades in. */}
+        {!videoSrc && poster && (
           <Image
             src={poster}
-            alt={videoSrc ? "" : posterAlt}
+            alt={posterAlt}
             fill
             priority
             sizes="100vw"
             className="video-bg"
-            style={{ opacity: videoLoaded ? 0 : 1, transition: "opacity 0.8s ease" }}
           />
         )}
         {videoSrc && (

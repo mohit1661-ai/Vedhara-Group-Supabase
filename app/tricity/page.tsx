@@ -262,7 +262,7 @@ export default function TricityPage() {
           <div className="prop-grid">
             {tricityListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
-                <Link href="/contact?service=tricity" className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                <Link href="/contact#tricity" className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image

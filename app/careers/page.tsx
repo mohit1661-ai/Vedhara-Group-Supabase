@@ -4,6 +4,7 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import EmailText from "@/components/ui/EmailText";
 
 export const metadata: Metadata = { title:"Real Estate Advisory Jobs in Delhi NCR", description:"Join Vedhara Group's independent advisory team across Delhi NCR & North India. Open roles in advisory, research, NRI and property management.", alternates:{ canonical:"https://www.vedharagroup.com/careers" } };
 
@@ -226,7 +227,7 @@ export default function CareersPage() {
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
                 If you see a role that fits, send your CV to{" "}
-                <a href="mailto:contact@vedharagroup.com" style={{ color:"var(--gold)",textDecoration:"underline",textUnderlineOffset:3 }}>contact@vedharagroup.com</a>
+                <a href="mailto:contact@vedharagroup.com" style={{ color:"var(--gold)",textDecoration:"underline",textUnderlineOffset:3 }}><EmailText /></a>
                 {" "}with a brief note on why Vedhara, and we will get back to you within a week.
               </p>
             </div>

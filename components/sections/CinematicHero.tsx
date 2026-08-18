@@ -277,8 +277,9 @@ export default function CinematicHero({
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={poster}
-            alt=""
-            aria-hidden="true"
+            srcSet={`${poster.replace(/\.jpg$/, "-mobile.jpg")} 768w, ${poster} 1920w`}
+            sizes="100vw"
+            alt="Vedhara Group cinematic hero — real estate advisory across Delhi NCR"
             fetchPriority="high"
             decoding="async"
             style={{
@@ -468,7 +469,7 @@ export default function CinematicHero({
                       transition:"border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease",
                     }}
                   >
-                    <Image src={p.img} alt="" fill sizes="180px" className="hero-part-img" style={{ objectFit:"cover" }} />
+                    <Image src={p.img} alt={`${p.t} — Vedhara Group`} fill sizes="180px" className="hero-part-img" style={{ objectFit:"cover" }} />
                     {/* Light overlay so the image stays bright and clear in the static state */}
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg, rgba(15,30,56,0.05) 0%, rgba(15,30,56,0.62) 100%)" }} />
                     <div style={{ position:"relative",display:"flex",flexDirection:"column",height:"100%",padding:"12px",justifyContent:"flex-end",alignItems:"flex-start" }}>

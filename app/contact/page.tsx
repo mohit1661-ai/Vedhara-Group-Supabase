@@ -6,6 +6,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ConsultationForm from "@/components/ui/ConsultationForm";
+import EmailText from "@/components/ui/EmailText";
 
 const contactFaqs = [
   { q:"How quickly will I hear back after submitting the form?", a:"A Vedhara advisor responds within 24 hours during business hours. No spam, ever; the first contact is simply a conversation about what you are trying to achieve." },
@@ -17,6 +18,27 @@ const contactFaqs = [
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle"|"success">("idle");
+  const [interest, setInterest] = useState("");
+
+  // Service links land on /contact#buy, /contact#rent, etc. so the interest
+  // dropdown is pre-selected and the URL stays short and readable (no query
+  // string). Hash fragments also survive client-side navigation cleanly.
+  useEffect(() => {
+    const h = window.location.hash.replace("#", "").toLowerCase();
+    if (!h) return;
+    const map: Record<string, string> = {
+      buy: "Buy Property",
+      sell: "Sell Property",
+      rent: "Rent / Lease",
+      commercial: "Commercial Real Estate",
+      luxury: "Luxury Properties",
+      "new-launches": "General Enquiry",
+      tricity: "General Enquiry",
+    };
+    // Reading the location hash is a browser-API-on-mount sync, not a derived-state update.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (map[h]) setInterest(map[h]);
+  }, []);
 
   // On success the whole page is swapped for the thank-you hero, but the
   // browser keeps the old scroll position (down at the form) → the user would
@@ -92,7 +114,9 @@ export default function ContactPage() {
                     {/* Gradient top bar */}
                     <div style={{ position:"absolute",top:0,left:0,right:0,height:3,background:item.grad }} />
                     <span className="eyebrow" style={{ color:"var(--gold)",marginBottom:4,fontSize:10 }}>{item.label}</span>
-                    <span className="body-sm" style={{ color:"var(--ink)",fontWeight:500 }}>{item.val}</span>
+                    <span className="body-sm" style={{ color:"var(--ink)",fontWeight:500 }}>
+                      {item.label === "Email" ? <EmailText /> : item.val}
+                    </span>
                   </a>
                 ))}
               </div>
@@ -135,7 +159,7 @@ export default function ContactPage() {
             {/* Gold gradient frame — luxury card that matches the popup form */}
             <div className="form-card" style={{ padding:1,background:"linear-gradient(165deg, rgba(212,168,67,0.5), rgba(212,168,67,0.12) 30%, rgba(212,168,67,0.28) 65%, rgba(212,168,67,0.5))",borderRadius:18,boxShadow:"0 18px 60px rgba(9,15,29,0.35)" }}>
               <div style={{ background:"var(--navy)",borderRadius:17,padding:"40px 36px 34px" }}>
-                <ConsultationForm sourcePage="/contact" onSuccess={()=>setStatus("success")} />
+                <ConsultationForm sourcePage="/contact" onSuccess={()=>setStatus("success")} initialInterest={interest} />
               </div>
             </div>
           </ScrollReveal>

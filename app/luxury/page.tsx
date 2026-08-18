@@ -151,7 +151,7 @@ export default function LuxuryPage() {
             {luxuryListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact?service=luxury"
+                  href="/contact#luxury"
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -207,7 +207,7 @@ export default function LuxuryPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Not on the market? Our Luxury Desk has access to off-market listings not shown publicly.
               </p>
-              <Link href="/contact?service=luxury" className="btn btn-primary">
+              <Link href="/contact#luxury" className="btn btn-primary">
                 Speak to Our Luxury Desk →
               </Link>
             </div>

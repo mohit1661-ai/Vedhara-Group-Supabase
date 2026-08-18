@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import Analytics from "@/components/seo/Analytics";
 import CustomCursor from "@/components/ui/CustomCursor";
 
 const cormorant = Cormorant_Garamond({ subsets:["latin"], weight:["300","400"], style:["normal","italic"], variable:"--font-display", display:"swap" });
@@ -32,6 +33,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="llms-full" href="/llms-full.txt" />
         <link rel="me" href="https://www.linkedin.com/company/vedharagroup/" />
         <link rel="me" href="https://www.instagram.com/vedharagroup" />
+        <link rel="me" href="https://www.facebook.com/vedharagroup" />
+        <link rel="me" href="https://www.youtube.com/@VedharaGroup" />
+        {/* Prioritize the two hero text fonts (h1 = Cormorant 300, hero paragraph = Roboto 300) — same URLs as next/font preloads, so no double download */}
+        <link rel="preload" as="font" type="font/woff2" href="/_next/static/media/01e4147cff8141ee-s.p.3huc2loe0ie8a.woff2" crossOrigin="" fetchPriority="high" />
+        <link rel="preload" as="font" type="font/woff2" href="/_next/static/media/ce62453a442c7f35-s.p.0a0h245ktd4x0.woff2" crossOrigin="" fetchPriority="high" />
         <meta name="theme-color" content="#0F1E38" />
       </head>
       <body style={{ display:"flex", flexDirection:"column", minHeight:"100vh" }}>
@@ -43,7 +49,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           description:"Vedhara Group is an independent real estate advisory and brokerage firm offering verified developer-partner listings and investment advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India.",
           slogan:"Wisdom Rooted. Futures Built.",
           telephone:"+91-98106-47063", email:"contact@vedharagroup.com",
-          address:{ "@type":"PostalAddress", addressLocality:"Delhi", addressRegion:"Delhi", addressCountry:"IN" },
+          image:"https://www.vedharagroup.com/vedhara-logo-white.png",
+          priceRange:"₹₹₹",
+          address:{ "@type":"PostalAddress", streetAddress:"Sushant Lok Phase 3, Near DLF City Phase 2", addressLocality:"Gurugram", addressRegion:"Haryana", addressCountry:"IN" },
           areaServed:[{name:"Delhi NCR"},{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Manesar"},{name:"Ghaziabad"},{name:"Greater Noida"},{name:"Chandigarh"},{name:"Mohali"},{name:"Panchkula"},{name:"Zirakpur"},{name:"Kharar"},{name:"North India"}],
           foundingDate:"2015", logo:"https://www.vedharagroup.com/vedhara-logo-white.png",
           openingHoursSpecification:[
@@ -51,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             { "@type":"OpeningHoursSpecification", dayOfWeek:["Saturday","Sunday"], opens:"10:00", closes:"16:00" }
           ],
           knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","Property Advisory Faridabad","Commercial Property Manesar","Real Estate North India","Chandigarh Tricity Real Estate","Property Advisory Mohali Panchkula","GMADA HRERA Punjab RERA Due Diligence","RERA Verified Property Listings","NRI Property Investment India"],
-          sameAs:["https://www.linkedin.com/company/vedharagroup/","https://www.instagram.com/vedharagroup"],
+          sameAs:["https://www.linkedin.com/company/vedharagroup/","https://www.instagram.com/vedharagroup","https://www.facebook.com/vedharagroup","https://www.youtube.com/@VedharaGroup"],
         }} />
         <JsonLd data={{
           "@context":"https://schema.org","@type":"WebSite",
@@ -64,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           potentialAction:{"@type":"SearchAction",target:{"@type":"EntryPoint",urlTemplate:"https://www.vedharagroup.com/?s={search_term_string}"},"query-input":"required name=search_term_string"},
         }} />
         <CustomCursor />
+        <Analytics />
         <Navbar />
         <main style={{ flex:1 }}>{children}</main>
         <Footer />

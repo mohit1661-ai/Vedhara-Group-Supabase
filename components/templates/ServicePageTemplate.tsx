@@ -10,6 +10,7 @@ export interface ServicePageContent {
   slug:string; eyebrow:string; h1:string; h1Accent?:string;
   intro:string; includedTitle?:string; included:string[];
   whoForTitle?:string; whoFor:string[]; faqs:FAQItem[]; ctaLabel:string;
+  seoText?:string;
 }
 
 export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ content:ServicePageContent; videoSrc?:string; hideFAQ?:boolean }) {
@@ -25,7 +26,15 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>{content.intro}</p>
       </VideoHeroSection>
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
+        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+          {content.seoText && (
+            <ScrollReveal>
+              <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.9,maxWidth:860,margin:"0 auto 56px",textAlign:"center" }}>
+                {content.seoText}
+              </p>
+            </ScrollReveal>
+          )}
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
           
           {/* What's Included - Navy card with gold frame */}
           <ScrollReveal>
@@ -59,6 +68,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
               </div>
             </div>
           </ScrollReveal>
+        </div>
         </div>
       </section>
       {!hideFAQ && <><FAQSection faqs={content.faqs} /><RelatedLinksSection

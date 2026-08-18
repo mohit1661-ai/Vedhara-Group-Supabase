@@ -144,7 +144,7 @@ export default function BuyPage() {
           <div className="prop-grid">
             {featuredListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80}>
-                <Link href="/contact?service=buy" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                <Link href="/contact#buy" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image

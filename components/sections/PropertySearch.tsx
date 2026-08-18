@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import FilterSelect from "@/components/ui/FilterSelect";
+import { paramsToSearchPath } from "@/lib/searchUrl";
 
 const modes = [
   { key: "buy", label: "Buy" },
@@ -21,13 +22,13 @@ const TYPES = [
 ];
 
 const popular = [
-  { label: "3 BHK in Gurugram", href: "/search?mode=buy&type=apartment&q=3%20bhk%20gurugram" },
-  { label: "Penthouse on Golf Course Road", href: "/search?mode=buy&type=penthouse&q=golf%20course%20road" },
-  { label: "Plots in Greater Noida", href: "/search?type=plot&q=greater%20noida" },
-  { label: "2 BHK in Noida", href: "/search?mode=buy&type=apartment&q=noida%202%20bhk" },
-  { label: "Villa in Vrindavan", href: "/search?mode=buy&type=villa&q=vrindavan" },
-  { label: "Office in Sector 62", href: "/search?mode=buy&type=commercial&q=sector%2062" },
-  { label: "Apartments in Chandigarh", href: "/search?mode=buy&type=apartment&q=chandigarh" },
+  { label: "3 BHK in Gurugram", href: paramsToSearchPath({ mode: "buy", type: "apartment", q: "3 bhk gurugram" }) },
+  { label: "Penthouse on Golf Course Road", href: paramsToSearchPath({ mode: "buy", type: "penthouse", q: "golf course road" }) },
+  { label: "Plots in Greater Noida", href: paramsToSearchPath({ type: "plot", q: "greater noida" }) },
+  { label: "2 BHK in Noida", href: paramsToSearchPath({ mode: "buy", type: "apartment", q: "noida 2 bhk" }) },
+  { label: "Villa in Vrindavan", href: paramsToSearchPath({ mode: "buy", type: "villa", q: "vrindavan" }) },
+  { label: "Office in Sector 62", href: paramsToSearchPath({ mode: "buy", type: "commercial", q: "sector 62" }) },
+  { label: "Apartments in Chandigarh", href: paramsToSearchPath({ mode: "buy", type: "apartment", q: "chandigarh" }) },
 ];
 
 const BUY_BUDGETS = [
@@ -58,12 +59,13 @@ export default function PropertySearch() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const p = new URLSearchParams();
-    p.set("mode", mode);
-    if (loc.trim()) p.set("q", loc.trim());
-    if (type !== "any") p.set("type", type);
-    if (budget !== "any") p.set("budget", budget);
-    router.push(`/search?${p.toString()}`);
+    const path = paramsToSearchPath({
+      mode,
+      q: loc.trim() || undefined,
+      type: type === "any" ? undefined : type,
+      budget: budget === "any" ? undefined : budget,
+    });
+    router.push(path);
   }
 
   return (
@@ -77,11 +79,10 @@ export default function PropertySearch() {
     >
       {/* Catchy but readable backdrop: faint skyline + navy veil + warm gold glow */}
       <div
+        className="property-search-bg"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage:
-            "url(https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=1600)",
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
           opacity: 0.22,

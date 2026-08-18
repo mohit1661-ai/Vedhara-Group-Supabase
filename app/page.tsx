@@ -93,8 +93,6 @@ const homeSchema = {
 export default function HomePage() {
   return (
     <>
-      {/* Preload hero poster (LCP element) — must match the raw URL CinematicHero renders */}
-      <link rel="preload" as="image" href="/videos/homepage-hero-poster.jpg" fetchPriority="high" />
       <JsonLd data={homeSchema} />
       {[
         { name:"D.R Sharma", jobTitle:"Founder & Chief Executive Officer", url:"https://www.vedharagroup.com/team", image:"/Images/Mr. D.R Sharma.png" },
@@ -479,7 +477,7 @@ export default function HomePage() {
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:14,fontWeight:700,color:"var(--navy)",marginBottom:8,lineHeight:1.4 }}>{post.title}</h3>
                     <p className="body-sm" style={{ color:"var(--slate)",fontSize:12,lineHeight:1.7,flex:1 }}>{post.excerpt}</p>
                     <div style={{ paddingTop:14,marginTop:12,borderTop:"1px solid rgba(212,168,67,0.15)" }}>
-                      <Link href={`/blog/${post.slug}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
+                      <Link href={`/${post.path ?? "blog"}/${post.slug}`} className="apply-btn" style={{ fontFamily:"var(--t-head)",fontSize:9.5,fontWeight:700,letterSpacing:"0.05em",textTransform:"uppercase",color:"var(--gold-lt)",display:"inline-flex",alignItems:"center",gap:4,background:"var(--navy)",padding:"6px 14px",borderRadius:6,textDecoration:"none",transition:"all 0.2s" }}>
                         Read Article →
                       </Link>
                     </div>

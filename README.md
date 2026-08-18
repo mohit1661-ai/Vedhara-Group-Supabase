@@ -69,6 +69,8 @@ Copy `.env.example` → `.env.local` and fill in the values. **Never commit `.en
 | `GOOGLE_SHEETS_API_BASE` | No | Advanced: override the Sheets API base URL (testing/proxy) |
 | `ADMIN_SECRET` | No | Password to view leads via /api/leads |
 | `NEXT_PUBLIC_SITE_URL` | No | Public site URL (defaults to https://www.vedharagroup.com) |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | No | Google Analytics 4 ID (defaults to `G-135693XWXG`) |
+| `NEXT_PUBLIC_FB_PIXEL_ID` | No | Meta/Facebook Pixel ID (defaults to `245711093135178`) |
 
 \* Without Supabase vars, leads fall back to a local JSON file (data/leads.json) — fine for dev, but set them in production for durable storage.
 
@@ -122,6 +124,32 @@ Each lead is appended to the **first tab** of the spreadsheet as a row:
 5. Deploy. The site builds 42/42 pages statically; API routes (/api/consultation, /api/leads, /api/health) are serverless.
 
 The domain `www.vedharagroup.com` → project domain; add `vedharagroup.com` as a redirect alias in Vercel domain settings.
+
+---
+
+## 📧 Email Deliverability (SPF / DKIM / DMARC)
+
+Transactional lead emails are sent via **Resend** (see `lib/email.ts`). To keep those
+emails out of spam, add the following DNS records at your domain registrar/DNS host
+(`vedharagroup.com`):
+
+| Type | Name | Value |
+|---|---|---|
+| TXT | `@` | `v=spf1 include:spf.resend.com ~all` |
+| TXT | `resend._domainkey` | the DKIM key shown in Resend → Domains |
+| TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:contact@vedharagroup.com` (tighten `p=quarantine` later) |
+
+Verify with `nslookup -type=TXT vedharagroup.com`. If you switch the sender domain
+later, replace `include:spf.resend.com` with your provider's SPF include.
+
+---
+
+## 📡 Analytics, Pixels & Social Profiles
+
+- **Google Analytics 4** — loaded via `components/seo/Analytics.tsx` (`afterInteractive`, so it never blocks paint). ID defaults to `G-135693XWXG`; override with `NEXT_PUBLIC_GA_MEASUREMENT_ID`.
+- **Meta Pixel** — same component, ID defaults to `245711093135178`; override with `NEXT_PUBLIC_FB_PIXEL_ID`.
+- **Social profiles** — Facebook (`/vedharagroup`) and YouTube (`@VedharaGroup`) are linked in the footer, the `<link rel="me">` head tags, and the LocalBusiness `sameAs` schema.
+- **Local Business schema** — full registered address, phone, email, logo, `priceRange`, opening hours and `areaServed` are published site-wide from `app/layout.tsx`.
 
 ---
 

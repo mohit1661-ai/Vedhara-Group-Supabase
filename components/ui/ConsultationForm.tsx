@@ -20,12 +20,14 @@ export default function ConsultationForm({
   sourcePage,
   onSuccess,
   variant = "dark",
+  initialInterest,
 }: {
   sourcePage: string;
   onSuccess?: () => void;
   variant?: "dark" | "light";
+  initialInterest?: string;
 }) {
-  const [form, setForm] = useState({ fullName:"",phone:"",email:"",interest:"",message:"",timezone:"" });
+  const [form, setForm] = useState({ fullName:"",phone:"",email:"",interest:initialInterest ?? "",message:"",timezone:"" });
   const [status, setStatus] = useState<"idle"|"submitting"|"error">("idle");
   const up = (k:string,v:string) => setForm(p=>({...p,[k]:v}));
 

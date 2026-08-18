@@ -8,6 +8,7 @@ export interface ArticleSection {
 export interface ArticleFAQ { q:string; a:string; }
 export interface BlogPost {
   slug:string;
+  path?:string;
   title:string;
   category:string;
   readTime:string;
@@ -448,6 +449,122 @@ export const blogPosts: BlogPost[] = [
       { q:"What is the current home loan interest rate in India in 2026?", a:"Rates for most creditworthy borrowers sit in the mid-to-upper single digits, varying by lender and loan amount. The best rates are reserved for strong credit scores and salaried or women applicants." },
       { q:"Can I get a home loan for 90% of the property value?", a:"Many lenders offer up to 90% loan-to-value on properties up to a threshold amount, subject to your eligibility. Beyond that threshold, the ratio typically steps down to 75–80%." },
       { q:"Is it better to prepay a home loan or invest the surplus?", a:"Generally, prepaying is attractive when the loan rate exceeds what you can reliably earn on investments after tax. If your loan is at a low rate and you can invest at a higher post-tax return, investing may be better, but this is a personal decision based on risk tolerance." },
+    ],
+  },
+  {
+    slug:"dwarka-expressway-18-month-price-trend-explained",
+    path:"insights",
+    title:"Dwarka Expressway 18-Month Price Trend Explained: Data, Drivers & What Comes Next",
+    category:"Market Insights",
+    readTime:"10 min read",
+    datePublished:"2026-08-10",
+    dateModified:"2026-08-18",
+    gradient:"linear-gradient(135deg,#0F1E38 0%,#2a5f8f 50%,#D4A843 100%)",
+    videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
+    metaTitle:"Dwarka Expressway Price Trend Explained",
+    metaDescription:"Dwarka Expressway price trend over 18 months: per-sqft data by quarter, appreciation by sector, circle rates, metro impact and forecasts for buyers and investors.",
+    keywords:["Dwarka Expressway price trend","Dwarka Expressway property prices","Dwarka Expressway price per sqft","Dwarka Expressway appreciation","Dwarka Expressway sector 104","Dwarka Expressway circle rate","Dwarka Expressway metro","Gurugram property price trend","Dwarka Expressway investment 2026","Dwarka Expressway real estate"],
+    excerpt:"Quarter-by-quarter Dwarka Expressway price data from early 2025 to mid-2026, sector-level appreciation, the infrastructure and circle-rate drivers, and what the next 12–18 months hold for buyers and investors.",
+    intro:[
+      "Over the past eighteen months, the Dwarka Expressway corridor in Gurugram has moved from emerging market to one of India's most watched residential destinations. The numbers tell the story: listed average apartment prices along the corridor have climbed from roughly ₹12,500 per square foot in late 2024 to around ₹14,100 by early 2026, while premium pockets have raced far ahead. This article breaks down that movement quarter by quarter, explains what actually drove it, and lays out what the next twelve to eighteen months look like for buyers and investors.",
+      "A word on methodology before the data. Real estate prices are reported by listing portals and by registration records, and the two tell different stories. Listed averages, from platforms such as 99acres, MagicBricks and Housing.com, reflect what sellers are asking; registered transactions reflect what buyers actually paid. We use listed averages to map the trend and registered-deal data to separate real returns from headline noise. Where sources differ, we show the range rather than invent a single figure.",
+    ],
+    sections:[
+      {
+        heading:"The 18-Month Price Picture, Quarter by Quarter",
+        paragraphs:[
+          "On listed averages for residential flats along the corridor, the climb has been steady rather than explosive. Dwarka Expressway averaged about ₹12,500 per square foot in the last quarter of 2024, moved past ₹13,250 by the second quarter of 2025, touched ₹13,600 by the third quarter, and closed 2025 near ₹13,700. In the first quarter of 2026, averages pushed past ₹14,100, a jump of roughly 3% over the preceding quarter and about 12–13% higher than a year earlier.",
+          "Different platforms and property types land in different places. One major portal put average multistorey apartment prices at about ₹14,800 per square foot in early 2026, with individual listings spanning roughly ₹11,250 to ₹18,400. Another tracked a corridor-wide average closer to ₹12,500. The spread is normal: the corridor is long, and price varies more by sector and project than it does by quarter. Every data source agrees on the direction, and on the acceleration in premium segments.",
+        ],
+        list:[
+          "Listed flat averages: ~₹12,500 (Q4 2024) → ~₹14,100 per sqft (Q1 2026)",
+          "1-year corridor growth of roughly 12–13% on listed averages",
+          "3-year growth near 75–80% and 5-year growth above 150%",
+          "Plot and builder-floor prices rose faster than apartment averages",
+        ],
+      },
+      {
+        heading:"What Drove the Rally: The Infrastructure Timeline",
+        paragraphs:[
+          "Price movement on the corridor tracks a short list of infrastructure events, and the sequencing matters. The Haryana stretch of the expressway opened in March 2024, which first brought speculative capital into the belt. In June 2025 the full 29-kilometre, 16-lane corridor became operational end to end, converting that speculation into sustained end-user demand.",
+          "Two events in 2025 did the heavy lifting for the second half of the period. In August 2025 the Delhi section opened, including the 5.1-kilometre tunnel that carries traffic to IGI Airport and cuts the airport commute to roughly twenty minutes from large parts of the corridor. And the Delhi Metro's Blue Line extension from Dwarka Sector 21 to Kherki Daula was confirmed for the 2026-27 period, giving investors a visible future catalyst to price in.",
+        ],
+        list:[
+          "March 2024: Haryana section of the expressway opens",
+          "June 2025: full 29 km corridor operational end to end",
+          "August 2025: Delhi section with the 5.1 km IGI tunnel opens (~20 min to airport)",
+          "2026-27: Dwarka Sector 21 → Kherki Daula metro extension confirmed",
+        ],
+      },
+      {
+        heading:"The Sector-Level Story: Where Prices Moved Most",
+        paragraphs:[
+          "The corridor average hides the real story, which is a widening gap between micro-markets. The luxury cluster near the Delhi border, dominated by Sectors 108, 111, 113 and 114, has been the fastest re-rating zone, with premium configurations trading well above ₹18,000 and in some projects above ₹20,000 per square foot. Sector 108 has led momentum among the interior sectors, Sector 113 has been the strongest-absorbed Delhi-border anchor, and Sector 111 has posted some of the corridor's highest ultra-luxury rates.",
+          "The premium core of Sectors 103, 104 and 109 has settled into a ₹15,500 to ₹18,000 per square foot band for entry inventory, while the mid-value belt of Sectors 102 and 106, typically 15–20% cheaper, has become the most popular entry point for budget-conscious end-users. Further out, Sectors 37D, 99 and 99A still hold entry prices near ₹6,500 to ₹12,000, giving the corridor a genuine affordability ladder rather than a single market.",
+          "The most striking data point of the period is the shift toward ultra-luxury. Deals above ₹10 crore along the expressway jumped from roughly ₹383 crore across 21 transactions in 2024 to more than ₹8,300 crore across over 600 transactions in 2025, making the corridor the single largest contributor to Gurugram overtaking Mumbai as India's biggest luxury residential market in 2025.",
+        ],
+        list:[
+          "Luxury border cluster (108, 111, 113, 114): ₹15,000–₹20,000+ per sqft",
+          "Premium core (103, 104, 109): ₹15,500–₹18,000 per sqft",
+          "Mid-value belt (102, 106): typically 15–20% cheaper than the core",
+          "₹10 crore+ deals: ~₹383 crore (2024) → ~₹8,300 crore (2025)",
+        ],
+      },
+      {
+        heading:"Circle Rates, Stamp Duty and the Real-Returns Question",
+        paragraphs:[
+          "One of the least understood factors in the corridor's 18-month run is the circle rate, the government-notified minimum value on which stamp duty is calculated. In August 2025 Haryana revised circle rates across the district, with increases of 10% to 145% depending on the zone. Along the Dwarka Expressway belt, Sectors 104 to 115 saw plot rates raised by 62% to 67%, and group-housing flat rates pushed to about ₹7,000 per square foot.",
+          "A higher circle rate raises the stamp duty bill even when the agreed price is unchanged, and it changes what appreciation means on paper. Sector 113 is a case study: its headline value rose roughly 24% in a year on listed data, yet after accounting for the circle-rate reset and the higher stamp duty it carries, the real, after-cost return was substantially lower. Headline per-square-foot gains are only meaningful once you net out acquisition costs and the effect of a rising taxable base.",
+        ],
+        list:[
+          "Aug 2025 revision: 10–145% across the district; 62–67% on expressway-belt plot rates",
+          "Group-housing flat circle rates along the corridor moved to ~₹7,000 per sqft",
+          "2026-27 proposals target further hikes of up to 67% in Sectors 104–115",
+          "Rising circle rates lift stamp duty and compress real, after-cost returns",
+        ],
+      },
+      {
+        heading:"Rents, Yields and the End-User Base",
+        paragraphs:[
+          "The corridor's rental market explains why prices are holding rather than merely printing. Two-bedroom apartments rent for roughly ₹13,000 to ₹30,000 a month depending on sector and specification, while three-bedrooms range from about ₹30,000 to ₹60,000. The tenant pool is built on aviation staff near the airport, corporate employees in the expressway commercial hubs, and families priced out of Golf Course Road.",
+          "Gross residential yields along the corridor sit in a thin 2% to 4% band, which makes this an appreciation market rather than a cash-flow one. The same demand base gives commercial spaces along the corridor yields in the 6% to 7% range, which is why serious investors on Dwarka Expressway now evaluate mixed or commercial exposure instead of pure residential buy-to-let.",
+        ],
+        list:[
+          "2BHK rents: ~₹13,000–₹30,000 per month",
+          "3BHK rents: ~₹30,000–₹60,000 per month",
+          "Residential gross yields: 2–4%; commercial: 6–7%",
+          "Tenant demand anchored by the airport and expressway commercial hubs",
+        ],
+      },
+      {
+        heading:"What Comes Next: Forecasts, Risks and a Buying Strategy",
+        paragraphs:[
+          "Projections for the corridor are broadly constructive but not uniform. Mature sectors such as 103 and 104 are expected to appreciate 8–12% annually in the base case, while emerging sectors such as 109 and 112 are projected at 12–15%. Industry forecasts suggest a cumulative move of 20–40% over the next two to three years, with 40–60% possible by 2030, and a metro-driven step-up of 10–20% in sectors along the alignment once construction begins in earnest.",
+          "The risks deserve equal weight. More than 25,000 units are under construction along the corridor, and large releases can compress prices in weaker sectors. Entry prices have roughly doubled in four years, compressing the affordability band even as incomes lag. And because yields are thin, buyers who overpay relative to registered transactions have no rental-income cushion while they wait for appreciation.",
+          "A disciplined strategy for the next 12–18 months: match the sector to your budget, verify every price against recent registered deals in the same project, confirm the developer's delivery record under RERA, and treat circle-rate movements as a cost that must be modelled, not ignored. The corridor's long-term fundamentals are strong; the short-term winners will be buyers who enter at verified prices in sectors where absorption is already proven.",
+        ],
+        list:[
+          "Base case: 8–12% annual appreciation (mature), 12–15% (emerging sectors)",
+          "Industry forecasts: 20–40% over 2–3 years, 40–60% by 2030",
+          "Risks: 25,000+ under-construction units and compressed affordability",
+          "Compare every quote with registered transactions before paying",
+        ],
+      },
+    ],
+    takeaways:[
+      "Listed flat averages moved ~₹12,500 to ~₹14,100 per sqft across the 18 months, with far wider swings by sector",
+      "Infrastructure, not sentiment, drove the re-rating: full activation, the IGI tunnel, and the confirmed metro line",
+      "Circle-rate revisions can turn headline gains into real losses; always model after-cost returns",
+      "Residential yields of 2–4% make this an appreciation corridor, not a cash-flow market",
+      "Sector and developer selection now matter more than corridor timing",
+    ],
+    faqs:[
+      { q:"What is the average price per square foot on Dwarka Expressway in 2026?", a:"Listed averages for residential flats sit between roughly ₹12,500 and ₹14,800 per square foot in early 2026, depending on the data source. Premium sectors near the Delhi border trade above ₹18,000, with top configurations exceeding ₹20,000 per square foot." },
+      { q:"How much have Dwarka Expressway prices risen in the last 18 months?", a:"On listed apartment averages, the corridor moved from about ₹12,500 per square foot in late 2024 to roughly ₹14,100 by early 2026, a gain of approximately 12–15%. Luxury pockets rose faster, and plot and builder-floor prices outpaced apartment averages." },
+      { q:"Which sectors on Dwarka Expressway appreciated the most?", a:"The Delhi-border luxury cluster of Sectors 108, 111, 113 and 114 led the re-rating, with Sector 108 showing the strongest momentum and Sector 111 the highest ultra-luxury rates. Sectors 102 and 106 remain the most popular value entry points." },
+      { q:"When will the metro reach Dwarka Expressway?", a:"The Delhi Metro Blue Line extension from Dwarka Sector 21 to Kherki Daula has been confirmed for the 2026-27 period. Sectors along the alignment, including 102, 103, 104 and 109, are expected to see an additional price step-up once construction begins." },
+      { q:"Is it a good time to buy on Dwarka Expressway in 2026?", a:"Yes, with discipline. The corridor's infrastructure is largely in place and demand is broad, but prices have roughly doubled in four years. Buy in a RERA-verified project, compare the quote against registered transactions, and model the higher circle-rate-driven stamp duty before committing." },
+      { q:"What is the current circle rate on Dwarka Expressway?", a:"After the August 2025 revision, group-housing flat rates along the expressway belt moved to about ₹7,000 per square foot, with plot rates in Sectors 104–115 up 62–67%. Further hikes of up to 67% have been proposed for 2026-27." },
     ],
   },
 ];

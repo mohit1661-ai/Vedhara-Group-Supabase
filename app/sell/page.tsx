@@ -159,7 +159,7 @@ export default function SellPage() {
           <div className="prop-grid">
             {sellListings.map((property,index)=>(
               <ScrollReveal key={property.id} delay={index * 80}>
-                <Link href="/contact?service=sell" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                <Link href="/contact#sell" className="hover-lift" style={{ display:"flex",flexDirection:"column",height:"100%",background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
@@ -212,7 +212,7 @@ export default function SellPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Want to list your property? Vedhara helps you price and position it for the right buyer.
               </p>
-              <Link href="/contact?service=sell" className="btn btn-primary">
+              <Link href="/contact#sell" className="btn btn-primary">
                 List Your Property →
               </Link>
             </div>

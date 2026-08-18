@@ -38,8 +38,8 @@ export default function VideosPage() {
 
       {/* Hero */}
       <VideoHeroSection
-        videoSrc="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=2#t=0"
-        videoSrcMobile="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=2#t=0"
+        videoSrc="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=3#t=0"
+        videoSrcMobile="/videos/Homepage%20Hero%20Video%20Real%20Estate%20Advisory%20in%20Gurgaon%20Delhi%20NCR.mp4?v=3#t=0"
       >
         <span className="v-line" style={{ margin:"0 auto 18px" }} />
         <p className="eyebrow" style={{ marginBottom:16 }}>Vedhara Group Films</p>

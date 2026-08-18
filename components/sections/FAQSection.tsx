@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import JsonLd from "@/components/seo/JsonLd";
+import ObfuscateEmailText from "@/components/ui/ObfuscateEmailText";
 export interface FAQItem { q:string; a:string; }
 export interface FAQGroup { label:string; icon?:string; faqs:FAQItem[]; }
 export default function FAQSection({ faqs=[], title, dark=true, groups, decor }:{ faqs?:FAQItem[]; title?:string; dark?:boolean; groups?:FAQGroup[]; decor?:boolean }) {
@@ -18,7 +19,7 @@ export default function FAQSection({ faqs=[], title, dark=true, groups, decor }:
         <span className={`faq-icon ${open===i?"open":""}`}>+</span>
       </button>
       <div className={`faq-answer ${open===i?"open":""}`}>
-        <div className="faq-answer-inner" style={{ color:ac }}>{faq.a}</div>
+        <div className="faq-answer-inner" style={{ color:ac }}><ObfuscateEmailText text={faq.a} /></div>
       </div>
     </div>
   );
