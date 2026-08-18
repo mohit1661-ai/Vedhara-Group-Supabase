@@ -166,9 +166,10 @@ export default function VideoHeroSection({
         };
         const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
         const slow = !!conn && (!!conn.saveData || /2g/.test(conn.effectiveType || ""));
-        // Hero videos autoplay on mobile too (muted/playsInline), deferred to idle
-        // so the first paint never waits on the download. Only Save-Data/2G keeps the poster.
-        if (slow) return;
+        // Keep the poster on mobile; the cinematic video is desktop-only so it never
+        // competes with mobile content and interaction resources.
+        const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+        if (slow || mobile) return;
         if ("requestIdleCallback" in window) {
           window.requestIdleCallback(start, { timeout: 900 });
         } else {
