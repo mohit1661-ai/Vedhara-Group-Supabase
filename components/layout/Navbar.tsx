@@ -42,8 +42,8 @@ export default function Navbar() {
             <Image
               src="/vedhara-logo-white.png"
               alt="Vedhara Group"
-              width={224}
-              height={56}
+              width={48}
+              height={38}
               priority
               style={{
                 height: "var(--nav-logo-h)", width: "auto",
@@ -56,9 +56,8 @@ export default function Navbar() {
             <Image
               src="/vedhara-logo-dark.png"
               alt="Vedhara Group"
-              width={224}
-              height={56}
-              priority
+              width={48}
+              height={38}
               style={{
                 height: "var(--nav-logo-h)", width: "auto",
                 position: scrolled ? "static" : "absolute",
