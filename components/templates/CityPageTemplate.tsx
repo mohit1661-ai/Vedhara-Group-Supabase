@@ -284,6 +284,33 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
       </section>
 
       <FAQSection title={data.faqTitle} faqs={data.faqs} dark decor />
+
+      {/* Related Resources */}
+      {data.relatedLinks && data.relatedLinks.length > 0 && (
+        <section style={{ background:"var(--navy)",padding:"56px 32px" }}>
+          <div style={{ maxWidth:1100,margin:"0 auto" }}>
+            <ScrollReveal>
+              <div style={{ textAlign:"center",marginBottom:36 }}>
+                <span className="v-line" style={{ margin:"0 auto 14px" }} />
+                <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Related Resources</p>
+                <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:12 }}>
+                  Explore <span style={{ color:"var(--gold-lt)" }}>Our Services</span>
+                </h2>
+              </div>
+            </ScrollReveal>
+            <div style={{ display:"flex",gap:16,justifyContent:"center",flexWrap:"wrap" }}>
+              {data.relatedLinks.map((link,i)=>(
+                <ScrollReveal key={link.href} delay={i*60}>
+                  <Link href={link.href} className="hover-lift" style={{ display:"inline-flex",alignItems:"center",gap:8,padding:"14px 24px",background:"var(--cream)",color:"var(--navy)",borderRadius:10,textDecoration:"none",fontFamily:"var(--t-head)",fontSize:12,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",transition:"all 0.2s" }}>
+                    {link.label} →
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <CTASection />
     </>
   );

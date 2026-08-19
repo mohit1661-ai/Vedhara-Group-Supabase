@@ -68,6 +68,7 @@ export interface CityPageData {
   schemaName: string;
   schemaAreaServed: string[];
   schemaDescription: string;
+  relatedLinks?: { label:string; href:string }[];
 }
 
 const img = (id: number) =>
@@ -172,6 +173,7 @@ const gurugram: CityPageData = {
   schemaName: "Real Estate Advisory in Gurugram",
   schemaAreaServed: ["Gurugram"],
   schemaDescription: "Independent real estate advisory across Gurugram: verified buying, selling, renting and investing in Golf Course Road, Dwarka Expressway, Sector 62 and Sohna Road with HRERA due diligence.",
+  relatedLinks: [{ label:"Commercial Advisory", href:"/commercial" }, { label:"Luxury Properties", href:"/luxury" }, { label:"Property Management", href:"/property-management" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -269,6 +271,7 @@ const noida: CityPageData = {
   schemaName: "Real Estate Advisory in Noida",
   schemaAreaServed: ["Noida"],
   schemaDescription: "Independent real estate advisory across Noida: verified buying, selling, renting and investing in Sector 150, Sector 44, Sector 137 and the Expressway corridor with UP RERA due diligence.",
+  relatedLinks: [{ label:"Commercial Advisory", href:"/commercial" }, { label:"Investment Advisory", href:"/investment" }, { label:"Greater Noida Properties", href:"/greater-noida" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -364,6 +367,7 @@ const greaterNoida: CityPageData = {
   schemaName: "Real Estate Advisory in Greater Noida",
   schemaAreaServed: ["Greater Noida"],
   schemaDescription: "Independent real estate advisory across Greater Noida: verified buying, selling, renting and investing in GNIDA and YEIDA sectors with UP RERA due diligence.",
+  relatedLinks: [{ label:"Noida Properties", href:"/noida" }, { label:"Commercial Advisory", href:"/commercial" }, { label:"Plots Advisory", href:"/plots" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -396,11 +400,11 @@ const southDelhi: CityPageData = {
     { id:"sd-02", title:"Magnolia Mansion", location:"Greater Kailash II, Delhi", price:"₹ 14.20 Cr", config:"5 BHK Independent Floor", size:"4,500 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["GK II Address","Rooftop Terrace","Puja Room","Family Lounge"], image:img(1630114), pos:"16%", alt:"Magnolia Mansion luxury independent floor in Greater Kailash II, Delhi" },
     { id:"sd-03", title:"Magnolia Court", location:"Greater Kailash II, Delhi", price:"₹ 3.40 Cr", config:"3 BHK", size:"1,550 sq.ft.", type:"Residential", status:"Under Construction", highlights:["RERA Registered","South Delhi","Premium Location","High Appreciation"], image:img(35114454), pos:"80%", alt:"Magnolia Court premium apartments in Greater Kailash II, Delhi" },
     { id:"sd-04", title:"Vasant Residency", location:"Vasant Kunj, Delhi", price:"₹ 65,000/mo", config:"3 BHK + Servant", size:"1,750 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["South Delhi","Lawns & Park","Covered Parking","Close to Airport"], image:img(34623003), pos:"80%", alt:"Vasant Residency 3 BHK rental in Vasant Kunj, Delhi" },
-    { id:"sd-05", title:"One Golf Course Penthouse", location:"Golf Course Road, Gurugram", price:"₹ 12.80 Cr", config:"5 BHK + Pool", size:"4,200 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["HRERA Registered","Panoramic View","Private Terrace","Butler Service"], image:img(20418771), alt:"One Golf Course Penthouse luxury penthouse near South Delhi" },
-    { id:"sd-06", title:"Sovereign Villa", location:"Sector 150, Noida", price:"₹ 9.50 Cr", config:"6 BHK + Study", size:"5,800 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["Lake Front","Private Garden","Home Theatre","Modular Kitchen"], image:img(16573669), pos:"72%", alt:"Sovereign Villa lakefront luxury villa" },
-    { id:"sd-07", title:"Skydeck Residence", location:"Sector 62, Gurugram", price:"₹ 7.95 Cr", config:"4 BHK Penthouse", size:"3,100 sq.ft.", type:"Luxury", status:"Under Construction", highlights:["Sky Deck","Private Elevator","Wine Cellar","Smart Home"], image:img(8082227), pos:"64%", alt:"Skydeck Residence luxury penthouse" },
+    { id:"sd-05", title:"Defence Colony Penthouse", location:"Defence Colony, Delhi", price:"₹ 12.80 Cr", config:"5 BHK + Pool", size:"4,200 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["Defence Colony Address","Panoramic View","Private Terrace","Butler Service"], image:img(20418771), alt:"Defence Colony luxury penthouse in South Delhi" },
+    { id:"sd-06", title:"Greater Kailash Villa", location:"Greater Kailash I, Delhi", price:"₹ 9.50 Cr", config:"6 BHK + Study", size:"5,800 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["GK I Address","Private Garden","Home Theatre","Modular Kitchen"], image:img(16573669), pos:"72%", alt:"Greater Kailash I luxury villa in South Delhi" },
+    { id:"sd-07", title:"Lodhi Colony Residence", location:"Lodhi Colony, Delhi", price:"₹ 7.95 Cr", config:"4 BHK Penthouse", size:"3,100 sq.ft.", type:"Luxury", status:"Under Construction", highlights:["Lodhi Colony","Private Elevator","Wine Cellar","Smart Home"], image:img(8082227), pos:"64%", alt:"Lodhi Colony luxury penthouse in South Delhi" },
     { id:"sd-08", title:"Defence Colony Floor", location:"Defence Colony, Delhi", price:"₹ 8.75 Cr", config:"4 BHK Independent Floor", size:"2,900 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["Prime Address","Wide Frontage","Family Lounge","Rooftop Terrace"], image:img(19516616), pos:"100%", alt:"Defence Colony independent floor in South Delhi" },
-    { id:"sd-09", title:"Amaryllis Residences", location:"Golf Course Road, Gurugram", price:"₹ 6.20 Cr", config:"3 BHK + Servant", size:"2,150 sq.ft.", type:"Luxury", status:"Possession Dec 2026", highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"], image:img(31684126), pos:"100%", alt:"Amaryllis Residences luxury apartments" },
+    { id:"sd-09", title:"Kalkaji Residence", location:"Kalkaji, Delhi", price:"₹ 6.20 Cr", config:"3 BHK + Servant", size:"2,150 sq.ft.", type:"Luxury", status:"Possession Dec 2026", highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"], image:img(31684126), pos:"100%", alt:"Kalkaji luxury apartments in South Delhi" },
     { id:"sd-10", title:"Vasant Vihar Penthouse", location:"Vasant Vihar, Delhi", price:"₹ 16.80 Cr", config:"4 BHK Penthouse", size:"3,800 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["Prime Address","Panoramic View","Private Terrace","Butler Service"], image:img(323780), pos:"100%", alt:"Vasant Vihar penthouse in South Delhi" },
     { id:"sd-11", title:"Greater Kailash I Villa", location:"Greater Kailash I, Delhi", price:"₹ 22.50 Cr", config:"6 BHK Villa", size:"6,500 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["GK I Address","Landscaped Lawns","Private Pool","Staff Quarters"], image:img(12359235), pos:"89%", alt:"Greater Kailash I luxury villa in South Delhi" },
     { id:"sd-12", title:"Hauz Khas Enclave Floor", location:"Hauz Khas Enclave, Delhi", price:"₹ 7.90 Cr", config:"3 BHK Independent Floor", size:"2,400 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["Hauz Khas Address","Green Surroundings","Rooftop Terrace","Family Lounge"], image:img(323781), pos:"92%", alt:"Hauz Khas Enclave independent floor in South Delhi" },
@@ -459,6 +463,7 @@ const southDelhi: CityPageData = {
   schemaName: "Real Estate Advisory in South Delhi",
   schemaAreaServed: ["South Delhi"],
   schemaDescription: "Independent luxury real estate advisory across South Delhi: verified buying, selling and renting in Lutyens' Delhi, Greater Kailash, Vasant Vihar, Defence Colony and Hauz Khas.",
+  relatedLinks: [{ label:"Luxury Properties", href:"/luxury" }, { label:"NRI Property Advisory", href:"/nri" }, { label:"Verification Center", href:"/verification-center" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -555,6 +560,7 @@ const chandigarh: CityPageData = {
   schemaName: "Real Estate Advisory in Chandigarh",
   schemaAreaServed: ["Chandigarh"],
   schemaDescription: "Independent real estate advisory in Chandigarh: verified buying, selling and investing with Estate Office NOC checks and registered-title due diligence.",
+  relatedLinks: [{ label:"Mohali Properties", href:"/mohali" }, { label:"Panchkula Properties", href:"/panchkula" }, { label:"Commercial Advisory", href:"/commercial" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -650,6 +656,7 @@ const mohali: CityPageData = {
   schemaName: "Real Estate Advisory in Mohali",
   schemaAreaServed: ["Mohali"],
   schemaDescription: "Independent real estate advisory across Mohali: verified buying, selling and investing in GMADA-approved sectors with Punjab RERA due diligence.",
+  relatedLinks: [{ label:"Chandigarh Properties", href:"/chandigarh" }, { label:"Panchkula Properties", href:"/panchkula" }, { label:"Plots Advisory", href:"/plots" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -745,6 +752,7 @@ const panchkula: CityPageData = {
   schemaName: "Real Estate Advisory in Panchkula",
   schemaAreaServed: ["Panchkula"],
   schemaDescription: "Independent real estate advisory in Panchkula: verified buying, selling and investing in planned Haryana sectors with HRERA due diligence and freehold-conversion checks.",
+  relatedLinks: [{ label:"Chandigarh Properties", href:"/chandigarh" }, { label:"Mohali Properties", href:"/mohali" }, { label:"Luxury Properties", href:"/luxury" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -840,6 +848,7 @@ const faridabad: CityPageData = {
   schemaName: "Real Estate Advisory in Faridabad",
   schemaAreaServed: ["Faridabad"],
   schemaDescription: "Independent real estate advisory across Faridabad: verified buying, selling and investing in Sector 47, Neharpar and emerging sectors with HRERA due diligence.",
+  relatedLinks: [{ label:"Gurugram Properties", href:"/gurugram" }, { label:"Commercial Advisory", href:"/commercial" }, { label:"Property Management", href:"/property-management" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -935,6 +944,7 @@ const ghaziabad: CityPageData = {
   schemaName: "Real Estate Advisory in Ghaziabad",
   schemaAreaServed: ["Ghaziabad"],
   schemaDescription: "Independent real estate advisory across Ghaziabad: verified buying, selling and investing in Indirapuram, Raj Nagar Extension, Vaishali and Crossings Republik with UP RERA due diligence.",
+  relatedLinks: [{ label:"Noida Properties", href:"/noida" }, { label:"Greater Noida Properties", href:"/greater-noida" }, { label:"Commercial Advisory", href:"/commercial" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1030,6 +1040,7 @@ const mathuraVrindavan: CityPageData = {
   schemaName: "Real Estate Advisory in Mathura & Vrindavan",
   schemaAreaServed: ["Mathura", "Vrindavan"],
   schemaDescription: "Independent real estate advisory across Mathura and Vrindavan: verified buying, selling and investing in Vrindavan villas, Yamuna Expressway plots and Mathura city homes with UP RERA and MVDA due diligence.",
+  relatedLinks: [{ label:"Greater Noida Properties", href:"/greater-noida" }, { label:"Plots Advisory", href:"/plots" }, { label:"NRI Property Advisory", href:"/nri" }],
 };
 
 export const cityPages: Record<string, CityPageData> = {

@@ -124,7 +124,7 @@ export const servicePages: Record<string, ServicePageContent> = {
   commercial: {
     slug: "commercial",
     eyebrow: "Commercial Advisory",
-    h1: "Commercial Real Estate,",
+    h1: "Commercial Real Estate in Delhi NCR,",
     h1Accent: "Backed by Data",
     intro:
       "Retail footfall, office accessibility, mixed-use zoning, commercial real estate has its own rules. Vedhara's advisory across Delhi NCR, Faridabad and Manesar is built around them.",
@@ -196,7 +196,7 @@ export const servicePages: Record<string, ServicePageContent> = {
   luxury: {
     slug: "luxury",
     eyebrow: "Luxury Properties",
-    h1: "Luxury Properties",
+    h1: "Luxury Properties in Delhi NCR,",
     h1Accent: "Premium Advisory",
     intro:
       "Luxury real estate demands discretion, speed, and an advisor who understands what premium buyers actually value. Vedhara's luxury desk across Delhi NCR, Chandigarh Tricity and North India is built for exactly that.",
@@ -248,7 +248,7 @@ export const servicePages: Record<string, ServicePageContent> = {
   "property-management": {
     slug: "property-management",
     eyebrow: "Property Management",
-    h1: "Property Management Services,",
+    h1: "Property Management in Delhi NCR,",
     h1Accent: "Managed Remotely",
     intro:
       "For owners who don't want to chase tenants, coordinate repairs, or track rent across Delhi NCR, Faridabad, Chandigarh or North India, Vedhara handles the operational side of ownership.",
