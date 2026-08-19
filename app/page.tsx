@@ -133,8 +133,8 @@ export default function HomePage() {
                 Three Steps to a{" "}
                 <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Verified Property Decision</em>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
-                Independent advice, verified information and a transparent process, from your first enquiry to your final decision.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:660,margin:"16px auto 0" }}>
+                Buying, selling or investing in Delhi NCR real estate can feel overwhelming with thousands of unverified listings, opaque pricing and aggressive sales teams. Vedhara simplifies the process into three clear steps: share your requirements, let us verify every shortlisted property, and receive honest advice backed by published due-diligence. No jargon. No pressure. Just a named senior advisor guiding you from your first enquiry to your final decision.
               </p>
             </div>
           </ScrollReveal>
@@ -168,8 +168,8 @@ export default function HomePage() {
                 Find Your Next Property in{" "}
                 <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Delhi NCR</em>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:660,margin:"16px auto 0" }}>
-                Pick a market to explore verified listings in that micro-market, benchmarked prices, live inventory and published project due diligence. No unverified projects. Ever.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:700,margin:"16px auto 0" }}>
+                Delhi NCR is not one market — it is a collection of micro-markets, each with distinct pricing trends, infrastructure timelines, builder reputations and investment profiles. Gurugram&apos;s Golf Course Road operates differently from Noida Sector 150, which operates differently from South Delhi&apos;s established neighbourhoods. Pick a market below to explore verified listings, benchmarked prices, live inventory and published project due diligence specific to that micro-market. No unverified projects. Ever.
               </p>
             </div>
           </ScrollReveal>
@@ -215,7 +215,7 @@ export default function HomePage() {
                   <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Before You See It</em>
                 </h2>
                 <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28,maxWidth:480 }}>
-                  Most property portals list whatever inventory developers hand them. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework, five documented checks that we publish in plain language on every listing page. No jargon. No fine print. Just the facts.
+                  Most property portals list whatever inventory developers hand them, with no independent validation of approvals, pricing or title status. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework — five documented checks covering RERA registration, delivery history, project-level approvals, price fairness benchmarked against government circle rates, and title document availability. We publish the results in plain language on every listing page. No jargon. No fine print. Just the facts you need to make a confident property decision in Delhi NCR.
                 </p>
                 <Link href="/verification-center" className="btn btn-ghost cta-pill">
                   See the Full Verification Framework →
@@ -285,7 +285,7 @@ export default function HomePage() {
                 <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Are Still Catching Up To</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:720,margin:"16px auto 0" }}>
-                Most real estate platforms are developer-distribution channels disguised as advisors: unverified listings, developer-set pricing, and sales-driven teams. Vedhara is different: published due-diligence on every listing, transparent fees, and one named advisor from day one.
+                Most real estate platforms in Delhi NCR are developer-distribution channels disguised as advisors: unverified listings, developer-set pricing, and sales-driven teams incentivised to push the highest-commission project rather than the right one for you. Vedhara is built on a different model. Every listing undergoes published due-diligence, every fee is disclosed upfront, and you get one named advisor from day one who knows your requirements and stays with you through the entire transaction. Here is what that difference looks like in practice.
               </p>
             </div>
           </ScrollReveal>
@@ -314,8 +314,8 @@ export default function HomePage() {
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1,marginBottom:20 }}>
                 NRI Property, Managed from Abroad
               </h2>
-              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28,maxWidth:560 }}>
-                Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk offers weekend and evening IST consultations, on-demand video walkthroughs of shortlisted properties within 48 hours, and e-signature documentation support, so you can make a verified property decision in India without buying a flight ticket.
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28,maxWidth:580 }}>
+                Distance shouldn&apos;t mean doubt. Vedhara&apos;s NRI desk is built for Non-Resident Indians who need to buy, sell or manage property in Delhi NCR without flying back and forth. We offer weekend and evening IST consultations to match your time zone, on-demand video walkthroughs of shortlisted properties within 48 hours, FEMA-compliant documentation guidance, and e-signature support so you can complete transactions remotely. Every listing you see has passed our five-point Verification Framework, and your named advisor handles everything from RERA checks to registration coordination.
               </p>
               <div style={{ display:"flex",flexWrap:"wrap",gap:16,marginBottom:32 }}>
                 {["UAE","UK","USA","Canada","Singapore","Australia"].map(n=>(<span key={n} className="body-sm" style={{ color:"rgba(255,255,255,0.36)" }}>{n}</span>))}
@@ -350,8 +350,8 @@ export default function HomePage() {
                 Four Free Tools,{" "}
                 <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>No Sign-Up Required</em>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:560,margin:"0 auto" }}>
-                Every property decision in Delhi NCR comes down to numbers. These four tools are free, instant, and available without sharing your contact details. Run the numbers first. Then talk to an advisor.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
+                Every property decision in Delhi NCR comes down to numbers — EMI affordability, stamp duty obligations, rental yield projections and realistic budget expectations. Vedhara offers four free calculators that give you instant, accurate estimates based on current interest rates, government circle rates and standard bank lending norms. No sign-up required, no contact details needed. Run the numbers yourself first, then speak to an advisor with the data to back your decision.
               </p>
             </div>
           </ScrollReveal>
@@ -385,6 +385,9 @@ export default function HomePage() {
                 <br />
                 Your Property Journey
               </h2>
+              <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:660,margin:"16px auto 0" }}>
+                Vedhara Group is led by professionals with deep expertise in Delhi NCR real estate, NRI advisory and investment strategy. Each leader brings a specific focus — from verification rigour to portfolio-level advisory — so every client benefits from specialised knowledge, not generic salesmanship.
+              </p>
             </div>
           </ScrollReveal>
 
@@ -455,6 +458,9 @@ export default function HomePage() {
                   Latest Insights From{" "}
                   <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Our Advisors</em>
                 </h2>
+                <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:580,margin:"12px auto 0" }}>
+                  Practical analysis on Delhi NCR property trends, RERA compliance, home loan strategy and NRI investment — written by our advisory team, not content mills.
+                </p>
               </div>
               <Link href="/blog" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Articles →</Link>
             </div>
@@ -498,8 +504,8 @@ export default function HomePage() {
               Your Next Property Decision Deserves{" "}
               <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Independent Advice.</em>
             </h2>
-            <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28 }}>
-              Whether you are buying, selling, investing, or managing property from abroad, start with an honest conversation, not a sales pitch.
+            <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28,maxWidth:600,margin:"0 auto 28px" }}>
+              Whether you are buying your first home, selling an inherited property, building a real estate investment portfolio, or managing assets from abroad, Vedhara gives you the verified information, transparent fees and named advisor you need to make a confident decision. Book a free consultation and experience the difference that independent, data-driven advisory makes.
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
               <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
@@ -527,8 +533,8 @@ export default function HomePage() {
                 Real Clients.{" "}
                 <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>Real Outcomes.</em>
               </h2>
-              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
-                Every story is a genuine Vedhara engagement, shared with permission. No stock photos, no fictional scenarios, no sales scripts.
+              <p className="body-lg" style={{ color:"var(--slate)",maxWidth:660,margin:"16px auto 0" }}>
+                Every story below is a genuine Vedhara engagement, shared with the client&apos;s permission. No stock photos, no fictional scenarios, no sales scripts. These case studies show how independent advisory, published due-diligence and transparent fees translate into real outcomes for buyers, sellers, investors and NRIs navigating Delhi NCR real estate.
               </p>
             </div>
           </ScrollReveal>
