@@ -20,8 +20,8 @@ export default function Footer() {
               <Image
                 src="/vedhara-logo-white.png"
                 alt="Vedhara Group"
-                width={240}
-                height={60}
+                width={71}
+                height={56}
                 style={{ height: 56, width: "auto" }}
               />
             </div>
