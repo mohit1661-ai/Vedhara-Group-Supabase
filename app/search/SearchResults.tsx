@@ -28,7 +28,7 @@ const CITY_LINKS = [
   { label: "Panchkula", href: "/panchkula", img: cityImg(37433082), sub: "Sector 19 & the foothills" },
   { label: "Faridabad", href: "/faridabad", img: cityImg(30381835), sub: "Sector 21C & the NH-44 corridor" },
   { label: "Ghaziabad", href: "/ghaziabad", img: cityImg(30368780), sub: "Vaishali, Indirapuram & Raj Nagar" },
-  { label: "Mathura & Vrindavan", href: "/mathura-vrindavan", img: cityImg(11969919), sub: "Yamuna Expressway & Vrindavan" },
+  { label: "Mathura & Vrindavan", href: "/mathura-vrindavan", img: "/Images/property-search-backdrop.jpg", sub: "Yamuna Expressway & Vrindavan" },
 ];
 
 const MODES: { label: string; value?: SearchMode }[] = [

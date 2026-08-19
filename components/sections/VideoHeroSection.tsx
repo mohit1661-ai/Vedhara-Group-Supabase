@@ -156,20 +156,21 @@ export default function VideoHeroSection({
       videoRef.current = el;
       // Force to start from beginning - runs synchronously on mount
       el.currentTime = 0;
-      if (videoSrc) {
+      const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+      const source = mobile && videoSrcMobile ? videoSrcMobile : videoSrc;
+      if (source) {
         const start = () => {
           if (!el.isConnected) return;
-          el.src = videoSrc;
+          el.src = source;
           el.preload = "auto";
           el.load();
           setVideoSrcReady(true);
         };
         const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
         const slow = !!conn && (!!conn.saveData || /2g/.test(conn.effectiveType || ""));
-        // Keep the poster on mobile; the cinematic video is desktop-only so it never
-        // competes with mobile content and interaction resources.
-        const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
-        if (slow || mobile) return;
+        // Mobile also receives the muted/inline video; only Save-Data/2G keeps
+        // the fallback behavior so normal mobile visitors are not left without a hero.
+        if (slow) return;
         if ("requestIdleCallback" in window) {
           window.requestIdleCallback(start, { timeout: 900 });
         } else {
@@ -177,7 +178,7 @@ export default function VideoHeroSection({
         }
       }
     }
-  }, [videoSrc]);
+  }, [videoSrc, videoSrcMobile]);
 
   /* ── Start loading + muted autoplay immediately on mount for instant playback ── */
   useEffect(() => {
