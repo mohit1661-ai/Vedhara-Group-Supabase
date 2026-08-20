@@ -337,8 +337,12 @@ section:not(.video-hero):not(.page-hero){content-visibility:auto;contain-intrins
 .stat-card:hover .stat-label{color:var(--slate);}
 
 /* Responsive */
-.show-mobile{display:none;}
-@media(max-width:1024px){.hidden-mobile{display:none!important;}.show-mobile{display:block!important;}}
+.mobile-menu-trigger,.mobile-sticky-cta{display:none;}
+@media(max-width:1024px){
+  .hidden-mobile{display:none!important;}
+  .mobile-menu-trigger{display:flex!important;}
+  .mobile-sticky-cta{display:block!important;}
+}
 
 /* Mobile/tablet: reserve space for the fixed bottom Call/Chat/Book bar so it
    never covers the footer's last content (copyright line) when scrolled to end. */
@@ -374,7 +378,7 @@ section:not(.video-hero):not(.page-hero){content-visibility:auto;contain-intrins
 
 /* Mobile: increase hamburger tap target */
 @media(max-width:1024px){
-  .show-mobile[aria-label="Menu"]{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;}
+  .mobile-menu-trigger{min-width:44px;min-height:44px;display:flex!important;align-items:center;justify-content:center;}
 }
 
 /* CTA sub-text: stay on one line on desktop */

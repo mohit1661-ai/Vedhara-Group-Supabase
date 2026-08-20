@@ -152,11 +152,7 @@ export default function CinematicHero({
         // Mobile also receives the muted/inline video; only Save-Data/2G keeps
         // the fallback behavior so normal mobile visitors are not left without a hero.
         if (slow) return;
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(start, { timeout: 900 });
-        } else {
-          setTimeout(start, 700);
-        }
+        start();
       }
     }
   }, [videoSrc, videoSrcMobile]);
@@ -314,7 +310,7 @@ export default function CinematicHero({
           muted
           loop
           playsInline
-          preload="none"
+           preload="auto"
           className="video-bg"
           title="Vedhara Group homepage cinematic property film"
           aria-label="Vedhara Group homepage cinematic property film"

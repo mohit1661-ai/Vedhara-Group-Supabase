@@ -141,7 +141,7 @@ export default function VideoHeroSection({
   children,
   videoSrc,
   videoSrcMobile,
-  poster = "/hero-poster.jpg",
+  poster,
   posterAlt = "",
   overlayGradient,
   disableTilt,
@@ -154,15 +154,19 @@ export default function VideoHeroSection({
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  // Ref callback to force currentTime = 0 and set src after mount.
-  // Video download is deferred until the browser is idle so it doesn't compete
-  // with the hero text on first paint (LCP) on any device; Save-Data/2G keeps the poster.
+  // Ref callback clears any previous route's source before assigning the new
+  // video, preventing the previous hero film from flashing during navigation.
   // useCallback keeps the identity stable so React never re-runs it on re-render —
   // a re-run would re-assign src and call load() again, restarting the video
   // and flashing the hero on screen.
   const videoRefCallback = useCallback((el: HTMLVideoElement | null) => {
     if (el) {
       videoRef.current = el;
+      el.pause();
+      el.removeAttribute("src");
+      el.load();
+      setVideoLoaded(false);
+      setVideoSrcReady(false);
       // Force to start from beginning - runs synchronously on mount
       el.currentTime = 0;
       const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
@@ -180,11 +184,7 @@ export default function VideoHeroSection({
         // Mobile also receives the muted/inline video; only Save-Data/2G keeps
         // the fallback behavior so normal mobile visitors are not left without a hero.
         if (slow) return;
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(start, { timeout: 900 });
-        } else {
-          setTimeout(start, 700);
-        }
+        start();
       }
     }
   }, [videoSrc, videoSrcMobile]);
@@ -369,7 +369,7 @@ export default function VideoHeroSection({
             muted
             loop
             playsInline
-            preload="none"
+            preload="auto"
             className="video-bg"
             title={posterAlt || "Vedhara Group cinematic property film"}
             aria-label={posterAlt || "Vedhara Group cinematic property film"}

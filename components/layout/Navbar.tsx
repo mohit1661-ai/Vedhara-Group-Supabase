@@ -85,7 +85,7 @@ export default function Navbar() {
           </div>
 
           {/* Hamburger */}
-          <button className="show-mobile" onClick={()=>setOpen(!open)} style={{ background:"none",border:"none",cursor:"pointer",padding:12,minWidth:44,minHeight:44,alignItems:"center",justifyContent:"center" }} aria-label="Menu">
+          <button className="mobile-menu-trigger" onClick={()=>setOpen(!open)} style={{ background:"none",border:"none",cursor:"pointer",padding:10,width:48,minWidth:48,height:44,minHeight:44,flex:"0 0 48px",flexDirection:"column",alignItems:"center",justifyContent:"center" }} aria-label="Menu">
             {[0,1,2].map(i=>(
               <div key={i} style={{ width:24,height:2,marginBottom:i<2?5:0,background:scrolled?"var(--navy)":"white",transition:"transform 0.3s,opacity 0.3s",transform:open?(i===0?"rotate(45deg) translateY(7px)":i===2?"rotate(-45deg) translateY(-7px)":"none"):"none",opacity:open&&i===1?0:1 }} />
             ))}
@@ -106,7 +106,7 @@ export default function Navbar() {
         {/* Consultation popup — opened from the Free Consultation CTA */}
         <ConsultationModal open={consultOpen} onClose={()=>setConsultOpen(false)} />
       {/* Mobile sticky CTA */}
-      <div className="show-mobile" style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:999,background:"var(--navy)",borderTop:"1px solid rgba(212,168,67,0.2)",display:"none" }}>
+      <div className="mobile-sticky-cta" style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:999,background:"var(--navy)",borderTop:"1px solid rgba(212,168,67,0.2)",display:"none" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr 1fr" }}>
           {[
             { label:"Call",  href:"tel:+919810647063",bg:"transparent" },
@@ -123,7 +123,6 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-      <style>{`@media(max-width:1024px){.show-mobile{display:flex!important;}}`}</style>
     </>
   );
 }
