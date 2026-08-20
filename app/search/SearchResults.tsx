@@ -157,7 +157,7 @@ export default function SearchResults({
 
       {/* Hero */}
       <section className="page-hero" style={{ background: "var(--navy)", position: "relative", overflow: "hidden" }}>
-        {/* Luxury video background — aligned with the rest of the site's cinematic heroes */}
+        {/* Luxury video background, aligned with the rest of the site's cinematic heroes */}
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           <video
             autoPlay

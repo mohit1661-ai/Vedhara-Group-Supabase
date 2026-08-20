@@ -10,7 +10,7 @@ const cols = [
 export default function Footer() {
   return (
     <footer style={{ background:"var(--navy)",color:"rgba(255,255,255,0.75)" }}>
-      {/* Gold differentiator — luxury hairline separating page content from the footer */}
+      {/* Gold differentiator, luxury hairline separating page content from the footer */}
       <div style={{ width:"100%",height:2,background:"linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold-lt) 50%,var(--gold) 80%,transparent)",opacity:0.55 }} />
       {/* Main */}
       <div style={{ maxWidth:1320,margin:"0 auto",padding:"56px 32px 32px" }}>

@@ -119,7 +119,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 .nav-dropdown-links a span{color:var(--gold-ink);font-size:13px;opacity:0;transition:opacity 0.2s;}
 .nav-dropdown-links a:hover span{opacity:1;}
 
-/* Cursor — pointer-driven (CustomCursor.tsx reveals only for a mouse pointer) */
+/* Cursor, pointer-driven (CustomCursor.tsx reveals only for a mouse pointer) */
 .cursor-dot{width:6px;height:6px;background:var(--gold-lt);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity 0.25s ease;}
 .cursor-ring{width:28px;height:28px;border:1px solid rgba(232,201,112,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:0;transition:width 0.3s var(--ease-out),height 0.3s var(--ease-out),border-color 0.3s,opacity 0.25s ease;}
 .cursor-ring.hover{width:44px;height:44px;border-color:rgba(232,201,112,0.9);}
@@ -181,7 +181,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 .svc-card-alt > :nth-child(even) .svc-card{background:var(--cream);}
 .svc-card-alt > :nth-child(even) .svc-card:hover{background:var(--navy)!important;}
 
-/* Micro-Market cards (tricity) — unified cream idle, navy hover, gold-framed */
+/* Micro-Market cards (tricity), unified cream idle, navy hover, gold-framed */
 .mm-card{height:100%;border:1px solid rgba(212,168,67,0.22);border-radius:12px;box-shadow:0 12px 32px rgba(9,15,29,0.06);transition:transform 0.4s var(--ease-spring),box-shadow 0.4s ease,border-color 0.35s ease;}
 .mm-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(9,15,29,0.2);border-color:rgba(212,168,67,0.35);}
 .mm-card .mm-tag{font-family:var(--t-head);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);background:rgba(212,168,67,0.12);padding:4px 10px;border-radius:3px;white-space:nowrap;display:inline-block;transition:background 0.35s,color 0.35s;}
@@ -222,7 +222,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 .svc-card-alt > *{align-self:stretch;}
 .svc-card-alt .svc-card{height:100%;}
 
-/* Decision Framework grid — flexbox for equal card heights */
+/* Decision Framework grid, flexbox for equal card heights */
 .df-grid{display:flex;flex-wrap:wrap;gap:20px;}
 .df-grid > *{flex:0 0 calc(33.333% - 14px);min-width:0;}
 @media(max-width:1024px){.df-grid > *{flex:0 0 calc(50% - 10px);}}
@@ -307,10 +307,10 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 .hover-lift{transition:transform 0.4s var(--ease-spring),box-shadow 0.4s ease,filter 0.3s ease;}
 .hover-lift:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 24px 48px rgba(9,15,29,0.25);filter:brightness(1.05);}
 
-/* Apply Now button — navy idle, gold hover */
+/* Apply Now button, navy idle, gold hover */
 .apply-btn:hover{background:var(--gold)!important;color:var(--navy)!important;}
 
-/* Gold-framed card — gold border on all 4 sides + hover popup */
+/* Gold-framed card, gold border on all 4 sides + hover popup */
 .gold-frame-card{position:relative;border:1px solid rgba(212,168,67,0.25);border-radius:12px;transition:transform 0.45s var(--ease-spring),box-shadow 0.4s ease;height:100%;}
 .gold-frame-card:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 24px 56px rgba(9,15,29,0.3);}
 .gold-frame-card.gfc-navy{background:var(--navy);}
@@ -360,7 +360,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 @media(max-width:1024px){body{padding-bottom:56px;}}
 
 /* /search "Explore by City": center the last lone card on the 3-col grid,
-   but let it span the full single column on mobile/tablet (≤768px) — the
+   but let it span the full single column on mobile/tablet (≤768px), the
    old inline `gridColumn:2 / 3` collapsed every even card to ~1px there. */
 .city-orphan{grid-column:2 / 3;}
 @media(max-width:768px){.city-orphan{grid-column:auto;}}
@@ -413,7 +413,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 
 /* ── Touch devices (mobile & tablet): cards respond to taps ────────────────
    Touch screens have no mouse, so CSS :hover only fires as a "sticky" state
-   after a tap — leaving cards raised/flipped until you tap somewhere else.
+   after a tap, leaving cards raised/flipped until you tap somewhere else.
    On touch we (1) neutralise that sticky hover so cards settle back, and
    (2) give cards immediate press feedback while the finger is down.
    Desktop (hover-capable) is completely unaffected. */
@@ -482,7 +482,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
   .stat-card:active .stat-accent{background:var(--gold)!important;}
 }
 
-/* PropertySearch backdrop — responsive source so mobile doesn't download the 1600px original */
+/* PropertySearch backdrop, responsive source so mobile doesn't download the 1600px original */
 .property-search-bg{
   background-image:url("/Images/property-search-backdrop-mobile.jpg");
 }

@@ -21,7 +21,7 @@ type FeaturedProperty = {
 };
 
 const featuredProperties: FeaturedProperty[] = [
-  // ONE PER CATEGORY — one commercial, one residential, one luxury, etc. (newest first)
+  // ONE PER CATEGORY, one commercial, one residential, one luxury, etc. (newest first)
   {
     category: "Luxury",
     title: "Sector 15 Duplex Kothi",
@@ -99,7 +99,7 @@ const featuredProperties: FeaturedProperty[] = [
 ];
 
 /**
- * Homepage "Featured Properties" showcase — premium property cards on a navy
+ * Homepage "Featured Properties" showcase, premium property cards on a navy
  * band. Extracted from app/page.tsx so it can be positioned prominently right
  * after the "Find Your Property" opener (real-estate-first page flow).
  */

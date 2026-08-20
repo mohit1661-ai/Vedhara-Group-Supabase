@@ -9,7 +9,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     intro:
       "Trust our expert guidance through verified residential and commercial property across Delhi NCR, Faridabad, Manesar and Chandigarh, from initial shortlisting to final paperwork, with your interests always first.",
     seoText:
-      "Buying a property in Delhi NCR involves far more than picking a project from a brochure. RERA registration status, builder delivery history, project-level approvals, price-to-locality fairness and the title chain all need to be verified before you commit. Vedhara's five-point Verification Framework does exactly that and publishes the results on every listing, so you can shortlist with confidence, negotiate with comparable market data, and complete registration without surprises — whether you are a first-time buyer in Gurugram, an investor tracking the Noida Expressway, or a family upgrading in Faridabad or Chandigarh.",
+      "Buying a property in Delhi NCR involves far more than picking a project from a brochure. RERA registration status, builder delivery history, project-level approvals, price-to-locality fairness and the title chain all need to be verified before you commit. Vedhara's five-point Verification Framework does exactly that and publishes the results on every listing, so you can shortlist with confidence, negotiate with comparable market data, and complete registration without surprises, whether you are a first-time buyer in Gurugram, an investor tracking the Noida Expressway, or a family upgrading in Faridabad or Chandigarh.",
     included: [
       "Goal-mapping session to understand budget, location priorities, and long-term plans",
       "Curated shortlist based on the Vedhara Verification Framework, not a flood of irrelevant listings",
@@ -76,7 +76,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     intro:
       "Whether you're a tenant searching for the right home or a landlord seeking a reliable tenant across Delhi NCR, Faridabad, Manesar or Chandigarh, Vedhara ensures the process is transparent and fair for both sides.",
     seoText:
-      "Renting in Delhi NCR cuts both ways: tenants want a verified home without hidden clauses, and landlords want vetted tenants without management headaches. Vedhara matches both sides — verified listings and lease-term reviews for tenants, and screening, market-rate pricing and agreement drafting support for landlords — across Delhi, Gurugram, Noida, Faridabad and Chandigarh. Whether it is an 11-month residential lease or a long-term commercial tenancy, every obligation is written down clearly so the relationship starts without ambiguity.",
+      "Renting in Delhi NCR cuts both ways: tenants want a verified home without hidden clauses, and landlords want vetted tenants without management headaches. Vedhara matches both sides, with verified listings and lease-term reviews for tenants, and screening, market-rate pricing and agreement drafting support for landlords, across Delhi, Gurugram, Noida, Faridabad and Chandigarh. Whether it is an 11-month residential lease or a long-term commercial tenancy, every obligation is written down clearly so the relationship starts without ambiguity.",
     includedTitle: "For Tenants",
     included: [
       "Verified listings matched to your budget, location, and lifestyle needs",
@@ -129,7 +129,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     intro:
       "Retail footfall, office accessibility, mixed-use zoning, commercial real estate has its own rules. Vedhara's advisory across Delhi NCR, Faridabad and Manesar is built around them.",
     seoText:
-      "Commercial real estate in Delhi NCR runs on data: footfall, accessibility, zoning, lease structures and tenant profiles. Vedhara's commercial desk handles office leasing, retail site selection, industrial assets and land deals across Gurugram's Golf Course Road and MG Road corridors, Noida's Sector 18 and expressway belt, Manesar and Faridabad — with rent benchmarking, lease negotiation, and due diligence on title, approvals and encumbrances on every transaction. For investors, pre-leased assets and yield analysis are benchmarked against real comparables before any recommendation.",
+      "Commercial real estate in Delhi NCR runs on data: footfall, accessibility, zoning, lease structures and tenant profiles. Vedhara's commercial desk handles office leasing, retail site selection, industrial assets and land deals across Gurugram's Golf Course Road and MG Road corridors, Noida's Sector 18 and expressway belt, Manesar and Faridabad, with rent benchmarking, lease negotiation, and due diligence on title, approvals and encumbrances on every transaction. For investors, pre-leased assets and yield analysis are benchmarked against real comparables before any recommendation.",
     included: [
       "Site selection based on footfall, accessibility, and zoning analysis",
       "Valuation and rent benchmarking against comparable commercial spaces",
@@ -253,7 +253,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     intro:
       "For owners who don't want to chase tenants, coordinate repairs, or track rent across Delhi NCR, Faridabad, Chandigarh or North India, Vedhara handles the operational side of ownership.",
     seoText:
-      "Property management in Delhi NCR is about being present without being personally involved in every repair, tenant conversation or rent reminder. Vedhara handles tenant sourcing and screening, lease administration, rent collection with timely owner payouts, and maintenance coordination through a vetted vendor network — with monthly statements and photo or video condition reports for owners. It is built for NRI owners managing Indian property remotely, investors running multiple rental units, and owners who simply want the operational load removed.",
+      "Property management in Delhi NCR is about being present without being personally involved in every repair, tenant conversation or rent reminder. Vedhara handles tenant sourcing and screening, lease administration, rent collection with timely owner payouts, and maintenance coordination through a vetted vendor network, with monthly statements and photo or video condition reports for owners. It is built for NRI owners managing Indian property remotely, investors running multiple rental units, and owners who simply want the operational load removed.",
     included: [
       "Tenant sourcing, screening, and lease management",
       "Rent collection and timely owner payouts",

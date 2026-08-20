@@ -13,8 +13,8 @@ const interests = [
  * The parent decides what to show on success via `onSuccess`.
  *
  * `variant` switches the palette:
- *   "dark"  (default) — for navy/dark surfaces (contact page, navbar modal).
- *   "light"           — for cream/light surfaces (homepage section).
+ *   "dark"  (default), for navy/dark surfaces (contact page, navbar modal).
+ *   "light",            for cream/light surfaces (homepage section).
  */
 export default function ConsultationForm({
   sourcePage,
@@ -117,7 +117,7 @@ export default function ConsultationForm({
         .lux-error{font-family:var(--t-body);font-size:12px;color:#E08A8A;text-align:center;margin:0;}
         .lux-note{font-family:var(--t-body);font-size:10.5px;letter-spacing:0.04em;color:rgba(255,255,255,0.38);text-align:center;margin:0;}
         @media(max-width:520px){.lux-row{grid-template-columns:1fr;}}
-        /* ── Light variant — for cream surfaces (homepage section) ── */
+        /* ── Light variant, for cream surfaces (homepage section) ── */
         .lux-form--light .lux-eyebrow{color:var(--gold-ink);}
         .lux-form--light .lux-title{color:var(--navy);}
         .lux-form--light .lux-title em{color:var(--gold-ink);}

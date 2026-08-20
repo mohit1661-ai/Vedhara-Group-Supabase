@@ -5,7 +5,7 @@
  * Every "Book a Free Consultation" submission is appended as a new row to
  * your Google Sheet (Excel-compatible). Two supported modes:
  *
- *   A) NATIVE GOOGLE SHEETS API (recommended) — writes directly to a specific
+ *   A) NATIVE GOOGLE SHEETS API (recommended), writes directly to a specific
  *      spreadsheet using a service account. Uses the spreadsheet ID from the
  *      share link:
  *
@@ -19,7 +19,7 @@
  *      Google Sheets API, then share your spreadsheet with the service
  *      account's email as an Editor. See README → "Google Sheets Connector".
  *
- *   B) APPS SCRIPT WEBHOOK — a zero-key alternative. Paste
+ *   B) APPS SCRIPT WEBHOOK, a zero-key alternative. Paste
  *      scripts/GoogleSheetsAppScript.gs into the spreadsheet's Apps Script,
  *      Deploy → Web app, then set GOOGLE_SHEETS_WEBHOOK_URL.
  *
@@ -126,7 +126,7 @@ async function firstSheetTitle(token: string): Promise<string> {
   return title;
 }
 
-/** One row per lead — column order matches scripts/GoogleSheetsAppScript.gs. */
+/** One row per lead, column order matches scripts/GoogleSheetsAppScript.gs. */
 function toRow(lead: Lead): string[] {
   const ist = new Date(lead.created_at).toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",
@@ -144,7 +144,7 @@ function toRow(lead: Lead): string[] {
   ];
 }
 
-/** Mode A — native Google Sheets API append. */
+/** Mode A, native Google Sheets API append. */
 async function appendViaApi(token: string, lead: Lead): Promise<void> {
   const sheet = await firstSheetTitle(token);
   const range = encodeURIComponent(`${sheet}!A1`);
@@ -171,7 +171,7 @@ async function appendViaApi(token: string, lead: Lead): Promise<void> {
   );
 }
 
-/** Mode B — Apps Script / Zapier / Make webhook append. */
+/** Mode B, Apps Script / Zapier / Make webhook append. */
 async function appendViaWebhook(lead: Lead): Promise<void> {
   const payload: Record<string, unknown> = {
     lead_id:     lead.id,
@@ -211,7 +211,7 @@ async function appendViaWebhook(lead: Lead): Promise<void> {
 
 export async function appendLeadToGoogleSheets(lead: Lead): Promise<void> {
   try {
-    // Mode A — native API (uses the spreadsheet ID from the share link).
+    // Mode A, native API (uses the spreadsheet ID from the share link).
     if (SHEETS_ID && CREDENTIALS_B64) {
       const creds = decodeCreds();
       if (!creds) return;
@@ -219,7 +219,7 @@ export async function appendLeadToGoogleSheets(lead: Lead): Promise<void> {
       await appendViaApi(token, lead);
       return;
     }
-    // Mode B — webhook (Apps Script / Zapier / Make).
+    // Mode B, webhook (Apps Script / Zapier / Make).
     if (WEBHOOK_URL) {
       await appendViaWebhook(lead);
       return;

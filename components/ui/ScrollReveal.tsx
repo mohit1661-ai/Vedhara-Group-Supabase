@@ -7,7 +7,7 @@ export default function ScrollReveal({ children, delay=0, direction="up", style=
   useEffect(()=>{
     const el=ref.current; if(!el) return;
 
-    // Never animate when the user prefers reduced motion — show instantly.
+    // Never animate when the user prefers reduced motion; show instantly.
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const isInView = () => {

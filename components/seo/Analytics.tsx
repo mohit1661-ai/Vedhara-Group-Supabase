@@ -35,7 +35,7 @@ export default function Analytics() {
   return (
     <>
       <noscript>
-        {/* Tracking pixel must be a raw <img> — next/image can't render inside <noscript>. */}
+        {/* Tracking pixel must be a raw <img>; next/image can't render inside <noscript>. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           height="1"

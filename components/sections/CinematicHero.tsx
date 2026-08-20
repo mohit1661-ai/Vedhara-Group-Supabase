@@ -105,7 +105,7 @@ interface CinematicHeroProps {
   poster?: string;
 }
 
-/* ── Hero "4 parts" — image cards that expand a short detail on click ── */
+/* ── Hero "4 parts", image cards that expand a short detail on click ── */
 const heroParts = [
   { t:"ROI Calculator",        h:"/calculators",           img:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Four free calculators: ROI & rental yield, home loan EMI, stamp duty and affordability. No sign-up needed." },
   { t:"NRI Services",          h:"/nri-services",          img:"https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg?auto=compress&cs=tinysrgb&w=600", d:"Remote-first advisory for NRIs, video walkthroughs, documentation support and weekend IST slots." },
@@ -127,10 +127,10 @@ export default function CinematicHero({
   const contentOuterRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Ref callback to set src after mount — prevents browser from restoring stale playback position.
+  // Ref callback to set src after mount, preventing browser from restoring stale playback position.
   // The heavy video download is deferred until the browser is idle so it never competes with
   // the LCP hero content on any device; on Save-Data/2G the poster stays.
-  // useCallback keeps the identity stable so React never re-runs it on re-render —
+  // useCallback keeps the identity stable, so React never re-runs it on re-render,
   // a re-run would re-assign src and call load() again, restarting the video
   // and flashing the hero on screen.
   const videoRefCallback = useCallback((el: HTMLVideoElement | null) => {
@@ -169,7 +169,7 @@ export default function CinematicHero({
     tryPlay();
 
     const handleReady = () => {
-      // Do NOT reset currentTime here — on mobile the loadeddata/canplay events
+      // Do NOT reset currentTime here; on mobile the loadeddata/canplay events
       // can arrive after playback has already begun, and rewinding mid-load is
       // what makes the hero flash/restart. A freshly created video starts at 0.
       setVideoLoaded(true);
@@ -289,7 +289,7 @@ export default function CinematicHero({
             src={poster}
             srcSet={`${poster.replace(/\.jpg$/, "-mobile.jpg")} 768w, ${poster} 1920w`}
             sizes="100vw"
-            alt="Vedhara Group cinematic hero — real estate advisory across Delhi NCR"
+            alt="Vedhara Group cinematic hero, real estate advisory across Delhi NCR"
             fetchPriority="high"
             decoding="async"
             style={{
@@ -457,7 +457,7 @@ export default function CinematicHero({
               </div>
               {/* Gold divider */}
               <div style={{ height:1,margin:"0 20px",background:"linear-gradient(90deg,transparent,rgba(212,168,67,0.45),transparent)" }} />
-              {/* The 4 parts — image cards; click to expand a short detail */}
+              {/* The 4 parts, image cards; click to expand a short detail */}
               <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,padding:"14px 14px 0" }}>
                 {heroParts.map((p, idx) => (
                   <button
@@ -479,7 +479,7 @@ export default function CinematicHero({
                       transition:"border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease",
                     }}
                   >
-                    <Image src={p.img} alt={`${p.t} — Vedhara Group`} fill sizes="180px" className="hero-part-img" style={{ objectFit:"cover" }} />
+                    <Image src={p.img} alt={`${p.t}, Vedhara Group`} fill sizes="180px" className="hero-part-img" style={{ objectFit:"cover" }} />
                     {/* Light overlay so the image stays bright and clear in the static state */}
                     <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg, rgba(15,30,56,0.05) 0%, rgba(15,30,56,0.62) 100%)" }} />
                     <div style={{ position:"relative",display:"flex",flexDirection:"column",height:"100%",padding:"12px",justifyContent:"flex-end",alignItems:"flex-start" }}>

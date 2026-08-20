@@ -41,7 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="me" href="https://www.instagram.com/vedharagroup" />
         <link rel="me" href="https://www.facebook.com/vedharagroup" />
         <link rel="me" href="https://www.youtube.com/@VedharaGroup" />
-        {/* Prioritize the two hero text fonts (h1 = Cormorant 300, hero paragraph = Roboto 300) — same URLs as next/font preloads, so no double download */}
+        {/* Prioritize the two hero text fonts (h1 = Cormorant 300, hero paragraph = Roboto 300), using the same URLs as next/font preloads, so there is no double download */}
         <link rel="preload" as="font" type="font/woff2" href="/_next/static/media/01e4147cff8141ee-s.p.3huc2loe0ie8a.woff2" crossOrigin="" fetchPriority="high" />
         <link rel="preload" as="font" type="font/woff2" href="/_next/static/media/ce62453a442c7f35-s.p.0a0h245ktd4x0.woff2" crossOrigin="" fetchPriority="high" />
         <meta name="theme-color" content="#0F1E38" />

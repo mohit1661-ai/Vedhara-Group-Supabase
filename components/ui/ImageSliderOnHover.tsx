@@ -18,7 +18,7 @@ export default function ImageSliderOnHover({ images, alt }: ImageSliderOnHoverPr
   const [idx, setIdx] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Touch devices have no hover — switch to tap-to-advance.
+  // Touch devices have no hover; switch to tap-to-advance.
   useEffect(() => {
     if (window.matchMedia("(hover: none)").matches || window.matchMedia("(pointer: coarse)").matches) {
       setTouch(true);
@@ -65,7 +65,7 @@ export default function ImageSliderOnHover({ images, alt }: ImageSliderOnHoverPr
         loading="lazy"
         style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:hover?0:1, transition:"opacity 0.35s ease" }}
       />
-      {/* Hover/tap slider frames (decorative — the static image carries the description) */}
+      {/* Hover/tap slider frames (decorative, the static image carries the description) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         key={idx}
@@ -75,7 +75,7 @@ export default function ImageSliderOnHover({ images, alt }: ImageSliderOnHoverPr
         loading="lazy"
         style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:hover?1:0, transition:"opacity 0.35s ease", pointerEvents:"none", animation:hover ? "vohFade 0.7s ease" : "none" }}
       />
-      {/* Touch photo counter — tells mobile/tablet users the media is tappable */}
+      {/* Touch photo counter, tells mobile/tablet users the media is tappable */}
       {touch && (
         <div style={{ position:"absolute", bottom:8, right:8, zIndex:3, pointerEvents:"none", fontFamily:"var(--t-head)", fontSize:8, fontWeight:700, letterSpacing:"0.08em", padding:"3px 8px", borderRadius:12, background:"rgba(9,15,29,0.6)", color:"rgba(255,255,255,0.95)", border:"1px solid rgba(255,255,255,0.25)", backdropFilter:"blur(4px)" }}>
           {idx + 1} / {images.length}

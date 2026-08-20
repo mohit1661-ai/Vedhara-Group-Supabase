@@ -10,7 +10,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import type { CityPageData } from "@/lib/data/cityPages";
 
 /**
- * CityPageTemplate — reusable city real-estate page that mirrors the
+ * CityPageTemplate, reusable city real-estate page that mirrors the
  * Chandigarh Tricity page design: hero → intro → featured listings →
  * micro-markets → jurisdiction/authority guide → market guide → FAQ → CTA.
  * Rendered entirely from a `CityPageData` object so each city page stays a

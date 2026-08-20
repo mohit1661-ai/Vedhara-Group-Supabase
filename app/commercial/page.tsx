@@ -33,7 +33,7 @@ interface CommercialListing {
 }
 
 const commercialListings: CommercialListing[] = [
-  // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  // NEWEST LISTINGS FIRST, add new properties at the top of this array
   {
     id:"ved-c16",
     title:"Fully Furnished Pre-Rented Building",
@@ -459,7 +459,7 @@ export default function CommercialPage() {
                       ))}
                     </div>
                     <div style={{ flex:1 }} />
-                    {/* Small photo cards — click to open the full-size lightbox viewer. Uses the full photo set (scroller appears when > 4 photos). Bottom-anchored so the gallery + CTA row stay aligned across all cards. */}
+                    {/* Small photo cards, click to open the full-size lightbox viewer. Uses the full photo set (scroller appears when > 4 photos). Bottom-anchored so the gallery + CTA row stay aligned across all cards. */}
                     <ListingGallery
                       images={property.images && property.images.length > 0
                         ? property.images

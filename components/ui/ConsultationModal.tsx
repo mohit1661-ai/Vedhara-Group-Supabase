@@ -52,7 +52,7 @@ export default function ConsultationModal({ open, onClose }: { open: boolean; on
         animation: "heroFade 0.25s ease",
       }}
     >
-      {/* Gold gradient frame around the navy card — luxury popup */}
+      {/* Gold gradient frame around the navy card, luxury popup */}
       <div
         onClick={(e)=>e.stopPropagation()}
         style={{

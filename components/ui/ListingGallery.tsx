@@ -119,7 +119,7 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={img}
-        alt={`${title || "Property"} — photo ${i + 1}`}
+            alt={`${title || "Property"}, photo ${i + 1}`}
         loading="lazy"
         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
       />
@@ -185,7 +185,7 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={images[idx]}
-            alt={`${title || "Property"} — photo ${idx + 1}`}
+            alt={`${title || "Property"}, photo ${idx + 1}`}
             onClick={(e) => e.stopPropagation()}
             style={{
               maxWidth: "100%", maxHeight: "84vh", objectFit: "contain",

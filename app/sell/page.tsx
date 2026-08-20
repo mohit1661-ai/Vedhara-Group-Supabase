@@ -27,7 +27,7 @@ interface SellListing {
 }
 
 const sellListings: SellListing[] = [
-  // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  // NEWEST LISTINGS FIRST, add new properties at the top of this array
   {
     id:"ved-s07",
     title:"NH-8 Facing Plot, Sector 15",

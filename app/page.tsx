@@ -119,12 +119,12 @@ export default function HomePage() {
       />
       <AnimatedStats />
 
-      {/* Gold hairline — rhythm separator */}
+      {/* Gold hairline, rhythm separator */}
       <div style={{ background:"var(--navy)",padding:"0 32px" }}>
         <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
       </div>
 
-      {/* ══ HOW IT WORKS — three steps for first-time visitors ══ */}
+      {/* ══ HOW IT WORKS, three steps for first-time visitors ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
           <ScrollReveal>
@@ -155,10 +155,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ PROPERTY SEARCH — real-estate search bar ══ */}
+      {/* ══ PROPERTY SEARCH, real-estate search bar ══ */}
       <PropertySearch />
 
-      {/* ══ EXPLORE BY MARKET — attention-grabbing opener (market browse, distinct from services) ══ */}
+      {/* ══ EXPLORE BY MARKET, attention-grabbing opener (market browse, distinct from services) ══ */}
       <section style={{ background:"var(--cream)",padding:"72px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"0%",left:"-8%",width:520,height:520,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.07) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1320,margin:"0 auto",position:"relative",zIndex:1 }}>
@@ -171,7 +171,7 @@ export default function HomePage() {
                 <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Delhi NCR</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:700,margin:"16px auto 0" }}>
-                Delhi NCR is not one market — it is a collection of micro-markets, each with distinct pricing trends, infrastructure timelines, builder reputations and investment profiles. Gurugram&apos;s Golf Course Road operates differently from Noida Sector 150, which operates differently from South Delhi&apos;s established neighbourhoods. Pick a market below to explore verified listings, benchmarked prices, live inventory and published project due diligence specific to that micro-market. No unverified projects. Ever.
+                Delhi NCR is not one market; it is a collection of micro-markets, each with distinct pricing trends, infrastructure timelines, builder reputations and investment profiles. Gurugram&apos;s Golf Course Road operates differently from Noida Sector 150, which operates differently from South Delhi&apos;s established neighbourhoods. Pick a market below to explore verified listings, benchmarked prices, live inventory and published project due diligence specific to that micro-market. No unverified projects. Ever.
               </p>
             </div>
           </ScrollReveal>
@@ -201,7 +201,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ FEATURED PROPERTIES (showcase listings early — real-estate-first flow) ══ */}
+      {/* ══ FEATURED PROPERTIES (showcase listings early, real-estate-first flow) ══ */}
       <FeaturedProperties />
 
       {/* ══ VERIFICATION FRAMEWORK ══ */}
@@ -217,7 +217,7 @@ export default function HomePage() {
                   <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold)" }}>Before You See It</em>
                 </h2>
                 <p className="body-lg" style={{ color:"var(--slate)",marginBottom:28,maxWidth:480 }}>
-                  Most property portals list whatever inventory developers hand them, with no independent validation of approvals, pricing or title status. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework — five documented checks covering RERA registration, delivery history, project-level approvals, price fairness benchmarked against government circle rates, and title document availability. We publish the results in plain language on every listing page. No jargon. No fine print. Just the facts you need to make a confident property decision in Delhi NCR.
+                  Most property portals list whatever inventory developers hand them, with no independent validation of approvals, pricing or title status. Vedhara does not. Before any project appears on our platform, it passes the Vedhara Verification Framework, five documented checks covering RERA registration, delivery history, project-level approvals, price fairness benchmarked against government circle rates, and title document availability. We publish the results in plain language on every listing page. No jargon. No fine print. Just the facts you need to make a confident property decision in Delhi NCR.
                 </p>
                 <Link href="/verification-center" className="btn btn-ghost cta-pill">
                   See the Full Verification Framework →
@@ -273,7 +273,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ FEATURED PROPERTIES — moved up; now rendered via <FeaturedProperties /> (components/sections/FeaturedProperties.tsx) ══ */}
+      {/* ══ FEATURED PROPERTIES, moved up; now rendered via <FeaturedProperties /> (components/sections/FeaturedProperties.tsx) ══ */}
 
       {/* ══ WHY VEDHARA ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
@@ -353,7 +353,7 @@ export default function HomePage() {
                 <em className="display-gold" style={{ fontSize:"inherit",color:"var(--gold-ink)" }}>No Sign-Up Required</em>
               </h2>
               <p className="body-lg" style={{ color:"var(--slate)",maxWidth:620,margin:"16px auto 0" }}>
-                Every property decision in Delhi NCR comes down to numbers — EMI affordability, stamp duty obligations, rental yield projections and realistic budget expectations. Vedhara offers four free calculators that give you instant, accurate estimates based on current interest rates, government circle rates and standard bank lending norms. No sign-up required, no contact details needed. Run the numbers yourself first, then speak to an advisor with the data to back your decision.
+                Every property decision in Delhi NCR comes down to numbers, EMI affordability, stamp duty obligations, rental yield projections and realistic budget expectations. Vedhara offers four free calculators that give you instant, accurate estimates based on current interest rates, government circle rates and standard bank lending norms. No sign-up required, no contact details needed. Run the numbers yourself first, then speak to an advisor with the data to back your decision.
               </p>
             </div>
           </ScrollReveal>
@@ -388,7 +388,7 @@ export default function HomePage() {
                 Your Property Journey
               </h2>
               <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:660,margin:"16px auto 0" }}>
-                Vedhara Group is led by professionals with deep expertise in Delhi NCR real estate, NRI advisory and investment strategy. Each leader brings a specific focus — from verification rigour to portfolio-level advisory — so every client benefits from specialised knowledge, not generic salesmanship.
+                Vedhara Group is led by professionals with deep expertise in Delhi NCR real estate, NRI advisory and investment strategy. Each leader brings a specific focus, from verification rigour to portfolio-level advisory, so every client benefits from specialised knowledge, not generic salesmanship.
               </p>
             </div>
           </ScrollReveal>
@@ -442,12 +442,12 @@ export default function HomePage() {
         ]}
       />
 
-      {/* Gold hairline — rhythm separator */}
+      {/* Gold hairline, rhythm separator */}
       <div style={{ background:"var(--cream)",padding:"0 32px" }}>
         <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
       </div>
 
-      {/* ══ LATEST INSIGHTS — recent articles ══ */}
+      {/* ══ LATEST INSIGHTS, recent articles ══ */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
         <div style={{ position:"absolute",top:"10%",right:"-6%",width:520,height:520,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
         <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
@@ -461,7 +461,7 @@ export default function HomePage() {
                   <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Our Advisors</em>
                 </h2>
                 <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",maxWidth:580,margin:"12px auto 0" }}>
-                  Practical analysis on Delhi NCR property trends, RERA compliance, home loan strategy and NRI investment — written by our advisory team, not content mills.
+                  Practical analysis on Delhi NCR property trends, RERA compliance, home loan strategy and NRI investment, written by our advisory team, not content mills.
                 </p>
               </div>
               <Link href="/blog" className="btn cta-pill" style={{ flexShrink:0,background:"linear-gradient(135deg,var(--gold),var(--gold-lt))",color:"var(--navy)",borderColor:"var(--gold)",boxShadow:"0 14px 30px -14px rgba(212,168,67,0.7)" }}>All Articles →</Link>
@@ -519,12 +519,12 @@ export default function HomePage() {
 
       <FAQSection faqs={homeFaqs} />
 
-      {/* Gold hairline — rhythm separator */}
+      {/* Gold hairline, rhythm separator */}
       <div style={{ background:"var(--navy)",padding:"0 32px" }}>
         <div style={{ width:"100%",height:1.5,background:"linear-gradient(90deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.4 }} />
       </div>
 
-      {/* ══ CLIENT SUCCESS STORIES — testimonials ══ */}
+      {/* ══ CLIENT SUCCESS STORIES, testimonials ══ */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
           <ScrollReveal>
@@ -563,7 +563,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ CONSULTATION FORM — lead capture above the footer ══ */}
+      {/* ══ CONSULTATION FORM, lead capture above the footer ══ */}
       <HomeConsultationSection />
     </>
   );

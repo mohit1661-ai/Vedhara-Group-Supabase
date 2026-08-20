@@ -2,7 +2,7 @@ import { watchVideos, VIDEOS_BASE_URL, VIDEOS_UPLOAD_DATE } from "@/lib/data/vid
 
 /**
  * Google video sitemap for the /videos watch page. All content and thumbnail
- * URLs point at /watch/ — the crawlable mirror — because /videos/ media is
+ * URLs point at /watch/, the crawlable mirror, because /videos/ media is
  * disallowed in robots.txt (decorative hero copies live there).
  * Reference: https://developers.google.com/search/docs/crawling-indexing/sitemaps/video-sitemaps
  */

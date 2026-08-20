@@ -9,7 +9,7 @@
  *
  * Segment order is fixed: mode, type, budget, then the keyword slug. A segment
  * is only interpreted as a known mode/type/budget if it matches one of the
- * whitelists below — anything else is treated as part of the free-text query.
+ * whitelists below; anything else is treated as part of the free-text query.
  */
 
 export interface SearchFilters {

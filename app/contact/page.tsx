@@ -156,7 +156,7 @@ export default function ContactPage() {
 
           {/* FORM SIDE */}
           <ScrollReveal delay={120} direction="right">
-            {/* Gold gradient frame — luxury card that matches the popup form */}
+            {/* Gold gradient frame, luxury card that matches the popup form */}
             <div className="form-card" style={{ padding:1,background:"linear-gradient(165deg, rgba(212,168,67,0.5), rgba(212,168,67,0.12) 30%, rgba(212,168,67,0.28) 65%, rgba(212,168,67,0.5))",borderRadius:18,boxShadow:"0 18px 60px rgba(9,15,29,0.35)" }}>
               <div style={{ background:"var(--navy)",borderRadius:17,padding:"40px 36px 34px" }}>
                 <ConsultationForm sourcePage="/contact" onSuccess={()=>setStatus("success")} initialInterest={interest} />

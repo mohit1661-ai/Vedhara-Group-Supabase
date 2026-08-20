@@ -1,5 +1,5 @@
 /**
- * City real-estate pages — single source of truth for the 9 city pages
+ * City real-estate pages, single source of truth for the 9 city pages
  * (Gurugram, Noida, Greater Noida, South Delhi, Chandigarh, Mohali,
  * Panchkula, Faridabad, Ghaziabad). Each page is rendered by the reusable
  * `CityPageTemplate` (mirrors the Chandigarh Tricity page design) with unique,
@@ -101,8 +101,8 @@ const gurugram: CityPageData = {
   listingsSub:
     "Every listing is Haryana RERA-verified and independently assessed through the Vedhara Verification Framework.",
   listings: [
-    // NEWEST LISTINGS FIRST — add new properties at the top of this array
-     { id:"gg-26", title:"3 Kay — Plotted Residence", location:"DLF Phase 1, Gurugram", price:"₹ 25 Cr", config:"", size:"490 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["DLF Phase 1","Plot A2/6","Prime Location","Ready to Build"], image:"/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%201.png", images:["/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%201.png","/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%202.png","/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%203.png","/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%204.png"], alt:"3 Kay plotted residence on Plot A2/6, DLF Phase 1, Gurugram — 490 sq.yds. available for ₹25 Cr" },
+    // NEWEST LISTINGS FIRST, add new properties at the top of this array
+     { id:"gg-26", title:"3 Kay, Plotted Residence", location:"DLF Phase 1, Gurugram", price:"₹ 25 Cr", config:"", size:"490 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["DLF Phase 1","Plot A2/6","Prime Location","Ready to Build"], image:"/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%201.png", images:["/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%201.png","/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%202.png","/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%203.png","/Images/Pushpanjali%20Farmhouse%20for%20sale%20-%204.png"], alt:"3 Kay plotted residence on Plot A2/6, DLF Phase 1, Gurugram, 490 sq.yds. available for ₹25 Cr" },
     { id:"gg-25", title:"Fully Furnished Pre-Rented Building", location:"Sector 32, Gurugram", price:"₹ 200 Cr", config:"Commercial · Pre-Rented", size:"1,25,000 sq.ft. Leased", type:"Commercial", status:"Available for Sale", highlights:["Rent ₹1.17 Cr/mo","Single Reputed Tenant","B2 + 5 Floors","New Lease · 3-Yr Lock-in"], image:"/Images/Fully%20Newly%20Furnished%20rented%20building%20in%20Sector%2032%20Gurgaon.webp", alt:"Fully furnished pre-rented commercial building with single reputed tenant in Sector 32, Gurugram" },
     { id:"gg-21", title:"Sector 15 Duplex Kothi", location:"Sector 15 Part 2, Gurugram", price:"₹ 18 Cr", config:"4 BHK + Servant Quarter", size:"502 sq.yds.", type:"Luxury", status:"Available for Sale", highlights:["Prime Sector 15","Duplex Villa","Servant Quarter","NH-8 Connectivity"], image:img(35808145), alt:"Sector 15 duplex kothi villa in Gurugram" },
     { id:"gg-22", title:"NH-8 Facing Plot, Sector 15", location:"Sector 15 Part 2, Gurugram", price:"₹ 18.50 Cr", config:"500 sq.yds. Plot", size:"500 sq.yds.", type:"Plotted", status:"Available for Sale", highlights:["Main NH-8 Facing","Green Belt Facing","Cheque Flexible","Prime Location"], image:img(11201060), alt:"NH-8 facing residential plot in Sector 15 Part 2, Gurugram" },
@@ -204,7 +204,7 @@ const noida: CityPageData = {
   listingsSub:
     "Every listing is UP RERA-verified and independently assessed through the Vedhara Verification Framework.",
   listings: [
-    // NEWEST LISTINGS FIRST — add new properties at the top of this array
+    // NEWEST LISTINGS FIRST, add new properties at the top of this array
     { id:"nd-21", title:"Pre-Rented Commercial Building", location:"Film City, Sector 16A, Noida", price:"₹ 220 Cr", config:"165,319 sq.ft. Built-up", size:"4,034 sq.yds.", type:"Commercial", status:"Available for Sale", highlights:["Pre-rented income asset","Basement + Stilt + 9 floors","90-yr Noida lease from 2006","South-West facing"], image:"/Images/film-city-noida-aerial.jpeg", alt:"Pre-rented commercial building for sale at Film City, Sector 16A, Noida" },
     { id:"nd-01", title:"The Cullinan Heights", location:"Sector 150, Noida", price:"₹ 4.85 Cr", config:"4 BHK + Study", size:"2,450 sq.ft.", type:"Residential", status:"Ready to Move", highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"], image:img(11729105), pos:"77%", alt:"The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida" },
     { id:"nd-02", title:"Veda Forest Villas", location:"Sector 150, Noida", price:"₹ 7.50 Cr", config:"5 BHK Independent Floor", size:"3,800 sq.ft.", type:"Luxury", status:"Ready to Move", highlights:["RERA Registered","Park Facing","Private Pool","Modular Kitchen"], image:img(20581232), alt:"Veda Forest Villas luxury villas in Sector 150, Noida" },

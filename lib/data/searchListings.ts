@@ -2,7 +2,7 @@
  * Shared search dataset for the /search results page.
  * Normalized from the real listing arrays on the buy/rent/commercial/luxury/
  * new-launches/tricity pages so the site-wide search returns real, consistent
- * inventory. `value` is numeric for budget filtering — lakhs (₹) for buy/sell,
+ * inventory. `value` is numeric for budget filtering, lakhs (₹) for buy/sell,
  * monthly rent (₹) for rent.
  */
 

@@ -204,7 +204,7 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-        {/* Consultation popup — opened from the Free Consultation CTA */}
+        {/* Consultation popup, opened from the Free Consultation CTA */}
         <ConsultationModal open={consultOpen} onClose={()=>setConsultOpen(false)} />
       {/* Mobile sticky CTA */}
       <div className="mobile-sticky-cta" style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:999,background:"var(--navy)",borderTop:"1px solid rgba(212,168,67,0.2)",display:"none" }}>

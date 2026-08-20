@@ -20,7 +20,7 @@ export default function VideoOnHover({ src, poster, alt }: VideoOnHoverProps) {
   const [ready, setReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Touch devices have no hover — detect and switch to tap-to-play/pause.
+  // Touch devices have no hover; detect and switch to tap-to-play/pause.
   useEffect(() => {
     if (window.matchMedia("(hover: none)").matches || window.matchMedia("(pointer: coarse)").matches) {
       setTouch(true);
@@ -78,7 +78,7 @@ export default function VideoOnHover({ src, poster, alt }: VideoOnHoverProps) {
         onPlaying={() => setReady(true)}
         style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:showVideo?1:0, transition:"opacity 0.35s ease", pointerEvents:"none" }}
       />
-      {/* Touch hint — tells mobile/tablet users the media is tappable */}
+      {/* Touch hint, tells mobile/tablet users the media is tappable */}
       {touch && (
         <div style={{ position:"absolute", top:14, right:14, zIndex:3, pointerEvents:"none", display:"flex", alignItems:"center", gap:5, fontFamily:"var(--t-head)", fontSize:8, fontWeight:700, letterSpacing:"0.08em", textTransform:"uppercase", padding:"4px 10px", borderRadius:20, background:"rgba(9,15,29,0.6)", color:"rgba(255,255,255,0.95)", border:"1px solid rgba(255,255,255,0.25)", backdropFilter:"blur(4px)" }}>
           <span style={{ fontSize:9 }}>{playing ? "❚❚" : "▶"}</span>

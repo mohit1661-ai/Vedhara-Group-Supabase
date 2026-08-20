@@ -27,7 +27,7 @@ interface LuxuryListing {
 }
 
 const luxuryListings: LuxuryListing[] = [
-  // NEWEST LISTINGS FIRST — add new properties at the top of this array
+  // NEWEST LISTINGS FIRST, add new properties at the top of this array
   {
     id:"ved-l07",
     title:"Sector 15 Duplex Kothi",

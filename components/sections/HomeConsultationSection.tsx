@@ -4,7 +4,7 @@ import Link from "next/link";
 import ConsultationForm from "@/components/ui/ConsultationForm";
 
 /**
- * HomeConsultationSection — luxury lead-capture placed directly above the footer
+ * HomeConsultationSection, luxury lead-capture placed directly above the footer
  * on the homepage. Keeps the site's navy backdrop; the form card and thank-you
  * screen sit on a cream/light surface with navy + gold type so they stand out
  * against the blue. Left column sells the free consultation; right column holds

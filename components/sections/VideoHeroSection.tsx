@@ -156,7 +156,7 @@ export default function VideoHeroSection({
 
   // Ref callback clears any previous route's source before assigning the new
   // video, preventing the previous hero film from flashing during navigation.
-  // useCallback keeps the identity stable so React never re-runs it on re-render —
+      // useCallback keeps the identity stable, so React never re-runs it on re-render,
   // a re-run would re-assign src and call load() again, restarting the video
   // and flashing the hero on screen.
   const videoRefCallback = useCallback((el: HTMLVideoElement | null) => {
@@ -203,7 +203,7 @@ export default function VideoHeroSection({
     tryPlay();
 
     const handleReady = () => {
-      // Do NOT reset currentTime here — on mobile the loadeddata/canplay events
+      // Do NOT reset currentTime here; on mobile the loadeddata/canplay events
       // can arrive after playback has already begun, and rewinding mid-load is
       // what makes the hero flash/restart. A freshly created video starts at 0.
       setVideoLoaded(true);
