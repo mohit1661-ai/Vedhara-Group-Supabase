@@ -6,20 +6,77 @@ import dynamic from "next/dynamic";
 
 const ConsultationModal = dynamic(() => import("@/components/ui/ConsultationModal"), { ssr: false });
 
-const navLinks = [
-  { label:"About",     href:"/about" },
-  { label:"Buy",       href:"/buy" },
-  { label:"Sell",      href:"/sell" },
-  { label:"Invest",    href:"/investment-advisory" },
-  { label:"Our Team",  href:"/team" },
-  { label:"NRI Desk",  href:"/nri-services" },
-  { label:"Verify",    href:"/verification-center" },
-  { label:"Calculators",href:"/calculators" },
-  { label:"Contact",   href:"/contact" },
+const menuGroups = [
+  {
+    label:"Explore",
+    description:"The Vedhara Group",
+    items:[
+      { label:"About Us", href:"/about" },
+      { label:"Our Team", href:"/team" },
+      { label:"All Services", href:"/services" },
+      { label:"Success Stories", href:"/success-stories" },
+      { label:"Careers", href:"/careers" },
+      { label:"Contact", href:"/contact" },
+    ],
+  },
+  {
+    label:"Properties",
+    description:"Buy, sell, rent and invest",
+    items:[
+      { label:"Buy Property", href:"/buy" },
+      { label:"Sell Property", href:"/sell" },
+      { label:"Rent Property", href:"/rent" },
+      { label:"Commercial Real Estate", href:"/commercial" },
+      { label:"Luxury Properties", href:"/luxury" },
+      { label:"New Launches", href:"/new-launches" },
+    ],
+  },
+  {
+    label:"Advisory",
+    description:"Independent advice, verified decisions",
+    items:[
+      { label:"Investment Advisory", href:"/investment-advisory" },
+      { label:"NRI Services", href:"/nri-services" },
+      { label:"Property Management", href:"/property-management" },
+      { label:"Verification Center", href:"/verification-center" },
+      { label:"Free Calculators", href:"/calculators" },
+    ],
+  },
+  {
+    label:"Locations",
+    description:"Delhi NCR, Chandigarh and North India",
+    wide:true,
+    items:[
+      { label:"South Delhi", href:"/south-delhi" },
+      { label:"Gurugram", href:"/gurugram" },
+      { label:"Noida", href:"/noida" },
+      { label:"Greater Noida", href:"/greater-noida" },
+      { label:"Faridabad", href:"/faridabad" },
+      { label:"Ghaziabad", href:"/ghaziabad" },
+      { label:"Chandigarh", href:"/chandigarh" },
+      { label:"Mohali", href:"/mohali" },
+      { label:"Panchkula", href:"/panchkula" },
+      { label:"Mathura & Vrindavan", href:"/mathura-vrindavan" },
+      { label:"Chandigarh Tricity", href:"/tricity" },
+    ],
+  },
+  {
+    label:"Insights",
+    description:"Research, guides and answers",
+    items:[
+      { label:"Market Insights", href:"/market-insights" },
+      { label:"Blog", href:"/blog" },
+      { label:"FAQ Hub", href:"/faq" },
+      { label:"Case Studies", href:"/case-studies" },
+      { label:"Watch Our Videos", href:"/videos" },
+    ],
+  },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<number | null>(null);
+  const [mobileGroup, setMobileGroup] = useState<number | null>(null);
   const [consultOpen, setConsultOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(()=>{
@@ -72,9 +129,32 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden-mobile" style={{ display:"flex",alignItems:"center",gap:28,listStyle:"none",margin:0,padding:0 }}>
-            {navLinks.map(l=>(
-              <li key={l.href}><Link href={l.href} className={`nav-link ${scrolled?"nav-link-dark":"nav-link-light"}`}>{l.label}</Link></li>
+          <ul className="hidden-mobile" style={{ display:"flex",alignItems:"center",gap:26,listStyle:"none",margin:0,padding:0 }}>
+            {menuGroups.map((group,index)=>(
+              <li key={group.label} style={{ position:"relative" }} onMouseEnter={()=>setActiveMenu(index)}>
+                <button
+                  type="button"
+                  onClick={()=>setActiveMenu(activeMenu===index?null:index)}
+                  aria-expanded={activeMenu===index}
+                  className={`nav-link ${scrolled?"nav-link-dark":"nav-link-light"}`}
+                  style={{ background:"none",border:0,cursor:"pointer",padding:0,fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.1em",textTransform:"uppercase" }}
+                >
+                  {group.label}<span className="nav-chevron" aria-hidden="true" />
+                </button>
+                {activeMenu===index && (
+                  <div
+                    className={group.wide?"nav-dropdown nav-dropdown-wide":"nav-dropdown"}
+                    onMouseLeave={()=>setActiveMenu(null)}
+                  >
+                    <p className="nav-dropdown-kicker">{group.description}</p>
+                    <div className="nav-dropdown-links">
+                      {group.items.map(item=>(
+                        <Link key={item.href} href={item.href} onClick={()=>setActiveMenu(null)}>{item.label}<span>→</span></Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
             ))}
           </ul>
 
@@ -94,8 +174,29 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         <div style={{ background:"var(--cream)",position:"absolute",top:"var(--nav-h)",left:0,right:0,maxHeight:open?"600px":"0",overflow:"hidden",transition:"max-height 0.4s ease",boxShadow:"0 8px 32px rgba(9,15,29,0.1)",borderTop:"1px solid rgba(42,45,53,0.06)" }}>
-          <div style={{ padding:"16px 24px 24px" }}>
-            {navLinks.map(l=>(<Link key={l.href} href={l.href} onClick={()=>setOpen(false)} style={{ display:"block",fontFamily:"var(--t-head)",fontSize:14,fontWeight:500,color:"var(--ink)",textDecoration:"none",padding:"13px 0",borderBottom:"1px solid rgba(42,45,53,0.06)" }}>{l.label}</Link>))}
+          <div style={{ padding:"12px 24px 24px" }}>
+            {menuGroups.map((group,index)=>(
+              <div key={group.label} style={{ borderBottom:"1px solid rgba(42,45,53,0.08)" }}>
+                <button
+                  type="button"
+                  onClick={()=>setMobileGroup(mobileGroup===index?null:index)}
+                  aria-expanded={mobileGroup===index}
+                  style={{ width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between",background:"none",border:0,cursor:"pointer",fontFamily:"var(--t-head)",fontSize:13,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--ink)",padding:"15px 0" }}
+                >
+                  {group.label}<span style={{ color:"var(--gold-ink)",fontSize:18,lineHeight:1,transform:mobileGroup===index?"rotate(45deg)":"none",transition:"transform 0.2s" }}>+</span>
+                </button>
+                {mobileGroup===index && (
+                  <div style={{ padding:"0 0 10px" }}>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:11,color:"var(--gold-ink)",margin:"0 0 4px" }}>{group.description}</p>
+                    {group.items.map(item=>(
+                      <Link key={item.href} href={item.href} onClick={()=>setOpen(false)} style={{ display:"flex",justifyContent:"space-between",fontFamily:"var(--t-head)",fontSize:14,fontWeight:500,color:"var(--ink)",textDecoration:"none",padding:"10px 0" }}>
+                        {item.label}<span style={{ color:"var(--gold-ink)" }}>→</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
             <div style={{ display:"flex",gap:10,marginTop:16 }}>
               <button type="button" onClick={()=>{setOpen(false); setConsultOpen(true);}} className="btn btn-dark" style={{ flex:1,justifyContent:"center",padding:"14px" }}>Free Consultation</button>
               <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ flex:1,justifyContent:"center",padding:"14px",background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp</a>
