@@ -367,6 +367,16 @@ section:not(.video-hero):not(.page-hero){content-visibility:auto;contain-intrins
   section .btn.btn-outline{display:flex;width:100%;justify-content:center;box-sizing:border-box;}
 }
 
+/* Mobile: reduce section padding for small screens */
+@media(max-width:640px){
+  section{padding-left:16px!important;padding-right:16px!important;}
+}
+
+/* Mobile: increase hamburger tap target */
+@media(max-width:1024px){
+  .show-mobile[aria-label="Menu"]{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;}
+}
+
 /* CTA sub-text: stay on one line on desktop */
 @media(min-width:1024px){
   .cta-sub-text{white-space:nowrap;}

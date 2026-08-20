@@ -4,6 +4,7 @@ import Image from "next/image";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ListingGallery from "@/components/ui/ListingGallery";
 
 export const metadata: Metadata = { title:"New Property Launches in Delhi NCR", description:"RERA-verified new property launches across Delhi NCR, Faridabad, Manesar, Chandigarh and North India from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
 
@@ -243,14 +244,14 @@ export default function NewLaunchesPage() {
                   </div>
 
                   {/* Content */}
-                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column" }}>
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column",height:"100%" }}>
                     <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
                         {project.type}
                       </span>
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{project.projectName}</h3>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{project.location}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{project.location}</p>
 
                     {/* Details grid */}
                     <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px 16px",marginBottom:10,padding:"10px 0",borderTop:"1px solid rgba(212,168,67,0.15)",borderBottom:"1px solid rgba(212,168,67,0.15)" }}>
@@ -267,19 +268,20 @@ export default function NewLaunchesPage() {
                     {/* Highlights */}
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {project.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:7.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
                           {h}
                         </span>
                       ))}
                     </div>
 
                     <div style={{ flex:1 }} />
+                    <ListingGallery images={[project.image]} title={project.projectName} />
 
                     {/* CTA - left to right */}
-                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
+                    <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0,minHeight:73,height:73 }}>
                       <div>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",margin:0 }}>{project.startingPrice}</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{project.startingPrice}</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
                         Register Interest →

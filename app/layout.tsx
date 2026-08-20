@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   openGraph: { type:"website", locale:"en_IN", siteName:"Vedhara Group", url:"https://www.vedharagroup.com", title: { absolute: "Vedhara Group | Verified Property Advisory in Delhi NCR" }, description: "North India's independent real estate advisory firm. Buy, sell or invest across Delhi NCR with verified listings.", images:[{ url:"/og-default.jpg", width:1200, height:630, alt:"Vedhara Group, Independent Real Estate Advisory Delhi NCR" }] },
   twitter: { card:"summary_large_image", site:"@vedharagroup", creator:"@vedharagroup", images:["/og-default.jpg"] },
   robots: { index:true, follow:true, googleBot:{ index:true, follow:true, "max-image-preview":"large", "max-snippet":-1 } },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

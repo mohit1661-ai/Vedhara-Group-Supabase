@@ -45,6 +45,7 @@ export default function Navbar() {
               width={48}
               height={38}
               priority
+              sizes="48px"
               style={{
                 height: "var(--nav-logo-h)", width: "auto",
                 position: scrolled ? "absolute" : "static",
@@ -58,6 +59,7 @@ export default function Navbar() {
               alt="Vedhara Group"
               width={48}
               height={38}
+              sizes="48px"
               style={{
                 height: "var(--nav-logo-h)", width: "auto",
                 position: scrolled ? "static" : "absolute",
@@ -83,7 +85,7 @@ export default function Navbar() {
           </div>
 
           {/* Hamburger */}
-          <button className="show-mobile" onClick={()=>setOpen(!open)} style={{ background:"none",border:"none",cursor:"pointer",padding:8 }} aria-label="Menu">
+          <button className="show-mobile" onClick={()=>setOpen(!open)} style={{ background:"none",border:"none",cursor:"pointer",padding:12,minWidth:44,minHeight:44,alignItems:"center",justifyContent:"center" }} aria-label="Menu">
             {[0,1,2].map(i=>(
               <div key={i} style={{ width:24,height:2,marginBottom:i<2?5:0,background:scrolled?"var(--navy)":"white",transition:"transform 0.3s,opacity 0.3s",transform:open?(i===0?"rotate(45deg) translateY(7px)":i===2?"rotate(-45deg) translateY(-7px)":"none"):"none",opacity:open&&i===1?0:1 }} />
             ))}
@@ -111,17 +113,17 @@ export default function Navbar() {
             { label:"Chat",  href:"https://wa.me/919810647063",bg:"transparent" },
             { label:"Book",  bg:"linear-gradient(135deg,var(--gold),var(--gold-lt))" },
           ].map(item=> item.href ? (
-            <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"10px 8px",textDecoration:"none",background:item.bg,borderRight:"1px solid rgba(255,255,255,0.06)" }}>
-              <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
+            <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"12px 8px",textDecoration:"none",background:item.bg,borderRight:"1px solid rgba(255,255,255,0.06)",minHeight:"44px" }}>
+              <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
             </a>
           ) : (
-            <button key={item.label} type="button" onClick={()=>setConsultOpen(true)} style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"10px 8px",background:item.bg,border:"none",borderRight:"1px solid rgba(255,255,255,0.06)",cursor:"pointer" }}>
-              <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
+            <button key={item.label} type="button" onClick={()=>setConsultOpen(true)} style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"12px 8px",background:item.bg,border:"none",borderRight:"1px solid rgba(255,255,255,0.06)",cursor:"pointer",minHeight:"44px" }}>
+              <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:item.bg.includes("gold")?"var(--navy)":"rgba(255,255,255,0.6)" }}>{item.label}</span>
             </button>
           ))}
         </div>
       </div>
-      <style>{`@media(max-width:1024px){.show-mobile{display:block!important;}}`}</style>
+      <style>{`@media(max-width:1024px){.show-mobile{display:flex!important;}}`}</style>
     </>
   );
 }

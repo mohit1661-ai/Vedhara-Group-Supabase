@@ -58,7 +58,8 @@ function Particles({ baseOpacity = 0.25 }) {
     };
     resize();
     window.addEventListener("resize", resize);
-    const particles = Array.from({ length: window.innerWidth < 768 ? 22 : 45 }, () => ({
+    const isMobile = window.innerWidth < 768;
+    const particles = Array.from({ length: isMobile ? 15 : 30 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.25,
@@ -68,7 +69,12 @@ function Particles({ baseOpacity = 0.25 }) {
     }));
     let raf = 0;
     let running = true;
-    const draw = () => {
+    let lastFrame = 0;
+    const FRAME_INTERVAL = isMobile ? 50 : 33;
+    const draw = (now: number) => {
+      if (!running) return;
+      if (now - lastFrame < FRAME_INTERVAL) { raf = requestAnimationFrame(draw); return; }
+      lastFrame = now;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
         p.x += p.vx;
@@ -82,16 +88,19 @@ function Particles({ baseOpacity = 0.25 }) {
         ctx.fillStyle = `rgba(232,201,112,${p.alpha * baseOpacity})`;
         ctx.fill();
       });
+      const maxDist = 100;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
+          if (Math.abs(dx) > maxDist) continue;
           const dy = particles[i].y - particles[j].y;
+          if (Math.abs(dy) > maxDist) continue;
           const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 100) {
+          if (d < maxDist) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(232,201,112,${0.04 * (1 - d / 100) * baseOpacity})`;
+            ctx.strokeStyle = `rgba(232,201,112,${0.04 * (1 - d / maxDist) * baseOpacity})`;
             ctx.lineWidth = 0.4;
             ctx.stroke();
           }
@@ -102,10 +111,10 @@ function Particles({ baseOpacity = 0.25 }) {
     // Pause the animation when the tab is hidden (invisible to users, saves CPU).
     const onVis = () => {
       if (document.hidden) { running = false; cancelAnimationFrame(raf); }
-      else if (!running) { running = true; draw(); }
+      else if (!running) { running = true; lastFrame = 0; raf = requestAnimationFrame(draw); }
     };
     document.addEventListener("visibilitychange", onVis);
-    draw();
+    raf = requestAnimationFrame(draw);
     return () => {
       running = false;
       cancelAnimationFrame(raf);
@@ -340,11 +349,10 @@ export default function VideoHeroSection({
           background: "#090f1d",
         }}
       >
-        {/* Poster is shown only when the section has NO video (e.g. legal pages
-            with a static hero). On video pages the poster is suppressed so a
-            foreign/old poster frame never flashes before that page's own video
-            loads — the navy layer + content hold the hero until it fades in. */}
-        {!videoSrc && poster && (
+        {/* Poster is shown until the video has loaded and faded in, preventing
+            a blank navy screen on slow connections. Once videoLoaded the poster
+            hides so the video layer takes over. */}
+        {poster && (!videoSrc || !videoLoaded) && (
           <Image
             src={poster}
             alt={posterAlt}

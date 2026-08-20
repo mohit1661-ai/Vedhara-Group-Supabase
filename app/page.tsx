@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import JsonLd from "@/components/seo/JsonLd";
 import CinematicHero from "@/components/sections/CinematicHero";
-import AnimatedStats from "@/components/sections/AnimatedStats";
-import FeaturedProperties from "@/components/sections/FeaturedProperties";
-import PropertySearch from "@/components/sections/PropertySearch";
-import ServicesGrid from "@/components/sections/ServicesGrid";
-import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import RelatedLinksSection from "@/components/sections/RelatedLinksSection";
-import HomeConsultationSection from "@/components/sections/HomeConsultationSection";
 import { blogPosts } from "@/lib/data/blogPosts";
+
+const AnimatedStats = dynamic(() => import("@/components/sections/AnimatedStats"));
+const FeaturedProperties = dynamic(() => import("@/components/sections/FeaturedProperties"));
+const PropertySearch = dynamic(() => import("@/components/sections/PropertySearch"));
+const ServicesGrid = dynamic(() => import("@/components/sections/ServicesGrid"));
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
+const RelatedLinksSection = dynamic(() => import("@/components/sections/RelatedLinksSection"));
+const HomeConsultationSection = dynamic(() => import("@/components/sections/HomeConsultationSection"));
 
 export const metadata: Metadata = {
   title: "Vedhara Group | Verified Property Advisory in Delhi NCR",

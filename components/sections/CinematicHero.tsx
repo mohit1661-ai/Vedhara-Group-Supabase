@@ -17,7 +17,8 @@ function Particles() {
     };
     resize();
     window.addEventListener("resize", resize);
-    const particles = Array.from({ length: window.innerWidth < 768 ? 32 : 70 }, () => ({
+    const isMobile = window.innerWidth < 768;
+    const particles = Array.from({ length: isMobile ? 20 : 40 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
@@ -27,7 +28,12 @@ function Particles() {
     }));
     let raf = 0;
     let running = true;
-    const draw = () => {
+    let lastFrame = 0;
+    const FRAME_INTERVAL = isMobile ? 50 : 33; // ~20fps mobile, ~30fps desktop
+    const draw = (now: number) => {
+      if (!running) return;
+      if (now - lastFrame < FRAME_INTERVAL) { raf = requestAnimationFrame(draw); return; }
+      lastFrame = now;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
         p.x += p.vx;
@@ -41,16 +47,19 @@ function Particles() {
         ctx.fillStyle = `rgba(232,201,112,${p.alpha})`;
         ctx.fill();
       });
+      const maxDist = 120;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
+          if (Math.abs(dx) > maxDist) continue;
           const dy = particles[i].y - particles[j].y;
+          if (Math.abs(dy) > maxDist) continue;
           const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 120) {
+          if (d < maxDist) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / 120)})`;
+            ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / maxDist)})`;
             ctx.lineWidth = 0.4;
             ctx.stroke();
           }
@@ -61,10 +70,10 @@ function Particles() {
     // Pause the animation when the tab is hidden (invisible to users, saves CPU).
     const onVis = () => {
       if (document.hidden) { running = false; cancelAnimationFrame(raf); }
-      else if (!running) { running = true; draw(); }
+      else if (!running) { running = true; lastFrame = 0; raf = requestAnimationFrame(draw); }
     };
     document.addEventListener("visibilitychange", onVis);
-    draw();
+    raf = requestAnimationFrame(draw);
     return () => {
       running = false;
       cancelAnimationFrame(raf);

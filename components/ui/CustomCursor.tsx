@@ -1,11 +1,13 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!window.matchMedia || window.matchMedia("(pointer: coarse)").matches) return;
+    setIsDesktop(true);
     const dot = dotRef.current; const ring = ringRef.current;
     if (!dot || !ring) return;
     let mx=0,my=0,rx=0,ry=0,raf:number;
@@ -35,5 +37,6 @@ export default function CustomCursor() {
     document.addEventListener("pointerout",onPointerOut);
     return ()=>{ active=false; cancelAnimationFrame(raf); window.removeEventListener("pointermove",onPointerMove); window.removeEventListener("pointerdown",onPointerDown); document.removeEventListener("pointerover",onPointerOver); document.removeEventListener("pointerout",onPointerOut); };
   },[]);
+  if (!isDesktop) return null;
   return (<><div ref={dotRef} className="cursor-dot"/><div ref={ringRef} className="cursor-ring"/></>);
 }

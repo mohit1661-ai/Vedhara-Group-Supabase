@@ -22,6 +22,7 @@ export default function Footer() {
                 alt="Vedhara Group"
                 width={71}
                 height={56}
+                sizes="71px"
                 style={{ height: 56, width: "auto" }}
               />
             </div>
