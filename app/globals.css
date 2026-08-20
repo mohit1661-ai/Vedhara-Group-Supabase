@@ -118,6 +118,7 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
 .nav-dropdown-links a:hover{color:var(--gold-ink);}
 .nav-dropdown-links a span{color:var(--gold-ink);font-size:13px;opacity:0;transition:opacity 0.2s;}
 .nav-dropdown-links a:hover span{opacity:1;}
+@media(min-width:1025px){.desktop-nav-links{transform:translateX(32px);}}
 
 /* Cursor, pointer-driven (CustomCursor.tsx reveals only for a mouse pointer) */
 .cursor-dot{width:6px;height:6px;background:var(--gold-lt);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity 0.25s ease;}

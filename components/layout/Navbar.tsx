@@ -129,7 +129,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden-mobile" style={{ display:"flex",alignItems:"center",gap:26,listStyle:"none",margin:0,padding:0 }}>
+          <ul className="hidden-mobile desktop-nav-links" style={{ display:"flex",alignItems:"center",gap:26,listStyle:"none",margin:0,padding:0 }}>
             {menuGroups.map((group,index)=>(
               <li key={group.label} style={{ position:"relative" }} onMouseEnter={()=>setActiveMenu(index)}>
                 <button
