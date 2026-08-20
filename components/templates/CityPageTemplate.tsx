@@ -116,7 +116,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
                     </div>
                     <h3 style={{ fontFamily: "var(--t-head)", fontSize: 15, fontWeight: 700, color: "var(--navy)", marginBottom: 6, lineHeight: 1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily: "var(--t-body)", fontSize: 13, color: "var(--slate)", marginBottom: 4 }}>{property.location}</p>
-                    <p style={{ fontFamily: "var(--t-body)", fontSize: 13, color: "var(--navy)", marginBottom: 10, lineHeight: 1.4 }}>{property.config} · {property.size}</p>
+                    <p style={{ fontFamily: "var(--t-body)", fontSize: 13, color: "var(--navy)", marginBottom: 10, lineHeight: 1.4 }}>{property.config ? `${property.config} · ` : ""}{property.size}</p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 10 }}>
                       {property.highlights.map((h) => (
                         <span key={h} style={{ fontFamily: "var(--t-head)", fontSize: 8.5, fontWeight: 600, letterSpacing: "0.04em", padding: "3px 7px", background: "rgba(212,168,67,0.08)", color: "var(--gold-ink)", borderRadius: 3 }}>
@@ -125,7 +125,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
                      ))}
                      </div>
                      <div style={{ flex: 1 }} />
-                     <ListingGallery images={[property.image]} title={property.title} />
+                     <ListingGallery images={property.images?.length ? property.images : [property.image]} title={property.title} />
                      <div style={{ flex: 1 }} />
                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(212,168,67,0.2)", paddingTop: 12, flexShrink: 0, minHeight: 73, height: 73 }}>
                       <div>
