@@ -56,7 +56,6 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
   // comfortable size and users can swipe/scroll to the rest). 4 or fewer → all
   // fit in a single row.
   const scroll = images.length > 4;
-  const thumbW = 100 / images.length;
 
   const openAt = (i: number) => (e: React.MouseEvent) => {
     e.preventDefault();
@@ -102,7 +101,9 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
       aria-label={`${title || "Property"} photo ${i + 1}`}
       className="lg-thumb"
       style={{
-        width: scroll ? 72 : `${thumbW}%`,
+        width: scroll ? 72 : undefined,
+        flex: scroll ? "0 0 72px" : "1 1 0",
+        minWidth: 0,
         height: 54,
         borderRadius: 6,
         border: "1px solid rgba(212,168,67,0.25)",

@@ -260,7 +260,7 @@ export default function CinematicHero({
   return (
     <section
       ref={heroRef}
-      className="video-hero"
+      className="video-hero cinematic-hero"
       style={{
         minHeight: "100svh",
         display: "flex",
@@ -411,10 +411,10 @@ export default function CinematicHero({
       <div ref={contentOuterRef} className="hero-content" style={{ position:"relative",zIndex:3,maxWidth:1320,margin:"0 auto",padding:"80px 32px 60px",width:"100%" }}>
         <div style={{ display:"grid",gridTemplateColumns:"1fr 380px",gap:80,alignItems:"center" }} className="hero-inner">
           {/* LEFT */}
-          <div>
-            <div className="hero-tagline" style={{ display:"inline-flex",alignItems:"center",gap:12,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",animation:"heroRise 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s backwards" }}>
-              <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",animation:"pulseRing 2.5s infinite",display:"block" }} />
-              <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory · Verified Listings · Delhi NCR</span>
+          <div className="hero-copy">
+            <div className="hero-tagline" style={{ display:"inline-flex",alignItems:"flex-start",gap:8,marginBottom:32,padding:"8px 18px",background:"rgba(212,168,67,0.1)",border:"1px solid rgba(212,168,67,0.3)",backdropFilter:"blur(12px)",animation:"heroRise 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s backwards" }}>
+              <span aria-hidden="true" style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",animation:"pulseRing 2.5s infinite",display:"block",flexShrink:0,marginTop:4 }} />
+              <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:600,letterSpacing:"0.2em",textTransform:"uppercase",color:"var(--gold-lt)" }}>Independent Advisory; Verified Listings;<br className="hero-tagline-break" /> Delhi NCR</span>
             </div>
 
             <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"var(--light)",marginBottom:28,animation:"heroRiseNoFade 0.6s cubic-bezier(0.22,1,0.36,1) 0.05s backwards" }}>
@@ -510,7 +510,8 @@ export default function CinematicHero({
 
       <style>{`
         @media(max-width:960px){.hero-inner{grid-template-columns:1fr!important;gap:32px!important;}.hero-right{max-width:400px;margin:0 auto;}}
-        @media(max-width:600px){.hero-tagline{margin-bottom:8px!important;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:8px!important;}}
+         .hero-tagline-break{display:none;}
+         @media(max-width:600px){.cinematic-hero{align-items:center!important;padding-top:var(--nav-h)!important;}.hero-content{padding:24px 16px 40px!important;}.hero-inner{text-align:center;}.hero-copy{display:flex;flex-direction:column;align-items:center;}.hero-tagline{display:flex!important;width:fit-content;max-width:100%;margin:0 auto 12px!important;}.hero-tagline-break{display:block;}.hero-tagline span:last-child{text-align:center;}.hero-copy h1{margin-bottom:20px!important;}.hero-copy p{margin-left:auto!important;margin-right:auto!important;margin-bottom:28px!important;}.hero-copy>div:not(.hero-tagline):not(.trust-strip){justify-content:center;}.hero-right{margin-top:8px!important;}.stat-grid{grid-template-columns:1fr 1fr!important;}.stat-grid>div{padding:12px 10px!important;}.stat-grid .stat-num{font-size:17px!important;}.stat-grid .stat-label{font-size:8px!important;}}
         .hero-quick-link{display:flex;align-items:center;gap:9px;padding:12px 12px;font-family:var(--t-head);font-size:11px;font-weight:500;color:#ffffff;text-decoration:none;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;letter-spacing:0.02em;transition:all 0.25s ease;}
         .hero-quick-link:hover{background:rgba(212,168,67,0.12);border-color:rgba(212,168,67,0.4);color:var(--gold-lt);transform:translateY(-2px);box-shadow:0 10px 24px rgba(9,15,29,0.45);}
         .hero-quick-icon{width:30px;height:30px;border-radius:8px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all 0.25s;}
