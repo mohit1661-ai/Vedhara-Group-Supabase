@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, ReactNode } from "react";
 
 /**
@@ -141,7 +140,6 @@ export default function VideoHeroSection({
   children,
   videoSrc,
   videoSrcMobile,
-  poster,
   posterAlt = "",
   overlayGradient,
   disableTilt,
@@ -359,19 +357,6 @@ export default function VideoHeroSection({
           background: "#090f1d",
         }}
       >
-        {/* Poster is shown until the video has loaded and faded in, preventing
-            a blank navy screen on slow connections. Once videoLoaded the poster
-            hides so the video layer takes over. */}
-        {poster && (!videoSrc || !videoLoaded) && (
-          <Image
-            src={poster}
-            alt={posterAlt}
-            fill
-            priority
-            sizes="100vw"
-            className="video-bg"
-          />
-        )}
         {videoSrc && (
           <video
             key={`${videoSrc}|${videoSrcMobile ?? ""}`}
