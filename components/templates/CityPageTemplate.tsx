@@ -34,7 +34,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
       <JsonLd data={schema} />
 
       {/* Hero */}
-      <VideoHeroSection videoSrc={data.heroVideo} videoSrcMobile={data.heroVideoMobile} poster={data.heroPoster} posterAlt={`${data.name} real estate hero`}>
+      <VideoHeroSection key={`${data.slug}-${data.heroVideo}`} videoSrc={data.heroVideo} videoSrcMobile={data.heroVideoMobile} poster={data.heroPoster} posterAlt={`${data.name} real estate hero`}>
         <span className="v-line" style={{ margin: "0 auto 16px" }} />
         <p className="eyebrow" style={{ marginBottom: 18 }}>{data.eyebrow}</p>
         <h1 style={{ fontFamily: "var(--t-display)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(32px,5vw,50px)", color: "var(--light)", lineHeight: 1.1, marginBottom: 26 }}>
@@ -254,7 +254,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
                     <p className="body-sm" style={{ color: "var(--slate)", lineHeight: 1.7, fontSize: 12, margin: "0 0 12px", flex: 1 }}>{j.body}</p>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(212,168,67,0.2)", paddingTop: 12 }}>
                       <span style={{ fontFamily: "var(--t-head)", fontSize: 9.5, fontWeight: 700, color: "var(--gold-ink)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Verified Authority</span>
-                      <Link href="/verification-center" style={{ fontFamily: "var(--t-head)", fontSize: 9, fontWeight: 700, color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.06em", display: "inline-flex", alignItems: "center", gap: 4, textDecoration: "none" }}>Check Process →</Link>
+                      <Link href="/verification-center" style={{ fontFamily: "var(--t-head)", fontSize: 9, fontWeight: 700, color: "var(--gold-lt)", textTransform: "uppercase", letterSpacing: "0.08em", display: "inline-flex", alignItems: "center", gap: 5, textDecoration: "none", padding: "9px 13px", background: "var(--navy)", borderRadius: 6, whiteSpace: "nowrap" }}>Check Progress →</Link>
                     </div>
                   </div>
                 </div>

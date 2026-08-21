@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
       // Block decorative background videos so Google doesn't flag
       // "Video isn't on a watch page" for pages where video is not
       // the primary content. Videos remain fully visible to visitors.
-      { userAgent:"*", allow:"/", disallow:["/videos/","/api/","/_next/"] },
+       { userAgent:"*", allow:"/", disallow:["/videos/","/api/"] },
       { userAgent:"GPTBot", allow:"/", disallow:["/videos/"] },
       { userAgent:"Google-Extended", allow:"/", disallow:["/videos/"] },
       { userAgent:"ClaudeBot", allow:"/", disallow:["/videos/"] },

@@ -273,7 +273,7 @@ const noida: CityPageData = {
   schemaName: "Real Estate Advisory in Noida",
   schemaAreaServed: ["Noida"],
   schemaDescription: "Independent real estate advisory across Noida: verified buying, selling, renting and investing in Sector 150, Sector 44, Sector 137 and the Expressway corridor with UP RERA due diligence.",
-  relatedLinks: [{ label:"Commercial Advisory", href:"/commercial" }, { label:"Investment Advisory", href:"/investment" }, { label:"Greater Noida Properties", href:"/greater-noida" }],
+  relatedLinks: [{ label:"Commercial Advisory", href:"/commercial" }, { label:"Investment Advisory", href:"/investment-advisory" }, { label:"Greater Noida Properties", href:"/greater-noida" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -369,7 +369,7 @@ const greaterNoida: CityPageData = {
   schemaName: "Real Estate Advisory in Greater Noida",
   schemaAreaServed: ["Greater Noida"],
   schemaDescription: "Independent real estate advisory across Greater Noida: verified buying, selling, renting and investing in GNIDA and YEIDA sectors with UP RERA due diligence.",
-  relatedLinks: [{ label:"Noida Properties", href:"/noida" }, { label:"Commercial Advisory", href:"/commercial" }, { label:"Plots Advisory", href:"/plots" }],
+  relatedLinks: [{ label:"Noida Properties", href:"/noida" }, { label:"Commercial Advisory", href:"/commercial" }, { label:"Plots Advisory", href:"/buy" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -465,7 +465,7 @@ const southDelhi: CityPageData = {
   schemaName: "Real Estate Advisory in South Delhi",
   schemaAreaServed: ["South Delhi"],
   schemaDescription: "Independent luxury real estate advisory across South Delhi: verified buying, selling and renting in Lutyens' Delhi, Greater Kailash, Vasant Vihar, Defence Colony and Hauz Khas.",
-  relatedLinks: [{ label:"Luxury Properties", href:"/luxury" }, { label:"NRI Property Advisory", href:"/nri" }, { label:"Verification Center", href:"/verification-center" }],
+  relatedLinks: [{ label:"Luxury Properties", href:"/luxury" }, { label:"NRI Property Advisory", href:"/nri-services" }, { label:"Verification Center", href:"/verification-center" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -658,7 +658,7 @@ const mohali: CityPageData = {
   schemaName: "Real Estate Advisory in Mohali",
   schemaAreaServed: ["Mohali"],
   schemaDescription: "Independent real estate advisory across Mohali: verified buying, selling and investing in GMADA-approved sectors with Punjab RERA due diligence.",
-  relatedLinks: [{ label:"Chandigarh Properties", href:"/chandigarh" }, { label:"Panchkula Properties", href:"/panchkula" }, { label:"Plots Advisory", href:"/plots" }],
+  relatedLinks: [{ label:"Chandigarh Properties", href:"/chandigarh" }, { label:"Panchkula Properties", href:"/panchkula" }, { label:"Plots Advisory", href:"/buy" }],
 };
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1042,7 +1042,7 @@ const mathuraVrindavan: CityPageData = {
   schemaName: "Real Estate Advisory in Mathura & Vrindavan",
   schemaAreaServed: ["Mathura", "Vrindavan"],
   schemaDescription: "Independent real estate advisory across Mathura and Vrindavan: verified buying, selling and investing in Vrindavan villas, Yamuna Expressway plots and Mathura city homes with UP RERA and MVDA due diligence.",
-  relatedLinks: [{ label:"Greater Noida Properties", href:"/greater-noida" }, { label:"Plots Advisory", href:"/plots" }, { label:"NRI Property Advisory", href:"/nri" }],
+  relatedLinks: [{ label:"Greater Noida Properties", href:"/greater-noida" }, { label:"Plots Advisory", href:"/buy" }, { label:"NRI Property Advisory", href:"/nri-services" }],
 };
 
 export const cityPages: Record<string, CityPageData> = {

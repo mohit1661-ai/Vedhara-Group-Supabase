@@ -38,7 +38,22 @@ export async function POST(req: NextRequest) {
   // 2. Parse
   let body: FormInput;
   try {
-    body = await req.json();
+    const parsed: unknown = await req.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return NextResponse.json(
+        { success:false, error:"Invalid request format." },
+        { status:400 }
+      );
+    }
+    const candidate = parsed as Record<string, unknown>;
+    const fields = ["fullName", "phone", "email", "interest", "timezone", "message", "sourcePage"];
+    if (fields.some((field) => candidate[field] !== undefined && typeof candidate[field] !== "string")) {
+      return NextResponse.json(
+        { success:false, error:"Invalid request format." },
+        { status:400 }
+      );
+    }
+    body = candidate as FormInput;
   } catch {
     return NextResponse.json(
       { success:false, error:"Invalid request format." },
@@ -75,7 +90,10 @@ export async function POST(req: NextRequest) {
     await writeLead(lead);
   } catch (err) {
     console.error("[Lead write failed]", err);
-    // Continue; don't fail the user request over a save error
+    return NextResponse.json(
+      { success:false, error:"We could not save your request. Please try again." },
+      { status:500 }
+    );
   }
 
   // 6. Email + Titan CRM + Google Sheets (all non-blocking)

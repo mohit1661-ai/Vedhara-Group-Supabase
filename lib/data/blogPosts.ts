@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     dateModified:"2026-08-12",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#1a3a5c 50%,#2a5f8f 100%)",
     videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
-    metaTitle:"Delhi NCR Property Price Trends 2026: Micro-Market Analysis",
+    metaTitle:"Delhi NCR Property Price Trends 2026",
     metaDescription:"Delhi NCR property price trends 2026 covering Gurugram, Noida, Faridabad, Manesar, Delhi and North India. Data-backed insights on where prices are moving.",
     keywords:["Delhi NCR property prices","Gurugram real estate trends","Noida property rates 2026","Greater Noida investment","Dwarka Expressway property","where to invest in Delhi NCR"],
     excerpt:"Detailed price-per-sqft analysis across Gurugram, Noida, Faridabad, and Delhi micro-markets. Understand where prices are moving and why, with data-driven insights for buyers and investors across Delhi NCR.",
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
     relatedLinks:[
       { label:"Gurugram Properties", href:"/gurugram" },
       { label:"Noida Properties", href:"/noida" },
-      { label:"Investment Advisory", href:"/investment" },
+      { label:"Investment Advisory", href:"/investment-advisory" },
     ],
   },
   {
@@ -171,7 +171,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks:[
       { label:"Verification Center", href:"/verification-center" },
-      { label:"Buying Guide", href:"/buying" },
+      { label:"Buying Guide", href:"/buy" },
       { label:"Gurugram Properties", href:"/gurugram" },
     ],
   },
@@ -241,8 +241,8 @@ export const blogPosts: BlogPost[] = [
       { q:"Can an NRI repatriate the proceeds of a property sale?", a:"Yes, provided the property was purchased through proper banking channels and taxes are settled. Repatriation of NRO sale proceeds is subject to the USD 1 million annual limit and the required documentation." },
     ],
     relatedLinks:[
-      { label:"NRI Property Advisory", href:"/nri" },
-      { label:"Investment Advisory", href:"/investment" },
+      { label:"NRI Property Advisory", href:"/nri-services" },
+      { label:"Investment Advisory", href:"/investment-advisory" },
       { label:"Verification Center", href:"/verification-center" },
     ],
   },
@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
     dateModified:"2026-08-01",
     gradient:"linear-gradient(135deg,#0a1a2a 0%,#1a3a5a 50%,#3a6a8a 100%)",
     videoSrc:"/videos/Real%20Estate%20Calculator.mp4",
-    metaTitle:"Stamp Duty Charges in Delhi NCR 2026: State Breakdown",
+    metaTitle:"Stamp Duty Charges in Delhi NCR 2026",
     metaDescription:"Compare 2026 stamp duty and registration charges across Delhi, Gurugram, Noida, Faridabad and Chandigarh, including women buyer concessions and circle rates.",
     keywords:["stamp duty Delhi NCR 2026","stamp duty Haryana 2026","registration charges UP","stamp duty for women buyers","circle rate Delhi","property registration charges"],
     excerpt:"Compare stamp duty rates, registration charges, and total acquisition costs across Delhi, Gurugram (Haryana), Noida (UP), and Faridabad. Includes recent budget changes and concessions for women buyers.",
@@ -318,7 +318,7 @@ export const blogPosts: BlogPost[] = [
       { q:"Does the buyer or seller pay stamp duty in Delhi NCR?", a:"Stamp duty and registration charges are generally payable by the buyer in residential transactions across Delhi NCR. This should be factored into your budget from the start." },
     ],
     relatedLinks:[
-      { label:"Buying Guide", href:"/buying" },
+      { label:"Buying Guide", href:"/buy" },
       { label:"Gurugram Properties", href:"/gurugram" },
       { label:"Noida Properties", href:"/noida" },
     ],
@@ -332,7 +332,7 @@ export const blogPosts: BlogPost[] = [
     dateModified:"2026-08-08",
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#D4A843 100%)",
     videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
-    metaTitle:"Rental Yields Gurugram vs Noida vs Faridabad 2026",
+    metaTitle:"Rental Yields in Gurugram, Noida and Faridabad",
     metaDescription:"Data-backed 2026 comparison of gross and net rental yields in Gurugram, Noida, Faridabad and Chandigarh for buy-to-let investors.",
     keywords:["rental yield Gurugram","rental income Noida","rental yield Faridabad","buy to let India","property investment returns","rental yield calculation"],
     excerpt:"Data-backed comparison of gross and net rental yields across Delhi NCR's major micro-markets. Analysis of tenant demand, vacancy rates, and capital appreciation potential for buy-to-let investors.",
@@ -397,7 +397,7 @@ export const blogPosts: BlogPost[] = [
     relatedLinks:[
       { label:"Gurugram Properties", href:"/gurugram" },
       { label:"Noida Properties", href:"/noida" },
-      { label:"Investment Advisory", href:"/investment" },
+      { label:"Investment Advisory", href:"/investment-advisory" },
     ],
   },
   {
@@ -409,7 +409,7 @@ export const blogPosts: BlogPost[] = [
     dateModified:"2026-08-15",
     gradient:"linear-gradient(135deg,#090F1D 0%,#1a2a4a 50%,#4a6a8a 100%)",
     videoSrc:"/videos/Real%20Estate%20Calculator.mp4",
-    metaTitle:"Home Loan Guide Delhi NCR 2026: Rates & Eligibility",
+    metaTitle:"Home Loan Guide Delhi NCR 2026",
     metaDescription:"2026 home loan guide for Delhi NCR and North India property: interest rates, eligibility, EMI calculation, and Section 24 and 80C tax benefits.",
     keywords:["home loan interest rates 2026","home loan eligibility India","home loan tax benefit","Section 24","Section 80C","first-time home buyer India","EMI calculator"],
     excerpt:"Current home loan interest rates from top banks and HFCs for Delhi NCR property, eligibility criteria, EMI calculator guidance, Section 24 and Section 80C tax benefits, and tips for first-time buyers.",
@@ -477,9 +477,9 @@ export const blogPosts: BlogPost[] = [
       { q:"Is it better to prepay a home loan or invest the surplus?", a:"Generally, prepaying is attractive when the loan rate exceeds what you can reliably earn on investments after tax. If your loan is at a low rate and you can invest at a higher post-tax return, investing may be better, but this is a personal decision based on risk tolerance." },
     ],
     relatedLinks:[
-      { label:"Buying Guide", href:"/buying" },
-      { label:"NRI Property Advisory", href:"/nri" },
-      { label:"Investment Advisory", href:"/investment" },
+      { label:"Buying Guide", href:"/buy" },
+      { label:"NRI Property Advisory", href:"/nri-services" },
+      { label:"Investment Advisory", href:"/investment-advisory" },
     ],
   },
   {
@@ -492,7 +492,7 @@ export const blogPosts: BlogPost[] = [
     dateModified:"2026-08-18",
     gradient:"linear-gradient(135deg,#0F1E38 0%,#2a5f8f 50%,#D4A843 100%)",
     videoSrc:"/videos/Market%20Insights%20Hero%20Video.mp4",
-    metaTitle:"Dwarka Expressway Price Trend 2026: Data & Forecast",
+    metaTitle:"Dwarka Expressway Price Trend 2026",
     metaDescription:"Dwarka Expressway price trend over 18 months: per-sqft data by quarter, appreciation by sector, circle rates, metro impact and forecasts for buyers and investors.",
     keywords:["Dwarka Expressway price trend","Dwarka Expressway property prices","Dwarka Expressway price per sqft","Dwarka Expressway appreciation","Dwarka Expressway sector 104","Dwarka Expressway circle rate","Dwarka Expressway metro","Gurugram property price trend","Dwarka Expressway investment 2026","Dwarka Expressway real estate"],
     excerpt:"Quarter-by-quarter Dwarka Expressway price data from early 2025 to mid-2026, sector-level appreciation, the infrastructure and circle-rate drivers, and what the next 12–18 months hold for buyers and investors.",
@@ -599,7 +599,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks:[
       { label:"Gurugram Properties", href:"/gurugram" },
-      { label:"Buying Guide", href:"/buying" },
+      { label:"Buying Guide", href:"/buy" },
       { label:"Faridabad Properties", href:"/faridabad" },
     ],
   },
