@@ -186,6 +186,12 @@ export default function VideoHeroSection({
         if (slow) return;
         start();
       }
+    } else if (videoRef.current) {
+      // Stop and detach the previous route's media before React replaces it.
+      videoRef.current.pause();
+      videoRef.current.removeAttribute("src");
+      videoRef.current.load();
+      videoRef.current = null;
     }
   }, [videoSrc, videoSrcMobile]);
 
@@ -199,7 +205,10 @@ export default function VideoHeroSection({
     video.defaultMuted = true;
     // Force video to start from beginning
     video.currentTime = 0;
-    const tryPlay = () => video.play().catch(() => {});
+    const tryPlay = () => {
+      if (!video.paused) return;
+      video.play().catch(() => {});
+    };
     tryPlay();
 
     const handleReady = () => {
@@ -229,8 +238,9 @@ export default function VideoHeroSection({
     if (!video) return;
 
     const resumeVideo = () => {
-      if (video.paused) {
-        video.play().catch(() => {});
+      const currentVideo = videoRef.current;
+      if (currentVideo?.paused) {
+        currentVideo.play().catch(() => {});
       }
       document.removeEventListener("click", resumeVideo);
       document.removeEventListener("touchstart", resumeVideo);
@@ -364,6 +374,7 @@ export default function VideoHeroSection({
         )}
         {videoSrc && (
           <video
+            key={`${videoSrc}|${videoSrcMobile ?? ""}`}
             ref={videoRefCallback}
             autoPlay
             muted
