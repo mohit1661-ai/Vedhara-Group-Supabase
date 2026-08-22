@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import FilterSelect from "@/components/ui/FilterSelect";
 import ScrollToResults from "@/components/ui/ScrollToResults";
@@ -149,10 +150,26 @@ export default function SearchResults({
     target: { "@type": "EntryPoint", urlTemplate: "https://www.vedharagroup.com/search?q={query}" },
   };
 
+  const listingsJsonLd = listingsSchema(
+    "/search",
+    results.map((p) => ({
+      id: p.id,
+      name: p.title,
+      description: p.config,
+      priceDisplay: p.price,
+      locality: p.location,
+      propertyType: p.category,
+      size: p.size,
+      status: p.tag,
+      image: p.image,
+    }))
+  );
+
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Search", href: "/search" }]} />
       <JsonLd data={schema} />
+      {results.length > 0 && <JsonLd data={listingsJsonLd} />}
       <ScrollToResults active={hasQuery} />
 
       {/* Hero */}

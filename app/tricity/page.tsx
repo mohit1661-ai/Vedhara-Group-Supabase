@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = {
   title:"Chandigarh Tricity Real Estate",
@@ -205,6 +206,17 @@ export default function TricityPage() {
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Tricity Real Estate", href:"/tricity" }]} />
       <JsonLd data={serviceSchema} />
+      <JsonLd data={listingsSchema("/tricity", tricityListings.map((l) => ({
+        id: l.id,
+        name: l.title,
+        description: l.highlights.join("; "),
+        priceDisplay: l.price,
+        locality: l.location,
+        propertyType: l.type,
+        size: `${l.config} · ${l.size}`,
+        status: l.status,
+        image: l.image,
+      })))} />
 
       {/* Hero */}
       <VideoHeroSection

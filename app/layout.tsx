@@ -48,7 +48,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body style={{ display:"flex", flexDirection:"column", minHeight:"100vh" }}>
         <JsonLd data={{
-          "@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],
+          "@context":"https://schema.org","@type":["Organization","RealEstateAgent","LocalBusiness"],
           "@id":"https://www.vedharagroup.com/#organization",
           name:"Vedhara Group", legalName:"Vedhara Group Pvt. Ltd.",
           url:"https://www.vedharagroup.com",

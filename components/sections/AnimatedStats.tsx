@@ -7,13 +7,16 @@ const stats = [
   { target:6,   prefix:"",  suffix:"+",    label:"Countries Served" },
 ];
 function Counter({ target, prefix, suffix }:{ target:number; prefix:string; suffix:string }) {
-  const [count, setCount] = useState(0);
+  // Seed with the target so server-rendered HTML (crawlers/AI bots) shows real
+  // numbers instead of "0+"; the observer resets to 0 and replays the count-up.
+  const [count, setCount] = useState(target);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
   useEffect(()=>{
     const obs=new IntersectionObserver(entries=>{
       if(entries[0].isIntersecting && !started.current){
         started.current=true;
+        setCount(0);
         const start=performance.now();const dur=1800;
         const tick=(now:number)=>{ const p=Math.min((now-start)/dur,1); setCount(Math.round((1-Math.pow(1-p,3))*target)); if(p<1) requestAnimationFrame(tick); };
         requestAnimationFrame(tick);

@@ -3,6 +3,8 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoOnHover from "@/components/ui/VideoOnHover";
 import ListingGallery from "@/components/ui/ListingGallery";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 type FeaturedProperty = {
   category: string;
@@ -104,8 +106,21 @@ const featuredProperties: FeaturedProperty[] = [
  * after the "Find Your Property" opener (real-estate-first page flow).
  */
 export default function FeaturedProperties() {
+  const listingsJsonLd = listingsSchema(
+    "/",
+    featuredProperties.map((p) => ({
+      name: p.title,
+      priceDisplay: p.price,
+      locality: p.location,
+      propertyType: p.category,
+      size: `${p.config} · ${p.size}`,
+      status: p.tag,
+      image: p.image,
+    }))
+  );
   return (
     <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+      <JsonLd data={listingsJsonLd} />
       <div style={{ position:"absolute",top:"10%",right:"-5%",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 70%)",pointerEvents:"none" }} />
       <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
         <ScrollReveal>

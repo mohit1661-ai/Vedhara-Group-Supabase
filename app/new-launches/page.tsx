@@ -5,6 +5,8 @@ import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = { title:"New Property Launches in Delhi NCR", description:"RERA-verified new property launches across Delhi NCR, Faridabad, Manesar, Chandigarh and North India from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
 
@@ -187,6 +189,17 @@ const launchProjects: LaunchProject[] = [
 export default function NewLaunchesPage() {
   return (
     <>
+      <JsonLd data={listingsSchema("/new-launches", launchProjects.map((p) => ({
+        id: p.id,
+        name: p.projectName,
+        description: `${p.developer}. ${p.highlights.join("; ")}`,
+        priceDisplay: p.startingPrice,
+        locality: p.location,
+        propertyType: p.type,
+        size: `${p.configs} · Possession ${p.possession}`,
+        status: p.status,
+        image: p.image,
+      })))} />
       <VideoHeroSection videoSrc="/videos/New%20Launches.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>New Launches</p>

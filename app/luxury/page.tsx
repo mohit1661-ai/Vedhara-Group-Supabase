@@ -8,6 +8,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = { title:"Luxury Properties in Delhi NCR | Premium Homes", description:"Curated luxury homes and premium residences across Delhi NCR, Gurugram, Noida, Chandigarh Tricity and North India. Discreet advisory from Vedhara Group.", alternates:{ canonical:"https://www.vedharagroup.com/luxury" } };
 
@@ -129,6 +131,17 @@ export default function LuxuryPage() {
   return (
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Luxury Properties", href:"/luxury" }]} />
+      <JsonLd data={listingsSchema("/luxury", luxuryListings.map((l) => ({
+        id: l.id,
+        name: l.title,
+        description: l.highlights.join("; "),
+        priceDisplay: l.price,
+        locality: l.location,
+        propertyType: l.type,
+        size: `${l.config} · ${l.size}`,
+        status: l.status,
+        image: l.image,
+      })))} />
       <ServicePageTemplate content={servicePages.luxury} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Luxury%20Properties%20Page%20Video%20(1).mp4" hideFAQ />
 
       {/* Luxury Listings Section */}

@@ -8,6 +8,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = { title:"Rent Property in Delhi NCR | Verified Rentals", description:"Find verified rental properties across Delhi NCR, Faridabad, Manesar and Chandigarh. Tenant advisory, landlord representation and transparent lease terms.", alternates:{ canonical:"https://www.vedharagroup.com/rent" } };
 
@@ -130,6 +132,17 @@ export default function RentPage() {
   return (
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Rent Property", href:"/rent" }]} />
+      <JsonLd data={listingsSchema("/rent", rentalListings.map((l) => ({
+        id: l.id,
+        name: l.title,
+        description: l.highlights.join("; "),
+        priceDisplay: l.monthlyRent,
+        locality: l.location,
+        propertyType: l.type,
+        size: `${l.config} · ${l.size} · ${l.furnished}`,
+        status: l.status,
+        image: l.image,
+      })))} />
       <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" hideFAQ />
 
       {/* Featured Rentals Section - Homepage-style cards */}

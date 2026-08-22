@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
 import FAQSection, { FAQItem } from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
@@ -143,6 +144,15 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd data={servicesSchema} />
+      <JsonLd data={listingsSchema("/services", featuredProperties.map((p) => ({
+        id: p.id,
+        name: p.title,
+        description: p.desc,
+        priceDisplay: p.price,
+        locality: p.location,
+        propertyType: p.tag,
+        image: p.image,
+      })))} />
       <VideoHeroSection videoSrc="/videos/All%20Services%20Hero%20Video.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>All Services</p>

@@ -8,6 +8,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = { title:"Buy Verified Property in Delhi NCR", description:"Buy verified residential and commercial property in Delhi NCR, Faridabad, Manesar, Chandigarh and across North India with RERA-verified listings.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
 
@@ -123,6 +125,17 @@ export default function BuyPage() {
   return (
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Buy Property", href:"/buy" }]} />
+      <JsonLd data={listingsSchema("/buy", featuredListings.map((l) => ({
+        id: l.id,
+        name: l.title,
+        description: l.highlights.join("; "),
+        priceDisplay: l.price,
+        locality: l.location,
+        propertyType: l.type,
+        size: `${l.config} · ${l.size}`,
+        status: l.status,
+        image: l.image,
+      })))} />
       <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" hideFAQ />
 
       {/* Featured Listings Section */}

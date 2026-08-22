@@ -8,6 +8,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = { title:"Sell Property in Delhi NCR", description:"Sell your property in Delhi NCR, Faridabad, Manesar or Chandigarh at the right price. Strategic pricing, qualified buyer access and end-to-end sale management.", alternates:{ canonical:"https://www.vedharagroup.com/sell" } };
 
@@ -138,6 +140,17 @@ export default function SellPage() {
   return (
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Sell Property", href:"/sell" }]} />
+      <JsonLd data={listingsSchema("/sell", sellListings.map((l) => ({
+        id: l.id,
+        name: l.title,
+        description: l.highlights.join("; "),
+        priceDisplay: l.askingPrice,
+        locality: l.location,
+        propertyType: l.type,
+        size: `${l.config} · ${l.size}`,
+        status: l.status,
+        image: l.image,
+      })))} />
       <ServicePageTemplate content={servicePages.sell} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Sell%20Page%20Video%20(1).mp4" hideFAQ />
 
       {/* Properties for Sale Section */}

@@ -7,6 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 import type { CityPageData } from "@/lib/data/cityPages";
 
 /**
@@ -27,11 +28,26 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
     description: data.schemaDescription,
     offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "INR" } },
   };
+  const listingsJsonLd = listingsSchema(
+    `/${data.slug}`,
+    data.listings.map((l) => ({
+      id: l.id,
+      name: l.title,
+      description: l.highlights.join("; "),
+      priceDisplay: l.price,
+      locality: l.location,
+      propertyType: l.type,
+      size: `${l.config} · ${l.size}`,
+      status: l.status,
+      image: l.image,
+    }))
+  );
 
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: `${data.name} Real Estate`, href: `/${data.slug}` }]} />
       <JsonLd data={schema} />
+      <JsonLd data={listingsJsonLd} />
 
       {/* Hero */}
       <VideoHeroSection key={`${data.slug}-${data.heroVideo}`} videoSrc={data.heroVideo} videoSrcMobile={data.heroVideoMobile} poster={data.heroPoster} posterAlt={`${data.name} real estate hero`}>

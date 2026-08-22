@@ -45,7 +45,7 @@ const faqs = [
   { q:"Is Vedhara Group a real estate developer?", a:"No. Vedhara Group is an independent real estate advisory and brokerage firm. We do not build, develop, or own properties. Our role is to represent and advise clients, buyers, sellers, investors, tenants, landlords, and NRIs, independently, while listing verified projects from partner developers." },
   { q:"Is Vedhara Group RERA registered?", a:"Vedhara Group operates in compliance with RERA registration requirements applicable to real estate agents in Delhi, Haryana, and Uttar Pradesh. RERA agent registration numbers are disclosed on request and on relevant transaction documents." },
   { q:"Where is Vedhara Group based?", a:"Vedhara Group is based in the Delhi NCR region and serves clients across Delhi NCR, Gurugram, Noida, Greater Noida, Faridabad, Manesar, Chandigarh and across North India. NRI clients are served remotely through video consultations and digital documentation." },
-  { q:"How long has Vedhara Group been operating?", a:"Vedhara Group is a growing independent advisory firm in the Delhi NCR market. Our team brings professional real estate advisory experience across residential, commercial, and investment property segments." },
+  { q:"How long has Vedhara Group been operating?", a:"Vedhara Group was founded by a leadership team with over 20 years of hands-on experience in Delhi NCR real estate. While our digital platform and Verification Framework are newly built, our advisory practice is grounded in two decades of transaction experience across Gurugram, Noida, Delhi and North India." },
 ];
 
 export default function AboutPage() {

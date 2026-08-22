@@ -10,6 +10,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
+import JsonLd from "@/components/seo/JsonLd";
+import { listingsSchema } from "@/lib/seo/listings";
 
 export const metadata: Metadata = { title:"Commercial Property Advisory in Delhi NCR", description:"Independent commercial property advisory in Delhi NCR, Faridabad & Manesar: office space leasing, retail site selection, industrial sheds and acquisition.", alternates:{ canonical:"https://www.vedharagroup.com/commercial" } };
 
@@ -381,6 +383,17 @@ export default function CommercialPage() {
   return (
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Commercial Real Estate", href:"/commercial" }]} />
+      <JsonLd data={listingsSchema("/commercial", commercialListings.map((l) => ({
+        id: l.id,
+        name: l.title,
+        description: l.highlights.join("; "),
+        priceDisplay: l.price,
+        locality: l.location,
+        propertyType: l.type,
+        size: l.size,
+        status: l.status,
+        image: l.image,
+      })))} />
       <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" hideFAQ />
 
       {/* Commercial Listings Section */}
