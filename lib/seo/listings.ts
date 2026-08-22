@@ -55,12 +55,13 @@ export function parsePriceINR(
 ): { value: number; period: "MONTH" | "YEAR" | null } | null {
   if (!s) return null;
   const cleaned = s.replace(/[₹,\s]/g, "").toUpperCase();
-  const m = cleaned.match(/^(\d+(?:\.\d+)?)(CR|LAKHS|L)/);
+  const m = cleaned.match(/^(\d+(?:\.\d+)?)(CR|LAKHS|L)?/);
   if (!m) return null;
   const n = parseFloat(m[1]);
   if (!Number.isFinite(n)) return null;
-  const base = m[2] === "CR" ? n * 1e7 : n * 1e5;
   const period = cleaned.includes("/MO") ? "MONTH" : cleaned.includes("/YR") ? "YEAR" : null;
+  if (!m[2] && !period) return null;
+  const base = m[2] === "CR" ? n * 1e7 : m[2] ? n * 1e5 : n;
   return { value: Math.round(base), period };
 }
 

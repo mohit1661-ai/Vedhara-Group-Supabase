@@ -7,7 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "How We Charge | Transparent Real Estate Fees",
+  title: "How We Charge | Transparent Fees",
   description: "Understand Vedhara Group's disclosed commission and advisory retainer model before you begin a property conversation.",
   alternates: { canonical: "https://www.vedharagroup.com/how-we-charge" },
 };
@@ -40,7 +40,7 @@ export default function HowWeChargePage() {
         <span className="v-line" style={{ margin: "0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom: 18 }}>Fee Transparency</p>
         <h1 style={{ fontFamily: "var(--t-display)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(30px,5vw,56px)", color: "var(--light)", lineHeight: 1.1, marginBottom: 24 }}>
-          Clear Fees Before You Decide<br /><span style={{ color: "var(--gold-lt)" }}>No Surprises at Closing</span>
+          Vedhara&apos;s Fees, Clearly Disclosed<br /><span style={{ color: "var(--gold-lt)" }}>Before Any Engagement</span>
         </h1>
         <p className="body-lg" style={{ color: "rgba(255,255,255,0.85)", maxWidth: 580, margin: "0 auto" }}>
           Independent advice includes knowing exactly how the engagement is paid for. We disclose the applicable commission or fee before the conversation becomes a commitment.
@@ -53,7 +53,7 @@ export default function HowWeChargePage() {
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <span className="v-line" style={{ margin: "0 auto 14px" }} />
               <p className="eyebrow" style={{ marginBottom: 14 }}>Our Fee Model</p>
-              <h2 className="heading-xl" style={{ color: "var(--navy)", lineHeight: 1.1 }}>Advice That Is <em className="display-gold" style={{ fontSize: "inherit", color: "var(--gold-ink)" }}>Clear From the Start</em></h2>
+              <h2 className="heading-xl" style={{ color: "var(--navy)", lineHeight: 1.1 }}>Three Ways an Engagement <em className="display-gold" style={{ fontSize: "inherit", color: "var(--gold-ink)" }}>Can Be Priced</em></h2>
             </div>
           </ScrollReveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
@@ -77,7 +77,7 @@ export default function HowWeChargePage() {
             <div style={{ textAlign: "center", marginBottom: 36 }}>
               <span className="v-line" style={{ margin: "0 auto 14px" }} />
               <p className="eyebrow" style={{ color: "var(--gold-lt)", marginBottom: 14 }}>What Disclosure Means</p>
-              <h2 className="heading-xl" style={{ color: "var(--light)", lineHeight: 1.1 }}>The Fee Is Never a <em className="display-gold" style={{ fontSize: "inherit" }}>Surprise</em></h2>
+              <h2 className="heading-xl" style={{ color: "var(--light)", lineHeight: 1.1 }}>What You Know <em className="display-gold" style={{ fontSize: "inherit" }}>Before Proceeding</em></h2>
             </div>
           </ScrollReveal>
           <div style={{ display: "grid", gap: 1, background: "rgba(255,255,255,0.08)" }}>

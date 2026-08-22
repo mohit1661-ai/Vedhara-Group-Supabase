@@ -230,7 +230,7 @@ export default function SellPage() {
           <ScrollReveal delay={120}>
             <div style={{ textAlign:"center",marginTop:40 }}>
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
-                Want to list your property? Vedhara helps you price and position it for the right buyer.
+                Want to list your property? Vedhara helps you price and position it for the right buyer. <Link href="/sell/valuation" style={{ color:"var(--gold-lt)" }}>Review our valuation tool.</Link>
               </p>
               <Link href="/contact#sell" className="btn btn-primary">
                 List Your Property →

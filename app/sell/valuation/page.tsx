@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import ValuationTool from "./ValuationTool";
 
 export const metadata: Metadata = {
-  title: "Property Valuation Tool | Vedhara Group",
+  title: "Property Valuation Tool",
   description: "Estimate your Delhi NCR property's value using locality comparables and government circle rate data.",
   alternates: { canonical: "https://www.vedharagroup.com/sell/valuation" },
 };
@@ -20,7 +20,7 @@ export default function PropertyValuationPage() {
         <span className="v-line" style={{ margin: "0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom: 18 }}>Seller Tools</p>
         <h1 style={{ fontFamily: "var(--t-display)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(30px,5vw,52px)", color: "var(--light)", lineHeight: 1.1, marginBottom: 24 }}>
-          Understand Your Property&apos;s Value<br /><span style={{ color: "var(--gold-lt)" }}>Before You List</span>
+          Seller Property Valuation<br /><span style={{ color: "var(--gold-lt)" }}>Based on Locality Evidence</span>
         </h1>
         <p className="body-lg" style={{ color: "rgba(255,255,255,0.85)", maxWidth: 620, margin: "0 auto" }}>
           This tool is designed to estimate value using locality comparables and government circle rate data, mirroring the Price Fairness check in Vedhara&apos;s Verification Framework.

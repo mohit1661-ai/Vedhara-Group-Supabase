@@ -29,7 +29,7 @@ export default function ValuationTool() {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="grid-2">
       <div>
-        <h3 className="heading-md" style={{ color: "var(--navy)", marginBottom: 8 }}>Property Details</h3>
+        <h2 className="heading-md" style={{ color: "var(--navy)", marginBottom: 8 }}>Property Details</h2>
         <p className="body-sm" style={{ color: "var(--slate)", marginBottom: 20 }}>Enter the information available for your property. The final tool will compare locality evidence with applicable government circle rate data.</p>
         <div style={{ marginBottom: 14 }}>
           <label className="input-label" htmlFor="valuation-locality">Locality</label>
@@ -55,7 +55,7 @@ export default function ValuationTool() {
         <button type="button" className="btn btn-dark" onClick={() => setSubmitted(true)}>Prepare Valuation Estimate</button>
       </div>
       <div style={{ background: "var(--navy)", padding: "28px 24px" }}>
-        <h4 className="eyebrow" style={{ color: "var(--gold)", marginBottom: 20 }}>Valuation Preview</h4>
+        <h3 className="eyebrow" style={{ color: "var(--gold)", marginBottom: 20 }}>Valuation Preview</h3>
         {estimate === null ? (
           <>
             <p className="body-lg" style={{ color: "var(--light)", marginBottom: 16 }}>Your estimate will appear here.</p>
