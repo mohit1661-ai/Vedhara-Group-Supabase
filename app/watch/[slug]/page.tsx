@@ -67,6 +67,15 @@ export default async function WatchVideoPage({ params }: { params: Promise<{ slu
             <source src={mediaUrl} type="video/mp4" />
             Your browser does not support HTML video.
           </video>
+          <section style={{ maxWidth: 780, marginTop: 36 }}>
+            <h2 className="heading-lg" style={{ color: "var(--navy)", marginBottom: 12 }}>About this film</h2>
+            <p className="body-md" style={{ color: "var(--navy)", opacity: 0.78, lineHeight: 1.75 }}>
+              This Vedhara Group film gives buyers, sellers, investors and NRI clients a clear view of how independent property advisory works in practice. The video is part of our resource library for Delhi NCR, Chandigarh Tricity and North India, where local market knowledge and document-led verification matter before a property decision is made.
+            </p>
+            <p className="body-md" style={{ color: "var(--navy)", opacity: 0.78, lineHeight: 1.75 }}>
+              Watch the complete film above, then explore our <a href="/verification-center" style={{ color: "var(--gold)", textDecoration: "underline" }}>Verification Framework</a> or <a href="/contact" style={{ color: "var(--gold)", textDecoration: "underline" }}>book a free consultation</a> for advice matched to your goals, location and timeline.
+            </p>
+          </section>
         </article>
       </main>
     </>
