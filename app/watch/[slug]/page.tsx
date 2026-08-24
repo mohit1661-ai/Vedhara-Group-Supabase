@@ -1,0 +1,74 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import JsonLd from "@/components/seo/JsonLd";
+import { videoSlug, watchVideos, VIDEOS_BASE_URL as BASE, VIDEOS_UPLOAD_DATE as UPLOAD_DATE } from "@/lib/data/videos";
+
+const enc = (value: string) => encodeURI(value);
+
+export function generateStaticParams() {
+  return watchVideos.map((video) => ({ slug: videoSlug(video.file) }));
+}
+
+function getVideo(slug: string) {
+  return watchVideos.find((video) => videoSlug(video.file) === slug);
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const video = getVideo(slug);
+  if (!video) return {};
+
+  const url = `${BASE}/watch/${slug}`;
+  return {
+    title: video.title,
+    description: video.desc,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "video.other",
+      url,
+      title: video.title,
+      description: video.desc,
+      images: [{ url: `${BASE}/watch/${enc(`thumb-${video.file.replace(/\.mp4$/i, "")}.jpg`)}`, alt: video.title }],
+      videos: [{ url: `${BASE}/watch/${enc(video.file)}`, type: "video/mp4" }],
+    },
+  };
+}
+
+export default async function WatchVideoPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const video = getVideo(slug);
+  if (!video) notFound();
+
+  const url = `${BASE}/watch/${slug}`;
+  const mediaUrl = `${BASE}/watch/${enc(video.file)}`;
+  const thumbnailUrl = `${BASE}/watch/${enc(`thumb-${video.file.replace(/\.mp4$/i, "")}.jpg`)}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.title,
+    description: video.desc,
+    thumbnailUrl,
+    uploadDate: UPLOAD_DATE,
+    contentUrl: mediaUrl,
+    embedUrl: url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    publisher: { "@type": "Organization", name: "Vedhara Group", url: BASE },
+  };
+
+  return (
+    <>
+      <JsonLd data={jsonLd} />
+      <main style={{ background: "var(--cream)", minHeight: "70vh", padding: "96px 32px" }}>
+        <article style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <p className="eyebrow" style={{ color: "var(--gold)", marginBottom: 14 }}>Vedhara Group Film</p>
+          <h1 className="heading-xl" style={{ color: "var(--navy)", maxWidth: 800, marginBottom: 18 }}>{video.title}</h1>
+          <p className="body-lg" style={{ color: "var(--navy)", opacity: 0.75, maxWidth: 760, marginBottom: 32 }}>{video.desc}</p>
+          <video controls preload="metadata" poster={thumbnailUrl} title={video.title} style={{ display: "block", width: "100%", maxHeight: "70vh", background: "#000", borderRadius: 10 }}>
+            <source src={mediaUrl} type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+        </article>
+      </main>
+    </>
+  );
+}

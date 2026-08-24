@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd from "@/components/seo/JsonLd";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
-import { watchVideos, VIDEOS_BASE_URL as BASE, VIDEOS_UPLOAD_DATE as UPLOAD_DATE } from "@/lib/data/videos";
+import { watchVideos, videoSlug, VIDEOS_BASE_URL as BASE, VIDEOS_UPLOAD_DATE as UPLOAD_DATE } from "@/lib/data/videos";
 
 export const metadata: Metadata = {
   title: "Delhi NCR Real Estate Videos",
@@ -23,10 +23,11 @@ const jsonLd = {
       "@type":"VideoObject",
       name: v.title,
       description: v.desc,
+      url: `${BASE}/watch/${videoSlug(v.file)}`,
       thumbnailUrl: `${BASE}/watch/${enc(`thumb-${v.file.replace(/\.mp4$/,"")}.jpg`)}`,
       uploadDate: UPLOAD_DATE,
       contentUrl: `${BASE}/watch/${enc(v.file)}`,
-      embedUrl: `${BASE}/videos`,
+      embedUrl: `${BASE}/watch/${videoSlug(v.file)}`,
     },
   })),
 };

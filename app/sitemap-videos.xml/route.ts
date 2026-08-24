@@ -1,4 +1,4 @@
-import { watchVideos, VIDEOS_BASE_URL, VIDEOS_UPLOAD_DATE } from "@/lib/data/videos";
+import { watchVideos, videoSlug, VIDEOS_BASE_URL, VIDEOS_UPLOAD_DATE } from "@/lib/data/videos";
 
 /**
  * Google video sitemap for the /videos watch page. All content and thumbnail
@@ -16,22 +16,22 @@ export function GET() {
     .map((v) => {
       const thumb = `${VIDEOS_BASE_URL}/watch/${encodeURIComponent(`thumb-${v.file.replace(/\.mp4$/, "")}.jpg`)}`;
       const content = `${VIDEOS_BASE_URL}/watch/${encodeURIComponent(v.file)}`;
-      return `    <video:video>
+      return `  <url>
+    <loc>${VIDEOS_BASE_URL}/watch/${videoSlug(v.file)}</loc>
+    <video:video>
       <video:thumbnail_loc>${thumb}</video:thumbnail_loc>
       <video:title>${esc(v.title)}</video:title>
       <video:description>${esc(v.desc)}</video:description>
       <video:content_loc>${content}</video:content_loc>
       <video:publication_date>${VIDEOS_UPLOAD_DATE}</video:publication_date>
-    </video:video>`;
+    </video:video>
+  </url>`;
     })
     .join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  <url>
-    <loc>${VIDEOS_BASE_URL}/videos</loc>
 ${entries}
-  </url>
 </urlset>`;
 
   return new Response(xml, {

@@ -13,6 +13,9 @@ export interface WatchVideo {
   desc: string;
 }
 
+export const videoSlug = (file: string) =>
+  file.replace(/\.mp4$/i, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 export const watchVideos: WatchVideo[] = [
   { file:"Homepage Hero Video Real Estate Advisory in Gurgaon Delhi NCR.mp4", title:"Vedhara Group Verified Property Advisory", desc:"Our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
   { file:"Homepage Hero Video Desktop.mp4", title:"Vedhara Group Verified Property Advisory", desc:"Our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
