@@ -92,23 +92,23 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating button — always above everything */}
+      {/* Floating button — bright gold with white icon */}
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close chat" : "Open chat"}
         className="chat-widget-btn"
         style={{
           position: "fixed",
-          bottom: "max(24px, calc(64px + env(safe-area-inset-bottom, 0px)))",
+          bottom: 24,
           right: 20,
           zIndex: 10000,
-          width: 56,
-          height: 56,
+          width: 48,
+          height: 48,
           borderRadius: "50%",
           border: "none",
           cursor: "pointer",
           background: "linear-gradient(135deg, var(--gold), var(--gold-lt))",
-          boxShadow: "0 6px 28px rgba(212,168,67,0.5), 0 0 0 3px rgba(212,168,67,0.15)",
+          boxShadow: "0 4px 20px rgba(212,168,67,0.5)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -117,20 +117,20 @@ export default function ChatWidget() {
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "scale(1.1)";
-          e.currentTarget.style.boxShadow = "0 8px 36px rgba(212,168,67,0.6), 0 0 0 4px rgba(212,168,67,0.2)";
+          e.currentTarget.style.boxShadow = "0 6px 28px rgba(212,168,67,0.65)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.boxShadow = "0 6px 28px rgba(212,168,67,0.5), 0 0 0 3px rgba(212,168,67,0.15)";
+          e.currentTarget.style.boxShadow = "0 4px 20px rgba(212,168,67,0.5)";
         }}
       >
         {open ? (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" strokeWidth="2.5" strokeLinecap="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
         )}
@@ -142,38 +142,38 @@ export default function ChatWidget() {
           className="chat-widget-panel"
           style={{
             position: "fixed",
-            bottom: "max(92px, calc(132px + env(safe-area-inset-bottom, 0px)))",
+            bottom: 84,
             right: 20,
             zIndex: 10000,
-            width: 400,
+            width: 380,
             maxWidth: "calc(100vw - 40px)",
-            height: 560,
-            maxHeight: "calc(100vh - 180px)",
-            borderRadius: 18,
+            height: 480,
+            maxHeight: "calc(100vh - 140px)",
+            borderRadius: 16,
             overflow: "hidden",
             display: "flex",
             flexDirection: "column",
             background: "var(--cream)",
             border: "1px solid rgba(212,168,67,0.25)",
-            boxShadow: "0 24px 80px rgba(9,15,29,0.35), 0 0 0 1px rgba(212,168,67,0.1)",
+            boxShadow: "0 20px 60px rgba(9,15,29,0.3), 0 0 0 1px rgba(212,168,67,0.1)",
             fontFamily: "var(--t-body)",
           }}
         >
-          {/* Header */}
+          {/* Header — always visible, contains close button */}
           <div
             style={{
-              padding: "16px 20px",
+              padding: "12px 14px",
               background: "var(--navy)",
               display: "flex",
               alignItems: "center",
-              gap: 12,
+              gap: 10,
               flexShrink: 0,
             }}
           >
             <div
               style={{
-                width: 38,
-                height: 38,
+                width: 32,
+                height: 32,
                 borderRadius: "50%",
                 background: "linear-gradient(135deg, var(--gold), var(--gold-lt))",
                 display: "flex",
@@ -182,16 +182,16 @@ export default function ChatWidget() {
                 flexShrink: 0,
               }}
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
             </div>
-            <div>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <p
                 style={{
                   margin: 0,
                   fontFamily: "var(--t-head)",
-                  fontSize: 13,
+                  fontSize: 12,
                   fontWeight: 700,
                   color: "var(--gold-lt)",
                   letterSpacing: "0.02em",
@@ -202,14 +202,39 @@ export default function ChatWidget() {
               <p
                 style={{
                   margin: 0,
-                  fontSize: 10.5,
+                  fontSize: 10,
                   color: "rgba(255,255,255,0.5)",
                   fontWeight: 500,
                 }}
               >
-                AI-powered &middot; Typically replies instantly
+                AI-powered &middot; Replies instantly
               </p>
             </div>
+            {/* Close button in header — always accessible */}
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: "50%",
+                border: "1px solid rgba(255,255,255,0.2)",
+                background: "rgba(255,255,255,0.08)",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
           </div>
 
           {/* Messages */}
@@ -218,10 +243,10 @@ export default function ChatWidget() {
             style={{
               flex: 1,
               overflowY: "auto",
-              padding: "16px",
+              padding: "14px",
               display: "flex",
               flexDirection: "column",
-              gap: 10,
+              gap: 8,
               background: "var(--cream)",
             }}
           >
@@ -236,11 +261,11 @@ export default function ChatWidget() {
                 <div
                   style={{
                     maxWidth: "82%",
-                    padding: "10px 14px",
-                    borderRadius: m.role === "user" ? "14px 14px 4px 14px" : "14px 14px 14px 4px",
+                    padding: "9px 12px",
+                    borderRadius: m.role === "user" ? "12px 12px 4px 12px" : "12px 12px 12px 4px",
                     fontFamily: "var(--t-body)",
-                    fontSize: 12.5,
-                    lineHeight: 1.65,
+                    fontSize: 12,
+                    lineHeight: 1.6,
                     color: m.role === "user" ? "var(--navy)" : "var(--ink)",
                     background:
                       m.role === "user"
@@ -262,12 +287,12 @@ export default function ChatWidget() {
               <div style={{ display: "flex", justifyContent: "flex-start" }}>
                 <div
                   style={{
-                    padding: "12px 16px",
-                    borderRadius: "14px 14px 14px 4px",
+                    padding: "10px 14px",
+                    borderRadius: "12px 12px 12px 4px",
                     background: "white",
                     boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
                     display: "flex",
-                    gap: 5,
+                    gap: 4,
                     alignItems: "center",
                   }}
                 >
@@ -275,8 +300,8 @@ export default function ChatWidget() {
                     <span
                       key={d}
                       style={{
-                        width: 6,
-                        height: 6,
+                        width: 5,
+                        height: 5,
                         borderRadius: "50%",
                         background: "var(--gold)",
                         animation: "chatDot 1.2s infinite",
@@ -289,22 +314,22 @@ export default function ChatWidget() {
             )}
           </div>
 
-          {/* Quick replies — only show when no user messages yet */}
+          {/* Quick replies — only at start */}
           {messages.length <= 1 && (
             <div
               style={{
-                padding: "0 16px 12px",
+                padding: "0 14px 10px",
                 display: "flex",
                 flexDirection: "column",
-                gap: 6,
+                gap: 5,
                 background: "var(--cream)",
               }}
             >
               <p
                 style={{
-                  margin: "0 0 4px",
+                  margin: "0 0 3px",
                   fontFamily: "var(--t-head)",
-                  fontSize: 9,
+                  fontSize: 8.5,
                   fontWeight: 700,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
@@ -313,18 +338,18 @@ export default function ChatWidget() {
               >
                 Quick questions
               </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
                 {QUICK_REPLIES.map((q) => (
                   <button
                     key={q.label}
                     onClick={() => send(q.query)}
                     style={{
                       fontFamily: "var(--t-head)",
-                      fontSize: 10,
+                      fontSize: 9.5,
                       fontWeight: 600,
                       letterSpacing: "0.02em",
-                      padding: "7px 12px",
-                      borderRadius: 20,
+                      padding: "6px 10px",
+                      borderRadius: 18,
                       border: "1px solid rgba(212,168,67,0.3)",
                       background: "white",
                       color: "var(--gold-ink)",
@@ -353,10 +378,10 @@ export default function ChatWidget() {
           {/* Input */}
           <div
             style={{
-              padding: "12px 16px",
+              padding: "10px 14px",
               borderTop: "1px solid rgba(212,168,67,0.15)",
               display: "flex",
-              gap: 8,
+              gap: 6,
               alignItems: "center",
               background: "white",
               flexShrink: 0,
@@ -367,14 +392,14 @@ export default function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKey}
-              placeholder="Ask about properties, pricing..."
+              placeholder="Ask about properties..."
               disabled={loading}
               style={{
                 flex: 1,
                 fontFamily: "var(--t-body)",
-                fontSize: 12.5,
-                padding: "10px 14px",
-                borderRadius: 10,
+                fontSize: 12,
+                padding: "8px 12px",
+                borderRadius: 8,
                 border: "1px solid rgba(212,168,67,0.2)",
                 outline: "none",
                 background: "var(--cream)",
@@ -389,9 +414,9 @@ export default function ChatWidget() {
               disabled={loading || !input.trim()}
               aria-label="Send message"
               style={{
-                width: 40,
-                height: 40,
-                borderRadius: 10,
+                width: 34,
+                height: 34,
+                borderRadius: 8,
                 border: "none",
                 cursor: loading || !input.trim() ? "default" : "pointer",
                 background:
@@ -406,7 +431,7 @@ export default function ChatWidget() {
                 opacity: loading || !input.trim() ? 0.5 : 1,
               }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={loading || !input.trim() ? "var(--slate)" : "var(--navy)"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={loading || !input.trim() ? "var(--slate)" : "var(--navy)"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
@@ -421,13 +446,23 @@ export default function ChatWidget() {
           40% { transform: scale(1); opacity: 1; }
         }
         @media (max-width: 640px) {
+          .chat-widget-btn {
+            width: 40px !important;
+            height: 40px !important;
+            right: 14px !important;
+            bottom: 18px !important;
+          }
+          .chat-widget-btn svg {
+            width: 16px !important;
+            height: 16px !important;
+          }
           .chat-widget-panel {
-            right: 10px !important;
-            left: 10px !important;
+            right: 8px !important;
+            left: 8px !important;
             width: auto !important;
             maxWidth: none !important;
-            bottom: 80px !important;
-            height: calc(100vh - 160px) !important;
+            bottom: 68px !important;
+            height: 60vh !important;
             max-height: none !important;
             border-radius: 14px !important;
           }
