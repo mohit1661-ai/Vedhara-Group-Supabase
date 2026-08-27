@@ -13,6 +13,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { writeLead, generateId, type Lead } from "@/lib/leads";
+import { sendLeadNotification } from "@/lib/email";
+
+/* ── IST business hours (10 AM – 7 PM) ───────────────────────── */
+const BUSINESS_OPEN_HOUR = 10;
+const BUSINESS_CLOSE_HOUR = 19;
+
+// Returns true if current IST time is within business hours (10:00–19:00)
+function isBusinessHours(now: Date): boolean {
+  const ist = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Kolkata",
+    hour: "numeric",
+    hour12: false,
+  }).formatToParts(now);
+  const hour = parseInt(ist.find((p) => p.type === "hour")?.value || "0", 10);
+  return hour >= BUSINESS_OPEN_HOUR && hour < BUSINESS_CLOSE_HOUR;
+}
+
+const AFTER_HOURS_MESSAGE =
+  "We're currently away (business hours are 10 AM to 7 PM IST, Mon–Sun). Our team would love to help you.\n\nPlease share your name and phone number and we'll get back to you first thing tomorrow morning.\n\nFor urgent help you can reach us at 📞 +91-98106-47063 or ✉️ contact@vedharagroup.com.";
 
 /* ── Rate limiting ──────────────────────────────────────────── */
 const chatStore = new Map<string, { count: number; resetAt: number }>();
@@ -32,57 +51,119 @@ function isChatRateLimited(ip: string): boolean {
 }
 
 /* ── Lead detection ─────────────────────────────────────────── */
+// Only scans the LATEST user message so we don't re-capture the same details
+// mentioned earlier in the transcript on every follow-up turn.
 function detectLeadInfo(messages: { role: string; content: string }[]): {
   name?: string; phone?: string; email?: string;
 } | null {
-  const allText = messages.filter((m) => m.role === "user").map((m) => m.content).join(" ");
-  const phoneMatch = allText.match(/(?:\+91|91|0)?[6-9]\d{9}/);
-  const emailMatch = allText.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+  const text = [...messages].reverse().find((m) => m.role === "user")?.content || "";
+  if (!text) return null;
+  const phoneMatch = text.match(/(?:\+91[\s-]?|91)?[6-9]\d{9}/);
+  const emailMatch = text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
   const namePatterns = [
-    /(?:my name is|i am|i'm|call me|i'm called)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/i,
-    /(?:name[:\s]+)([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/i,
+    /(?:my name is|i am|i'm|call me|i'm called|this is)\s+([A-Za-z][a-z]+(?:\s+[A-Z][a-z]+)?)/,
+    /(?:name[:\s]+)([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/,
   ];
   let name: string | undefined;
-  for (const p of namePatterns) { const m = allText.match(p); if (m) { name = m[1].trim(); break; } }
+  for (const p of namePatterns) { const m = text.match(p); if (m) { name = m[1].trim(); break; } }
   if (!phoneMatch && !emailMatch && !name) return null;
-  return { name, phone: phoneMatch?.[0], email: emailMatch?.[0] };
+  return { name, phone: phoneMatch?.[0]?.replace(/[\s-]/g, ""), email: emailMatch?.[0] };
+}
+
+// De-dupe: avoid saving + emailing the same contact repeatedly within one hour.
+const notifiedLeads = new Map<string, number>();
+const LEAD_DEDUPE_TTL = 60 * 60 * 1000;
+
+function isDuplicateLead(phone?: string, email?: string): boolean {
+  const key = `${phone || ""}|${email || ""}`.toLowerCase();
+  if (key === "|") return false;
+  const now = Date.now();
+  // Purge expired entries
+  for (const [k, t] of notifiedLeads) if (now - t > LEAD_DEDUPE_TTL) notifiedLeads.delete(k);
+  if (notifiedLeads.has(key)) return true;
+  notifiedLeads.set(key, now);
+  return false;
 }
 
 /* ════════════════════════════════════════════════════════════════
    LOCAL KNOWLEDGE BASE — answers without OpenAI
    ════════════════════════════════════════════════════════════════ */
 
-const LISTINGS_Gurugram = [
-  { n:"HQ27 Premium Commercial Building", l:"Near IFFCO Chowk & HUDA City Centre Metro", p:"₹2,250 Cr", d:"Grade-A Commercial + Mall, 16 Floors + 3 Basements, ~6 Lakh sq.ft. Leasable, Rent ₹11.5 Cr/mo, 3 Acres, Managed by Bharti, Near NH-48 & IGI Airport" },
-  { n:"Rented Bank Property, Sector 76", l:"DLF Phase 6", p:"₹2.22 Cr", d:"6 Ground-Floor Shops, 10-Yr Bank Lease, Rent ₹2.22 Lakh/mo, Next to DLF Privana" },
-  { n:"3 Kay Plotted Residence", l:"DLF Phase 1", p:"₹25 Cr", d:"490 sq.yds." },
-  { n:"Fully Furnished Pre-Rented Building", l:"Sector 32", p:"₹200 Cr", d:"1,25,000 sq.ft. Leased, Rent ₹1.17 Cr/mo, Single Tenant" },
-  { n:"Sector 15 Duplex Kothi", l:"Sector 15 Part 2", p:"₹18 Cr", d:"502 sq.yds., 4 BHK + Servant Quarter" },
-  { n:"NH-8 Facing Plot", l:"Sector 15 Part 2", p:"₹18.50 Cr", d:"500 sq.yds." },
-  { n:"Commercial Building, Udyog Vihar 5", l:"Udyog Vihar Phase 5", p:"₹40 Cr", d:"1,000 sq.m." },
-  { n:"MG Road Commercial Building", l:"Sector 16", p:"₹25 Cr", d:"1,000 sq.m." },
-  { n:"One Golf Course Penthouse", l:"Golf Course Road", p:"₹12.80 Cr", d:"5 BHK + Pool, 4,200 sq.ft." },
-  { n:"Amaryllis Residences", l:"Golf Course Road", p:"₹6.20 Cr", d:"3 BHK + Servant, 2,150 sq.ft., Possession Dec 2026" },
-  { n:"One Golden Mile", l:"Sector 62", p:"₹8.50 Cr", d:"4,500 sq.ft. Office, LEED Platinum" },
-  { n:"Platinum Towers", l:"Dwarka Expressway", p:"₹2.95 Cr", d:"3 BHK, Possession Dec 2026" },
-];
-
-const LISTINGS_Noida = [
-  { n:"Ajnara Damsaz", p:"₹55 Lakh", d:"2 BHK, 1,095 sq.ft." },
-  { n:"Ajnara Le Garden", p:"₹58 Lakh", d:"2 BHK, 1,115 sq.ft." },
-  { n:"Exotica Blossom", p:"₹72 Lakh", d:"3 BHK, 1,390 sq.ft." },
-  { n:"Ajnara Integrity", p:"₹68 Lakh", d:"3 BHK, 1,625 sq.ft." },
-  { n:"Ajnara Homes", p:"₹48 Lakh", d:"2 BHK, 975 sq.ft." },
-];
-
-const LISTINGS_OTHER = [
-  { n:"Hero Homes", l:"Mohali", p:"₹76 Lakh", d:"2 & 3 BHK" },
-  { n:"Pre-Leased Industrial Estate", l:"Ghiloth, Neemrana", p:"₹250 Cr", d:"20 Acres, MNC Tenant" },
-  { n:"Laxman Public School", l:"Hauz Khas, South Delhi", p:"₹450 Cr", d:"8.5 Acres, Institutional" },
-];
-
 function matchKeywords(q: string, words: string[]): boolean {
   return words.some((w) => q.includes(w));
+}
+
+// Map a listing name to its detail string and page URL on the site.
+const LISTING_URLS: { keys: string[]; name: string; detail: string; url: string }[] = [
+  { keys:["hq27","hq 27","premium commercial building"], name:"HQ27 Premium Commercial Building",
+    detail:"HQ27 Premium Commercial Building — Near IFFCO Chowk & HUDA City Centre Metro, Gurugram.\n• Asking Price: ₹2,250 Cr\n• Type: Grade-A Commercial Building + Mall\n• 16 Floors + 3 Basements, ~6 Lakh sq.ft. Leasable\n• Land: 3 Acres, rising 280 ft high\n• Current Rent: ₹11.5 Cr/month (expected ₹13 Cr soon)\n• Projected Annual Income: ₹150 Cr\n• Office ~5 Lakh sq.ft. leased @ ₹160/sq.ft.\n• Retail & F&B ~1 Lakh sq.ft. pending lease\n• Managed by Bharti\n• Connectivity: NH-48, Golf Course Road, IGI Airport",
+    url:"https://www.vedharagroup.com/gurugram" },
+  { keys:["rented bank","bank property","sector 76","dlf phase 6"], name:"Rented Bank Property, Sector 76",
+    detail:"Rented Bank Property, Sector 76 — DLF Phase 6, Gurugram.\n• Price: ₹2.22 Cr\n• 6 Ground-Floor Shops\n• Fresh 10-Yr Bank Lease\n• Rent: ₹2.22 Lakh/month @ ₹88/sq.ft.\n• Size: 2,520 sq.ft.\n• Next to DLF Privana, Proposed Cyber City 2",
+    url:"https://www.vedharagroup.com/gurugram" },
+  { keys:["3 kay","plotted residence","dlf phase 1"], name:"3 Kay Plotted Residence",
+    detail:"3 Kay Plotted Residence — DLF Phase 1, Gurugram.\n• Price: ₹25 Cr\n• Plot A2/6, 490 sq.yds.\n• Prime location, ready to build",
+    url:"https://www.vedharagroup.com/gurugram" },
+  { keys:["pre-rented building","sector 32","fully furnished"], name:"Fully Furnished Pre-Rented Building, Sector 32",
+    detail:"Fully Furnished Pre-Rented Building — Sector 32, Gurugram.\n• Price: ₹200 Cr\n• 1,25,000 sq.ft. Leased\n• Rent: ₹1.17 Cr/month\n• Single Reputed Tenant\n• B2 + 5 Floors\n• New Lease with 3-Yr Lock-in",
+    url:"https://www.vedharagroup.com/commercial" },
+  { keys:["one golf course","golf course penthouse"], name:"One Golf Course Penthouse",
+    detail:"One Golf Course Penthouse — Golf Course Road, Gurugram.\n• Price: ₹12.80 Cr\n• 5 BHK + Pool, 4,200 sq.ft.\n• HRERA Registered, Panoramic view, Private terrace, Butler service",
+    url:"https://www.vedharagroup.com/luxury" },
+  { keys:["amaryllis"], name:"Amaryllis Residences",
+    detail:"Amaryllis Residences — Golf Course Road, Gurugram.\n• Price: ₹6.20 Cr\n• 3 BHK + Servant, 2,150 sq.ft.\n• HRERA Registered, Corner unit, Private terrace, Smart home\n• Possession Dec 2026",
+    url:"https://www.vedharagroup.com/luxury" },
+  { keys:["one golden mile"], name:"One Golden Mile",
+    detail:"One Golden Mile — Sector 62, Gurugram.\n• Price: ₹8.50 Cr\n• 4,500 sq.ft. Office\n• LEED Platinum, 24hr security, 100+ car parking",
+    url:"https://www.vedharagroup.com/commercial" },
+  { keys:["platinum towers"], name:"Platinum Towers",
+    detail:"Platinum Towers — Dwarka Expressway, Gurugram.\n• Price: ₹2.95 Cr\n• 3 BHK, 1,650 sq.ft.\n• HRERA Registered, Metro proximity, 85% open area\n• Possession Dec 2026",
+    url:"https://www.vedharagroup.com/gurugram" },
+  { keys:["udyog vihar"], name:"Commercial Building, Udyog Vihar 5",
+    detail:"Commercial Building — Udyog Vihar Phase 5, Gurugram.\n• Price: ₹40 Cr\n• 1,000 sq.m., 40,000 sq.ft. built-up\n• Established commercial zone",
+    url:"https://www.vedharagroup.com/commercial" },
+  { keys:["mg road","sector 16"], name:"MG Road Commercial Building",
+    detail:"MG Road Commercial Building — Sector 16, Gurugram.\n• Price: ₹25 Cr\n• 1,000 sq.m.\n• MG Road, opp. Sector 14, prime commercial corridor",
+    url:"https://www.vedharagroup.com/commercial" },
+  { keys:["sector 15 duplex","duplex kothi"], name:"Sector 15 Duplex Kothi",
+    detail:"Sector 15 Duplex Kothi — Sector 15 Part 2, Gurugram.\n• Price: ₹18 Cr\n• 4 BHK + Servant Quarter, 502 sq.yds.\n• Prime sector, NH-8 connectivity",
+    url:"https://www.vedharagroup.com/luxury" },
+  { keys:["nh-8 facing plot","sector 15 plot"], name:"NH-8 Facing Plot, Sector 15",
+    detail:"NH-8 Facing Plot — Sector 15 Part 2, Gurugram.\n• Price: ₹18.50 Cr\n• 500 sq.yds., Main NH-8 facing, Green belt facing",
+    url:"https://www.vedharagroup.com/gurugram" },
+  { keys:["ajnara homes"], name:"Ajnara Homes",
+    detail:"Ajnara Homes — Noida.\n• Price: ₹48 Lakh\n• 2 BHK, 975 sq.ft.",
+    url:"https://www.vedharagroup.com/noida" },
+  { keys:["ajnara damsaz"], name:"Ajnara Damsaz",
+    detail:"Ajnara Damsaz — Noida.\n• Price: ₹55 Lakh\n• 2 BHK, 1,095 sq.ft.",
+    url:"https://www.vedharagroup.com/noida" },
+  { keys:["ajnara le garden"], name:"Ajnara Le Garden",
+    detail:"Ajnara Le Garden — Noida.\n• Price: ₹58 Lakh\n• 2 BHK, 1,115 sq.ft.",
+    url:"https://www.vedharagroup.com/noida" },
+  { keys:["ajnara integrity"], name:"Ajnara Integrity",
+    detail:"Ajnara Integrity — Noida.\n• Price: ₹68 Lakh\n• 3 BHK, 1,625 sq.ft.",
+    url:"https://www.vedharagroup.com/noida" },
+  { keys:["exotica blossom"], name:"Exotica Blossom",
+    detail:"Exotica Blossom — Noida.\n• Price: ₹72 Lakh\n• 3 BHK, 1,390 sq.ft.",
+    url:"https://www.vedharagroup.com/noida" },
+  { keys:["hero homes"], name:"Hero Homes",
+    detail:"Hero Homes — Mohali, Chandigarh Tricity.\n• Price: ₹76 Lakh\n• 2 & 3 BHK",
+    url:"https://www.vedharagroup.com/tricity" },
+  { keys:["laxman public school"], name:"Laxman Public School",
+    detail:"Laxman Public School — Hauz Khas Enclave, South Delhi.\n• Price: ₹450 Cr\n• 8.5 Acres, Institutional • Nursery–12th CBSE, 4,400 students",
+    url:"https://www.vedharagroup.com/commercial" },
+  { keys:["neemrana","industrial estate","ghiloth"], name:"Pre-Leased Industrial Estate, Neemrana",
+    detail:"Pre-Leased Industrial Estate — Ghiloth, Neemrana.\n• Price: ₹250 Cr\n• 20-Acre approved industrial plot\n• 6.5 Lakh sq.ft. shed area, top MNC tenant\n• Rent: ₹1.60 Cr/month",
+    url:"https://www.vedharagroup.com/commercial" },
+];
+
+function findListingDetail(allUserLower: string): string | null {
+  for (const item of LISTING_URLS) {
+    if (item.keys.some((k) => allUserLower.includes(k))) {
+      return `Here are the details of ${item.name}:\n\n${item.detail}\n\nView it on our website: ${item.url}\n\nAll prices are asking prices (negotiable). Would you like to schedule a site visit? You can call +91-98106-47063.`;
+    }
+  }
+  return null;
 }
 
 function buildLocalAnswer(messages: { role: string; content: string }[]): string {
@@ -173,6 +254,14 @@ function buildLocalAnswer(messages: { role: string; content: string }[]): string
     return "Top investment areas we recommend:\n\nGurugram:\n• Dwarka Expressway — new launches, strong appreciation\n• Golf Course Road — premium, stable returns\n• Sector 76–82 — affordable commercial with rental income\n\nNoida:\n• Expressway corridor — infrastructure growth\n• Greater Noida West — affordable housing demand\n\nFaridabad: Sectors 79–89 — emerging zone\nChandigarh: Mohali — IT hub growth\n\nWe provide independent investment advisory with ROI projections. Call +91-98106-47063 for a personalized plan.";
   }
 
+  // ── Specific listing detail (name → details + URL) ──
+  {
+    // Search both user's latest message and any prior user messages for a known listing name
+    const allUser = messages.filter((m) => m.role === "user").map((m) => m.content).join(" ").toLowerCase();
+    const detail = findListingDetail(allUser);
+    if (detail) return detail;
+  }
+
   // Gurugram listings
   if (matchKeywords(q, ["gurugram","gurgaon","dlf","sector","udyog vihar","mg road","golf course","dwarka expressway","iffco"])) {
     return "Gurugram listings:\n1. HQ27 Premium Commercial — ₹2,250 Cr\n2. Rented Bank Property, Sector 76 — ₹2.22 Cr\n3. 3 Kay Plotted Residence — ₹25 Cr\n4. Pre-Rented Building, Sector 32 — ₹200 Cr\n5. Sector 15 Duplex Kothi — ₹18 Cr\n6. NH-8 Facing Plot — ₹18.50 Cr\n7. Commercial Building, Udyog Vihar — ₹40 Cr\n8. MG Road Commercial — ₹25 Cr\n9. One Golf Course Penthouse — ₹12.80 Cr\n10. Amaryllis Residences — ₹6.20 Cr\n11. One Golden Mile — ₹8.50 Cr\n12. Platinum Towers — ₹2.95 Cr\n\nWhich one interests you?";
@@ -239,8 +328,12 @@ function buildLocalAnswer(messages: { role: string; content: string }[]): string
   }
 
   // Fallback
-  return "I'd be happy to help! I can assist with:\n• Property listings in Gurugram, Noida, Faridabad, Chandigarh\n• Commercial properties (offices, shops, pre-rented)\n• Investment advice for Delhi NCR\n• Buy/sell process and pricing\n• NRI services\n\nWhat are you looking for? Or call +91-98106-47063 for immediate help.";
+  return KB_FALLBACK;
 }
+
+// Returned by the knowledge base when nothing matches — used as signal to try OpenAI.
+const KB_FALLBACK =
+  "I'd be happy to help! I can assist with:\n• Property listings in Gurugram, Noida, Faridabad, Chandigarh\n• Commercial properties (offices, shops, pre-rented)\n• Investment advice for Delhi NCR\n• Buy/sell process and pricing\n• NRI services\n\nWhat are you looking for? Or call +91-98106-47063 for immediate help.";
 
 /* ════════════════════════════════════════════════════════════════
    SYSTEM PROMPT (for OpenAI)
@@ -303,10 +396,23 @@ Noida: Expressway corridor, Greater Noida West (affordable)
 Faridabad: Sectors 79–89 (emerging)
 Chandigarh: Mohali (IT hub), Zirakpur (residential)
 
+## Listing Page URLs (share when user wants details)
+- Gurugram listings: https://www.vedharagroup.com/gurugram
+- Noida listings: https://www.vedharagroup.com/noida
+- Commercial/industrial/institutional: https://www.vedharagroup.com/commercial
+- Luxury (penthouse, kothi, DLF Phase 1): https://www.vedharagroup.com/luxury
+- Tricity/Mohali: https://www.vedharagroup.com/tricity
+
+## Business Hours
+- Chat advisor availability: 10 AM – 7 PM IST, all days
+- Outside hours the system itself replies with an away message — you will not be called then.
+
 ## Rules
 - Be friendly, concise (under 120 words)
 - Use specific listing data with names and prices
+- When a user asks for details of a specific listing, give full details AND its page URL from "Listing Page URLs"
 - Prices are asking prices, negotiable
+- If users share name/phone/email, confirm warmly that our team will contact them (details go to contact@vedharagroup.com)
 - End with a follow-up question
 - Contact: +91-98106-47063, contact@vedharagroup.com`;
 }
@@ -341,10 +447,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid message format" }, { status: 400 });
   }
 
-  // Detect lead info
+  // Detect lead info (from the latest user message only)
   const leadInfo = detectLeadInfo(messages);
   let leadCaptured = false;
-  if (leadInfo && (leadInfo.phone || leadInfo.email)) {
+  if (leadInfo && (leadInfo.phone || leadInfo.email) && !isDuplicateLead(leadInfo.phone, leadInfo.email)) {
     const lead: Lead = {
       id: generateId(),
       full_name: leadInfo.name || "Chat User",
@@ -357,10 +463,56 @@ export async function POST(req: NextRequest) {
       user_agent: req.headers.get("user-agent") || undefined,
       created_at: new Date().toISOString(),
     };
-    try { await writeLead(lead); leadCaptured = true; } catch (err) { console.error("[Chatbot lead save failed]", err); }
+    try {
+      await writeLead(lead);
+      leadCaptured = true;
+      // Also email the lead to the team (contact@vedharagroup.com) like consultation forms
+      await sendLeadNotification(lead);
+    } catch (err) { console.error("[Chatbot lead save failed]", err); }
   }
 
-  // Layer 2: Local knowledge base (always works, context-aware)
-  const reply = buildLocalAnswer(messages);
-  return NextResponse.json({ reply, leadCaptured });
+  // If it's outside business hours, respond with the away message (unless we already
+  // captured contact details so the team can follow up).
+  if (!isBusinessHours(new Date())) {
+    return NextResponse.json({
+      reply: leadCaptured
+        ? "Thank you! We've noted your details and our team will contact you tomorrow during business hours (10 AM – 7 PM IST). For urgent help, call +91-98106-47063."
+        : AFTER_HOURS_MESSAGE,
+      leadCaptured,
+    });
+  }
+
+  // Confirmation note appended whenever we captured fresh contact details
+  const captureNote = leadCaptured
+    ? "\n\n✅ Noted your details — our team will reach out shortly. You can also call +91-98106-47063."
+    : "";
+
+  // Layer 1: Local knowledge base (always works, context-aware, includes listing URLs)
+  const localReply = buildLocalAnswer(messages);
+
+  // Layer 2: If the KB didn't match anything, try OpenAI for free-form questions
+  if (localReply === KB_FALLBACK) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (apiKey) {
+      try {
+        const openai = new OpenAI({ apiKey });
+        const chatMessages = [
+          { role: "system" as const, content: buildSystemPrompt() },
+          ...messages.slice(-20).map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
+        ];
+        const completion = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
+          messages: chatMessages,
+          max_tokens: 800,
+          temperature: 0.7,
+        });
+        const aiReply = completion.choices[0]?.message?.content;
+        if (aiReply) return NextResponse.json({ reply: aiReply + captureNote, leadCaptured });
+      } catch (err) {
+        console.error("[OpenAI error, using local fallback]", err);
+      }
+    }
+  }
+
+  return NextResponse.json({ reply: localReply + captureNote, leadCaptured });
 }
