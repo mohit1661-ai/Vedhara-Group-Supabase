@@ -16,6 +16,7 @@ import {
   type SearchType,
 } from "@/lib/data/searchListings";
 import { paramsToSearchPath } from "@/lib/searchUrl";
+import { withAnchor } from "@/lib/data/listingAnchors";
 
 const cityImg = (id: number) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
@@ -238,8 +239,8 @@ export default function SearchResults({
           {results.length > 0 ? (
             <div className="prop-grid">
               {results.map((property, index) => (
-                <ScrollReveal key={property.id} delay={Math.min(index * 60, 420)} style={{ display: "flex", minWidth: 0 }}>
-                  <Link href={property.link} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0, background: "#fff", border: "1px solid rgba(212,168,67,0.18)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
+                <ScrollReveal key={property.id} id={property.id} delay={Math.min(index * 60, 420)} style={{ display: "flex", minWidth: 0 }}>
+                  <Link href={withAnchor(property.link, property.title)} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0, background: "#fff", border: "1px solid rgba(212,168,67,0.18)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
                     <div style={{ height: 180, flexShrink: 0, position: "relative", overflow: "hidden" }}>
                       <Image
                         src={property.image}

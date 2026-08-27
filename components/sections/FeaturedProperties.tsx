@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { withAnchor } from "@/lib/data/listingAnchors";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoOnHover from "@/components/ui/VideoOnHover";
@@ -139,7 +140,7 @@ export default function FeaturedProperties() {
         <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }} className="prop-grid">
           {featuredProperties.map((p,i)=>(
             <ScrollReveal key={p.title} delay={i*80} style={{ display:"flex" }}>
-              <Link href={p.link} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+              <Link href={withAnchor(p.link, p.title)} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                 <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
                   {p.video ? (
                     <VideoOnHover src={p.video} poster={p.poster} alt={p.alt || p.title} />

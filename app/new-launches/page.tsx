@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
@@ -55,7 +55,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Aura Sky Villas",
     developer:"Prestige Group",
     location:"Sector 152, Noida",
-    startingPrice:"₹ 1.85 Cr",
+    startingPrice:"â‚¹ 1.85 Cr",
     configs:"2, 3, 4 BHK",
     possession:"Dec 2028",
     type:"Residential",
@@ -70,7 +70,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"The Presidential",
     developer:"DLF",
     location:"Sector 63A, Gurugram",
-    startingPrice:"₹ 3.20 Cr",
+    startingPrice:"â‚¹ 3.20 Cr",
     configs:"3, 4 BHK + Penthouse",
     possession:"Mar 2029",
     type:"Luxury",
@@ -85,7 +85,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Central Business Park",
     developer:"Godrej Properties",
     location:"Sector 44, Gurugram",
-    startingPrice:"₹ 95 Lakhs",
+    startingPrice:"â‚¹ 95 Lakhs",
     configs:"500-2,500 sq.ft. Offices",
     possession:"Jun 2028",
     type:"Commercial",
@@ -100,7 +100,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Emerald County",
     developer:"Tata Housing",
     location:"Sector 150, Noida",
-    startingPrice:"₹ 2.45 Cr",
+    startingPrice:"â‚¹ 2.45 Cr",
     configs:"3, 4, 5 BHK",
     possession:"Sep 2028",
     type:"Residential",
@@ -115,7 +115,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Imperial Heights",
     developer:"M3M India",
     location:"Southern Peripheral Road, Gurugram",
-    startingPrice:"₹ 2.85 Cr",
+    startingPrice:"â‚¹ 2.85 Cr",
     configs:"3, 4 BHK",
     possession:"Apr 2028",
     type:"Residential",
@@ -130,7 +130,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"The Green Mile",
     developer:"Signature Global",
     location:"Sector 36, Sohna Road, Gurugram",
-    startingPrice:"₹ 1.55 Cr",
+    startingPrice:"â‚¹ 1.55 Cr",
     configs:"2, 3 BHK",
     possession:"Phase 2, Dec 2027",
     type:"Residential",
@@ -145,7 +145,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Santorini Bay",
     developer:"Sobha Ltd.",
     location:"Sector 47, Faridabad",
-    startingPrice:"₹ 1.25 Cr",
+    startingPrice:"â‚¹ 1.25 Cr",
     configs:"2, 3 BHK + Retail Shops",
     possession:"Aug 2028",
     type:"Residential",
@@ -160,7 +160,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Oakwood Estate",
     developer:"Antriksh Group",
     location:"Sector 77, Noida",
-    startingPrice:"₹ 1.85 Cr",
+    startingPrice:"â‚¹ 1.85 Cr",
     configs:"3, 4 BHK + Plots",
     possession:"Plots Ready; Tower Dec 2028",
     type:"Plotted",
@@ -175,7 +175,7 @@ const launchProjects: LaunchProject[] = [
     projectName:"Altius Tower",
     developer:"Brigade Group",
     location:"Sector 152, Noida",
-    startingPrice:"₹ 2.15 Cr",
+    startingPrice:"â‚¹ 2.15 Cr",
     configs:"3, 4 BHK",
     possession:"Feb 2029",
     type:"Residential",
@@ -196,7 +196,7 @@ export default function NewLaunchesPage() {
         priceDisplay: p.startingPrice,
         locality: p.location,
         propertyType: p.type,
-        size: `${p.configs} · Possession ${p.possession}`,
+        size: `${p.configs} Â· Possession ${p.possession}`,
         status: p.status,
         image: p.image,
       })))} />
@@ -233,9 +233,9 @@ export default function NewLaunchesPage() {
 
           <div className="prop-grid">
             {launchProjects.map((project,index)=>(
-              <ScrollReveal key={project.id} delay={index * 80} style={{ display:"flex" }}>
+              <ScrollReveal key={project.id} id={project.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact#new-launches"
+                  href={`#${project.id}`}
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -297,7 +297,7 @@ export default function NewLaunchesPage() {
                         <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{project.startingPrice}</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
-                        Register Interest →
+                        Register Interest â†’
                       </span>
                     </div>
                   </div>
@@ -314,10 +314,10 @@ export default function NewLaunchesPage() {
               </p>
               <div style={{ display:"flex",gap:16,justifyContent:"center",flexWrap:"wrap" }}>
                 <Link href="/contact#new-launches" className="btn btn-primary">
-                  Get Project Brochure →
+                  Get Project Brochure â†’
                 </Link>
                 <Link href="/market-insights" className="btn btn-outline">
-                  Subscribe to Ground Report →
+                  Subscribe to Ground Report â†’
                 </Link>
               </div>
             </div>

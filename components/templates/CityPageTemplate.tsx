@@ -108,7 +108,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
           <div className="prop-grid">
             {data.listings.map((property, index) => (
               <ScrollReveal key={property.id} id={property.id} delay={(index % 6) * 80} style={{ display: "flex" }}>
-                <Link href="/contact" className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, background: "var(--cream)", border: "1px solid rgba(212,168,67,0.15)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
+                <Link href={`#${property.id}`} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, background: "var(--cream)", border: "1px solid rgba(212,168,67,0.15)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
                   <div style={{ height: 180, flexShrink: 0, position: "relative", overflow: "hidden" }}>
                     <Image
                       src={property.image}

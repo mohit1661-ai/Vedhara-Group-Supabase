@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -34,7 +34,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l07",
     title:"Sector 15 Duplex Kothi",
     location:"Sector 15 Part 2, Gurugram",
-    price:"₹ 18 Cr",
+    price:"â‚¹ 18 Cr",
     config:"4 BHK + Servant Quarter",
     size:"502 sq.yds.",
     type:"Villa",
@@ -47,7 +47,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l01",
     title:"One Golf Course Penthouse",
     location:"Golf Course Road, Gurugram",
-    price:"₹ 12.80 Cr",
+    price:"â‚¹ 12.80 Cr",
     config:"5 BHK + Pool",
     size:"4,200 sq.ft.",
     type:"Penthouse",
@@ -60,7 +60,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l02",
     title:"Sovereign Villa",
     location:"Sector 150, Noida",
-    price:"₹ 9.50 Cr",
+    price:"â‚¹ 9.50 Cr",
     config:"6 BHK + Study",
     size:"5,800 sq.ft.",
     type:"Villa",
@@ -74,7 +74,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l03",
     title:"The Claridge Estate",
     location:"Jubilee Hills, Delhi",
-    price:"₹ 18.50 Cr",
+    price:"â‚¹ 18.50 Cr",
     config:"7 BHK + Guest Wing",
     size:"8,200 sq.ft.",
     type:"Estate",
@@ -88,7 +88,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l04",
     title:"Skydeck Residence",
     location:"Sector 62, Gurugram",
-    price:"₹ 7.95 Cr",
+    price:"â‚¹ 7.95 Cr",
     config:"4 BHK Penthouse",
     size:"3,100 sq.ft.",
     type:"Penthouse",
@@ -101,7 +101,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l05",
     title:"Magnolia Mansion",
     location:"Greater Kailash II, Delhi",
-    price:"₹ 14.20 Cr",
+    price:"â‚¹ 14.20 Cr",
     config:"5 BHK Independent Floor",
     size:"4,500 sq.ft.",
     type:"Independent Floor",
@@ -115,7 +115,7 @@ const luxuryListings: LuxuryListing[] = [
     id:"ved-l06",
     title:"Tuscan Valley Retreat",
     location:"Sohna Road, Gurugram",
-    price:"₹ 6.50 Cr",
+    price:"â‚¹ 6.50 Cr",
     config:"4 BHK + Pool",
     size:"3,600 sq.ft.",
     type:"Villa",
@@ -138,7 +138,7 @@ export default function LuxuryPage() {
         priceDisplay: l.price,
         locality: l.location,
         propertyType: l.type,
-        size: `${l.config} · ${l.size}`,
+        size: `${l.config} Â· ${l.size}`,
         status: l.status,
         image: l.image,
       })))} />
@@ -163,9 +163,9 @@ export default function LuxuryPage() {
 
           <div className="prop-grid">
             {luxuryListings.map((property,index)=>(
-              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
+              <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact#luxury"
+                  href={`#${property.id}`}
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -192,7 +192,7 @@ export default function LuxuryPage() {
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} Â· {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {property.highlights.map(h=>(
                           <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
@@ -209,7 +209,7 @@ export default function LuxuryPage() {
                         <p style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:600,color:"var(--gold-ink)",margin:0 }}>&nbsp;</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
-                        Inquire →
+                        Inquire â†’
                       </span>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export default function LuxuryPage() {
                 Not on the market? Our Luxury Desk has access to off-market listings not shown publicly.
               </p>
               <Link href="/contact#luxury" className="btn btn-primary">
-                Speak to Our Luxury Desk →
+                Speak to Our Luxury Desk â†’
               </Link>
             </div>
           </ScrollReveal>

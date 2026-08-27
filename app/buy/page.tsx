@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -33,7 +33,7 @@ const featuredListings: PropertyListing[] = [
     id:"ved-001",
     title:"The Cullinan Heights",
     location:"Sector 150, Noida",
-    price:"₹ 4.85 Cr",
+    price:"â‚¹ 4.85 Cr",
     config:"4 BHK + Study",
     size:"2,450 sq.ft.",
     type:"Residential",
@@ -46,7 +46,7 @@ const featuredListings: PropertyListing[] = [
     id:"ved-002",
     title:"Amaryllis Residences",
     location:"Golf Course Road, Gurugram",
-    price:"₹ 6.20 Cr",
+    price:"â‚¹ 6.20 Cr",
     config:"3 BHK + Servant",
     size:"2,150 sq.ft.",
     type:"Luxury",
@@ -60,7 +60,7 @@ const featuredListings: PropertyListing[] = [
     id:"ved-003",
     title:"Platinum Towers",
     location:"Dwarka Expressway, Gurugram",
-    price:"₹ 2.95 Cr",
+    price:"â‚¹ 2.95 Cr",
     config:"3 BHK",
     size:"1,650 sq.ft.",
     type:"Residential",
@@ -74,7 +74,7 @@ const featuredListings: PropertyListing[] = [
     id:"ved-004",
     title:"One Golden Mile",
     location:"Sector 62, Gurugram",
-    price:"₹ 8.50 Cr",
+    price:"â‚¹ 8.50 Cr",
     config:"4,500 sq.ft. Office",
     size:"4,500 sq.ft.",
     type:"Commercial",
@@ -88,7 +88,7 @@ const featuredListings: PropertyListing[] = [
     id:"ved-005",
     title:"Veda Forest Villas",
     location:"Sector 150, Noida",
-    price:"₹ 7.50 Cr",
+    price:"â‚¹ 7.50 Cr",
     config:"5 BHK Independent Floor",
     size:"3,800 sq.ft.",
     type:"Luxury",
@@ -101,7 +101,7 @@ const featuredListings: PropertyListing[] = [
     id:"ved-006",
     title:"Magnolia Court",
     location:"Greater Kailash II, Delhi",
-    price:"₹ 3.40 Cr",
+    price:"â‚¹ 3.40 Cr",
     config:"3 BHK",
     size:"1,550 sq.ft.",
     type:"Residential",
@@ -132,7 +132,7 @@ export default function BuyPage() {
         priceDisplay: l.price,
         locality: l.location,
         propertyType: l.type,
-        size: `${l.config} · ${l.size}`,
+        size: `${l.config} Â· ${l.size}`,
         status: l.status,
         image: l.image,
       })))} />
@@ -157,8 +157,8 @@ export default function BuyPage() {
 
           <div className="prop-grid">
             {featuredListings.map((property,index)=>(
-              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
-                <Link href="/contact#buy" className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+              <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
+                <Link href={`#${property.id}`} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
@@ -185,7 +185,7 @@ export default function BuyPage() {
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} Â· {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {property.highlights.map(h=>(
                         <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
@@ -202,7 +202,7 @@ export default function BuyPage() {
                         <p style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:600,color:"var(--gold-ink)",margin:0 }}>&nbsp;</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
-                        Inquire →
+                        Inquire â†’
                       </span>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function BuyPage() {
                 Don&apos;t see what you&apos;re looking for? Our full inventory spans 500+ verified listings across Delhi NCR, Faridabad, Manesar, Chandigarh and North India.
               </p>
               <Link href="/contact" className="btn btn-primary">
-                Talk to an Advisor →
+                Talk to an Advisor â†’
               </Link>
             </div>
           </ScrollReveal>

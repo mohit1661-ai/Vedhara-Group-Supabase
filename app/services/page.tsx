@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { withAnchor } from "@/lib/data/listingAnchors";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
@@ -214,8 +215,8 @@ export default function ServicesPage() {
 
           <div className="prop-grid">
             {featuredProperties.map((p,i)=>(
-              <ScrollReveal key={p.id} delay={i*80} style={{ display:"flex" }}>
-                <Link href={p.tagHref} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+              <ScrollReveal key={p.id} id={p.id} delay={i*80} style={{ display:"flex" }}>
+                <Link href={withAnchor(p.tagHref, p.title)} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   <div style={{ height:180,background:p.gradient,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     <Image
                       src={p.image}

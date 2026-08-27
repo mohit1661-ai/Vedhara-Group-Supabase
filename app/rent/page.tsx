@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -35,8 +35,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r01",
     title:"The Aspen Residency",
     location:"Sector 57, Gurugram",
-    monthlyRent:"₹ 58,000/mo",
-    deposit:"₹ 1.74 Lakhs",
+    monthlyRent:"â‚¹ 58,000/mo",
+    deposit:"â‚¹ 1.74 Lakhs",
     config:"3 BHK",
     size:"1,550 sq.ft.",
     furnished:"Fully Furnished",
@@ -51,8 +51,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r02",
     title:"Palm Grove Apartments",
     location:"Sector 44, Noida",
-    monthlyRent:"₹ 42,000/mo",
-    deposit:"₹ 1.26 Lakhs",
+    monthlyRent:"â‚¹ 42,000/mo",
+    deposit:"â‚¹ 1.26 Lakhs",
     config:"2 BHK",
     size:"1,250 sq.ft.",
     furnished:"Semi Furnished",
@@ -67,8 +67,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r03",
     title:"Corporate Square",
     location:"Sector 62, Gurugram",
-    monthlyRent:"₹ 1,85,000/mo",
-    deposit:"₹ 5.55 Lakhs",
+    monthlyRent:"â‚¹ 1,85,000/mo",
+    deposit:"â‚¹ 5.55 Lakhs",
     config:"2,800 sq.ft. Office",
     size:"2,800 sq.ft.",
     furnished:"Fully Furnished",
@@ -83,8 +83,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r04",
     title:"Vasant Residency",
     location:"Vasant Kunj, Delhi",
-    monthlyRent:"₹ 65,000/mo",
-    deposit:"₹ 2.60 Lakhs",
+    monthlyRent:"â‚¹ 65,000/mo",
+    deposit:"â‚¹ 2.60 Lakhs",
     config:"3 BHK + Servant",
     size:"1,750 sq.ft.",
     furnished:"Semi Furnished",
@@ -99,8 +99,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r05",
     title:"Lake Vista Heights",
     location:"Sector 150, Noida",
-    monthlyRent:"₹ 75,000/mo",
-    deposit:"₹ 3.00 Lakhs",
+    monthlyRent:"â‚¹ 75,000/mo",
+    deposit:"â‚¹ 3.00 Lakhs",
     config:"4 BHK",
     size:"2,200 sq.ft.",
     furnished:"Fully Furnished",
@@ -115,8 +115,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r06",
     title:"Galleria Business Hub",
     location:"MG Road, Gurugram",
-    monthlyRent:"₹ 2,40,000/mo",
-    deposit:"₹ 7.20 Lakhs",
+    monthlyRent:"â‚¹ 2,40,000/mo",
+    deposit:"â‚¹ 7.20 Lakhs",
     config:"3,500 sq.ft. Retail",
     size:"3,500 sq.ft.",
     furnished:"Semi Furnished",
@@ -139,7 +139,7 @@ export default function RentPage() {
         priceDisplay: l.monthlyRent,
         locality: l.location,
         propertyType: l.type,
-        size: `${l.config} · ${l.size} · ${l.furnished}`,
+        size: `${l.config} Â· ${l.size} Â· ${l.furnished}`,
         status: l.status,
         image: l.image,
       })))} />
@@ -164,9 +164,9 @@ export default function RentPage() {
 
           <div className="prop-grid">
             {rentalListings.map((property,index)=>(
-              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
+              <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact#rent"
+                  href={`#${property.id}`}
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -201,7 +201,7 @@ export default function RentPage() {
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} Â· {property.size}</p>
                     
                     {/* Highlights as small tags */}
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
@@ -221,7 +221,7 @@ export default function RentPage() {
                         <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.monthlyRent}</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,marginLeft:"auto",padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
-                        Schedule Visit →
+                        Schedule Visit â†’
                       </span>
                     </div>
                   </div>
@@ -237,7 +237,7 @@ export default function RentPage() {
                 Don&apos;t see what you&apos;re looking for? We have 80+ verified rental listings across Delhi NCR, Faridabad, Manesar and Chandigarh.
               </p>
               <Link href="/contact#rent" className="btn btn-primary">
-                Get Rental Assistance →
+                Get Rental Assistance â†’
               </Link>
             </div>
           </ScrollReveal>

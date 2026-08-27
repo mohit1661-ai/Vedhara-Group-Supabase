@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -40,17 +40,17 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c16",
     title:"Fully Furnished Pre-Rented Building",
     location:"Sector 32, Gurugram",
-    price:"₹ 200 Cr Demand",
-    priceNote:"Rent ₹1.17 Cr/mo · Pre-Rented",
+    price:"â‚¹ 200 Cr Demand",
+    priceNote:"Rent â‚¹1.17 Cr/mo Â· Pre-Rented",
     size:"",
     type:"Commercial",
     status:"For Sale",
     highlights:[
-      "4,000 sq.m. Plot · B2 + 5 Floors",
+      "4,000 sq.m. Plot Â· B2 + 5 Floors",
       "1,25,000 sq.ft. Leased Area",
-      "Single Tenant · Highly Reputed Company",
-      "Newly & Fully Furnished · Running",
-      "New Lease · 3-Year Lock-in",
+      "Single Tenant Â· Highly Reputed Company",
+      "Newly & Fully Furnished Â· Running",
+      "New Lease Â· 3-Year Lock-in",
       "15% Escalation Every 3 Years",
     ],
     image:"/Images/Fully%20Newly%20Furnished%20rented%20building%20in%20Sector%2032%20Gurgaon.webp",
@@ -74,17 +74,17 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c15",
     title:"Pre-Leased Industrial Estate",
     location:"Ghiloth Industrial Area, Neemrana, Rajasthan",
-    price:"₹ 250 Cr Demand",
-    priceNote:"₹225 Cr Net (Non-Negotiable) · Rent ₹1.60 Cr/mo",
+    price:"â‚¹ 250 Cr Demand",
+    priceNote:"â‚¹225 Cr Net (Non-Negotiable) Â· Rent â‚¹1.60 Cr/mo",
     size:"",
     type:"Industrial",
     status:"For Sale",
     highlights:[
       "20-Acre Approved Industrial Plot",
       "6.5 Lakh sq.ft. Shed Area Across 3 Sheds",
-      "1.10 Lakh sq.ft. RCC · Ground + 2 Floors",
-      "Top MNC · Electronics Manufacturing",
-      "Fresh 12-Year Lease · 3-Year Lock-in",
+      "1.10 Lakh sq.ft. RCC Â· Ground + 2 Floors",
+      "Top MNC Â· Electronics Manufacturing",
+      "Fresh 12-Year Lease Â· 3-Year Lock-in",
     ],
     image:"/Images/Neemrana%20Ghilot%20industrial%20area%20Image%20-%204.jpg",
     images:[
@@ -105,12 +105,12 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c14",
     title:"Laxman Public School",
     location:"Hauz Khas Enclave, South Delhi",
-    price:"₹ 450 Cr (Negotiable)",
-    priceNote:"Rental ₹25 L/mo · Hostel ₹1.95 Cr/mo",
+    price:"â‚¹ 450 Cr (Negotiable)",
+    priceNote:"Rental â‚¹25 L/mo Â· Hostel â‚¹1.95 Cr/mo",
     size:"",
     type:"Commercial",
     status:"For Sale",
-    highlights:["8.5 Acres · 4 Owned + 4.5 DDA Lease","~1 Lakh sq.ft. Built-up","Running 40+ Years · CBSE · Co-Ed","Nursery–Class XII · 4,400 Students","160 Teaching + 40 Support Staff","Hostel: 1,300 Residents · 35 Buses","Cricket, Tennis, Basketball, Swimming Pool","Society-Owned · Zero Loans or Liability","Rentals: Bank, 2 Canteens, FIITJEE, Aakash"],
+    highlights:["8.5 Acres Â· 4 Owned + 4.5 DDA Lease","~1 Lakh sq.ft. Built-up","Running 40+ Years Â· CBSE Â· Co-Ed","Nurseryâ€“Class XII Â· 4,400 Students","160 Teaching + 40 Support Staff","Hostel: 1,300 Residents Â· 35 Buses","Cricket, Tennis, Basketball, Swimming Pool","Society-Owned Â· Zero Loans or Liability","Rentals: Bank, 2 Canteens, FIITJEE, Aakash"],
     image:"/Images/Laxman%20Public%20School%20Image%20-%203.jpg",
     images:[
       "/Images/Laxman%20Public%20School%20Image%20-%203.jpg",
@@ -132,7 +132,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c13",
     title:"Fortune Questa",
     location:"Udyog Vihar Phase VII, Sector 35, Gurugram",
-    price:"₹ 150 Cr Demand",
+    price:"â‚¹ 150 Cr Demand",
     size:"",
     type:"Office",
     status:"For Sale",
@@ -155,12 +155,12 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c12",
     title:"Pre-Rented Commercial Building",
     location:"Film City, Sector 16A, Noida",
-    price:"₹ 220 Cr Demand",
-    priceNote:"Rent ₹1.41 Cr / month · Pre-rented",
+    price:"â‚¹ 220 Cr Demand",
+    priceNote:"Rent â‚¹1.41 Cr / month Â· Pre-rented",
     size:"",
     type:"Commercial",
     status:"For Sale",
-    highlights:["Pre-rented income asset","165,319 sq.ft. built-up","Basement + Stilt + 9 floors","90-yr Noida lease from 2006","Escalation 10–15% every 3–5 yrs","South-West facing","4,034 sq.yds. plot"],
+    highlights:["Pre-rented income asset","165,319 sq.ft. built-up","Basement + Stilt + 9 floors","90-yr Noida lease from 2006","Escalation 10â€“15% every 3â€“5 yrs","South-West facing","4,034 sq.yds. plot"],
     image:"/Images/film-city-noida-aerial.jpeg",
     images:[
       "/Images/film-city-noida-aerial.jpeg",
@@ -176,7 +176,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c10",
     title:"Commercial Building for Sale",
     location:"Udyog Vihar Phase 5, Gurugram",
-    price:"₹ 40 Cr Demand",
+    price:"â‚¹ 40 Cr Demand",
     priceNote:"40,000 sq.ft. built-up",
     size:"",
     type:"Commercial",
@@ -199,7 +199,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c11",
     title:"MG Road Commercial Building",
     location:"Sector 16, Gurugram",
-    price:"₹ 25 Cr Demand",
+    price:"â‚¹ 25 Cr Demand",
     size:"",
     type:"Commercial",
     status:"For Sale",
@@ -217,12 +217,12 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c07",
     title:"Commercial Land for JV",
     location:"Sector 67, Ansal Essencia, Gurgaon",
-    price:"₹ 160 Cr Outright",
-    priceNote:"JV: ₹35 Cr (non-adjustable) · 50:50",
+    price:"â‚¹ 160 Cr Outright",
+    priceNote:"JV: â‚¹35 Cr (non-adjustable) Â· 50:50",
     size:"",
     type:"Land",
     status:"JV Opportunity",
-    highlights:["FSI 1,33,000 sq.ft.","Salable 2,60,000 sq.ft.","Structure G+3","Frontage 220 ft","Front road 60 m","M3M · IREO · Bestech · Emaar · BPTP","1.75 Acre"],
+    highlights:["FSI 1,33,000 sq.ft.","Salable 2,60,000 sq.ft.","Structure G+3","Frontage 220 ft","Front road 60 m","M3M Â· IREO Â· Bestech Â· Emaar Â· BPTP","1.75 Acre"],
     image:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
     video:"/videos/Commercial%20Land%20Available%20for%20JV%20in%20Gurgaon%20Video.mp4",
     poster:"/Images/Commercial%20land%20available%20for%20JV%20in%20Gurgaon%20Site%20Plan.jpeg",
@@ -237,12 +237,12 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c08",
     title:"Rented Commercial Building for Sale",
     location:"Udyog Vihar 2, Gurgaon",
-    price:"₹ 270 Cr Demand",
-    priceNote:"Rent ₹1.65 Cr / month",
+    price:"â‚¹ 270 Cr Demand",
+    priceNote:"Rent â‚¹1.65 Cr / month",
     size:"",
     type:"Commercial",
     status:"For Sale",
-    highlights:["4,000 sq. m. plot","₹1.65 Cr/month rent","Newly constructed, fully furnished","Reliable existing tenant","Payment 50:50"],
+    highlights:["4,000 sq. m. plot","â‚¹1.65 Cr/month rent","Newly constructed, fully furnished","Reliable existing tenant","Payment 50:50"],
     image:"/Images/udyog-vihar-01.jpeg",
     images:[
       "/Images/udyog-vihar-01.jpeg",
@@ -277,12 +277,12 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c09",
     title:"IT Pass Building for Sale",
     location:"Phase 1, Udyog Vihar, Gurgaon",
-    price:"₹ 17 Cr Asking",
-    priceNote:"Rent ₹5.0 L / month · Mix Cheque Deal",
+    price:"â‚¹ 17 Cr Asking",
+    priceNote:"Rent â‚¹5.0 L / month Â· Mix Cheque Deal",
     size:"",
     type:"Commercial",
     status:"For Sale",
-    highlights:["IT Pass Building","Basement, GF+2","Shed-covered cafeteria on terrace","Basement vacant · rest floors rented","₹5.0 L / month rent","Mix Cheque Deal","450 sq. m. · 12,000 sq. ft. constructed"],
+    highlights:["IT Pass Building","Basement, GF+2","Shed-covered cafeteria on terrace","Basement vacant Â· rest floors rented","â‚¹5.0 L / month rent","Mix Cheque Deal","450 sq. m. Â· 12,000 sq. ft. constructed"],
     image:"/Images/udyog-vihar-p1-03.jpeg",
     images:[
       "/Images/udyog-vihar-p1-03.jpeg",
@@ -304,7 +304,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c01",
     title:"One Horizon Center",
     location:"Sector 43, Gurugram",
-    price:"₹ 12.50 Cr",
+    price:"â‚¹ 12.50 Cr",
     size:"",
     type:"Office",
     status:"Available",
@@ -316,7 +316,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c02",
     title:"Retail Arcade",
     location:"Sector 18, Noida",
-    price:"₹ 2.85 Cr",
+    price:"â‚¹ 2.85 Cr",
     size:"",
     type:"Retail",
     status:"Available",
@@ -329,7 +329,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c03",
     title:"Industrial Shed Complex",
     location:"Bhiwadi, Rajasthan (NCR)",
-    price:"₹ 4.20 Cr",
+    price:"â‚¹ 4.20 Cr",
     size:"",
     type:"Industrial",
     status:"Available",
@@ -342,7 +342,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c04",
     title:"Cyber Park",
     location:"Sector 67, Gurugram",
-    price:"₹ 95 Lakhs/yr",
+    price:"â‚¹ 95 Lakhs/yr",
     size:"",
     type:"Co-working",
     status:"Available",
@@ -355,7 +355,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c05",
     title:"Commercial Plot, Sector 150",
     location:"Sector 150, Noida",
-    price:"₹ 6.80 Cr",
+    price:"â‚¹ 6.80 Cr",
     size:"",
     type:"Land",
     status:"Available",
@@ -368,7 +368,7 @@ const commercialListings: CommercialListing[] = [
     id:"ved-c06",
     title:"Platinum Business Centre",
     location:"MG Road, Gurugram",
-    price:"₹ 18.00 Cr",
+    price:"â‚¹ 18.00 Cr",
     size:"",
     type:"Office",
     status:"Under Offer",
@@ -415,9 +415,9 @@ export default function CommercialPage() {
 
           <div className="prop-grid">
             {commercialListings.map((property,index)=>(
-              <ScrollReveal key={property.id} delay={index * 80} style={{ display:"flex" }}>
+              <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href="/contact#commercial"
+                  href={`#${property.id}`}
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
@@ -439,13 +439,13 @@ export default function CommercialPage() {
                     {property.video ? (
                       <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
                         <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
-                          ▶ Video Tour
+                          â–¶ Video Tour
                         </span>
                       </div>
                     ) : property.images && property.images.length > 0 ? (
                       <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
                         <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
-                          📷 {property.images.length} Photos
+                          ðŸ“· {property.images.length} Photos
                         </span>
                       </div>
                     ) : null}
@@ -485,11 +485,11 @@ export default function CommercialPage() {
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>Price</p>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.price}</p>
-                        {/* Always reserve the note line so every card's CTA row has the same height → gallery + Inquire button stay aligned across cards. */}
+                        {/* Always reserve the note line so every card's CTA row has the same height â†’ gallery + Inquire button stay aligned across cards. */}
                         <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:600,color:"var(--gold-ink)",margin:"2px 0 0",lineHeight:1.2,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.priceNote || "\u00A0"}</p>
                       </div>
                       <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
-                        Inquire →
+                        Inquire â†’
                       </span>
                     </div>
                   </div>
@@ -504,7 +504,7 @@ export default function CommercialPage() {
                 Looking for something specific? We have 40+ commercial properties across Delhi NCR, Faridabad and Manesar.
               </p>
               <Link href="/contact#commercial" className="btn btn-primary">
-                Discuss Your Commercial Requirement →
+                Discuss Your Commercial Requirement â†’
               </Link>
             </div>
           </ScrollReveal>

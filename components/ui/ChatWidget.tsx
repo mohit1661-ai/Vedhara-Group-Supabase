@@ -46,20 +46,14 @@ export default function ChatWidget() {
   // Deep-link landing: /gurugram#gg-bk2 etc. Browsers fire their one-shot native
   // fragment jump before hero videos/lazy images/fonts settle, so late layout
   // shifts push the target away and users stay at the top. Re-center the target
-  // on mount + hashchange with staged retries once the layout has stabilized,
-  // and flash the card so it's unmistakable.
+  // on mount + hashchange + same-page anchor clicks with staged retries once the
+  // layout has stabilized, and flash the card so it's unmistakable.
   useEffect(() => {
     const timers: number[] = [];
-    const focusTarget = () => {
-      const hash = window.location.hash;
-      if (!hash || hash.length < 2) return;
-      const el = document.getElementById(hash.slice(1));
-      if (!el) return;
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      const centerIt = () => {
-        el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
-      };
+    const flashAndCenter = (el: HTMLElement) => {
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const centerIt = () => el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
       // Staged: quick catch-up for fast loads, later passes absorb image/video shifts
       timers.push(window.setTimeout(centerIt, 150));
       timers.push(window.setTimeout(centerIt, 700));
@@ -71,11 +65,33 @@ export default function ChatWidget() {
       }, 1600));
     };
 
-    focusTarget();
-    window.addEventListener("hashchange", focusTarget);
+    const focusHash = () => {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      const el = document.getElementById(hash.slice(1));
+      if (el) flashAndCenter(el);
+    };
+
+    // Same-page anchor clicks (e.g. clicking a card jumps to itself/another listing)
+    const onClickCapture = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement)?.closest?.("a[href*='#']") as HTMLAnchorElement | null;
+      if (!a) return;
+      const href = a.getAttribute("href") || "";
+      const idx = href.indexOf("#");
+      if (idx === -1) return;
+      const path = href.slice(0, idx);
+      if (path && !window.location.pathname.startsWith(path.replace(/\/$/, ""))) return; // cross-page → let native handle on load
+      const el = document.getElementById(href.slice(idx + 1));
+      if (el) flashAndCenter(el);
+    };
+
+    focusHash();
+    window.addEventListener("hashchange", focusHash);
+    document.addEventListener("click", onClickCapture, true);
     return () => {
       timers.forEach((t) => clearTimeout(t));
-      window.removeEventListener("hashchange", focusTarget);
+      window.removeEventListener("hashchange", focusHash);
+      document.removeEventListener("click", onClickCapture, true);
     };
   }, []);
 
