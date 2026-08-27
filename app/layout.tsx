@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import Analytics from "@/components/seo/Analytics";
 import CustomCursor from "@/components/ui/CustomCursor";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 const cormorant = Cormorant_Garamond({ subsets:["latin"], weight:["300","400"], style:["normal","italic"], variable:"--font-display", display:"swap" });
 const poppins = Poppins({ subsets:["latin"], weight:["400","500","600","700"], variable:"--font-head", display:"swap" });
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
         <main style={{ flex:1 }}>{children}</main>
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );

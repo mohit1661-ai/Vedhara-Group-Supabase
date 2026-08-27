@@ -68,6 +68,7 @@ Copy `.env.example` → `.env.local` and fill in the values. **Never commit `.en
 | `GOOGLE_OAUTH_TOKEN_URL` | No | Advanced: override Google's OAuth token endpoint (testing/proxy) |
 | `GOOGLE_SHEETS_API_BASE` | No | Advanced: override the Sheets API base URL (testing/proxy) |
 | `ADMIN_SECRET` | No | Password to view leads via /api/leads |
+| `OPENAI_API_KEY` | No | OpenAI API key for the AI chatbot (enables /api/chat). Without it the chat widget shows a fallback message |
 | `NEXT_PUBLIC_SITE_URL` | No | Public site URL (defaults to https://www.vedharagroup.com) |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | No | Google Analytics 4 ID (defaults to `G-135693XWXG`) |
 | `NEXT_PUBLIC_FB_PIXEL_ID` | No | Meta/Facebook Pixel ID (defaults to `245711093135178`) |
