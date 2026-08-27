@@ -189,6 +189,47 @@ const OUT_OF_AREA = ["mumbai","bangalore","bengaluru","pune","hyderabad","chenna
   "jaipur","lucknow","ahmedabad","dehradun","indore","goa","surat","nagpur","bhopal",
   "kochi","coimbatore","vizag","visakhapatnam","patna","bhubaneswar","guwahati","shimla"];
 
+/* ── Numbered-choice menu memory ──────────────────────────────
+ * Whenever the bot presents a numbered list, we remember it per visitor
+ * (IP-keyed, 30-min TTL). A bare reply like "2" then drills into that option —
+ * same behavior whether lists came from city dumps, budget filters, etc.
+ */
+type ChatMenuEntry = { title: string; body: string; url: string | null };
+const chatMenus = new Map<string, { entries: ChatMenuEntry[]; expiresAt: number }>();
+const MENU_TTL_MS = 30 * 60 * 1000;
+
+function rememberMenu(ip: string, entries: ChatMenuEntry[]) {
+  if (entries.length === 0) return;
+  const now = Date.now();
+  for (const [k, v] of chatMenus) if (now > v.expiresAt) chatMenus.delete(k);
+  if (chatMenus.size > 500) chatMenus.clear();
+  chatMenus.set(ip, { entries, expiresAt: now + MENU_TTL_MS });
+}
+
+function recallMenu(ip: string): ChatMenuEntry[] | null {
+  const m = chatMenus.get(ip);
+  if (!m) return null;
+  if (Date.now() > m.expiresAt) { chatMenus.delete(ip); return null; }
+  return m.entries;
+}
+
+// Best-effort URL for an inventory row by matching its name/location against LISTING_URLS keys
+function entryForListing(n: string, l: string, extraBody?: string): ChatMenuEntry {
+  const hay = `${n} ${l}`.toLowerCase();
+  const u = LISTING_URLS.find((it) => it.keys.some((k) => hay.includes(k)));
+  const body = u ? u.detail : `${n} — ${l}\n${extraBody || ""}`;
+  return { title: u ? u.name : n, body, url: u ? u.url : "https://www.vedharagroup.com" };
+}
+
+function detailReplyFor(e: ChatMenuEntry): string {
+  return `Here are the details of ${e.title}:\n\n${e.body}${e.url ? `\n\nView it on our website: ${e.url}` : ""}\n\nAll prices are asking prices (negotiable). Would you like to schedule a site visit? Call +91-98106-47063.`;
+}
+
+// Turns any list of entries into the numbered text block we show users
+function numberedBlock(items: { label: string }[]): string {
+  return items.map((it, i) => `${i + 1}. ${it.label}`).join("\n");
+}
+
 // ── Structured inventory (numeric prices) ────────────────────
 // p = price in ₹ Crore, c = city group. Powers budget/BHK/cheapest/priciest answers.
 const INVENTORY = [
@@ -219,7 +260,59 @@ const INVENTORY = [
  * "properties under 1 crore", "80 lakh budget flat". Returns null when the
  * message has no budget/BHK/superlative signal, letting normal branches answer.
  */
-function resolveInventoryQuery(q: string): string | null {
+// ── Region answers (shared by direct queries AND numbered-menu selections) ──
+// ip may be null when generating texts at module load (no side-effect menus wanted)
+function cityAnswer(ip: string | null, city: string, q = ""): string {
+  const commercialOnly = matchKeywords(q, ["commercial","office","shop","retail","mall","pre-rented","leased"]);
+  let menu: ChatMenuEntry[] = [];
+  let text = "";
+
+  if (city === "gurugram") {
+    const rows = INVENTORY.filter((i) => i.c === "gg");
+    if (commercialOnly) {
+      const subset = rows.filter((i) => !/BHK|Plot|Kothi/i.test(i.cfg));
+      menu = subset.map((i) => entryForListing(i.n, i.l));
+      text = "Commercial properties in Gurugram:\n\n" + numberedBlock(subset.map((i, k) => ({ label: `${i.pt} · ${i.cfg} — ${i.n} (${i.l})` })));
+    } else {
+      menu = rows.map((i) => entryForListing(i.n, i.l));
+      text = "Properties available in Gurugram:\n\n" + numberedBlock(rows.map((i) => ({ label: `${i.pt} · ${i.cfg} — ${i.n}` })));
+    }
+    text += "\n\nReply with a number (e.g. \"2\") for full details, or browse: https://www.vedharagroup.com/gurugram";
+  } else if (city === "noida") {
+    const rows = INVENTORY.filter((i) => i.c === "nd");
+    menu = rows.map((i) => entryForListing(i.n, i.l));
+    text = "Properties available in Noida:\n\n" + numberedBlock(rows.map((i) => ({ label: `${i.pt} · ${i.cfg} — ${i.n}` })))
+      + "\n\nAll verified under our 5-point framework. Reply with a number for details, or view: https://www.vedharagroup.com/noida";
+  } else if (city === "faridabad") {
+    text = "Faridabad: We cover residential apartments and plots across Sectors 79–89 — the emerging development zone with strong appreciation potential.\n\nShare your budget and preferred sector and I'll shortlist options, or call +91-98106-47063. See the city page: https://www.vedharagroup.com/faridabad";
+  } else if (city === "tricity") {
+    const hero = INVENTORY.find((i) => i.n.startsWith("Hero"));
+    menu = [entryForListing(hero!.n, hero!.l)];
+    text = "Chandigarh Tricity inventory:\n1. Hero Homes, Mohali — ₹76 Lakh — 2 & 3 BHK\n\nWe also advise on Panchkula, Zirakpur and Kharar markets. Reply \"1\" for Hero Homes details. Browse: https://www.vedharagroup.com/tricity";
+  } else if (city === "delhi") {
+    const school = INVENTORY.find((i) => i.n.startsWith("Laxman"));
+    menu = [entryForListing(school!.n, school!.l)];
+    text = "Delhi inventory:\n1. Laxman Public School, Hauz Khas Enclave — ₹450 Cr — 8.5 acres institutional (CBSE, 4,400 students)\n\nReply \"1\" for full details. For builder floors/residential we work on requirement basis — share budget & area.\nMore: https://www.vedharagroup.com/south-delhi";
+  } else if (city === "manesar") {
+    text = "Manesar sits right on our Gurugram coverage — industrial plots and pre-rented options along NH-48. Share your requirement (size, budget, industrial vs commercial) and I'll shortlist. Call +91-98106-47063.";
+  } else if (city === "ghaziabad") {
+    text = "Ghaziabad/Raj Nagar Extension: options come up on requirement basis. Share budget and configuration (2/3 BHK etc.) and our team will shortlist verified choices. Call +91-98106-47063.";
+  }
+
+  if (menu.length > 0 && ip) rememberMenu(ip, menu);
+  return text;
+}
+
+// Precomputed region texts (no menu side effects) for use inside other menus
+const REGION_SUMMARY: Record<string, string> = {
+  gurugram: cityAnswer(null, "gurugram"),
+  noida: cityAnswer(null, "noida"),
+  faridabad: cityAnswer(null, "faridabad"),
+  tricity: cityAnswer(null, "tricity"),
+  delhi: cityAnswer(null, "delhi"),
+};
+
+function resolveInventoryQuery(q: string, ip: string): string | null {
   const cityWordMap: Record<string, string> = {
     gurugram:"gg", "gurgaon":"gg", dlf:"gg", noida:"nd",
     faridabad:"fb", chandigarh:"tri", mohali:"tri", tricity:"tri",
@@ -277,11 +370,12 @@ function resolveInventoryQuery(q: string): string | null {
 
   const cityName: Record<string,string> = { gg:"Gurugram", nd:"Noida", fb:"Faridabad", tri:"the Tricity", dl:"Delhi" };
   const scopeLine = cityPool ? `in ${cityName[cityPool]}` : "across Delhi NCR";
-  const bullets = list.map((i) => `• ${i.n} (${i.l}) — ${i.pt} · ${i.cfg}`).join("\n");
-  return `Here's what matches ${scopeLine}:\n\n${bullets}\n\nAll asking prices are negotiable. Want full details on any one of these?`;
+  const entries = list.map((i) => entryForListing(i.n, i.l, `• Price: ${i.pt}\n• ${i.cfg}`));
+  rememberMenu(ip, entries);
+  return `Here's what matches ${scopeLine}:\n\n${numberedBlock(entries.map((e, i) => ({ label: `${list[i].pt} · ${list[i].cfg} — ${e.title} (${list[i].l})` })))}\n\nReply with a number (e.g. "1") for full details. All asking prices are negotiable.`;
 }
 
-function buildLocalAnswer(messages: { role: string; content: string }[]): string {
+function buildLocalAnswer(messages: { role: string; content: string }[], ip: string): string {
   const lastUserMsg = [...messages].reverse().find((m) => m.role === "user")?.content || "";
   const lastBotMsg = [...messages].reverse().find((m) => m.role === "assistant")?.content || "";
   const q = lastUserMsg.toLowerCase();
@@ -328,38 +422,29 @@ function buildLocalAnswer(messages: { role: string; content: string }[]): string
     return "Hello! Welcome to Vedhara Group. Ask me about properties (e.g. \"HQ27 Gurugram\", \"Noida flats\"), pricing, investment areas, or our services. What are you looking for?";
   }
 
-  // ── 3. Out-of-area cities → acknowledge explicitly ──
+  // ── 3. Out-of-area cities → acknowledge + offer covered regions as a menu ──
   if (OUT_OF_AREA.some((c) => q.includes(c))) {
-    return "Sorry, we don't currently have inventory there. Vedhara Group operates across Delhi NCR and North India:\n• Gurugram • Noida • Faridabad • South Delhi\n• Chandigarh Tricity (Mohali, Panchkula, Zirakpur, Kharar)\n• Manesar • Ghaziabad • Greater Noida • Neemrana\n\nWhich of these would you like to explore?";
+    const regions: { key: string; label: string }[] = [
+      { key:"gurugram", label:"Gurugram (12 listings, ₹2.22 Cr – ₹2,250 Cr)" },
+      { key:"noida",    label:"Noida (5 apartments, ₹48–72 Lakh)" },
+      { key:"faridabad",label:"Faridabad (Sectors 79–89)" },
+      { key:"tricity",  label:"Chandigarh Tricity / Mohali" },
+      { key:"delhi",    label:"South Delhi" },
+    ];
+    rememberMenu(ip, regions.map((r) => ({ title:r.label, body:REGION_SUMMARY[r.key] || "", url:null })));
+    return "Sorry, we don't currently have inventory there. Vedhara Group operates across Delhi NCR and North India:\n\n"
+      + numberedBlock(regions.map((r) => ({ label: r.label })))
+      + "\n\nReply with a number to see that region's listings.";
   }
 
   // ── 3b. Specific asks: budget / BHK / cheapest / priciest ──
-  const inv = resolveInventoryQuery(q);
+  const inv = resolveInventoryQuery(q, ip);
   if (inv) return inv;
 
   // ── 4. City queries always answer with that city's inventory ──
   if (city) {
-    switch (city) {
-      case "gurugram": {
-        const commercial = matchKeywords(q, ["commercial","office","shop","retail","mall","pre-rented","leased"]);
-        if (commercial) {
-          return "Commercial properties in Gurugram:\n• HQ27 Premium Commercial Building — ₹2,250 Cr — Grade-A + Mall near IFFCO Chowk, Rent ₹11.5 Cr/mo\n• Rented Bank Property, Sector 76 — ₹2.22 Cr — 6 shops, 10-yr bank lease, ₹2.22 Lakh/mo\n• Pre-Rented Building, Sector 32 — ₹200 Cr — 1.25L sq.ft., ₹1.17 Cr/mo\n• Udyog Vihar Phase 5 — ₹40 Cr\n• MG Road, Sector 16 — ₹25 Cr\n• One Golden Mile, Sector 62 — ₹8.50 Cr office\n\nAsk me about any of these for full details, or view all at https://www.vedharagroup.com/gurugram";
-        }
-        return "Properties available in Gurugram:\n1. HQ27 Premium Commercial Building — ₹2,250 Cr (Grade-A + Mall)\n2. Rented Bank Property, Sector 76 — ₹2.22 Cr (10-yr lease)\n3. 3 Kay Plotted Residence, DLF Phase 1 — ₹25 Cr\n4. Pre-Rented Building, Sector 32 — ₹200 Cr\n5. Sector 15 Duplex Kothi — ₹18 Cr\n6. NH-8 Facing Plot, Sector 15 — ₹18.50 Cr\n7. Commercial Building, Udyog Vihar — ₹40 Cr\n8. MG Road Commercial — ₹25 Cr\n9. One Golf Course Penthouse — ₹12.80 Cr (5 BHK + Pool)\n10. Amaryllis Residences — ₹6.20 Cr (3 BHK)\n11. One Golden Mile — ₹8.50 Cr (Office)\n12. Platinum Towers, Dwarka Expressway — ₹2.95 Cr\n\nTell me a property name for full details, or browse: https://www.vedharagroup.com/gurugram";
-      }
-      case "noida":
-        return "Properties available in Noida:\n1. Ajnara Homes — ₹48 Lakh (2 BHK, 975 sq.ft.)\n2. Ajnara Damsaz — ₹55 Lakh (2 BHK, 1,095 sq.ft.)\n3. Ajnara Le Garden — ₹58 Lakh (2 BHK, 1,115 sq.ft.)\n4. Ajnara Integrity — ₹68 Lakh (3 BHK, 1,625 sq.ft.)\n5. Exotica Blossom — ₹72 Lakh (3 BHK, 1,390 sq.ft.)\n\nAll verified under our 5-point framework. Ask me about any one for details, or view: https://www.vedharagroup.com/noida";
-      case "faridabad":
-        return "Faridabad: We cover residential apartments and plots across Sectors 79–89 — the emerging development zone with strong appreciation potential.\n\nShare your budget and preferred sector and I'll shortlist options, or call +91-98106-47063. See the city page: https://www.vedharagroup.com/faridabad";
-      case "tricity":
-        return "Chandigarh Tricity inventory:\n• Hero Homes, Mohali — ₹76 Lakh — 2 & 3 BHK\n\nWe also advise on Panchkula, Zirakpur and Kharar markets. Want Hero Homes details or a different Tricity area? Browse: https://www.vedharagroup.com/tricity";
-      case "delhi":
-        return "Delhi inventory:\n• Laxman Public School, Hauz Khas Enclave — ₹450 Cr — 8.5 acres institutional (CBSE school, 4,400 students)\n\nFor residential/builder floors in South Delhi we work on specific requirement basis — share your budget & area (defence colony, hauz khas, green park etc.). More: https://www.vedharagroup.com/south-delhi";
-      case "manesar":
-        return "Manesar sits right on our Gurugram coverage — industrial plots and pre-rented options along NH-48. Share your requirement (size, budget, industrial vs commercial) and I'll shortlist. Call +91-98106-47063.";
-      case "ghaziabad":
-        return "Ghaziabad/Raj Nagar Extension: options come up on requirement basis. Share budget and configuration (2/3 BHK etc.) and our team will shortlist verified choices. Call +91-98106-47063.";
-    }
+    const answer = cityAnswer(ip, city, q);
+    if (answer) return answer;
   }
 
   // ── 5. Intent matching (city not mentioned) ──
@@ -386,7 +471,14 @@ function buildLocalAnswer(messages: { role: string; content: string }[]): string
 
   // Commercial (generic)
   if (matchKeywords(q, ["commercial","office space","office building","shops","retail space","pre-rented","pre leased","warehouse","industrial"])) {
-    return "Commercial inventory across Delhi NCR:\n\n• HQ27 Premium Commercial — ₹2,250 Cr — Grade-A + Mall, ~6L sq.ft., Rent ₹11.5 Cr/mo\n• Rented Bank Property, Sector 76 Gurugram — ₹2.22 Cr — 6 shops, 10-yr lease\n• Pre-Rented Building, Sector 32 — ₹200 Cr — 1.25L sq.ft., ₹1.17 Cr/mo\n• Udyog Vihar Commercial — ₹40 Cr\n• MG Road Commercial — ₹25 Cr\n• One Golden Mile — ₹8.50 Cr — 4,500 sq.ft. office\n• Neemrana Industrial Estate — ₹250 Cr — 20 acres\n\nMention a property name for full details, or ask by city (e.g. \"commercial in gurugram\").";
+    const picks = ["HQ27","Rented Bank","Pre-Rented Building","Udyog Vihar 5 Building","MG Road Commercial","One Golden Mile","Neemrana Industrial Estate"]
+      .map((p) => INVENTORY.find((i) => i.n.startsWith(p)))
+      .filter((i): i is (typeof INVENTORY)[number] => Boolean(i));
+    const menu = picks.map((i) => entryForListing(i.n, i.l));
+    rememberMenu(ip, menu);
+    return "Commercial inventory across Delhi NCR:\n\n"
+      + numberedBlock(picks.map((i) => ({ label: `${i.pt} · ${i.cfg} — ${i.n} (${i.l})` })))
+      + "\n\nReply with a number (e.g. \"3\") for full details.";
   }
 
   // Investment
@@ -396,7 +488,12 @@ function buildLocalAnswer(messages: { role: string; content: string }[]): string
 
   // Luxury
   if (matchKeywords(q, ["luxury","luxurious","villa","penthouse","farmhouse","high end","kothi"])) {
-    return "Premium properties:\n• One Golf Course Penthouse — ₹12.80 Cr — 5 BHK + Pool, Golf Course Road\n• Amaryllis Residences — ₹6.20 Cr — 3 BHK, Golf Course Road\n• 3 Kay Plotted Residence — ₹25 Cr — DLF Phase 1, 490 sq.yds.\n• Sector 15 Duplex Kothi — ₹18 Cr — 502 sq.yds.\n\nWant details on any of these? https://www.vedharagroup.com/luxury";
+    const picks = INVENTORY.filter((i) => /BHK \+ Pool|3 BHK, 2,150|Plot|Duplex/.test(i.cfg) && i.c === "gg");
+    const menu = picks.map((i) => entryForListing(i.n, i.l));
+    rememberMenu(ip, menu);
+    return "Premium properties:\n\n"
+      + numberedBlock(picks.map((i) => ({ label: `${i.pt} · ${i.cfg} — ${i.n}` })))
+      + "\n\nReply with a number for details. More: https://www.vedharagroup.com/luxury";
   }
 
   // Rental / rent
@@ -599,6 +696,22 @@ export async function POST(req: NextRequest) {
     ? "\n\n✅ Noted your details — our team will reach out shortly. You can also call +91-98106-47063."
     : "";
 
+  // Layer 0: numeric reply ("1", "2", "#3", "3.") drills into the last list we presented.
+  // Runs before business-hours gate so visitors can keep browsing away-hours too.
+  const lastUserText = [...messages].reverse().find((m) => m.role === "user")?.content?.trim() || "";
+  const bareNum = lastUserText.match(/^(?:#)?(\d{1,2})(?:[.)])?$/);
+  if (bareNum) {
+    const menuEntries = recallMenu(ip);
+    if (menuEntries) {
+      const pick = menuEntries[parseInt(bareNum[1], 10) - 1];
+      if (pick) {
+        // Re-member the same menu so the visitor can keep exploring other numbers
+        rememberMenu(ip, menuEntries);
+        return NextResponse.json({ reply: detailReplyFor(pick) + captureNote, leadCaptured });
+      }
+    }
+  }
+
   // Layer 1: OpenAI (when OPENAI_API_KEY is set) answers the actual question in
   // natural language, grounded by the system prompt. Any failure falls through.
   const apiKey = process.env.OPENAI_API_KEY;
@@ -624,5 +737,5 @@ export async function POST(req: NextRequest) {
 
   // Layer 2: Local knowledge base (always works, no API key needed) — direct
   // answers for listings, cities, budgets; OpenAI-free environments included.
-  return NextResponse.json({ reply: buildLocalAnswer(messages) + captureNote, leadCaptured });
+  return NextResponse.json({ reply: buildLocalAnswer(messages, ip) + captureNote, leadCaptured });
 }
