@@ -449,8 +449,9 @@ export default function ChatWidget() {
           .chat-widget-btn {
             width: 40px !important;
             height: 40px !important;
-            right: 14px !important;
-            bottom: 18px !important;
+            right: auto !important;
+            left: 16px !important;
+            bottom: 56px !important;
           }
           .chat-widget-btn svg {
             width: 16px !important;
@@ -461,8 +462,8 @@ export default function ChatWidget() {
             left: 8px !important;
             width: auto !important;
             maxWidth: none !important;
-            bottom: 68px !important;
-            height: 60vh !important;
+            bottom: 104px !important;
+            height: 55vh !important;
             max-height: none !important;
             border-radius: 14px !important;
           }
