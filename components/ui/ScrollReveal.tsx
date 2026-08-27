@@ -2,7 +2,7 @@
 import { useEffect, useRef, ReactNode, CSSProperties } from "react";
 type Direction="up"|"left"|"right"|"scale";
 const inits:Record<Direction,string>={ up:"translateY(32px)", left:"translateX(-32px)", right:"translateX(32px)", scale:"scale(0.93)" };
-export default function ScrollReveal({ children, delay=0, direction="up", style={}, className="" }:{ children:ReactNode; delay?:number; direction?:Direction; style?:CSSProperties; className?:string; }) {
+export default function ScrollReveal({ children, delay=0, direction="up", style={}, className="", id }: { children:ReactNode; delay?:number; direction?:Direction; style?:CSSProperties; className?:string; id?:string; }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(()=>{
     const el=ref.current; if(!el) return;
@@ -59,5 +59,5 @@ export default function ScrollReveal({ children, delay=0, direction="up", style=
       window.clearTimeout(failSafe);
     };
   },[delay,direction]);
-  return <div ref={ref} style={style} className={className}>{children}</div>;
+  return <div ref={ref} id={id} style={style} className={className}>{children}</div>;
 }

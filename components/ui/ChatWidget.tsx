@@ -90,6 +90,32 @@ export default function ChatWidget() {
     }
   };
 
+  // Renders [Title](url) markdown links and bare URLs as real anchors
+  const renderContent = (text: string) => {
+    const parts = text.split(/(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s)<)]+)/g);
+    return parts.map((p, i) => {
+      const md = p.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
+      if (md) {
+        return (
+          <a key={i} href={md[2]} target="_blank" rel="noopener noreferrer"
+            style={{ color: "var(--gold-dk)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 2 }}>
+            {md[1]}
+          </a>
+        );
+      }
+      if (/^https?:\/\//.test(p)) {
+        const label = p.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+        return (
+          <a key={i} href={p} target="_blank" rel="noopener noreferrer"
+            style={{ color: "var(--gold-dk)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 2, wordBreak: "break-all" }}>
+            {label}
+          </a>
+        );
+      }
+      return <span key={i}>{p}</span>;
+    });
+  };
+
   return (
     <>
       {/* Floating button — bright gold with white icon */}
@@ -278,7 +304,7 @@ export default function ChatWidget() {
                     whiteSpace: "pre-wrap",
                   }}
                 >
-                  {m.content}
+                  {renderContent(m.content)}
                 </div>
               </div>
             ))}
