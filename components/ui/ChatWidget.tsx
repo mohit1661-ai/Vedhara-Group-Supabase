@@ -43,6 +43,42 @@ export default function ChatWidget() {
     }
   }, [open]);
 
+  // Deep-link landing: /gurugram#gg-bk2 etc. Browsers fire their one-shot native
+  // fragment jump before hero videos/lazy images/fonts settle, so late layout
+  // shifts push the target away and users stay at the top. Re-center the target
+  // on mount + hashchange with staged retries once the layout has stabilized,
+  // and flash the card so it's unmistakable.
+  useEffect(() => {
+    const timers: number[] = [];
+    const focusTarget = () => {
+      const hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      const el = document.getElementById(hash.slice(1));
+      if (!el) return;
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const centerIt = () => {
+        el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+      };
+      // Staged: quick catch-up for fast loads, later passes absorb image/video shifts
+      timers.push(window.setTimeout(centerIt, 150));
+      timers.push(window.setTimeout(centerIt, 700));
+      timers.push(window.setTimeout(centerIt, 1600));
+      // Flash highlight
+      timers.push(window.setTimeout(() => {
+        el.classList.add("chat-link-target");
+        setTimeout(() => el.classList.remove("chat-link-target"), 2800);
+      }, 1600));
+    };
+
+    focusTarget();
+    window.addEventListener("hashchange", focusTarget);
+    return () => {
+      timers.forEach((t) => clearTimeout(t));
+      window.removeEventListener("hashchange", focusTarget);
+    };
+  }, []);
+
   const send = useCallback(
     async (text?: string) => {
       const msg = (text || input).trim();
@@ -470,6 +506,18 @@ export default function ChatWidget() {
         @keyframes chatDot {
           0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
           40% { transform: scale(1); opacity: 1; }
+        }
+        /* Native-anchor fallback positioning (sticky navbar clearance) */
+        .prop-grid [id], .grid-3 [id] {
+          scroll-margin-top: 96px;
+        }
+        /* Chat deep-link highlight flash on the targeted listing card */
+        .chat-link-target {
+          outline: 3px solid var(--gold) !important;
+          outline-offset: -3px;
+          border-radius: 16px;
+          box-shadow: 0 0 0 8px rgba(212, 168, 67, 0.25);
+          transition: box-shadow 0.4s ease;
         }
         @media (max-width: 1024px) {
           .chat-widget-panel {
