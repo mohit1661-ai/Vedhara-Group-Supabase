@@ -85,8 +85,63 @@ function matchKeywords(q: string, words: string[]): boolean {
   return words.some((w) => q.includes(w));
 }
 
-function buildLocalAnswer(lastUserMsg: string): string {
+function buildLocalAnswer(messages: { role: string; content: string }[]): string {
+  const lastUserMsg = [...messages].reverse().find((m) => m.role === "user")?.content || "";
+  const lastBotMsg = [...messages].reverse().find((m) => m.role === "assistant")?.content || "";
   const q = lastUserMsg.toLowerCase();
+  const ctx = lastBotMsg.toLowerCase();
+
+  // ── Context-aware: answer what the bot just asked ──
+
+  // If bot asked about budget/price and user gives a number
+  if ((ctx.includes("budget") || ctx.includes("price range") || ctx.includes("budget range")) && /\d/.test(q)) {
+    const listings = q.includes("lakh") || q.includes("lac")
+      ? "Here are options in your budget:\n• Ajnara Homes, Noida — ₹48 Lakh (2 BHK)\n• Ajnara Damsaz, Noida — ₹55 Lakh (2 BHK)\n• Ajnara Le Garden, Noida — ₹58 Lakh (2 BHK)\n• Ajnara Integrity, Noida — ₹68 Lakh (3 BHK)\n• Exotica Blossom, Noida — ₹72 Lakh (3 BHK)\n• Hero Homes, Mohali — ₹76 Lakh (2 & 3 BHK)"
+      : q.includes("cr") || q.includes("crore")
+      ? "Great budget! Here are options:\n• Platinum Towers, Dwarka Expressway — ₹2.95 Cr (3 BHK)\n• Amaryllis Residences — ₹6.20 Cr (3 BHK, Golf Course Road)\n• One Golden Mile — ₹8.50 Cr (Office)\n• One Golf Course Penthouse — ₹12.80 Cr (5 BHK + Pool)\n• Sector 15 Duplex Kothi — ₹18 Cr\n• 3 Kay Plotted Residence — ₹25 Cr (DLF Phase 1)"
+      : "Thanks! Let me find options in that range. Could you also share:\n- Preferred location (Gurugram, Noida, Faridabad?)\n- Property type (apartment, plot, commercial?)\n\nThis helps me shortlist the best matches for you.";
+    return listings + "\n\nWould you like to schedule a site visit? Call +91-98106-47063.";
+  }
+
+  // If bot asked about location and user names a place
+  if ((ctx.includes("location") || ctx.includes("preferred") || ctx.includes("which area") || ctx.includes("which city")) && matchKeywords(q, ["gurugram","gurgaon","noida","faridabad","delhi","chandigarh","mohali"])) {
+    if (matchKeywords(q, ["gurugram","gurgaon"])) {
+      return "Gurugram is a great choice! Here's what we have:\n• HQ27 Premium Commercial — ₹2,250 Cr (Grade-A + Mall)\n• Rented Bank Property, Sector 76 — ₹2.22 Cr (6 shops, 10-yr lease)\n• 3 Kay Plotted Residence — ₹25 Cr (DLF Phase 1)\n• One Golf Course Penthouse — ₹12.80 Cr (5 BHK + Pool)\n• Amaryllis Residences — ₹6.20 Cr (3 BHK)\n• Platinum Towers — ₹2.95 Cr (3 BHK, Dwarka Expressway)\n\nWhich type interests you — residential, commercial, or investment?";
+    }
+    if (matchKeywords(q, ["noida"])) {
+      return "Noida options:\n• Ajnara Homes — ₹48 Lakh (2 BHK)\n• Ajnara Damsaz — ₹55 Lakh (2 BHK)\n• Ajnara Le Garden — ₹58 Lakh (2 BHK)\n• Ajnara Integrity — ₹68 Lakh (3 BHK)\n• Exotica Blossom — ₹72 Lakh (3 BHK)\n\nAll are residential apartments. Want to schedule a site visit?";
+    }
+    return "We cover that area! Let me share relevant listings. Could you also share your budget and property type (apartment, plot, commercial)?";
+  }
+
+  // If bot asked about property type and user answers
+  if ((ctx.includes("type") || ctx.includes("interested") || ctx.includes("residential") || ctx.includes("commercial")) && matchKeywords(q, ["residential","apartment","flat","villa","house","plot","commercial","office","shop"])) {
+    if (matchKeywords(q, ["commercial","office","shop"])) {
+      return "Commercial properties available:\n• HQ27 Premium Commercial — ₹2,250 Cr (Grade-A + Mall, ~6L sq.ft.)\n• Rented Bank Property, Sector 76 — ₹2.22 Cr (6 shops, 10-yr lease)\n• Pre-Rented Building, Sector 32 — ₹200 Cr (1.25L sq.ft.)\n• Commercial Building, Udyog Vihar — ₹40 Cr\n• MG Road Commercial — ₹25 Cr\n• One Golden Mile — ₹8.50 Cr (4,500 sq.ft. office)\n\nAll prices negotiable. Want details on any specific one?";
+    }
+    if (matchKeywords(q, ["plot","land"])) {
+      return "Plot options:\n• 3 Kay Plotted Residence — ₹25 Cr (DLF Phase 1, 490 sq.yds.)\n• NH-8 Facing Plot — ₹18.50 Cr (Sector 15, 500 sq.yds.)\n\nBoth are prime locations. Want more details?";
+    }
+    return "Residential options across budgets:\n• Under ₹1 Cr: Noida apartments (₹48–72 Lakh)\n• ₹2–5 Cr: Platinum Towers (₹2.95 Cr), Amaryllis (₹6.20 Cr)\n• Above ₹10 Cr: Golf Course Penthouse, Duplex Kothi, DLF Phase 1 plots\n\nWhat's your budget range?";
+  }
+
+  // If bot asked yes/no and user says yes
+  if (matchKeywords(q, ["yes","yeah","sure","ok","okay","definitely","please"])) {
+    if (ctx.includes("site visit") || ctx.includes("schedule")) {
+      return "Great! To schedule a site visit, please share:\n- Your name\n- Phone number\n- Preferred date and time\n\nOr call us directly at +91-98106-47063. We'll arrange a visit with honest, no-pressure assessments.";
+    }
+    if (ctx.includes("details") || ctx.includes("more about")) {
+      return "I'd be happy to share more details! Could you tell me which specific property you'd like to know more about? You can also call +91-98106-47063 for an immediate walkthrough.";
+    }
+    return "Sure! How can I help further? You can ask about specific properties, pricing, locations, or our services.";
+  }
+
+  // If user says no
+  if (matchKeywords(q, ["no","nah","nope","not now","later"])) {
+    return "No problem! Feel free to come back anytime. For immediate help, call +91-98106-47063 or visit vedharagroup.com. Have a great day!";
+  }
+
+  // ── Direct question matching (no context needed) ──
 
   // Greeting
   if (matchKeywords(q, ["hi","hello","hey","good morning","good evening","namaste","sup"])) {
@@ -100,93 +155,91 @@ function buildLocalAnswer(lastUserMsg: string): string {
 
   // Sell
   if (matchKeywords(q, ["sell","selling","sell my","want to sell"])) {
-    return "Thinking of selling? Here's how Vedhara helps:\n\n1. Market Analysis — we study comparable sales in your area to set the right asking price\n2. Professional Photography — high-quality visuals for portal listings\n3. Targeted Marketing — we list across major portals and our investor network\n4. Buyer Screening — we vet buyers before sharing your details\n5. Negotiation — we use market data to get you the best deal\n6. Paperwork — registration, transfer, and handover support\n\nShare your property details (location, size, type) and I'll connect you with our sell team. You can also call +91-98106-47063.";
+    return "Thinking of selling? Here's how Vedhara helps:\n\n1. Market Analysis — comparable sales data for the right price\n2. Professional Photography — high-quality visuals\n3. Targeted Marketing — major portals + investor network\n4. Buyer Screening — vetted buyers only\n5. Negotiation — best deal with market data\n6. Paperwork — registration & transfer support\n\nShare your property details (location, size, type) and I'll connect you with our sell team. Call +91-98106-47063.";
   }
 
   // Buy
   if (matchKeywords(q, ["buy","buying","buy a","want to buy","purchase","looking for","looking to buy"])) {
-    return "Great! We have verified properties across Delhi NCR. To help you better, could you share:\n\n- Budget range\n- Preferred location (Gurugram, Noida, Faridabad, Chandigarh?)\n- Property type (apartment, plot, commercial, luxury?)\n- BHK preference (if residential)\n\nHere are some highlights from our current inventory:\n- Gurugram: ₹2.95 Cr to ₹25 Cr (residential & commercial)\n- Noida: ₹48 Lakh to ₹72 Lakh (2-3 BHK apartments)\n- Chandigarh: ₹76 Lakh (Hero Homes, Mohali)\n\nAll listings come with our 5-point Verification Framework. Call +91-98106-47063 for personalized shortlisting.";
+    return "Great! To help you better, could you share:\n- Budget range\n- Preferred location\n- Property type (apartment, plot, commercial?)\n\nCurrent highlights:\n• Gurugram: ₹2.95 Cr to ₹25 Cr\n• Noida: ₹48 Lakh to ₹72 Lakh\n• Chandigarh: ₹76 Lakh\n\nAll listings come with our 5-point Verification Framework.";
   }
 
   // Commercial
   if (matchKeywords(q, ["commercial","office","shop","retail","mall","warehouse","industrial","pre-rented","leased"])) {
-    return "We have strong commercial inventory across Delhi NCR:\n\nGurugram:\n• HQ27 Premium Commercial Building — ₹2,250 Cr — Grade-A + Mall, ~6 Lakh sq.ft., Rent ₹11.5 Cr/mo\n• Rented Bank Property, Sector 76 — ₹2.22 Cr — 6 shops, 10-yr lease, ₹2.22 Lakh/mo rent\n• Pre-Rented Building, Sector 32 — ₹200 Cr — 1.25 Lakh sq.ft., ₹1.17 Cr/mo rent\n• Commercial Building, Udyog Vihar 5 — ₹40 Cr\n• MG Road Commercial Building — ₹25 Cr\n• One Golden Mile — ₹8.50 Cr — 4,500 sq.ft. office\n\nNeemrana: Pre-Leased Industrial Estate — ₹250 Cr — 20 Acres\n\nAll asking prices are negotiable. Want details on any specific property?";
+    return "Commercial inventory across Delhi NCR:\n\n• HQ27 Premium Commercial — ₹2,250 Cr — Grade-A + Mall, ~6L sq.ft., Rent ₹11.5 Cr/mo\n• Rented Bank Property — ₹2.22 Cr — 6 shops, 10-yr lease\n• Pre-Rented Building — ₹200 Cr — 1.25L sq.ft., ₹1.17 Cr/mo\n• Udyog Vihar Commercial — ₹40 Cr\n• MG Road Commercial — ₹25 Cr\n• One Golden Mile — ₹8.50 Cr — 4,500 sq.ft. office\n\nAll prices negotiable. Want details on any specific property?";
   }
 
   // Investment
   if (matchKeywords(q, ["invest","investment","roi","appreciation","best area","where to invest","growth"])) {
-    return "Great question! Here are the top investment areas we recommend:\n\nGurugram:\n• Dwarka Expressway — new launches, strong appreciation potential\n• Golf Course Road — premium, stable returns\n• Sector 76–82 — affordable commercial with rental income\n• Udyog Vihar — established commercial corridor\n\nNoida:\n• Noida Expressway corridor — infrastructure-driven growth\n• Greater Noida West — affordable housing demand\n\nFaridabad:\n• Sectors 79–89 — emerging residential zone\n\nChandigarh Tricity:\n• Mohali — IT hub growth, rental demand\n• Zirakpur — residential demand\n\nWe provide independent investment advisory with ROI projections and market analysis. Call +91-98106-47063 for a personalized investment plan.";
+    return "Top investment areas we recommend:\n\nGurugram:\n• Dwarka Expressway — new launches, strong appreciation\n• Golf Course Road — premium, stable returns\n• Sector 76–82 — affordable commercial with rental income\n\nNoida:\n• Expressway corridor — infrastructure growth\n• Greater Noida West — affordable housing demand\n\nFaridabad: Sectors 79–89 — emerging zone\nChandigarh: Mohali — IT hub growth\n\nWe provide independent investment advisory with ROI projections. Call +91-98106-47063 for a personalized plan.";
   }
 
   // Gurugram listings
   if (matchKeywords(q, ["gurugram","gurgaon","dlf","sector","udyog vihar","mg road","golf course","dwarka expressway","iffco"])) {
-    const items = LISTINGS_Gurugram.map((l,i) => `${i+1}. ${l.n} — ${l.p}${l.l ? ' — '+l.l : ''}`).join("\n");
-    return `Here are our current Gurugram listings:\n\n${items}\n\nAll prices are asking prices and negotiable. Want details on any specific property?`;
+    return "Gurugram listings:\n1. HQ27 Premium Commercial — ₹2,250 Cr\n2. Rented Bank Property, Sector 76 — ₹2.22 Cr\n3. 3 Kay Plotted Residence — ₹25 Cr\n4. Pre-Rented Building, Sector 32 — ₹200 Cr\n5. Sector 15 Duplex Kothi — ₹18 Cr\n6. NH-8 Facing Plot — ₹18.50 Cr\n7. Commercial Building, Udyog Vihar — ₹40 Cr\n8. MG Road Commercial — ₹25 Cr\n9. One Golf Course Penthouse — ₹12.80 Cr\n10. Amaryllis Residences — ₹6.20 Cr\n11. One Golden Mile — ₹8.50 Cr\n12. Platinum Towers — ₹2.95 Cr\n\nWhich one interests you?";
   }
 
   // Noida listings
   if (matchKeywords(q, ["noida","greater noida","ajnara","exotica"])) {
-    const items = LISTINGS_Noida.map((l,i) => `${i+1}. ${l.n} — ${l.p} — ${l.d}`).join("\n");
-    return `Here are our Noida listings:\n\n${items}\n\nAll prices are asking prices. Want to schedule a site visit?`;
+    return "Noida listings:\n1. Ajnara Homes — ₹48 Lakh (2 BHK)\n2. Ajnara Damsaz — ₹55 Lakh (2 BHK)\n3. Ajnara Le Garden — ₹58 Lakh (2 BHK)\n4. Ajnara Integrity — ₹68 Lakh (3 BHK)\n5. Exotica Blossom — ₹72 Lakh (3 BHK)\n\nWant to schedule a site visit?";
   }
 
   // Faridabad
   if (matchKeywords(q, ["faridabad"])) {
-    return "We have residential options in Faridabad across Sectors 79–89 — apartments and plots in the emerging development zone. Share your budget and I'll help shortlist. You can also call +91-98106-47063 for details.";
+    return "Faridabad: Residential options in Sectors 79–89 — apartments and plots. Share your budget and I'll help shortlist. Call +91-98106-47063.";
   }
 
-  // Chandigarh / Tricity / Mohali
+  // Chandigarh / Tricity
   if (matchKeywords(q, ["chandigarh","tricity","mohali","panchkula","zirakpur","kharar"])) {
-    return "Chandigarh Tricity listings:\n• Hero Homes, Mohali — ₹76 Lakh — 2 & 3 BHK apartments\n\nWe also cover Panchkula, Zirakpur, and Kharar. Want to explore options in the Tricity area? Call +91-98106-47063.";
+    return "Chandigarh Tricity:\n• Hero Homes, Mohali — ₹76 Lakh — 2 & 3 BHK\n\nWe also cover Panchkula, Zirakpur, and Kharar. Want to explore?";
   }
 
   // South Delhi
   if (matchKeywords(q, ["south delhi","delhi","hauz khas"])) {
-    return "South Delhi listing:\n• Laxman Public School — Hauz Khas — ₹450 Cr — 8.5 Acres, Institutional\n\nWe cover properties across Delhi NCR. What area are you interested in?";
+    return "South Delhi:\n• Laxman Public School — Hauz Khas — ₹450 Cr — 8.5 Acres, Institutional\n\nWhat area are you interested in?";
   }
 
   // Luxury
   if (matchKeywords(q, ["luxury","premium","villa","penthouse","farmhouse","high end"])) {
-    return "Our premium/luxury properties:\n• One Golf Course Penthouse — ₹12.80 Cr — 5 BHK + Pool, 4,200 sq.ft.\n• Amaryllis Residences — ₹6.20 Cr — 3 BHK + Servant, Golf Course Road\n• 3 Kay Plotted Residence — ₹25 Cr — DLF Phase 1, 490 sq.yds.\n• Sector 15 Duplex Kothi — ₹18 Cr — 4 BHK + Servant\n\nAll luxury listings include exclusive amenities and prime locations. Want to schedule a private viewing?";
+    return "Premium properties:\n• One Golf Course Penthouse — ₹12.80 Cr — 5 BHK + Pool\n• Amaryllis Residences — ₹6.20 Cr — 3 BHK, Golf Course Road\n• 3 Kay Plotted Residence — ₹25 Cr — DLF Phase 1\n• Sector 15 Duplex Kothi — ₹18 Cr\n\nWant a private viewing?";
   }
 
-  // Price / budget
+  // Price/budget
   if (matchKeywords(q, ["price","cost","budget","affordable","cheap","expensive","lakh","crore","₹"])) {
-    return "Our inventory spans various budgets:\n\nUnder ₹1 Cr:\n• Ajnara Homes, Noida — ₹48 Lakh\n• Ajnara Damsaz, Noida — ₹55 Lakh\n\n₹1–10 Cr:\n• Platinum Towers, Dwarka Expressway — ₹2.95 Cr\n• Amaryllis Residences — ₹6.20 Cr\n• One Golden Mile — ₹8.50 Cr\n\n₹10–25 Cr:\n• One Golf Course Penthouse — ₹12.80 Cr\n• Sector 15 Duplex Kothi — ₹18 Cr\n• 3 Kay Plotted Residence — ₹25 Cr\n\nAbove ₹25 Cr:\n• Commercial buildings (₹25–₹200 Cr)\n• HQ27 Premium Building — ₹2,250 Cr\n\nWhat's your budget range?";
+    return "Budget ranges:\n\nUnder ₹1 Cr: Noida apartments (₹48–72 Lakh)\n₹1–10 Cr: Platinum Towers (₹2.95 Cr), Amaryllis (₹6.20 Cr), One Golden Mile (₹8.50 Cr)\n₹10–25 Cr: Golf Course Penthouse (₹12.80 Cr), Duplex Kothi (₹18 Cr), DLF Phase 1 (₹25 Cr)\nAbove ₹25 Cr: Commercial buildings (₹25–₹2,250 Cr)\n\nWhat's your budget range?";
   }
 
-  // Contact / phone / email / location / visit
+  // Contact
   if (matchKeywords(q, ["contact","phone","call","email","address","location","where","visit","office","map"])) {
-    return "Vedhara Group Office:\n📍 Sushant Lok Phase 3, Near DLF City Phase 2, Gurugram, Haryana\n📞 +91-98106-47063\n✉️ contact@vedharagroup.com\n🌐 www.vedharagroup.com\n\nHours: Mon–Fri 9AM–7PM, Sat–Sun 10AM–4PM\n\nFeel free to call or visit us!";
+    return "Vedhara Group:\n📍 Sushant Lok Phase 3, Near DLF City Phase 2, Gurugram\n📞 +91-98106-47063\n✉️ contact@vedharagroup.com\n🌐 www.vedharagroup.com\n\nHours: Mon–Fri 9AM–7PM, Sat–Sun 10AM–4PM";
   }
 
   // NRI
-  if (matchKeywords(q, ["nri","non resident","overseas","abroad","nri services"])) {
-    return "We offer dedicated NRI Services:\n• Remote property search with virtual tours\n• Documentation & power of attorney guidance\n• Rental management for NRI-owned properties\n• End-to-end purchase support from abroad\n\nWe've helped many NRIs invest in Delhi NCR properties. Call +91-98106-47063 to discuss your requirements.";
+  if (matchKeywords(q, ["nri","non resident","overseas","abroad"])) {
+    return "NRI Services:\n• Remote property search with virtual tours\n• Documentation & PoA guidance\n• Rental management for NRI-owned properties\n• End-to-end purchase support from abroad\n\nCall +91-98106-47063 to discuss.";
   }
 
-  // Verification / trust / rera
+  // Verification/trust
   if (matchKeywords(q, ["verify","verification","trust","rera","genuine","legit","safe","secure"])) {
-    return "Our 5-point Verification Framework ensures every listing is trustworthy:\n1. RERA Registration Status\n2. Builder Delivery History\n3. Project-level Approvals\n4. Price-to-Locality Fairness Analysis\n5. Title Chain Verification\n\nWe publish results on every listing so you can shortlist with confidence. We're builder-independent — our recommendations are always in YOUR interest.";
+    return "Our 5-point Verification Framework:\n1. RERA Registration Status\n2. Builder Delivery History\n3. Project Approvals\n4. Price-to-Locality Fairness\n5. Title Chain Verification\n\nWe publish results on every listing. Builder-independent — always in YOUR interest.";
   }
 
-  // Fees / commission / charges
+  // Fees
   if (matchKeywords(q, ["fee","commission","charge","cost","how much","payment","hidden"])) {
-    return "Our fee structure:\n• Vedhara charges a disclosed commission on successful transactions\n• No hidden charges — everything is transparent\n• Commission is clearly stated on every specific listing\n• We're builder-independent, so no conflict of interest\n\nFor specific commission details, call +91-98106-47063.";
+    return "Fee structure:\n• Disclosed commission on successful transactions\n• No hidden charges\n• Clearly stated on every listing\n• Builder-independent, no conflict of interest\n\nCall +91-98106-47063 for specifics.";
   }
 
   // Thanks
-  if (matchKeywords(q, ["thank","thanks","thanks alot","thank you"])) {
-    return "You're welcome! Happy to help. If you have more questions about properties or want to schedule a site visit, just ask. You can also call us at +91-98106-47063.";
+  if (matchKeywords(q, ["thank","thanks","thank you"])) {
+    return "You're welcome! Happy to help. For more questions, just ask. Call +91-98106-47063 anytime.";
   }
 
   // Goodbye
   if (matchKeywords(q, ["bye","goodbye","see you","talk later"])) {
-    return "Goodbye! Feel free to come back anytime. For immediate assistance, call +91-98106-47063 or visit vedharagroup.com. Have a great day!";
+    return "Goodbye! Come back anytime. For immediate help, call +91-98106-47063 or visit vedharagroup.com.";
   }
 
-  // Fallback — try to give a helpful generic response
-  return `I'd be happy to help with that! Here's what I can assist with:\n\n• Property listings in Gurugram, Noida, Faridabad, Chandigarh\n• Commercial properties (offices, shops, pre-rented buildings)\n• Investment advice for Delhi NCR\n• Buy/sell process and pricing\n• NRI services\n• Contact information\n\nCould you tell me more about what you're looking for? You can also call us at +91-98106-47063 for immediate help.`;
+  // Fallback
+  return "I'd be happy to help! I can assist with:\n• Property listings in Gurugram, Noida, Faridabad, Chandigarh\n• Commercial properties (offices, shops, pre-rented)\n• Investment advice for Delhi NCR\n• Buy/sell process and pricing\n• NRI services\n\nWhat are you looking for? Or call +91-98106-47063 for immediate help.";
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -307,32 +360,7 @@ export async function POST(req: NextRequest) {
     try { await writeLead(lead); leadCaptured = true; } catch (err) { console.error("[Chatbot lead save failed]", err); }
   }
 
-  // Get last user message for local matching
-  const lastUserMsg = [...messages].reverse().find((m) => m.role === "user")?.content || "";
-
-  // Layer 1: Try OpenAI if key is available
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (apiKey) {
-    try {
-      const openai = new OpenAI({ apiKey });
-      const chatMessages = [
-        { role: "system" as const, content: buildSystemPrompt() },
-        ...messages.slice(-20).map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
-      ];
-      const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: chatMessages,
-        max_tokens: 800,
-        temperature: 0.7,
-      });
-      const reply = completion.choices[0]?.message?.content;
-      if (reply) return NextResponse.json({ reply, leadCaptured });
-    } catch (err) {
-      console.error("[OpenAI error, falling back to local KB]", err);
-    }
-  }
-
-  // Layer 2: Local knowledge base (always works)
-  const reply = buildLocalAnswer(lastUserMsg.toLowerCase());
+  // Layer 2: Local knowledge base (always works, context-aware)
+  const reply = buildLocalAnswer(messages);
   return NextResponse.json({ reply, leadCaptured });
 }

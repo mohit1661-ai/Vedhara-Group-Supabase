@@ -142,13 +142,13 @@ export default function ChatWidget() {
           className="chat-widget-panel"
           style={{
             position: "fixed",
-            bottom: 84,
+            bottom: 82,
             right: 20,
             zIndex: 10000,
             width: 380,
             maxWidth: "calc(100vw - 40px)",
             height: 480,
-            maxHeight: "calc(100vh - 140px)",
+            maxHeight: "calc(100vh - 120px)",
             borderRadius: 16,
             overflow: "hidden",
             display: "flex",
@@ -445,25 +445,32 @@ export default function ChatWidget() {
           0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
           40% { transform: scale(1); opacity: 1; }
         }
+        @media (max-width: 1024px) {
+          .chat-widget-panel {
+            width: 360px !important;
+          }
+        }
         @media (max-width: 640px) {
           .chat-widget-btn {
-            width: 40px !important;
-            height: 40px !important;
+            width: 42px !important;
+            height: 42px !important;
             right: auto !important;
-            left: 16px !important;
-            bottom: 56px !important;
+            left: 14px !important;
+            bottom: 58px !important;
           }
           .chat-widget-btn svg {
-            width: 16px !important;
-            height: 16px !important;
+            width: 17px !important;
+            height: 17px !important;
           }
           .chat-widget-panel {
+            position: fixed !important;
+            top: 16px !important;
             right: 8px !important;
             left: 8px !important;
+            bottom: auto !important;
             width: auto !important;
             maxWidth: none !important;
-            bottom: 104px !important;
-            height: 55vh !important;
+            height: calc(100vh - 32px) !important;
             max-height: none !important;
             border-radius: 14px !important;
           }
