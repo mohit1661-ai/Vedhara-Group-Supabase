@@ -9,14 +9,14 @@ interface Message {
 
 const WELCOME: Message = {
   role: "assistant",
-  content: "Hi! I'm Vedhara's property advisor. I can help you with properties, pricing, locations, and our services across Delhi NCR. What are you looking for?",
+  content: "Hi! I'm Vedhara's property advisor. I can help you find properties, check prices, or learn about our services across Delhi NCR. What are you looking for?",
 };
 
 const QUICK_REPLIES = [
-  "What properties are available in Gurugram?",
-  "Tell me about commercial properties",
-  "How does Vedhara work?",
-  "I want to sell my property",
+  { label: "Gurugram Properties", query: "Show me properties available in Gurugram with prices" },
+  { label: "Commercial Deals", query: "What commercial properties do you have for sale or lease?" },
+  { label: "Sell My Property", query: "I want to sell my property. How does Vedhara help sellers?" },
+  { label: "Investment Advice", query: "Which areas are best for real estate investment in Delhi NCR right now?" },
 ];
 
 export default function ChatWidget() {
@@ -38,7 +38,9 @@ export default function ChatWidget() {
   }, [messages, loading, scrollToBottom]);
 
   useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (open) {
+      setTimeout(() => inputRef.current?.focus(), 100);
+    }
   }, [open]);
 
   const send = useCallback(
@@ -90,29 +92,37 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating button */}
+      {/* Floating button — always above everything */}
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close chat" : "Open chat"}
+        className="chat-widget-btn"
         style={{
           position: "fixed",
-          bottom: 24,
-          right: 24,
-          zIndex: 9998,
+          bottom: "max(24px, calc(64px + env(safe-area-inset-bottom, 0px)))",
+          right: 20,
+          zIndex: 10000,
           width: 56,
           height: 56,
           borderRadius: "50%",
           border: "none",
           cursor: "pointer",
           background: "linear-gradient(135deg, var(--gold), var(--gold-lt))",
-          boxShadow: "0 6px 24px rgba(212,168,67,0.4)",
+          boxShadow: "0 6px 28px rgba(212,168,67,0.5), 0 0 0 3px rgba(212,168,67,0.15)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          transition: "transform 0.25s cubic-bezier(0.34,1.56,0.64,1)",
+          transition: "transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease",
+          outline: "none",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.1)";
+          e.currentTarget.style.boxShadow = "0 8px 36px rgba(212,168,67,0.6), 0 0 0 4px rgba(212,168,67,0.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 6px 28px rgba(212,168,67,0.5), 0 0 0 3px rgba(212,168,67,0.15)";
+        }}
       >
         {open ? (
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" strokeWidth="2.5" strokeLinecap="round">
@@ -129,22 +139,23 @@ export default function ChatWidget() {
       {/* Chat panel */}
       {open && (
         <div
+          className="chat-widget-panel"
           style={{
             position: "fixed",
-            bottom: 92,
-            right: 24,
-            zIndex: 9998,
-            width: 380,
-            maxWidth: "calc(100vw - 32px)",
-            height: 520,
-            maxHeight: "calc(100vh - 140px)",
-            borderRadius: 16,
+            bottom: "max(92px, calc(132px + env(safe-area-inset-bottom, 0px)))",
+            right: 20,
+            zIndex: 10000,
+            width: 400,
+            maxWidth: "calc(100vw - 40px)",
+            height: 560,
+            maxHeight: "calc(100vh - 180px)",
+            borderRadius: 18,
             overflow: "hidden",
             display: "flex",
             flexDirection: "column",
             background: "var(--cream)",
             border: "1px solid rgba(212,168,67,0.25)",
-            boxShadow: "0 20px 60px rgba(9,15,29,0.25), 0 0 0 1px rgba(212,168,67,0.1)",
+            boxShadow: "0 24px 80px rgba(9,15,29,0.35), 0 0 0 1px rgba(212,168,67,0.1)",
             fontFamily: "var(--t-body)",
           }}
         >
@@ -161,8 +172,8 @@ export default function ChatWidget() {
           >
             <div
               style={{
-                width: 36,
-                height: 36,
+                width: 38,
+                height: 38,
                 borderRadius: "50%",
                 background: "linear-gradient(135deg, var(--gold), var(--gold-lt))",
                 display: "flex",
@@ -229,7 +240,7 @@ export default function ChatWidget() {
                     borderRadius: m.role === "user" ? "14px 14px 4px 14px" : "14px 14px 14px 4px",
                     fontFamily: "var(--t-body)",
                     fontSize: 12.5,
-                    lineHeight: 1.6,
+                    lineHeight: 1.65,
                     color: m.role === "user" ? "var(--navy)" : "var(--ink)",
                     background:
                       m.role === "user"
@@ -278,47 +289,64 @@ export default function ChatWidget() {
             )}
           </div>
 
-          {/* Quick replies (only show at start) */}
+          {/* Quick replies — only show when no user messages yet */}
           {messages.length <= 1 && (
             <div
               style={{
-                padding: "0 16px 10px",
+                padding: "0 16px 12px",
                 display: "flex",
-                flexWrap: "wrap",
+                flexDirection: "column",
                 gap: 6,
                 background: "var(--cream)",
               }}
             >
-              {QUICK_REPLIES.map((q) => (
-                <button
-                  key={q}
-                  onClick={() => send(q)}
-                  style={{
-                    fontFamily: "var(--t-head)",
-                    fontSize: 9.5,
-                    fontWeight: 600,
-                    letterSpacing: "0.04em",
-                    padding: "6px 10px",
-                    borderRadius: 20,
-                    border: "1px solid rgba(212,168,67,0.3)",
-                    background: "white",
-                    color: "var(--gold-ink)",
-                    cursor: "pointer",
-                    transition: "all 0.2s",
-                    whiteSpace: "nowrap",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "var(--gold)";
-                    e.currentTarget.style.color = "var(--navy)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "white";
-                    e.currentTarget.style.color = "var(--gold-ink)";
-                  }}
-                >
-                  {q}
-                </button>
-              ))}
+              <p
+                style={{
+                  margin: "0 0 4px",
+                  fontFamily: "var(--t-head)",
+                  fontSize: 9,
+                  fontWeight: 700,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "var(--slate)",
+                }}
+              >
+                Quick questions
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {QUICK_REPLIES.map((q) => (
+                  <button
+                    key={q.label}
+                    onClick={() => send(q.query)}
+                    style={{
+                      fontFamily: "var(--t-head)",
+                      fontSize: 10,
+                      fontWeight: 600,
+                      letterSpacing: "0.02em",
+                      padding: "7px 12px",
+                      borderRadius: 20,
+                      border: "1px solid rgba(212,168,67,0.3)",
+                      background: "white",
+                      color: "var(--gold-ink)",
+                      cursor: "pointer",
+                      transition: "all 0.2s",
+                      whiteSpace: "nowrap",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = "var(--gold)";
+                      e.currentTarget.style.color = "var(--navy)";
+                      e.currentTarget.style.borderColor = "var(--gold)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "white";
+                      e.currentTarget.style.color = "var(--gold-ink)";
+                      e.currentTarget.style.borderColor = "rgba(212,168,67,0.3)";
+                    }}
+                  >
+                    {q.label}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
@@ -353,16 +381,16 @@ export default function ChatWidget() {
                 color: "var(--ink)",
                 transition: "border-color 0.2s",
               }}
-              onFocus={(e) => (e.target.style.borderColor = "var(--gold)")}
-              onBlur={(e) => (e.target.style.borderColor = "rgba(212,168,67,0.2)")}
+              onFocus={(e) => (e.currentTarget.style.borderColor = "var(--gold)")}
+              onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(212,168,67,0.2)")}
             />
             <button
               onClick={() => send()}
               disabled={loading || !input.trim()}
               aria-label="Send message"
               style={{
-                width: 38,
-                height: 38,
+                width: 40,
+                height: 40,
                 borderRadius: 10,
                 border: "none",
                 cursor: loading || !input.trim() ? "default" : "pointer",
@@ -391,6 +419,18 @@ export default function ChatWidget() {
         @keyframes chatDot {
           0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
           40% { transform: scale(1); opacity: 1; }
+        }
+        @media (max-width: 640px) {
+          .chat-widget-panel {
+            right: 10px !important;
+            left: 10px !important;
+            width: auto !important;
+            maxWidth: none !important;
+            bottom: 80px !important;
+            height: calc(100vh - 160px) !important;
+            max-height: none !important;
+            border-radius: 14px !important;
+          }
         }
       `}</style>
     </>
