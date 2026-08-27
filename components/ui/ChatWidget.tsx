@@ -454,9 +454,9 @@ export default function ChatWidget() {
           .chat-widget-btn {
             width: 42px !important;
             height: 42px !important;
-            right: auto !important;
-            left: 14px !important;
-            bottom: 58px !important;
+            left: auto !important;
+            right: 14px !important;
+            bottom: calc(60px + env(safe-area-inset-bottom, 0px)) !important;
           }
           .chat-widget-btn svg {
             width: 17px !important;

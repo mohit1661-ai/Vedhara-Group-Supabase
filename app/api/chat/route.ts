@@ -189,6 +189,98 @@ const OUT_OF_AREA = ["mumbai","bangalore","bengaluru","pune","hyderabad","chenna
   "jaipur","lucknow","ahmedabad","dehradun","indore","goa","surat","nagpur","bhopal",
   "kochi","coimbatore","vizag","visakhapatnam","patna","bhubaneswar","guwahati","shimla"];
 
+// ── Structured inventory (numeric prices) ────────────────────
+// p = price in ₹ Crore, c = city group. Powers budget/BHK/cheapest/priciest answers.
+const INVENTORY = [
+  { n:"HQ27 Premium Commercial Building", l:"IFFCO Chowk, Gurugram", cr:2250, pt:"₹2,250 Cr", cfg:"Grade-A Commercial + Mall", c:"gg" },
+  { n:"Rented Bank Property, Sector 76", l:"DLF Phase 6, Gurugram", cr:2.22, pt:"₹2.22 Cr", cfg:"6 Shops, 10-Yr Bank Lease", c:"gg" },
+  { n:"3 Kay Plotted Residence", l:"DLF Phase 1, Gurugram", cr:25, pt:"₹25 Cr", cfg:"490 sq.yds. Plot", c:"gg" },
+  { n:"Pre-Rented Building", l:"Sector 32, Gurugram", cr:200, pt:"₹200 Cr", cfg:"1.25L sq.ft., ₹1.17 Cr/mo rent", c:"gg" },
+  { n:"Sector 15 Duplex Kothi", l:"Sector 15, Gurugram", cr:18, pt:"₹18 Cr", cfg:"4 BHK + Servant, 502 sq.yds.", c:"gg" },
+  { n:"NH-8 Facing Plot", l:"Sector 15, Gurugram", cr:18.5, pt:"₹18.50 Cr", cfg:"500 sq.yds.", c:"gg" },
+  { n:"Udyog Vihar 5 Building", l:"Udyog Vihar, Gurugram", cr:40, pt:"₹40 Cr", cfg:"1,000 sq.m.", c:"gg" },
+  { n:"MG Road Commercial", l:"Sector 16, Gurugram", cr:25, pt:"₹25 Cr", cfg:"1,000 sq.m.", c:"gg" },
+  { n:"One Golf Course Penthouse", l:"Golf Course Road, Gurugram", cr:12.8, pt:"₹12.80 Cr", cfg:"5 BHK + Pool, 4,200 sq.ft.", c:"gg" },
+  { n:"Amaryllis Residences", l:"Golf Course Road, Gurugram", cr:6.2, pt:"₹6.20 Cr", cfg:"3 BHK, 2,150 sq.ft.", c:"gg" },
+  { n:"One Golden Mile", l:"Sector 62, Gurugram", cr:8.5, pt:"₹8.50 Cr", cfg:"4,500 sq.ft. Office", c:"gg" },
+  { n:"Platinum Towers", l:"Dwarka Expressway, Gurugram", cr:2.95, pt:"₹2.95 Cr", cfg:"3 BHK, 1,650 sq.ft.", c:"gg" },
+  { n:"Ajnara Homes", l:"Noida", cr:0.48, pt:"₹48 Lakh", cfg:"2 BHK, 975 sq.ft.", c:"nd" },
+  { n:"Ajnara Damsaz", l:"Noida", cr:0.55, pt:"₹55 Lakh", cfg:"2 BHK, 1,095 sq.ft.", c:"nd" },
+  { n:"Ajnara Le Garden", l:"Noida", cr:0.58, pt:"₹58 Lakh", cfg:"2 BHK, 1,115 sq.ft.", c:"nd" },
+  { n:"Ajnara Integrity", l:"Noida", cr:0.68, pt:"₹68 Lakh", cfg:"3 BHK, 1,625 sq.ft.", c:"nd" },
+  { n:"Exotica Blossom", l:"Noida", cr:0.72, pt:"₹72 Lakh", cfg:"3 BHK, 1,390 sq.ft.", c:"nd" },
+  { n:"Hero Homes", l:"Mohali", cr:0.76, pt:"₹76 Lakh", cfg:"2 & 3 BHK", c:"tri" },
+  { n:"Neemrana Industrial Estate", l:"Ghiloth, Neemrana", cr:250, pt:"₹250 Cr", cfg:"20 Acres, MNC Tenant", c:"oth" },
+  { n:"Laxman Public School", l:"Hauz Khas, South Delhi", cr:450, pt:"₹450 Cr", cfg:"8.5 Acres Institutional", c:"oth" },
+];
+
+/**
+ * Answers SPECIFIC inventory questions: "cheapest in noida", "3 bhk in gurgaon",
+ * "properties under 1 crore", "80 lakh budget flat". Returns null when the
+ * message has no budget/BHK/superlative signal, letting normal branches answer.
+ */
+function resolveInventoryQuery(q: string): string | null {
+  const cityWordMap: Record<string, string> = {
+    gurugram:"gg", "gurgaon":"gg", dlf:"gg", noida:"nd",
+    faridabad:"fb", chandigarh:"tri", mohali:"tri", tricity:"tri",
+    zirakpur:"tri", panchkula:"tri", kharar:"tri", delhi:"dl",
+  };
+  let cityPool: string | null = null;
+  const cityKeys = Object.keys(cityWordMap);
+  for (const w of q.split(/[^a-z]+/)) if (cityKeys.includes(w)) { cityPool = cityWordMap[w]; break; }
+
+  // Budget: "under 3 cr", "below 70 lakh", "1.5 crore budget", bare numbers with unit
+  let budgetCr: number | null = null;
+  const m = q.match(/(\d+(?:\.\d+)?)\s*(cr|crore|crores|lac|lakh|lakhs|lacs)/);
+  if (m) {
+    const v = parseFloat(m[1]);
+    budgetCr = m[2].startsWith("cr") ? v : v * 0.01;
+  }
+
+  const bhkM = q.match(/\b([12345])\s*bhk\b/);
+  const wantsCheap = /\b(cheap|cheapest|low(est)? price|lowest|affordable|smallest)\b/.test(q);
+  const wantsDear = /\b(expensive|most premium|top end|highest|costliest|dearest)\b/.test(q);
+
+  if (budgetCr === null && !bhkM && !wantsCheap && !wantsDear) return null;
+
+  let pool = INVENTORY.filter((i) => (cityPool === null || i.c === cityPool));
+  // Priciest building skews pools — keep commercial out unless asked or already filtered
+  if (!q.includes("commercial") && !q.includes("office") && !q.includes("industrial") && !q.includes("school") && !q.includes("mall")) {
+    pool = pool.filter((i) => i.cr <= 30);
+  }
+  if (pool.length === 0) pool = INVENTORY;
+
+  const byBhk = bhkM
+    ? pool.filter((i) => i.cfg.includes(bhkM[1] + " BHK"))
+    : pool;
+  const resultPool = byBhk.length > 0 ? byBhk : pool;
+
+  let list = [...resultPool];
+  if (bhkM === null && wantsCheap === false && wantsDear === true) {
+    list.sort((a, b) => b.cr - a.cr); list = list.slice(0, 5);
+  } else if ((wantsCheap && budgetCr !== null)) {
+    list.sort((a, b) => a.cr - b.cr);
+    list = list.filter((i) => i.cr <= budgetCr! * 1.15);
+    if (list.length === 0) list = [...resultPool].sort((a, b) => a.cr - b.cr).slice(0, 4);
+  } else if (wantsCheap || budgetCr !== null) {
+    if (wantsCheap) { list.sort((a, b) => a.cr - b.cr); list = list.slice(0, 5); }
+    else {
+      list.sort((a, b) => a.cr - b.cr);
+      const within = list.filter((i) => i.cr <= budgetCr! * 1.15);
+      list = within.slice(0, 6);
+    }
+  }
+
+  if (list.length === 0) {
+    return `Nothing fits that exactly yet. Our closest options start around ${[...resultPool].sort((a,b)=>a.cr-b.cr)[0]?.pt}. Would you like me to share those instead? You can also call +91-98106-47063 with your exact requirement.`;
+  }
+
+  const cityName: Record<string,string> = { gg:"Gurugram", nd:"Noida", fb:"Faridabad", tri:"the Tricity", dl:"Delhi" };
+  const scopeLine = cityPool ? `in ${cityName[cityPool]}` : "across Delhi NCR";
+  const bullets = list.map((i) => `• ${i.n} (${i.l}) — ${i.pt} · ${i.cfg}`).join("\n");
+  return `Here's what matches ${scopeLine}:\n\n${bullets}\n\nAll asking prices are negotiable. Want full details on any one of these?`;
+}
+
 function buildLocalAnswer(messages: { role: string; content: string }[]): string {
   const lastUserMsg = [...messages].reverse().find((m) => m.role === "user")?.content || "";
   const lastBotMsg = [...messages].reverse().find((m) => m.role === "assistant")?.content || "";
@@ -240,6 +332,10 @@ function buildLocalAnswer(messages: { role: string; content: string }[]): string
   if (OUT_OF_AREA.some((c) => q.includes(c))) {
     return "Sorry, we don't currently have inventory there. Vedhara Group operates across Delhi NCR and North India:\n• Gurugram • Noida • Faridabad • South Delhi\n• Chandigarh Tricity (Mohali, Panchkula, Zirakpur, Kharar)\n• Manesar • Ghaziabad • Greater Noida • Neemrana\n\nWhich of these would you like to explore?";
   }
+
+  // ── 3b. Specific asks: budget / BHK / cheapest / priciest ──
+  const inv = resolveInventoryQuery(q);
+  if (inv) return inv;
 
   // ── 4. City queries always answer with that city's inventory ──
   if (city) {
@@ -503,32 +599,30 @@ export async function POST(req: NextRequest) {
     ? "\n\n✅ Noted your details — our team will reach out shortly. You can also call +91-98106-47063."
     : "";
 
-  // Layer 1: Local knowledge base (always works, context-aware, includes listing URLs)
-  const localReply = buildLocalAnswer(messages);
-
-  // Layer 2: If the KB didn't match anything, try OpenAI for free-form questions
-  if (localReply === KB_FALLBACK) {
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (apiKey) {
-      try {
-        const openai = new OpenAI({ apiKey });
-        const chatMessages = [
-          { role: "system" as const, content: buildSystemPrompt() },
-          ...messages.slice(-20).map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
-        ];
-        const completion = await openai.chat.completions.create({
-          model: "gpt-4o-mini",
-          messages: chatMessages,
-          max_tokens: 800,
-          temperature: 0.7,
-        });
-        const aiReply = completion.choices[0]?.message?.content;
-        if (aiReply) return NextResponse.json({ reply: aiReply + captureNote, leadCaptured });
-      } catch (err) {
-        console.error("[OpenAI error, using local fallback]", err);
-      }
+  // Layer 1: OpenAI (when OPENAI_API_KEY is set) answers the actual question in
+  // natural language, grounded by the system prompt. Any failure falls through.
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (apiKey) {
+    try {
+      const openai = new OpenAI({ apiKey });
+      const chatMessages = [
+        { role: "system" as const, content: buildSystemPrompt() },
+        ...messages.slice(-20).map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
+      ];
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: chatMessages,
+        max_tokens: 800,
+        temperature: 0.7,
+      });
+      const aiReply = completion.choices[0]?.message?.content;
+      if (aiReply) return NextResponse.json({ reply: aiReply + captureNote, leadCaptured });
+    } catch (err) {
+      console.error("[OpenAI error, using local knowledge base]", err);
     }
   }
 
-  return NextResponse.json({ reply: localReply + captureNote, leadCaptured });
+  // Layer 2: Local knowledge base (always works, no API key needed) — direct
+  // answers for listings, cities, budgets; OpenAI-free environments included.
+  return NextResponse.json({ reply: buildLocalAnswer(messages) + captureNote, leadCaptured });
 }
