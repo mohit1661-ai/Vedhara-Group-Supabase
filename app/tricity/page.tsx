@@ -23,7 +23,7 @@ const markets = [
     points:["Chandigarh Estate Office rules and NOC requirements","Freehold majority with leasehold pockets in specific sectors","Capital project zones with strict floor-area and resale rules"],
   },
   {
-    name:"Mohali (SAS Nagar)", tag:"Punjab Â· GMADA",
+    name:"Mohali (SAS Nagar)", tag:"Punjab · GMADA",
     desc:"Chandigarh's fastest-growing employment and IT corridor. Newer sectors are planned by GMADA (Greater Mohali Area Development Authority) and fall under Punjab RERA oversight. Strong rental demand from IT parks and easy highway access make it the most active micro-market.",
     points:["GMADA-approved sectors with defined development plans","Punjab RERA (PunRERA) registered projects","IT Parks, Airport Road and Kharar connectivity driving demand"],
   },
@@ -33,12 +33,12 @@ const markets = [
     points:["HRERA registration for new projects","Legacy HUDA/HSVP sectors, many now freehold-converted","Haryana circle rates and stamp duty apply"],
   },
   {
-    name:"Zirakpur & Kharar", tag:"Punjab Â· GMADA",
+    name:"Zirakpur & Kharar", tag:"Punjab · GMADA",
     desc:"High-density, affordable corridors straddling the Chandigarh periphery. Zirakpur is a retail and connectivity hub on the Ambala highway; Kharar is an emerging residential belt on the Mohali side. Higher transaction volume at lower ticket sizes, with more developer inventory to verify.",
     points:["Entry-friendly price points with strong rental absorption","GMADA approvals and Punjab RERA verification essential","Beware of unapproved colonies, title checks are critical"],
   },
   {
-    name:"New Chandigarh", tag:"Punjab Â· GMADA",
+    name:"New Chandigarh", tag:"Punjab · GMADA",
     desc:"The planned extension of Chandigarh across the Mohali side. Plots and units here are typically GMADA-approved with defined land-use. Pricing is discovery-stage, which rewards careful selection and penalises hasty buying in unapproved pockets.",
     points:["Planned extension with premium positioning","GMADA sector allotments and resale rules","Medium-term appreciation play, not instant liquidity"],
   },
@@ -53,14 +53,14 @@ const jurisdictions = [
     body:"No separate RERA authority is yet functional in Chandigarh UT. Allotments, resale permissions, and NOCs are handled by the Chandigarh Administration's Estate Office under the 1960 Rules. Title checks focus on the registered chain, allotment letters, and Estate Office approvals.",
   },
   {
-    title:"GMADA", applies:"Mohali Â· Zirakpur Â· Kharar Â· New Chandigarh", mono:"GM",
+    title:"GMADA", applies:"Mohali · Zirakpur · Kharar · New Chandigarh", mono:"GM",
     image:"https://images.pexels.com/photos/33848325/pexels-photo-33848325.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"79%",
     alt:"GMADA office for sector approvals in Mohali, Zirakpur and Kharar",
     body:"Punjab projects are planned and approved by GMADA. We verify the sector's sanctioned layout, the project's approval status, and whether the unit sits inside an approved or unauthorised colony before any recommendation.",
   },
   {
-    title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab Â· Haryana", mono:"RA",
+    title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab · Haryana", mono:"RA",
     image:"https://images.pexels.com/photos/33217250/pexels-photo-33217250.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos:"50% 70%",
     alt:"Punjab RERA and HRERA registration office for real estate projects in Punjab and Haryana",
@@ -94,7 +94,7 @@ const tricityListings: TricityListing[] = [
     id:"ved-t01",
     title:"The Corbusier Residences",
     location:"Sector 17, Chandigarh",
-    price:"â‚¹ 6.75 Cr",
+    price:"₹ 6.75 Cr",
     config:"4 BHK + Study",
     size:"2,850 sq.ft.",
     type:"Residential",
@@ -108,7 +108,7 @@ const tricityListings: TricityListing[] = [
     id:"ved-t02",
     title:"Sukna Lakefront Villas",
     location:"Sector 4, Panchkula",
-    price:"â‚¹ 8.90 Cr",
+    price:"₹ 8.90 Cr",
     config:"5 BHK Villa",
     size:"4,200 sq.ft.",
     type:"Luxury",
@@ -121,7 +121,7 @@ const tricityListings: TricityListing[] = [
     id:"ved-t03",
     title:"Aero City Heights",
     location:"Airport Road, Mohali",
-    price:"â‚¹ 2.65 Cr",
+    price:"₹ 2.65 Cr",
     config:"3 BHK",
     size:"1,650 sq.ft.",
     type:"Residential",
@@ -135,7 +135,7 @@ const tricityListings: TricityListing[] = [
     id:"ved-t04",
     title:"New Chandigarh Skyline",
     location:"Sector 101, New Chandigarh",
-    price:"â‚¹ 4.20 Cr",
+    price:"₹ 4.20 Cr",
     config:"4 BHK",
     size:"2,350 sq.ft.",
     type:"Residential",
@@ -149,7 +149,7 @@ const tricityListings: TricityListing[] = [
     id:"ved-t05",
     title:"Zirakpur Metro Square",
     location:"VIP Road, Zirakpur",
-    price:"â‚¹ 1.85 Cr",
+    price:"₹ 1.85 Cr",
     config:"1,800 sq.ft. Retail",
     size:"1,800 sq.ft.",
     type:"Commercial",
@@ -163,7 +163,7 @@ const tricityListings: TricityListing[] = [
     id:"ved-t06",
     title:"Kharar Green County",
     location:"Kharar, Mohali",
-    price:"â‚¹ 2.10 Cr",
+    price:"₹ 2.10 Cr",
     config:"300 sq.yds. Plot",
     size:"300 sq.yds.",
     type:"Plotted",
@@ -178,12 +178,12 @@ const tricityListings: TricityListing[] = [
 const faqs = [
   { q:"Is it a good time to buy property in Chandigarh Tricity in 2026?", a:"Demand is concentrated in Mohali's IT corridor, New Chandigarh, and Panchkula's converted-freehold sectors, while Zirakpur offers affordable entry points with strong rental absorption. Tricity prices are more stable than Delhi NCR's speculative corridors, which suits end-users and long-horizon investors. We benchmark every shortlist against recent registered transactions in the same sector before advising, rather than relying on asking prices." },
   { q:"Which is better to buy, Mohali, Panchkula, or Chandigarh?", a:"There is no single answer, each serves a different buyer. Chandigarh offers prestige and scarcity but the highest entry prices and limited inventory. Panchkula is green and quiet with many freehold-converted sectors, better for families and retirees. Mohali has the strongest IT-led rental and appreciation story and the most active market. Your choice depends on budget, whether you need rental income, and how soon you need possession, we model the trade-offs side by side." },
-  { q:"Is Panchkula property freehold or leasehold?", a:"Historically, most Panchkula sectors were 99-year leasehold. Haryana has since allowed conversion to freehold at prescribed rates, and the majority of older sectors (Sectors 2â€“12 and others) have been converted or are convertible. Newer HSVP projects vary. We verify the actual tenure from the title chain and conversion records, not from the developer's marketing, before recommending anything." },
+  { q:"Is Panchkula property freehold or leasehold?", a:"Historically, most Panchkula sectors were 99-year leasehold. Haryana has since allowed conversion to freehold at prescribed rates, and the majority of older sectors (Sectors 2–12 and others) have been converted or are convertible. Newer HSVP projects vary. We verify the actual tenure from the title chain and conversion records, not from the developer's marketing, before recommending anything." },
   { q:"What is GMADA and how does it affect property in Mohali?", a:"GMADA, the Greater Mohali Area Development Authority, is Punjab's planning and development authority for the Mohali region, including Zirakpur, Kharar, and New Chandigarh. It sanctions layouts, allots plots, and sets development charges. Buying inside a GMADA-approved sector gives you legal protection; buying in an unapproved colony outside GMADA's sanctioned plans carries significant title and approval risk, which is why our first check is always the approval status." },
   { q:"Does RERA apply to property in Chandigarh city?", a:"Chandigarh is a Union Territory and, as of now, does not have a fully functional RERA authority of its own. Property in Chandigarh city is regulated by the Chandigarh Administration under the Chandigarh (Sale of Sites and Buildings) Rules, 1960, with the Estate Office handling allotments and NOCs. Buyers should therefore rely on Estate Office checks, the registered title chain, and legal review, which is exactly what our verification process covers for Chandigarh UT." },
   { q:"Can an NRI buy property in Chandigarh Tricity?", a:"Yes. NRIs and Persons of Indian Origin can freely purchase residential and commercial property in Chandigarh, Mohali, Panchkula, and the rest of Tricity, without RBI approval. Agricultural land and farmhouses are not permitted without special RBI permission. Funds must flow through NRE/NRO banking channels, and keeping transfer receipts makes future sale proceeds fully repatriable. Our NRI desk manages the entire remote purchase, including GMADA/HRERA checks and documentation." },
-  { q:"What are the stamp duty and registration charges in Tricity?", a:"Charges differ by state and by buyer. Haryana (Panchkula) levies stamp duty in the 7â€“8% band with a lower rate for women buyers; Punjab (Mohali, Zirakpur, Kharar, New Chandigarh) has its own stamp duty and registration structure, and Chandigarh UT follows the Indian Stamp Act with its own rates. Rates also shift with circle rates and state budgets. We compute the exact all-in cost for your specific property and buyer profile at the time of your transaction, itemised in writing." },
-  { q:"Is New Chandigarh a good investment?", a:"New Chandigarh is a planned GMADA extension with a premium positioning and currently discovery-stage pricing. It suits buyers with a 5â€“10 year horizon who want the Chandigarh address at a lower entry point. Liquidity is still maturing, so we recommend it primarily as a medium-term appreciation play for buyers who do not need quick exit, and we always verify that the plot or unit is inside a GMADA-sanctioned sector before advising." },
+  { q:"What are the stamp duty and registration charges in Tricity?", a:"Charges differ by state and by buyer. Haryana (Panchkula) levies stamp duty in the 7–8% band with a lower rate for women buyers; Punjab (Mohali, Zirakpur, Kharar, New Chandigarh) has its own stamp duty and registration structure, and Chandigarh UT follows the Indian Stamp Act with its own rates. Rates also shift with circle rates and state budgets. We compute the exact all-in cost for your specific property and buyer profile at the time of your transaction, itemised in writing." },
+  { q:"Is New Chandigarh a good investment?", a:"New Chandigarh is a planned GMADA extension with a premium positioning and currently discovery-stage pricing. It suits buyers with a 5–10 year horizon who want the Chandigarh address at a lower entry point. Liquidity is still maturing, so we recommend it primarily as a medium-term appreciation play for buyers who do not need quick exit, and we always verify that the plot or unit is inside a GMADA-sanctioned sector before advising." },
   { q:"What is the difference between the Chandigarh and Mohali property markets?", a:"Chandigarh is a low-volume, high-ticket market with scarce freehold inventory, governed by the Estate Office with no functional RERA, making due diligence more manual. Mohali is a high-volume, more affordable market with GMADA planning, Punjab RERA registration, and stronger IT-led rental demand. In short, Chandigarh trades on scarcity and prestige; Mohali trades on growth and rental yield." },
   { q:"How do I verify the title of a property in Tricity?", a:"The essentials are the same as anywhere, but the authority matters. For Chandigarh, check the registered sale chain, the allotment letter, and Estate Office NOC/permission where applicable. For Mohali, Zirakpur, Kharar and New Chandigarh, confirm GMADA approval and Punjab RERA status. For Panchkula, confirm HSVP/HRERA status and whether the sector is freehold or converted. We run these checks directly on the respective portals and disclose anything adverse we find." },
   { q:"Are returns in Zirakpur or Kharar better than central Chandigarh?", a:"Zirakpur and Kharar offer lower entry prices and strong rental absorption, which can produce attractive rental yields, but their capital appreciation is typically steadier and more dependent on infrastructure. Central Chandigarh offers lower yield but greater price stability and scarcity value. The better choice depends on whether you prioritise rental income or capital preservation, which is exactly the analysis we run before recommending." },
@@ -213,7 +213,7 @@ export default function TricityPage() {
         priceDisplay: l.price,
         locality: l.location,
         propertyType: l.type,
-        size: `${l.config} Â· ${l.size}`,
+        size: `${l.config} · ${l.size}`,
         status: l.status,
         image: l.image,
       })))} />
@@ -302,7 +302,7 @@ export default function TricityPage() {
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} Â· {property.size}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {property.highlights.map(h=>(
                         <span key={h} className="highlight-chip">
@@ -319,7 +319,7 @@ export default function TricityPage() {
                         <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:600,color:"var(--gold-ink)",margin:"2px 0 0",lineHeight:1.2,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{"\u00A0"}</p>
                       </div>
                       <span className="inquire-btn">
-                        Inquire â†’
+                        Inquire →
                       </span>
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export default function TricityPage() {
                 Don&apos;t see what you&apos;re looking for? Our full inventory spans Chandigarh, Mohali, Panchkula, Zirakpur, Kharar and New Chandigarh.
               </p>
               <Link href="/contact" className="btn btn-primary">
-                Talk to an Advisor â†’
+                Talk to an Advisor →
               </Link>
             </div>
           </ScrollReveal>
@@ -440,7 +440,7 @@ export default function TricityPage() {
                     <p className="body-sm" style={{ color:"var(--slate)", lineHeight:1.7, fontSize:12, margin:"0 0 12px", flex:1 }}>{j.body}</p>
                     <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", borderTop:"1px solid rgba(212,168,67,0.2)", paddingTop:12 }}>
                       <span style={{ fontFamily:"var(--t-head)", fontSize:9.5, fontWeight:700, color:"var(--gold-ink)", textTransform:"uppercase", letterSpacing:"0.06em" }}>Verified Authority</span>
-                      <Link href="/verification-center" style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:700, color:"var(--gold)", textTransform:"uppercase", letterSpacing:"0.06em", display:"inline-flex", alignItems:"center", gap:4, textDecoration:"none" }}>Check Process â†’</Link>
+                      <Link href="/verification-center" style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:700, color:"var(--gold)", textTransform:"uppercase", letterSpacing:"0.06em", display:"inline-flex", alignItems:"center", gap:4, textDecoration:"none" }}>Check Process →</Link>
                     </div>
                   </div>
                 </div>

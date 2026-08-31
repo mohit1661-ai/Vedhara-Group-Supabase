@@ -35,8 +35,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r01",
     title:"The Aspen Residency",
     location:"Sector 57, Gurugram",
-    monthlyRent:"â‚¹ 58,000/mo",
-    deposit:"â‚¹ 1.74 Lakhs",
+    monthlyRent:"₹ 58,000/mo",
+    deposit:"₹ 1.74 Lakhs",
     config:"3 BHK",
     size:"1,550 sq.ft.",
     furnished:"Fully Furnished",
@@ -51,8 +51,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r02",
     title:"Palm Grove Apartments",
     location:"Sector 44, Noida",
-    monthlyRent:"â‚¹ 42,000/mo",
-    deposit:"â‚¹ 1.26 Lakhs",
+    monthlyRent:"₹ 42,000/mo",
+    deposit:"₹ 1.26 Lakhs",
     config:"2 BHK",
     size:"1,250 sq.ft.",
     furnished:"Semi Furnished",
@@ -67,8 +67,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r03",
     title:"Corporate Square",
     location:"Sector 62, Gurugram",
-    monthlyRent:"â‚¹ 1,85,000/mo",
-    deposit:"â‚¹ 5.55 Lakhs",
+    monthlyRent:"₹ 1,85,000/mo",
+    deposit:"₹ 5.55 Lakhs",
     config:"2,800 sq.ft. Office",
     size:"2,800 sq.ft.",
     furnished:"Fully Furnished",
@@ -83,8 +83,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r04",
     title:"Vasant Residency",
     location:"Vasant Kunj, Delhi",
-    monthlyRent:"â‚¹ 65,000/mo",
-    deposit:"â‚¹ 2.60 Lakhs",
+    monthlyRent:"₹ 65,000/mo",
+    deposit:"₹ 2.60 Lakhs",
     config:"3 BHK + Servant",
     size:"1,750 sq.ft.",
     furnished:"Semi Furnished",
@@ -99,8 +99,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r05",
     title:"Lake Vista Heights",
     location:"Sector 150, Noida",
-    monthlyRent:"â‚¹ 75,000/mo",
-    deposit:"â‚¹ 3.00 Lakhs",
+    monthlyRent:"₹ 75,000/mo",
+    deposit:"₹ 3.00 Lakhs",
     config:"4 BHK",
     size:"2,200 sq.ft.",
     furnished:"Fully Furnished",
@@ -115,8 +115,8 @@ const rentalListings: RentalListing[] = [
     id:"ved-r06",
     title:"Galleria Business Hub",
     location:"MG Road, Gurugram",
-    monthlyRent:"â‚¹ 2,40,000/mo",
-    deposit:"â‚¹ 7.20 Lakhs",
+    monthlyRent:"₹ 2,40,000/mo",
+    deposit:"₹ 7.20 Lakhs",
     config:"3,500 sq.ft. Retail",
     size:"3,500 sq.ft.",
     furnished:"Semi Furnished",
@@ -139,7 +139,7 @@ export default function RentPage() {
         priceDisplay: l.monthlyRent,
         locality: l.location,
         propertyType: l.type,
-        size: `${l.config} Â· ${l.size} Â· ${l.furnished}`,
+        size: `${l.config} · ${l.size} · ${l.furnished}`,
         status: l.status,
         image: l.image,
       })))} />
@@ -200,7 +200,7 @@ export default function RentPage() {
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} Â· {property.size}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     
                     {/* Highlights as small tags */}
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
@@ -220,7 +220,7 @@ export default function RentPage() {
                         <p className="price-block" style={{ whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.monthlyRent}</p>
                       </div>
                       <span className="inquire-btn" style={{ marginLeft:"auto" }}>
-                        Schedule Visit â†’
+                        Schedule Visit →
                       </span>
                     </div>
                   </div>
@@ -236,7 +236,7 @@ export default function RentPage() {
                 Don&apos;t see what you&apos;re looking for? We have 80+ verified rental listings across Delhi NCR, Faridabad, Manesar and Chandigarh.
               </p>
               <Link href="/contact#rent" className="btn btn-primary">
-                Get Rental Assistance â†’
+                Get Rental Assistance →
               </Link>
             </div>
           </ScrollReveal>

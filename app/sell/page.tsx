@@ -34,7 +34,7 @@ const sellListings: SellListing[] = [
     id:"ved-s07",
     title:"NH-8 Facing Plot, Sector 15",
     location:"Sector 15 Part 2, Gurugram",
-    askingPrice:"â‚¹ 18.50 Cr",
+    askingPrice:"₹ 18.50 Cr",
     config:"500 sq.yds. Plot",
     size:"500 sq.yds.",
     type:"Plotted",
@@ -47,7 +47,7 @@ const sellListings: SellListing[] = [
     id:"ved-s01",
     title:"Sunset Villa",
     location:"Sector 23, Dwarka, Delhi",
-    askingPrice:"â‚¹ 3.95 Cr",
+    askingPrice:"₹ 3.95 Cr",
     config:"4 BHK Independent Floor",
     size:"2,600 sq.ft.",
     type:"Residential",
@@ -61,7 +61,7 @@ const sellListings: SellListing[] = [
     id:"ved-s02",
     title:"Green Valley Apartment",
     location:"Sector 49, Gurugram",
-    askingPrice:"â‚¹ 2.35 Cr",
+    askingPrice:"₹ 2.35 Cr",
     config:"3 BHK",
     size:"1,580 sq.ft.",
     type:"Residential",
@@ -74,7 +74,7 @@ const sellListings: SellListing[] = [
     id:"ved-s03",
     title:"Lotus Business Center",
     location:"Sector 44, Gurugram",
-    askingPrice:"â‚¹ 6.80 Cr",
+    askingPrice:"₹ 6.80 Cr",
     config:"3,200 sq.ft. Office",
     size:"3,200 sq.ft.",
     type:"Commercial",
@@ -88,7 +88,7 @@ const sellListings: SellListing[] = [
     id:"ved-s04",
     title:"Royal Heritage Penthouse",
     location:"Golf Course Road, Gurugram",
-    askingPrice:"â‚¹ 8.75 Cr",
+    askingPrice:"₹ 8.75 Cr",
     config:"4 BHK Penthouse",
     size:"3,400 sq.ft.",
     type:"Luxury",
@@ -102,7 +102,7 @@ const sellListings: SellListing[] = [
     id:"ved-s05",
     title:"Serene Garden Plot",
     location:"Sector 150, Noida",
-    askingPrice:"â‚¹ 4.50 Cr",
+    askingPrice:"₹ 4.50 Cr",
     config:"450 sq.yds. Plot",
     size:"450 sq.yds.",
     type:"Plotted",
@@ -116,7 +116,7 @@ const sellListings: SellListing[] = [
     id:"ved-s06",
     title:"Heritage Haveli",
     location:"Mehrauli, Delhi",
-    askingPrice:"â‚¹ 12.50 Cr",
+    askingPrice:"₹ 12.50 Cr",
     config:"5 BHK + Courtyard",
     size:"5,200 sq.ft.",
     type:"Luxury",
@@ -131,7 +131,7 @@ const sellListings: SellListing[] = [
 const sellFaqs = [
   { q:"How does Vedhara determine my property's value?", a:"We analyse recent comparable transactions in your locality, current demand trends, and the specific condition and positioning of your property, arriving at a price range that is realistic, not aspirational." },
   { q:"What if I'm not ready to sell yet but want an opinion?", a:"That's exactly the kind of conversation we welcome. Our Portfolio Health Check service is designed for owners who want an honest hold, sell, or rebalance assessment, with no obligation to act." },
-  { q:"How long does it typically take to sell a property with Vedhara?", a:"Timelines vary by property type, location, and market conditions. On average, our listings receive qualified interest within 4â€“6 weeks of active marketing. We provide a transparent timeline estimate upfront." },
+  { q:"How long does it typically take to sell a property with Vedhara?", a:"Timelines vary by property type, location, and market conditions. On average, our listings receive qualified interest within 4–6 weeks of active marketing. We provide a transparent timeline estimate upfront." },
   { q:"Do I need to vacate my property before you start marketing it?", a:"No. We coordinate marketing and site visits around your schedule. For tenanted properties, we work with existing tenants to arrange convenient viewing windows." },
   { q:"What costs are involved in selling through Vedhara?", a:"Vedhara charges a success-fee structure; you pay only when your property is sold. The fee is a fixed percentage of the final sale price, disclosed upfront with no hidden charges." },
 ];
@@ -147,7 +147,7 @@ export default function SellPage() {
         priceDisplay: l.askingPrice,
         locality: l.location,
         propertyType: l.type,
-        size: `${l.config} Â· ${l.size}`,
+        size: `${l.config} · ${l.size}`,
         status: l.status,
         image: l.image,
       })))} />
@@ -200,7 +200,7 @@ export default function SellPage() {
                     </div>
                     <h3 style={{ fontFamily:"var(--t-head)",fontSize:15,fontWeight:700,color:"var(--navy)",marginBottom:6,lineHeight:1.3 }}>{property.title}</h3>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--slate)",marginBottom:4 }}>{property.location}</p>
-                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} Â· {property.size}</p>
+                    <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--navy)",marginBottom:10,lineHeight:1.4 }}>{property.config} · {property.size}</p>
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {property.highlights.map(h=>(
                         <span key={h} className="highlight-chip">
@@ -217,7 +217,7 @@ export default function SellPage() {
                         <p style={{ fontFamily:"var(--t-body)",fontSize:10.5,fontWeight:600,color:"var(--gold-ink)",margin:"2px 0 0",lineHeight:1.2,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.status === "Under Offer" ? "Under Offer" : property.status === "Sold" ? "Sold" : "\u00A0"}</p>
                       </div>
                       <span className="inquire-btn">
-                        Inquire â†’
+                        Inquire →
                       </span>
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export default function SellPage() {
                 Want to list your property? Vedhara helps you price and position it for the right buyer. <Link href="/sell/valuation" style={{ color:"var(--gold-lt)" }}>Review our valuation tool.</Link>
               </p>
               <Link href="/contact#sell" className="btn btn-primary">
-                List Your Property â†’
+                List Your Property →
               </Link>
             </div>
           </ScrollReveal>
