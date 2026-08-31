@@ -215,9 +215,9 @@ export default function NewLaunchesPage() {
       </div>
 
       {/* Upcoming & New Launch Projects */}
-      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
-        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
+      <section className="section-navy">
+        <div className="glow-orb" />
+        <div className="section-inner">
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
@@ -236,11 +236,10 @@ export default function NewLaunchesPage() {
               <ScrollReveal key={project.id} id={project.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
                   href={`#${project.id}`}
-                  className="hover-lift"
-                  style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
+                  className="hover-lift listing-card-link"
                 >
                   {/* Image area */}
-                  <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                  <div className="listing-img-wrap">
                     <Image
                       src={project.image}
                       alt={project.alt || project.projectName}
@@ -248,18 +247,18 @@ export default function NewLaunchesPage() {
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: project.pos ? (project.pos.indexOf(" ") > -1 ? project.pos : "50% " + project.pos) : "50% 50%" }}
                     />
-                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)" }} />
+                    <div className="listing-img-shade" />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
+                      <span className="pill-status">
                         {project.status}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column",height:"100%" }}>
-                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8 }}>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
+                  <div className="listing-body">
+                    <div className="listing-tag-row">
+                      <span className="pill-sm">
                         {project.type}
                       </span>
                     </div>
@@ -281,7 +280,7 @@ export default function NewLaunchesPage() {
                     {/* Highlights */}
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {project.highlights.map(h=>(
-                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
+                        <span key={h} className="highlight-chip">
                           {h}
                         </span>
                       ))}
@@ -294,9 +293,9 @@ export default function NewLaunchesPage() {
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0,minHeight:73,height:73 }}>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1 }}>Starting Price</p>
-                        <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{project.startingPrice}</p>
+                        <p className="price-block">{project.startingPrice}</p>
                       </div>
-                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
+                      <span className="inquire-btn">
                         Register Interest â†’
                       </span>
                     </div>

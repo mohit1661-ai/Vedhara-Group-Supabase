@@ -25,8 +25,8 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
         </h1>
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto" }}>{content.intro}</p>
       </VideoHeroSection>
-      <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
-        <div style={{ maxWidth:1200,margin:"0 auto" }}>
+      <section className="section-cream" style={{ padding:"60px 32px" }}>
+        <div className="section-wrap">
           {content.seoText && (
             <ScrollReveal>
               <p className="body-lg" style={{ color:"var(--slate)",lineHeight:1.9,maxWidth:860,margin:"0 auto 56px",textAlign:"center" }}>
@@ -34,7 +34,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
               </p>
             </ScrollReveal>
           )}
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:32 }} className="grid-2">
+          <div className="grid-2" style={{ columnGap:32,rowGap:32,gridTemplateColumns:"1fr 1fr" }}>
           
           {/* What's Included - Navy card with gold frame */}
           <ScrollReveal>
