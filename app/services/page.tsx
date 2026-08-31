@@ -181,36 +181,6 @@ export default function ServicesPage() {
           </ScrollReveal>
         </div>
       </div>
-
-      {/* What we do — SEO body copy */}
-      <section style={{ background:"var(--cream)",padding:"8px 32px" }}>
-        <div style={{ maxWidth:1080,margin:"0 auto" }}>
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:36 }} className="grid-2">
-            <ScrollReveal>
-              <div>
-                <h2 className="heading-md" style={{ color:"var(--navy)",marginBottom:12 }}>A Single Team for Buying and Selling Across Delhi NCR</h2>
-                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:14 }}>
-                  Whether you are looking for residential property for sale in Gurugram, a Noida flat for rent, commercial real estate in Faridabad or a plotted investment in Mohali, Vedhara Group keeps your search, negotiation, legal due diligence and paperwork under one disciplined roof. Each city team maps the local micro-markets, from the Dwarka Expressway and Golf Course Extension Road in Gurugram to the Noida Expressway and Yamuna Expressway corridors, so you compare properties like-for-like instead of against a generic brochure description.
-                </p>
-                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:14 }}>
-                  Every recommendation passes the five-point Vedhara Verification Framework: RERA registration status, builder delivery history, project-level approvals, price fairness against comparable sales, and a clean title chain. If a property fails any check, it is not published. That is why our buyers shortlist with confidence and our sellers gain access to genuinely pre-qualified demand.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <div>
-                <h2 className="heading-md" style={{ color:"var(--navy)",marginBottom:12 }}>Advisory Beyond the Transaction, for NRIs and Investors</h2>
-                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:14 }}>
-                  For non-resident Indians managing property from abroad, we coordinate site visits, documentation, Power of Attorney, and rental or resale decisions through a single named advisor. Property investors use our portfolio-level guidance, backed by free tools such as the ROI and rental-yield calculator, home loan EMI calculator and stamp duty estimator, to model a purchase before committing capital.
-                </p>
-                <p className="body-md" style={{ color:"var(--slate)",lineHeight:1.8,marginBottom:14 }}>
-                  Our fee model is disclosed up front for every engagement, whether you buy, sell, rent or commercialise real estate in Delhi NCR, Chandigarh Tricity or across North India. The result is a property advisory partner you can hold accountable from the first site visit to the final registration.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
           {services.map((svc,i)=>(
@@ -227,9 +197,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Featured Properties Showcase */}
-      <section className="section-navy">
-        <div className="glow-orb" />
-        <div className="section-inner">
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
@@ -246,8 +216,8 @@ export default function ServicesPage() {
           <div className="prop-grid">
             {featuredProperties.map((p,i)=>(
               <ScrollReveal key={p.id} id={p.id} delay={i*80} style={{ display:"flex" }}>
-                <Link href={withAnchor(p.tagHref, p.title)} className="hover-lift listing-card-link">
-                  <div className="listing-img-wrap" style={{ background:p.gradient }}>
+                <Link href={withAnchor(p.tagHref, p.title)} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                  <div style={{ height:180,background:p.gradient,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     <Image
                       src={p.image}
                       alt={p.alt || p.title}
@@ -255,9 +225,9 @@ export default function ServicesPage() {
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: p.pos ? (p.pos.indexOf(" ") > -1 ? p.pos : "50% " + p.pos) : "50% 50%" }}
                     />
-                    <div className="video-gradient-overlay" />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.10) 0%,rgba(9,15,29,0.50) 100%)" }} />
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span className="pill-status">
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {p.tag}
                       </span>
                     </div>
@@ -267,8 +237,8 @@ export default function ServicesPage() {
                     <p style={{ fontFamily:"var(--t-body)",fontSize:11.5,color:"var(--slate)",marginBottom:4 }}>{p.location}</p>
                     <p style={{ fontFamily:"var(--t-body)",fontSize:13,color:"var(--ink)",marginBottom:10,lineHeight:1.4,flex:1 }}>{p.desc}</p>
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0 }}>
-                      <p className="price-block">{p.price}</p>
-                      <span className="inquire-btn" style={{ padding:"8px 14px",fontSize:10 }}>
+                      <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0 }}>{p.price}</p>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:4,padding:"8px 14px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
                         View {p.tag} →
                       </span>
                     </div>

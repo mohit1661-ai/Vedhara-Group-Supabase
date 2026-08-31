@@ -146,9 +146,9 @@ export default function RentPage() {
       <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" hideFAQ />
 
       {/* Featured Rentals Section - Homepage-style cards */}
-      <section className="section-navy">
-        <div className="glow-orb" />
-        <div className="section-inner">
+      <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
+        <div style={{ position:"absolute",top:"20%",right:"-10%",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(212,168,67,0.04) 0%,transparent 70%)",pointerEvents:"none" }} />
+        <div style={{ maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1 }}>
           <ScrollReveal>
             <div style={{ textAlign:"center",marginBottom:60 }}>
               <span className="v-line" style={{ margin:"0 auto 14px" }} />
@@ -167,10 +167,11 @@ export default function RentPage() {
               <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
                   href={`#${property.id}`}
-                  className="hover-lift listing-card-link"
+                  className="hover-lift"
+                  style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >
                   {/* Image area */}
-                  <div className="listing-img-wrap">
+                  <div style={{ height:180,position:"relative",overflow:"hidden",flexShrink:0 }}>
                     <Image
                       src={property.image}
                       alt={property.alt || property.title}
@@ -178,23 +179,23 @@ export default function RentPage() {
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       style={{ objectFit:"cover", objectPosition: property.pos ? (property.pos.indexOf(" ") > -1 ? property.pos : "50% " + property.pos) : "50% 50%" }}
                     />
-                    <div className="listing-img-shade" />
+                    <div style={{ position:"absolute",inset:0,background:"linear-gradient(180deg,rgba(9,15,29,0.05) 0%,rgba(9,15,29,0.45) 100%)",pointerEvents:"none" }} />
                     {/* Status badge */}
                     <div style={{ position:"absolute",top:14,right:14,zIndex:2 }}>
-                      <span className="pill-status">
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)" }}>
                         {property.status}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="listing-body">
+                  <div style={{ padding:20,flex:1,display:"flex",flexDirection:"column",height:"100%" }}>
                     {/* Type & Furnished badges */}
-                    <div className="listing-tag-row" style={{ flexWrap:"wrap" }}>
-                      <span className="pill-sm">
+                    <div style={{ display:"flex",alignItems:"center",gap:6,marginBottom:8,flexWrap:"wrap" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:10,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"3px 8px",background:"rgba(212,168,67,0.12)",color:"var(--gold-ink)",borderRadius:3 }}>
                         {property.type}
                       </span>
-                      <span className="pill-sm" style={{ background:"rgba(42,45,53,0.04)",color:"var(--slate)",fontSize:8 }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:600,letterSpacing:"0.04em",padding:"3px 8px",background:"rgba(42,45,53,0.04)",color:"var(--slate)",borderRadius:3 }}>
                         {property.furnished}
                       </span>
                     </div>
@@ -205,7 +206,7 @@ export default function RentPage() {
                     {/* Highlights as small tags */}
                     <div style={{ display:"flex",flexWrap:"wrap",gap:4,marginBottom:10 }}>
                       {property.highlights.map(h=>(
-                        <span key={h} className="highlight-chip">
+                        <span key={h} style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:600,letterSpacing:"0.04em",padding:"3px 7px",background:"rgba(212,168,67,0.08)",color:"var(--gold-ink)",borderRadius:3 }}>
                           {h}
                         </span>
                       ))}
@@ -217,9 +218,9 @@ export default function RentPage() {
                     <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8,rowGap:8,borderTop:"1px solid rgba(212,168,67,0.2)",paddingTop:12,flexShrink:0,minHeight:73,height:73 }}>
                       <div>
                         <p style={{ fontFamily:"var(--t-head)",fontSize:8.5,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",color:"rgba(42,45,53,0.35)",marginBottom:1,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>Monthly Rent</p>
-                        <p className="price-block" style={{ whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.monthlyRent}</p>
+                        <p style={{ fontFamily:"var(--t-head)",fontSize:17,fontWeight:700,color:"var(--navy)",margin:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{property.monthlyRent}</p>
                       </div>
-                      <span className="inquire-btn" style={{ marginLeft:"auto" }}>
+                      <span style={{ fontFamily:"var(--t-head)",fontSize:11,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",display:"inline-flex",alignItems:"center",gap:5,marginLeft:"auto",padding:"10px 16px",background:"var(--navy)",color:"var(--gold-lt)",borderRadius:6,whiteSpace:"nowrap" }}>
                         Schedule Visit →
                       </span>
                     </div>
