@@ -15,6 +15,22 @@ interface ListingGalleryProps {
   title?: string;
 }
 
+/**
+ * Fetch-provider-aware width rewrite. Pexels/Unsplash/Pixabay accept a `w=`
+ * query param to serve the image at an exact width; our data layer stores a
+ * single `w=900` source for every image. Rendering that full 900px file in a
+ * 72px thumbnail wastes ~75% of its bytes (and of the page's weight). Thumbnails
+ * get a ~2x-DPI size, while the lightbox asks for a sharper width so the
+ * enlarged photo stays crisp on high-density screens. Unknown/local URLs are
+ * returned unchanged.
+ */
+function responsiveSrc(src: string, kind: "thumb" | "lightbox"): string {
+  const widthFor = kind === "thumb" ? 200 : 1600;
+  const m = src.match(/^(https:\/\/(?:images\.(?:pexels|unsplash|pixabay)\.com)\/.*[?&]w=)(\d+)(.*)$/i);
+  if (m) return `${m[1]}${widthFor}${m[3]}`;
+  return src;
+}
+
 export default function ListingGallery({ images, title }: ListingGalleryProps) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
@@ -118,7 +134,7 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={img}
+        src={responsiveSrc(img, "thumb")}
             alt={`${title || "Property"}, photo ${i + 1}`}
         loading="lazy"
         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -184,7 +200,7 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
           {/* Image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={images[idx]}
+            src={responsiveSrc(images[idx], "lightbox")}
             alt={`${title || "Property"}, photo ${idx + 1}`}
             onClick={(e) => e.stopPropagation()}
             style={{
