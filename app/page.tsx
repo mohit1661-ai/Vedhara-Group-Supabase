@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { preload } from "react-dom";
 import dynamic from "next/dynamic";
 import JsonLd from "@/components/seo/JsonLd";
 import CinematicHero from "@/components/sections/CinematicHero";
@@ -93,6 +94,8 @@ const homeSchema = {
 };
 
 export default function HomePage() {
+  // The hero poster is the homepage LCP candidate while the video buffers; preload it.
+  preload("/videos/homepage-hero-poster.jpg", { as: "image" });
   return (
     <>
       <JsonLd data={homeSchema} />
@@ -369,6 +372,7 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ textAlign:"center" }}>
+            <p className="caption" style={{ color:"var(--slate)",margin:"0 0 18px" }}>Calculator outputs are estimates for guidance only and do not constitute financial, legal or tax advice.</p>
             <Link href="/calculators" className="btn btn-dark">Open All Four Calculators →</Link>
           </div>
         </div>
@@ -383,7 +387,7 @@ export default function HomePage() {
               <p className="eyebrow" style={{ color:"var(--gold-lt)",marginBottom:14 }}>Our Team</p>
               <h2 className="heading-xl" style={{ color:"var(--light)",lineHeight:1.1 }}>
                 Meet the{" "}
-                <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Leadership Behind</em>
+                <em style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,color:"var(--gold-lt)" }}>Leadership Behind </em>
                 <br />
                 Your Property Journey
               </h2>

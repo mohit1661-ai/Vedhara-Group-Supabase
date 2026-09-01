@@ -20,8 +20,8 @@ function ROICalculator() {
         <p className="body-sm" style={{ color:"var(--slate)",marginBottom:20 }}>Estimate gross yield, net yield, and total return over your holding period.</p>
         {[{l:"Purchase Price (₹)",k:"price"},{l:"Expected Monthly Rent (₹)",k:"rent"},{l:"Expected Annual Appreciation (%)",k:"app"},{l:"Holding Period (Years)",k:"years"},{l:"Annual Maintenance (% of Value)",k:"maint"}].map(f=>(
           <div key={f.k} style={{ marginBottom:14 }}>
-            <label className="input-label">{f.l}</label>
-            <input type="number" value={v[f.k as keyof typeof v]} onChange={s(f.k)} className="input-field" />
+            <label className="input-label" htmlFor={`roi-${f.k}`}>{f.l}</label>
+            <input id={`roi-${f.k}`} type="number" value={v[f.k as keyof typeof v]} onChange={s(f.k)} className="input-field" />
           </div>
         ))}
       </div>
@@ -52,8 +52,8 @@ function EMICalculator() {
         <p className="body-sm" style={{ color:"var(--slate)",marginBottom:20 }}>Monthly EMI, total interest, and full amortisation schedule using the standard reducing-balance formula, identical to bank calculations.</p>
         {[{l:"Loan Amount (₹)",k:"loan"},{l:"Annual Interest Rate (%)",k:"rate"},{l:"Loan Tenure (Years)",k:"tenure"}].map(f=>(
           <div key={f.k} style={{ marginBottom:14 }}>
-            <label className="input-label">{f.l}</label>
-            <input type="number" value={v[f.k as keyof typeof v]} onChange={s(f.k)} className="input-field" />
+            <label className="input-label" htmlFor={`emi-${f.k}`}>{f.l}</label>
+            <input id={`emi-${f.k}`} type="number" value={v[f.k as keyof typeof v]} onChange={s(f.k)} className="input-field" />
           </div>
         ))}
       </div>
@@ -89,18 +89,18 @@ function StampDutyCalculator() {
         <h3 className="heading-md" style={{ color:"var(--navy)",marginBottom:8 }}>Stamp Duty &amp; Registration Calculator</h3>
         <p className="body-sm" style={{ color:"var(--slate)",marginBottom:20 }}>State-wise stamp duty and registration charges. Current rates for Delhi, Haryana, UP, Rajasthan, and Maharashtra. Verify rates before transacting.</p>
         <div style={{ marginBottom:14 }}>
-          <label className="input-label">State</label>
-          <select value={state} onChange={e=>setState(e.target.value)} className="input-field">
+          <label className="input-label" htmlFor="stamp-state">State</label>
+          <select id="stamp-state" value={state} onChange={e=>setState(e.target.value)} className="input-field">
             {Object.entries(rates).map(([k,v])=><option key={k} value={k}>{v.name}</option>)}
           </select>
         </div>
         <div style={{ marginBottom:14 }}>
-          <label className="input-label">Property Value (₹)</label>
-          <input type="number" value={value} onChange={e=>setValue(e.target.value)} className="input-field" />
+          <label className="input-label" htmlFor="stamp-value">Property Value (₹)</label>
+          <input id="stamp-value" type="number" value={value} onChange={e=>setValue(e.target.value)} className="input-field" />
         </div>
         <div style={{ marginBottom:14 }}>
-          <label className="input-label">Buyer Category</label>
-          <select value={gender} onChange={e=>setGender(e.target.value)} className="input-field">
+          <label className="input-label" htmlFor="stamp-gender">Buyer Category</label>
+          <select id="stamp-gender" value={gender} onChange={e=>setGender(e.target.value)} className="input-field">
             <option value="general">General</option>
             <option value="women">Woman Owner (lower rate)</option>
           </select>
@@ -138,8 +138,8 @@ function AffordabilityCalculator() {
         <p className="body-sm" style={{ color:"var(--slate)",marginBottom:20 }}>Realistic property budget based on the standard 40–50% Fixed Obligation to Income Ratio (FOIR) used by Indian lenders. This calculator conservatively uses 45%.</p>
         {[{l:"Monthly Gross Income (₹)",k:"income"},{l:"Existing Monthly EMIs (₹)",k:"existing"},{l:"Available Down Payment (₹)",k:"down"},{l:"Expected Interest Rate (%)",k:"rate"},{l:"Preferred Loan Tenure (Years)",k:"tenure"}].map(f=>(
           <div key={f.k} style={{ marginBottom:14 }}>
-            <label className="input-label">{f.l}</label>
-            <input type="number" value={v[f.k as keyof typeof v]} onChange={s(f.k)} className="input-field" />
+            <label className="input-label" htmlFor={`afford-${f.k}`}>{f.l}</label>
+            <input id={`afford-${f.k}`} type="number" value={v[f.k as keyof typeof v]} onChange={s(f.k)} className="input-field" />
           </div>
         ))}
       </div>

@@ -429,7 +429,7 @@ export default function CinematicHero({
             </div>
 
             <h1 style={{ fontFamily:"var(--t-display)",fontWeight:300,fontSize:"clamp(40px,5.5vw,72px)",lineHeight:1.02,letterSpacing:"-0.025em",color:"var(--light)",marginBottom:28,animation:"heroRiseNoFade 0.6s cubic-bezier(0.22,1,0.36,1) 0.05s backwards" }}>
-              Property Advisory<br /><em className="gold-shimmer" style={{ fontSize:"inherit",fontStyle:"italic" }}>in Delhi NCR, Verified.</em>
+              Property Advisory <br /><em className="gold-shimmer" style={{ fontSize:"inherit",fontStyle:"italic" }}>in Delhi NCR, Verified.</em>
             </h1>
 
             {/* Exact sub-headline from Word doc */}

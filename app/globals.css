@@ -492,3 +492,23 @@ button[aria-expanded="true"] .nav-chevron{transform:rotate(225deg);margin-bottom
     background-image:url("/Images/property-search-backdrop.jpg");
   }
 }
+
+/* Skip-to-content link: hidden until keyboard focus (accessibility, no visual change) */
+.skip-link{
+  position:fixed;
+  top:-100px;
+  left:16px;
+  z-index:10000;
+  background:var(--gold);
+  color:var(--navy);
+  padding:12px 20px;
+  border-radius:0 0 8px 8px;
+  font-family:var(--t-head);
+  font-size:12px;
+  font-weight:600;
+  text-decoration:none;
+  transition:top 0.2s ease;
+}
+.skip-link:focus{
+  top:0;
+}

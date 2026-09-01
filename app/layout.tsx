@@ -33,6 +33,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="preconnect" href="https://images.pexels.com" />
         <link rel="dns-prefetch" href="https://images.pexels.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -81,9 +85,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           potentialAction:{"@type":"SearchAction",target:{"@type":"EntryPoint",urlTemplate:"https://www.vedharagroup.com/?s={search_term_string}"},"query-input":"required name=search_term_string"},
         }} />
         <CustomCursor />
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Analytics />
         <Navbar />
-        <main style={{ flex:1 }}>{children}</main>
+        <main id="main-content" style={{ flex:1 }}>{children}</main>
         <Footer />
         <ChatWidget />
       </body>
