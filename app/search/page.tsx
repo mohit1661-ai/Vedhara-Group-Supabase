@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SearchResults from "./SearchResults";
 
 export const metadata: Metadata = {
-  title: "Search Verified Properties | Vedhara Group",
+  title: "Search Verified Properties",
   description:
     "Search verified properties across Gurugram, Noida, Greater Noida, South Delhi, Chandigarh Tricity and Faridabad. Buy, rent or sell with RERA-verified listings.",
   alternates: { canonical: "https://www.vedharagroup.com/search" },

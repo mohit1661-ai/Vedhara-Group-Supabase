@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { blogPosts } from "@/lib/data/blogPosts";
 
 export const metadata: Metadata = {
-  title:"Market Insights | Vedhara Group",
+  title:"Market Insights",
   description:"Data-backed market insights and research reports on Dwarka Expressway, Gurugram and Delhi NCR property prices, trends and forecasts.",
   keywords:["market insights Gurugram","Dwarka Expressway price trend","Delhi NCR property analysis","Vedhara Group insights","real estate research India"],
   alternates:{ canonical:"https://www.vedharagroup.com/insights" },
