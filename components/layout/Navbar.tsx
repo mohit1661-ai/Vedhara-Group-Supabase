@@ -39,6 +39,7 @@ const menuGroups = [
       { label:"NRI Services", href:"/nri-services" },
       { label:"Property Management", href:"/property-management" },
       { label:"Verification Center", href:"/verification-center" },
+      { label:"Free Property Valuation", href:"/sell/valuation" },
       { label:"Free Calculators", href:"/calculators" },
     ],
   },

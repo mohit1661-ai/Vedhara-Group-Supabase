@@ -245,6 +245,14 @@ export default function CalculatorsPage() {
         </div>
       </section>
 
+      {/* Cross-link: valuation tool */}
+      <div style={{ background: "var(--cream)", padding: "0 32px 48px", textAlign: "center" }}>
+        <p className="body-md" style={{ color: "var(--slate)", margin: 0 }}>
+          Need a sale-price estimate for a specific property instead?{" "}
+          <Link href="/sell/valuation" style={{ color: "var(--gold-ink)", textDecoration: "underline", fontWeight: 600 }}>Try the Free Property Valuation →</Link>
+        </p>
+      </div>
+
       <FAQSection faqs={faqs} title="Calculator FAQ" />
 
       {/* CTA Section */}
