@@ -11,7 +11,7 @@ import { servicePages } from "@/lib/data/servicePages";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
 
-export const metadata: Metadata = { title:"Sell Property in Delhi NCR | Best Price Guarantee", description:"Sell your property in Delhi NCR, Gurugram, Noida, Faridabad, Manesar or Chandigarh at the right price. Strategic pricing, qualified buyer access and end-to-end sale management.", alternates:{ canonical:"https://www.vedharagroup.com/sell" } };
+export const metadata: Metadata = { title:"Sell Property in Delhi NCR at the Right Price", description:"Sell your property in Delhi NCR with a data-backed price, qualified buyer access and end-to-end sale management across Gurugram, Noida and Faridabad.", alternates:{ canonical:"https://www.vedharagroup.com/sell" } };
 
 interface SellListing {
   id:string;

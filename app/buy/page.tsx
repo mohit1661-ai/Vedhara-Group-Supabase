@@ -11,7 +11,7 @@ import { servicePages } from "@/lib/data/servicePages";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
 
-export const metadata: Metadata = { title:"Buy Property in Delhi NCR | RERA-Verified Listings", description:"Buy verified residential and commercial property in Delhi NCR, Gurugram, Noida, Faridabad, Manesar, Chandigarh and across North India with RERA-verified listings and independent advisory.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
+export const metadata: Metadata = { title:"Buy Property in Delhi NCR | Verified Listings", description:"Buy verified residential and commercial property across Delhi NCR, Gurugram and Noida with RERA-verified listings, transparent fees and independent advisory.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
 
 interface PropertyListing {
   id:string;

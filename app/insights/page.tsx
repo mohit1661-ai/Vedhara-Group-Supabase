@@ -8,8 +8,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { blogPosts } from "@/lib/data/blogPosts";
 
 export const metadata: Metadata = {
-  title:"Market Insights",
-  description:"Data-backed market insights and research reports on Dwarka Expressway, Gurugram and Delhi NCR property prices, trends and forecasts.",
+  title:"Market Insights: Delhi NCR Property Research",
+  description:"Data-backed Delhi NCR property market insights: Dwarka Expressway, Gurugram and Noida price trends, micro-market research and infrastructure impact analysis.",
   keywords:["market insights Gurugram","Dwarka Expressway price trend","Delhi NCR property analysis","Vedhara Group insights","real estate research India"],
   alternates:{ canonical:"https://www.vedharagroup.com/insights" },
 };
@@ -69,6 +69,27 @@ export default function InsightsPage() {
         </div>
       </div>
 
+      {/* What the insights cover */}
+      <section style={{ background: "var(--cream)", padding: "0 32px 60px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
+            {[
+              { title: "Price Trend Reports", desc: "Quarter-by-quarter per-square-foot movements for Delhi NCR's most active corridors — Dwarka Expressway, Golf Course Road, the Noida Expressway and the Tricity — with the registered-transaction data behind every claim, not developer press releases." },
+              { title: "Micro-Market Deep Dives", desc: "Sector-level analysis of where value is concentrating and why: inventory pipelines, absorption rates, rental yield bands and the price gap between neighbouring sectors that most buyers discover only after they have committed." },
+              { title: "Infrastructure Impact Analysis", desc: "What metro extensions, expressways and proposed corridors actually do to nearby prices — and on what timeline. We separate documented appreciation effects from the speculation that precedes them, so you can price infrastructure realistically into a purchase." },
+            ].map((c, i) => (
+              <ScrollReveal key={c.title} delay={i * 80}>
+                <div className="svc-card" style={{ borderRadius: 0, height: "100%" }}>
+                  <div className="gold-accent" />
+                  <h3 className="svc-card-title">{c.title}</h3>
+                  <p className="svc-card-desc">{c.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Insights grid */}
       <section style={{ background:"var(--cream)",padding:"60px 32px" }}>
         <div style={{ maxWidth:1200,margin:"0 auto" }}>
@@ -103,6 +124,30 @@ export default function InsightsPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ══ METHODOLOGY ══ */}
+      <section style={{ background: "var(--navy)", padding: "60px 32px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(ellipse 50% 80% at 85% 50%,rgba(212,168,67,0.08) 0%,transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <ScrollReveal>
+            <div style={{ textAlign: "center", marginBottom: 32 }}>
+              <span className="v-line" style={{ margin: "0 auto 14px", background: "var(--gold-lt)" }} />
+              <p className="eyebrow" style={{ color: "var(--gold-lt)", marginBottom: 14 }}>Our Method</p>
+              <h2 className="heading-xl" style={{ color: "var(--light)", lineHeight: 1.1 }}>
+                How Each Report Is <em style={{ fontFamily: "var(--t-display)", fontStyle: "italic", fontWeight: 300, color: "var(--gold-lt)" }}>Built</em>
+              </h2>
+            </div>
+            <div className="body-lg" style={{ color: "rgba(252,250,244,0.6)", lineHeight: 1.85, textAlign: "left" }}>
+              <p style={{ marginBottom: 18 }}>
+                Every report starts with registered transaction data — the sale deeds actually recorded at sub-registrar offices across Delhi, Gurugram, Noida and the Tricity — supplemented by circle rate schedules, RERA filings and inventory trackers. Our advisory team then adds what data alone cannot show: site visits, broker network feedback on real absorption, and the ground-level demand shifts that appear in enquiries months before they appear in prices. Nothing in these reports is commissioned by developers, and no project markets itself through them.
+              </p>
+              <p>
+                We publish the methodology alongside the conclusions so you can challenge either. Where the data is thin — a new corridor with few registered deals, for example — we say so instead of extrapolating. That discipline is the same one behind our Verification Framework, and it is why buyers, sellers and investors use these reports as a decision input rather than marketing material. When you are ready to apply the numbers to a specific property, <Link href="/contact" style={{ color: "var(--gold-lt)" }}>talk to an advisor</Link> who works in your target micro-market every day.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

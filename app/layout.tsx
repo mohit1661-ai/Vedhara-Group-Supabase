@@ -58,7 +58,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           telephone:"+91-98106-47063", email:"contact@vedharagroup.com",
           image:"https://www.vedharagroup.com/vedhara-logo-white.png",
           priceRange:"₹₹₹",
-          address:{ "@type":"PostalAddress", streetAddress:"Sushant Lok Phase 3, Near DLF City Phase 2", addressLocality:"Gurugram", addressRegion:"Haryana", addressCountry:"IN" },
+          address:{ "@type":"PostalAddress", streetAddress:"Sushant Lok Phase 3, Near DLF City Phase 2", addressLocality:"Gurugram", addressRegion:"Haryana", postalCode:"122011", addressCountry:"IN" },
+          hasMap:"https://www.google.com/maps/search/?api=1&query=Sushant+Lok+Phase+3+Near+DLF+City+Phase+2+Gurugram+122011",
+          contactPoint:{ "@type":"ContactPoint", telephone:"+91-98106-47063", email:"contact@vedharagroup.com", contactType:"customer service", areaServed:"IN", availableLanguage:["English","Hindi"] },
           areaServed:[{name:"Delhi NCR"},{name:"Delhi"},{name:"Gurugram"},{name:"Noida"},{name:"Faridabad"},{name:"Manesar"},{name:"Ghaziabad"},{name:"Greater Noida"},{name:"Chandigarh"},{name:"Mohali"},{name:"Panchkula"},{name:"Zirakpur"},{name:"Kharar"},{name:"North India"}],
           foundingDate:"2015", logo:"https://www.vedharagroup.com/vedhara-logo-white.png",
           openingHoursSpecification:[

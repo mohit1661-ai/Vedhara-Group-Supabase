@@ -107,6 +107,7 @@ export default function ContactPage() {
                   { icon:"C",  label:"Call",      val:"+91 98106 47063",       href:"tel:+919810647063", grad:"linear-gradient(135deg,#0F1E38,#1a3a5c)" },
                   { icon:"W",  label:"WhatsApp",  val:"Chat with us instantly", href:"https://wa.me/919810647063?text=Hello%20Vedhara%20Group", grad:"linear-gradient(135deg,#0F1E38,#D4A843)" },
                   { icon:"E",  label:"Email",     val:"contact@vedharagroup.com", href:"mailto:contact@vedharagroup.com", grad:"linear-gradient(135deg,#0F1E38,#2a3f6f)" },
+                  { icon:"V",  label:"Office",    val:"Sushant Lok Phase 3, Near DLF City Phase 2, Gurugram, Haryana 122011", href:"https://www.google.com/maps/search/?api=1&query=Sushant+Lok+Phase+3+Near+DLF+City+Phase+2+Gurugram+122011", grad:"linear-gradient(135deg,#0F1E38,#6b5a20)" },
                 ].map(item=>(
                   <a key={item.label} href={item.href} target={item.href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer"
                     className="cta-card"
