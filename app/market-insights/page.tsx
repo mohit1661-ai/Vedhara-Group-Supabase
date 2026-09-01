@@ -9,9 +9,9 @@ export const metadata: Metadata = { title:"Delhi NCR Real Estate Market Insights
 
 const themes = [
   { title:"Delhi NCR Premium Segment", body:"Post-2022 price appreciation has been significant across Gurugram and Noida Expressway premium corridors. The ₹1.5Cr–3Cr segment remains the most active nationally, driven by end-user demand from corporate employment growth." },
-  { title:"Faridabad Undervaluation", body:"Faridabad&apos;s NH-19 corridor offers similar connectivity to south Gurugram at significantly lower price points, increasingly attractive to buyers priced out of premium Gurugram sectors. Entry prices 30–40% below comparable Gurugram inventory." },
+  { title:"Faridabad Undervaluation", body:"Faridabad's NH-19 corridor offers similar connectivity to south Gurugram at significantly lower price points, increasingly attractive to buyers priced out of premium Gurugram sectors. Entry prices 30–40% below comparable Gurugram inventory." },
   { title:"Noida Expressway Infrastructure", body:"Upcoming Jewar Airport (Noida International Airport), the Aqua Line Metro extension, and Film City development are material value drivers for Noida Expressway and Greater Noida localities. Projects in the 10–15 km radius are well-positioned." },
-  { title:"Rental Market Tightening", body:"Corporate demand recovery post-2023 has tightened rental supply in Cyber City (Gurugram) and Noida&apos;s Sector 62/63 IT corridors. Rental yields in these locations have improved from 2021 lows to 3.5–4.5% gross." },
+  { title:"Rental Market Tightening", body:"Corporate demand recovery post-2023 has tightened rental supply in Cyber City (Gurugram) and Noida's Sector 62/63 IT corridors. Rental yields in these locations have improved from 2021 lows to 3.5–4.5% gross." },
 ];
 
 const differentiators = [
@@ -57,7 +57,7 @@ const whoForItems = [
 const marketFaqs: FAQItem[] = [
   {
     q:"How does Vedhara gather its market intelligence?",
-    a:"Vedhara&apos;s market insights are compiled from verified transaction data, RERA filings, developer disclosures, and our own advisory team&apos;s ground-level assessments across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. We do not rely on aggregated portal data alone.",
+    a:"Vedhara's market insights are compiled from verified transaction data, RERA filings, developer disclosures, and our own advisory team's ground-level assessments across Delhi NCR, Faridabad, Manesar, Chandigarh and North India micro-markets. We do not rely on aggregated portal data alone.",
   },
   {
     q:"Is the Ground Report available for free?",

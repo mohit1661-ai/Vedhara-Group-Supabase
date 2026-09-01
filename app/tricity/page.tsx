@@ -268,7 +268,7 @@ export default function TricityPage() {
                     <ul style={{ margin:0, padding:0, listStyle:"none" }}>
                       {m.points.map(p => (
                         <li key={p} style={{ display:"flex", gap:9, marginBottom:7, alignItems:"flex-start" }}>
-                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:10, lineHeight:1.6 }}>â—†</span>
+                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:10, lineHeight:1.6 }}>◆</span>
                           <span className="svc-card-desc" style={{ fontSize:11.5, lineHeight:1.55, margin:0 }}>{p}</span>
                         </li>
                       ))}
@@ -293,7 +293,7 @@ export default function TricityPage() {
                     <ul style={{ margin:0, padding:0, listStyle:"none" }}>
                       {m.points.map(p => (
                         <li key={p} style={{ display:"flex", gap:9, marginBottom:7, alignItems:"flex-start" }}>
-                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:10, lineHeight:1.6 }}>â—†</span>
+                          <span style={{ color:"var(--gold)", flexShrink:0, fontSize:10, lineHeight:1.6 }}>◆</span>
                           <span className="svc-card-desc" style={{ fontSize:11.5, lineHeight:1.55, margin:0 }}>{p}</span>
                         </li>
                       ))}

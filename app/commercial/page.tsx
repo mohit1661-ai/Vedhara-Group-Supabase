@@ -77,13 +77,13 @@ export default function CommercialPage() {
                     {property.video ? (
                       <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
                         <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
-                          â–¶ Video Tour
+                          ▶ Video Tour
                         </span>
                       </div>
                     ) : property.images && property.images.length > 0 ? (
                       <div style={{ position:"absolute",top:14,left:14,zIndex:2 }}>
                         <span style={{ fontFamily:"var(--t-head)",fontSize:8,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",padding:"4px 10px",borderRadius:20,background:"rgba(9,15,29,0.55)",color:"rgba(255,255,255,0.95)",border:"1px solid rgba(255,255,255,0.25)",backdropFilter:"blur(4px)",display:"inline-flex",alignItems:"center",gap:5 }}>
-                          ðŸ“· {property.images.length} Photos
+                          📷 {property.images.length} Photos
                         </span>
                       </div>
                     ) : null}

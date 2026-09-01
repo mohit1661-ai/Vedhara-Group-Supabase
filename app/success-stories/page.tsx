@@ -39,7 +39,7 @@ const stories = [
     client:"Col. R. Nair (Retd.)",
     location:"NH-19, Faridabad",
     outcome:"Sold 4 BHK independent house, bought 2 BHK premium apartment, unlocked ₹1.2 Cr liquidity",
-    quote:"Vedhara&apos;s team was patient, thorough, and never pushy. They understood that timing mattered more than speed for us.",
+    quote:"Vedhara's team was patient, thorough, and never pushy. They understood that timing mattered more than speed for us.",
     tags:["Downsizing","Sell & Buy","Retirement","Faridabad"],
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#4a2a1a 50%,#D4A843 100%)",
   },
@@ -91,7 +91,7 @@ const stories = [
 ];
 
 const storiesFaqs = [
-  { q:"Are these success stories real?", a:"Yes. Every story reflects a genuine Vedhara client engagement and is shared with the client&apos;s permission. To respect privacy and confidentiality, names and some identifying details may be adjusted, but the figures, outcomes, and the nature of the engagement are accurately represented." },
+  { q:"Are these success stories real?", a:"Yes. Every story reflects a genuine Vedhara client engagement and is shared with the client's permission. To respect privacy and confidentiality, names and some identifying details may be adjusted, but the figures, outcomes, and the nature of the engagement are accurately represented." },
   { q:"Can my experience be featured as a success story?", a:"If you are a Vedhara client and would like to share your experience, just mention it to your advisor or write to contact@vedharagroup.com. We only ever publish stories with explicit client consent and full control over what is shared." },
   { q:"How does Vedhara achieve below-market prices like these?", a:"Our negotiation is grounded in comparable transaction data, timing, and an independent position; we are not compensated to push any developer or seller. We also flag risks early, which avoids costly mistakes that often inflate the final cost of a purchase." },
   { q:"Can I get a similar outcome for my own situation?", a:"Every engagement is different, and no result is guaranteed. What these stories share is a repeatable process: a discovery call, verification of every shortlisted property, honest pricing, skilled negotiation, and end-to-end documentation. That process is available to every client." },
