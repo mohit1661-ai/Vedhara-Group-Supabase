@@ -137,7 +137,7 @@ export default function PropertyValuationPage() {
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <h2 className="heading-xl" style={{ color: "var(--light)", lineHeight: 1.1, marginBottom: 18 }}>A Number Is the Start.<br /><em className="display-gold" style={{ fontSize: "inherit" }}>Context Makes It Useful.</em></h2>
           <p className="body-lg" style={{ color: "rgba(252,250,244,0.5)", marginBottom: 28 }}>A valuation should reflect the real locality, property condition, comparable transactions, and applicable government data. Speak to an advisor before setting an asking price.</p>
-          <Link href="/contact" className="btn btn-primary">Speak to a Seller Advisor →</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-primary">Speak to a Seller Advisor →</Link>
         </div>
       </section>
       <CTASection />

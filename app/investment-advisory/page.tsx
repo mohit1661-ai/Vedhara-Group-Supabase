@@ -125,7 +125,7 @@ export default function InvestmentAdvisoryPage() {
           </p>
           <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
             <Link href="/calculators" className="btn btn-primary">Try the ROI Calculator →</Link>
-            <Link href="/contact" className="btn btn-outline">Book a Consultation</Link>
+            <Link href="/contact#enquiry-form" className="btn btn-outline">Book a Consultation</Link>
           </div>
         </div>
       </section>

@@ -73,7 +73,7 @@ export default async function WatchVideoPage({ params }: { params: Promise<{ slu
               This Vedhara Group film gives buyers, sellers, investors and NRI clients a clear view of how independent property advisory works in practice. The video is part of our resource library for Delhi NCR, Chandigarh Tricity and North India, where local market knowledge and document-led verification matter before a property decision is made.
             </p>
             <p className="body-md" style={{ color: "var(--navy)", opacity: 0.78, lineHeight: 1.75 }}>
-              Watch the complete film above, then explore our <a href="/verification-center" style={{ color: "var(--gold)", textDecoration: "underline" }}>Verification Framework</a> or <a href="/contact" style={{ color: "var(--gold)", textDecoration: "underline" }}>book a free consultation</a> for advice matched to your goals, location and timeline.
+              Watch the complete film above, then explore our <a href="/verification-center" style={{ color: "var(--gold)", textDecoration: "underline" }}>Verification Framework</a> or <a href="/contact#enquiry-form" style={{ color: "var(--gold)", textDecoration: "underline" }}>book a free consultation</a> for advice matched to your goals, location and timeline.
             </p>
           </section>
         </article>

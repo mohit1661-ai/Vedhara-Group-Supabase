@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import VideoHeroSection from "@/components/sections/VideoHeroSection";
@@ -7,24 +7,9 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
+import { launchProjects } from "@/lib/data/pageListings";
 
 export const metadata: Metadata = { title:"New Property Launches in Delhi NCR", description:"RERA-verified new property launches across Delhi NCR, Faridabad, Manesar, Chandigarh and North India from Vedhara Group's verified developer partners.", alternates:{ canonical:"https://www.vedharagroup.com/new-launches" } };
-
-interface LaunchProject {
-  id:string;
-  projectName:string;
-  developer:string;
-  location:string;
-  startingPrice:string;
-  configs:string;
-  possession:string;
-  type:"Residential"|"Luxury"|"Commercial"|"Plotted";
-  status:"Just Launched"|"Pre-Launch"|"Under Construction"|"Phase 2 Released";
-  highlights:string[];
-  image:string;
-  pos?:string;
-  alt?:string;
-}
 
 const launchFaqs: FAQItem[] = [
   {
@@ -49,142 +34,6 @@ const launchFaqs: FAQItem[] = [
   },
 ];
 
-const launchProjects: LaunchProject[] = [
-  {
-    id:"ved-n01",
-    projectName:"Aura Sky Villas",
-    developer:"Prestige Group",
-    location:"Sector 152, Noida",
-    startingPrice:"₹ 1.85 Cr",
-    configs:"2, 3, 4 BHK",
-    possession:"Dec 2028",
-    type:"Residential",
-    status:"Just Launched",
-    highlights:["RERA Applied","53 Towers","7 Acres Green","Club & Pool"],
-    image:"https://images.pexels.com/photos/38341175/pexels-photo-38341175.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"84%",
-    alt:"Aura Sky Villas by Prestige Group in Sector 152, Noida",
-  },
-  {
-    id:"ved-n02",
-    projectName:"The Presidential",
-    developer:"DLF",
-    location:"Sector 63A, Gurugram",
-    startingPrice:"₹ 3.20 Cr",
-    configs:"3, 4 BHK + Penthouse",
-    possession:"Mar 2029",
-    type:"Luxury",
-    status:"Pre-Launch",
-    highlights:["Limited Inventory","Golf Course Road","Private Elevator","Concierge"],
-    image:"https://images.pexels.com/photos/30608874/pexels-photo-30608874.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"71%",
-    alt:"The Presidential luxury project by DLF in Sector 63A, Gurugram",
-  },
-  {
-    id:"ved-n03",
-    projectName:"Central Business Park",
-    developer:"Godrej Properties",
-    location:"Sector 44, Gurugram",
-    startingPrice:"₹ 95 Lakhs",
-    configs:"500-2,500 sq.ft. Offices",
-    possession:"Jun 2028",
-    type:"Commercial",
-    status:"Just Launched",
-    highlights:["LEED Platinum","Metro Connector","Food Court","24hr Operation"],
-    image:"https://images.pexels.com/photos/36903834/pexels-photo-36903834.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"84%",
-    alt:"Central Business Park commercial offices by Godrej in Sector 44, Gurugram",
-  },
-  {
-    id:"ved-n04",
-    projectName:"Emerald County",
-    developer:"Tata Housing",
-    location:"Sector 150, Noida",
-    startingPrice:"₹ 2.45 Cr",
-    configs:"3, 4, 5 BHK",
-    possession:"Sep 2028",
-    type:"Residential",
-    status:"Under Construction",
-    highlights:["RERA Registered","35% Open Space","School Tie-up","Lake View"],
-    image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"66%",
-    alt:"Emerald County residential project by Tata Housing in Sector 150, Noida",
-  },
-  {
-    id:"ved-n05",
-    projectName:"Imperial Heights",
-    developer:"M3M India",
-    location:"Southern Peripheral Road, Gurugram",
-    startingPrice:"₹ 2.85 Cr",
-    configs:"3, 4 BHK",
-    possession:"Apr 2028",
-    type:"Residential",
-    status:"Under Construction",
-    highlights:["RERA Registered","Golf Course View","70% Sold","Possession Apr 2028"],
-    image:"https://images.pexels.com/photos/30368780/pexels-photo-30368780.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"74%",
-    alt:"Imperial Heights residential project by M3M India on Southern Peripheral Road, Gurugram",
-  },
-  {
-    id:"ved-n06",
-    projectName:"The Green Mile",
-    developer:"Signature Global",
-    location:"Sector 36, Sohna Road, Gurugram",
-    startingPrice:"₹ 1.55 Cr",
-    configs:"2, 3 BHK",
-    possession:"Phase 2, Dec 2027",
-    type:"Residential",
-    status:"Phase 2 Released",
-    highlights:["RERA Registered","Affordable Luxury","Duplex Options","Easy Payment Plan"],
-    image:"https://images.pexels.com/photos/5711363/pexels-photo-5711363.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"The Green Mile affordable luxury project by Signature Global on Sohna Road, Gurugram",
-  },
-  {
-    id:"ved-n07",
-    projectName:"Santorini Bay",
-    developer:"Sobha Ltd.",
-    location:"Sector 47, Faridabad",
-    startingPrice:"₹ 1.25 Cr",
-    configs:"2, 3 BHK + Retail Shops",
-    possession:"Aug 2028",
-    type:"Residential",
-    status:"Just Launched",
-    highlights:["RERA Applied","Metro 800m","Neighbourhood Mall","Landscaped Gardens"],
-    image:"https://images.pexels.com/photos/30381835/pexels-photo-30381835.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"82%",
-    alt:"Santorini Bay residential project by Sobha in Sector 47, Faridabad",
-  },
-  {
-    id:"ved-n08",
-    projectName:"Oakwood Estate",
-    developer:"Antriksh Group",
-    location:"Sector 77, Noida",
-    startingPrice:"₹ 1.85 Cr",
-    configs:"3, 4 BHK + Plots",
-    possession:"Plots Ready; Tower Dec 2028",
-    type:"Plotted",
-    status:"Under Construction",
-    highlights:["RERA Registered","Gated Community","Plots Available","Bank Tied-up"],
-    image:"https://images.pexels.com/photos/8330963/pexels-photo-8330963.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"Oakwood Estate gated community project by Antriksh Group in Sector 77, Noida",
-  },
-  {
-    id:"ved-n09",
-    projectName:"Altius Tower",
-    developer:"Brigade Group",
-    location:"Sector 152, Noida",
-    startingPrice:"₹ 2.15 Cr",
-    configs:"3, 4 BHK",
-    possession:"Feb 2029",
-    type:"Residential",
-    status:"Pre-Launch",
-    highlights:["Early Bird Pricing","RERA Applied","Noida Extension","High Appreciation Zone"],
-    image:"https://images.pexels.com/photos/31325988/pexels-photo-31325988.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"Altius Tower residential project by Brigade Group in Sector 152, Noida",
-  },
-];
 
 export default function NewLaunchesPage() {
   return (
@@ -235,7 +84,7 @@ export default function NewLaunchesPage() {
             {launchProjects.map((project,index)=>(
               <ScrollReveal key={project.id} id={project.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href={`#${project.id}`}
+                  href="/contact#new-launches"
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >

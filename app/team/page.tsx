@@ -120,7 +120,7 @@ export default function TeamPage() {
         <p className="body-lg" style={{ color:"rgba(255,255,255,0.85)",maxWidth:580,margin:"0 auto 32px" }}>
           Every client at Vedhara Group works with a named senior advisor, not a rotating team. Meet the leadership that sets the standard.
         </p>
-        <Link href="/contact" className="btn btn-primary" style={{ marginTop:4 }}>Book a Free Consultation</Link>
+        <Link href="/contact#enquiry-form" className="btn btn-primary" style={{ marginTop:4 }}>Book a Free Consultation</Link>
       </VideoHeroSection>
 
       {/* Team Grid */}
@@ -240,7 +240,7 @@ export default function TeamPage() {
               Start with a 30-minute discovery conversation. Free, no obligation, and you will know exactly which team member will guide your journey.
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
-              <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
+              <Link href="/contact#enquiry-form" className="btn btn-dark">Book a Free Consultation</Link>
               <Link href="/about" className="btn" style={{ background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>Learn More About Us</Link>
             </div>
           </ScrollReveal>

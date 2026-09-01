@@ -64,7 +64,7 @@ export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ con
                 </div>
               ))}
               <div style={{ marginTop:32,paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.2)" }}>
-                <Link href="/contact" className="btn btn-dark">{content.ctaLabel} →</Link>
+                <Link href="/contact#enquiry-form" className="btn btn-dark">{content.ctaLabel} →</Link>
               </div>
             </div>
           </ScrollReveal>

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -10,108 +10,10 @@ import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
+import { featuredListings } from "@/lib/data/pageListings";
 
 export const metadata: Metadata = { title:"Buy Property in Delhi NCR | Verified Listings", description:"Buy verified residential and commercial property across Delhi NCR, Gurugram and Noida with RERA-verified listings, transparent fees and independent advisory.", alternates:{ canonical:"https://www.vedharagroup.com/buy" } };
 
-interface PropertyListing {
-  id:string;
-  title:string;
-  location:string;
-  price:string;
-  config:string;
-  size:string;
-  type:"Residential"|"Commercial"|"Luxury"|"Plotted";
-  status:"Ready to Move"|"Possession Oct 2026"|"Possession Dec 2026"|"Under Construction";
-  highlights:string[];
-  image:string;
-  pos?:string;
-  alt?:string;
-}
-
-const featuredListings: PropertyListing[] = [
-  {
-    id:"ved-001",
-    title:"The Cullinan Heights",
-    location:"Sector 150, Noida",
-    price:"₹ 4.85 Cr",
-    config:"4 BHK + Study",
-    size:"2,450 sq.ft.",
-    type:"Residential",
-    status:"Ready to Move",
-    highlights:["RERA Registered","Golf Course View","Clubhouse Access","Vastu Compliant"],
-    image:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"The Cullinan Heights luxury high-rise illuminated at dusk in Sector 150, Noida",
-  },
-  {
-    id:"ved-002",
-    title:"Amaryllis Residences",
-    location:"Golf Course Road, Gurugram",
-    price:"₹ 6.20 Cr",
-    config:"3 BHK + Servant",
-    size:"2,150 sq.ft.",
-    type:"Luxury",
-    status:"Possession Oct 2026",
-    highlights:["RERA Registered","Corner Unit","Private Terrace","Smart Home"],
-    image:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
-  },
-  {
-    id:"ved-003",
-    title:"Platinum Towers",
-    location:"Dwarka Expressway, Gurugram",
-    price:"₹ 2.95 Cr",
-    config:"3 BHK",
-    size:"1,650 sq.ft.",
-    type:"Residential",
-    status:"Possession Dec 2026",
-    highlights:["RERA Registered","Metro Proximity","85% Open Area","Premium Finishes"],
-    image:"https://images.pexels.com/photos/7672058/pexels-photo-7672058.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"Platinum Towers residential high-rise on Dwarka Expressway, Gurugram",
-  },
-  {
-    id:"ved-004",
-    title:"One Golden Mile",
-    location:"Sector 62, Gurugram",
-    price:"₹ 8.50 Cr",
-    config:"4,500 sq.ft. Office",
-    size:"4,500 sq.ft.",
-    type:"Commercial",
-    status:"Ready to Move",
-    highlights:["RERA Registered","LEED Platinum","24hr Security","100+ Car Parking"],
-    image:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"One Golden Mile commercial office building in Sector 62, Gurugram",
-  },
-  {
-    id:"ved-005",
-    title:"Veda Forest Villas",
-    location:"Sector 150, Noida",
-    price:"₹ 7.50 Cr",
-    config:"5 BHK Independent Floor",
-    size:"3,800 sq.ft.",
-    type:"Luxury",
-    status:"Ready to Move",
-    highlights:["RERA Registered","Park Facing","Private Pool","Modular Kitchen"],
-    image:"https://images.pexels.com/photos/20581232/pexels-photo-20581232.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"Veda Forest Villas luxury villas in Sector 150, Noida",
-  },
-  {
-    id:"ved-006",
-    title:"Magnolia Court",
-    location:"Greater Kailash II, Delhi",
-    price:"₹ 3.40 Cr",
-    config:"3 BHK",
-    size:"1,550 sq.ft.",
-    type:"Residential",
-    status:"Under Construction",
-    highlights:["RERA Registered","South Delhi","Premium Location","High Appreciation"],
-    image:"https://images.pexels.com/photos/35114454/pexels-photo-35114454.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"80%",
-    alt:"Magnolia Court premium apartments in Greater Kailash II, Delhi",
-  },
-];
 
 const buyFaqs = [
   { q:"Do I pay Vedhara a fee to buy a property?", a:"In most cases, Vedhara charges a disclosed commission on both the buyer and seller sides, in line with the standard rules and practices followed by real estate businesses. The commission is clearly stated on every specific listing." },
@@ -158,7 +60,7 @@ export default function BuyPage() {
           <div className="prop-grid">
             {featuredListings.map((property,index)=>(
               <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
-                <Link href={`#${property.id}`} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                <Link href="/contact#buy" className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
@@ -216,7 +118,7 @@ export default function BuyPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Don&apos;t see what you&apos;re looking for? Our full inventory spans 500+ verified listings across Delhi NCR, Faridabad, Manesar, Chandigarh and North India.
               </p>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact#enquiry-form" className="btn btn-primary">
                 Talk to an Advisor →
               </Link>
             </div>

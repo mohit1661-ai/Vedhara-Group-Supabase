@@ -65,7 +65,7 @@ export default function NRIServicesPage() {
           Weekend IST consultations, 48-hour video walkthroughs, and e-signature documentation. Verified property decisions across Delhi NCR, Chandigarh and North India without buying a flight ticket.
         </p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
-          <Link href="/contact" className="btn btn-primary">Book a Weekend Video Consultation</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-primary">Book a Weekend Video Consultation</Link>
           <a href="https://wa.me/919810647063" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp NRI Desk</a>
         </div>
       </VideoHeroSection>

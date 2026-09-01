@@ -438,7 +438,7 @@ export default function CinematicHero({
             </p>
 
             <div style={{ display:"flex",gap:14,flexWrap:"wrap",marginBottom:52,animation:"heroRise 0.8s cubic-bezier(0.22,1,0.36,1) 0.6s backwards" }}>
-              <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
+              <Link href="/contact#enquiry-form" className="btn btn-primary">Book a Free Consultation</Link>
               <Link href="/buy" className="btn btn-outline">Explore Verified Listings →</Link>
             </div>
 

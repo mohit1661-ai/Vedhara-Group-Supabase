@@ -78,7 +78,7 @@ export default function HomeConsultationSection() {
                   <p className="body-md" style={{ color:"var(--slate)", margin:"0 0 24px" }}>
                     A Vedhara advisor will contact you within 24 hours. No sales pitch, just a conversation about what you are trying to achieve.
                   </p>
-                  <Link href="/contact" className="btn btn-dark" style={{ display:"inline-flex" }}>Explore More Ways to Reach Us</Link>
+                  <Link href="/contact#enquiry-form" className="btn btn-dark" style={{ display:"inline-flex" }}>Explore More Ways to Reach Us</Link>
                 </div>
               ) : (
                 <ConsultationForm sourcePage="/" onSuccess={()=>setDone(true)} variant="light" />

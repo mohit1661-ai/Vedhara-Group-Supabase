@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
@@ -9,6 +9,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import ListingGallery from "@/components/ui/ListingGallery";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
+import { tricityListings } from "@/lib/data/pageListings";
 
 export const metadata: Metadata = {
   title:"Chandigarh Tricity Real Estate",
@@ -74,106 +75,6 @@ const freeholdLeasehold = [
   { t:"The Tricity Nuance", d:"Chandigarh is majority freehold with leasehold pockets; Panchkula was historically leasehold and many sectors have converted to freehold; Mohali and GMADA sectors are predominantly freehold. Always confirm the tenure on the title, not on the brochure." },
 ];
 
-interface TricityListing {
-  id:string;
-  title:string;
-  location:string;
-  price:string;
-  config:string;
-  size:string;
-  type:"Residential"|"Luxury"|"Commercial"|"Plotted";
-  status:"Ready to Move"|"Possession Dec 2026"|"Under Construction"|"Available for Sale";
-  highlights:string[];
-  image:string;
-  pos?:string;
-  alt?:string;
-}
-
-const tricityListings: TricityListing[] = [
-  {
-    id:"ved-t01",
-    title:"The Corbusier Residences",
-    location:"Sector 17, Chandigarh",
-    price:"₹ 6.75 Cr",
-    config:"4 BHK + Study",
-    size:"2,850 sq.ft.",
-    type:"Residential",
-    status:"Ready to Move",
-    highlights:["Estate Office NOC","Freehold Title","Golf Course View","Clubhouse Access"],
-    image:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"58%",
-    alt:"The Corbusier Residences apartment building in Sector 17, Chandigarh",
-  },
-  {
-    id:"ved-t02",
-    title:"Sukna Lakefront Villas",
-    location:"Sector 4, Panchkula",
-    price:"₹ 8.90 Cr",
-    config:"5 BHK Villa",
-    size:"4,200 sq.ft.",
-    type:"Luxury",
-    status:"Ready to Move",
-    highlights:["HRERA Registered","Lake Front","Freehold Converted","Private Garden"],
-    image:"https://images.pexels.com/photos/37433082/pexels-photo-37433082.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"Sukna Lakefront Villas luxury villas in Sector 4, Panchkula",
-  },
-  {
-    id:"ved-t03",
-    title:"Aero City Heights",
-    location:"Airport Road, Mohali",
-    price:"₹ 2.65 Cr",
-    config:"3 BHK",
-    size:"1,650 sq.ft.",
-    type:"Residential",
-    status:"Possession Dec 2026",
-    highlights:["Punjab RERA","IT Park Proximity","Gated Community","Metro Proposed"],
-    image:"https://images.pexels.com/photos/35229793/pexels-photo-35229793.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"Aero City Heights apartments on Airport Road, Mohali",
-  },
-  {
-    id:"ved-t04",
-    title:"New Chandigarh Skyline",
-    location:"Sector 101, New Chandigarh",
-    price:"₹ 4.20 Cr",
-    config:"4 BHK",
-    size:"2,350 sq.ft.",
-    type:"Residential",
-    status:"Under Construction",
-    highlights:["GMADA Approved","High Appreciation","Smart Home","Panoramic Balcony"],
-    image:"https://images.pexels.com/photos/11442140/pexels-photo-11442140.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"98%",
-    alt:"New Chandigarh Skyline apartments in Sector 101, New Chandigarh",
-  },
-  {
-    id:"ved-t05",
-    title:"Zirakpur Metro Square",
-    location:"VIP Road, Zirakpur",
-    price:"₹ 1.85 Cr",
-    config:"1,800 sq.ft. Retail",
-    size:"1,800 sq.ft.",
-    type:"Commercial",
-    status:"Ready to Move",
-    highlights:["High Footfall","GMADA Zone","Signage Visible","Car Parking"],
-    image:"https://images.pexels.com/photos/11840337/pexels-photo-11840337.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"69%",
-    alt:"Zirakpur Metro Square retail space on VIP Road, Zirakpur",
-  },
-  {
-    id:"ved-t06",
-    title:"Kharar Green County",
-    location:"Kharar, Mohali",
-    price:"₹ 2.10 Cr",
-    config:"300 sq.yds. Plot",
-    size:"300 sq.yds.",
-    type:"Plotted",
-    status:"Available for Sale",
-    highlights:["GMADA Approved","Corner Plot","Clear Title","Immediate Registry"],
-    image:"https://images.pexels.com/photos/9716228/pexels-photo-9716228.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"100%",
-    alt:"Kharar Green County residential plot in Kharar, Mohali",
-  },
-];
 
 const faqs = [
   { q:"Is it a good time to buy property in Chandigarh Tricity in 2026?", a:"Demand is concentrated in Mohali's IT corridor, New Chandigarh, and Panchkula's converted-freehold sectors, while Zirakpur offers affordable entry points with strong rental absorption. Tricity prices are more stable than Delhi NCR's speculative corridors, which suits end-users and long-horizon investors. We benchmark every shortlist against recent registered transactions in the same sector before advising, rather than relying on asking prices." },
@@ -233,7 +134,7 @@ export default function TricityPage() {
           Three states, three rulebooks, one market. From the Chandigarh Estate Office to GMADA and HRERA, we make Tricity property safe to buy, sell and invest in, no matter which side of the border it sits.
         </p>
         <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap" }}>
-          <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-primary">Book a Free Consultation</Link>
           <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group%2C%20I%20need%20advice%20on%20Chandigarh%20Tricity%20property" target="_blank" rel="noopener noreferrer" className="btn btn-outline">WhatsApp Us</a>
         </div>
       </VideoHeroSection>
@@ -333,7 +234,7 @@ export default function TricityPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Don&apos;t see what you&apos;re looking for? Our full inventory spans Chandigarh, Mohali, Panchkula, Zirakpur, Kharar and New Chandigarh.
               </p>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact#enquiry-form" className="btn btn-primary">
                 Talk to an Advisor →
               </Link>
             </div>

@@ -4,7 +4,7 @@ import EmailText from "@/components/ui/EmailText";
 const cols = [
   { title:"Services", links:[{l:"Buy Property",h:"/buy"},{l:"Sell Property",h:"/sell"},{l:"Rent Property",h:"/rent"},{l:"Commercial RE",h:"/commercial"},{l:"Luxury Properties",h:"/luxury"},{l:"New Launches",h:"/new-launches"},{l:"Chandigarh Tricity",h:"/tricity"}] },
   { title:"Advisory",  links:[{l:"Investment Advisory",h:"/investment-advisory"},{l:"NRI Services",h:"/nri-services"},{l:"Property Management",h:"/property-management"},{l:"How We Charge",h:"/how-we-charge"},{l:"Verification Center",h:"/verification-center"},{l:"Free Calculators",h:"/calculators"}] },
-  { title:"Company",   links:[{l:"About Us",h:"/about"},{l:"Our Team",h:"/team"},{l:"All Services",h:"/services"},{l:"Market Insights",h:"/market-insights"},{l:"Success Stories",h:"/success-stories"},{l:"Careers",h:"/careers"},{l:"Contact",h:"/contact"}] },
+  { title:"Company",   links:[{l:"About Us",h:"/about"},{l:"Our Team",h:"/team"},{l:"All Services",h:"/services"},{l:"Market Insights",h:"/market-insights"},{l:"Success Stories",h:"/success-stories"},{l:"Careers",h:"/careers"},{l:"Contact",h:"/contact#enquiry-form"}] },
   { title:"Support",   links:[{l:"FAQ Hub",h:"/faq"},{l:"Blog",h:"/blog"},{l:"Case Studies",h:"/case-studies"},{l:"Watch Our Videos",h:"/videos"},{l:"Privacy Policy",h:"/privacy"},{l:"Terms & Conditions",h:"/terms"}] },
 ];
 export default function Footer() {

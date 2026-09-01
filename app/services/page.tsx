@@ -253,7 +253,7 @@ export default function ServicesPage() {
               <p className="body-md" style={{ color:"rgba(252,250,244,0.35)",marginBottom:20 }}>
                 Explore the full range of Vedhara&apos;s advisory services and verified listings.
               </p>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact#enquiry-form" className="btn btn-primary">
                 Book a Free Consultation →
               </Link>
             </div>

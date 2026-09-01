@@ -514,7 +514,7 @@ export default function HomePage() {
               Whether you are buying your first home, selling an inherited property, building a real estate investment portfolio, or managing assets from abroad, Vedhara gives you the verified information, transparent fees and named advisor you need to make a confident decision. Book a free consultation and experience the difference that independent, data-driven advisory makes.
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap" }}>
-              <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
+              <Link href="/contact#enquiry-form" className="btn btn-dark">Book a Free Consultation</Link>
               <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp Us</a>
             </div>
           </div>

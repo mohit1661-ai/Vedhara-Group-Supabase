@@ -16,7 +16,7 @@ const menuGroups = [
       { label:"All Services", href:"/services" },
       { label:"Success Stories", href:"/success-stories" },
       { label:"Careers", href:"/careers" },
-      { label:"Contact", href:"/contact" },
+      { label:"Contact", href:"/contact#enquiry-form" },
     ],
   },
   {

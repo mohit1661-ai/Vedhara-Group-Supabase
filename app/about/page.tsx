@@ -163,7 +163,7 @@ export default function AboutPage() {
         <div style={{ maxWidth:560,margin:"0 auto" }}>
           <h2 className="heading-xl" style={{ color:"var(--light)",marginBottom:14,lineHeight:1.1 }}>Ready for an Advisor<br />Who Works for You?</h2>
           <p className="body-lg" style={{ color:"rgba(252,250,244,0.5)",marginBottom:28 }}>No pitch, no pressure.<br className="br-desktop" />A 30-minute conversation about your property goals, free, no obligation.</p>
-          <Link href="/contact" className="btn btn-primary">Book a Free Consultation →</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-primary">Book a Free Consultation →</Link>
         </div>
       </section>
 

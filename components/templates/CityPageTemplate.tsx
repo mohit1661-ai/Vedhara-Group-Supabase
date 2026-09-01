@@ -61,7 +61,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
           {data.heroBody}
         </p>
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-          <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-primary">Book a Free Consultation</Link>
           <a
             href={`https://wa.me/919810647063?text=Hello%20Vedhara%20Group%2C%20I%20need%20advice%20on%20${encodeURIComponent(data.name)}%20property`}
             target="_blank"
@@ -108,7 +108,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
           <div className="prop-grid">
             {data.listings.map((property, index) => (
               <ScrollReveal key={property.id} id={property.id} delay={(index % 6) * 80} style={{ display: "flex" }}>
-                <Link href={`#${property.id}`} className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, background: "var(--cream)", border: "1px solid rgba(212,168,67,0.15)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
+                <Link href="/contact#enquiry-form" className="hover-lift" style={{ display: "flex", flexDirection: "column", flex: 1, background: "var(--cream)", border: "1px solid rgba(212,168,67,0.15)", borderRadius: 16, overflow: "hidden", textDecoration: "none" }}>
                   <div style={{ height: 180, flexShrink: 0, position: "relative", overflow: "hidden" }}>
                     <Image
                       src={property.image}
@@ -164,7 +164,7 @@ export default function CityPageTemplate({ data }: { data: CityPageData }) {
               <p className="body-md" style={{ color: "rgba(252,250,244,0.35)", marginBottom: 20 }}>
                 Don&apos;t see what you&apos;re looking for? Our full inventory spans {data.name} and the surrounding micro-markets.
               </p>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact#enquiry-form" className="btn btn-primary">
                 Talk to an Advisor →
               </Link>
             </div>

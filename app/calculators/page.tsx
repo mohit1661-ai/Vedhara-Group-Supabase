@@ -260,7 +260,7 @@ export default function CalculatorsPage() {
               Calculators give you the data. A conversation gives you the context. Speak with a Vedhara advisor to understand what the numbers mean for your specific situation.
             </p>
             <div style={{ display:"flex",gap:14,justifyContent:"center",alignItems:"center",flexWrap:"wrap" }}>
-              <Link href="/contact" className="btn btn-dark">Book a Free Consultation</Link>
+              <Link href="/contact#enquiry-form" className="btn btn-dark">Book a Free Consultation</Link>
               {/* Gold separator */}
               <div style={{ width:1.5,height:28,background:"linear-gradient(180deg,transparent,var(--gold),var(--gold-lt),var(--gold),transparent)",opacity:0.5 }} />
               <a href="https://wa.me/919810647063?text=Hello%20Vedhara%20Group" target="_blank" rel="noopener noreferrer" className="btn" style={{ background:"var(--cream)",color:"var(--ink)",border:"1px solid rgba(42,45,53,0.12)" }}>WhatsApp Us</a>

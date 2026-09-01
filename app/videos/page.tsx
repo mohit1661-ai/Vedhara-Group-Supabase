@@ -92,7 +92,7 @@ export default function VideosPage() {
           <p className="body-lg" style={{ color:"rgba(255,255,255,0.8)", marginBottom:28 }}>
             Tell us your goals, budget and location across Delhi NCR, Faridabad, Manesar, Chandigarh and North India, and an advisor will respond within 24 hours.
           </p>
-          <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-primary">Book a Free Consultation</Link>
         </div>
       </section>
     </>

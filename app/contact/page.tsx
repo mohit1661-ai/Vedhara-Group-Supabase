@@ -24,20 +24,39 @@ export default function ContactPage() {
   // dropdown is pre-selected and the URL stays short and readable (no query
   // string). Hash fragments also survive client-side navigation cleanly.
   useEffect(() => {
-    const h = window.location.hash.replace("#", "").toLowerCase();
-    if (!h) return;
-    const map: Record<string, string> = {
-      buy: "Buy Property",
-      sell: "Sell Property",
-      rent: "Rent / Lease",
-      commercial: "Commercial Real Estate",
-      luxury: "Luxury Properties",
-      "new-launches": "General Enquiry",
-      tricity: "General Enquiry",
+    // SPA repeat-navigations can corrupt the fragment (observed "#buy#buy"),
+    // so parse only the first segment. The hashchange listener also catches
+    // repeat clicks that reuse a cached page instance instead of remounting.
+    const apply = () => {
+      const h = window.location.hash.replace(/^#/, "").split("#")[0].trim().toLowerCase();
+      if (!h) return;
+      const map: Record<string, string> = {
+        buy: "Buy Property",
+        sell: "Sell Property",
+        rent: "Rent / Lease",
+        commercial: "Commercial Real Estate",
+        luxury: "Luxury Properties",
+        "new-launches": "General Enquiry",
+        tricity: "General Enquiry",
+      };
+      // Reading the location hash is a browser-API-on-mount sync, not a derived-state update.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (h === "enquiry-form") {
+        // Generic CTAs (/contact#enquiry-form) scroll natively on first load;
+        // handle repeats here in case the fragment gets corrupted by the SPA router.
+        document.getElementById("enquiry-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      if (map[h]) {
+        setInterest(map[h]);
+        // Service CTAs (/contact#buy etc.) prefill the interest above and should
+        // land on the form itself, not the page hero. #enquiry-form scrolls natively.
+        document.getElementById("enquiry-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     };
-    // Reading the location hash is a browser-API-on-mount sync, not a derived-state update.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (map[h]) setInterest(map[h]);
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => window.removeEventListener("hashchange", apply);
   }, []);
 
   // On success the whole page is swapped for the thank-you hero, but the
@@ -156,11 +175,13 @@ export default function ContactPage() {
           </ScrollReveal>
 
           {/* FORM SIDE */}
-          <ScrollReveal delay={120} direction="right">
+          <ScrollReveal delay={120} direction="right" id="enquiry-form">
             {/* Gold gradient frame, luxury card that matches the popup form */}
             <div className="form-card" style={{ padding:1,background:"linear-gradient(165deg, rgba(212,168,67,0.5), rgba(212,168,67,0.12) 30%, rgba(212,168,67,0.28) 65%, rgba(212,168,67,0.5))",borderRadius:18,boxShadow:"0 18px 60px rgba(9,15,29,0.35)" }}>
               <div style={{ background:"var(--navy)",borderRadius:17,padding:"40px 36px 34px" }}>
-                <ConsultationForm sourcePage="/contact" onSuccess={()=>setStatus("success")} initialInterest={interest} />
+                {/* key: remount with the prefilled interest — ConsultationForm
+                    reads initialInterest only in its initial state */}
+                <ConsultationForm key={interest} sourcePage="/contact" onSuccess={()=>setStatus("success")} initialInterest={interest} />
               </div>
             </div>
           </ScrollReveal>
@@ -170,6 +191,8 @@ export default function ContactPage() {
       <FAQSection faqs={contactFaqs} title="Contact Us, FAQ" />
 
       <style>{`
+        /* CTA deep links (/contact#enquiry-form) must land below the fixed navbar */
+        #enquiry-form { scroll-margin-top: calc(var(--nav-h, 72px) + 16px); }
         .contact-detail-row {
           display: grid;
           grid-template-columns: 100px 1fr;

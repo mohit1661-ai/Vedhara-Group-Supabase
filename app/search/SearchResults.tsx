@@ -302,7 +302,7 @@ export default function SearchResults({
                   </Link>
                 ))}
               </div>
-              <Link href="/contact" className="btn btn-dark">Talk to an Advisor →</Link>
+              <Link href="/contact#enquiry-form" className="btn btn-dark">Talk to an Advisor →</Link>
             </div>
           )}
         </div>

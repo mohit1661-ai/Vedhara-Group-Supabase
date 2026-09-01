@@ -95,7 +95,7 @@ export default function HowWeChargePage() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 className="heading-xl" style={{ color: "var(--navy)", lineHeight: 1.1, marginBottom: 16 }}>Know the Terms.<br /><em className="display-gold" style={{ fontSize: "inherit", color: "var(--gold-ink)" }}>Choose With Confidence.</em></h2>
           <p className="body-lg" style={{ color: "var(--slate)", marginBottom: 28 }}>Our compensation model supports independent advice, but it never changes the principle that you should understand the fee before you decide whether to proceed.</p>
-          <Link href="/contact" className="btn btn-dark">Discuss Your Property Goals →</Link>
+          <Link href="/contact#enquiry-form" className="btn btn-dark">Discuss Your Property Goals →</Link>
         </div>
       </section>
 

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -10,123 +10,10 @@ import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
+import { rentalListings } from "@/lib/data/pageListings";
 
 export const metadata: Metadata = { title:"Rent Property in Delhi NCR | Verified Rentals", description:"Find verified rental properties across Delhi NCR, Faridabad, Manesar and Chandigarh. Tenant advisory, landlord representation and transparent lease terms.", alternates:{ canonical:"https://www.vedharagroup.com/rent" } };
 
-interface RentalListing {
-  id:string;
-  title:string;
-  location:string;
-  monthlyRent:string;
-  deposit:string;
-  config:string;
-  size:string;
-  furnished:"Fully Furnished"|"Semi Furnished"|"Unfurnished";
-  type:"Residential"|"Commercial";
-  status:"Available"|"Recently Leased"|"Under Offer";
-  highlights:string[];
-  image:string;
-  pos?:string;
-  alt?:string;
-}
-
-const rentalListings: RentalListing[] = [
-  {
-    id:"ved-r01",
-    title:"The Aspen Residency",
-    location:"Sector 57, Gurugram",
-    monthlyRent:"₹ 58,000/mo",
-    deposit:"₹ 1.74 Lakhs",
-    config:"3 BHK",
-    size:"1,550 sq.ft.",
-    furnished:"Fully Furnished",
-    type:"Residential",
-    status:"Available",
-    highlights:["Gurugram prime location","Gated Society","Parking Included","Power Backup"],
-    image:"https://images.pexels.com/photos/33559373/pexels-photo-33559373.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"0%",
-    alt:"The Aspen Residency 3 BHK rental apartment in Sector 57, Gurugram",
-  },
-  {
-    id:"ved-r02",
-    title:"Palm Grove Apartments",
-    location:"Sector 44, Noida",
-    monthlyRent:"₹ 42,000/mo",
-    deposit:"₹ 1.26 Lakhs",
-    config:"2 BHK",
-    size:"1,250 sq.ft.",
-    furnished:"Semi Furnished",
-    type:"Residential",
-    status:"Available",
-    highlights:["Noida Sec 44","Metro 500m","Balcony","24hr Water"],
-    image:"https://images.pexels.com/photos/27085225/pexels-photo-27085225.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"61%",
-    alt:"Palm Grove Apartments 2 BHK rental in Sector 44, Noida",
-  },
-  {
-    id:"ved-r03",
-    title:"Corporate Square",
-    location:"Sector 62, Gurugram",
-    monthlyRent:"₹ 1,85,000/mo",
-    deposit:"₹ 5.55 Lakhs",
-    config:"2,800 sq.ft. Office",
-    size:"2,800 sq.ft.",
-    furnished:"Fully Furnished",
-    type:"Commercial",
-    status:"Available",
-    highlights:["IT/Tech Hub","Conference Room","Pantry","24hr Security"],
-    image:"https://images.pexels.com/photos/5859962/pexels-photo-5859962.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"95%",
-    alt:"Corporate Square office space for rent in Sector 62, Gurugram",
-  },
-  {
-    id:"ved-r04",
-    title:"Vasant Residency",
-    location:"Vasant Kunj, Delhi",
-    monthlyRent:"₹ 65,000/mo",
-    deposit:"₹ 2.60 Lakhs",
-    config:"3 BHK + Servant",
-    size:"1,750 sq.ft.",
-    furnished:"Semi Furnished",
-    type:"Residential",
-    status:"Available",
-    highlights:["South Delhi","Lawns & Park","Covered Parking","Close to Airport"],
-    image:"https://images.pexels.com/photos/34623003/pexels-photo-34623003.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"80%",
-    alt:"Vasant Residency 3 BHK rental in Vasant Kunj, Delhi",
-  },
-  {
-    id:"ved-r05",
-    title:"Lake Vista Heights",
-    location:"Sector 150, Noida",
-    monthlyRent:"₹ 75,000/mo",
-    deposit:"₹ 3.00 Lakhs",
-    config:"4 BHK",
-    size:"2,200 sq.ft.",
-    furnished:"Fully Furnished",
-    type:"Residential",
-    status:"Under Offer",
-    highlights:["Lake View","Premium Finishes","Clubhouse","Modular Kitchen"],
-    image:"https://images.pexels.com/photos/4792297/pexels-photo-4792297.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"63%",
-    alt:"Lake Vista Heights 4 BHK rental with lake view in Sector 150, Noida",
-  },
-  {
-    id:"ved-r06",
-    title:"Galleria Business Hub",
-    location:"MG Road, Gurugram",
-    monthlyRent:"₹ 2,40,000/mo",
-    deposit:"₹ 7.20 Lakhs",
-    config:"3,500 sq.ft. Retail",
-    size:"3,500 sq.ft.",
-    furnished:"Semi Furnished",
-    type:"Commercial",
-    status:"Available",
-    highlights:["MG Road Front","High Footfall","Washroom","Loading Bay"],
-    image:"https://images.pexels.com/photos/13425897/pexels-photo-13425897.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"Galleria Business Hub retail mall on MG Road, Gurugram",
-  },
-];
 
 export default function RentPage() {
   return (
@@ -166,7 +53,7 @@ export default function RentPage() {
             {rentalListings.map((property,index)=>(
               <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
                 <Link
-                  href={`#${property.id}`}
+                  href="/contact#rent"
                   className="hover-lift"
                   style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}
                 >

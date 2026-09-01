@@ -126,7 +126,7 @@ export default function MarketInsightsPage() {
                 ))}
               </div>
               <div style={{ paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.25)" }}>
-                <Link href="/contact" className="btn btn-primary">Subscribe to Ground Report →</Link>
+                <Link href="/contact#enquiry-form" className="btn btn-primary">Subscribe to Ground Report →</Link>
               </div>
             </div>
           </ScrollReveal>
@@ -144,7 +144,7 @@ export default function MarketInsightsPage() {
                 ))}
               </div>
               <div style={{ paddingTop:24,borderTop:"1px solid rgba(212,168,67,0.2)" }}>
-                <Link href="/contact" className="btn btn-dark">Request Custom Research →</Link>
+                <Link href="/contact#enquiry-form" className="btn btn-dark">Request Custom Research →</Link>
               </div>
             </div>
           </ScrollReveal>

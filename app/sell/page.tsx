@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
@@ -10,123 +10,10 @@ import ListingGallery from "@/components/ui/ListingGallery";
 import { servicePages } from "@/lib/data/servicePages";
 import JsonLd from "@/components/seo/JsonLd";
 import { listingsSchema } from "@/lib/seo/listings";
+import { sellListings } from "@/lib/data/pageListings";
 
 export const metadata: Metadata = { title:"Sell Property in Delhi NCR at the Right Price", description:"Sell your property in Delhi NCR with a data-backed price, qualified buyer access and end-to-end sale management across Gurugram, Noida and Faridabad.", alternates:{ canonical:"https://www.vedharagroup.com/sell" } };
 
-interface SellListing {
-  id:string;
-  title:string;
-  location:string;
-  askingPrice:string;
-  config:string;
-  size:string;
-  type:"Residential"|"Commercial"|"Luxury"|"Plotted";
-  status:"Available for Sale"|"Under Offer"|"Sold";
-  highlights:string[];
-  image:string;
-  pos?:string;
-  alt?:string;
-}
-
-const sellListings: SellListing[] = [
-  // NEWEST LISTINGS FIRST, add new properties at the top of this array
-  {
-    id:"ved-s07",
-    title:"NH-8 Facing Plot, Sector 15",
-    location:"Sector 15 Part 2, Gurugram",
-    askingPrice:"₹ 18.50 Cr",
-    config:"500 sq.yds. Plot",
-    size:"500 sq.yds.",
-    type:"Plotted",
-    status:"Available for Sale",
-    highlights:["Main NH-8 Facing","Green Belt Facing","Cheque Flexible","Prime Location"],
-    image:"https://images.pexels.com/photos/11201060/pexels-photo-11201060.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"NH-8 facing residential plot in Sector 15 Part 2, Gurugram",
-  },
-  {
-    id:"ved-s01",
-    title:"Sunset Villa",
-    location:"Sector 23, Dwarka, Delhi",
-    askingPrice:"₹ 3.95 Cr",
-    config:"4 BHK Independent Floor",
-    size:"2,600 sq.ft.",
-    type:"Residential",
-    status:"Available for Sale",
-    highlights:["Dwarka Prime","Park Facing","3 Sidus Open","Vastu Compliant"],
-    image:"https://images.pexels.com/photos/35808145/pexels-photo-35808145.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"19%",
-    alt:"Sunset Villa independent floor in Sector 23, Dwarka, Delhi",
-  },
-  {
-    id:"ved-s02",
-    title:"Green Valley Apartment",
-    location:"Sector 49, Gurugram",
-    askingPrice:"₹ 2.35 Cr",
-    config:"3 BHK",
-    size:"1,580 sq.ft.",
-    type:"Residential",
-    status:"Available for Sale",
-    highlights:["Golf Course Extn","Clubhouse","Covered Parking","High Floor"],
-    image:"https://images.pexels.com/photos/7672060/pexels-photo-7672060.jpeg?auto=compress&cs=tinysrgb&w=900",
-    alt:"Green Valley Apartment 3 BHK for sale in Sector 49, Gurugram",
-  },
-  {
-    id:"ved-s03",
-    title:"Lotus Business Center",
-    location:"Sector 44, Gurugram",
-    askingPrice:"₹ 6.80 Cr",
-    config:"3,200 sq.ft. Office",
-    size:"3,200 sq.ft.",
-    type:"Commercial",
-    status:"Available for Sale",
-    highlights:["Commercial Zone","Leased Until Apr 27","High ROI","Corner Location"],
-    image:"https://images.pexels.com/photos/36676751/pexels-photo-36676751.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"67%",
-    alt:"Lotus Business Center commercial office space in Sector 44, Gurugram",
-  },
-  {
-    id:"ved-s04",
-    title:"Royal Heritage Penthouse",
-    location:"Golf Course Road, Gurugram",
-    askingPrice:"₹ 8.75 Cr",
-    config:"4 BHK Penthouse",
-    size:"3,400 sq.ft.",
-    type:"Luxury",
-    status:"Available for Sale",
-    highlights:["Golf Course View","Private Terrace","Smart Home","Jacuzzi"],
-    image:"https://images.pexels.com/photos/35203563/pexels-photo-35203563.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"28%",
-    alt:"Royal Heritage Penthouse luxury penthouse on Golf Course Road, Gurugram",
-  },
-  {
-    id:"ved-s05",
-    title:"Serene Garden Plot",
-    location:"Sector 150, Noida",
-    askingPrice:"₹ 4.50 Cr",
-    config:"450 sq.yds. Plot",
-    size:"450 sq.yds.",
-    type:"Plotted",
-    status:"Available for Sale",
-    highlights:["Sector 150","Corner Plot","All Approvals","Immediate Registration"],
-    image:"https://images.pexels.com/photos/15422584/pexels-photo-15422584.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"50%",
-    alt:"Serene Garden Plot green residential plot land in Sector 150, Noida",
-  },
-  {
-    id:"ved-s06",
-    title:"Heritage Haveli",
-    location:"Mehrauli, Delhi",
-    askingPrice:"₹ 12.50 Cr",
-    config:"5 BHK + Courtyard",
-    size:"5,200 sq.ft.",
-    type:"Luxury",
-    status:"Under Offer",
-    highlights:["South Delhi Prime","Heritage Architecture","Large Courtyard","Rare Offering"],
-    image:"https://images.pexels.com/photos/33520069/pexels-photo-33520069.jpeg?auto=compress&cs=tinysrgb&w=900",
-    pos:"32%",
-    alt:"Heritage Haveli heritage mansion in Mehrauli, South Delhi",
-  },
-];
 
 const sellFaqs = [
   { q:"How does Vedhara determine my property's value?", a:"We analyse recent comparable transactions in your locality, current demand trends, and the specific condition and positioning of your property, arriving at a price range that is realistic, not aspirational." },
@@ -173,7 +60,7 @@ export default function SellPage() {
           <div className="prop-grid">
             {sellListings.map((property,index)=>(
               <ScrollReveal key={property.id} id={property.id} delay={index * 80} style={{ display:"flex" }}>
-                <Link href={`#${property.id}`} className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
+                <Link href="/contact#sell" className="hover-lift" style={{ display:"flex",flexDirection:"column",flex:1,background:"var(--cream)",border:"1px solid rgba(212,168,67,0.15)",borderRadius:16,overflow:"hidden",textDecoration:"none" }}>
                   {/* Image area */}
                   <div style={{ height:180,flexShrink:0,position:"relative",overflow:"hidden" }}>
                     <Image
