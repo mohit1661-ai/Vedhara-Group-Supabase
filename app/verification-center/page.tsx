@@ -49,7 +49,7 @@ export default function VerificationCenterPage() {
     <>
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Verification Center", href:"/verification-center" }]} />
       <JsonLd data={howToSchema} />
-      <VideoHeroSection videoSrc="/videos/Property%20Verification.mp4">
+      <VideoHeroSection poster="/videos/Property%20Verification-poster.jpg" videoSrc="/videos/Property%20Verification.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Verification Center</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(28px,5vw,56px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

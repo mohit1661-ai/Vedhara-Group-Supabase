@@ -41,7 +41,7 @@ export default function InvestmentAdvisoryPage() {
     <>
       <JsonLd data={{ "@context":"https://schema.org","@type":"Service",name:"Real Estate Investment Advisory Delhi NCR",provider:{"@id":"https://www.vedharagroup.com/#organization"} }} />
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"Investment Advisory", href:"/investment-advisory" }]} />
-      <VideoHeroSection videoSrc="/videos/Real%20Estate%20Investment%20Advisory.mp4">
+      <VideoHeroSection poster="/videos/Real%20Estate%20Investment%20Advisory-poster.jpg" videoSrc="/videos/Real%20Estate%20Investment%20Advisory.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Investment Advisory</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

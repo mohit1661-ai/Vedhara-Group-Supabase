@@ -179,7 +179,7 @@ export default function CalculatorsPage() {
   const [active, setActive] = useState("roi");
   return (
     <>
-      <VideoHeroSection videoSrc="/videos/Real%20Estate%20Calculator.mp4">
+      <VideoHeroSection poster="/videos/Real%20Estate%20Calculator-poster.jpg" videoSrc="/videos/Real%20Estate%20Calculator.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>Free Tools</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

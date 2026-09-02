@@ -61,7 +61,7 @@ export default function PropertyManagementPage() {
   return (
     <>
       <JsonLd data={{"@context":"https://schema.org","@type":"Service",name:content.h1+(content.h1Accent?" "+content.h1Accent:""),provider:{"@id":"https://www.vedharagroup.com/#organization"},areaServed:{"@type":"City","name":"Delhi NCR"},description:content.intro}} />
-      <VideoHeroSection videoSrc="/videos/Property%20Management%20Hero%20Video.mp4">
+      <VideoHeroSection poster="/videos/Property%20Management%20Hero%20Video-poster.jpg" videoSrc="/videos/Property%20Management%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>{content.eyebrow}</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,56px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

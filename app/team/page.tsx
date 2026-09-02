@@ -110,7 +110,7 @@ export default function TeamPage() {
   return (
     <>
       <JsonLd data={teamSchema} />
-      <VideoHeroSection videoSrc="/videos/Our%20Team%20Hero%20Video.mp4">
+      <VideoHeroSection poster="/videos/Our%20Team%20Hero%20Video-poster.jpg" videoSrc="/videos/Our%20Team%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Leadership</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

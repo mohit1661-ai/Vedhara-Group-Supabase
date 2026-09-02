@@ -39,7 +39,7 @@ export default function BlogPage() {
   return (
     <>
       <JsonLd data={blogSchema} />
-      <VideoHeroSection videoSrc="/videos/Blog Page Hero Video.mp4">
+      <VideoHeroSection poster="/videos/Blog%20Page%20Hero%20Video-poster.jpg" videoSrc="/videos/Blog Page Hero Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Blog</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>

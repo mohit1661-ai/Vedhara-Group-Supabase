@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Keep the Next devtools indicator out of production bundles.
+  devIndicators: false,
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [75, 80],

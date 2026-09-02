@@ -152,7 +152,35 @@ export default function CinematicHero({
         // Mobile also receives the muted/inline video; only Save-Data/2G keeps
         // the fallback behavior so normal mobile visitors are not left without a hero.
         if (slow) return;
-        start();
+        // Defer the multi-MB hero film until the critical render is complete:
+        // poster and text paint first (LCP), then the fetch starts after the
+        // window load event once the network goes idle. Visual behaviour is
+        // unchanged — the poster is the video's own first frame. A hard 3.5s
+        // failsafe guarantees playback even if `load` never fires (a hanging
+        // third-party resource must never block the hero film).
+        let started = false;
+        const go = () => {
+          if (started || !el.isConnected) return;
+          started = true;
+          start();
+        };
+        const idle = (cb: () => void) => {
+          const ric = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+          if (ric) ric(cb, { timeout: 2000 });
+          else setTimeout(cb, 300);
+        };
+        const failSafe = setTimeout(go, 3500);
+        const onLoad = () => {
+          window.removeEventListener("load", onLoad);
+          clearTimeout(failSafe);
+          idle(go);
+        };
+        if (document.readyState === "complete") {
+          clearTimeout(failSafe);
+          idle(go);
+        } else {
+          window.addEventListener("load", onLoad);
+        }
       }
     } else if (videoRef.current) {
       // Stop and detach the previous route's media before React replaces it.

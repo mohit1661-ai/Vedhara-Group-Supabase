@@ -49,7 +49,7 @@ export default function NewLaunchesPage() {
         status: p.status,
         image: p.image,
       })))} />
-      <VideoHeroSection videoSrc="/videos/New%20Launches.mp4">
+      <VideoHeroSection poster="/videos/New%20Launches-poster.jpg" videoSrc="/videos/New%20Launches.mp4">
           <span className="v-line" style={{ margin:"0 auto 14px" }} />
           <p className="eyebrow" style={{ marginBottom:18 }}>New Launches</p>
           <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5vw,52px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

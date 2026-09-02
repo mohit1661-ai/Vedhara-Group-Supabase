@@ -102,7 +102,7 @@ const storiesFaqs = [
 export default function SuccessStoriesPage() {
   return (
     <>
-      <VideoHeroSection videoSrc="/videos/Success%20Stories%20Hero%20Video.mp4">
+      <VideoHeroSection poster="/videos/Success%20Stories%20Hero%20Video-poster.jpg" videoSrc="/videos/Success%20Stories%20Hero%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Success Stories</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>

@@ -90,7 +90,7 @@ export default function CareersPage() {
   return (
     <>
       <JsonLd data={careersSchema} />
-      <VideoHeroSection videoSrc="/videos/careers%20hero%20video.mp4">
+      <VideoHeroSection poster="/videos/careers%20hero%20video-poster.jpg" videoSrc="/videos/careers%20hero%20video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>Careers</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>

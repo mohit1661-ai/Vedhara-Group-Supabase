@@ -55,7 +55,7 @@ export default function NRIServicesPage() {
       <JsonLd data={{ "@context":"https://schema.org","@type":"Service",name:"NRI Property Investment Advisory",provider:{"@id":"https://www.vedharagroup.com/#organization"},areaServed:["AE","GB","US","CA","SG","AU"] }} />
 
       <Breadcrumbs items={[{ name:"Home", href:"/" },{ name:"NRI Services", href:"/nri-services" }]} />
-      <VideoHeroSection videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video.mp4">
+      <VideoHeroSection poster="/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video-poster.jpg" videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20NRI%20Desk%20Page%20Video.mp4">
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>NRI Property Services</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(32px,5.5vw,64px)",color:"var(--light)",lineHeight:1.05,marginBottom:24 }}>
