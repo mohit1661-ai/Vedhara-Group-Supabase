@@ -30,7 +30,7 @@ export default function LuxuryPage() {
         status: l.status,
         image: l.image,
       })))} />
-      <ServicePageTemplate content={servicePages.luxury} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Luxury%20Properties%20Page%20Video%20(1).mp4" hideFAQ />
+      <ServicePageTemplate content={servicePages.luxury} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Luxury%20Properties%20Page%20Video%20(1).mp4" poster="/videos/Vedhara%20Group%20Delhi%20NCR%20Luxury%20Properties%20Page%20Video-poster.jpg" hideFAQ />
 
       {/* Luxury Listings Section */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>

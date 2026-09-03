@@ -38,7 +38,7 @@ export default function BuyPage() {
         status: l.status,
         image: l.image,
       })))} />
-      <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" hideFAQ />
+      <ServicePageTemplate content={servicePages.buy} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video.mp4" poster="/videos/Vedhara%20Group%20Delhi%20NCR%20Buy%20Page%20Video-poster.jpg" hideFAQ />
 
       {/* Featured Listings Section */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>

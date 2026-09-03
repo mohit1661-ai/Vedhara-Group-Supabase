@@ -30,7 +30,7 @@ export default function RentPage() {
         status: l.status,
         image: l.image,
       })))} />
-      <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" hideFAQ />
+      <ServicePageTemplate content={servicePages.rent} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video.mp4" poster="/videos/Vedhara%20Group%20Delhi%20NCR%20Rent%20Page%20Video-poster.jpg" hideFAQ />
 
       {/* Featured Rentals Section - Homepage-style cards */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>

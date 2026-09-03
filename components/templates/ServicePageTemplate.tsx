@@ -13,11 +13,11 @@ export interface ServicePageContent {
   seoText?:string;
 }
 
-export default function ServicePageTemplate({ content, videoSrc, hideFAQ }:{ content:ServicePageContent; videoSrc?:string; hideFAQ?:boolean }) {
+export default function ServicePageTemplate({ content, videoSrc, poster, hideFAQ }:{ content:ServicePageContent; videoSrc?:string; poster?:string; hideFAQ?:boolean }) {
   return (
     <>
       <JsonLd data={{"@context":"https://schema.org","@type":"Service",name:content.h1+(content.h1Accent?" "+content.h1Accent:""),provider:{"@id":"https://www.vedharagroup.com/#organization"},areaServed:{"@type":"City","name":"Delhi NCR"},description:content.intro}} />
-      <VideoHeroSection videoSrc={videoSrc}>
+      <VideoHeroSection poster={poster} videoSrc={videoSrc}>
         <span className="v-line" style={{ margin:"0 auto 14px" }} />
         <p className="eyebrow" style={{ marginBottom:18 }}>{content.eyebrow}</p>
         <h1 style={{ fontFamily:"var(--t-display)",fontStyle:"italic",fontWeight:300,fontSize:"clamp(30px,5.2vw,64px)",color:"var(--light)",lineHeight:1.1,marginBottom:24 }}>

@@ -38,7 +38,7 @@ export default function SellPage() {
         status: l.status,
         image: l.image,
       })))} />
-      <ServicePageTemplate content={servicePages.sell} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Sell%20Page%20Video%20(1).mp4" hideFAQ />
+      <ServicePageTemplate content={servicePages.sell} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Sell%20Page%20Video%20(1).mp4" poster="/videos/Vedhara%20Group%20Delhi%20NCR%20Sell%20Page%20Video-poster.jpg" hideFAQ />
 
       {/* Properties for Sale Section */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>

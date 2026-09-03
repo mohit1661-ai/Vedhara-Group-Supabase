@@ -32,7 +32,7 @@ export default function CommercialPage() {
         status: l.status,
         image: l.image,
       })))} />
-      <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" hideFAQ />
+      <ServicePageTemplate content={servicePages.commercial} videoSrc="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video.mp4" poster="/videos/Vedhara%20Group%20Delhi%20NCR%20Commercial%20Page%20Video-poster.jpg" hideFAQ />
 
       {/* Commercial Listings Section */}
       <section style={{ background:"var(--navy)",padding:"60px 32px",position:"relative",overflow:"hidden" }}>
