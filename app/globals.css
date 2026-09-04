@@ -15,6 +15,9 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
+/* Deep-link anchors (e.g. /luxury#ved-l07) land just below the fixed navbar
+   instead of being hidden behind it. */
+[id]{scroll-margin-top:calc(var(--nav-h) + 16px);}
 body{font-family:var(--t-body);background:var(--navy);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;}
 /* Text wrap: prevent orphaned single words on the last line of paragraphs */
 p{text-wrap:pretty;}

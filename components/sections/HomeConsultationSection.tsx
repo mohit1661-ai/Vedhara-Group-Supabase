@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import ConsultationForm from "@/components/ui/ConsultationForm";
+import TrustBadges from "@/components/ui/TrustBadges";
 
 /**
  * HomeConsultationSection, luxury lead-capture placed directly above the footer
@@ -53,11 +54,7 @@ export default function HomeConsultationSection() {
           </ul>
 
           {/* Trust strip */}
-          <div style={{ display:"flex", gap:10, flexWrap:"wrap", marginBottom:28 }}>
-            {["RERA Compliant","ISO Verified","Independent by Design"].map(b=>(
-              <span key={b} style={{ fontFamily:"var(--t-head)", fontSize:9, fontWeight:600, letterSpacing:"0.1em", textTransform:"uppercase", color:"var(--gold-lt)", border:"1px solid rgba(212,168,67,0.28)", padding:"5px 10px", borderRadius:3 }}>{b}</span>
-            ))}
-          </div>
+          <TrustBadges position="consultation" style={{ marginBottom: 28 }} />
 
           {/* Quick contact */}
           <div style={{ display:"flex", gap:14, flexWrap:"wrap" }}>

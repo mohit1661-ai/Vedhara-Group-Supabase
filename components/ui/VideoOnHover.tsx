@@ -3,9 +3,10 @@ import { useRef, useState, useEffect } from "react";
 
 /**
  * Shows a poster image by default and plays a muted looping video on hover
- * (desktop). On touch devices (no hover) tapping the media toggles play/pause,
- * and the tap is captured so the card link doesn't navigate.
- * Used for property-listing cards so videos don't weigh down page load.
+ * (desktop). On touch devices (no hover) the play/pause toggle lives on a
+ * small corner button; tapping the rest of the media navigates to the listing
+ * (it doesn't capture the tap). Used for property-listing cards so videos
+ * don't weigh down page load.
  */
 interface VideoOnHoverProps {
   src: string;
@@ -42,15 +43,6 @@ export default function VideoOnHover({ src, poster, alt }: VideoOnHoverProps) {
     }
   };
 
-  // Touch: tap toggles play/pause and stops the card link from navigating.
-  const onTouchTap = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!touch) return;
-    e.preventDefault();
-    e.stopPropagation();
-    if (playing) pause();
-    else play();
-  };
-
   const showVideo = (hover || playing) && ready;
 
   return (
@@ -58,7 +50,6 @@ export default function VideoOnHover({ src, poster, alt }: VideoOnHoverProps) {
       style={{ position:"absolute", inset:0, overflow:"hidden" }}
       onMouseEnter={touch ? undefined : () => { setHover(true); videoRef.current?.play().catch(() => {}); }}
       onMouseLeave={touch ? undefined : () => pause()}
-      onClick={onTouchTap}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -78,12 +69,19 @@ export default function VideoOnHover({ src, poster, alt }: VideoOnHoverProps) {
         onPlaying={() => setReady(true)}
         style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:showVideo?1:0, transition:"opacity 0.35s ease", pointerEvents:"none" }}
       />
-      {/* Touch hint, tells mobile/tablet users the media is tappable */}
+      {/* Touch control: tapping the card itself navigates to the listing. The
+          play/pause toggle lives on this dedicated button which stops
+          propagation so it doesn't block navigation. */}
       {touch && (
-        <div style={{ position:"absolute", top:14, right:14, zIndex:3, pointerEvents:"none", display:"flex", alignItems:"center", gap:5, fontFamily:"var(--t-head)", fontSize:8, fontWeight:700, letterSpacing:"0.08em", textTransform:"uppercase", padding:"4px 10px", borderRadius:20, background:"rgba(9,15,29,0.6)", color:"rgba(255,255,255,0.95)", border:"1px solid rgba(255,255,255,0.25)", backdropFilter:"blur(4px)" }}>
+        <button
+          type="button"
+          aria-label={playing ? "Pause video" : "Play video"}
+          onClick={(e) => { e.stopPropagation(); if (playing) pause(); else play(); }}
+          style={{ position:"absolute", top:14, right:14, zIndex:3, display:"flex", alignItems:"center", gap:5, fontFamily:"var(--t-head)", fontSize:8, fontWeight:700, letterSpacing:"0.08em", textTransform:"uppercase", padding:"4px 10px", borderRadius:20, background:"rgba(9,15,29,0.6)", color:"rgba(255,255,255,0.95)", border:"1px solid rgba(255,255,255,0.25)", backdropFilter:"blur(4px)", cursor:"pointer" }}
+        >
           <span style={{ fontSize:9 }}>{playing ? "❚❚" : "▶"}</span>
-          {playing ? "Tap to pause" : "Tap to play"}
-        </div>
+          {playing ? "Pause" : "Play video"}
+        </button>
       )}
     </div>
   );

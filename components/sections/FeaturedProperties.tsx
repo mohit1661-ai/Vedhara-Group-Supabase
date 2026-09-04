@@ -51,7 +51,7 @@ const featuredProperties: FeaturedProperty[] = [
   },
   {
     category: "Commercial",
-    title: "Commercial Building, Udyog Vihar 5",
+    title: "Commercial Building for Sale",
     location: "Udyog Vihar Phase 5, Gurugram",
     price: "₹ 40 Cr",
     config: "40,000 sq.ft. Built-up",
@@ -83,7 +83,7 @@ const featuredProperties: FeaturedProperty[] = [
     image: "https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900",
     pos: "100%",
     alt: "Amaryllis Residences luxury apartments on Golf Course Road, Gurugram",
-    link: "/new-launches",
+    link: "/gurugram",
     tag: "Possession Oct 2026",
   },
   {

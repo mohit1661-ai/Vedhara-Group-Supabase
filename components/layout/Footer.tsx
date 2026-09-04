@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import EmailText from "@/components/ui/EmailText";
+import TrustBadges from "@/components/ui/TrustBadges";
 const cols = [
   { title:"Services", links:[{l:"Buy Property",h:"/buy"},{l:"Sell Property",h:"/sell"},{l:"Rent Property",h:"/rent"},{l:"Commercial RE",h:"/commercial"},{l:"Luxury Properties",h:"/luxury"},{l:"New Launches",h:"/new-launches"},{l:"Chandigarh Tricity",h:"/tricity"}] },
   { title:"Advisory",  links:[{l:"Investment Advisory",h:"/investment-advisory"},{l:"NRI Services",h:"/nri-services"},{l:"Property Management",h:"/property-management"},{l:"Free Property Valuation",h:"/sell/valuation"},{l:"How We Charge",h:"/how-we-charge"},{l:"Verification Center",h:"/verification-center"},{l:"Free Calculators",h:"/calculators"}] },
@@ -46,11 +47,7 @@ export default function Footer() {
                 WhatsApp Us
               </a>
             </div>
-            <div style={{ display:"flex",gap:8,marginTop:18,flexWrap:"wrap" }}>
-              {["RERA Compliant","ISO Verified"].map(b=>(
-                <span key={b} style={{ fontFamily:"var(--t-head)",fontSize:9,fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--gold-lt)",border:"1px solid rgba(212,168,67,0.2)",padding:"4px 8px" }}>{b}</span>
-              ))}
-            </div>
+            <TrustBadges position="footer" style={{ marginTop: 18 }} />
             <div style={{ display:"flex",gap:10,marginTop:18 }}>
               <a href="https://www.linkedin.com/company/vedharagroup/" target="_blank" rel="noopener noreferrer" aria-label="Vedhara Group on LinkedIn" style={{ width:32,height:32,display:"flex",alignItems:"center",justifyContent:"center",border:"1px solid rgba(212,168,67,0.25)",borderRadius:"50%",color:"var(--gold-lt)",transition:"all 0.2s" }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>

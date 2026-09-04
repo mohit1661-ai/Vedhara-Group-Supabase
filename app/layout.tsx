@@ -7,6 +7,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import Analytics from "@/components/seo/Analytics";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ChatWidget from "@/components/ui/ChatWidget";
+import { organizationIdentifiers } from "@/lib/data/firmDetails";
 
 const cormorant = Cormorant_Garamond({ subsets:["latin"], weight:["300","400"], style:["normal","italic"], variable:"--font-display", display:"swap" });
 const poppins = Poppins({ subsets:["latin"], weight:["400","500","600","700"], variable:"--font-head", display:"swap" });
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           ],
           knowsAbout:["Real Estate Advisory Delhi NCR","Property Investment Gurugram","Property Advisory Faridabad","Commercial Property Manesar","Real Estate North India","Chandigarh Tricity Real Estate","Property Advisory Mohali Panchkula","GMADA HRERA Punjab RERA Due Diligence","RERA Verified Property Listings","NRI Property Investment India"],
           sameAs:["https://www.linkedin.com/company/vedharagroup/","https://www.instagram.com/vedharagroup","https://www.facebook.com/vedharagroup","https://www.youtube.com/@VedharaGroup"],
+          ...(organizationIdentifiers() ? { identifier: organizationIdentifiers() } : {}),
         }} />
         <JsonLd data={{
           "@context":"https://schema.org","@type":"WebSite",

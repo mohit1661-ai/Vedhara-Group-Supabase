@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustBadges from "@/components/ui/TrustBadges";
 
 /* ── Gold Particles Canvas ── */
 function Particles() {
@@ -471,14 +472,7 @@ export default function CinematicHero({
             </div>
 
             {/* Trust strip from Word doc */}
-            <div className="trust-strip" style={{ animation:"heroFade 0.8s ease 0.75s backwards" }}>
-              {["RERA Compliant","Transparent Fees","Verified Developer Partners","4 Free Property Tools","NRI Desk Available"].map(t=>(
-                <div key={t} className="trust-item">
-                  <span style={{ width:6,height:6,borderRadius:"50%",background:"var(--gold-lt)",display:"block",boxShadow:"0 0 8px rgba(232,201,112,0.6)",flexShrink:0 }} />
-                  <span className="trust-label">{t}</span>
-                </div>
-              ))}
-            </div>
+            <TrustBadges position="hero" variant="dots" style={{ marginBottom: 52, animation: "heroFade 0.8s ease 0.75s backwards" }} />
           </div>
 
           {/* RIGHT: Premium verification + tools card */}
