@@ -214,10 +214,14 @@ export async function appendLeadToGoogleSheets(lead: Lead): Promise<void> {
     // Mode A, native API (uses the spreadsheet ID from the share link).
     if (SHEETS_ID && CREDENTIALS_B64) {
       const creds = decodeCreds();
-      if (!creds) return;
-      const token = await getAccessToken(creds);
-      await appendViaApi(token, lead);
-      return;
+      if (creds) {
+        const token = await getAccessToken(creds);
+        await appendViaApi(token, lead);
+        return;
+      }
+      console.warn(
+        "[Sheets] GOOGLE_SHEETS_CREDENTIALS is invalid, falling back to webhook mode if configured"
+      );
     }
     // Mode B, webhook (Apps Script / Zapier / Make).
     if (WEBHOOK_URL) {

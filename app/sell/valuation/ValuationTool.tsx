@@ -82,8 +82,8 @@ function estimate(localityIdx: number, type: PropertyType, area: number, unit: U
   if (circleRate > 0) {
     const premium = ((midRate - circleRate) / circleRate) * 100;
     circleNote = premium >= 0
-      ? `Your circle rate of ${formatRate(circleRate)}/${unitRate === "sqyd" ? "sq.yd" : "sq.ft"} sits ${premium.toFixed(0)}% below the implied market rate — a normal spread in most NCR micro-markets.`
-      : `Your circle rate of ${formatRate(circleRate)}/${unitRate === "sqyd" ? "sq.yd" : "sq.ft"} is ${Math.abs(premium).toFixed(0)}% above the implied market rate — registration value may exceed achievable market value here.`;
+      ? `Your circle rate of ${formatRate(circleRate)}/${unitRate === "sqyd" ? "sq.yd" : "sq.ft"} sits ${premium.toFixed(0)}% below the implied market rate, a normal spread in most NCR micro-markets.`
+      : `Your circle rate of ${formatRate(circleRate)}/${unitRate === "sqyd" ? "sq.yd" : "sq.ft"} is ${Math.abs(premium).toFixed(0)}% above the implied market rate; registration value may exceed achievable market value here.`;
   }
 
   return { low, mid, high, rateMid: midRate, unitRate, localityName: loc.name, matched, circleNote };
@@ -181,7 +181,7 @@ export default function ValuationTool() {
           </>
         ) : (
           <div>
-            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", margin: "0 0 6px" }}>Estimated Market Value{result.matched ? ` — ${result.localityName}` : " — General NCR Band"}</p>
+            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", margin: "0 0 6px" }}>Estimated Market Value{result.matched ? `, ${result.localityName}` : ", General NCR Band"}</p>
             <p style={{ fontFamily: "var(--t-head)", fontSize: 26, fontWeight: 700, color: "var(--gold-lt)", margin: "0 0 4px", lineHeight: 1.2 }}>
               {formatINR(result.low)} – {formatINR(result.high)}
             </p>
@@ -197,7 +197,7 @@ export default function ValuationTool() {
               {[
                 `Baseline: verified ${VALUATION_RATES_LAST_VERIFIED} locality rate band for your property type`,
                 "Adjustments: property age and specification applied to the baseline",
-                "Band: ±12% around the midpoint — the realistic negotiating range",
+                "Band: ±12% around the midpoint, the realistic negotiating range",
               ].map(t => (
                 <li key={t} style={{ display: "flex", gap: 8, marginBottom: 7 }}>
                   <span style={{ color: "var(--gold-lt)", flexShrink: 0, fontSize: 10, lineHeight: 1.7 }}>◆</span>
@@ -207,10 +207,10 @@ export default function ValuationTool() {
             </ul>
 
             {!result.matched && (
-              <p className="body-sm" style={{ color: "rgba(232,201,112,0.85)", margin: "0 0 16px" }}>Your locality is not in our tracked list yet — this is a general NCR band. An advisor can price your specific micro-market precisely.</p>
+              <p className="body-sm" style={{ color: "rgba(232,201,112,0.85)", margin: "0 0 16px" }}>Your locality is not in our tracked list yet; this is a general NCR band. An advisor can price your specific micro-market precisely.</p>
             )}
 
-            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", margin: "0 0 6px" }}>Data transparency: rates are indicative bands last verified {VALUATION_RATES_LAST_VERIFIED} from {VALUATION_RATE_SOURCES.length} published sources and refreshed by our research team as the market moves. Indicative estimate, not a certified appraisal — plots and high-value assets vary most.</p>
+            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", margin: "0 0 6px" }}>Data transparency: rates are indicative bands last verified {VALUATION_RATES_LAST_VERIFIED} from {VALUATION_RATE_SOURCES.length} published sources and refreshed by our research team as the market moves. Indicative estimate, not a certified appraisal; plots and high-value assets vary most.</p>
             <p className="body-sm" style={{ color: "rgba(232,201,112,0.8)", margin: "0 0 18px" }}>Sources: {VALUATION_RATE_SOURCES.join(" · ")}</p>
             <Link href="/contact#sell" className="btn btn-primary">Get an Advisor-Verified Valuation →</Link>
           </div>

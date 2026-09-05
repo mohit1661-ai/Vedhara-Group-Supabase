@@ -172,7 +172,7 @@ const faqs = [
   { q:"What FOIR do Indian banks use for home loan eligibility?", a:"Most Indian banks and HFCs apply a Fixed Obligation to Income Ratio (FOIR) of 40% to 50%, meaning your total monthly loan EMIs should not exceed 40–50% of your gross monthly income. Our affordability calculator conservatively uses 45%; confirm with your specific lender." },
   { q:"How accurate is the EMI calculator?", a:"The EMI calculator uses the standard reducing-balance formula: EMI = P × r × (1+r)^n / ((1+r)^n – 1). This is the same formula all Indian banks use. Your actual bank EMI may differ marginally due to processing fees or specific bank calculation conventions, but the difference is typically less than ₹50–100 per lakh." },
   { q:"Do these calculators store my data or require sign-up?", a:"No. Every calculator runs entirely in your browser. The numbers you enter are never sent to a server, stored, or shared, and no account, phone number or email address is required to use any of the four tools." },
-  { q:"Can I use these calculators for commercial property?", a:"Yes, with care. The EMI, stamp duty and affordability tools work the same way for commercial purchases, though commercial stamp duty rates and loan terms (shorter tenures, higher rates) differ from residential norms. For the ROI calculator, use commercial rent levels and remember that vacancy periods, fit-out costs and maintenance shares are typically larger for commercial assets — our advisors can model a specific commercial asset with you." },
+  { q:"Can I use these calculators for commercial property?", a:"Yes, with care. The EMI, stamp duty and affordability tools work the same way for commercial purchases, though commercial stamp duty rates and loan terms (shorter tenures, higher rates) differ from residential norms. For the ROI calculator, use commercial rent levels and remember that vacancy periods, fit-out costs and maintenance shares are typically larger for commercial assets; our advisors can model a specific commercial asset with you." },
 ];
 
 export default function CalculatorsPage() {
@@ -222,16 +222,16 @@ export default function CalculatorsPage() {
                 <em className="display-gold" style={{ fontSize: "inherit", color: "var(--gold-ink)" }}>and What the Results Mean</em>
               </h2>
               <p className="body-lg" style={{ color: "var(--slate)", maxWidth: 680, margin: "16px auto 0" }}>
-                A calculator is only as useful as the inputs and assumptions behind it. Here is exactly what to enter, what each result tells you, and where the honest limitations are — so the numbers you walk away with are decision-grade, not decorative.
+                A calculator is only as useful as the inputs and assumptions behind it. Here is exactly what to enter, what each result tells you, and where the honest limitations are; so the numbers you walk away with are decision-grade, not decorative.
               </p>
             </div>
           </ScrollReveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 1, background: "rgba(42,45,53,0.08)" }} className="grid-4 svc-card-alt">
             {[
               { title: "ROI & Rental Yield", desc: "Enter the purchase price, realistic monthly rent (check comparable listings, not optimistic ones), expected annual appreciation and your holding period. Gross yield tells you the headline return; net yield after maintenance is what actually lands in your account. Use the annualised ROI to compare property against other asset classes on the same time horizon." },
-              { title: "Home Loan EMI", desc: "Enter the loan amount, the interest rate your bank has actually quoted (not a best-case advertised rate) and your intended tenure. The schedule shows total interest over the life of the loan — often 60-80% more than the principal on a 20-year loan. Test shorter tenures to see how much interest a slightly higher EMI saves." },
+              { title: "Home Loan EMI", desc: "Enter the loan amount, the interest rate your bank has actually quoted (not a best-case advertised rate) and your intended tenure. The schedule shows total interest over the life of the loan, often 60-80% more than the principal on a 20-year loan. Test shorter tenures to see how much interest a slightly higher EMI saves." },
               { title: "Stamp Duty & Registration", desc: "Select the state where the property sits and enter the agreement value. The calculator applies current state rates, including the lower rate many states offer women buyers. Budget the output as real upfront cash: stamp duty and registration are paid at registration, before you receive keys, and are not part of the home loan." },
-              { title: "Affordability", desc: "Enter your gross monthly income, any existing EMIs and your available down payment. The tool uses the 40-50% FOIR norm Indian lenders apply, so the result mirrors what a bank will actually sanction rather than what a listing portal suggests you can spend. Treat the output as a ceiling, not a target — leave room for registration costs and interiors." },
+              { title: "Affordability", desc: "Enter your gross monthly income, any existing EMIs and your available down payment. The tool uses the 40-50% FOIR norm Indian lenders apply, so the result mirrors what a bank will actually sanction rather than what a listing portal suggests you can spend. Treat the output as a ceiling, not a target; leave room for registration costs and interiors." },
             ].map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 80}>
                 <div className="svc-card" style={{ borderRadius: 0, height: "100%" }}>

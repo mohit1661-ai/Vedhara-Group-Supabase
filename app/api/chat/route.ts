@@ -252,11 +252,11 @@ function cityAnswer(ip: string | null, city: string, q = ""): string {
   } else if (city === "delhi") {
     rows = LISTINGS.filter((r) => r.l.includes("Delhi") || r.path === "commercial" && r.keys.includes("laxman public school"));
     intro = "Delhi inventory:";
-    footer += "\nFor builder floors/residential we work on requirement basis — share budget & area.";
+    footer += "\nFor builder floors/residential we work on requirement basis; share budget & area.";
   } else if (city === "faridabad") {
-    return "Faridabad: We cover residential apartments and plots across Sectors 79–89 — the emerging development zone with strong appreciation potential.\n\nShare your budget and preferred sector and I'll shortlist options, or call +91-98106-47063. See the city page: " + SITE + "faridabad";
+    return "Faridabad: We cover residential apartments and plots across Sectors 79–89, the emerging development zone with strong appreciation potential.\n\nShare your budget and preferred sector and I'll shortlist options, or call +91-98106-47063. See the city page: " + SITE + "faridabad";
   } else if (city === "manesar") {
-    return "Manesar sits right on our Gurugram coverage — industrial plots and pre-rented options along NH-48. Share your requirement (size, budget, industrial vs commercial) and I'll shortlist. Call +91-98106-47063.";
+    return "Manesar sits right on our Gurugram coverage, industrial plots and pre-rented options along NH-48. Share your requirement (size, budget, industrial vs commercial) and I'll shortlist. Call +91-98106-47063.";
   } else if (city === "ghaziabad") {
     return "Ghaziabad/Raj Nagar Extension: options come up on requirement basis. Share budget and configuration (2/3 BHK etc.) and our team will shortlist verified choices. Call +91-98106-47063.";
   }
@@ -370,7 +370,7 @@ function buildLocalAnswer(messages: { role: string; content: string }[], ip: str
       return "Great! To schedule a site visit, please share:\n- Your name\n- Phone number\n- Preferred date and time\n\nOr call us directly at +91-98106-47063. We'll arrange a visit with honest, no-pressure assessments.";
     }
     if (ctx.includes("details") || ctx.includes("more about") || ctx.includes("interests you")) {
-      return "I'd be happy to share more details! Just tell me which property or area you'd like to know about — e.g. \"HQ27\", \"bank property sector 76\", \"Noida\".";
+      return "I'd be happy to share more details! Just tell me which property or area you'd like to know about, e.g. \"HQ27\", \"bank property sector 76\", \"Noida\".";
     }
     return "Sure! You can ask me about specific properties (e.g. \"HQ27\", \"Ajnara Homes\"), areas (e.g. \"Gurugram\", \"Noida\"), pricing, or our services.";
   }
@@ -413,17 +413,17 @@ function buildLocalAnswer(messages: { role: string; content: string }[], ip: str
 
   // How does Vedhara work / about us
   if (matchKeywords(q, ["how does","how do you","how it works","about vedhara","about your company","who are you","what is vedhara","what do you do"])) {
-    return "Vedhara Group is an independent real estate advisory firm (est. 2015) based in Gurugram. We help you buy, sell, or invest in properties across Delhi NCR with a 5-point Verification Framework — RERA check, builder history, approvals, price fairness, and title verification.\n\nHere's how we work:\n1. You share your requirements\n2. We shortlist verified options\n3. We arrange site visits with honest assessments\n4. Legal/title due diligence\n5. Price negotiation with market data\n6. Paperwork & registration support\n\nWe're builder-independent, so our advice is always in YOUR interest. Call us at +91-98106-47063 to get started!";
+    return "Vedhara Group is an independent real estate advisory firm (est. 2015) based in Gurugram. We help you buy, sell, or invest in properties across Delhi NCR with a 5-point Verification Framework, RERA check, builder history, approvals, price fairness, and title verification.\n\nHere's how we work:\n1. You share your requirements\n2. We shortlist verified options\n3. We arrange site visits with honest assessments\n4. Legal/title due diligence\n5. Price negotiation with market data\n6. Paperwork & registration support\n\nWe're builder-independent, so our advice is always in YOUR interest. Call us at +91-98106-47063 to get started!";
   }
 
   // Sell
   if (matchKeywords(q, ["sell my","want to sell","selling my","i want to sell","sell a property","sell property"])) {
-    return "Thinking of selling? Here's how Vedhara helps:\n\n1. Market Analysis — comparable sales data for the right price\n2. Professional Photography — high-quality visuals\n3. Targeted Marketing — major portals + investor network\n4. Buyer Screening — vetted buyers only\n5. Negotiation — best deal with market data\n6. Paperwork — registration & transfer support\n\nShare your property details (location, size, type) and I'll connect you with our sell team. Call +91-98106-47063.";
+    return "Thinking of selling? Here's how Vedhara helps:\n\n1. Market Analysis, comparable sales data for the right price\n2. Professional Photography, high-quality visuals\n3. Targeted Marketing, major portals + investor network\n4. Buyer Screening, vetted buyers only\n5. Negotiation, best deal with market data\n6. Paperwork, registration & transfer support\n\nShare your property details (location, size, type) and I'll connect you with our sell team. Call +91-98106-47063.";
   }
 
   // Site visit / appointment
   if (matchKeywords(q, ["site visit","schedule a visit","book a visit","appointment","meet your team","visit the property"])) {
-    return "Happy to arrange a site visit! Please share:\n- Your name\n- Phone number\n- Which property (or area) you'd like to see\n- Preferred date and time\n\nOr call us directly at +91-98106-47063 — we'll set it up with honest, no-pressure assessments.";
+    return "Happy to arrange a site visit! Please share:\n- Your name\n- Phone number\n- Which property (or area) you'd like to see\n- Preferred date and time\n\nOr call us directly at +91-98106-47063; we'll set it up with honest, no-pressure assessments.";
   }
 
   // Buy
@@ -443,7 +443,7 @@ function buildLocalAnswer(messages: { role: string; content: string }[], ip: str
 
   // Investment
   if (matchKeywords(q, ["invest","investment","roi","appreciation","best area","where to invest","growth"])) {
-    return "Top investment areas we recommend:\n\nGurugram:\n• Dwarka Expressway — new launches, strong appreciation\n• Golf Course Road — premium, stable returns\n• Sector 76–82 — affordable commercial with rental income\n\nNoida:\n• Sectors 150–152 — planned sectors on the expressway\n• Sector 62 — IT corridor offices\n\nFaridabad: Sectors 79–89 — emerging zone\nMohali: Airport Road & IT Park — employment-led growth\n\nWe provide independent investment advisory with ROI projections. Call +91-98106-47063 for a personalized plan.";
+    return "Top investment areas we recommend:\n\nGurugram:\n• Dwarka Expressway, new launches, strong appreciation\n• Golf Course Road, premium, stable returns\n• Sector 76–82, affordable commercial with rental income\n\nNoida:\n• Sectors 150–152, planned sectors on the expressway\n• Sector 62, IT corridor offices\n\nFaridabad: Sectors 79–89, emerging zone\nMohali: Airport Road & IT Park, employment-led growth\n\nWe provide independent investment advisory with ROI projections. Call +91-98106-47063 for a personalized plan.";
   }
 
   // Luxury
@@ -463,7 +463,7 @@ function buildLocalAnswer(messages: { role: string; content: string }[], ip: str
   if (matchKeywords(q, ["price","prices","pricing","cost","budget","affordable","cheap","expensive","lakh","crore"])) {
     const under1 = linkList(LISTINGS.filter((i) => i.cr < 1).slice(0, 3));
     const m10 = linkList(LISTINGS.filter((i) => i.cr >= 2 && i.cr <= 10).sort((a,b)=>a.cr-b.cr).slice(0, 3));
-    return "Budget snapshot:\n\nUnder ₹1 Cr:\n" + (under1 || "• Ask us — new options arrive weekly")
+    return "Budget snapshot:\n\nUnder ₹1 Cr:\n" + (under1 || "• Ask us, new options arrive weekly")
       + "\n\n₹2–10 Cr:\n" + m10
       + "\n\nTell me your budget + city and I'll send exact matches with links. Or call +91-98106-47063.";
   }
@@ -480,7 +480,7 @@ function buildLocalAnswer(messages: { role: string; content: string }[], ip: str
 
   // Verification/trust
   if (matchKeywords(q, ["verify","verification","trust","rera","genuine","legit","safe","secure"])) {
-    return "Our 5-point Verification Framework:\n1. RERA Registration Status\n2. Builder Delivery History\n3. Project Approvals\n4. Price-to-Locality Fairness\n5. Title Chain Verification\n\nWe publish results on every listing. Builder-independent — always in YOUR interest.";
+    return "Our 5-point Verification Framework:\n1. RERA Registration Status\n2. Builder Delivery History\n3. Project Approvals\n4. Price-to-Locality Fairness\n5. Title Chain Verification\n\nWe publish results on every listing. Builder-independent, always in YOUR interest.";
   }
 
   // Fees
@@ -511,7 +511,7 @@ const KB_FALLBACK =
    ════════════════════════════════════════════════════════════════ */
 
 function buildSystemPrompt(): string {
-  return `You are Vedhara Group's AI property advisor — a friendly, knowledgeable real estate assistant for Delhi NCR and North India. Answer using ONLY the information below. Never invent listings or prices.
+  return `You are Vedhara Group's AI property advisor, a friendly, knowledgeable real estate assistant for Delhi NCR and North India. Answer using ONLY the information below. Never invent listings or prices.
 
 ## About Vedhara Group
 - Independent real estate advisory firm, founded 2015
@@ -533,7 +533,7 @@ function buildSystemPrompt(): string {
 1. Share requirements → 2. We shortlist verified options → 3. Site visits → 4. Legal due diligence → 5. Price negotiation → 6. Paperwork & registration
 Fee: Disclosed commission on successful transactions, no hidden charges.
 
-## Current Listings (verified — link format: [Title](pageURL))
+## Current Listings (verified, link format: [Title](pageURL))
 Gurugram ([/gurugram]): HQ27 Premium Commercial Building ₹2,250 Cr · Rented Bank Property Sector 76 ₹2.22 Cr · 3 Kay Plotted Residence DLF Phase 1 ₹25 Cr · Pre-Rented Building Sector 32 ₹200 Cr · Duplex Kothi ₹18 Cr · NH-8 Plot ₹18.5 Cr · Udyog Vihar ₹40 Cr · MG Road ₹25 Cr · Golf Course Penthouse ₹12.8 Cr · Amaryllis ₹6.2 Cr · Golden Mile ₹8.5 Cr · Platinum Towers ₹2.95 Cr
 Noida ([/noida]): Cullinan Heights ₹4.85 Cr · Veda Forest Villas ₹7.5 Cr · Magnolia Court ₹3.4 Cr · Aura Sky Villas ₹1.85 Cr · Oakwood Estate ₹1.85 Cr · Altius Tower ₹2.15 Cr · Emerald County ₹2.45 Cr · Santorini Bay ₹1.25 Cr · Aspen Heights ₹3.95 Cr · Crown Plaza ₹2.75 Cr
 Mohali–Panchkula ([/mohali]): Aero City Heights ₹2.65 Cr · Sector 91 Flats ₹1.65 Cr · Sukna Lakefront Villas ₹8.9 Cr · IT Park Offices ₹3.2 Cr · Sector 70 Villa ₹2.4 Cr
@@ -554,11 +554,11 @@ Chandigarh: Mohali (IT hub), Zirakpur (residential)
 
 ## Business Hours
 - Chat advisor availability: 10 AM – 7 PM IST, all days
-- Outside hours the system itself replies with an away message — you will not be called then.
+- Outside hours the system itself replies with an away message; you will not be called then.
 
 ## Rules
 - Be friendly, concise (under 120 words)
-- KEEP REPLIES SHORT — give the listing TITLE and its clickable page link, NOT long spec sheets. Visitors click through for details.
+- KEEP REPLIES SHORT, give the listing TITLE and its clickable page link, NOT long spec sheets. Visitors click through for details.
 - Format every property reference as a markdown link: [Title](https://www.vedharagroup.com/...) using /gurugram /noida /mohali /commercial paths
 - Prices are asking prices, negotiable
 - If users share name/phone/email, confirm warmly that our team will contact them (details go to contact@vedharagroup.com)
@@ -633,7 +633,7 @@ export async function POST(req: NextRequest) {
 
   // Confirmation note appended whenever we captured fresh contact details
   const captureNote = leadCaptured
-    ? "\n\n✅ Noted your details — our team will reach out shortly. You can also call +91-98106-47063."
+    ? "\n\n✅ Noted your details; our team will reach out shortly. You can also call +91-98106-47063."
     : "";
 
   // Layer 0: numeric reply ("1", "2", "#3", "3.") drills into the last list we presented.

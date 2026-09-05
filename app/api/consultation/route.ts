@@ -13,13 +13,17 @@
  *  7. Return structured JSON response
  */
 
-import { NextRequest, NextResponse }         from "next/server";
+import { after, NextRequest, NextResponse }  from "next/server";
 import { writeLead, generateId, type Lead }  from "@/lib/leads";
 import { sendLeadNotification }              from "@/lib/email";
 import { sendLeadToTitan }                   from "@/lib/titan";
 import { appendLeadToGoogleSheets }          from "@/lib/sheets";
 import { isRateLimited }                     from "@/lib/rateLimit";
 import { validate, sanitise, type FormInput } from "@/lib/validation";
+
+// Keep the function alive long enough for the `after()` forwarding work
+// (email + Titan + Google Sheets) to finish on serverless platforms.
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   // 1. Rate limit
@@ -97,15 +101,23 @@ export async function POST(req: NextRequest) {
   }
 
   // 6. Email + Titan CRM + Google Sheets (all non-blocking)
-  sendLeadNotification(lead).catch(err =>
-    console.error("[Email notification failed]", err)
-  );
-  sendLeadToTitan(lead).catch(err =>
-    console.error("[Titan notification failed]", err)
-  );
-  appendLeadToGoogleSheets(lead).catch(err =>
-    console.error("[Google Sheets notification failed]", err)
-  );
+  //    Wrapped in `after()` so Vercel keeps the serverless function alive
+  //    until these finish. Without it, the function can be frozen right after
+  //    the response is sent and long-running forwards (e.g. the Apps Script
+  //    cold start) never complete.
+  after(async () => {
+    await Promise.allSettled([
+      sendLeadNotification(lead).catch(err =>
+        console.error("[Email notification failed]", err)
+      ),
+      sendLeadToTitan(lead).catch(err =>
+        console.error("[Titan notification failed]", err)
+      ),
+      appendLeadToGoogleSheets(lead).catch(err =>
+        console.error("[Google Sheets notification failed]", err)
+      ),
+    ]);
+  });
 
   // 7. Respond
   return NextResponse.json(

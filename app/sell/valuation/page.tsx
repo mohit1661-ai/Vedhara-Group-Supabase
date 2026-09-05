@@ -17,7 +17,7 @@ const valuationSteps = [
   {
     num: "01",
     title: "Locality Comparable Transactions",
-    desc: "The estimate starts with recent registered transactions in the same micro-market — the same sector, tower type or floor pattern, not a city-wide average. Two apartments in the same city can differ by 300% in per-square-foot price depending on the road they sit on, which is why locality evidence, not city medians, drives the first layer of the estimate.",
+    desc: "The estimate starts with recent registered transactions in the same micro-market, the same sector, tower type or floor pattern, not a city-wide average. Two apartments in the same city can differ by 300% in per-square-foot price depending on the road they sit on, which is why locality evidence, not city medians, drives the first layer of the estimate.",
   },
   {
     num: "02",
@@ -27,7 +27,7 @@ const valuationSteps = [
   {
     num: "03",
     title: "Property-Level Adjustments",
-    desc: "Finally, the estimate adjusts for the attributes that move value within a locality: floor rise, facing, age of the property, condition and fittings, parking, power backup and society amenities. A base rate only becomes a usable number once these adjustments are applied — this is the step most free online tools skip entirely.",
+    desc: "Finally, the estimate adjusts for the attributes that move value within a locality: floor rise, facing, age of the property, condition and fittings, parking, power backup and society amenities. A base rate only becomes a usable number once these adjustments are applied; this is the step most free online tools skip entirely.",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function PropertyValuationPage() {
             </div>
             <div className="body-lg" style={{ color: "var(--slate)", lineHeight: 1.85 }}>
               <p style={{ marginBottom: 18 }}>
-                Portal estimates are usually built from asking prices of currently listed inventory. Asking prices are set by sellers, and they drift upward: stale listings stay in the average for months, and motivated sellers rarely reprice quickly. Registered transaction data inverts that bias — it records what buyers actually paid, after negotiation, in your specific locality. When a portal says your flat is worth more than the registered data suggests, the gap is usually wishful asking prices, not hidden value.
+                Portal estimates are usually built from asking prices of currently listed inventory. Asking prices are set by sellers, and they drift upward: stale listings stay in the average for months, and motivated sellers rarely reprice quickly. Registered transaction data inverts that bias; it records what buyers actually paid, after negotiation, in your specific locality. When a portal says your flat is worth more than the registered data suggests, the gap is usually wishful asking prices, not hidden value.
               </p>
               <p>
                 The second reason is granularity. Delhi NCR is a market of micro-markets: the same project can trade at meaningfully different rates tower to tower, and the road on which a sector sits can be worth more than the sector next to it. Averages smooth all of that away. This valuation keeps the estimate anchored to the narrowest locality band the data supports, then applies property-level adjustments on top. If you are preparing to sell, pair the estimate with our guide on <Link href="/sell" style={{ color: "var(--gold-ink)", textDecoration: "underline" }}>how we sell property in Delhi NCR</Link>, or read the latest <Link href="/insights" style={{ color: "var(--gold-ink)", textDecoration: "underline" }}>Delhi NCR price trend research</Link> to see which way your micro-market is moving.

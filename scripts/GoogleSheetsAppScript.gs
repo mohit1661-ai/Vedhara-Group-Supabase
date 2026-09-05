@@ -58,6 +58,18 @@ function doPost(e) {
   if (!sheet) {
     sheet = ss.insertSheet("Leads");
   }
+
+  // Diagnostic probe: verify the URL/auth without appending a real row.
+  if (data.diag === true) {
+    return json_({
+      success: true,
+      diag: true,
+      sheet: sheet.getName(),
+      row: sheet.getLastRow(),
+      lead_id: String(data.lead_id || ""),
+    });
+  }
+
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
   }

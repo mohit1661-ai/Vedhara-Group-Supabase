@@ -18,7 +18,7 @@ const HomeConsultationSection = dynamic(() => import("@/components/sections/Home
 
 export const metadata: Metadata = {
   title: "Vedhara Group | Verified Property Listings & Advisory in Delhi NCR",
-  description: "Independent real estate advisory. Verified property listings across Delhi NCR — Gurugram, Noida, Faridabad, Manesar & Chandigarh. Book a free consultation.",
+  description: "Independent real estate advisory. Verified property listings across Delhi NCR, Gurugram, Noida, Faridabad, Manesar & Chandigarh. Book a free consultation.",
   alternates: { canonical: "https://www.vedharagroup.com" },
 };
 
@@ -75,7 +75,7 @@ const homeSchema = {
   "@id":"https://www.vedharagroup.com/#webpage",
   url:"https://www.vedharagroup.com",
   name:"Vedhara Group | Verified Property Listings & Advisory in Delhi NCR",
-  description:"Independent real estate advisory. Verified property listings across Delhi NCR — Gurugram, Noida, Faridabad, Manesar & Chandigarh. Book a free consultation.",
+  description:"Independent real estate advisory. Verified property listings across Delhi NCR, Gurugram, Noida, Faridabad, Manesar & Chandigarh. Book a free consultation.",
   isPartOf:{"@id":"https://www.vedharagroup.com/#website"},
   about:{"@id":"https://www.vedharagroup.com/#organization"},
   inLanguage:"en-IN",
@@ -213,7 +213,7 @@ export default function HomePage() {
           </div>
 
           <p className="body-lg" style={{ color:"var(--slate)",maxWidth:820,margin:"36px auto 0",textAlign:"center" }}>
-            Beyond these six markets, Vedhara actively advises across the wider Delhi NCR ring — Faridabad, Ghaziabad, Sonipat and Greater Noida West — plus Chandigarh, Mohali and Panchkula. Every listing carries the same five-point verification and the same named senior advisor, whether you are buying your first 2 BHK in Noida or structuring a multi-crore investment portfolio across Gurugram and Delhi.
+            Beyond these six markets, Vedhara actively advises across the wider Delhi NCR ring, Faridabad, Ghaziabad, Sonipat and Greater Noida West, plus Chandigarh, Mohali and Panchkula. Every listing carries the same five-point verification and the same named senior advisor, whether you are buying your first 2 BHK in Noida or structuring a multi-crore investment portfolio across Gurugram and Delhi.
           </p>
         </div>
       </section>

@@ -73,7 +73,15 @@ export async function sendLeadNotification(lead: Lead): Promise<void> {
       }),
     });
     if (!res.ok) {
-      console.error("[Email] Resend error:", await res.text());
+      const detail = (await res.text()).slice(0, 500);
+      console.error("[Email] Resend error:", detail);
+      // Most common cause: the sender domain (e.g. vedharagroup.com) is not
+      // verified in Resend. Hint only logs when a sender-related status shows up.
+      if (res.status === 403 || /verify|sender|domain/i.test(detail)) {
+        console.error(
+          `[Email] Hint: verify the sender domain in Resend, or set RESEND_FROM to a verified/onboarding address (e.g. "Vedhara Website <onboarding@resend.dev>") for testing.`
+        );
+      }
     } else {
       console.log("[Email] Notification sent to", toEmail);
     }

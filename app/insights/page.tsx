@@ -74,9 +74,9 @@ export default function InsightsPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1, background: "rgba(42,45,53,0.08)" }} className="grid-3 svc-card-alt">
             {[
-              { title: "Price Trend Reports", desc: "Quarter-by-quarter per-square-foot movements for Delhi NCR's most active corridors — Dwarka Expressway, Golf Course Road, the Noida Expressway and the Tricity — with the registered-transaction data behind every claim, not developer press releases." },
+              { title: "Price Trend Reports", desc: "Quarter-by-quarter per-square-foot movements for Delhi NCR's most active corridors, Dwarka Expressway, Golf Course Road, the Noida Expressway and the Tricity, with the registered-transaction data behind every claim, not developer press releases." },
               { title: "Micro-Market Deep Dives", desc: "Sector-level analysis of where value is concentrating and why: inventory pipelines, absorption rates, rental yield bands and the price gap between neighbouring sectors that most buyers discover only after they have committed." },
-              { title: "Infrastructure Impact Analysis", desc: "What metro extensions, expressways and proposed corridors actually do to nearby prices — and on what timeline. We separate documented appreciation effects from the speculation that precedes them, so you can price infrastructure realistically into a purchase." },
+              { title: "Infrastructure Impact Analysis", desc: "What metro extensions, expressways and proposed corridors actually do to nearby prices, and on what timeline. We separate documented appreciation effects from the speculation that precedes them, so you can price infrastructure realistically into a purchase." },
             ].map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 80}>
                 <div className="svc-card" style={{ borderRadius: 0, height: "100%" }}>
@@ -141,10 +141,10 @@ export default function InsightsPage() {
             </div>
             <div className="body-lg" style={{ color: "rgba(252,250,244,0.6)", lineHeight: 1.85, textAlign: "left" }}>
               <p style={{ marginBottom: 18 }}>
-                Every report starts with registered transaction data — the sale deeds actually recorded at sub-registrar offices across Delhi, Gurugram, Noida and the Tricity — supplemented by circle rate schedules, RERA filings and inventory trackers. Our advisory team then adds what data alone cannot show: site visits, broker network feedback on real absorption, and the ground-level demand shifts that appear in enquiries months before they appear in prices. Nothing in these reports is commissioned by developers, and no project markets itself through them.
+                Every report starts with registered transaction data, the sale deeds actually recorded at sub-registrar offices across Delhi, Gurugram, Noida and the Tricity, supplemented by circle rate schedules, RERA filings and inventory trackers. Our advisory team then adds what data alone cannot show: site visits, broker network feedback on real absorption, and the ground-level demand shifts that appear in enquiries months before they appear in prices. Nothing in these reports is commissioned by developers, and no project markets itself through them.
               </p>
               <p>
-                We publish the methodology alongside the conclusions so you can challenge either. Where the data is thin — a new corridor with few registered deals, for example — we say so instead of extrapolating. That discipline is the same one behind our Verification Framework, and it is why buyers, sellers and investors use these reports as a decision input rather than marketing material. When you are ready to apply the numbers to a specific property, <Link href="/contact#enquiry-form" style={{ color: "var(--gold-lt)" }}>talk to an advisor</Link> who works in your target micro-market every day.
+                We publish the methodology alongside the conclusions so you can challenge either. Where the data is thin, a new corridor with few registered deals, for example, we say so instead of extrapolating. That discipline is the same one behind our Verification Framework, and it is why buyers, sellers and investors use these reports as a decision input rather than marketing material. When you are ready to apply the numbers to a specific property, <Link href="/contact#enquiry-form" style={{ color: "var(--gold-lt)" }}>talk to an advisor</Link> who works in your target micro-market every day.
               </p>
             </div>
           </ScrollReveal>

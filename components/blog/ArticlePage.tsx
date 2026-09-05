@@ -9,6 +9,44 @@ import JsonLd from "@/components/seo/JsonLd";
 
 const BASE = "https://www.vedharagroup.com";
 
+const STOP_WORDS = new Set([
+  "the","and","for","with","from","this","that","they","them","what","when","where",
+  "how","which","into","your","you","are","all","will","has","have","not","per",
+  "ncr","delhi","india","real","estate","property","properties","home","buy","sell",
+  "guide","2026","2025","year","years","complete","north","price","prices","time",
+]);
+
+function tokenize(text: string): Set<string> {
+  return new Set(
+    text.toLowerCase().replace(/[^a-z0-9\s-]/g, " ").split(/[\s-]+/)
+      .filter((w) => w.length > 2 && !STOP_WORDS.has(w))
+  );
+}
+
+function relatedPosts(post: BlogPost): BlogPost[] {
+  const kw = tokenize(post.keywords.join(" "));
+  return blogPosts
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => {
+      const kwOther = tokenize(p.keywords.join(" "));
+      let shared = 0;
+      for (const t of kw) if (kwOther.has(t)) shared++;
+      const title = tokenize(post.title);
+      const titleOther = tokenize(p.title);
+      let tShared = 0;
+      for (const t of title) if (titleOther.has(t)) tShared++;
+      const score =
+        (p.category === post.category ? 3 : 0) +
+        shared +
+        tShared * 0.4 +
+        ((p.path ?? "blog") === (post.path ?? "blog") ? 0.3 : 0);
+      return { p, score };
+    })
+    .sort((a, b) => b.score - a.score || a.p.title.localeCompare(b.p.title))
+    .slice(0, 3)
+    .map(({ p }) => p);
+}
+
 export default function ArticlePage({ post, basePath }: { post: BlogPost; basePath: string }) {
   const wordCount = post.sections.reduce((acc, s) => acc + s.paragraphs.join(" ").split(/\s+/).length, 0)
     + post.intro.join(" ").split(/\s+/).length
@@ -33,7 +71,7 @@ export default function ArticlePage({ post, basePath }: { post: BlogPost; basePa
     },
   };
 
-  const others = blogPosts.filter((p)=>p.slug!==post.slug).slice(0,3);
+  const others = relatedPosts(post);
 
   return (
     <>
