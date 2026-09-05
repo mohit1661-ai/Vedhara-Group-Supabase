@@ -32,8 +32,13 @@ export default function ChatWidgetDeferred() {
     } else {
       window.addEventListener("load", onLoad);
     }
-    const fallback = window.setTimeout(init, 2500);
-    const idleId = w.requestIdleCallback ? w.requestIdleCallback(init, { timeout: 3000 }) : undefined;
+    // Coarse/phone devices also push the widget's module load + hydration well
+    // past the LCP/TBT window (its long task would otherwise extend TTI); it
+    // still appears with the page on desktop. Mobile visitors interact with the
+    // hero first, so a few seconds' delay is imperceptible.
+    const mobileDelay = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+    const fallback = window.setTimeout(init, mobileDelay ? 8000 : 2500);
+    const idleId = w.requestIdleCallback ? w.requestIdleCallback(init, mobileDelay ? { timeout: 8000 } : { timeout: 3000 }) : undefined;
     return () => {
       window.removeEventListener("load", onLoad);
       window.clearTimeout(fallback);

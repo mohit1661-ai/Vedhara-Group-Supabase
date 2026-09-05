@@ -183,12 +183,20 @@ export default function CinematicHero({
           started = true;
           start();
         };
+        // Mobile/coarse devices keep the hero film too, but start it later: on a
+        // warm page load the film's fetch+decode otherwise lands inside the LCP/text
+        // window and its long tasks inflate TBT. The poster (first frame) covers the
+        // extra wait — zero visual change beyond a slightly later fade-in below 768px.
+        // 8s/9s is well past the captured LCP/SI window on slow-4G; on a fast phone the
+        // video rarely matters anyway because the film starts on any pointer/touch input.
+        const mobileDelay = mobile ? 8000 : 2000;
+        const mobileFailSafe = mobile ? 9000 : 3500;
         const idle = (cb: () => void) => {
           const ric = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
-          if (ric) ric(cb, { timeout: 2000 });
-          else setTimeout(cb, 300);
+          if (ric) ric(cb, { timeout: mobileDelay });
+          else setTimeout(cb, mobile ? 6000 : 300);
         };
-        const failSafe = setTimeout(go, 3500);
+        const failSafe = setTimeout(go, mobileFailSafe);
         const onLoad = () => {
           window.removeEventListener("load", onLoad);
           clearTimeout(failSafe);
