@@ -133,6 +133,57 @@ export async function getLeads(): Promise<Lead[]> {
   return readLeadsFromFile();
 }
 
+// ── Update (admin CRM only — does NOT touch the lead-capture write path) ──
+export const LEAD_STATUSES = ["new", "contacted", "converted", "closed"] as const;
+export type LeadStatus = (typeof LEAD_STATUSES)[number];
+
+export interface LeadUpdate {
+  id: string;
+  status?: LeadStatus;
+  notes?: string;
+}
+
+async function updateLeadInSupabase(update: LeadUpdate): Promise<void> {
+  if (!supabase) throw new Error("Supabase not configured");
+
+  const patch: Record<string, unknown> = {};
+  if (update.status) patch.status = update.status;
+  if (update.notes !== undefined) patch.notes = update.notes;
+  if (Object.keys(patch).length === 0) return;
+
+  const { error } = await supabase
+    .from("leads")
+    .update(patch)
+    .eq("id", update.id);
+  if (error) throw new Error(`Supabase update failed: ${error.message}`);
+}
+
+async function updateLeadInFile(update: LeadUpdate): Promise<void> {
+  const leads = await readLeadsFromFile();
+  const index = leads.findIndex((l) => l.id === update.id);
+  if (index === -1) {
+    throw new Error(`Lead not found: ${update.id}`);
+  }
+  if (update.status) leads[index] = { ...leads[index], status: update.status };
+  if (update.notes !== undefined) leads[index] = { ...leads[index], notes: update.notes };
+  await ensureDir();
+  await fs.writeFile(LEADS_FILE, JSON.stringify(leads, null, 2), "utf8");
+}
+
+export async function updateLead(update: LeadUpdate): Promise<void> {
+  if (supabaseConfigured) {
+    try {
+      await updateLeadInSupabase(update);
+      console.log(`[Lead → Supabase] updated id=${update.id}`);
+      return;
+    } catch (err) {
+      console.error("[Supabase update failed, falling back to file]", err);
+    }
+  }
+  await updateLeadInFile(update);
+  console.log(`[Lead → File] updated id=${update.id}`);
+}
+
 export function generateId(): string {
   return `lead_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 }
