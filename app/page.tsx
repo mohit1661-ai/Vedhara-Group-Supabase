@@ -17,8 +17,8 @@ const RelatedLinksSection = dynamic(() => import("@/components/sections/RelatedL
 const HomeConsultationSection = dynamic(() => import("@/components/sections/HomeConsultationSection"));
 
 export const metadata: Metadata = {
-  title: "Vedhara Group | Verified Property Advisory in Delhi NCR",
-  description: "North India's independent real estate advisory firm. Buy, sell or invest across Delhi NCR, Faridabad, Manesar & Chandigarh with verified listings.",
+  title: "Vedhara Group | Verified Property Listings & Advisory in Delhi NCR",
+  description: "Independent real estate advisory. Verified property listings across Delhi NCR — Gurugram, Noida, Faridabad, Manesar & Chandigarh. Book a free consultation.",
   alternates: { canonical: "https://www.vedharagroup.com" },
 };
 
@@ -64,6 +64,9 @@ const homeFaqs = [
   { q:"How does Vedhara verify the properties it lists?", a:"Every partner project passes five checks: RERA registration validity, builder delivery history, project-level approvals, price-to-locality fairness benchmarked against government circle rates and registered transactions, and title document availability. Results are published on the listing page, not hidden in fine print." },
   { q:"Does Vedhara charge buyers a fee?", a:"In most cases, Vedhara charges a disclosed commission on both the buyer and seller sides, in line with the standard rules and practices followed by real estate businesses. The commission is clearly stated on every specific listing, and for portfolio-level investment advisory an optional flat retainer is available." },
   { q:"Can I use the property calculators without sharing contact details?", a:"Yes. All four calculators: ROI & Rental Yield, EMI, Stamp Duty, and Affordability, are completely free and require no account, phone number, or email address to use." },
+  { q:"Is this a good time to buy or sell property in Delhi NCR?", a:"We do not advocate market timing, and we publish what the data shows. Our advisory team benchmarks each micro-market against registered transactions, government circle rates, downstream demand pockets, inventory levels and infrastructure timelines before recommending a decision. Buyers and sellers in Gurugram, Noida, Greater Noida and Chandigarh receive the same evidence-based read: realistic pricing, RERA-registered options and a documented holding horizon, so the decision is made on numbers rather than developer narratives." },
+  { q:"How does selling a property through Vedhara work?", a:"We start with a valuation benchmarked against circle rates and registered transactions, then a documentation and legal-readiness review, professional photography, a verified listing, and filtered showings to qualified buyers only. A named senior advisor runs negotiation and end-to-end closure support, and your expected net proceeds and sale costs are stated clearly before you commit to anything." },
+  { q:"What documents should an NRI buyer keep ready?", a:"Keep your PAN card, passport with valid visa status, proof of overseas address, a bank account capable of receiving rupee remittances, and a power of attorney executed in favour of a trusted person in India if you cannot travel. On the property side we review the complete title chain, RERA registration, encumbrance certificate and approval documents with you before any payment is made." },
 ];
 
 const homeSchema = {
@@ -71,8 +74,8 @@ const homeSchema = {
   "@type":"WebPage",
   "@id":"https://www.vedharagroup.com/#webpage",
   url:"https://www.vedharagroup.com",
-  name:"Vedhara Group | Verified Property Advisory in Delhi NCR",
-  description:"North India's independent real estate advisory firm. Buy, sell or invest across Delhi NCR, Faridabad, Manesar & Chandigarh with verified listings.",
+  name:"Vedhara Group | Verified Property Listings & Advisory in Delhi NCR",
+  description:"Independent real estate advisory. Verified property listings across Delhi NCR — Gurugram, Noida, Faridabad, Manesar & Chandigarh. Book a free consultation.",
   isPartOf:{"@id":"https://www.vedharagroup.com/#website"},
   about:{"@id":"https://www.vedharagroup.com/#organization"},
   inLanguage:"en-IN",
@@ -208,6 +211,10 @@ export default function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+
+          <p className="body-lg" style={{ color:"var(--slate)",maxWidth:820,margin:"36px auto 0",textAlign:"center" }}>
+            Beyond these six markets, Vedhara actively advises across the wider Delhi NCR ring — Faridabad, Ghaziabad, Sonipat and Greater Noida West — plus Chandigarh, Mohali and Panchkula. Every listing carries the same five-point verification and the same named senior advisor, whether you are buying your first 2 BHK in Noida or structuring a multi-crore investment portfolio across Gurugram and Delhi.
+          </p>
         </div>
       </section>
 
