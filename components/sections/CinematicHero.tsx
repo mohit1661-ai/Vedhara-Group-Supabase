@@ -19,6 +19,11 @@ function Particles() {
     resize();
     window.addEventListener("resize", resize);
     const isMobile = window.innerWidth < 768;
+    // Touch/coarse devices drop the faint connector lines; they are nearly
+    // invisible on small screens and their O(n²) distance loop is the main
+    // per-frame cost on constrained CPUs.
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    const drawLines = !coarse;
     const particles = Array.from({ length: isMobile ? 20 : 40 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -28,7 +33,7 @@ function Particles() {
       alpha: Math.random() * 0.35 + 0.05,
     }));
     let raf = 0;
-    let running = true;
+    let running = false;
     let lastFrame = 0;
     const FRAME_INTERVAL = isMobile ? 50 : 33; // ~20fps mobile, ~30fps desktop
     const draw = (now: number) => {
@@ -48,38 +53,51 @@ function Particles() {
         ctx.fillStyle = `rgba(232,201,112,${p.alpha})`;
         ctx.fill();
       });
-      const maxDist = 120;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          if (Math.abs(dx) > maxDist) continue;
-          const dy = particles[i].y - particles[j].y;
-          if (Math.abs(dy) > maxDist) continue;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < maxDist) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / maxDist)})`;
-            ctx.lineWidth = 0.4;
-            ctx.stroke();
+      if (drawLines) {
+        const maxDist = 120;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            if (Math.abs(dx) > maxDist) continue;
+            const dy = particles[i].y - particles[j].y;
+            if (Math.abs(dy) > maxDist) continue;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < maxDist) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(232,201,112,${0.05 * (1 - d / maxDist)})`;
+              ctx.lineWidth = 0.4;
+              ctx.stroke();
+            }
           }
         }
       }
       raf = requestAnimationFrame(draw);
     };
-    // Pause the animation when the tab is hidden (invisible to users, saves CPU).
-    const onVis = () => {
-      if (document.hidden) { running = false; cancelAnimationFrame(raf); }
-      else if (!running) { running = true; lastFrame = 0; raf = requestAnimationFrame(draw); }
+    const start = () => { if (!running) { running = true; lastFrame = 0; raf = requestAnimationFrame(draw); } };
+    const stop = () => { if (running) { running = false; cancelAnimationFrame(raf); } };
+    // Animate only while the hero is on screen and the tab is visible; the
+    // canvas is decoupled from LCP (idle-delayed start) so its frames never
+    // compete with first paint.
+    const inView = () => {
+      const r = canvas.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      return r.bottom > 0 && r.top < vh;
     };
+    const onVis = () => { if (document.hidden) stop(); else if (inView()) start(); };
     document.addEventListener("visibilitychange", onVis);
-    raf = requestAnimationFrame(draw);
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) start(); else stop(); }, { threshold: 0 });
+    io.observe(canvas);
+    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    const idleRef = ric ? ric(() => { if (inView() && !document.hidden) start(); }, { timeout: 1500 }) : window.setTimeout(() => { if (inView() && !document.hidden) start(); }, 300);
     return () => {
-      running = false;
-      cancelAnimationFrame(raf);
+      stop();
+      io.disconnect();
       window.removeEventListener("resize", resize);
       document.removeEventListener("visibilitychange", onVis);
+      if (ric && typeof idleRef === "number") window.cancelIdleCallback?.(idleRef);
+      if (!ric && typeof idleRef === "number") window.clearTimeout(idleRef);
     };
   }, []);
   return (
@@ -327,7 +345,7 @@ export default function CinematicHero({
           <img
             src={poster}
             srcSet={`${poster.replace(/\.jpg$/, "-mobile.jpg")} 768w, ${poster} 1920w`}
-            sizes="100vw"
+            sizes="(max-width: 768px) 768px, 100vw"
             alt="Vedhara Group cinematic hero, real estate advisory across Delhi NCR"
             fetchPriority="high"
             decoding="async"

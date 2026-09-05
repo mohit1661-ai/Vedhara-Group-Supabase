@@ -19,7 +19,7 @@ import { paramsToSearchPath } from "@/lib/searchUrl";
 import { withAnchor } from "@/lib/data/listingAnchors";
 
 const cityImg = (id: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`;
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=640`;
 
 const CITY_LINKS = [
   { label: "Gurugram", href: "/gurugram", img: cityImg(11729105), sub: "Golf Course Road & prime sectors" },

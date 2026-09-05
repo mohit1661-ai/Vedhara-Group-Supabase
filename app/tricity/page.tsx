@@ -48,21 +48,21 @@ const markets = [
 const jurisdictions = [
   {
     title:"Chandigarh Estate Office", applies:"Chandigarh UT", mono:"EO",
-    image:"https://images.pexels.com/photos/34968154/pexels-photo-34968154.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/34968154/pexels-photo-34968154.jpeg?auto=compress&cs=tinysrgb&w=640",
     pos:"100%",
     alt:"Chandigarh Estate Office for property allotments and NOCs in Chandigarh UT",
     body:"No separate RERA authority is yet functional in Chandigarh UT. Allotments, resale permissions, and NOCs are handled by the Chandigarh Administration's Estate Office under the 1960 Rules. Title checks focus on the registered chain, allotment letters, and Estate Office approvals.",
   },
   {
     title:"GMADA", applies:"Mohali · Zirakpur · Kharar · New Chandigarh", mono:"GM",
-    image:"https://images.pexels.com/photos/33848325/pexels-photo-33848325.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/33848325/pexels-photo-33848325.jpeg?auto=compress&cs=tinysrgb&w=640",
     pos:"79%",
     alt:"GMADA office for sector approvals in Mohali, Zirakpur and Kharar",
     body:"Punjab projects are planned and approved by GMADA. We verify the sector's sanctioned layout, the project's approval status, and whether the unit sits inside an approved or unauthorised colony before any recommendation.",
   },
   {
     title:"Punjab RERA (PunRERA) & HRERA", applies:"Punjab · Haryana", mono:"RA",
-    image:"https://images.pexels.com/photos/33217250/pexels-photo-33217250.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image:"https://images.pexels.com/photos/33217250/pexels-photo-33217250.jpeg?auto=compress&cs=tinysrgb&w=640",
     pos:"50% 70%",
     alt:"Punjab RERA and HRERA registration office for real estate projects in Punjab and Haryana",
     body:"Mohali, Zirakpur, Kharar and New Chandigarh fall under Punjab RERA (PSIARA/PunRERA); Panchkula falls under HRERA (Haryana). RERA registration, quarterly progress filings, and complaint history are checked on the correct state portal for each project.",

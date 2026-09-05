@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import Analytics from "@/components/seo/Analytics";
 import CustomCursor from "@/components/ui/CustomCursor";
-import ChatWidget from "@/components/ui/ChatWidget";
+import ChatWidgetDeferred from "@/components/ui/ChatWidgetDeferred";
 import { organizationIdentifiers } from "@/lib/data/firmDetails";
 
 const cormorant = Cormorant_Garamond({ subsets:["latin"], weight:["300","400"], style:["normal","italic"], variable:"--font-display", display:"swap" });
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
         <main id="main-content" style={{ flex:1 }}>{children}</main>
         <Footer />
-        <ChatWidget />
+        <ChatWidgetDeferred />
       </body>
     </html>
   );

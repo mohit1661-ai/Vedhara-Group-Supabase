@@ -95,7 +95,14 @@ const homeSchema = {
 
 export default function HomePage() {
   // The hero poster is the homepage LCP candidate while the video buffers; preload it.
-  preload("/videos/homepage-hero-poster.jpg", { as: "image" });
+  // Responsive preload: mobile downloads the lighter 768w variant, desktop the 1920w.
+  preload("/videos/homepage-hero-poster.jpg", {
+    as: "image",
+    imageSrcSet:
+      "/videos/homepage-hero-poster-mobile.jpg 768w, /videos/homepage-hero-poster.jpg 1920w",
+    imageSizes: "(max-width: 768px) 768px, 100vw",
+    fetchPriority: "high",
+  });
   return (
     <>
       <JsonLd data={homeSchema} />
@@ -181,12 +188,12 @@ export default function HomePage() {
 
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:18 }} className="grid-3">
             {[
-              { t:"Gurugram", s:"Golf Course Road & prime sectors", h:"/gurugram", img:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=900" },
-              { t:"Noida", s:"Sector 150 & the Expressway corridor", h:"/noida", img:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=900" },
-              { t:"Greater Noida", s:"Plots, townships & new projects", h:"/greater-noida", img:"https://images.pexels.com/photos/20581232/pexels-photo-20581232.jpeg?auto=compress&cs=tinysrgb&w=900" },
-              { t:"South Delhi", s:"Lutyens', Vasant Vihar & Greater Kailash", h:"/south-delhi", img:"https://images.pexels.com/photos/33520069/pexels-photo-33520069.jpeg?auto=compress&cs=tinysrgb&w=900" },
-              { t:"Chandigarh Tricity", s:"Chandigarh, Mohali & Panchkula", h:"/tricity", img:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=900" },
-              { t:"Commercial Hubs", s:"Sector 62, MG Road & Noida Expressway", h:"/commercial", img:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=900" },
+              { t:"Gurugram", s:"Golf Course Road & prime sectors", h:"/gurugram", img:"https://images.pexels.com/photos/31684126/pexels-photo-31684126.jpeg?auto=compress&cs=tinysrgb&w=640" },
+              { t:"Noida", s:"Sector 150 & the Expressway corridor", h:"/noida", img:"https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=640" },
+              { t:"Greater Noida", s:"Plots, townships & new projects", h:"/greater-noida", img:"https://images.pexels.com/photos/20581232/pexels-photo-20581232.jpeg?auto=compress&cs=tinysrgb&w=640" },
+              { t:"South Delhi", s:"Lutyens', Vasant Vihar & Greater Kailash", h:"/south-delhi", img:"https://images.pexels.com/photos/33520069/pexels-photo-33520069.jpeg?auto=compress&cs=tinysrgb&w=640" },
+              { t:"Chandigarh Tricity", s:"Chandigarh, Mohali & Panchkula", h:"/tricity", img:"https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=640" },
+              { t:"Commercial Hubs", s:"Sector 62, MG Road & Noida Expressway", h:"/commercial", img:"https://images.pexels.com/photos/5859963/pexels-photo-5859963.jpeg?auto=compress&cs=tinysrgb&w=640" },
             ].map((c,i)=>(
               <ScrollReveal key={c.t} delay={i*70}>
                 <Link href={c.h} className="hover-lift" style={{ display:"block",position:"relative",height:268,borderRadius:16,overflow:"hidden",textDecoration:"none",border:"1px solid rgba(212,168,67,0.25)" }}>
