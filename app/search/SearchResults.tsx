@@ -17,6 +17,7 @@ import {
 } from "@/lib/data/searchListings";
 import { paramsToSearchPath } from "@/lib/searchUrl";
 import { withAnchor } from "@/lib/data/listingAnchors";
+import { findWatchVideo, videoObjectSchema, watchContentUrl } from "@/lib/data/videos";
 
 const cityImg = (id: number) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=640`;
@@ -166,10 +167,13 @@ export default function SearchResults({
     }))
   );
 
+  const heroWatchVideo = findWatchVideo("/videos/Property%20Verification.mp4");
+
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Search", href: "/search" }]} />
       <JsonLd data={schema} />
+      {heroWatchVideo && <JsonLd data={videoObjectSchema(heroWatchVideo)} />}
       {results.length > 0 && <JsonLd data={listingsJsonLd} />}
       <ScrollToResults active={hasQuery} />
 
@@ -188,7 +192,7 @@ export default function SearchResults({
             className="video-bg"
             style={{ objectFit: "cover" }}
           >
-            <source src="/videos/Property%20Verification.mp4" type="video/mp4" />
+            <source src={heroWatchVideo ? watchContentUrl(heroWatchVideo) : "/videos/Property%20Verification.mp4"} type="video/mp4" />
           </video>
         </div>
         {/* Navy overlay keeps the search text and form crisp over the video */}

@@ -3,6 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TrustBadges from "@/components/ui/TrustBadges";
+import JsonLd from "@/components/seo/JsonLd";
+import { findWatchVideo, videoObjectSchema, watchContentUrl } from "@/lib/data/videos";
 
 /* ── Gold Particles Canvas ── */
 function Particles() {
@@ -145,6 +147,12 @@ export default function CinematicHero({
   const bgRef = useRef<HTMLDivElement>(null);
   const contentOuterRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Canonical /watch/ record for this hero film, so the initial HTML exposes the
+  // /watch/ media URL (matching the video sitemap) plus a VideoObject that
+  // associates it with the watch page — instead of a bare decorative mp4.
+  const heroWatchVideo = findWatchVideo(videoSrc);
+  const initialSrc = heroWatchVideo ? watchContentUrl(heroWatchVideo) : videoSrc;
 
   // Ref callback to set src after mount, preventing browser from restoring stale playback position.
   // The heavy video download is deferred until the browser is idle so it never competes with
@@ -323,7 +331,9 @@ export default function CinematicHero({
   }, []);
 
   return (
-    <section
+    <>
+      {heroWatchVideo && <JsonLd data={videoObjectSchema(heroWatchVideo)} />}
+      <section
       ref={heroRef}
       className="video-hero cinematic-hero"
       style={{
@@ -372,11 +382,12 @@ export default function CinematicHero({
         <video
           key={`${videoSrc}|${videoSrcMobile ?? ""}`}
           ref={videoRefCallback}
+          src={initialSrc}
           autoPlay
           muted
           loop
           playsInline
-           preload="auto"
+           preload="metadata"
           className="video-bg"
           title="Vedhara Group homepage cinematic property film"
           aria-label="Vedhara Group homepage cinematic property film"
@@ -586,5 +597,6 @@ export default function CinematicHero({
         @media(max-width:960px){.trust-strip{justify-content:center;}}
       `}</style>
     </section>
+    </>
   );
 }

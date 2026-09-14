@@ -16,6 +16,43 @@ export interface WatchVideo {
 export const videoSlug = (file: string) =>
   file.replace(/\.mp4$/i, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+/**
+ * Look up the canonical /watch/ record for a hero-video path as used in
+ * videoSrc props (e.g. "/videos/Chandigarh Tricity Hero Mobile.mp4?x=1#t=0").
+ * Returns undefined when the file is not part of the /watch/ library.
+ */
+export const findWatchVideo = (srcPath: string | undefined): WatchVideo | undefined => {
+  if (!srcPath) return undefined;
+  const decoded = decodeURIComponent(srcPath);
+  const withoutHash = decoded.split("#")[0];
+  const withoutQuery = withoutHash.split("?")[0];
+  const fileName = withoutQuery.split("/").pop() || "";
+  if (!fileName.endsWith(".mp4")) return undefined;
+  return watchVideos.find((v) => v.file === fileName);
+};
+
+const watchThumb = (v: WatchVideo) =>
+  `${VIDEOS_BASE_URL}/watch/${encodeURIComponent(`thumb-${v.file.replace(/\.mp4$/i, "")}.jpg`)}`;
+
+/** Absolute URL of the canonical /watch/ page for this video. */
+export const watchPageUrl = (v: WatchVideo) => `${VIDEOS_BASE_URL}/watch/${videoSlug(v.file)}`;
+
+/** Absolute URL of the crawlable /watch/ video file (byte-identical to /videos/). */
+export const watchContentUrl = (v: WatchVideo) => `${VIDEOS_BASE_URL}/watch/${encodeURIComponent(v.file)}`;
+
+/** schema.org VideoObject for a page that embeds a hero video, pointing at its /watch/ page. */
+export const videoObjectSchema = (v: WatchVideo) => ({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: v.title,
+  description: v.desc,
+  thumbnailUrl: watchThumb(v),
+  uploadDate: VIDEOS_UPLOAD_DATE,
+  contentUrl: watchContentUrl(v),
+  embedUrl: watchPageUrl(v),
+  mainEntityOfPage: watchPageUrl(v),
+});
+
 export const watchVideos: WatchVideo[] = [
   { file:"Homepage Hero Video Real Estate Advisory in Gurgaon Delhi NCR.mp4", title:"Vedhara Group Verified Property Advisory", desc:"Our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },
   { file:"Homepage Hero Video Desktop.mp4", title:"Vedhara Group Desktop Advisory Film", desc:"The desktop edition of our flagship film on independent, verified real estate advisory across Delhi NCR, Faridabad, Manesar, Chandigarh and North India." },

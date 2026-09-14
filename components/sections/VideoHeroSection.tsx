@@ -1,5 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState, ReactNode } from "react";
+import JsonLd from "@/components/seo/JsonLd";
+import { findWatchVideo, videoObjectSchema, watchContentUrl } from "@/lib/data/videos";
 
 /**
  * VideoHeroSection, Cinematic 3D video hero for sub-pages.
@@ -152,6 +154,13 @@ export default function VideoHeroSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+
+  // Canonical /watch/ record for this hero film. When present, the initial HTML
+  // exposes the /watch/ media URL (matching the video sitemap content_loc) and a
+  // VideoObject pointing at the watch page, which is what Google needs to
+  // associate a video with a watch page instead of a bare decorative mp4.
+  const heroWatchVideo = findWatchVideo(videoSrc);
+  const initialSrc = heroWatchVideo ? watchContentUrl(heroWatchVideo) : videoSrc;
 
   // Ref callback clears any previous route's source before assigning the new
   // video, preventing the previous hero film from flashing during navigation.
@@ -359,7 +368,9 @@ export default function VideoHeroSection({
   }, [disableTilt]);
 
   return (
-    <section
+    <>
+      {heroWatchVideo && <JsonLd data={videoObjectSchema(heroWatchVideo)} />}
+      <section
       ref={sectionRef}
       className="page-hero video-hero"
       style={{
@@ -390,11 +401,12 @@ export default function VideoHeroSection({
           <video
             key={`${videoSrc}|${videoSrcMobile ?? ""}`}
             ref={videoRefCallback}
+            src={initialSrc}
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={poster}
             className="video-bg"
             title={posterAlt || "Vedhara Group cinematic property film"}
@@ -519,5 +531,6 @@ export default function VideoHeroSection({
         </div>
       )}
     </section>
+    </>
   );
 }
