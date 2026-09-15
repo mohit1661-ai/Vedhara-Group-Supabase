@@ -180,9 +180,11 @@ export default function VideoHeroSection({
       const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
       const source = mobile && videoSrcMobile ? videoSrcMobile : videoSrc;
       if (source) {
+        const watchMatch = findWatchVideo(source);
+        const src = watchMatch ? watchContentUrl(watchMatch) : source;
         const start = () => {
           if (!el.isConnected) return;
-          el.src = source;
+          el.src = src;
           el.preload = "auto";
           el.load();
           setVideoSrcReady(true);
